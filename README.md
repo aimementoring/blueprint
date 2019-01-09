@@ -2,18 +2,17 @@
 
 ![AIME](https://d2ylaz7bdw65jx.cloudfront.net/assets/images/aime-logo.svg)
 
-<a href="https://npmjs.com/package/aime-blueprint"><img src="https://img.shields.io/npm/dm/aime-blueprint.svg"></a>
-<a href="https://npmjs.com/package/aime-blueprint"><img src="https://img.shields.io/npm/v/aime-blueprint.svg"></a>
-<img src="http://img.badgesize.io/https://unpkg.com/aime-blueprint/build/aime-blueprint.min.js?compression=gzip&label=gzip%20size">
-<img src="http://img.badgesize.io/https://unpkg.com/aime-blueprint/build/aime-blueprint.min.js?label=size">
-<img src="https://img.shields.io/badge/module%20formats-umd%2C%20cjs%2C%20esm-green.svg">
-
-[![npm version](https://badge.fury.io/js/aime-blueprint.svg)](https://badge.fury.io/js/aime-blueprint)
-https://img.shields.io/npm/v/:scope/:packageName.svg
+<a href="https://npmjs.com/package/aime-blueprint">
+  <img src="https://img.shields.io/npm/dm/aime-blueprint.svg">
+</a>
+<a href="https://npmjs.com/package/aime-blueprint">
+  <img src="https://img.shields.io/npm/v/aime-blueprint.svg">
+</a>
+<a href="https://npmjs.com/package/aime-blueprint">
+  <img src="https://img.shields.io/badge/module%20formats-umd%2C%20cjs%2C%20esm-green.svg">
+</a>
 
 ## Blueprint
-
-[![npm (scoped)](https://img.shields.io/npm/v/aime-blueprint.svg)]
 
 The main idea of this project is to define some standards for all AIME platforms. Here you'll find design definitions and React components which are used across all the platforms.
 
