@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from './button';
 import renderer from 'react-test-renderer';
+import Button from './button';
 
 describe('Button', () => {
   it('renders properly', () => {
