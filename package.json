@@ -1,19 +1,23 @@
 {
   "name": "aime-blueprint",
+  "title": "Blueprint",
   "description": "Standard components and UI design definitions for all AIME projects",
   "version": "0.1.2",
   "homepage": "https://blueprint.aimementoring.com",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
   "files": [
-    "lib",
-    "dist",
+    "src/lib",
+    "build",
     "README.md"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/aimementoring/blueprint.git"
   },
+  "pre-commit": [
+    "lint-staged"
+  ],
   "author": {
     "name": "Kevin Bardi",
     "email": "bardi.kevin@gmail.com"
