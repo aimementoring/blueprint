@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input renders properly 1`] = `
+<div
+  className="inputWrapper "
+>
+  <input
+    className="input "
+    disabled="disabled"
+    name="name"
+    onChange={[Function]}
+    placeholder="Name"
+    required={true}
+    type="text"
+    value=""
+  />
+</div>
+`;

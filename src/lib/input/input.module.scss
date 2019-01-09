@@ -1,0 +1,39 @@
+@import '../styles/variables/variables.module.scss';
+
+.inputWrapper {
+  float: left;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.input {
+  height: 60px;
+  color: $brand-primary;
+  background-color: $off-white;
+  border: 1px solid $eggplant;
+  font-weight: 400;
+  font-size: 0.9rem;
+  font-family: $secondary-font-family;
+  border-radius: 6px;
+  padding: 0.1em 1.3em;
+  box-sizing: border-box;
+  width: 100%;
+
+  &::placeholder {
+    color: $eggplant-transparent;
+  }
+
+  @media only screen and (max-width: $sm) {
+    margin-bottom: 0.8em;
+  }
+}
+
+.input:focus {
+  background-color: $white;
+  border-color: $brand-primary;
+  outline: none;
+}
+
+::placeholder {
+  color: $lavender;
+}
