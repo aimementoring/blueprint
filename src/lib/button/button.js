@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import styles from './button.module.scss';
 
-class Button extends PureComponent {
+export default class Button extends PureComponent {
   static propTypes = {
     containerClassNameFromParent: PropTypes.string,
     classNameFromParent: PropTypes.string,
@@ -38,5 +38,3 @@ class Button extends PureComponent {
     );
   }
 }
-
-export default Button;

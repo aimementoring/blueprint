@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox renders properly 1`] = `
+<div
+  className="classname customCheckbox customCheckboxDefault"
+  onClick={[Function]}
+>
+  <input
+    name="checkbox"
+    type="hidden"
+    value="no"
+  />
+  <input
+    checked={true}
+    className="hide"
+    id="checkbox"
+    name="checkbox"
+    readOnly={true}
+    type="checkbox"
+    value="yes"
+  />
+  <label
+    htmlFor="checkbox"
+  >
+    Accept terms and conditions
+  </label>
+</div>
+`;
