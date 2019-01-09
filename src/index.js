@@ -12,6 +12,9 @@ class App extends Component {
       required: true,
       disabled: false,
     },
+    checkbox: {
+      value: false,
+    },
   };
 
   handleInputChange = (attribute, event) => {
@@ -91,11 +94,29 @@ class App extends Component {
     );
   };
 
+  renderCheckboxComponent = () => {
+    const { checkbox } = this.state;
+    return (
+      <div>
+        <h1>Checkbox component</h1>
+        <Checkbox
+          elementClassName="classname"
+          handleFieldChange={(name, value) => this.updateState(name, 'value', value)}
+          labeltext="Accept terms and conditions"
+          name="checkbox"
+          customId="checkbox"
+          value={checkbox.value}
+        />
+      </div>
+    );
+  };
+
   render() {
     return (
       <div>
         {this.renderInputComponent()}
         {this.renderButtonComponent()}
+        {this.renderCheckboxComponent()}
       </div>
     );
   }
