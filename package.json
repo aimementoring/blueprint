@@ -2,7 +2,7 @@
   "name": "aime-blueprint",
   "title": "Blueprint",
   "description": "Standard components and UI design definitions for all AIME projects",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "homepage": "https://blueprint.aimementoring.com",
   "main": "src/lib/index.js",
   "module": "src/lib/index.js",
