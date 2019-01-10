@@ -111,12 +111,13 @@ module.exports = function(webpackEnv) {
   return {
     mode: isEnvProduction ? 'production' : isEnvDevelopment && 'development',
     // Stop compilation early in production
-    bail: isEnvProduction,
-    devtool: isEnvProduction
-      ? shouldUseSourceMap
-        ? 'source-map'
-        : false
-      : isEnvDevelopment && 'cheap-module-source-map',
+    bail: false, // isEnvProduction,
+    devtool: 'cheap-module-source-map',
+    // devtool: isEnvProduction
+    //   ? shouldUseSourceMap
+    //     ? 'source-map'
+    //     : false
+    //   : isEnvDevelopment && 'cheap-module-source-map',
     // These are the "entry points" to our application.
     // This means they will be the "root" imports that are included in JS bundle.
     entry: [
@@ -144,95 +145,95 @@ module.exports = function(webpackEnv) {
       pathinfo: isEnvDevelopment,
       // There will be one main bundle, and one file per asynchronous chunk.
       // In development, it does not produce real files.
-      filename: isEnvProduction
-        ? 'static/js/[name].[chunkhash:8].js'
-        : isEnvDevelopment && 'static/js/bundle.js',
+      filename: isEnvProduction ? 'lib/js/[name].js' : isEnvDevelopment && 'static/js/bundle.js',
       // There are also additional JS chunk files if you use code splitting.
-      chunkFilename: isEnvProduction
-        ? 'static/js/[name].[chunkhash:8].chunk.js'
-        : isEnvDevelopment && 'static/js/[name].chunk.js',
+      // chunkFilename: isEnvProduction
+      //   ? 'static/js/[name].[chunkhash:8].chunk.js'
+      //   : isEnvDevelopment && 'static/js/[name].chunk.js',
       // We inferred the "public path" (such as / or /my-project) from homepage.
       // We use "/" in development.
       publicPath: publicPath,
+      devtoolModuleFilenameTemplate: info =>
+        path.resolve(info.absoluteResourcePath).replace(/\\/g, '/'),
       // Point sourcemap entries to original disk location (format as URL on Windows)
-      devtoolModuleFilenameTemplate: isEnvProduction
-        ? info => path.relative(paths.appSrc, info.absoluteResourcePath).replace(/\\/g, '/')
-        : isEnvDevelopment && (info => path.resolve(info.absoluteResourcePath).replace(/\\/g, '/')),
+      // devtoolModuleFilenameTemplate: isEnvProduction
+      //   ? info => path.relative(paths.appSrc, info.absoluteResourcePath).replace(/\\/g, '/')
+      //   : isEnvDevelopment && (info => path.resolve(info.absoluteResourcePath).replace(/\\/g, '/')),
     },
-    optimization: {
-      minimize: isEnvProduction,
-      minimizer: [
-        // This is only used in production mode
-        new TerserPlugin({
-          terserOptions: {
-            parse: {
-              // we want terser to parse ecma 8 code. However, we don't want it
-              // to apply any minfication steps that turns valid ecma 5 code
-              // into invalid ecma 5 code. This is why the 'compress' and 'output'
-              // sections only apply transformations that are ecma 5 safe
-              // https://github.com/facebook/create-react-app/pull/4234
-              ecma: 8,
-            },
-            compress: {
-              ecma: 5,
-              warnings: false,
-              // Disabled because of an issue with Uglify breaking seemingly valid code:
-              // https://github.com/facebook/create-react-app/issues/2376
-              // Pending further investigation:
-              // https://github.com/mishoo/UglifyJS2/issues/2011
-              comparisons: false,
-              // Disabled because of an issue with Terser breaking valid code:
-              // https://github.com/facebook/create-react-app/issues/5250
-              // Pending futher investigation:
-              // https://github.com/terser-js/terser/issues/120
-              inline: 2,
-            },
-            mangle: {
-              safari10: true,
-            },
-            output: {
-              ecma: 5,
-              comments: false,
-              // Turned on because emoji and regex is not minified properly using default
-              // https://github.com/facebook/create-react-app/issues/2488
-              ascii_only: true,
-            },
-          },
-          // Use multi-process parallel running to improve the build speed
-          // Default number of concurrent runs: os.cpus().length - 1
-          parallel: true,
-          // Enable file caching
-          cache: true,
-          sourceMap: shouldUseSourceMap,
-        }),
-        // This is only used in production mode
-        new OptimizeCSSAssetsPlugin({
-          cssProcessorOptions: {
-            parser: safePostCssParser,
-            map: shouldUseSourceMap
-              ? {
-                  // `inline: false` forces the sourcemap to be output into a
-                  // separate file
-                  inline: false,
-                  // `annotation: true` appends the sourceMappingURL to the end of
-                  // the css file, helping the browser find the sourcemap
-                  annotation: true,
-                }
-              : false,
-          },
-        }),
-      ],
-      // Automatically split vendor and commons
-      // https://twitter.com/wSokra/status/969633336732905474
-      // https://medium.com/webpack/webpack-4-code-splitting-chunk-graph-and-the-splitchunks-optimization-be739a861366
-      splitChunks: {
-        chunks: 'all',
-        name: false,
-      },
-      // Keep the runtime chunk separated to enable long term caching
-      // https://twitter.com/wSokra/status/969679223278505985
-      runtimeChunk: true,
-    },
+    // optimization: {
+    //   minimize: isEnvProduction,
+    //   minimizer: [
+    //     // This is only used in production mode
+    //     new TerserPlugin({
+    //       terserOptions: {
+    //         parse: {
+    //           // we want terser to parse ecma 8 code. However, we don't want it
+    //           // to apply any minfication steps that turns valid ecma 5 code
+    //           // into invalid ecma 5 code. This is why the 'compress' and 'output'
+    //           // sections only apply transformations that are ecma 5 safe
+    //           // https://github.com/facebook/create-react-app/pull/4234
+    //           ecma: 8,
+    //         },
+    //         compress: {
+    //           ecma: 5,
+    //           warnings: false,
+    //           // Disabled because of an issue with Uglify breaking seemingly valid code:
+    //           // https://github.com/facebook/create-react-app/issues/2376
+    //           // Pending further investigation:
+    //           // https://github.com/mishoo/UglifyJS2/issues/2011
+    //           comparisons: false,
+    //           // Disabled because of an issue with Terser breaking valid code:
+    //           // https://github.com/facebook/create-react-app/issues/5250
+    //           // Pending futher investigation:
+    //           // https://github.com/terser-js/terser/issues/120
+    //           inline: 2,
+    //         },
+    //         mangle: {
+    //           safari10: true,
+    //         },
+    //         output: {
+    //           ecma: 5,
+    //           comments: false,
+    //           // Turned on because emoji and regex is not minified properly using default
+    //           // https://github.com/facebook/create-react-app/issues/2488
+    //           ascii_only: true,
+    //         },
+    //       },
+    //       // Use multi-process parallel running to improve the build speed
+    //       // Default number of concurrent runs: os.cpus().length - 1
+    //       parallel: true,
+    //       // Enable file caching
+    //       cache: true,
+    //       sourceMap: shouldUseSourceMap,
+    //     }),
+    //     // This is only used in production mode
+    //     new OptimizeCSSAssetsPlugin({
+    //       cssProcessorOptions: {
+    //         parser: safePostCssParser,
+    //         map: shouldUseSourceMap
+    //           ? {
+    //               // `inline: false` forces the sourcemap to be output into a
+    //               // separate file
+    //               inline: false,
+    //               // `annotation: true` appends the sourceMappingURL to the end of
+    //               // the css file, helping the browser find the sourcemap
+    //               annotation: true,
+    //             }
+    //           : false,
+    //       },
+    //     }),
+    //   ],
+    //   // Automatically split vendor and commons
+    //   // https://twitter.com/wSokra/status/969633336732905474
+    //   // https://medium.com/webpack/webpack-4-code-splitting-chunk-graph-and-the-splitchunks-optimization-be739a861366
+    //   splitChunks: {
+    //     chunks: 'all',
+    //     name: false,
+    //   },
+    //   // Keep the runtime chunk separated to enable long term caching
+    //   // https://twitter.com/wSokra/status/969679223278505985
+    //   runtimeChunk: true,
+    // },
     resolve: {
       // This allows you to set a fallback for where Webpack should look for modules.
       // We placed these paths second because we want `node_modules` to "win"
@@ -338,8 +339,8 @@ module.exports = function(webpackEnv) {
                 // It enables caching results in ./node_modules/.cache/babel-loader/
                 // directory for faster rebuilds.
                 cacheDirectory: true,
-                cacheCompression: isEnvProduction,
-                compact: isEnvProduction,
+                cacheCompression: false, // isEnvProduction,
+                compact: false, // isEnvProduction,
               },
             },
             // Process any JS outside of the app with Babel.
@@ -356,7 +357,7 @@ module.exports = function(webpackEnv) {
                   [require.resolve('babel-preset-react-app/dependencies'), { helpers: true }],
                 ],
                 cacheDirectory: true,
-                cacheCompression: isEnvProduction,
+                cacheCompression: false, // isEnvProduction,
 
                 // If an error happens in a package, it's possible to be
                 // because it was compiled. Thus, we don't want the browser
@@ -377,7 +378,7 @@ module.exports = function(webpackEnv) {
               exclude: cssModuleRegex,
               use: getStyleLoaders({
                 importLoaders: 1,
-                sourceMap: isEnvProduction && shouldUseSourceMap,
+                sourceMap: false, // isEnvProduction && shouldUseSourceMap,
               }),
               // Don't consider CSS imports dead code even if the
               // containing package claims to have no side effects.
@@ -391,7 +392,7 @@ module.exports = function(webpackEnv) {
               test: cssModuleRegex,
               use: getStyleLoaders({
                 importLoaders: 1,
-                sourceMap: isEnvProduction && shouldUseSourceMap,
+                sourceMap: false, // isEnvProduction && shouldUseSourceMap,
                 modules: true,
                 getLocalIdent: getCSSModuleLocalIdent,
               }),
@@ -405,7 +406,7 @@ module.exports = function(webpackEnv) {
               use: getStyleLoaders(
                 {
                   importLoaders: 2,
-                  sourceMap: isEnvProduction && shouldUseSourceMap,
+                  sourceMap: false, // isEnvProduction && shouldUseSourceMap,
                 },
                 'sass-loader',
               ),
@@ -422,7 +423,7 @@ module.exports = function(webpackEnv) {
               use: getStyleLoaders(
                 {
                   importLoaders: 2,
-                  sourceMap: isEnvProduction && shouldUseSourceMap,
+                  sourceMap: false, // isEnvProduction && shouldUseSourceMap,
                   modules: true,
                   getLocalIdent: getCSSModuleLocalIdent,
                 },

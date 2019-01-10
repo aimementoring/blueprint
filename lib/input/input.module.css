@@ -1,0 +1,30 @@
+.inputWrapper {
+  float: left;
+  width: 100%;
+  margin-bottom: 10px; }
+
+.input {
+  height: 60px;
+  color: #7603db;
+  background-color: #fef6ff;
+  border: 1px solid #550d94;
+  font-weight: 400;
+  font-size: 0.9rem;
+  font-family: "Poppins Bold Italic", Helvetica, Arial, sans-serif;
+  border-radius: 6px;
+  padding: 0.1em 1.3em;
+  box-sizing: border-box;
+  width: 100%; }
+  .input::placeholder {
+    color: rgba(65, 0, 72, 0.769); }
+  @media only screen and (max-width: 40em) {
+    .input {
+      margin-bottom: 0.8em; } }
+
+.input:focus {
+  background-color: white;
+  border-color: #7603db;
+  outline: none; }
+
+::placeholder {
+  color: #9da1b4; }

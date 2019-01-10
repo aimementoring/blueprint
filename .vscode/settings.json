@@ -75,5 +75,6 @@
   "prettier.endOfLine": "cr",
   "prettier.printWidth": 100,
   "prettier.tabWidth": 2,
-  "prettier.trailingComma": "all"
+  "prettier.trailingComma": "all",
+  "prettier.stylelintIntegration": false
 }

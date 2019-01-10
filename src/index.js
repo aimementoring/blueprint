@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import { Input, Button } from './lib';
+import { Input, Button, Checkbox } from './lib';
 
 const container = document.getElementById('root');
 class App extends Component {
