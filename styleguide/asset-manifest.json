@@ -1,11 +1,8 @@
 {
-  "main.css": "/static/css/main.a1cc9441.chunk.css",
-  "main.js": "/build/main.38e03258.js",
-  "build/1.1e6691d0.js": "/build/1.1e6691d0.js",
-  "build/2.ceea5bef.js": "/build/2.ceea5bef.js",
-  "runtime~main.js": "/build/bundle.bed03552.js",
-  "static/css/main.a1cc9441.chunk.css.map": "/static/css/main.a1cc9441.chunk.css.map",
+  "main.css": "/static/css/main.bbeb740e.css",
+  "main.js": "/build/bundle.2f72dc64.js",
+  "build/1.936ed086.js": "/build/1.936ed086.js",
   "index.html": "/index.html",
-  "precache-manifest.24a264be9ea2e258c95ea7f578b44c47.js": "/precache-manifest.24a264be9ea2e258c95ea7f578b44c47.js",
+  "precache-manifest.49d3108d517e73efaf782e5f34104933.js": "/precache-manifest.49d3108d517e73efaf782e5f34104933.js",
   "service-worker.js": "/service-worker.js"
 }
