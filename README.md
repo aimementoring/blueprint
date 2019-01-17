@@ -22,6 +22,7 @@ The main idea of this project is to define some standards for all AIME platforms
 2. [Components](#components)
 3. Design UI
 4. How to's
+5. How to deploy
 
 ### Installation
 
@@ -37,3 +38,12 @@ Now you are ready to use them :)!
 
 - Button
 - Input
+
+### Deploy
+
+1. Add your updated files you want to commit with `git add /file1 /file2 ...`.
+2. Run commit command to save los changes on git `git commit -m "COMMENTS OF THE CHANGE"` adding a comment of what have you updated, changed or fixed.
+3. Push your changes to your branch `git push origin BRANCH_NAME`.
+4. Create a PR to master.
+5. After PR is approved, run `npm version PATCH.MAJOR.MINOR` replacing PATCH, MAJOR and MINOR by your publish version according to previous version and your type of change.
+6. Run `npm publish`.

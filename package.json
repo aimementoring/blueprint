@@ -119,7 +119,7 @@
     "test": "node scripts/test.js",
     "prepare": "yarn run build",
     "predeploy": "yarn install && yarn run build && yarn run build:styleguide",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d lib"
   },
   "browserslist": [
     ">0.2%",
