@@ -15,8 +15,6 @@
     "babel-loader": "8.0.4",
     "babel-plugin-named-asset-import": "^0.3.0",
     "babel-plugin-transform-rename-import": "^2.3.0",
-    "bfj": "6.1.1",
-    "case-sensitive-paths-webpack-plugin": "2.1.2",
     "chalk": "2.4.1",
     "css-loader": "1.0.0",
     "dotenv": "6.0.0",
@@ -40,12 +38,7 @@
     "resolve": "1.8.1",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.0",
-    "terser-webpack-plugin": "1.1.0",
-    "url-loader": "1.1.1",
-    "webpack": "4.19.1",
-    "webpack-dev-server": "3.1.14",
-    "webpack-manifest-plugin": "2.0.4",
-    "workbox-webpack-plugin": "3.6.3"
+    "styled-jsx": "^3.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -87,12 +80,18 @@
     "react-styleguidist": "^8.0.6",
     "react-test-renderer": "^16.7.0",
     "rollup": "^1.1.0",
+    "rollup-plugin-analyzer": "^3.0.0",
     "rollup-plugin-babel": "^4.3.0",
     "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-delete": "^0.1.2",
+    "rollup-plugin-execute": "^1.0.0",
+    "rollup-plugin-filesize": "^6.0.0",
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-postcss": "^1.6.3",
+    "rollup-plugin-progress": "^1.0.0",
     "rollup-plugin-url": "^2.1.0",
+    "rollup-plugin-visualizer": "^0.9.2",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.0",
     "stylelint": "^9.6.0",
@@ -116,7 +115,7 @@
     "publish:blueprint": "npm run build && npm publish",
     "start": "cross-env NODE_ENV=production BABEL_ENV=production rollup -c -w",
     "build": "cross-env NODE_ENV=production BABEL_ENV=production rollup -c",
-    "test": "node scripts/test.js",
+    "test": "cross-env NODE_ENV=test BABEL_ENV=test jest --coverage --watch",
     "prepare": "yarn run build",
     "predeploy": "yarn install && yarn run build && yarn run build:styleguide",
     "deploy": "gh-pages -d lib"
@@ -144,8 +143,8 @@
     "testURL": "http://localhost",
     "transform": {
       "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
-      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+      "^.+\\.css$": "<rootDir>/jest/cssTransform.js",
+      "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "<rootDir>/jest/fileTransform.js"
     },
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
@@ -186,6 +185,11 @@
   "babel": {
     "presets": [
       "react-app"
+    ],
+    "plugins": [
+      [
+        "styled-jsx/babel"
+      ]
     ]
   }
 }

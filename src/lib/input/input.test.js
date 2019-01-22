@@ -13,7 +13,7 @@ describe('Input', () => {
           type="text"
           required={true}
           onChangeFunction={value => {}}
-          disabled="disabled"
+          disabled={true}
         />,
       )
       .toJSON();

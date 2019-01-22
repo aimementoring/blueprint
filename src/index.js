@@ -123,3 +123,5 @@ class App extends Component {
 }
 
 render(<App />, container);
+
+export { Button, Checkbox, Input };

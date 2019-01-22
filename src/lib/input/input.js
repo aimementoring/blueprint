@@ -4,15 +4,15 @@ import styles from './input.module.scss';
 
 export default class Input extends PureComponent {
   static propTypes = {
-    type: PropTypes.string,
     classNameFromParent: PropTypes.string,
     classNameInputFromParent: PropTypes.string,
     placeholder: PropTypes.string,
     disabled: PropTypes.bool,
     required: PropTypes.bool,
-    onChangeFunction: PropTypes.func,
-    name: PropTypes.string,
+    name: PropTypes.string.isRequired,
     value: PropTypes.string,
+    type: PropTypes.string,
+    onChangeFunction: PropTypes.func,
   };
 
   static defaultProps = {
@@ -21,10 +21,9 @@ export default class Input extends PureComponent {
     placeholder: '',
     disabled: false,
     required: true,
-    onChangeFunction: () => {},
-    name: '',
     value: '',
     type: 'text',
+    onChangeFunction: () => {},
   };
 
   handleChange = name => event => {
