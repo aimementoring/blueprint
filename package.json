@@ -15,6 +15,8 @@
     "babel-loader": "8.0.4",
     "babel-plugin-named-asset-import": "^0.3.0",
     "babel-plugin-transform-rename-import": "^2.3.0",
+    "bfj": "6.1.1",
+    "case-sensitive-paths-webpack-plugin": "2.1.2",
     "chalk": "2.4.1",
     "css-loader": "1.0.0",
     "dotenv": "6.0.0",
@@ -31,6 +33,7 @@
     "postcss-flexbugs-fixes": "4.1.0",
     "postcss-loader": "3.0.0",
     "postcss-safe-parser": "4.0.1",
+    "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-app-polyfill": "^0.2.0",
     "react-dev-utils": "^7.0.1",
@@ -38,16 +41,18 @@
     "resolve": "1.8.1",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.0",
-    "styled-jsx": "^3.2.0"
+    "styled-jsx": "^3.2.0",
+    "terser-webpack-plugin": "1.1.0",
+    "url-loader": "1.1.1",
+    "webpack": "4.19.1",
+    "webpack-dev-server": "3.1.14",
+    "webpack-manifest-plugin": "2.0.4",
+    "workbox-webpack-plugin": "3.6.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "7.1.6",
     "@babel/plugin-external-helpers": "^7.2.0",
-    "@storybook/addon-actions": "^4.1.6",
-    "@storybook/addon-links": "^4.1.6",
-    "@storybook/addons": "^4.1.6",
-    "@storybook/react": "^4.1.6",
     "@svgr/rollup": "^4.1.0",
     "babel-eslint": "9.0.0",
     "babel-preset-react-app": "^5.0.4",
@@ -64,7 +69,6 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-markdown": "^1.0.0-beta.6",
     "eslint-plugin-react": "^7.11.1",
-    "gh-pages": "^2.0.1",
     "husky": "^1.1.2",
     "jest": "23.6.0",
     "jest-pnp-resolver": "1.0.1",
@@ -102,23 +106,17 @@
     "**/*.less": "stylelint --syntax scss"
   },
   "scripts": {
-    "styleguide": "styleguidist server",
-    "storybook": "start-storybook -p 6006",
     "build:styleguide": "styleguidist build",
-    "build:storybook": "build-storybook",
-    "build:full": "npm run build && npm run build:styleguide && npm run build:storybook",
+    "build:lib": "cross-env NODE_ENV=production BABEL_ENV=production rollup -c",
+    "build": "yarn build:lib && yarn build:styleguide",
     "lint-staged": "lint-staged",
     "lint": "eslint --ext .js src",
     "fix-lint": "eslint --fix --ext .js",
     "fix-code": "prettier-eslint --write 'src/**/*.{js,jsx}' ",
     "fix-styles": "prettier-stylelint --write 'src/**/*.{css,scss}' ",
-    "publish:blueprint": "npm run build && npm publish",
     "start": "cross-env NODE_ENV=production BABEL_ENV=production rollup -c -w",
-    "build": "cross-env NODE_ENV=production BABEL_ENV=production rollup -c",
-    "test": "cross-env NODE_ENV=test BABEL_ENV=test jest --coverage --watch",
-    "prepare": "yarn run build",
-    "predeploy": "yarn install && yarn run build && yarn run build:styleguide",
-    "deploy": "gh-pages -d lib"
+    "test": "cross-env NODE_ENV=test BABEL_ENV=test jest --coverage",
+    "deploy": "yarn test && yarn build"
   },
   "browserslist": [
     ">0.2%",
@@ -143,8 +141,8 @@
     "testURL": "http://localhost",
     "transform": {
       "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
-      "^.+\\.css$": "<rootDir>/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "<rootDir>/jest/fileTransform.js"
+      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+      "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
