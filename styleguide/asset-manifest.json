@@ -1,8 +1,9 @@
 {
-  "main.css": "/static/css/main.e45f3fef.css",
-  "main.js": "/build/bundle.49e02fc4.js",
-  "build/1.d3545e16.js": "/build/1.d3545e16.js",
+  "main.css": "/static/css/main.c799bbb4.css",
+  "main.js": "/build/bundle.5447411b.js",
+  "build/1.65d3647e.js": "/build/1.65d3647e.js",
+  "static/media/main.css": "/static/media/flags@2x.7de34bf2.png",
   "index.html": "/index.html",
-  "precache-manifest.641ab7ff06c89e5035233ebb4bad5024.js": "/precache-manifest.641ab7ff06c89e5035233ebb4bad5024.js",
+  "precache-manifest.5ba6660577d58233852582bbdfcfee8f.js": "/precache-manifest.5ba6660577d58233852582bbdfcfee8f.js",
   "service-worker.js": "/service-worker.js"
 }

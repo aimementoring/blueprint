@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select renders properly 1`] = `
+<div
+  className="inputWrapper "
+>
+  <select
+    className="select input "
+    name="select"
+    onChange={[Function]}
+    placeholder="Select an option"
+    required={true}
+    value=""
+  >
+    <option
+      disabled={true}
+      value=""
+    >
+      Select an option
+    </option>
+    <option>
+      Option 1
+    </option>
+    <option>
+      Option 2
+    </option>
+    <option>
+      Option 3
+    </option>
+    <option>
+      Option 4
+    </option>
+    <option>
+      Option 5
+    </option>
+  </select>
+</div>
+`;

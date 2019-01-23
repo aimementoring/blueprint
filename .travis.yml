@@ -1,0 +1,18 @@
+---
+sudo: false
+install:
+  - node -v
+before_script:
+  - yarn
+cache:
+  directories:
+    - node_modules
+  yarn: true
+
+git:
+  depth: 3
+
+script:
+  - yarn lint
+  - yarn test
+  - yarn build

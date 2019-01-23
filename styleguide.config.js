@@ -1,7 +1,7 @@
 module.exports = {
   title: 'AIME Portal Style Guide',
   components: 'src/lib/**/*.js',
-  ignore: ['**/*.spec.js', '**/*.test.js', '**/index.js'],
+  ignore: ['**/*.spec.js', '**/*.test.js', '**/index.js', '**/countryCollection.js'],
   template: {
     favicon: 'public/favicon.ico',
   },

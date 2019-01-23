@@ -11,6 +11,11 @@
 <a href="https://npmjs.com/package/aime-blueprint">
   <img src="https://img.shields.io/badge/module%20formats-umd%2C%20cjs%2C%20esm-green.svg">
 </a>
+<a href="https://npmjs.com/package/aime-blueprint">
+  <img src="https://img.shields.io/coveralls/github/aimementoring/blueprint.svg">
+</a>
+
+[![https://nodei.co/npm/aime-blueprint.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/aime-blueprint.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/aime-blueprint)
 
 ## Blueprint
 
