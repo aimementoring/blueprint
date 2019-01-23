@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextBox renders properly 1`] = `
+<div
+  className="inputWrapper "
+>
+  <textarea
+    className="input textarea myClass"
+    name="textbox"
+    onChange={[Function]}
+    placeholder="Write area"
+    required={true}
+    value=""
+  />
+</div>
+`;

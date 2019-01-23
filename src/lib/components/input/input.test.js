@@ -11,9 +11,9 @@ describe('Input', () => {
           value=""
           name="name"
           type="text"
-          required={true}
+          required
           onChangeFunction={value => {}}
-          disabled={true}
+          disabled
         />,
       )
       .toJSON();

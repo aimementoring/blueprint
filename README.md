@@ -37,6 +37,7 @@ Now you are ready to use them :)!
 ### Components
 
 - Button
+- Checkbox
 - Input
 
 ### Deploy
