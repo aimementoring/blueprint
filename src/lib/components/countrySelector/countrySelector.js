@@ -35,13 +35,14 @@ export default class CountrySelector extends Component {
     if (!value || !countries.find(country => country.text === value)) {
       value = '';
     }
-    const countryOptions = countries.length
-      ? countries.map(country => ({
-          label: country.text,
-          value: country.text,
-          disabled: country.disabled,
-        }))
-      : [];
+    let countryOptions = [];
+    if (countries.length) {
+      countryOptions = countries.map(country => ({
+        label: country.text,
+        value: country.text,
+        disabled: country.disabled,
+      }));
+    }
     countryOptions.unshift({
       label: placeholder,
       value: '',

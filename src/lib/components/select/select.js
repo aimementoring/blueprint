@@ -29,7 +29,7 @@ export default class SelectInput extends PureComponent {
   };
 
   static defaultProps = {
-    onChangeFunction: (name, value) => {},
+    onChangeFunction: () => {},
     className: '',
     classNameFromParent: '',
     isMulti: false,

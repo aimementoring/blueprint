@@ -1,8 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Select from './select';
+import SelectInput from './select';
 
-describe('Select', () => {
+describe('SelectInput', () => {
   it('renders properly', () => {
     const selectOptions = [
       { value: 'Select an option', label: 'Select an option' },
@@ -14,7 +14,7 @@ describe('Select', () => {
     ];
     const tree = renderer
       .create(
-        <Select
+        <SelectInput
           placeholder="Select an option"
           name="select"
           onChangeFunction={value => {}}

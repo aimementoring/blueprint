@@ -1,10 +1,16 @@
 ```js
-<Select placeholder="Select an option" name="select" onChangeFunction={value => {}} required>
-  <option value="" disabled>
-    Select an option
-  </option>
-  {['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5'].map(value => (
-    <option key={`value-${value}`}>{value}</option>
-  ))}
-</Select>
+const selectOptions = [
+  { value: 'Select an option', label: 'Select an option' },
+  { value: 'Option 1', label: 'Option 1' },
+  { value: 'Option 2', label: 'Option 2' },
+  { value: 'Option 3', label: 'Option 3' },
+  { value: 'Option 4', label: 'Option 4' },
+  { value: 'Option 5', label: 'Option 5' },
+];
+<SelectInput
+  placeholder="Select an option"
+  name="select"
+  onChangeFunction={value => {}}
+  options={selectOptions}
+/>;
 ```
