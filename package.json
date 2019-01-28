@@ -2,13 +2,16 @@
   "name": "aime-blueprint",
   "title": "Blueprint",
   "description": "Standard components and UI design definitions for all AIME projects",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "homepage": "https://blueprint.aimementoring.com",
   "main": "lib/index.js",
   "module": "lib/index.js",
   "dependencies": {
+    "@bugsnag/js": "^6.0.0-alpha.0",
+    "@bugsnag/plugin-react": "^6.0.0-alpha.0",
     "@svgr/webpack": "2.4.1",
+    "airtable": "^0.5.8",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "9.0.0",
     "babel-jest": "23.6.0",
@@ -19,6 +22,7 @@
     "case-sensitive-paths-webpack-plugin": "2.1.2",
     "chalk": "2.4.1",
     "country-list": "^2.1.0",
+    "cross-fetch": "^3.0.0",
     "css-loader": "1.0.0",
     "dotenv": "6.0.0",
     "dotenv-expand": "4.2.0",
@@ -40,6 +44,7 @@
     "react-dev-utils": "^7.0.1",
     "react-dom": "^16.7.0",
     "react-intl-tel-input": "^6.1.0",
+    "react-select": "^2.3.0",
     "resolve": "1.8.1",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.0",
@@ -73,6 +78,7 @@
     "eslint-plugin-react": "^7.11.1",
     "husky": "^1.1.2",
     "jest": "23.6.0",
+    "jest-coverage-badges": "^1.1.2",
     "jest-pnp-resolver": "1.0.1",
     "jest-resolve": "23.6.0",
     "lint-staged": "^7.3.0",
@@ -117,7 +123,7 @@
     "fix-code": "prettier-eslint --write 'src/**/*.{js,jsx}' ",
     "fix-styles": "prettier-stylelint --write 'src/**/*.{css,scss}' ",
     "start": "cross-env NODE_ENV=production BABEL_ENV=production rollup -c -w",
-    "test": "cross-env NODE_ENV=test BABEL_ENV=test jest --coverage",
+    "test": "cross-env NODE_ENV=test BABEL_ENV=test jest --coverage && jest-coverage-badges",
     "deploy": "yarn test && yarn build"
   },
   "browserslist": [
@@ -165,6 +171,11 @@
       "web.jsx",
       "jsx",
       "node"
+    ],
+    "coverageReporters": [
+      "json-summary",
+      "text",
+      "lcov"
     ]
   },
   "files": [

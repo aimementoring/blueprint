@@ -49,7 +49,9 @@ export default {
     clean({ targets: 'lib' }),
     execute('mkdir lib'),
     external(),
-    resolve(),
+    resolve({
+      preferBuiltins: true,
+    }),
     postcss({
       modules: true,
     }),
@@ -65,6 +67,7 @@ export default {
           'createElement',
           'Fragment',
         ],
+        'node_modules/react-dom/index.js': ['createPortal', 'findDOMNode'],
       },
     }),
     url(),

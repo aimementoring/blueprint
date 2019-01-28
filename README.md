@@ -12,7 +12,16 @@
   <img src="https://img.shields.io/badge/module%20formats-umd%2C%20cjs%2C%20esm-green.svg">
 </a>
 <a href="https://npmjs.com/package/aime-blueprint">
-  <img src="https://img.shields.io/coveralls/github/aimementoring/blueprint.svg">
+  <img src="coverage/badge-lines.svg">
+</a>
+<a href="https://npmjs.com/package/aime-blueprint">
+  <img src="coverage/badge-functions.svg">
+</a>
+<a href="https://npmjs.com/package/aime-blueprint">
+  <img src="coverage/badge-statements.svg">
+</a>
+<a href="https://npmjs.com/package/aime-blueprint">
+  <img src="coverage/badge-branches.svg">
 </a>
 
 [![https://nodei.co/npm/aime-blueprint.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/aime-blueprint.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/aime-blueprint)
@@ -24,10 +33,9 @@ The main idea of this project is to define some standards for all AIME platforms
 ## Table of Contents
 
 1. [Installation](#installation)
-2. [Components](#components)
-3. Design UI
-4. How to's
-5. How to deploy
+2. Design UI
+3. How to's
+4. How to deploy
 
 ### Installation
 
@@ -38,12 +46,6 @@ Now import the component/components in the file you will use it:
 `import { Button, Input } from 'aime-blueprint`;
 
 Now you are ready to use them :)!
-
-### Components
-
-- Button
-- Checkbox
-- Input
 
 ### Deploy
 

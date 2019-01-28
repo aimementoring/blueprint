@@ -1,9 +1,7 @@
 module.exports = {
   title: 'AIME Portal Style Guide',
-  components: 'src/lib/**/*.js',
-  ignore: ['**/*.spec.js', '**/*.test.js', '**/index.js', '**/countryCollection.js'],
   template: {
-    favicon: 'public/favicon.ico',
+    favicon: 'https://d2ylaz7bdw65jx.cloudfront.net/assets/images/favicon/favicon.ico',
   },
   webpackConfig: require('./config/webpack.config.js'),
   dangerouslyUpdateWebpackConfig(webpackConfig, env) {
@@ -13,4 +11,18 @@ module.exports = {
     };
     return webpackConfig;
   },
+  sections: [
+    {
+      name: 'Components',
+      description: 'Visual components to be used in React websites',
+      components: 'src/lib/components/**/*.js',
+      ignore: ['**/*.spec.js', '**/*.test.js', '**/index.js', '**/countryCollection.js'],
+    },
+    {
+      name: 'Utils',
+      description: 'Utils functions',
+      components: 'src/lib/utils/**/*.js',
+      ignore: ['**/*.spec.js', '**/*.test.js', 'src/lib/utils/index.js'],
+    },
+  ],
 };
