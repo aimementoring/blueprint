@@ -22,7 +22,7 @@ module.exports = {
       name: 'Utils',
       description: 'Utils functions',
       components: 'src/lib/utils/**/*.js',
-      ignore: ['**/*.spec.js', '**/*.test.js', 'src/lib/utils/index.js'],
+      ignore: ['**/*.spec.js', '**/*.test.js', '**/index.js', 'src/lib/utils/index.js'],
     },
   ],
 };

@@ -1,0 +1,228 @@
+.button_container__2e208 {
+  margin: 0 auto;
+  text-align: center;
+  float: left;
+  width: 100%; }
+
+.button_button__C1Icx {
+  font-family: "Poppins Bold Italic", Helvetica, Arial, sans-serif;
+  font-size: 0.8rem;
+  text-align: center;
+  color: white;
+  background-color: #7603db;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  opacity: 1;
+  border-radius: 90px;
+  border: 0;
+  transition: all 0.1s ease-in-out;
+  outline: none; }
+  .button_button__C1Icx:hover {
+    background-color: #da0dff; }
+
+.checkbox_customCheckbox__15cld input[type='checkbox'] {
+  display: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }
+  .checkbox_customCheckbox__15cld input[type='checkbox'] ~ label {
+    position: relative;
+    cursor: pointer;
+    padding-left: 1rem;
+    margin-left: 1rem;
+    transition: ease 0.1s color; }
+    .checkbox_customCheckbox__15cld input[type='checkbox'] ~ label:hover {
+      color: #666666; }
+  .checkbox_customCheckbox__15cld input[type='checkbox']:not(:checked) ~ label:after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    position: absolute;
+    top: -1.5px;
+    left: -12px;
+    border-style: solid;
+    border-width: 1.5px;
+    border-radius: 4px;
+    border-color: #e8e8e8; }
+  .checkbox_customCheckbox__15cld input[type='checkbox']:not(:checked) ~ label:before {
+    content: '';
+    width: 11px;
+    height: 10px;
+    background: none;
+    position: absolute;
+    top: 2.5px;
+    left: -8px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden; }
+
+.checkbox_customCheckboxDefault__HM2_i input[type='checkbox']:focus ~ label:after {
+  border-color: #7603db; }
+
+.checkbox_customCheckboxDefault__HM2_i input[type='checkbox']:checked ~ label:after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  position: absolute;
+  top: -1.5px;
+  left: -12px;
+  border-style: solid;
+  border-width: 1.5px;
+  border-radius: 4px;
+  border-color: #7603db; }
+
+.checkbox_customCheckboxDefault__HM2_i input[type='checkbox']:checked ~ label:before {
+  content: '';
+  width: 11px;
+  height: 10px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMSI+ICA8cGF0aCBkPSJNMy4yNjQgMTAuNDg5TC40MjQgNy4zN2ExLjY4IDEuNjggMCAwIDEgMC0yLjIzMiAxLjQ0MiAxLjQ0MiAwIDAgMSAyLjE2IDBsMS43OTggMS45NzRMMTAuNDE2LjQ4NmExLjQ0MiAxLjQ0MiAwIDAgMSAyLjE2IDAgMS42OCAxLjY4IDAgMCAxIDAgMi4yMzNsLTcuMSA3Ljc5NWExLjQzOSAxLjQzOSAwIDAgMS0xLjczLjMzIDEuNTAxIDEuNTAxIDAgMCAxLS40ODItLjM1NXoiIGZpbGw9IiM3NjAzREIiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==");
+  position: absolute;
+  top: 2.5px;
+  left: -8px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 2;
+  opacity: 1;
+  visibility: visible; }
+
+.input_inputWrapper__qEwOA {
+  float: left;
+  width: 100%;
+  margin-bottom: 10px; }
+
+.input_input__38ZzY {
+  height: 60px;
+  color: #7603db;
+  background-color: #fef6ff;
+  border: 1px solid #550d94;
+  font-weight: 400;
+  font-size: 0.9rem;
+  font-family: "Poppins Bold Italic", Helvetica, Arial, sans-serif;
+  border-radius: 6px;
+  padding: 0.1em 1.3em;
+  box-sizing: border-box;
+  width: 100%; }
+  .input_input__38ZzY::-webkit-input-placeholder {
+    color: rgba(65, 0, 72, 0.769); }
+  .input_input__38ZzY::-ms-input-placeholder {
+    color: rgba(65, 0, 72, 0.769); }
+  .input_input__38ZzY::placeholder {
+    color: rgba(65, 0, 72, 0.769); }
+  @media only screen and (max-width: 40em) {
+    .input_input__38ZzY {
+      margin-bottom: 0.8em; } }
+
+.input_input__38ZzY:focus {
+  background-color: white;
+  border-color: #7603db;
+  outline: none; }
+
+::-webkit-input-placeholder {
+  color: #9da1b4; }
+
+::-ms-input-placeholder {
+  color: #9da1b4; }
+
+::placeholder {
+  color: #9da1b4; }
+
+.select_inputWrapper__hzm_D {
+  float: left;
+  width: 100%;
+  margin-bottom: 10px; }
+
+.select_input__CQih4 {
+  height: 60px;
+  color: #7603db;
+  background-color: #fef6ff;
+  border: 1px solid #550d94;
+  font-weight: 400;
+  font-size: 0.9rem;
+  font-family: "Poppins Bold Italic", Helvetica, Arial, sans-serif;
+  border-radius: 6px;
+  padding: 0.1em 1.3em;
+  box-sizing: border-box;
+  width: 100%; }
+  .select_input__CQih4::-webkit-input-placeholder {
+    color: rgba(65, 0, 72, 0.769); }
+  .select_input__CQih4::-ms-input-placeholder {
+    color: rgba(65, 0, 72, 0.769); }
+  .select_input__CQih4::placeholder {
+    color: rgba(65, 0, 72, 0.769); }
+  @media only screen and (max-width: 40em) {
+    .select_input__CQih4 {
+      margin-bottom: 0.8em; } }
+
+.select_input__CQih4:focus {
+  background-color: white;
+  border-color: #7603db;
+  outline: none; }
+
+::-webkit-input-placeholder {
+  color: #9da1b4; }
+
+::-ms-input-placeholder {
+  color: #9da1b4; }
+
+::placeholder {
+  color: #9da1b4; }
+
+select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  vertical-align: middle; }
+
+.textbox_inputWrapper__2hC6p {
+  float: left;
+  width: 100%;
+  margin-bottom: 10px; }
+
+.textbox_input__2T89F {
+  height: 60px;
+  color: #7603db;
+  background-color: #fef6ff;
+  border: 1px solid #550d94;
+  font-weight: 400;
+  font-size: 0.9rem;
+  font-family: "Poppins Bold Italic", Helvetica, Arial, sans-serif;
+  border-radius: 6px;
+  padding: 0.1em 1.3em;
+  box-sizing: border-box;
+  width: 100%; }
+  .textbox_input__2T89F::-webkit-input-placeholder {
+    color: rgba(65, 0, 72, 0.769); }
+  .textbox_input__2T89F::-ms-input-placeholder {
+    color: rgba(65, 0, 72, 0.769); }
+  .textbox_input__2T89F::placeholder {
+    color: rgba(65, 0, 72, 0.769); }
+  @media only screen and (max-width: 40em) {
+    .textbox_input__2T89F {
+      margin-bottom: 0.8em; } }
+
+.textbox_input__2T89F:focus {
+  background-color: white;
+  border-color: #7603db;
+  outline: none; }
+
+::-webkit-input-placeholder {
+  color: #9da1b4; }
+
+::-ms-input-placeholder {
+  color: #9da1b4; }
+
+::placeholder {
+  color: #9da1b4; }
+
+.textbox_textarea__1hN90 {
+  padding: 1rem;
+  margin: 0px;
+  height: 259px;
+  width: 784px; }
+

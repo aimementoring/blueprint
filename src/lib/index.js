@@ -1,4 +1,4 @@
-import * as components from './components';
-import * as utils from './utils';
+import * as Components from './components';
+import * as Utils from './utils';
 
-export { components, utils };
+export { Components, Utils };

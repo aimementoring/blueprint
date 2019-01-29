@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Select from 'react-select';
+import Dropdown from 'react-select';
 
-export default class SelectInput extends PureComponent {
+export default class Select extends PureComponent {
   static propTypes = {
     placeholder: PropTypes.string.isRequired,
     className: PropTypes.string,
@@ -47,10 +47,10 @@ export default class SelectInput extends PureComponent {
   handleChange = value => {
     const { onChangeFunction, name } = this.props;
     if (value) {
-      onChangeFunction(
-        name,
-        value.length ? value.map(identification => identification.value) : value.value,
-      );
+      const newValue = value.length
+        ? value.map(identification => identification.value)
+        : value.value;
+      onChangeFunction(name, newValue);
     }
   };
 
@@ -94,7 +94,7 @@ export default class SelectInput extends PureComponent {
 
     return (
       <div className={classNameFromParent}>
-        <Select
+        <Dropdown
           placeholder={placeholder}
           className={className}
           styles={customStyles}

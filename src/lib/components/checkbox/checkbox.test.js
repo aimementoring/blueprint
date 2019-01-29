@@ -8,8 +8,8 @@ describe('Checkbox', () => {
       .create(
         <Checkbox
           elementClassName="classname"
-          handleFieldChange={() => {}}
-          labeltext="Accept terms and conditions"
+          onChangeFunction={() => {}}
+          placeholder="Accept terms and conditions"
           name="checkbox"
           customId="checkbox"
           value={true}

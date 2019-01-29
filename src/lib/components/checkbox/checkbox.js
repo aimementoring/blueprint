@@ -5,29 +5,29 @@ import styles from './checkbox.module.scss';
 export default class Checkbox extends PureComponent {
   static propTypes = {
     elementClassName: PropTypes.string,
-    labeltext: PropTypes.string,
+    placeholder: PropTypes.string,
     name: PropTypes.string,
     customId: PropTypes.string,
-    handleFieldChange: PropTypes.func,
+    onChangeFunction: PropTypes.func,
     value: PropTypes.bool,
     extraParamResponse: PropTypes.string,
   };
 
   static defaultProps = {
     elementClassName: '',
-    handleFieldChange: () => {},
+    onChangeFunction: () => {},
     value: false,
     extraParamResponse: '',
   };
 
   handleFieldChange = e => {
     e.preventDefault();
-    const { handleFieldChange, name, extraParamResponse, value } = this.props;
-    handleFieldChange(name, !value, extraParamResponse);
+    const { onChangeFunction, name, extraParamResponse, value } = this.props;
+    onChangeFunction(name, !value, extraParamResponse);
   };
 
   render() {
-    const { elementClassName, labeltext, name, customId, value } = this.props;
+    const { elementClassName, placeholder, name, customId, value } = this.props;
 
     return (
       <div
@@ -44,7 +44,7 @@ export default class Checkbox extends PureComponent {
           readOnly
           checked={value}
         />
-        <label htmlFor={customId}>{labeltext}</label>
+        <label htmlFor={customId}>{placeholder}</label>
       </div>
     );
   }

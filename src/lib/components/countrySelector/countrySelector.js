@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import countryCollection from './countryCollection';
+import countriesList from './countryCollection';
 import Select from '../select';
 
 export default class CountrySelector extends Component {
@@ -24,30 +24,27 @@ export default class CountrySelector extends Component {
   };
 
   componentDidMount() {
-    const countries = countryCollection();
-    this.setState({ countries });
+    const { placeholder } = this.props;
+    this.setState({
+      countries: [
+        {
+          value: '',
+          label: placeholder,
+          disabled: true,
+        },
+        ...countriesList.map(country => ({
+          value: country.name,
+          label: country.name,
+        })),
+      ],
+    });
   }
 
   render() {
     const { countries } = this.state;
     const { classNames, placeholder, onChangeFunction, containerClassNames, name } = this.props;
     let { value } = this.props;
-    if (!value || !countries.find(country => country.text === value)) {
-      value = '';
-    }
-    let countryOptions = [];
-    if (countries.length) {
-      countryOptions = countries.map(country => ({
-        label: country.text,
-        value: country.text,
-        disabled: country.disabled,
-      }));
-    }
-    countryOptions.unshift({
-      label: placeholder,
-      value: '',
-      disabled: true,
-    });
+    if (!value || !countries.find(country => country.text === value)) value = '';
 
     return (
       <Select
@@ -57,7 +54,7 @@ export default class CountrySelector extends Component {
         classNameFromParent={containerClassNames}
         onChangeFunction={onChangeFunction}
         value={value}
-        options={countryOptions}
+        options={countries}
         required
       />
     );

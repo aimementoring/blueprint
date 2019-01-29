@@ -3,7 +3,6 @@ import visualizer from 'rollup-plugin-visualizer';
 import clean from 'rollup-plugin-delete';
 import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
-import execute from 'rollup-plugin-execute';
 import filesize from 'rollup-plugin-filesize';
 import progress from 'rollup-plugin-progress';
 import url from 'rollup-plugin-url';
@@ -11,6 +10,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import external from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 import svgr from '@svgr/rollup';
+// import minify from 'rollup-plugin-babel-minify';
 
 import pkg from './package.json';
 
@@ -24,7 +24,6 @@ export default {
       file: pkg.main,
       format: 'cjs',
       name: 'ui-core',
-      sourcemap: false,
     },
     {
       globals: {
@@ -33,7 +32,6 @@ export default {
       file: pkg.module,
       format: 'es',
       name: 'ui-core',
-      sourcemap: false,
     },
   ],
   plugins: [
@@ -47,7 +45,6 @@ export default {
       clearLine: false,
     }),
     clean({ targets: 'lib' }),
-    execute('mkdir lib'),
     external(),
     resolve({
       preferBuiltins: true,
@@ -77,5 +74,8 @@ export default {
       exclude: 'node_modules/**',
       plugins: ['@babel/plugin-external-helpers'],
     }),
+    // minify({
+    //   comments: false,
+    // }),
   ],
 };

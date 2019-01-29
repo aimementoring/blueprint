@@ -1,7 +1,7 @@
-```jsx
+```jsx static
 setOnStorage('token', 'abcd1234');
 ```
 
-```jsx
+```jsx static
 getFromStorage('token');
 ```

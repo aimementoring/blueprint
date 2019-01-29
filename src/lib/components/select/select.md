@@ -7,7 +7,7 @@ const selectOptions = [
   { value: 'Option 4', label: 'Option 4' },
   { value: 'Option 5', label: 'Option 5' },
 ];
-<SelectInput
+<Select
   placeholder="Select an option"
   name="select"
   onChangeFunction={value => {}}
