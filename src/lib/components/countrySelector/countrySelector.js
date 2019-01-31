@@ -14,7 +14,7 @@ export default class CountrySelector extends Component {
   };
 
   static defaultProps = {
-    onChangeFunction: () => {},
+    onChangeFunction: () => { },
     value: '',
     name: 'country-name',
   };
@@ -40,9 +40,19 @@ export default class CountrySelector extends Component {
     });
   }
 
+  handleChange = value => {
+    const { onChangeFunction, name } = this.props;
+    if (value) {
+      const newValue = value.length
+        ? value.map(identification => identification.value)
+        : value.value;
+      onChangeFunction(name, newValue);
+    }
+  };
+
   render() {
     const { countries } = this.state;
-    const { classNames, placeholder, onChangeFunction, containerClassNames, name } = this.props;
+    const { classNames, placeholder, containerClassNames, name } = this.props;
     let { value } = this.props;
     if (!value || !countries.find(country => country.text === value)) value = '';
 
@@ -52,7 +62,7 @@ export default class CountrySelector extends Component {
         name={name}
         className={classNames}
         classNameFromParent={containerClassNames}
-        onChangeFunction={onChangeFunction}
+        onChangeFunction={this.handleChange}
         value={value}
         options={countries}
         required
