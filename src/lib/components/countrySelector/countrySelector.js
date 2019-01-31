@@ -14,7 +14,7 @@ export default class CountrySelector extends Component {
   };
 
   static defaultProps = {
-    onChangeFunction: () => { },
+    onChangeFunction: () => {},
     value: '',
     name: 'country-name',
   };
