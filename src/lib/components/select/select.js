@@ -26,10 +26,17 @@ export default class Select extends PureComponent {
       menu: PropTypes.shape({}),
       menuList: PropTypes.shape({}),
     }),
+    joinValues: PropTypes.bool,
+    defaultValues: PropTypes.arrayOf(
+      PropTypes.shape({
+        value: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
+      }),
+    ),
   };
 
   static defaultProps = {
-    onChangeFunction: () => {},
+    onChangeFunction: () => { },
     className: '',
     classNameFromParent: '',
     isMulti: false,
@@ -42,6 +49,8 @@ export default class Select extends PureComponent {
       menu: {},
       menuList: {},
     },
+    joinValues: false,
+    defaultValues: [],
   };
 
   handleChange = value => {
@@ -66,6 +75,8 @@ export default class Select extends PureComponent {
       disabled,
       searchable,
       styles,
+      joinValues,
+      defaultValues,
     } = this.props;
 
     const customStyles = {
@@ -106,6 +117,8 @@ export default class Select extends PureComponent {
           isDisabled={disabled}
           isSearchable={searchable}
           isOptionDisabled={option => option.disabled}
+          joinValues
+          defaultValues={defaultValues}
         />
       </div>
     );
