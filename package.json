@@ -2,11 +2,11 @@
   "name": "aime-blueprint",
   "title": "Blueprint",
   "description": "Standard components and UI design definitions for all AIME projects",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "license": "MIT",
   "homepage": "https://blueprint.aimementoring.com",
   "main": "lib/index.js",
-  "module": "lib/index.js",
+  "module": "lib/index.esm.js",
   "dependencies": {
     "@bugsnag/js": "^6.0.0-alpha.1",
     "@bugsnag/plugin-react": "^6.0.0-alpha.1",
