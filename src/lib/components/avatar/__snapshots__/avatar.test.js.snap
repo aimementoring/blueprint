@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar name renders properly 1`] = `
+<div
+  className="profileAvatar"
+>
+  <span>
+    KB
+  </span>
+</div>
+`;
+
+exports[`Avatar with photo renders properly 1`] = `
+<div
+  className="profileAvatar"
+>
+  <img
+    alt="Lionel Messi"
+    src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2018/08/19/15347041965884.jpg"
+  />
+</div>
+`;

@@ -4,3 +4,5 @@ export { default as CountrySelector } from './countrySelector';
 export { default as Input } from './input';
 export { default as TextBox } from './textbox';
 export { default as Select } from './select';
+export { default as Loading } from './loading';
+export { default as Avatar } from './avatar';

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading false renders properly 1`] = `null`;
+
+exports[`Loading true renders properly 1`] = `
+<div
+  className="loading"
+>
+  <div
+    className="spin spinning"
+  >
+    <span
+      className="spinDot spinDotSpin"
+    >
+      <i />
+      <i />
+      <i />
+      <i />
+    </span>
+  </div>
+</div>
+`;

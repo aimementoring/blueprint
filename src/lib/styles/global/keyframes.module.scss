@@ -1,0 +1,24 @@
+@-webkit-keyframes spinMove {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes spinMove {
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes spinRotate {
+  to {
+    -webkit-transform: rotate(405deg);
+    transform: rotate(405deg);
+  }
+}
+
+@keyframes spinRotate {
+  to {
+    -webkit-transform: rotate(405deg);
+    transform: rotate(405deg);
+  }
+}
