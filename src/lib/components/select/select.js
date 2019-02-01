@@ -6,7 +6,7 @@ export default class Select extends PureComponent {
   static propTypes = {
     placeholder: PropTypes.string.isRequired,
     className: PropTypes.string,
-    classNameFromParent: PropTypes.string,
+    // classNameFromParent: PropTypes.string,
     name: PropTypes.string.isRequired,
     options: PropTypes.arrayOf(
       PropTypes.shape({
@@ -25,6 +25,8 @@ export default class Select extends PureComponent {
       control: PropTypes.shape({}),
       menu: PropTypes.shape({}),
       menuList: PropTypes.shape({}),
+      input: PropTypes.shape({}),
+      singleValue: PropTypes.shape({}),
     }),
     joinValues: PropTypes.bool,
     defaultValues: PropTypes.arrayOf(
@@ -33,12 +35,14 @@ export default class Select extends PureComponent {
         label: PropTypes.string.isRequired,
       }),
     ),
+    borderColor: PropTypes.string,
+    borderColorInError: PropTypes.string,
   };
 
   static defaultProps = {
     onChangeFunction: () => { },
     className: '',
-    classNameFromParent: '',
+    // classNameFromParent: '',
     isMulti: false,
     error: false,
     isClearable: false,
@@ -48,9 +52,13 @@ export default class Select extends PureComponent {
       control: {},
       menu: {},
       menuList: {},
+      input: {},
+      singleValue: {},
     },
     joinValues: false,
     defaultValues: [],
+    borderColor: '#DC143C',
+    borderColorInError: '#DC143C',
   };
 
   handleChange = value => {
@@ -68,7 +76,7 @@ export default class Select extends PureComponent {
       placeholder,
       options,
       className,
-      classNameFromParent,
+      // classNameFromParent,
       isMulti,
       isClearable,
       value,
@@ -77,17 +85,35 @@ export default class Select extends PureComponent {
       styles,
       joinValues,
       defaultValues,
+      borderColor,
+      borderColorInError,
     } = this.props;
 
     const customStyles = {
       control: (base, state) => ({
         ...base,
-        background: '#fef6ff',
-        border: '1px solid #550D940px',
         maxHeight: '60px',
-        borderColor: this.props.error ? '#DC143C' : '#7603DB',
+        borderColor: this.props.error ? borderColorInError : borderColor,
         boxShadow: state.isFocused ? null : null,
+        "&:hover": {
+          // Overwrittes the different states of border
+          borderColor: state.isFocused ? borderColorInError : borderColor,
+        },
+        "&:focus": {
+          // Overwrittes the different states of border
+          borderColor: state.isFocused ? borderColorInError : borderColor,
+        },
         ...styles.control,
+      }),
+      // Text when you write
+      input: (base) => ({
+        ...base,
+        ...styles.input,
+      }),
+      // Single value selected
+      singleValue: base => ({
+        ...base,
+        ...styles.singleValue,
       }),
       menu: base => ({
         ...base,
@@ -104,23 +130,23 @@ export default class Select extends PureComponent {
     };
 
     return (
-      <div className={classNameFromParent}>
-        <Dropdown
-          placeholder={placeholder}
-          className={className}
-          styles={customStyles}
-          onChange={this.handleChange}
-          options={options}
-          value={value && options.filter(option => option.value === value)}
-          isMulti={isMulti}
-          isClearable={isClearable}
-          isDisabled={disabled}
-          isSearchable={searchable}
-          isOptionDisabled={option => option.disabled}
-          joinValues
-          defaultValues={defaultValues}
-        />
-      </div>
+      // <div className={classNameFromParent}>
+      <Dropdown
+        placeholder={placeholder}
+        className={className}
+        styles={customStyles}
+        onChange={this.handleChange}
+        options={options}
+        value={value && options.filter(option => option.value === value)}
+        isMulti={isMulti}
+        isClearable={isClearable}
+        isDisabled={disabled}
+        isSearchable={searchable}
+        isOptionDisabled={option => option.disabled}
+        joinValues={joinValues}
+        defaultValues={defaultValues}
+      />
+      // </div>
     );
   }
 }
