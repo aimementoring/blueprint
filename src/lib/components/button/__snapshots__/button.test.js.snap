@@ -20,10 +20,14 @@ exports[`Button renders button properly 1`] = `
 `;
 
 exports[`Button renders link properly 1`] = `
-<a
-  className="linkButton"
-  href="www.aimementoring.com"
+<div
+  className="container "
 >
-  Link button
-</a>
+  <a
+    className=" linkButton"
+    href="www.aimementoring.com"
+  >
+    Link button
+  </a>
+</div>
 `;

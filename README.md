@@ -37,13 +37,14 @@ The main idea of this project is to define some standards for all AIME platforms
 3. [What should be here](#what-should-be-here)
 4. [What should not be here](#what-should-not-be-here)
 5. [How to's](#how-tos)
-6. [NPM Commands](#npm-commands)
 
-- [How to create a new component](#how-to-create-a-new-component)
-- [How to test components](#how-to-test-components)
-- [How to build styleguide](#how-to-build-styleguide)
-- [How to build library](#how-to-build-library)
-- [How to deploy](#how-to-deploy)
+   - [How to create a new component](#how-to-create-a-new-component)
+   - [How to test components](#how-to-test-components)
+   - [How to build styleguide](#how-to-build-styleguide)
+   - [How to build library](#how-to-build-library)
+   - [How to deploy](#how-to-deploy)
+
+6. [NPM Commands](#npm-commands)
 
 ### Installation
 

@@ -37,9 +37,11 @@ export default class Button extends PureComponent {
 
     if (type === 'link' && url) {
       return (
-        <a href={url} className={styles.linkButton}>
-          {text}
-        </a>
+        <div className={`${styles.container} ${containerClassNameFromParent}`}>
+          <a href={url} className={`${classNameFromParent} ${styles.linkButton}`}>
+            {text}
+          </a>
+        </div>
       );
     } else {
       return (
