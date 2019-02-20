@@ -1,15 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button renders properly 1`] = `
+exports[`Button renders button properly 1`] = `
 <div
   className="container "
 >
-  <button
-    className=" button"
-    onClick={[Function]}
-    type="button"
+  <div
+    className="buttonGroup"
   >
-    Back
-  </button>
+    <button
+      className=" button"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Back
+    </button>
+  </div>
 </div>
+`;
+
+exports[`Button renders link properly 1`] = `
+<a
+  className="linkButton"
+  href="www.aimementoring.com"
+>
+  Link button
+</a>
 `;

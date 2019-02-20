@@ -5,6 +5,13 @@
   text-align: center;
   float: left;
   width: 100%;
+  position: relative;
+}
+
+.buttonGroup {
+  position: relative;
+  width: auto;
+  display: block;
 }
 
 .button {
@@ -23,5 +30,47 @@
 
   &:hover {
     background-color: $brand-tertiary;
+  }
+
+  &:disabled,
+  &[disabled] {
+    background-color: $grey;
+    color: $white;
+    cursor: not-allowed;
+  }
+}
+
+.underneathLabel {
+  font-family: $secondary-font-family;
+  text-align: left;
+  font-size: 0.8rem;
+  color: $brand-primary;
+  display: block;
+  margin-top: 1rem;
+}
+
+.linkButton {
+  cursor: pointer;
+  padding: 1rem 2.5rem;
+  background-color: $brand-primary;
+  text-align: center;
+  transition: all 0.1s linear;
+  color: $white;
+  border-radius: 90px;
+  margin-top: 2rem;
+  display: inline-block;
+  text-decoration: none;
+  opacity: 1;
+  font: {
+    weight: 500;
+    size: 14px;
+    family: $tertiary-font-family;
+  }
+
+  @media screen and (min-width: 52em) {
+    padding: 0.7rem 2.2rem;
+  }
+  @media screen and (min-width: 64em) {
+    padding: 1rem 2.5rem;
   }
 }

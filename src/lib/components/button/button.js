@@ -8,13 +8,19 @@ export default class Button extends PureComponent {
     classNameFromParent: PropTypes.string,
     onClickFunction: PropTypes.func,
     text: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
+    type: PropTypes.oneOf(['button', 'submit', 'reset', 'link']).isRequired,
+    underneathLabel: PropTypes.string,
+    disabled: PropTypes.bool,
+    url: PropTypes.string,
   };
 
   static defaultProps = {
     containerClassNameFromParent: '',
     classNameFromParent: '',
     onClickFunction: () => {},
+    underneathLabel: null,
+    disabled: false,
+    url: null,
   };
 
   render() {
@@ -24,17 +30,33 @@ export default class Button extends PureComponent {
       onClickFunction,
       text,
       type,
+      underneathLabel,
+      disabled,
+      url,
     } = this.props;
-    return (
-      <div className={`${styles.container} ${containerClassNameFromParent}`}>
-        <button
-          type={type}
-          className={`${classNameFromParent} ${styles.button}`}
-          onClick={onClickFunction}
-        >
+
+    if (type === 'link' && url) {
+      return (
+        <a href={url} className={styles.linkButton}>
           {text}
-        </button>
-      </div>
-    );
+        </a>
+      );
+    } else {
+      return (
+        <div className={`${styles.container} ${containerClassNameFromParent}`}>
+          <div className={styles.buttonGroup}>
+            <button
+              type={type}
+              className={`${classNameFromParent} ${styles.button}`}
+              onClick={onClickFunction}
+              disabled={disabled}
+            >
+              {text}
+            </button>
+            {underneathLabel && <label className={styles.underneathLabel}>{underneathLabel}</label>}
+          </div>
+        </div>
+      );
+    }
   }
 }

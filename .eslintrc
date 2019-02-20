@@ -81,7 +81,8 @@
     "react/jsx-boolean-value": [0],
     "react/button-has-type": [0],
     "import/no-named-as-default-member": [0],
-    "import/no-named-as-default": [0]
+    "import/no-named-as-default": [0],
+    "new-cap": [0]
   },
   "parserOptions": {
     "ecmaFeatures": {

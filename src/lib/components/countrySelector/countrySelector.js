@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import countriesList from './countryCollection';
+import countriesList from './countryCollection.ignore';
 import Select from '../select';
 
 export default class CountrySelector extends Component {

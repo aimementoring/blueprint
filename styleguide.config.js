@@ -16,13 +16,25 @@ module.exports = {
       name: 'Components',
       description: 'Visual components to be used in React websites',
       components: 'src/lib/components/**/*.js',
-      ignore: ['**/*.spec.js', '**/*.test.js', '**/index.js', '**/countryCollection.js'],
+      ignore: [
+        '**/*.spec.js',
+        '**/*.test.js',
+        '**/index.js',
+        '**/countryCollection.js',
+        '**/*.ignore.js',
+      ],
     },
     {
       name: 'Utils',
       description: 'Utils functions',
       components: 'src/lib/utils/**/*.js',
-      ignore: ['**/*.spec.js', '**/*.test.js', '**/index.js', 'src/lib/utils/index.js'],
+      ignore: [
+        '**/*.spec.js',
+        '**/*.test.js',
+        '**/index.js',
+        'src/lib/utils/index.js',
+        '**/*.ignore.js',
+      ],
     },
   ],
 };

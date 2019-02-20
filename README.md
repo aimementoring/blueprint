@@ -37,6 +37,7 @@ The main idea of this project is to define some standards for all AIME platforms
 3. [What should be here](#what-should-be-here)
 4. [What should not be here](#what-should-not-be-here)
 5. [How to's](#how-tos)
+6. [NPM Commands](#npm-commands)
 
 - [How to create a new component](#how-to-create-a-new-component)
 - [How to test components](#how-to-test-components)
@@ -120,3 +121,20 @@ Some examples about how to increase versions are:
 1. **MINOR change**: We are on version `1.0.3` and we just fixed an existing component, so it's a minor version we need to publish, we have to run the command `sh publish 1.0.4`.
 2. **MAYOR change**: Ohhh, we change the structure of some components, and added a new theme, so we think it's a major version. Library is in version `1.0.4`. So now we have to run `sh publish 1.1.0`.
 3. **PATCH change**: It's less common to to have this kind of change, but we updated mostly all components, it was a big refactor, and we upgrade versions of some dependencies we have in the project, so it's a big change. We are in version `1.1.8` so the command we run is `sh publish 2.0.0`.
+
+### NPM Commands
+
+| Command                     | Description                                                                                 |
+| --------------------------- | ------------------------------------------------------------------------------------------- |
+| `yarn run build:styleguide` | Generates styleguide folder with all project documentation                                  |
+| `yarn run build:lib`        | Generates lib folder with all components to be imported from projects which use the library |
+| `yarn run build`            | Build styleguide and lib folder                                                             |
+| `yarn run lint-staged`      | Validate javascript code style only on files you have changed                               |
+| `yarn run lint`             | Validate javascript code style in the whole project                                         |
+| `yarn run fix-lint`         | Fixes some lint errors (not complex ones)                                                   |
+| `yarn run fix-code`         | Fixes **javascript** lint errors using prettier (only to be used from VSCode)               |
+| `yarn run fix-styles`       | Fixes **scss** lint errors using prettier (only to be used from VSCode)                     |
+| `yarn run start`            | Start project for development process in localhost                                          |
+| `yarn run test`             | Run all unit tests, and generates coverage report                                           |
+| `yarn run deploy`           | Execute all unit test and run build to generate lib and styleguide folder                   |
+| `yarn run release`          | Generate a release with a new version (Still not ready to use)                              |

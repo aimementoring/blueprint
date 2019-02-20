@@ -14,3 +14,4 @@ echo "import $componentName from './$componentFile';\n\nexport default $componen
 echo "import React from 'react';\nimport renderer from 'react-test-renderer';\nimport $componentName from './$componentFile.js';\n\ndescribe('$componentName', () => {\n\tit('renders properly', () => {\n\t\tconst tree = renderer\n\t\t\t.create(\n\t\t\t\t<$componentName />,\n\t\t\t)\n\t\t\t.toJSON();\n\t\texpect(tree).toMatchSnapshot();\n\t});\n});" > "$componentFile/$componentFile.test.js"
 echo "\`\`\`js\n\n\`\`\`" > "$componentFile/$componentFile.md"
 echo "export { default as $componentName } from './$componentFile';" >> "index.js"
+echo "import React, { PureComponent } from 'react';\nimport PropTypes from 'prop-types';\nimport styles from './$componentFile.module.scss';\n\nexport default class $componentName extends PureComponent {\n\tstatic propTypes = {};\n\n\tstatic defaultProps = {};\n\n\trender() {\n\t\treturn ();\n\t}\n}\n" >> "$componentFile/$componentFile.js"
