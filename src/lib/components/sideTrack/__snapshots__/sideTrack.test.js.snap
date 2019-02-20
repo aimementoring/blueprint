@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SideTrack renders properly 1`] = `
+<div
+  className="sideTrackCallOut right"
+>
+  <div
+    className="sideTrackCallOutWrapper"
+  >
+    <div
+      className="sideTrackText"
+    >
+      <h3
+        className="sideTrackTitle"
+      >
+        Side track title
+      </h3>
+      <p>
+        <div>
+          Testing paragraph with a 
+          <a
+            href="#"
+          >
+            Link
+          </a>
+           inside
+        </div>
+      </p>
+    </div>
+    <div
+      className="emojiWrap"
+    >
+      <span
+        aria-label="point down"
+        role="img"
+      >
+        👇🏿
+      </span>
+    </div>
+  </div>
+</div>
+`;

@@ -8,3 +8,4 @@ export { default as Loading } from './loading';
 export { default as Avatar } from './avatar';
 export { default as Title } from './title';
 export { default as VideoPlayer } from './videoPlayer';
+export { default as SideTrack } from './sideTrack';

@@ -1,0 +1,89 @@
+@import '../../styles/variables/variables.module.scss';
+
+.sideTrackCallOut {
+  position: relative;
+  top: -20px;
+  background-color: $brand-tertiary;
+  padding-bottom: 3em;
+
+  @media only screen and (min-width: 111em) {
+    left: auto;
+    width: 300px;
+    right: 44px;
+    top: 400px;
+    position: absolute;
+  }
+
+  @media only screen and (min-width: $md) {
+    background-color: transparent;
+    padding-bottom: 0;
+    transition: all 0.3s ease-in;
+    z-index: 11;
+    width: 310px;
+    top: -30px;
+
+    &.left {
+      left: 25px;
+    }
+
+    &.right {
+      right: 25px;
+    }
+  }
+}
+
+.sideTrackCallOutWrapper {
+  @media only screen and (min-width: $md) {
+    position: absolute;
+  }
+}
+
+.sideTrackText {
+  background-color: $brand-tertiary;
+  padding: 2em 1.7em 1em;
+  color: $white;
+
+  @media only screen and (min-width: $lg) {
+    padding: 2em 1.7em 1em;
+  }
+
+  @media only screen and (min-width: $md) {
+    border-radius: 3px;
+    padding: 2.3em 2em 1.2em;
+  }
+
+  p {
+    margin-bottom: 1.5em;
+    line-height: 1.5em;
+    font-size: 0.9rem;
+
+    .whiteColor {
+      color: $white;
+    }
+  }
+}
+
+.sideTrackTitle {
+  margin-bottom: 1rem;
+  font: {
+    weight: 700;
+    style: italic;
+    family: $tertiary-font-family;
+    size: 18px;
+  }
+}
+
+.emojiWrap {
+  padding: 0;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  transform: rotate(-9deg);
+  font-size: 30px;
+  position: absolute;
+  display: inline-block;
+
+  @media only screen and (min-width: $md) {
+    bottom: -20px;
+  }
+}
