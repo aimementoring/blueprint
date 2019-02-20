@@ -40,7 +40,7 @@ export default class Select extends PureComponent {
   };
 
   static defaultProps = {
-    onChangeFunction: () => { },
+    onChangeFunction: () => {},
     className: '',
     // classNameFromParent: '',
     isMulti: false,
@@ -57,7 +57,7 @@ export default class Select extends PureComponent {
     },
     joinValues: false,
     defaultValues: [],
-    borderColor: '#DC143C',
+    borderColor: '#550d94',
     borderColorInError: '#DC143C',
   };
 
@@ -95,18 +95,18 @@ export default class Select extends PureComponent {
         maxHeight: '60px',
         borderColor: this.props.error ? borderColorInError : borderColor,
         boxShadow: state.isFocused ? null : null,
-        "&:hover": {
+        '&:hover': {
           // Overwrittes the different states of border
           borderColor: state.isFocused ? borderColorInError : borderColor,
         },
-        "&:focus": {
+        '&:focus': {
           // Overwrittes the different states of border
           borderColor: state.isFocused ? borderColorInError : borderColor,
         },
         ...styles.control,
       }),
       // Text when you write
-      input: (base) => ({
+      input: base => ({
         ...base,
         ...styles.input,
       }),

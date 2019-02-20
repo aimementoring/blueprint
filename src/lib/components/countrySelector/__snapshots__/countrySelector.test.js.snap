@@ -6,7 +6,7 @@ exports[`CountrySelector renders properly 1`] = `
   onKeyDown={[Function]}
 >
   <div
-    className="css-ke81c5"
+    className="css-1y2qrkb"
     onMouseDown={[Function]}
     onTouchEnd={[Function]}
   >
