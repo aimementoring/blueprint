@@ -2,32 +2,40 @@
 
 exports[`Button renders button properly 1`] = `
 <div
-  className="container "
+  className="theme-purple"
 >
   <div
-    className="buttonGroup"
+    className="container "
   >
-    <button
-      className=" button"
-      disabled={false}
-      onClick={[Function]}
-      type="button"
+    <div
+      className="buttonGroup"
     >
-      Back
-    </button>
+      <button
+        className=" button"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Back
+      </button>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Button renders link properly 1`] = `
 <div
-  className="container "
+  className="theme-purple"
 >
-  <a
-    className=" linkButton"
-    href="www.aimementoring.com"
+  <div
+    className="container "
   >
-    Link button
-  </a>
+    <a
+      className=" linkButton"
+      href="www.aimementoring.com"
+    >
+      Link button
+    </a>
+  </div>
 </div>
 `;

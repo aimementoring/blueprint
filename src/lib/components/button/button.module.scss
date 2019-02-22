@@ -1,4 +1,5 @@
 @import '../../styles/variables/variables.module.scss';
+@import '../../styles/themes/themes.module.scss';
 
 .container {
   margin: 0 auto;
@@ -15,47 +16,58 @@
 }
 
 .button {
-  font-family: $secondary-font-family;
+  @include themify() {
+    color: themed('white-color');
+    font-family: themed('secondary-font-family');
+    background-color: themed('brand-primary');
+    transition: themed('smooth-transition');
+
+    &:hover {
+      background-color: themed('brand-tertiary');
+    }
+
+    &:disabled,
+    &[disabled] {
+      background-color: themed('grey-color');
+      color: themed('white-color');
+    }
+  }
+
   font-size: 0.8rem;
   text-align: center;
-  color: $white;
-  background-color: $brand-primary;
   padding: 1rem 4rem;
   cursor: pointer;
   opacity: 1;
   border-radius: 90px;
   border: 0;
-  transition: $smooth-transition;
   outline: none;
-
-  &:hover {
-    background-color: $brand-tertiary;
-  }
-
   &:disabled,
   &[disabled] {
-    background-color: $grey;
-    color: $white;
     cursor: not-allowed;
   }
 }
 
 .underneathLabel {
-  font-family: $secondary-font-family;
+  @include themify() {
+    font-family: themed('secondary-font-family');
+    color: themed('brand-primary');
+  }
   text-align: left;
   font-size: 0.8rem;
-  color: $brand-primary;
   display: block;
   margin-top: 1rem;
 }
 
 .linkButton {
+  @include themify() {
+    background-color: themed('brand-primary');
+    font-family: themed('tertiary-font-family');
+    color: themed('white-color');
+  }
   cursor: pointer;
   padding: 1rem 2.5rem;
-  background-color: $brand-primary;
   text-align: center;
   transition: all 0.1s linear;
-  color: $white;
   border-radius: 90px;
   margin-top: 2rem;
   display: inline-block;
@@ -64,7 +76,6 @@
   font: {
     weight: 500;
     size: 14px;
-    family: $tertiary-font-family;
   }
 
   @media screen and (min-width: 52em) {

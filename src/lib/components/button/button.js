@@ -12,6 +12,7 @@ export default class Button extends PureComponent {
     underneathLabel: PropTypes.string,
     disabled: PropTypes.bool,
     url: PropTypes.string,
+    theme: PropTypes.string,
   };
 
   static defaultProps = {
@@ -21,6 +22,7 @@ export default class Button extends PureComponent {
     underneathLabel: null,
     disabled: false,
     url: null,
+    theme: 'purple',
   };
 
   render() {
@@ -33,32 +35,33 @@ export default class Button extends PureComponent {
       underneathLabel,
       disabled,
       url,
+      theme,
     } = this.props;
 
-    if (type === 'link' && url) {
-      return (
+    return (
+      <div className={styles[`theme-${theme}`]}>
         <div className={`${styles.container} ${containerClassNameFromParent}`}>
-          <a href={url} className={`${classNameFromParent} ${styles.linkButton}`}>
-            {text}
-          </a>
-        </div>
-      );
-    } else {
-      return (
-        <div className={`${styles.container} ${containerClassNameFromParent}`}>
-          <div className={styles.buttonGroup}>
-            <button
-              type={type}
-              className={`${classNameFromParent} ${styles.button}`}
-              onClick={onClickFunction}
-              disabled={disabled}
-            >
+          {type === 'link' && url ? (
+            <a href={url} className={`${classNameFromParent} ${styles.linkButton}`}>
               {text}
-            </button>
-            {underneathLabel && <label className={styles.underneathLabel}>{underneathLabel}</label>}
-          </div>
+            </a>
+          ) : (
+            <div className={styles.buttonGroup}>
+              <button
+                type={type}
+                className={`${classNameFromParent} ${styles.button}`}
+                onClick={onClickFunction}
+                disabled={disabled}
+              >
+                {text}
+              </button>
+              {underneathLabel && (
+                <label className={styles.underneathLabel}>{underneathLabel}</label>
+              )}
+            </div>
+          )}
         </div>
-      );
-    }
+      </div>
+    );
   }
 }
