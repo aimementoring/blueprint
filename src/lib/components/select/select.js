@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Dropdown from 'react-select';
+import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
 
 export default class Select extends PureComponent {
   static propTypes = {
+    ...componentPropTypes,
     placeholder: PropTypes.string.isRequired,
-    className: PropTypes.string,
-    // classNameFromParent: PropTypes.string,
     name: PropTypes.string.isRequired,
     options: PropTypes.arrayOf(
       PropTypes.shape({
@@ -40,9 +40,8 @@ export default class Select extends PureComponent {
   };
 
   static defaultProps = {
+    ...defaultComponentPropTypes,
     onChangeFunction: () => {},
-    className: '',
-    // classNameFromParent: '',
     isMulti: false,
     error: false,
     isClearable: false,
@@ -76,7 +75,8 @@ export default class Select extends PureComponent {
       placeholder,
       options,
       className,
-      // classNameFromParent,
+      containerClassName,
+      theme,
       isMulti,
       isClearable,
       value,
@@ -130,23 +130,25 @@ export default class Select extends PureComponent {
     };
 
     return (
-      // <div className={classNameFromParent}>
-      <Dropdown
-        placeholder={placeholder}
-        className={className}
-        styles={customStyles}
-        onChange={this.handleChange}
-        options={options}
-        value={value && options.filter(option => option.value === value)}
-        isMulti={isMulti}
-        isClearable={isClearable}
-        isDisabled={disabled}
-        isSearchable={searchable}
-        isOptionDisabled={option => option.disabled}
-        joinValues={joinValues}
-        defaultValues={defaultValues}
-      />
-      // </div>
+      <div className={styles[`theme-${theme}`]}>
+        <div className={containerClassName}>
+          <Dropdown
+            placeholder={placeholder}
+            className={className}
+            styles={customStyles}
+            onChange={this.handleChange}
+            options={options}
+            value={value && options.filter(option => option.value === value)}
+            isMulti={isMulti}
+            isClearable={isClearable}
+            isDisabled={disabled}
+            isSearchable={searchable}
+            isOptionDisabled={option => option.disabled}
+            joinValues={joinValues}
+            defaultValues={defaultValues}
+          />
+        </div>
+      </div>
     );
   }
 }

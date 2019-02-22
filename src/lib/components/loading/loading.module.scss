@@ -1,8 +1,11 @@
-@import '../../styles/global/keyframes.module.scss';
+@import '../../styles/global/global.module.scss';
 @import '../../styles/variables/variables.module.scss';
+@import '../../styles/themes/themes.module.scss';
 
 .loading {
-  background: $loading-black;
+  @include themify() {
+    background: themed('loading-black');
+  }
   bottom: 0;
   left: 0;
   position: fixed;
@@ -12,9 +15,10 @@
   z-index: 1000;
 
   .spin {
+    @include themify() {
+      color: themed('brand-primary');
+    }
     box-sizing: border-box;
-    color: $brand-primary;
-    // color: $translucent-black;
     display: none;
     font-size: 14px;
     line-height: 100vh;
@@ -48,8 +52,10 @@
       }
 
       i {
+        @include themify() {
+          background-color: themed('brand-primary');
+        }
         animation: spinMove 1s infinite linear alternate;
-        background-color: $brand-primary;
         border-radius: 100%;
         display: block;
         height: 14px;

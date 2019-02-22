@@ -2,15 +2,19 @@
 
 exports[`TextBox renders properly 1`] = `
 <div
-  className="inputWrapper "
+  className="theme-purple"
 >
-  <textarea
-    className="input textarea myClass"
-    name="textbox"
-    onChange={[Function]}
-    placeholder="Write area"
-    required={true}
-    value=""
-  />
+  <div
+    className="inputWrapper "
+  >
+    <textarea
+      className="input textarea myClass"
+      name="textbox"
+      onChange={[Function]}
+      placeholder="Write area"
+      required={true}
+      value=""
+    />
+  </div>
 </div>
 `;

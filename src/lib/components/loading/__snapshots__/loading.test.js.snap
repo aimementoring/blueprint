@@ -4,19 +4,23 @@ exports[`Loading false renders properly 1`] = `null`;
 
 exports[`Loading true renders properly 1`] = `
 <div
-  className="loading"
+  className="theme-purple"
 >
   <div
-    className="spin spinning"
+    className="loading "
   >
-    <span
-      className="spinDot spinDotSpin"
+    <div
+      className="spin spinning "
     >
-      <i />
-      <i />
-      <i />
-      <i />
-    </span>
+      <span
+        className="spinDot spinDotSpin"
+      >
+        <i />
+        <i />
+        <i />
+        <i />
+      </span>
+    </div>
   </div>
 </div>
 `;

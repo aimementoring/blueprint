@@ -1,9 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Title renders properly 1`] = `
-<span
-  className="gradientTitle "
+<div
+  className="theme-purple"
 >
-  Gradient default title
-</span>
+  <span
+    className="gradientTitle "
+  >
+    Gradient default title
+  </span>
+</div>
 `;

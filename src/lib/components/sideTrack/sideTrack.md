@@ -21,3 +21,29 @@ const emoji = (
   />
 </div>;
 ```
+
+```js
+const paragraph = (
+  <span>
+    Light theme....{' '}
+    <a>
+      <strong>Light theme</strong>
+    </a>{' '}
+    light theme <strong>Light theme</strong>
+  </span>
+);
+const emoji = (
+  <span role="img" aria-label="point down">
+    👇🏿
+  </span>
+);
+<div style={{ position: 'relative', minHeight: '280px' }}>
+  <SideTrack
+    title="Hey! Want to do more than just mentoring? Want to lead a mentoring program?"
+    paragraph={paragraph}
+    emoji={emoji}
+    theme="light"
+    position="right"
+  />
+</div>;
+```

@@ -1,101 +1,18 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import plyr from 'plyr';
-import './videoPlayer.module.scss';
 import { capitalize } from '../../utils/helpers';
-import videoPlayerDefaultProps from './videoPlayerDefaultProps.ignore';
+import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
+import { videoPlayerProps, videoPlayerDefaultProps } from './videoPlayerProps.ignore';
+import styles from './videoPlayer.module.scss';
 
 export default class VideoPlayer extends PureComponent {
   static propTypes = {
-    type: PropTypes.oneOf(['youtube', 'vimeo', 'video', 'audio']),
-    className: PropTypes.string,
-    videoId: PropTypes.string,
-    url: PropTypes.string,
-    onReady: PropTypes.func,
-    onPlay: PropTypes.func,
-    onPause: PropTypes.func,
-    onEnd: PropTypes.func,
-    onLoadedData: PropTypes.func,
-    onSeeked: PropTypes.func,
-    onTimeUpdate: PropTypes.func,
-    onEnterFullscreen: PropTypes.func,
-    onExitFullscreen: PropTypes.func,
-    onVolumeChange: PropTypes.func,
-    onCaptionsEnabled: PropTypes.func,
-    onCaptionsDisabled: PropTypes.func,
-    // plyr props
-    enabled: PropTypes.bool,
-    title: PropTypes.string,
-    debug: PropTypes.bool,
-    autoplay: PropTypes.bool,
-    autopause: PropTypes.bool,
-    seekTime: PropTypes.number,
-    volume: PropTypes.number,
-    muted: PropTypes.bool,
-    duration: PropTypes.number,
-    displayDuration: PropTypes.bool,
-    invertTime: PropTypes.bool,
-    toggleInvert: PropTypes.bool,
-    ratio: PropTypes.string,
-    clickToPlay: PropTypes.bool,
-    hideControls: PropTypes.bool,
-    resetOnEnd: PropTypes.bool,
-    disableContextMenu: PropTypes.bool,
-    loadSprite: PropTypes.bool,
-    iconPrefix: PropTypes.string,
-    iconUrl: PropTypes.string,
-    blankVideo: PropTypes.string,
-    quality: PropTypes.shape({
-      default: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      options: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
-    }),
-    loop: PropTypes.shape({
-      active: PropTypes.bool,
-    }),
-    speed: PropTypes.shape({
-      selected: PropTypes.number,
-      options: PropTypes.arrayOf(PropTypes.number),
-    }),
-    keyboard: PropTypes.shape({
-      focused: PropTypes.bool,
-      global: PropTypes.bool,
-    }),
-    tooltips: PropTypes.shape({
-      controls: PropTypes.bool,
-      seek: PropTypes.bool,
-    }),
-    fullscreen: PropTypes.shape({
-      enabled: PropTypes.bool,
-      fallback: PropTypes.bool,
-      iosNative: PropTypes.bool,
-    }),
-    storage: PropTypes.shape({
-      enabled: PropTypes.bool,
-      key: PropTypes.string,
-    }),
-    controls: PropTypes.arrayOf(PropTypes.string),
-    settings: PropTypes.arrayOf(PropTypes.string),
-    poster: PropTypes.string,
-    sources: PropTypes.arrayOf(
-      PropTypes.shape({
-        src: PropTypes.string.isRequired,
-        type: PropTypes.string.isRequired,
-        size: PropTypes.string,
-      }),
-    ),
-    captions: PropTypes.arrayOf(
-      PropTypes.shape({
-        kind: PropTypes.string,
-        label: PropTypes.string,
-        src: PropTypes.string.isRequired,
-        srclang: PropTypes.string,
-        default: PropTypes.bool,
-        key: PropTypes.any,
-      }),
-    ),
+    ...componentPropTypes,
+    ...videoPlayerProps,
   };
 
   static defaultProps = {
+    ...defaultComponentPropTypes,
     ...videoPlayerDefaultProps,
   };
 
@@ -129,6 +46,7 @@ export default class VideoPlayer extends PureComponent {
     };
 
     const {
+      className,
       onReady,
       onPlay,
       onPause,
@@ -144,8 +62,7 @@ export default class VideoPlayer extends PureComponent {
     } = this.props;
 
     const node = this.elementRef.current;
-    this.player =
-      node && node.classList.contains(this.props.className) ? new plyr(node, options) : null;
+    this.player = node && node.classList.contains(className) ? new plyr(node, options) : null;
 
     if (this.player) {
       this.player.on('play', onPlay);
@@ -167,12 +84,11 @@ export default class VideoPlayer extends PureComponent {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.muted !== this.props.muted) {
-      this.player.muted = this.props.muted;
-    }
+    const { videoId, muted, provider } = this.props;
 
-    if (prevProps.videoId !== this.props.videoId) {
-      if (this.props.videoId) this.updateVideoSource(this.props.videoId, this.props.provider);
+    if (prevProps.muted !== muted) this.player.muted = muted;
+    if (prevProps.videoId !== videoId) {
+      if (videoId) this.updateVideoSource(videoId, provider);
     }
   }
 
@@ -224,25 +140,20 @@ export default class VideoPlayer extends PureComponent {
 
   toggleFullscreen = () => this.player && this.player.fullscreen.toggle();
 
-  updateVideoSource = (videoId, provider) => {
+  updateVideoSource = (src, provider) => {
     this.player.source = {
       type: 'video',
-      sources: [
-        {
-          src: videoId,
-          provider,
-        },
-      ],
+      sources: [{ src, provider }],
     };
   };
 
-  updateHtmlVideoSource = (videoUrl, type, title, poster, tracks) => {
+  updateHtmlVideoSource = (src, type, title, poster, tracks) => {
     this.player.source = {
       type,
       title,
       sources: [
         {
-          src: videoUrl,
+          src,
           type: 'video/mp4',
         },
       ],
@@ -332,8 +243,13 @@ export default class VideoPlayer extends PureComponent {
 
   render() {
     let { type } = this.props;
+    const { theme, containerClassName } = this.props;
     if (['audio', 'video'].indexOf(type) === -1) type = 'default';
 
-    return this[`render${capitalize(type)}Player`]();
+    return (
+      <div className={styles[`theme-${theme}`]}>
+        <div className={containerClassName}>{this[`render${capitalize(type)}Player`]()}</div>
+      </div>
+    );
   }
 }

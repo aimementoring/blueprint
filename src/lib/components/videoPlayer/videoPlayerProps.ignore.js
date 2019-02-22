@@ -1,4 +1,94 @@
-export default {
+import PropTypes from 'prop-types';
+
+export const videoPlayerProps = {
+  type: PropTypes.oneOf(['youtube', 'vimeo', 'video', 'audio']),
+  videoId: PropTypes.string,
+  url: PropTypes.string,
+  onReady: PropTypes.func,
+  onPlay: PropTypes.func,
+  onPause: PropTypes.func,
+  onEnd: PropTypes.func,
+  onLoadedData: PropTypes.func,
+  onSeeked: PropTypes.func,
+  onTimeUpdate: PropTypes.func,
+  onEnterFullscreen: PropTypes.func,
+  onExitFullscreen: PropTypes.func,
+  onVolumeChange: PropTypes.func,
+  onCaptionsEnabled: PropTypes.func,
+  onCaptionsDisabled: PropTypes.func,
+  // plyr props
+  enabled: PropTypes.bool,
+  title: PropTypes.string,
+  debug: PropTypes.bool,
+  autoplay: PropTypes.bool,
+  autopause: PropTypes.bool,
+  seekTime: PropTypes.number,
+  volume: PropTypes.number,
+  muted: PropTypes.bool,
+  duration: PropTypes.number,
+  displayDuration: PropTypes.bool,
+  invertTime: PropTypes.bool,
+  toggleInvert: PropTypes.bool,
+  ratio: PropTypes.string,
+  clickToPlay: PropTypes.bool,
+  hideControls: PropTypes.bool,
+  resetOnEnd: PropTypes.bool,
+  disableContextMenu: PropTypes.bool,
+  loadSprite: PropTypes.bool,
+  iconPrefix: PropTypes.string,
+  iconUrl: PropTypes.string,
+  blankVideo: PropTypes.string,
+  quality: PropTypes.shape({
+    default: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    options: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
+  }),
+  loop: PropTypes.shape({
+    active: PropTypes.bool,
+  }),
+  speed: PropTypes.shape({
+    selected: PropTypes.number,
+    options: PropTypes.arrayOf(PropTypes.number),
+  }),
+  keyboard: PropTypes.shape({
+    focused: PropTypes.bool,
+    global: PropTypes.bool,
+  }),
+  tooltips: PropTypes.shape({
+    controls: PropTypes.bool,
+    seek: PropTypes.bool,
+  }),
+  fullscreen: PropTypes.shape({
+    enabled: PropTypes.bool,
+    fallback: PropTypes.bool,
+    iosNative: PropTypes.bool,
+  }),
+  storage: PropTypes.shape({
+    enabled: PropTypes.bool,
+    key: PropTypes.string,
+  }),
+  controls: PropTypes.arrayOf(PropTypes.string),
+  settings: PropTypes.arrayOf(PropTypes.string),
+  poster: PropTypes.string,
+  sources: PropTypes.arrayOf(
+    PropTypes.shape({
+      src: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      size: PropTypes.string,
+    }),
+  ),
+  captions: PropTypes.arrayOf(
+    PropTypes.shape({
+      kind: PropTypes.string,
+      label: PropTypes.string,
+      src: PropTypes.string.isRequired,
+      srclang: PropTypes.string,
+      default: PropTypes.bool,
+      key: PropTypes.any,
+    }),
+  ),
+};
+
+export const videoPlayerDefaultProps = {
   // Custom
   type: 'youtube',
   className: 'react-plyr',

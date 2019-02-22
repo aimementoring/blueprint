@@ -1,5 +1,5 @@
-@import 'lightTheme.module.scss';
-@import 'purpleTheme.module.scss';
+@import 'lightTheme/lightTheme.module.scss';
+@import 'purpleTheme/purpleTheme.module.scss';
 
 $themes: (
   purple: $purpleTheme,

@@ -1,9 +1,12 @@
 @import '../../styles/variables/variables.module.scss';
+@import '../../styles/themes/themes.module.scss';
 
 .sideTrackCallOut {
+  @include themify() {
+    background-color: themed('brand-tertiary');
+  }
   position: relative;
   top: -20px;
-  background-color: $brand-tertiary;
   padding-bottom: 3em;
 
   @media only screen and (min-width: 111em) {
@@ -39,9 +42,11 @@
 }
 
 .sideTrackText {
-  background-color: $brand-tertiary;
+  @include themify() {
+    background-color: themed('brand-tertiary');
+    color: themed('white-color');
+  }
   padding: 2em 1.7em 1em;
-  color: $white;
 
   @media only screen and (min-width: $lg) {
     padding: 2em 1.7em 1em;
@@ -58,17 +63,21 @@
     font-size: 0.9rem;
 
     .whiteColor {
-      color: $white;
+      @include themify() {
+        color: themed('white-color');
+      }
     }
   }
 }
 
 .sideTrackTitle {
+  @include themify() {
+    font-family: themed('tertiary-font-family');
+  }
   margin-bottom: 1rem;
   font: {
     weight: 700;
     style: italic;
-    family: $tertiary-font-family;
     size: 18px;
   }
 }

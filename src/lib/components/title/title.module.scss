@@ -1,19 +1,22 @@
 @import '../../styles/variables/variables.module.scss';
+@import '../../styles/themes/themes.module.scss';
 
 .gradientTitle {
+  @include themify() {
+    background: linear-gradient(135deg, themed('electric-blue'), themed('brand-tertiary'));
+    font-family: themed('gradient-title-font-family');
+    color: themed('white-color');
+  }
   line-height: 2rem;
   display: inline-block;
   padding: 0.2em 0 0.4em;
-  background: linear-gradient(135deg, $electric-blue, $brand-tertiary);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   outline: none;
   transform: rotate(-20deg);
-  color: $white;
   position: relative;
   z-index: 1;
   font: {
-    family: $gradient-title-font-family;
     size: 4rem;
     weight: 100;
   }
@@ -24,14 +27,16 @@
 }
 
 .blockTitle {
-  color: $brand-tertiary;
+  @include themify() {
+    color: themed('brand-tertiary');
+    font-family: themed('tertiary-font-family');
+  }
   position: relative;
   z-index: 2;
   margin-bottom: 1rem;
   text-align: left;
   display: block;
   font: {
-    family: $tertiary-font-family;
     weight: 900;
     size: 1.6rem;
     style: italic;
@@ -39,13 +44,15 @@
 }
 
 .mainTitle {
-  color: $white;
+  @include themify() {
+    color: themed('white-color');
+    font-family: themed('tertiary-font-family');
+  }
   line-height: 1.125;
   margin-bottom: 2rem;
   display: inline-block;
   font: {
     size: 1rem;
-    family: $tertiary-font-family;
     weight: 700;
     style: italic;
   }

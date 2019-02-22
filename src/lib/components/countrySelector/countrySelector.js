@@ -2,18 +2,20 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import countriesList from './countryCollection.ignore';
 import Select from '../select';
+import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
+import styles from './countrySelector.module.scss';
 
 export default class CountrySelector extends Component {
   static propTypes = {
+    ...componentPropTypes,
     placeholder: PropTypes.string.isRequired,
-    classNames: PropTypes.string,
-    containerClassNames: PropTypes.string,
     onChangeFunction: PropTypes.func,
     value: PropTypes.string,
     name: PropTypes.string,
   };
 
   static defaultProps = {
+    ...defaultComponentPropTypes,
     onChangeFunction: () => {},
     value: '',
     name: 'country-name',
@@ -52,21 +54,23 @@ export default class CountrySelector extends Component {
 
   render() {
     const { countries } = this.state;
-    const { classNames, placeholder, containerClassNames, name } = this.props;
+    const { className, placeholder, containerClassName, name, theme } = this.props;
     let { value } = this.props;
     if (!value || !countries.find(country => country.text === value)) value = '';
 
     return (
-      <Select
-        placeholder={placeholder}
-        name={name}
-        className={classNames}
-        classNameFromParent={containerClassNames}
-        onChangeFunction={this.handleChange}
-        value={value}
-        options={countries}
-        required
-      />
+      <div className={styles[`theme-${theme}`]}>
+        <Select
+          placeholder={placeholder}
+          name={name}
+          className={className}
+          classNameFromParent={containerClassName}
+          onChangeFunction={this.handleChange}
+          value={value}
+          options={countries}
+          required
+        />
+      </div>
     );
   }
 }

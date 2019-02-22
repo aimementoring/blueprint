@@ -2,7 +2,15 @@
 
 exports[`Video renders properly 1`] = `
 <div
-  className="react-plyr"
-  data-plyr-provider="youtube"
-/>
+  className="theme-purple"
+>
+  <div
+    className=""
+  >
+    <div
+      className="react-plyr"
+      data-plyr-provider="youtube"
+    />
+  </div>
+</div>
 `;
