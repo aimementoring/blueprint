@@ -1,63 +1,17 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import Dropdown from 'react-select';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
+import { selectProps, selectDefaultProps } from './selectProps.ignore';
 
 export default class Select extends PureComponent {
   static propTypes = {
     ...componentPropTypes,
-    placeholder: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    options: PropTypes.arrayOf(
-      PropTypes.shape({
-        value: PropTypes.string.isRequired,
-        label: PropTypes.string.isRequired,
-      }),
-    ).isRequired,
-    onChangeFunction: PropTypes.func,
-    isMulti: PropTypes.bool,
-    error: PropTypes.bool,
-    isClearable: PropTypes.bool,
-    value: PropTypes.string,
-    disabled: PropTypes.bool,
-    searchable: PropTypes.bool,
-    styles: PropTypes.shape({
-      control: PropTypes.shape({}),
-      menu: PropTypes.shape({}),
-      menuList: PropTypes.shape({}),
-      input: PropTypes.shape({}),
-      singleValue: PropTypes.shape({}),
-    }),
-    joinValues: PropTypes.bool,
-    defaultValues: PropTypes.arrayOf(
-      PropTypes.shape({
-        value: PropTypes.string.isRequired,
-        label: PropTypes.string.isRequired,
-      }),
-    ),
-    borderColor: PropTypes.string,
-    borderColorInError: PropTypes.string,
+    ...selectProps,
   };
 
   static defaultProps = {
     ...defaultComponentPropTypes,
-    onChangeFunction: () => {},
-    isMulti: false,
-    error: false,
-    isClearable: false,
-    disabled: false,
-    searchable: true,
-    styles: {
-      control: {},
-      menu: {},
-      menuList: {},
-      input: {},
-      singleValue: {},
-    },
-    joinValues: false,
-    defaultValues: [],
-    borderColor: '#550d94',
-    borderColorInError: '#DC143C',
+    ...selectDefaultProps,
   };
 
   handleChange = value => {
