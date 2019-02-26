@@ -17,9 +17,7 @@ export default class Select extends PureComponent {
   handleChange = value => {
     const { onChangeFunction, name } = this.props;
     if (value) {
-      const newValue = value.length
-        ? value.map(identification => identification.value)
-        : value.value;
+      const newValue = value.length ? value.map(item => item.value) : value.value;
       onChangeFunction(name, newValue);
     }
   };
@@ -33,7 +31,6 @@ export default class Select extends PureComponent {
       theme,
       isMulti,
       isClearable,
-      value,
       disabled,
       searchable,
       styles,
@@ -42,6 +39,7 @@ export default class Select extends PureComponent {
       borderColor,
       borderColorInError,
     } = this.props;
+    let { selectedValue } = this.props;
 
     const customStyles = {
       control: (base, state) => ({
@@ -83,6 +81,15 @@ export default class Select extends PureComponent {
       }),
     };
 
+    if (isMulti) {
+      selectedValue =
+        selectedValue && selectedValue.length
+          ? options.filter(option => selectedValue.indexOf(option.value) > -1)
+          : [];
+    } else {
+      selectedValue = selectedValue ? options.find(option => option.value === selectedValue) : null;
+    }
+
     return (
       <div className={styles[`theme-${theme}`]}>
         <div className={containerClassName}>
@@ -92,14 +99,14 @@ export default class Select extends PureComponent {
             styles={customStyles}
             onChange={this.handleChange}
             options={options}
-            value={value && options.filter(option => option.value === value)}
+            value={selectedValue}
             isMulti={isMulti}
             isClearable={isClearable}
             isDisabled={disabled}
             isSearchable={searchable}
             isOptionDisabled={option => option.disabled}
             joinValues={joinValues}
-            defaultValues={defaultValues}
+            defaultValue={defaultValues}
           />
         </div>
       </div>

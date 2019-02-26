@@ -13,7 +13,7 @@ export const selectProps = {
   isMulti: PropTypes.bool,
   error: PropTypes.bool,
   isClearable: PropTypes.bool,
-  value: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
   disabled: PropTypes.bool,
   searchable: PropTypes.bool,
   styles: PropTypes.shape({
