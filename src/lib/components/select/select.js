@@ -6,7 +6,7 @@ export default class Select extends PureComponent {
   static propTypes = {
     placeholder: PropTypes.string.isRequired,
     className: PropTypes.string,
-    // classNameFromParent: PropTypes.string,
+    classNameFromParent: PropTypes.string,
     name: PropTypes.string.isRequired,
     options: PropTypes.arrayOf(
       PropTypes.shape({
@@ -18,7 +18,7 @@ export default class Select extends PureComponent {
     isMulti: PropTypes.bool,
     error: PropTypes.bool,
     isClearable: PropTypes.bool,
-    value: PropTypes.string,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
     disabled: PropTypes.bool,
     searchable: PropTypes.bool,
     styles: PropTypes.shape({
@@ -42,7 +42,7 @@ export default class Select extends PureComponent {
   static defaultProps = {
     onChangeFunction: () => {},
     className: '',
-    // classNameFromParent: '',
+    classNameFromParent: '',
     isMulti: false,
     error: false,
     isClearable: false,
@@ -76,7 +76,7 @@ export default class Select extends PureComponent {
       placeholder,
       options,
       className,
-      // classNameFromParent,
+      classNameFromParent,
       isMulti,
       isClearable,
       value,
@@ -129,24 +129,32 @@ export default class Select extends PureComponent {
       }),
     };
 
+    let selectedValue = null;
+    if (isMulti) {
+      selectedValue =
+        value && value.length ? options.filter(option => value.indexOf(option.value) > -1) : [];
+    } else {
+      selectedValue = value ? options.find(option => option.value === value) : null;
+    }
+
     return (
-      // <div className={classNameFromParent}>
-      <Dropdown
-        placeholder={placeholder}
-        className={className}
-        styles={customStyles}
-        onChange={this.handleChange}
-        options={options}
-        value={value && options.filter(option => option.value === value)}
-        isMulti={isMulti}
-        isClearable={isClearable}
-        isDisabled={disabled}
-        isSearchable={searchable}
-        isOptionDisabled={option => option.disabled}
-        joinValues={joinValues}
-        defaultValues={defaultValues}
-      />
-      // </div>
+      <div className={classNameFromParent}>
+        <Dropdown
+          placeholder={placeholder}
+          className={className}
+          styles={customStyles}
+          onChange={this.handleChange}
+          options={options}
+          value={selectedValue}
+          isMulti={isMulti}
+          isClearable={isClearable}
+          isDisabled={disabled}
+          isSearchable={searchable}
+          isOptionDisabled={option => option.disabled}
+          joinValues={joinValues}
+          defaultValue={defaultValues}
+        />
+      </div>
     );
   }
 }
