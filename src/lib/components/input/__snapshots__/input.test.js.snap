@@ -2,10 +2,10 @@
 
 exports[`Input renders properly 1`] = `
 <div
-  className="inputWrapper "
+  className="inputWrapper"
 >
   <input
-    className="input "
+    className="input"
     disabled="disabled"
     name="name"
     onChange={[Function]}
