@@ -2,16 +2,9 @@
 @import '../../styles/themes/themes.module.scss';
 
 .gradientTitle {
-  @include themify() {
-    background: linear-gradient(135deg, themed('electric-blue'), themed('brand-tertiary'));
-    font-family: themed('gradient-title-font-family');
-    color: themed('white-color');
-  }
   line-height: 2rem;
   display: inline-block;
   padding: 0.2em 0 0.4em;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
   outline: none;
   transform: rotate(-20deg);
   position: relative;
@@ -19,6 +12,13 @@
   font: {
     size: 4rem;
     weight: 100;
+  }
+  @include themify() {
+    background: linear-gradient(135deg, themed('electric-blue'), themed('brand-tertiary'));
+    font-family: themed('gradient-title-font-family');
+    color: themed('white-color');
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
   }
 
   @media screen and (min-width: 40em) {
