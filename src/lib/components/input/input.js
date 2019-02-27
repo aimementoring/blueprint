@@ -16,14 +16,14 @@ export default class Input extends PureComponent {
   };
 
   static defaultProps = {
-    classNameFromParent: '',
-    classNameInputFromParent: '',
+    classNameFromParent: null,
+    classNameInputFromParent: null,
     placeholder: '',
     disabled: false,
     required: true,
     value: '',
     type: 'text',
-    onChangeFunction: () => {},
+    onChangeFunction: () => { },
   };
 
   handleChange = name => event => {
@@ -43,11 +43,14 @@ export default class Input extends PureComponent {
       value,
       type,
     } = this.props;
+
+    const wrapperClass = classNameFromParent || styles.inputWrapper;
+    const inputClass = classNameInputFromParent || styles.input;
     return (
-      <div className={`${styles.inputWrapper} ${classNameFromParent}`}>
+      <div className={wrapperClass}>
         <input
           placeholder={placeholder}
-          className={`${styles.input} ${classNameInputFromParent}`}
+          className={inputClass}
           value={value}
           name={name}
           type={type}
