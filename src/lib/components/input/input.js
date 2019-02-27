@@ -23,7 +23,7 @@ export default class Input extends PureComponent {
     required: true,
     value: '',
     type: 'text',
-    onChangeFunction: () => { },
+    onChangeFunction: () => {},
   };
 
   handleChange = name => event => {
@@ -44,13 +44,11 @@ export default class Input extends PureComponent {
       type,
     } = this.props;
 
-    const wrapperClass = classNameFromParent || styles.inputWrapper;
-    const inputClass = classNameInputFromParent || styles.input;
     return (
-      <div className={wrapperClass}>
+      <div className={`${classNameFromParent} ${styles.inputWrapper}`}>
         <input
           placeholder={placeholder}
-          className={inputClass}
+          className={`${classNameInputFromParent} ${styles.input}`}
           value={value}
           name={name}
           type={type}
