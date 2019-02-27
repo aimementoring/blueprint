@@ -2,7 +2,7 @@
   "name": "aime-blueprint",
   "title": "Blueprint",
   "description": "Standard components and UI design definitions for all AIME projects",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "license": "MIT",
   "homepage": "https://blueprint.aimementoring.com",
   "main": "lib/index.js",
