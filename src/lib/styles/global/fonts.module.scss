@@ -1,0 +1,73 @@
+// $fontsPath: 'https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts';
+
+// Univers
+@font-face {
+  font-family: 'Univers';
+  src: url('https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts/universal/UniversLTStd.otf');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Univers Light';
+  src: url('https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts/universal/UniversLTStd-Light.otf');
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Univers Bold';
+  src: url('https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts/universal/UniversLTStd-Bold.otf');
+  font-style: normal;
+  font-weight: 500;
+}
+
+// Poppins
+@font-face {
+  font-family: 'Poppins';
+  src: url('https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts/poppins/Poppins-Medium.ttf');
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Poppins SemiBold';
+  src: url('https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts/poppins/Poppins-SemiBold.ttf');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Poppins Bold';
+  src: url('https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts/poppins/Poppins-Bold.ttf');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Poppins Bold Italic';
+  src: url('https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts/poppins/Poppins-BoldItalic.ttf');
+  font-style: normal;
+  font-weight: 500;
+}
+
+// Blackhawk
+@font-face {
+  font-family: 'Blackhawk';
+  src: url('https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts/blackhawk/blackhawk_italic-webfont.woff2')
+      format('woff2'),
+    url('https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts/blackhawk/blackhawk_italic-webfont.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'blackhawk_italicregular';
+  src: url('https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts/blackhawk/blackhawk_italic-webfont.woff2')
+      format('woff2'),
+    url('https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts/blackhawk/blackhawk_italic-webfont.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

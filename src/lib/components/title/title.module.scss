@@ -1,22 +1,22 @@
 @import '../../styles/variables/variables.module.scss';
 
 .gradientTitle {
+  background: linear-gradient(135deg, $electric-blue, $brand-tertiary);
+  font-family: $gradient-title-font-family;
+  color: $white;
   line-height: 2rem;
   display: inline-block;
   padding: 0.2em 0 0.4em;
-  background: linear-gradient(135deg, $electric-blue, $brand-tertiary);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
   outline: none;
   transform: rotate(-20deg);
-  color: $white;
   position: relative;
   z-index: 1;
   font: {
-    family: $gradient-title-font-family;
     size: 4rem;
     weight: 100;
   }
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 
   @media screen and (min-width: 40em) {
     line-height: 3rem;

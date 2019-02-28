@@ -2,7 +2,26 @@
 
 exports[`Video renders properly 1`] = `
 <div
-  className="react-plyr"
-  data-plyr-provider="youtube"
-/>
+  className=""
+>
+  <div
+    style={
+      Object {
+        "height": "360px",
+        "width": "640px",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "backgroundColor": "black",
+          "height": "100%",
+          "overflow": "hidden",
+          "width": "100%",
+        }
+      }
+    />
+  </div>
+</div>
 `;
