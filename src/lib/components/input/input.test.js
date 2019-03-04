@@ -14,6 +14,7 @@ describe('Input', () => {
           required
           onChangeFunction={value => {}}
           disabled
+          autoComplete="given-name"
         />,
       )
       .toJSON();

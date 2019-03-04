@@ -12,6 +12,7 @@ export default class Input extends PureComponent {
     name: PropTypes.string.isRequired,
     value: PropTypes.string,
     type: PropTypes.string,
+    autoComplete: PropTypes.string,
     onChangeFunction: PropTypes.func,
   };
 
@@ -42,6 +43,7 @@ export default class Input extends PureComponent {
       name,
       value,
       type,
+      autoComplete,
     } = this.props;
 
     return (
@@ -54,6 +56,7 @@ export default class Input extends PureComponent {
           type={type}
           required={required}
           onChange={this.handleChange(name)}
+          autocomplete={autoComplete}
           disabled={disabled ? 'disabled' : ''}
         />
       </div>
