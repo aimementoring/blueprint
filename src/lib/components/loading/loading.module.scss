@@ -12,6 +12,7 @@
   right: 0;
   text-align: center;
   top: 0;
+
   z-index: 1000;
 
   .spin {
@@ -28,10 +29,7 @@
     padding: 0;
     position: absolute;
     text-align: center;
-    transition: -webkit-transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
-    transition: transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86),
-      -webkit-transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
-    // transition: transform .3s cubic-bezier(.78, .14, .15, .86);
+    transition: transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
     vertical-align: middle;
 
     &.spinning {
