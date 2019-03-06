@@ -43,12 +43,13 @@ export default class Input extends PureComponent {
       value,
       type,
     } = this.props;
+
     return (
       <div className={styles[`theme-${theme}`]}>
         <div className={`${styles.inputWrapper} ${containerClassName}`}>
           <input
             placeholder={placeholder}
-            className={`${styles.input} ${className}`}
+            className={`${className} ${styles.input}`}
             value={value}
             name={name}
             type={type}

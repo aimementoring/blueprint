@@ -38,22 +38,27 @@ export default class Select extends PureComponent {
       defaultValues,
       borderColor,
       borderColorInError,
+      error,
     } = this.props;
     let { selectedValue } = this.props;
+
+    if (error) {
+      delete styles.control.border;
+    }
 
     const customStyles = {
       control: (base, state) => ({
         ...base,
         maxHeight: '60px',
-        borderColor: this.props.error ? borderColorInError : borderColor,
+        borderColor: error ? borderColorInError : borderColor,
         boxShadow: state.isFocused ? null : null,
         '&:hover': {
           // Overwrittes the different states of border
-          borderColor: state.isFocused ? borderColorInError : borderColor,
+          borderColor: error ? borderColorInError : borderColor,
         },
         '&:focus': {
           // Overwrittes the different states of border
-          borderColor: state.isFocused ? borderColorInError : borderColor,
+          borderColor: error ? borderColorInError : borderColor,
         },
         ...styles.control,
       }),
