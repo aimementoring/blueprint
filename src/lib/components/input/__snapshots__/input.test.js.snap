@@ -2,17 +2,21 @@
 
 exports[`Input renders properly 1`] = `
 <div
-  className="null inputWrapper"
+  className="theme-purple"
 >
-  <input
-    className="null input"
-    disabled="disabled"
-    name="name"
-    onChange={[Function]}
-    placeholder="Name"
-    required={true}
-    type="text"
-    value=""
-  />
+  <div
+    className="inputWrapper "
+  >
+    <input
+      className=" input"
+      disabled="disabled"
+      name="name"
+      onChange={[Function]}
+      placeholder="Name"
+      required={true}
+      type="text"
+      value=""
+    />
+  </div>
 </div>
 `;

@@ -2,21 +2,29 @@
 
 exports[`Avatar name renders properly 1`] = `
 <div
-  className="profileAvatar"
+  className="theme-purple"
 >
-  <span>
-    KB
-  </span>
+  <div
+    className="profileAvatar"
+  >
+    <span>
+      KB
+    </span>
+  </div>
 </div>
 `;
 
 exports[`Avatar with photo renders properly 1`] = `
 <div
-  className="profileAvatar"
+  className="theme-purple"
 >
-  <img
-    alt="Lionel Messi"
-    src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2018/08/19/15347041965884.jpg"
-  />
+  <div
+    className="profileAvatar"
+  >
+    <img
+      alt="Lionel Messi"
+      src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2018/08/19/15347041965884.jpg"
+    />
+  </div>
 </div>
 `;

@@ -1,29 +1,30 @@
-$brand-primary: rgb(118, 3, 219);
-$brand-secondary: rgb(199, 0, 255);
-$brand-tertiary: rgb(218, 13, 255);
+$brand-primary: rgb(118, 3, 219) !default;
+$brand-secondary: rgb(199, 0, 255) !default;
+$brand-tertiary: rgb(218, 13, 255) !default;
 
-$eggplant: rgb(85, 13, 148);
-$eggplant-transparent: rgba(65, 0, 72, 0.769);
+$eggplant: rgb(85, 13, 148) !default;
+$eggplant-transparent: rgba(65, 0, 72, 0.769) !default;
 
-$lavender: rgb(157, 161, 180);
-$electric-blue: rgb(49, 233, 255);
+$lavender: rgb(157, 161, 180) !default;
+$electric-blue: rgb(49, 233, 255) !default;
 
-$black: rgb(0, 0, 0);
-$darkest-purple: rgb(56, 2, 73);
-$loading-black: rgba(0, 0, 0, 0.3);
-$translucent-black: rgba(0, 0, 0, 0.65);
-$light-grey: rgb(232, 232, 232);
-$white-grey: rgb(217, 217, 217);
-$white-dark-grey: rgb(170, 170, 170);
-$medium-grey: rgb(163, 163, 163);
-$soft-grey: rgb(153, 153, 153);
-$grey: rgb(102, 102, 102);
+$black: rgb(0, 0, 0) !default;
+$darkest-purple: rgb(56, 2, 73) !default;
+$loading-black: rgba(0, 0, 0, 0.3) !default;
+$translucent-black: rgba(0, 0, 0, 0.65) !default;
+$light-grey: rgb(232, 232, 232) !default;
+$white-grey: rgb(217, 217, 217) !default;
+$white-dark-grey: rgb(170, 170, 170) !default;
+$medium-grey: rgb(163, 163, 163) !default;
+$soft-grey: rgb(153, 153, 153) !default;
+$shadow-grey: rgb(136, 136, 136) !default;
+$grey: rgb(102, 102, 102) !default;
 
-$white: rgb(255, 255, 255);
-$off-white: rgb(254, 246, 255);
-$soft-lavender: rgb(251, 249, 253);
-$grey-lavender: rgb(241, 238, 243);
+$white: rgb(255, 255, 255) !default;
+$off-white: rgb(254, 246, 255) !default;
+$soft-lavender: rgb(251, 249, 253) !default;
+$grey-lavender: rgb(241, 238, 243) !default;
 
 // TODO: check with mischa can we move keyframes sheet into the variables folder?
 
-$smooth-transition: all 0.1s ease-in-out;
+$smooth-transition: all 0.1s ease-in-out !default;

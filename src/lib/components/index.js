@@ -11,3 +11,5 @@ export { default as Avatar } from './avatar';
 export { default as Title } from './title';
 export { default as VideoPlayer } from './videoPlayer';
 export { default as SideTrack } from './sideTrack';
+export { default as WarningBlock } from './warningBlock';
+export { default as PhoneInput } from './phoneInput';

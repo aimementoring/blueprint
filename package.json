@@ -7,6 +7,9 @@
   "homepage": "https://blueprint.aimementoring.com",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
+  "engines": {
+    "node": ">=10.0"
+  },
   "dependencies": {
     "@bugsnag/js": "^6.0.0-alpha.1",
     "@bugsnag/plugin-react": "^6.0.0-alpha.1",
@@ -42,8 +45,9 @@
     "react-app-polyfill": "^0.2.0",
     "react-dev-utils": "^7.0.1",
     "react-dom": "^16.7.0",
+    "react-intl-tel-input": "^7.0.1",
+    "react-select": "^2.4.1",
     "react-player": "^1.9.3",
-    "react-select": "^2.3.0",
     "resolve": "1.8.1",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.0",
@@ -115,6 +119,8 @@
     "**/*.less": "stylelint --syntax scss"
   },
   "scripts": {
+    "start": "cross-env NODE_ENV=production BABEL_ENV=production rollup -c -w",
+    "start:styleguide": "styleguidist server",
     "build:styleguide": "styleguidist build",
     "build:lib": "cross-env NODE_ENV=production BABEL_ENV=production rollup -c",
     "build": "yarn build:lib && yarn build:styleguide",
@@ -123,7 +129,6 @@
     "fix-lint": "eslint --fix --ext .js",
     "fix-code": "prettier-eslint --write 'src/**/*.{js,jsx}' ",
     "fix-styles": "prettier-stylelint --write 'src/**/*.{css,scss}' ",
-    "start": "cross-env NODE_ENV=production BABEL_ENV=production rollup -c -w",
     "test": "cross-env NODE_ENV=test BABEL_ENV=test jest --coverage && jest-coverage-badges",
     "deploy": "yarn test && yarn build",
     "release": "release-it"

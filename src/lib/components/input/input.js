@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
 import styles from './input.module.scss';
 
 export default class Input extends PureComponent {
   static propTypes = {
-    classNameFromParent: PropTypes.string,
-    classNameInputFromParent: PropTypes.string,
+    ...componentPropTypes,
     placeholder: PropTypes.string,
     disabled: PropTypes.bool,
     required: PropTypes.bool,
@@ -16,8 +16,7 @@ export default class Input extends PureComponent {
   };
 
   static defaultProps = {
-    classNameFromParent: null,
-    classNameInputFromParent: null,
+    ...defaultComponentPropTypes,
     placeholder: '',
     disabled: false,
     required: true,
@@ -34,8 +33,9 @@ export default class Input extends PureComponent {
 
   render() {
     const {
-      classNameFromParent,
-      classNameInputFromParent,
+      containerClassName,
+      className,
+      theme,
       placeholder,
       disabled,
       required,
@@ -45,17 +45,19 @@ export default class Input extends PureComponent {
     } = this.props;
 
     return (
-      <div className={`${classNameFromParent} ${styles.inputWrapper}`}>
-        <input
-          placeholder={placeholder}
-          className={`${classNameInputFromParent} ${styles.input}`}
-          value={value}
-          name={name}
-          type={type}
-          required={required}
-          onChange={this.handleChange(name)}
-          disabled={disabled ? 'disabled' : ''}
-        />
+      <div className={styles[`theme-${theme}`]}>
+        <div className={`${styles.inputWrapper} ${containerClassName}`}>
+          <input
+            placeholder={placeholder}
+            className={`${className} ${styles.input}`}
+            value={value}
+            name={name}
+            type={type}
+            required={required}
+            onChange={this.handleChange(name)}
+            disabled={disabled ? 'disabled' : ''}
+          />
+        </div>
       </div>
     );
   }

@@ -14,3 +14,7 @@
   underneathLabel="Label here..."
 />
 ```
+
+```js
+<Button type="button" onClickFunction={this.handleClick} text="Light theme" theme="light" />
+```
