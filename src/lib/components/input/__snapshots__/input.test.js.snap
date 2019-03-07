@@ -8,7 +8,7 @@ exports[`Input renders properly 1`] = `
     className="inputWrapper "
   >
     <input
-      className=" input"
+      className=" input false"
       disabled="disabled"
       name="name"
       onChange={[Function]}

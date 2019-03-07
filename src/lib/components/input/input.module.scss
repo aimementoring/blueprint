@@ -22,6 +22,15 @@
   box-sizing: border-box;
   width: 100%;
 
+  &.error,
+  &.error:focus,
+  &.error:hover {
+    @include themify() {
+      border: 1px solid themed('error-color');
+      border-color: themed('error-color');
+    }
+  }
+
   &::placeholder {
     @include themify() {
       color: themed('eggplant-transparent');
@@ -41,14 +50,14 @@
   outline: none;
 }
 
-input.input[type="date"]:before {
-  content: attr(placeholder)':' !important;
+input.input[type='date']:before {
+  content: attr(placeholder) ':' !important;
   color: #aaa;
   margin-right: 0.5em;
 }
-input[type="date"]:focus:before,
-input[type="date"]:valid:before {
-  content: "" !important;
+input[type='date']:focus:before,
+input[type='date']:valid:before {
+  content: '' !important;
 }
 
 ::placeholder {

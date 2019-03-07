@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import { Input, Button, Checkbox } from './lib';
+import { Components } from './lib';
+import { validateEmail, maxCharacters, minCharacters } from './lib/utils/validation';
+
+const { Input, Button, Checkbox, TextBox } = Components;
 
 const container = document.getElementById('root');
 class App extends Component {
   state = {
     input: {
       placeholder: 'Name',
+      value: '',
+      type: 'text',
+      required: true,
+      disabled: false,
+    },
+    textbox: {
+      placeholder: 'Textbox',
       value: '',
       type: 'text',
       required: true,
@@ -80,8 +90,21 @@ class App extends Component {
           {...input}
           name="value"
           onChangeFunction={(attr, value) => this.updateState('input', attr, value)}
+          validations={[validateEmail, maxCharacters(10)]}
         />
       </div>
+    );
+  };
+
+  renderTextboxComponent = () => {
+    const { textbox } = this.state;
+    return (
+      <TextBox
+        {...textbox}
+        name="value"
+        onChangeFunction={(attr, value) => this.updateState('textbox', attr, value)}
+        validations={[maxCharacters(100), minCharacters(10)]}
+      />
     );
   };
 
@@ -117,6 +140,7 @@ class App extends Component {
         {this.renderInputComponent()}
         {this.renderButtonComponent()}
         {this.renderCheckboxComponent()}
+        {this.renderTextboxComponent()}
       </div>
     );
   }

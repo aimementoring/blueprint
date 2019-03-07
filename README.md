@@ -12,16 +12,16 @@
   <img src="https://img.shields.io/badge/module%20formats-umd%2C%20cjs%2C%20esm-green.svg">
 </a>
 <a href="https://npmjs.com/package/aime-blueprint">
-  <img src="coverage/badge-lines.svg">
+  <img src="https://github.com/aimementoring/blueprint/coverage/badge-lines.svg">
 </a>
 <a href="https://npmjs.com/package/aime-blueprint">
-  <img src="coverage/badge-functions.svg">
+  <img src="https://github.com/aimementoring/blueprint/coverage/badge-functions.svg">
 </a>
 <a href="https://npmjs.com/package/aime-blueprint">
-  <img src="coverage/badge-statements.svg">
+  <img src="https://github.com/aimementoring/blueprint/coverage/badge-statements.svg">
 </a>
 <a href="https://npmjs.com/package/aime-blueprint">
-  <img src="coverage/badge-branches.svg">
+  <img src="https://github.com/aimementoring/blueprint/coverage/badge-branches.svg">
 </a>
 
 [![https://nodei.co/npm/aime-blueprint.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/aime-blueprint.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/aime-blueprint)

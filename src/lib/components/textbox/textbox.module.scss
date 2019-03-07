@@ -1,8 +1,18 @@
 @import '../input/input.module.scss';
+@import '../../styles/themes/themes.module.scss';
 
 .textarea {
   padding: 1rem;
   margin: 0px;
   height: 259px;
   width: 784px;
+
+  &.error,
+  &.error:focus,
+  &.error:hover {
+    @include themify() {
+      border: 1px solid themed('error-color');
+      border-color: themed('error-color');
+    }
+  }
 }

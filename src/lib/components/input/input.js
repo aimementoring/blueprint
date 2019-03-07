@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { checkValidations } from '../../utils/validation';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
 import styles from './input.module.scss';
 
@@ -13,6 +14,8 @@ export default class Input extends PureComponent {
     value: PropTypes.string,
     type: PropTypes.string,
     onChangeFunction: PropTypes.func,
+    validations: PropTypes.array,
+    onValidationFail: PropTypes.func,
   };
 
   static defaultProps = {
@@ -23,12 +26,27 @@ export default class Input extends PureComponent {
     value: '',
     type: 'text',
     onChangeFunction: () => {},
+    validations: [],
+    onValidationFail: () => {},
+  };
+
+  state = {
+    validatedOk: true,
+    validationMessage: '',
   };
 
   handleChange = name => event => {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
-    this.props.onChangeFunction(name, value);
+    const { onChangeFunction, validations, onValidationFail } = this.props;
+    const validationResultMsg = checkValidations(validations, value);
+    if (validationResultMsg) {
+      this.setState({ validatedOk: false, validationMessage: validationResultMsg });
+      onValidationFail(name);
+    } else {
+      this.setState({ validatedOk: true, validationMessage: '' });
+    }
+    onChangeFunction(name, value);
   };
 
   render() {
@@ -44,12 +62,14 @@ export default class Input extends PureComponent {
       type,
     } = this.props;
 
+    const { validatedOk, validationMessage } = this.state;
+
     return (
       <div className={styles[`theme-${theme}`]}>
         <div className={`${styles.inputWrapper} ${containerClassName}`}>
           <input
             placeholder={placeholder}
-            className={`${className} ${styles.input}`}
+            className={`${className} ${styles.input} ${!validatedOk && styles.error}`}
             value={value}
             name={name}
             type={type}
@@ -57,6 +77,7 @@ export default class Input extends PureComponent {
             onChange={this.handleChange(name)}
             disabled={disabled ? 'disabled' : ''}
           />
+          {!validatedOk && <span>{validationMessage}</span>}
         </div>
       </div>
     );
