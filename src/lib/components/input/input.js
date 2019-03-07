@@ -14,7 +14,7 @@ export default class Input extends PureComponent {
     value: PropTypes.string,
     type: PropTypes.string,
     onChangeFunction: PropTypes.func,
-    onValidationWrong: PropTypes.func,
+    onValidationFail: PropTypes.func,
     validations: PropTypes.array,
   };
 
@@ -28,7 +28,7 @@ export default class Input extends PureComponent {
     type: 'text',
     validations: [],
     onChangeFunction: () => { },
-    onValidationWrong: () => { },
+    onValidationFail: () => { },
   };
 
   state = {
@@ -39,14 +39,14 @@ export default class Input extends PureComponent {
   handleChange = name => event => {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
-    const { onChangeFunction, validations, onValidationWrong } = this.props;
+    const { onChangeFunction, validations, onValidationFail } = this.props;
     const validationResultMsg = checkValidations(validations, value);
     if (validationResultMsg) {
       this.setState({ validatedOk: false, validationMessage: validationResultMsg })
-      onValidationWrong(name);
-      return;
+      onValidationFail(name);
+    } else {
+      this.setState({ validatedOk: true, validationMessage: '' });
     }
-    this.setState({ validatedOk: true, validationMessage: '' });
     onChangeFunction(name, value);
   };
 

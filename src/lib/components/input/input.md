@@ -16,6 +16,8 @@ function updateValue(name, value) {
 ```
 
 ```jsx inside Markdown
+import React from 'react';
+import Dropdown from 'react-select';
 import { validateEmail } from '../../utils/validation';
 
 initialState = {

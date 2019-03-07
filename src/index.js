@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { Components } from './lib';
+import { validateEmail, maxCharacters } from './lib/utils/validation';
 
 const { Input, Button, Checkbox } = Components;
 
@@ -82,6 +83,7 @@ class App extends Component {
           {...input}
           name="value"
           onChangeFunction={(attr, value) => this.updateState('input', attr, value)}
+          validations={[validateEmail, maxCharacters(10)]}
         />
       </div>
     );
@@ -91,7 +93,7 @@ class App extends Component {
     return (
       <div>
         <h1>Button component</h1>
-        <Button type="button" onClickFunction={() => {}} text="Back" />
+        <Button type="button" onClickFunction={() => { }} text="Back" />
       </div>
     );
   };

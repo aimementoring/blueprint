@@ -46,7 +46,7 @@ export const maxAmount = memoize(max => value => (value && value > max
 );
 
 export const maxCharacters = memoize(max => value => (value && value.length > max
-  ? `This value should contain maximum ${maxCharacters} characters`
+  ? `This value should contain maximum ${max} characters`
   : undefined),
 );
 

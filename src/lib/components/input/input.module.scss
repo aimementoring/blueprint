@@ -19,7 +19,9 @@
   box-sizing: border-box;
   width: 100%;
   
-  &.error {
+  &.error,
+  &.error:focus,
+  &.error:hover {
     border: 1px solid rgb(255, 0, 0);
   }
 
