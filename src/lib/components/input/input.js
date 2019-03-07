@@ -14,8 +14,8 @@ export default class Input extends PureComponent {
     value: PropTypes.string,
     type: PropTypes.string,
     onChangeFunction: PropTypes.func,
-    onValidationFail: PropTypes.func,
     validations: PropTypes.array,
+    onValidationFail: PropTypes.func,
   };
 
   static defaultProps = {
@@ -25,15 +25,15 @@ export default class Input extends PureComponent {
     required: true,
     value: '',
     type: 'text',
+    onChangeFunction: () => {},
     validations: [],
-    onChangeFunction: () => { },
-    onValidationFail: () => { },
+    onValidationFail: () => {},
   };
 
   state = {
     validatedOk: true,
     validationMessage: '',
-  }
+  };
 
   handleChange = name => event => {
     const target = event.target;
@@ -41,7 +41,7 @@ export default class Input extends PureComponent {
     const { onChangeFunction, validations, onValidationFail } = this.props;
     const validationResultMsg = checkValidations(validations, value);
     if (validationResultMsg) {
-      this.setState({ validatedOk: false, validationMessage: validationResultMsg })
+      this.setState({ validatedOk: false, validationMessage: validationResultMsg });
       onValidationFail(name);
     } else {
       this.setState({ validatedOk: true, validationMessage: '' });
@@ -62,10 +62,7 @@ export default class Input extends PureComponent {
       type,
     } = this.props;
 
-    const {
-      validatedOk,
-      validationMessage,
-    } = this.state;
+    const { validatedOk, validationMessage } = this.state;
 
     return (
       <div className={styles[`theme-${theme}`]}>
@@ -80,8 +77,7 @@ export default class Input extends PureComponent {
             onChange={this.handleChange(name)}
             disabled={disabled ? 'disabled' : ''}
           />
-          {!validatedOk &&
-            <span>{validationMessage}</span>}
+          {!validatedOk && <span>{validationMessage}</span>}
         </div>
       </div>
     );

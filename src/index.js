@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { Components } from './lib';
-import { validateEmail, maxCharacters } from './lib/utils/validation';
+import { validateEmail, maxCharacters, minCharacters } from './lib/utils/validation';
 
-const { Input, Button, Checkbox } = Components;
+const { Input, Button, Checkbox, TextBox } = Components;
 
 const container = document.getElementById('root');
 class App extends Component {
   state = {
     input: {
       placeholder: 'Name',
+      value: '',
+      type: 'text',
+      required: true,
+      disabled: false,
+    },
+    textbox: {
+      placeholder: 'Textbox',
       value: '',
       type: 'text',
       required: true,
@@ -89,11 +96,23 @@ class App extends Component {
     );
   };
 
+  renderTextboxComponent = () => {
+    const { textbox } = this.state;
+    return (
+      <TextBox
+        {...textbox}
+        name="value"
+        onChangeFunction={(attr, value) => this.updateState('textbox', attr, value)}
+        validations={[maxCharacters(100), minCharacters(10)]}
+      />
+    );
+  };
+
   renderButtonComponent = () => {
     return (
       <div>
         <h1>Button component</h1>
-        <Button type="button" onClickFunction={() => { }} text="Back" />
+        <Button type="button" onClickFunction={() => {}} text="Back" />
       </div>
     );
   };
@@ -121,6 +140,7 @@ class App extends Component {
         {this.renderInputComponent()}
         {this.renderButtonComponent()}
         {this.renderCheckboxComponent()}
+        {this.renderTextboxComponent()}
       </div>
     );
   }

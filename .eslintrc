@@ -43,6 +43,8 @@
     "no-plusplus": [0],
     "no-cond-assign": [0],
     "import/no-unresolved": [0],
+    "no-confusing-arrow": [0],
+    "implicit-arrow-linebreak": [0],
     "comma-dangle": [
       "error",
       {

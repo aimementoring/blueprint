@@ -8,6 +8,7 @@ import {
   minAmount,
   maxAmount,
   maxCharacters,
+  minCharacters,
   checkValidations,
 } from './validation';
 
@@ -21,5 +22,6 @@ export {
   minAmount,
   maxAmount,
   maxCharacters,
+  minCharacters,
   checkValidations,
 };

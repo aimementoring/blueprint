@@ -10,46 +10,40 @@ const regularExpressions = {
   numeric: /^\d+$/,
 };
 
-export const required = value => (value !== undefined && value !== ''
-  ? undefined
-  : "Required");
+export const required = value => (value !== undefined && value !== '' ? undefined : 'Required');
 
-export const validateNumeric = value => (regularExpressions.numeric.test(value)
-  ? undefined
-  : "This value should be a valid number.");
+export const validateNumeric = value =>
+  regularExpressions.numeric.test(value) ? undefined : 'This value should be a valid number.';
 
-export const validateAlphanumeric = value => (regularExpressions.alphanumeric.test(value)
-  ? undefined
-  : "This value shouldn't contain special characters.");
+export const validateAlphanumeric = value =>
+  regularExpressions.alphanumeric.test(value)
+    ? undefined
+    : "This value shouldn't contain special characters.";
 
-export const validateEmail = value => (
-  regularExpressions.email.test(value) ? undefined : "This value is not a valid email"
+export const validateEmail = value =>
+  regularExpressions.email.test(value) ? undefined : 'This value is not a valid email';
+
+export const validateNonNegative = value =>
+  value >= 0 ? undefined : "This value shouldn't be negative";
+
+export const validateHigherThanZero = value =>
+  value > 0 ? undefined : 'This value should be higher than zero';
+
+export const minAmount = memoize(min => value =>
+  value && value < min ? `This value should not be less than ${min}` : undefined,
 );
 
-
-export const validateNonNegative = value => (
-  value >= 0 ? undefined : "This value shouldn't be negative"
+export const maxAmount = memoize(max => value =>
+  value && value > max ? `This value should not be more than ${max}` : undefined,
 );
 
-export const validateHigherThanZero = value => (
-  value > 0 ? undefined : "This value should be higher than zero"
+export const maxCharacters = memoize(max => value =>
+  value && value.length > max ? `This value should contain maximum ${max} characters` : undefined,
 );
 
-export const minAmount = memoize(min => value => (value && value < min
-  ? `This value should not be less than ${min}`
-  : undefined),
+export const minCharacters = memoize(min => value =>
+  value && value.length < min ? `This value should contain minimum ${min} characters` : undefined,
 );
-
-export const maxAmount = memoize(max => value => (value && value > max
-  ? `This value should not be more than ${max}`
-  : undefined),
-);
-
-export const maxCharacters = memoize(max => value => (value && value.length > max
-  ? `This value should contain maximum ${max} characters`
-  : undefined),
-);
-
 
 export const checkValidations = (validations, value) => {
   let errorMessage = null;
@@ -60,4 +54,4 @@ export const checkValidations = (validations, value) => {
     }
   }
   return errorMessage;
-}
+};
