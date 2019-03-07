@@ -25,7 +25,10 @@
   &.error,
   &.error:focus,
   &.error:hover {
-    border: 1px solid rgb(255, 0, 0);
+    @include themify() {
+      border: 1px solid themed('error-color');
+      border-color: themed('error-color');
+    }
   }
 
   &::placeholder {
@@ -47,14 +50,14 @@
   outline: none;
 }
 
-input.input[type="date"]:before {
-  content: attr(placeholder)':' !important;
+input.input[type='date']:before {
+  content: attr(placeholder) ':' !important;
   color: #aaa;
   margin-right: 0.5em;
 }
-input[type="date"]:focus:before,
-input[type="date"]:valid:before {
-  content: "" !important;
+input[type='date']:focus:before,
+input[type='date']:valid:before {
+  content: '' !important;
 }
 
 ::placeholder {
