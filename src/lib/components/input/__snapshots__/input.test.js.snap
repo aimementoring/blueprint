@@ -1,22 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input renders properly 1`] = `
-<div
-  className="theme-purple"
->
+<div>
   <div
-    className="inputWrapper "
+    className="theme-purple"
   >
-    <input
-      className=" input false"
-      disabled="disabled"
-      name="name"
-      onChange={[Function]}
-      placeholder="Name"
-      required={true}
-      type="text"
-      value=""
-    />
+    <div
+      className="inputWrapper "
+    >
+      <input
+        className=" input false"
+        disabled="disabled"
+        name="name"
+        onChange={[Function]}
+        placeholder="Name"
+        required={true}
+        type="text"
+        value=""
+      />
+    </div>
   </div>
 </div>
 `;

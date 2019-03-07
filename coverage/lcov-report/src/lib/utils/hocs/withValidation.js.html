@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for src/lib/components/sideTrack/sideTrack.js</title>
+    <title>Code coverage report for src/lib/utils/hocs/withValidation.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../../prettify.css" />
     <link rel="stylesheet" href="../../../../base.css" />
@@ -16,32 +16,32 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../../../index.html">All files</a> / <a href="index.html">src/lib/components/sideTrack</a> sideTrack.js
+      <a href="../../../../index.html">All files</a> / <a href="index.html">src/lib/utils/hocs</a> withValidation.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">45.45% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>5/11</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">25% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>1/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">60% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/1</span>
+        <span class='fraction'>3/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">45.45% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>5/11</span>
       </div>
     </div>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -88,22 +88,23 @@
 43
 44
 45
-46</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -123,6 +124,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -133,50 +149,64 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { PureComponent } from 'react';
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 import PropTypes from 'prop-types';
-import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
-import styles from './sideTrack.module.scss';
+import { checkValidations } from '../validation';
 &nbsp;
-export default class SideTrack extends PureComponent {
-  static propTypes = {
-    ...componentPropTypes,
-    title: PropTypes.string,
-    paragraph: PropTypes.node,
-    emoji: PropTypes.node,
-    position: PropTypes.oneOf(['left', 'right']),
-  };
+export default function withValidation(WrappedComponent) {
+  // ...and returns another component...
+  return class extends React.Component {
+    static propTypes = {
+      validations: PropTypes.array,
+      onValidationFail: PropTypes.func,
+    };
 &nbsp;
-  static defaultProps = {
-    ...defaultComponentPropTypes,
-    title: '',
-    paragraph: &lt;div /&gt;,
-    emoji: (
-      &lt;span role="img" aria-label="point down"&gt;
-        👇🏿
-      &lt;/span&gt;
-    ),
-    position: 'left',
-  };
+    static defaultProps = {
+      validations: [],
+      onValidationFail: <span class="fstat-no" title="function not covered" >()</span> =&gt; { },
+    };
 &nbsp;
-  render() {
-    const { title, paragraph, emoji, position, className, containerClassName, theme } = this.props;
-    return (
-      &lt;div className={styles[`theme-${theme}`]}&gt;
-        &lt;div className={containerClassName}&gt;
-          &lt;div className={`${styles.sideTrackCallOut} ${styles[position]} ${className}`}&gt;
-            &lt;div className={styles.sideTrackCallOutWrapper}&gt;
-              &lt;div className={styles.sideTrackText}&gt;
-                &lt;h3 className={styles.sideTrackTitle}&gt;{title}&lt;/h3&gt;
-                &lt;p&gt;{paragraph}&lt;/p&gt;
-              &lt;/div&gt;
-              &lt;div className={styles.emojiWrap}&gt;{emoji}&lt;/div&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
+    constructor(props) {
+      super(props);
+      this.state = {
+        validatedOk: true,
+        validationMessage: '',
+      };
+    }
+&nbsp;
+    handleValidations = <span class="fstat-no" title="function not covered" >(v</span>alue) =&gt; {
+      const { validations, onValidationFail } = <span class="cstat-no" title="statement not covered" >this.props;</span>
+      const validationResultMsg = <span class="cstat-no" title="statement not covered" >checkValidations(validations, value);</span>
+<span class="cstat-no" title="statement not covered" >      if (validationResultMsg) {</span>
+<span class="cstat-no" title="statement not covered" >        this.setState({ validatedOk: false, validationMessage: validationResultMsg });</span>
+<span class="cstat-no" title="statement not covered" >        onValidationFail(name);</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        this.setState({ validatedOk: true, validationMessage: '' });</span>
+      }
+    }
+&nbsp;
+    render() {
+      const { validatedOk, validationMessage } = this.state;
+      // ... and renders the wrapped component with the fresh data!
+      // Notice that we pass through any additional props
+      return (
+        &lt;div&gt;
+          &lt;WrappedComponent
+            handleValidations={this.handleValidations}
+            data={this.state.data}
+            validatedOk={validatedOk}
+            validationMessage={validationMessage}
+            {...this.props}
+          /&gt;
+          {!validatedOk &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;span&gt;{validationMessage}&lt;/span&gt;}</span>
         &lt;/div&gt;
-      &lt;/div&gt;
-    );
-  }
+      );
+    }
+  };
 }
 &nbsp;</pre></td></tr>
 </table></pre>

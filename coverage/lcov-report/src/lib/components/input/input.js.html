@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">30.77% </span>
+        <span class="strong">37.5% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>4/13</span>
+        <span class='fraction'>3/8</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">30% </span>
+        <span class="strong">33.33% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>3/10</span>
+        <span class='fraction'>2/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">40% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/5</span>
+        <span class='fraction'>2/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">30.77% </span>
+        <span class="strong">37.5% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>4/13</span>
+        <span class='fraction'>3/8</span>
       </div>
     </div>
   </div>
@@ -116,29 +116,7 @@
 71
 72
 73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+74</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -175,12 +153,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -191,10 +163,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -223,11 +191,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { checkValidations } from '../../utils/validation';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
+import { withValidation } from '../../utils/hocs';
 import styles from './input.module.scss';
 &nbsp;
-export default class Input extends PureComponent {
+class Input extends PureComponent {
   static propTypes = {
     ...componentPropTypes,
     placeholder: PropTypes.string,
@@ -237,8 +205,8 @@ export default class Input extends PureComponent {
     value: PropTypes.string,
     type: PropTypes.string,
     onChangeFunction: PropTypes.func,
-    onValidationFail: PropTypes.func,
-    validations: PropTypes.array,
+    validatedOk: PropTypes.bool,
+    handleValidations: PropTypes.func.isRequired,
   };
 &nbsp;
   static defaultProps = {
@@ -248,27 +216,15 @@ export default class Input extends PureComponent {
     required: true,
     value: '',
     type: 'text',
-    validations: [],
     onChangeFunction: <span class="fstat-no" title="function not covered" >()</span> =&gt; { },
-    onValidationFail: <span class="fstat-no" title="function not covered" >()</span> =&gt; { },
-  };
-&nbsp;
-  state = {
     validatedOk: true,
-    validationMessage: '',
-  }
+  };
 &nbsp;
   handleChange = name =&gt; <span class="fstat-no" title="function not covered" >ev</span>ent =&gt; {
     const target = <span class="cstat-no" title="statement not covered" >event.target;</span>
     const value = <span class="cstat-no" title="statement not covered" >target.type === 'checkbox' ? target.checked : target.value;</span>
-    const { onChangeFunction, validations, onValidationFail } = <span class="cstat-no" title="statement not covered" >this.props;</span>
-    const validationResultMsg = <span class="cstat-no" title="statement not covered" >checkValidations(validations, value);</span>
-<span class="cstat-no" title="statement not covered" >    if (validationResultMsg) {</span>
-<span class="cstat-no" title="statement not covered" >      this.setState({ validatedOk: false, validationMessage: validationResultMsg })</span>
-<span class="cstat-no" title="statement not covered" >      onValidationFail(name);</span>
-    } else {
-<span class="cstat-no" title="statement not covered" >      this.setState({ validatedOk: true, validationMessage: '' });</span>
-    }
+    const { onChangeFunction, handleValidations } = <span class="cstat-no" title="statement not covered" >this.props;</span>
+<span class="cstat-no" title="statement not covered" >    handleValidations(value);</span>
 <span class="cstat-no" title="statement not covered" >    onChangeFunction(name, value);</span>
   };
 &nbsp;
@@ -283,12 +239,8 @@ export default class Input extends PureComponent {
       name,
       value,
       type,
-    } = this.props;
-&nbsp;
-    const {
       validatedOk,
-      validationMessage,
-    } = this.state;
+    } = this.props;
 &nbsp;
     return (
       &lt;div className={styles[`theme-${theme}`]}&gt;
@@ -303,20 +255,20 @@ export default class Input extends PureComponent {
             onChange={this.handleChange(name)}
             disabled={disabled ? 'disabled' : <span class="branch-1 cbranch-no" title="branch not covered" >''}</span>
           /&gt;
-          {!validatedOk &amp;&amp;
-<span class="branch-1 cbranch-no" title="branch not covered" >            &lt;span&gt;{validationMessage}&lt;/span&gt;}</span>
         &lt;/div&gt;
       &lt;/div&gt;
     );
   }
 }
+&nbsp;
+export default withValidation(Input);
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Mar 07 2019 16:08:19 GMT-0300 (Argentina Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Mar 07 2019 18:10:37 GMT-0300 (Argentina Standard Time)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>
