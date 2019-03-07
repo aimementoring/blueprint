@@ -5,7 +5,8 @@ exports[`Input renders properly 1`] = `
   className="null inputWrapper"
 >
   <input
-    className="null input"
+    className="null input
+            false"
     disabled="disabled"
     name="name"
     onChange={[Function]}

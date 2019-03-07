@@ -18,6 +18,10 @@
   padding: 0.1em 1.3em;
   box-sizing: border-box;
   width: 100%;
+  
+  &.error {
+    border: 1px solid rgb(255, 0, 0);
+  }
 
   &::placeholder {
     color: $eggplant-transparent;
