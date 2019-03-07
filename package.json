@@ -123,7 +123,7 @@
     "fix-lint": "eslint --fix --ext .js",
     "fix-code": "prettier-eslint --write 'src/**/*.{js,jsx}' ",
     "fix-styles": "prettier-stylelint --write 'src/**/*.{css,scss}' ",
-    "start": "cross-env NODE_ENV=production BABEL_ENV=production rollup -c -w",
+    "start": "PORT=3001 node scripts/start.js",
     "test": "cross-env NODE_ENV=test BABEL_ENV=test jest --coverage && jest-coverage-badges",
     "deploy": "yarn test && yarn build",
     "release": "release-it"
