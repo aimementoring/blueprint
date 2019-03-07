@@ -16,8 +16,7 @@ function updateValue(name, value) {
 ```
 
 ```jsx inside Markdown
-const validations = require('../../utils/validation');
-const validateEmail = validations.validateEmail;
+import { validateEmail } from '../../utils/validation';
 
 initialState = {
   value: 'asdas',
