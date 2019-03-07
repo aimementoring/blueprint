@@ -1,4 +1,5 @@
 @import '../../styles/variables/variables.module.scss';
+@import '../../styles/themes/themes.module.scss';
 
 .inputWrapper {
   float: left;
@@ -7,18 +8,20 @@
 }
 
 .input {
+  @include themify() {
+    color: themed('brand-primary');
+    background-color: themed('off-white');
+    border: 1px solid themed('eggplant');
+    font-family: themed('secondary-font-family');
+  }
   height: 60px;
-  color: $brand-primary;
-  background-color: $off-white;
-  border: 1px solid $eggplant;
   font-weight: 400;
   font-size: 0.9rem;
-  font-family: $secondary-font-family;
   border-radius: 6px;
   padding: 0.1em 1.3em;
   box-sizing: border-box;
   width: 100%;
-  
+
   &.error,
   &.error:focus,
   &.error:hover {
@@ -26,7 +29,9 @@
   }
 
   &::placeholder {
-    color: $eggplant-transparent;
+    @include themify() {
+      color: themed('eggplant-transparent');
+    }
   }
 
   @media only screen and (max-width: $sm) {
@@ -35,8 +40,10 @@
 }
 
 .input:focus {
-  background-color: $white;
-  border-color: $brand-primary;
+  @include themify() {
+    background-color: themed('white-color');
+    border-color: themed('brand-primary');
+  }
   outline: none;
 }
 
@@ -51,5 +58,7 @@ input[type="date"]:valid:before {
 }
 
 ::placeholder {
-  color: $lavender;
+  @include themify() {
+    color: themed('lavender');
+  }
 }

@@ -2,27 +2,31 @@
 
 exports[`Checkbox renders properly 1`] = `
 <div
-  className="classname customCheckbox customCheckboxDefault"
-  onClick={[Function]}
+  className="theme-purple"
 >
-  <input
-    name="checkbox"
-    type="hidden"
-    value="no"
-  />
-  <input
-    checked={true}
-    className="hide"
-    id="checkbox"
-    name="checkbox"
-    readOnly={true}
-    type="checkbox"
-    value="yes"
-  />
-  <label
-    htmlFor="checkbox"
+  <div
+    className=" customCheckbox customCheckboxDefault"
+    onClick={[Function]}
   >
-    Accept terms and conditions
-  </label>
+    <input
+      name="checkbox"
+      type="hidden"
+      value="no"
+    />
+    <input
+      checked={true}
+      className="hide"
+      id="checkbox"
+      name="checkbox"
+      readOnly={true}
+      type="checkbox"
+      value="yes"
+    />
+    <label
+      htmlFor="checkbox"
+    >
+      Accept terms and conditions
+    </label>
+  </div>
 </div>
 `;

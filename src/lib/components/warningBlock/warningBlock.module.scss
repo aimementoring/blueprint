@@ -1,0 +1,16 @@
+@import '../../styles/variables/variables.module.scss';
+@import '../../styles/themes/themes.module.scss';
+
+.warningBlock {
+  @include themify() {
+    background-color: themed('soft-lavender');
+    color: themed('black-color');
+    font-family: themed('tertiary-font-family');
+  }
+  margin-top: 3em;
+  padding: 5em 4em;
+  border-radius: 3px;
+  font-size: 1em;
+  line-height: 1.6;
+  text-align: center;
+}

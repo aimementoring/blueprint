@@ -8597,6 +8597,11 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
+libphonenumber-js-utils@^8.10.2:
+  version "8.10.5"
+  resolved "https://registry.yarnpkg.com/libphonenumber-js-utils/-/libphonenumber-js-utils-8.10.5.tgz#778cb7633c94e2524f08c3109a7450095b4e6727"
+  integrity sha512-VxpwgrAGps1p5avOVQVBTCpUQwkrJZqptV2DoTimY3VXTzm0EetbT73sWVTkg8FmreVmM2qwwFl7yqymdOkFug==
+
 lint-staged@^7.3.0:
   version "7.3.0"
   resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-7.3.0.tgz#90ff33e5ca61ed3dbac35b6f6502dbefdc0db58d"
@@ -9109,10 +9114,10 @@ mem@^4.0.0:
     mimic-fn "^1.0.0"
     p-is-promise "^1.1.0"
 
-memoize-one@^4.0.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-4.1.0.tgz#a2387c58c03fff27ca390c31b764a79addf3f906"
-  integrity sha512-2GApq0yI/b22J2j9rhbrAlsHb0Qcz+7yWxeLG8h+95sl1XPUgeLimQSOdur4Vw7cUhrBHwaUZxWFZueojqNRzA==
+memoize-one@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-5.0.0.tgz#d55007dffefb8de7546659a1722a5d42e128286e"
+  integrity sha512-7g0+ejkOaI9w5x6LvQwmj68kUj6rxROywPSCqmclG/HBacmFnZqhVscQ8kovkn9FBCNJmOz6SY42+jnvZzDWdw==
 
 memory-fs@^0.4.0, memory-fs@^0.4.1, memory-fs@~0.4.1:
   version "0.4.1"
@@ -11722,7 +11727,7 @@ prompts@^0.1.9:
     kleur "^2.0.1"
     sisteransi "^0.1.1"
 
-prop-types@^15.5.6, prop-types@^15.7.2:
+prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.6.1, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -12086,15 +12091,26 @@ react-input-autosize@^2.2.1:
   dependencies:
     prop-types "^15.5.8"
 
+react-intl-tel-input@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/react-intl-tel-input/-/react-intl-tel-input-7.0.1.tgz#395827303ee6ea42908b9f92bd7567453538c7d2"
+  integrity sha512-0FPAz6oTP1lR1CcELA9USq+Oa7XbVnCNIQO5tbPlNa6bQ1JW6p4vHO8uVORLJxTqIedSOi+5c3KXGMKnVvv8DQ==
+  dependencies:
+    classnames "^2.2.5"
+    libphonenumber-js-utils "^8.10.2"
+    prop-types "^15.6.1"
+    react-style-proptype "^3.0.0"
+    underscore.deferred "^0.4.0"
+
 react-is@^16.7.0:
   version "16.7.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.7.0.tgz#c1bd21c64f1f1364c6f70695ec02d69392f41bfa"
   integrity sha512-Z0VRQdF4NPDoI0tsXVMLkJLiwEBa+RP66g0xDHxgxysxSoCUccSten4RTF/UFvZF1dZvZ9Zu1sx+MDXwcOR34g==
 
 react-is@^16.8.1:
-  version "16.8.3"
-  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.3.tgz#4ad8b029c2a718fc0cfc746c8d4e1b7221e5387d"
-  integrity sha512-Y4rC1ZJmsxxkkPuMLwvKvlL1Zfpbcu+Bf4ZigkHup3v9EfdYhAlWAaVyA19olXq2o2mGn0w+dFKvk3pVVlYcIA==
+  version "16.8.2"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.2.tgz#09891d324cad1cb0c1f2d91f70a71a4bee34df0f"
+  integrity sha512-D+NxhSR2HUCjYky1q1DwpNUD44cDpUXzSmmFyC3ug1bClcU/iDNy0YNn1iwme28fn+NFhpA13IndOd42CrFb+Q==
 
 react-lifecycles-compat@^3.0.4:
   version "3.0.4"
@@ -12110,14 +12126,14 @@ react-player@^1.9.3:
     load-script "^1.0.0"
     prop-types "^15.5.6"
 
-react-select@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/react-select/-/react-select-2.3.0.tgz#990429622445eb2b4a6e985b8069fe7d498cae91"
-  integrity sha512-CD3jyZs5lwy/CHW3SdYU1d1FtmJxgvVPdKMwEE8dD6MyNANFtvW95P/V20StPsPppFY7oePv/i2Mun2C2+WgTA==
+react-select@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/react-select/-/react-select-2.4.1.tgz#99dd9c8b7700b5ebd38007dd707b1abdbad2e70f"
+  integrity sha512-je1cVAFsyQrGxkruQnNCuwo3+P0+1dyq7M4/gTlSwhO4ptPeTjf0eNrvCJ9iurVyorrnI88zgx2/yxrr2/oLLQ==
   dependencies:
     classnames "^2.2.5"
     emotion "^9.1.2"
-    memoize-one "^4.0.0"
+    memoize-one "^5.0.0"
     prop-types "^15.6.0"
     raf "^3.4.0"
     react-input-autosize "^2.2.1"
@@ -12127,6 +12143,13 @@ react-simple-code-editor@^0.9.3:
   version "0.9.3"
   resolved "https://registry.yarnpkg.com/react-simple-code-editor/-/react-simple-code-editor-0.9.3.tgz#12af0f85455eb1be1a86f15e325ec7861bc0db75"
   integrity sha512-JexTKcpcOjArsXUDCWNoXgIdshoacJVSuf3LbdKG0tHw5ISREoh7wvNZlRRk2gncFRSixkkTI5E18svC966rYQ==
+
+react-style-proptype@^3.0.0:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/react-style-proptype/-/react-style-proptype-3.2.2.tgz#d8e998e62ce79ec35b087252b90f19f1c33968a0"
+  integrity sha512-ywYLSjNkxKHiZOqNlso9PZByNEY+FTyh3C+7uuziK0xFXu9xzdyfHwg4S9iyiRRoPCR4k2LqaBBsWVmSBwCWYQ==
+  dependencies:
+    prop-types "^15.5.4"
 
 react-styleguidist@^9.0.3:
   version "9.0.3"
@@ -14720,6 +14743,11 @@ uglifyjs-webpack-plugin@^1.2.4:
     uglify-es "^3.3.4"
     webpack-sources "^1.1.0"
     worker-farm "^1.5.2"
+
+underscore.deferred@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/underscore.deferred/-/underscore.deferred-0.4.0.tgz#2753de633b9ff7db601a2f3fa2af92b3dd290e6c"
+  integrity sha1-J1PeYzuf99tgGi8/oq+Ss90pDmw=
 
 unherit@^1.0.4:
   version "1.1.1"

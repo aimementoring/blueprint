@@ -1,10 +1,11 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
 import styles from './checkbox.module.scss';
 
 export default class Checkbox extends PureComponent {
   static propTypes = {
-    elementClassName: PropTypes.string,
+    ...componentPropTypes,
     placeholder: PropTypes.string,
     name: PropTypes.string,
     customId: PropTypes.string,
@@ -14,7 +15,7 @@ export default class Checkbox extends PureComponent {
   };
 
   static defaultProps = {
-    elementClassName: '',
+    ...defaultComponentPropTypes,
     onChangeFunction: () => {},
     value: false,
     extraParamResponse: '',
@@ -27,24 +28,26 @@ export default class Checkbox extends PureComponent {
   };
 
   render() {
-    const { elementClassName, placeholder, name, customId, value } = this.props;
+    const { className, placeholder, name, customId, value, theme } = this.props;
 
     return (
-      <div
-        className={`${elementClassName} ${styles.customCheckbox} ${styles.customCheckboxDefault}`}
-        onClick={this.handleFieldChange}
-      >
-        <input type="hidden" name={name} value="no" />
-        <input
-          id={customId}
-          type="checkbox"
-          className="hide"
-          name={name}
-          value="yes"
-          readOnly
-          checked={value}
-        />
-        <label htmlFor={customId}>{placeholder}</label>
+      <div className={styles[`theme-${theme}`]}>
+        <div
+          className={`${className} ${styles.customCheckbox} ${styles.customCheckboxDefault}`}
+          onClick={this.handleFieldChange}
+        >
+          <input type="hidden" name={name} value="no" />
+          <input
+            id={customId}
+            type="checkbox"
+            className="hide"
+            name={name}
+            value="yes"
+            readOnly
+            checked={value}
+          />
+          <label htmlFor={customId}>{placeholder}</label>
+        </div>
       </div>
     );
   }

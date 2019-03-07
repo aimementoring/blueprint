@@ -1,20 +1,25 @@
-@import '../../styles/global/keyframes.module.scss';
+@import '../../styles/global/global.module.scss';
 @import '../../styles/variables/variables.module.scss';
+@import '../../styles/themes/themes.module.scss';
 
 .loading {
-  background: $loading-black;
+  @include themify() {
+    background: themed('loading-black');
+  }
   bottom: 0;
   left: 0;
   position: fixed;
   right: 0;
   text-align: center;
   top: 0;
+
   z-index: 1000;
 
   .spin {
+    @include themify() {
+      color: themed('brand-primary');
+    }
     box-sizing: border-box;
-    color: $brand-primary;
-    // color: $translucent-black;
     display: none;
     font-size: 14px;
     line-height: 100vh;
@@ -24,10 +29,7 @@
     padding: 0;
     position: absolute;
     text-align: center;
-    transition: -webkit-transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
-    transition: transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86),
-      -webkit-transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
-    // transition: transform .3s cubic-bezier(.78, .14, .15, .86);
+    transition: transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
     vertical-align: middle;
 
     &.spinning {
@@ -48,8 +50,10 @@
       }
 
       i {
+        @include themify() {
+          background-color: themed('brand-primary');
+        }
         animation: spinMove 1s infinite linear alternate;
-        background-color: $brand-primary;
         border-radius: 100%;
         display: block;
         height: 14px;

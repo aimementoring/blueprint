@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WarningBlock renders properly 1`] = `
+<div
+  className="theme-purple"
+>
+  <div
+    className="warningBlock "
+  >
+    Ups! There was an error, please call your AIME key contact for more information
+  </div>
+</div>
+`;

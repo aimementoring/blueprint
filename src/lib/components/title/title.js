@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import styles from './title.module.scss';
+import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
 
 const titleTypeClass = {
   gradient: styles.gradientTitle,
@@ -10,19 +11,23 @@ const titleTypeClass = {
 
 export default class Title extends PureComponent {
   static propTypes = {
-    classNameFromParent: PropTypes.string,
+    ...componentPropTypes,
     text: PropTypes.string.isRequired,
     type: PropTypes.oneOf(['gradient', 'blockTitle', 'mainTitle']),
   };
 
   static defaultProps = {
-    classNameFromParent: '',
+    ...defaultComponentPropTypes,
     type: 'gradient',
   };
 
   render() {
-    const { text, type, classNameFromParent } = this.props;
+    const { text, type, className, theme } = this.props;
     const titleClass = titleTypeClass[type];
-    return <span className={`${titleClass} ${classNameFromParent}`}>{text}</span>;
+    return (
+      <div className={styles[`theme-${theme}`]}>
+        <span className={`${titleClass} ${className}`}>{text}</span>
+      </div>
+    );
   }
 }

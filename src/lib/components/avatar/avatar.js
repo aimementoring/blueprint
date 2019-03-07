@@ -1,9 +1,11 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
 import styles from './avatar.module.scss';
 
 export default class Avatar extends PureComponent {
   static propTypes = {
+    ...componentPropTypes,
     text: PropTypes.string.isRequired,
     photo: PropTypes.arrayOf(
       PropTypes.shape({
@@ -13,6 +15,7 @@ export default class Avatar extends PureComponent {
   };
 
   static defaultProps = {
+    ...defaultComponentPropTypes,
     photo: null,
   };
 
@@ -28,14 +31,16 @@ export default class Avatar extends PureComponent {
   }
 
   render() {
-    const { photo, text } = this.props;
+    const { photo, text, theme } = this.props;
     return (
-      <div className={styles.profileAvatar}>
-        {photo && photo.length && photo[0].url ? (
-          <img alt={text} src={photo[0].url} />
-        ) : (
-          <span>{this.getInitials(text)}</span>
-        )}
+      <div className={styles[`theme-${theme}`]}>
+        <div className={styles.profileAvatar}>
+          {photo && photo.length && photo[0].url ? (
+            <img alt={text} src={photo[0].url} />
+          ) : (
+            <span>{this.getInitials(text)}</span>
+          )}
+        </div>
       </div>
     );
   }
