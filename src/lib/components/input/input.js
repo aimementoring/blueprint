@@ -14,8 +14,9 @@ class Input extends PureComponent {
     value: PropTypes.string,
     type: PropTypes.string,
     onChangeFunction: PropTypes.func,
-    validatedOk: PropTypes.bool,
+    // props from withValidation HOC
     handleValidations: PropTypes.func.isRequired,
+    isValidationOk: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -26,15 +27,14 @@ class Input extends PureComponent {
     value: '',
     type: 'text',
     onChangeFunction: () => { },
-    validatedOk: true,
   };
 
   handleChange = name => event => {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const { onChangeFunction, handleValidations } = this.props;
-    handleValidations(value);
-    onChangeFunction(name, value);
+    const isWrongValidation = handleValidations(value);
+    onChangeFunction(name, value, isWrongValidation);
   };
 
   render() {
@@ -48,7 +48,7 @@ class Input extends PureComponent {
       name,
       value,
       type,
-      validatedOk,
+      isValidationOk,
     } = this.props;
 
     return (
@@ -56,7 +56,8 @@ class Input extends PureComponent {
         <div className={`${styles.inputWrapper} ${containerClassName}`}>
           <input
             placeholder={placeholder}
-            className={`${className} ${styles.input} ${!validatedOk && styles.error}`}
+            className={`${className} ${styles.input} 
+              ${isValidationOk() && styles.error}`}
             value={value}
             name={name}
             type={type}

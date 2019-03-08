@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { checkValidations } from '../../utils/validation';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
+import { withValidation } from '../../utils/hocs';
 import styles from './textbox.module.scss';
 
-export default class TextBox extends PureComponent {
+class TextBox extends PureComponent {
   static propTypes = {
     ...componentPropTypes,
     placeholder: PropTypes.string,
@@ -12,49 +12,44 @@ export default class TextBox extends PureComponent {
     required: PropTypes.bool,
     onChangeFunction: PropTypes.func,
     value: PropTypes.string,
-    validations: PropTypes.array,
-    onValidationFail: PropTypes.func,
+    // props from withValidation HOC
+    handleValidations: PropTypes.func.isRequired,
+    isValidationOk: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
     ...defaultComponentPropTypes,
     placeholder: '',
     required: true,
-    onChangeFunction: () => {},
+    onChangeFunction: () => { },
     value: '',
-    validations: [],
-    onValidationFail: () => {},
-  };
-
-  state = {
-    validatedOk: true,
-    validationMessage: '',
   };
 
   handleChange = event => {
-    const { onChangeFunction, validations, onValidationFail, name } = this.props;
+    const { onChangeFunction, name, handleValidations } = this.props;
     const value = event.target.value;
-    const validationResultMsg = checkValidations(validations, value);
-    if (validationResultMsg) {
-      this.setState({ validatedOk: false, validationMessage: validationResultMsg });
-      onValidationFail(name);
-    } else {
-      this.setState({ validatedOk: true, validationMessage: '' });
-    }
-    onChangeFunction(name, value);
+    const isWrongValidation = handleValidations(value);
+    onChangeFunction(name, value, isWrongValidation);
   };
 
   render() {
-    const { containerClassName, placeholder, name, required, className, value, theme } = this.props;
-
-    const { validatedOk, validationMessage } = this.state;
+    const {
+      containerClassName,
+      placeholder,
+      name,
+      required,
+      className,
+      value,
+      theme,
+      isValidationOk,
+    } = this.props;
 
     return (
       <div className={styles[`theme-${theme}`]}>
         <div className={`${styles.inputWrapper} ${containerClassName}`}>
           <textarea
-            className={`${styles.input} ${styles.textarea} ${className} ${!validatedOk &&
-              styles.error}`}
+            className={`${styles.input} ${styles.textarea} ${className}
+              ${isValidationOk() && styles.error}`}
             placeholder={placeholder}
             onChange={this.handleChange}
             name={name}
@@ -62,8 +57,9 @@ export default class TextBox extends PureComponent {
             required={required || false}
           />
         </div>
-        {!validatedOk && <span>{validationMessage}</span>}
       </div>
     );
   }
 }
+
+export default withValidation(TextBox);

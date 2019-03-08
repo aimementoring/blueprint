@@ -1,0 +1,8 @@
+@import '../../styles/variables/variables.module.scss';
+@import '../../styles/themes/themes.module.scss';
+
+.error {
+  @include themify() {
+    color: themed('error-color');
+  }
+}

@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">45.45% </span>
+        <span class="strong">61.54% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>5/11</span>
+        <span class='fraction'>8/13</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">25% </span>
+        <span class="strong">18.18% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>1/4</span>
+        <span class='fraction'>2/11</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">60% </span>
+        <span class="strong">83.33% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>3/5</span>
+        <span class='fraction'>5/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">45.45% </span>
+        <span class="strong">61.54% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>5/11</span>
+        <span class='fraction'>8/13</span>
       </div>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -98,13 +98,25 @@
 53
 54
 55
-56</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -116,30 +128,42 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -156,53 +180,65 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 import PropTypes from 'prop-types';
 import { checkValidations } from '../validation';
+import styles from './withValidation.module.scss';
 &nbsp;
 export default function withValidation(WrappedComponent) {
-  // ...and returns another component...
   return class extends React.Component {
     static propTypes = {
       validations: PropTypes.array,
-      onValidationFail: PropTypes.func,
+      validationMessage: PropTypes.string,
+      theme: PropTypes.string,
     };
 &nbsp;
     static defaultProps = {
+      theme: 'purple',
       validations: [],
-      onValidationFail: <span class="fstat-no" title="function not covered" >()</span> =&gt; { },
+      validationMessage: '',
     };
 &nbsp;
     constructor(props) {
       super(props);
       this.state = {
-        validatedOk: true,
         validationMessage: '',
+        value: '',
       };
     }
 &nbsp;
-    handleValidations = <span class="fstat-no" title="function not covered" >(v</span>alue) =&gt; {
-      const { validations, onValidationFail } = <span class="cstat-no" title="statement not covered" >this.props;</span>
-      const validationResultMsg = <span class="cstat-no" title="statement not covered" >checkValidations(validations, value);</span>
-<span class="cstat-no" title="statement not covered" >      if (validationResultMsg) {</span>
-<span class="cstat-no" title="statement not covered" >        this.setState({ validatedOk: false, validationMessage: validationResultMsg });</span>
-<span class="cstat-no" title="statement not covered" >        onValidationFail(name);</span>
-      } else {
-<span class="cstat-no" title="statement not covered" >        this.setState({ validatedOk: true, validationMessage: '' });</span>
+    static getDerivedStateFromProps(props, state) {
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (props.validationMessage !== state.validationMessage) {
+<span class="cstat-no" title="statement not covered" >        return {</span>
+          validationMessage: props.validationMessage || checkValidations(props.validations, state.value),
+        };
       }
+&nbsp;
+      // Return null if the state hasn't changed
+      return null;
     }
 &nbsp;
+    handleValidations = <span class="fstat-no" title="function not covered" >(v</span>alue) =&gt; {
+      const { validations } = <span class="cstat-no" title="statement not covered" >this.props;</span>
+      const validationResultMsg = <span class="cstat-no" title="statement not covered" >checkValidations(validations, value);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      this.setState({</span>
+        validationMessage: validationResultMsg || this.props.validationMessage || '',
+        value,
+      });
+<span class="cstat-no" title="statement not covered" >      return (validationResultMsg || this.props.validationMessage);</span>
+    }
+&nbsp;
+    isValidationOk = () =&gt; !!this.state.validationMessage;
+&nbsp;
     render() {
-      const { validatedOk, validationMessage } = this.state;
-      // ... and renders the wrapped component with the fresh data!
-      // Notice that we pass through any additional props
+      const { validationMessage } = this.state;
       return (
-        &lt;div&gt;
+        &lt;div className={styles[`theme-${this.props.theme}`]}&gt;
           &lt;WrappedComponent
             handleValidations={this.handleValidations}
-            data={this.state.data}
-            validatedOk={validatedOk}
-            validationMessage={validationMessage}
+            isValidationOk={this.isValidationOk}
             {...this.props}
           /&gt;
-          {!validatedOk &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;span&gt;{validationMessage}&lt;/span&gt;}</span>
+          {validationMessage &amp;&amp;
+<span class="branch-1 cbranch-no" title="branch not covered" >            &lt;span className={styles.error}&gt;{validationMessage}&lt;/span&gt;}</span>
         &lt;/div&gt;
       );
     }
@@ -214,7 +250,7 @@ export default function withValidation(WrappedComponent) {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Mar 07 2019 18:10:37 GMT-0300 (Argentina Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Mar 08 2019 15:19:30 GMT-0300 (Argentina Standard Time)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>

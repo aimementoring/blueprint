@@ -95,3 +95,9 @@
     }
   }
 }
+
+.error {
+  @include themify() {
+    color: themed('error-color');
+  }
+}

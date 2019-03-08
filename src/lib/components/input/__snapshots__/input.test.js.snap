@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input renders properly 1`] = `
-<div>
+<div
+  className="theme-purple"
+>
   <div
     className="theme-purple"
   >
@@ -9,7 +11,8 @@ exports[`Input renders properly 1`] = `
       className="inputWrapper "
     >
       <input
-        className=" input false"
+        className=" input 
+              false"
         disabled="disabled"
         name="name"
         onChange={[Function]}
@@ -20,5 +23,6 @@ exports[`Input renders properly 1`] = `
       />
     </div>
   </div>
+  
 </div>
 `;

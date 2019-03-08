@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { Components } from './lib';
-import { validateEmail, maxCharacters, minCharacters } from './lib/utils/validation';
+import { validateEmail, maxCharacters, minCharacters, required } from './lib/utils/validation';
 
 const { Input, Button, Checkbox, TextBox } = Components;
 
@@ -14,6 +14,7 @@ class App extends Component {
       type: 'text',
       required: true,
       disabled: false,
+      validationMessage: '',
     },
     textbox: {
       placeholder: 'Textbox',
@@ -83,6 +84,14 @@ class App extends Component {
             name="disabled"
           />
           <br />
+          error message:
+          <input
+            type="text"
+            value={input.validationMessage}
+            onChange={e => this.handleInputChange('input', e)}
+            name="validationMessage"
+          />
+          <br />
           value: {input.value}
           <br />
         </div>
@@ -90,8 +99,9 @@ class App extends Component {
           {...input}
           name="value"
           onChangeFunction={(attr, value) => this.updateState('input', attr, value)}
-          validations={[validateEmail, maxCharacters(10)]}
+          validations={[validateEmail, maxCharacters(10), required]}
         />
+        <br />
       </div>
     );
   };
@@ -112,7 +122,7 @@ class App extends Component {
     return (
       <div>
         <h1>Button component</h1>
-        <Button type="button" onClickFunction={() => {}} text="Back" />
+        <Button type="button" onClickFunction={() => { }} text="Back" />
       </div>
     );
   };
@@ -125,10 +135,11 @@ class App extends Component {
         <Checkbox
           elementClassName="classname"
           handleFieldChange={(name, value) => this.updateState(name, 'value', value)}
-          labeltext="Accept terms and conditions"
+          placeholder="Accept terms and conditions"
           name="checkbox"
           customId="checkbox"
           value={checkbox.value}
+          validationMessage="is Required"
         />
       </div>
     );

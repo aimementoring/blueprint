@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
+import { withValidation } from '../../utils/hocs';
 import styles from './checkbox.module.scss';
 
-export default class Checkbox extends PureComponent {
+class Checkbox extends PureComponent {
   static propTypes = {
     ...componentPropTypes,
     placeholder: PropTypes.string,
@@ -12,23 +13,41 @@ export default class Checkbox extends PureComponent {
     onChangeFunction: PropTypes.func,
     value: PropTypes.bool,
     extraParamResponse: PropTypes.string,
+    // props from withValidation HOC
+    handleValidations: PropTypes.func.isRequired,
+    isValidationOk: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
     ...defaultComponentPropTypes,
-    onChangeFunction: () => {},
+    onChangeFunction: () => { },
     value: false,
     extraParamResponse: '',
   };
 
   handleFieldChange = e => {
     e.preventDefault();
-    const { onChangeFunction, name, extraParamResponse, value } = this.props;
-    onChangeFunction(name, !value, extraParamResponse);
+    const {
+      onChangeFunction,
+      name,
+      extraParamResponse,
+      value,
+      handleValidations,
+    } = this.props;
+    const isWrongValidation = handleValidations(value);
+    onChangeFunction(name, !value, extraParamResponse, isWrongValidation);
   };
 
   render() {
-    const { className, placeholder, name, customId, value, theme } = this.props;
+    const {
+      className,
+      placeholder,
+      name,
+      customId,
+      value,
+      theme,
+      isValidationOk,
+    } = this.props;
 
     return (
       <div className={styles[`theme-${theme}`]}>
@@ -46,9 +65,15 @@ export default class Checkbox extends PureComponent {
             readOnly
             checked={value}
           />
-          <label htmlFor={customId}>{placeholder}</label>
+          <label
+            htmlFor={customId}
+            className={`${isValidationOk() && styles.error}`}
+          >{placeholder}
+          </label>
         </div>
       </div>
     );
   }
 }
+
+export default withValidation(Checkbox);

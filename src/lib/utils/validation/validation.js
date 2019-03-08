@@ -21,7 +21,7 @@ export const validateAlphanumeric = value =>
     : "This value shouldn't contain special characters.";
 
 export const validateEmail = value =>
-  regularExpressions.email.test(value) ? undefined : 'This value is not a valid email';
+  (value === '' || regularExpressions.email.test(value)) ? undefined : 'This value is not a valid email';
 
 export const validateNonNegative = value =>
   value >= 0 ? undefined : "This value shouldn't be negative";
