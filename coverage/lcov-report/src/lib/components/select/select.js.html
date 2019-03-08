@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">45.45% </span>
+        <span class="strong">43.48% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>10/22</span>
+        <span class='fraction'>10/23</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">31.82% </span>
+        <span class="strong">33.33% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>7/22</span>
+        <span class='fraction'>8/24</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">36.36% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>4/11</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">47.62% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>10/20</span>
+        <span class='fraction'>10/21</span>
       </div>
     </div>
   </div>
@@ -163,7 +163,21 @@
 118
 119
 120
-121</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -184,6 +198,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -283,15 +299,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import Dropdown from 'react-select';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
 import { selectProps, selectDefaultProps } from './selectProps.ignore';
+import { withValidation } from '../../utils/hocs';
 &nbsp;
-export default class Select extends PureComponent {
+class Select extends PureComponent {
   static propTypes = {
     ...componentPropTypes,
     ...selectProps,
+    // props from withValidation HOC
+    handleValidations: PropTypes.func.isRequired,
+    isValidationOk: PropTypes.func.isRequired,
   };
 &nbsp;
   static defaultProps = {
@@ -303,7 +326,8 @@ export default class Select extends PureComponent {
     const { onChangeFunction, name } = <span class="cstat-no" title="statement not covered" >this.props;</span>
 <span class="cstat-no" title="statement not covered" >    if (value) {</span>
       const newValue = <span class="cstat-no" title="statement not covered" >value.length ? value.map(<span class="fstat-no" title="function not covered" >it</span>em =&gt; <span class="cstat-no" title="statement not covered" >item.value)</span> : value.value;</span>
-<span class="cstat-no" title="statement not covered" >      onChangeFunction(name, newValue);</span>
+      const isWrongValidation = <span class="cstat-no" title="statement not covered" >this.props.handleValidations(value);</span>
+<span class="cstat-no" title="statement not covered" >      onChangeFunction(name, newValue, isWrongValidation);</span>
     }
   };
 &nbsp;
@@ -324,6 +348,7 @@ export default class Select extends PureComponent {
       borderColor,
       borderColorInError,
       error,
+      isValidationOk,
     } = this.props;
     let { selectedValue } = this.props;
 &nbsp;
@@ -385,7 +410,7 @@ export default class Select extends PureComponent {
         &lt;div className={containerClassName}&gt;
           &lt;Dropdown
             placeholder={placeholder}
-            className={className}
+            className={`${className} ${isValidationOk() &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >styles.error}</span>`}
             styles={customStyles}
             onChange={this.handleChange}
             options={options}
@@ -403,13 +428,15 @@ export default class Select extends PureComponent {
     );
   }
 }
+&nbsp;
+export default withValidation(Select);
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Mar 08 2019 15:48:26 GMT-0300 (Argentina Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Mar 08 2019 17:54:42 GMT-0300 (Argentina Standard Time)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>
