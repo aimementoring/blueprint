@@ -3,7 +3,13 @@ import { render } from 'react-dom';
 import { Components } from './lib';
 import { validateEmail, maxCharacters, minCharacters, required } from './lib/utils/validation';
 
-const { Input, Button, Checkbox, TextBox } = Components;
+const {
+  Input,
+  Button,
+  Checkbox,
+  TextBox,
+  Select,
+} = Components;
 
 const container = document.getElementById('root');
 class App extends Component {
@@ -43,6 +49,27 @@ class App extends Component {
       },
     });
   };
+
+  getSelectStyles = () => {
+    return {
+      control: {
+        minHeight: '60px',
+        border: 'none',
+      },
+      input: {
+        fontFamily: 'Poppins',
+      },
+      singleValue: {
+        fontFamily: 'Poppins',
+      },
+      menu: {
+        fontFamily: 'Poppins',
+      },
+      menuList: {
+        fontFamily: 'Poppins',
+      },
+    }
+  }
 
   renderInputComponent = () => {
     const { input } = this.state;
@@ -95,12 +122,28 @@ class App extends Component {
           value: {input.value}
           <br />
         </div>
+        <Select
+          options={[
+            { value: 'Australia', label: 'Australia' },
+            { value: 'Uganda', label: 'Uganda' },
+            { value: 'South Africa', label: 'South Africa' },
+          ]}
+          value="Australia"
+          placeholder="Select a country"
+          onChangeFunction={() => { }}
+          error={true}
+          validationMessage="is Required"
+          name="countrySelected"
+          styles={this.getSelectStyles()}
+        />
         <Input
           {...input}
           name="value"
           onChangeFunction={(attr, value) => this.updateState('input', attr, value)}
           validations={[validateEmail, maxCharacters(10), required]}
         />
+
+
         <br />
       </div>
     );

@@ -1,12 +1,17 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import Dropdown from 'react-select';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
 import { selectProps, selectDefaultProps } from './selectProps.ignore';
+import { withValidation } from '../../utils/hocs';
 
-export default class Select extends PureComponent {
+class Select extends PureComponent {
   static propTypes = {
     ...componentPropTypes,
     ...selectProps,
+    // props from withValidation HOC
+    handleValidations: PropTypes.func.isRequired,
+    isValidationOk: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -18,7 +23,8 @@ export default class Select extends PureComponent {
     const { onChangeFunction, name } = this.props;
     if (value) {
       const newValue = value.length ? value.map(item => item.value) : value.value;
-      onChangeFunction(name, newValue);
+      const isWrongValidation = this.props.handleValidations(value);
+      onChangeFunction(name, newValue, isWrongValidation);
     }
   };
 
@@ -39,6 +45,7 @@ export default class Select extends PureComponent {
       borderColor,
       borderColorInError,
       error,
+      isValidationOk,
     } = this.props;
     let { selectedValue } = this.props;
 
@@ -100,7 +107,7 @@ export default class Select extends PureComponent {
         <div className={containerClassName}>
           <Dropdown
             placeholder={placeholder}
-            className={className}
+            className={`${className} ${isValidationOk() && styles.error}`}
             styles={customStyles}
             onChange={this.handleChange}
             options={options}
@@ -118,3 +125,5 @@ export default class Select extends PureComponent {
     );
   }
 }
+
+export default withValidation(Select);

@@ -5,3 +5,9 @@ select {
   appearance: none;
   vertical-align: middle;
 }
+
+.error {
+  @include themify() {
+    color: themed('error-color');
+  }
+}
