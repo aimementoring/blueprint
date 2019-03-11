@@ -2,6 +2,8 @@
 @import '../../styles/themes/themes.module.scss';
 
 .inputWrapper {
+  display: flex;
+  flex-direction: column;
   float: left;
   width: 100%;
   margin-bottom: 10px;
@@ -26,8 +28,8 @@
   &.error:focus,
   &.error:hover {
     @include themify() {
-      border: 1px solid themed('error-color');
-      border-color: themed('error-color');
+      border: 1px solid themed('error-color') !important;
+      border-color: themed('error-color') !important;
     }
   }
 
@@ -63,5 +65,11 @@ input[type='date']:valid:before {
 ::placeholder {
   @include themify() {
     color: themed('lavender');
+  }
+}
+
+.errorMessage {
+  @include themify() {
+    color: themed('error-color');
   }
 }

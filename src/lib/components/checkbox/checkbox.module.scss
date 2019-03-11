@@ -1,6 +1,11 @@
 @import '../../styles/variables/variables.module.scss';
 @import '../../styles/themes/themes.module.scss';
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .customCheckbox input[type='checkbox'] {
   display: none;
   appearance: none;
@@ -101,3 +106,9 @@
     color: themed('error-color');
   }
 }
+.errorMessage {
+  @include themify() {
+    color: themed('error-color');
+  }
+}
+

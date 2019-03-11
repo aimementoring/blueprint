@@ -35,7 +35,7 @@ export const selectProps = {
 };
 
 export const selectDefaultProps = {
-  onChangeFunction: () => {},
+  onChangeFunction: () => { },
   isMulti: false,
   error: false,
   isClearable: false,

@@ -20,7 +20,7 @@ const selectOptions = [
   name="singleValue"
   onChangeFunction={updateValue}
   options={selectOptions}
-  selectedValue={state.singleValue}
+  value={state.singleValue}
 />;
 ```
 
@@ -46,7 +46,7 @@ const selectOptions = [
   name="multipleValue"
   onChangeFunction={updateValue}
   options={selectOptions}
-  selectedValue={state.multipleValue}
+  value={state.multipleValue}
   searchable
   isMulti
 />;

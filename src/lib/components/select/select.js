@@ -4,12 +4,14 @@ import Dropdown from 'react-select';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
 import { selectProps, selectDefaultProps } from './selectProps.ignore';
 import { withValidation } from '../../utils/hocs';
+import stylesCss from './select.module.scss';
 
 class Select extends PureComponent {
   static propTypes = {
     ...componentPropTypes,
     ...selectProps,
     // props from withValidation HOC
+    getValidationMessage: PropTypes.func,
     handleValidations: PropTypes.func.isRequired,
     isValidationOk: PropTypes.func.isRequired,
   };
@@ -46,8 +48,9 @@ class Select extends PureComponent {
       borderColorInError,
       error,
       isValidationOk,
+      getValidationMessage,
     } = this.props;
-    let { selectedValue } = this.props;
+    let { value } = this.props;
 
     if (error) {
       delete styles.control.border;
@@ -94,33 +97,34 @@ class Select extends PureComponent {
     };
 
     if (isMulti) {
-      selectedValue =
-        selectedValue && selectedValue.length
-          ? options.filter(option => selectedValue.indexOf(option.value) > -1)
+      value =
+        value && value.length
+          ? options.filter(option => value.indexOf(option.value) > -1)
           : [];
     } else {
-      selectedValue = selectedValue ? options.find(option => option.value === selectedValue) : null;
+      value = value ? options.find(option => option.value === value) : null;
     }
 
     return (
-      <div className={styles[`theme-${theme}`]}>
-        <div className={containerClassName}>
-          <Dropdown
-            placeholder={placeholder}
-            className={`${className} ${isValidationOk() && styles.error}`}
-            styles={customStyles}
-            onChange={this.handleChange}
-            options={options}
-            value={selectedValue}
-            isMulti={isMulti}
-            isClearable={isClearable}
-            isDisabled={disabled}
-            isSearchable={searchable}
-            isOptionDisabled={option => option.disabled}
-            joinValues={joinValues}
-            defaultValue={defaultValues}
-          />
-        </div>
+      <div className={`${containerClassName} 
+          ${stylesCss[`theme-${theme}`]} ${stylesCss.wrapper}`}>
+        <Dropdown
+          placeholder={placeholder}
+          className={`${className} ${isValidationOk() && styles.error}`}
+          styles={customStyles}
+          onChange={this.handleChange}
+          options={options}
+          value={value}
+          isMulti={isMulti}
+          isClearable={isClearable}
+          isDisabled={disabled}
+          isSearchable={searchable}
+          isOptionDisabled={option => option.disabled}
+          joinValues={joinValues}
+          defaultValue={defaultValues}
+        />
+        {isValidationOk() &&
+          <span className={stylesCss.errorMessage}>{getValidationMessage()}</span>}
       </div>
     );
   }

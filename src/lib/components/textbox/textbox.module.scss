@@ -1,6 +1,11 @@
 @import '../input/input.module.scss';
 @import '../../styles/themes/themes.module.scss';
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .textarea {
   padding: 1rem;
   margin: 0px;
@@ -11,8 +16,13 @@
   &.error:focus,
   &.error:hover {
     @include themify() {
-      border: 1px solid themed('error-color');
-      border-color: themed('error-color');
+      border: 1px solid themed('error-color') !important;
+      border-color: themed('error-color') !important;
     }
+  }
+}
+.errorMessage {
+  @include themify() {
+    color: themed('error-color');
   }
 }

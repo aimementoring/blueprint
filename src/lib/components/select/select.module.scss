@@ -6,7 +6,18 @@ select {
   vertical-align: middle;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .error {
+  @include themify() {
+    color: themed('error-color') !important;
+  }
+}
+
+.errorMessage {
   @include themify() {
     color: themed('error-color');
   }

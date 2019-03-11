@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import { Components } from './lib';
-import { validateEmail, maxCharacters, minCharacters, required } from './lib/utils/validation';
+import { Components, Utils } from './lib';
+// import { validateEmail, maxCharacters, minCharacters, required } from './lib/utils/validation';
 
 const {
   Input,
@@ -10,6 +10,13 @@ const {
   TextBox,
   Select,
 } = Components;
+
+const {
+  validateEmail,
+  minCharacters,
+  required,
+  maxCharacters,
+} = Utils.Validation;
 
 const container = document.getElementById('root');
 class App extends Component {
@@ -140,7 +147,7 @@ class App extends Component {
           {...input}
           name="value"
           onChangeFunction={(attr, value) => this.updateState('input', attr, value)}
-          validations={[validateEmail, maxCharacters(10), required]}
+          validations={[required, validateEmail, maxCharacters(10)]}
         />
 
 

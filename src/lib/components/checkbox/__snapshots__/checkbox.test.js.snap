@@ -2,37 +2,32 @@
 
 exports[`Checkbox renders properly 1`] = `
 <div
-  className="theme-purple"
+  className="theme-purple wrapper"
 >
   <div
-    className="theme-purple"
+    className=" customCheckbox customCheckboxDefault"
+    onClick={[Function]}
   >
-    <div
-      className=" customCheckbox customCheckboxDefault"
-      onClick={[Function]}
+    <input
+      name="checkbox"
+      type="hidden"
+      value="no"
+    />
+    <input
+      checked={true}
+      className="hide"
+      id="checkbox"
+      name="checkbox"
+      readOnly={true}
+      type="checkbox"
+      value="yes"
+    />
+    <label
+      className="false"
+      htmlFor="checkbox"
     >
-      <input
-        name="checkbox"
-        type="hidden"
-        value="no"
-      />
-      <input
-        checked={true}
-        className="hide"
-        id="checkbox"
-        name="checkbox"
-        readOnly={true}
-        type="checkbox"
-        value="yes"
-      />
-      <label
-        className="false"
-        htmlFor="checkbox"
-      >
-        Accept terms and conditions
-      </label>
-    </div>
+      Accept terms and conditions
+    </label>
   </div>
-  
 </div>
 `;

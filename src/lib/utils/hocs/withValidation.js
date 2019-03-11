@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { checkValidations } from '../validation';
-import styles from './withValidation.module.scss';
+// import styles from './withValidation.module.scss';
 
 export default function withValidation(WrappedComponent) {
   return class extends React.Component {
@@ -47,20 +47,19 @@ export default function withValidation(WrappedComponent) {
       return (validationResultMsg || this.props.validationMessage);
     }
 
+    getValidationMessage = () => this.state.validationMessage;
+
     isValidationOk = () => !!this.state.validationMessage;
 
     render() {
-      const { validationMessage } = this.state;
+      // const { validationMessage } = this.state;
       return (
-        <div className={styles[`theme-${this.props.theme}`]}>
-          <WrappedComponent
-            handleValidations={this.handleValidations}
-            isValidationOk={this.isValidationOk}
-            {...this.props}
-          />
-          {validationMessage &&
-            <span className={styles.error}>{validationMessage}</span>}
-        </div>
+        <WrappedComponent
+          handleValidations={this.handleValidations}
+          isValidationOk={this.isValidationOk}
+          getValidationMessage={this.getValidationMessage}
+          {...this.props}
+        />
       );
     }
   };

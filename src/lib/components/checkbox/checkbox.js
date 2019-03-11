@@ -14,6 +14,7 @@ class Checkbox extends PureComponent {
     value: PropTypes.bool,
     extraParamResponse: PropTypes.string,
     // props from withValidation HOC
+    getValidationMessage: PropTypes.func,
     handleValidations: PropTypes.func.isRequired,
     isValidationOk: PropTypes.func.isRequired,
   };
@@ -47,10 +48,11 @@ class Checkbox extends PureComponent {
       value,
       theme,
       isValidationOk,
+      getValidationMessage,
     } = this.props;
 
     return (
-      <div className={styles[`theme-${theme}`]}>
+      <div className={`${styles[`theme-${theme}`]} ${styles.wrapper}`}>
         <div
           className={`${className} ${styles.customCheckbox} ${styles.customCheckboxDefault}`}
           onClick={this.handleFieldChange}
@@ -71,6 +73,8 @@ class Checkbox extends PureComponent {
           >{placeholder}
           </label>
         </div>
+        {isValidationOk() &&
+          <span className={styles.errorMessage}>{getValidationMessage()}</span>}
       </div>
     );
   }
