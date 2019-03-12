@@ -10,7 +10,9 @@ const regularExpressions = {
   numeric: /^\d+$/,
 };
 
-export const required = value => (value !== undefined && value !== '' ? undefined : 'Required');
+export const required = value => (value !== undefined && value !== '' && value !== null
+  ? undefined
+  : 'Required');
 
 export const validateNumeric = value =>
   regularExpressions.numeric.test(value) ? undefined : 'This value should be a valid number.';
@@ -55,3 +57,22 @@ export const checkValidations = (validations, value) => {
   }
   return errorMessage;
 };
+
+export const validateComponents = (componentsObject, props) => {
+  let hasError = false;
+  for (let i = 0; i < Object.keys(componentsObject).length; i++) {
+    const inputField = Object.keys(componentsObject)[i];
+    const componentSelected = componentsObject[inputField];
+    if (!(componentSelected.condition && !componentSelected.condition())) {
+      const validationMessage = checkValidations(
+        componentSelected.validations,
+        props[inputField]);
+
+      if (validationMessage) {
+        componentSelected.errorMessage = validationMessage;
+        hasError = true;
+      }
+    }
+  }
+  return { hasError, componentsObject };
+}

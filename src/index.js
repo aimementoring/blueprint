@@ -27,7 +27,7 @@ class App extends Component {
       type: 'text',
       required: true,
       disabled: false,
-      validationMessage: '',
+      validationMessage: 'there is an error here',
     },
     textbox: {
       placeholder: 'Textbox',

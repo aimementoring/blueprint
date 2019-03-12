@@ -10,6 +10,7 @@ import {
   maxCharacters,
   minCharacters,
   checkValidations,
+  validateComponents,
 } from './validation';
 
 export {
@@ -24,4 +25,5 @@ export {
   maxCharacters,
   minCharacters,
   checkValidations,
+  validateComponents,
 };
