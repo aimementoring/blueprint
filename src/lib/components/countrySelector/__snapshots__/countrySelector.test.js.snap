@@ -5,7 +5,7 @@ exports[`CountrySelector renders properly 1`] = `
   className="theme-purple"
 >
   <div
-    className=" 
+    className="
           theme-purple wrapper"
   >
     <div

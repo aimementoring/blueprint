@@ -10,9 +10,8 @@ const regularExpressions = {
   numeric: /^\d+$/,
 };
 
-export const required = value => (value !== undefined && value !== '' && value !== null
-  ? undefined
-  : 'Required');
+export const required = value =>
+  value !== undefined && value !== '' && value !== null && value !== false ? undefined : 'Required';
 
 export const validateNumeric = value =>
   regularExpressions.numeric.test(value) ? undefined : 'This value should be a valid number.';
@@ -23,7 +22,9 @@ export const validateAlphanumeric = value =>
     : "This value shouldn't contain special characters.";
 
 export const validateEmail = value =>
-  (value === '' || regularExpressions.email.test(value)) ? undefined : 'This value is not a valid email';
+  value === '' || regularExpressions.email.test(value)
+    ? undefined
+    : 'This value is not a valid email';
 
 export const validateNonNegative = value =>
   value >= 0 ? undefined : "This value shouldn't be negative";
@@ -64,9 +65,7 @@ export const validateComponents = (componentsObject, props) => {
     const inputField = Object.keys(componentsObject)[i];
     const componentSelected = componentsObject[inputField];
     if (!(componentSelected.condition && !componentSelected.condition())) {
-      const validationMessage = checkValidations(
-        componentSelected.validations,
-        props[inputField]);
+      const validationMessage = checkValidations(componentSelected.validations, props[inputField]);
 
       if (validationMessage) {
         componentSelected.errorMessage = validationMessage;
@@ -75,4 +74,4 @@ export const validateComponents = (componentsObject, props) => {
     }
   }
   return { hasError, componentsObject };
-}
+};

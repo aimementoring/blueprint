@@ -1,8 +1,7 @@
 @import '../../styles/variables/variables.module.scss';
 @import '../../styles/themes/themes.module.scss';
 
-.error {
+.error,
+.errorMessage {
   color: $error-color;
-  // @include themify() {
-  // }
 }

@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">53.85% </span>
+        <span class="strong">57.14% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>7/13</span>
+        <span class='fraction'>8/14</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">11.11% </span>
+        <span class="strong">18.18% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>1/9</span>
+        <span class='fraction'>2/11</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">71.43% </span>
+        <span class="strong">75% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>5/7</span>
+        <span class='fraction'>6/8</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">53.85% </span>
+        <span class="strong">57.14% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>7/13</span>
+        <span class='fraction'>8/14</span>
       </div>
     </div>
   </div>
@@ -109,7 +109,13 @@
 64
 65
 66
-67</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+67
+68
+69
+70
+71
+72
+73</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -139,6 +145,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -163,8 +170,13 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -178,7 +190,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 import PropTypes from 'prop-types';
 import { checkValidations } from '../validation';
-// import styles from './withValidation.module.scss';
+import styles from './withValidation.module.scss';
 &nbsp;
 export default function withValidation(WrappedComponent) {
   return class extends React.Component {
@@ -205,7 +217,8 @@ export default function withValidation(WrappedComponent) {
     static getDerivedStateFromProps(props, state) {
       <span class="missing-if-branch" title="if path not taken" >I</span>if (props.validationMessage !== state.validationMessage) {
 <span class="cstat-no" title="statement not covered" >        return {</span>
-          validationMessage: props.validationMessage || checkValidations(props.validations, state.value),
+          validationMessage:
+            props.validationMessage || checkValidations(props.validations, state.value),
         };
       }
 &nbsp;
@@ -213,7 +226,7 @@ export default function withValidation(WrappedComponent) {
       return null;
     }
 &nbsp;
-    handleValidations = <span class="fstat-no" title="function not covered" >(v</span>alue) =&gt; {
+    handleValidations = <span class="fstat-no" title="function not covered" >va</span>lue =&gt; {
       const { validations } = <span class="cstat-no" title="statement not covered" >this.props;</span>
       const validationResultMsg = <span class="cstat-no" title="statement not covered" >checkValidations(validations, value);</span>
 &nbsp;
@@ -221,20 +234,25 @@ export default function withValidation(WrappedComponent) {
         validationMessage: validationResultMsg || this.props.validationMessage || '',
         value,
       });
-<span class="cstat-no" title="statement not covered" >      return (validationResultMsg || this.props.validationMessage);</span>
-    }
+<span class="cstat-no" title="statement not covered" >      return validationResultMsg || this.props.validationMessage;</span>
+    };
 &nbsp;
     getValidationMessage = <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >this.state.validationMessage;</span>
 &nbsp;
     isValidationOk = () =&gt; !!this.state.validationMessage;
 &nbsp;
+    renderValidationError = () =&gt;
+      this.isValidationOk() &amp;&amp; (
+<span class="branch-1 cbranch-no" title="branch not covered" >        &lt;span className={styles.errorMessage}&gt;{this.getValidationMessage()}&lt;/span&gt;</span>
+      );
+&nbsp;
     render() {
-      // const { validationMessage } = this.state;
       return (
         &lt;WrappedComponent
           handleValidations={this.handleValidations}
           isValidationOk={this.isValidationOk}
           getValidationMessage={this.getValidationMessage}
+          renderValidationError={this.renderValidationError}
           {...this.props}
         /&gt;
       );
@@ -247,7 +265,7 @@ export default function withValidation(WrappedComponent) {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Mar 12 2019 20:45:52 GMT-0300 (Argentina Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Mar 13 2019 18:12:44 GMT-0300 (Argentina Standard Time)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>

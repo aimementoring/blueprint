@@ -11,7 +11,7 @@ class Select extends PureComponent {
     ...componentPropTypes,
     ...selectProps,
     // props from withValidation HOC
-    getValidationMessage: PropTypes.func,
+    renderValidationError: PropTypes.func,
     handleValidations: PropTypes.func.isRequired,
     isValidationOk: PropTypes.func.isRequired,
   };
@@ -48,7 +48,7 @@ class Select extends PureComponent {
       borderColorInError,
       error,
       isValidationOk,
-      getValidationMessage,
+      renderValidationError,
     } = this.props;
     let { value } = this.props;
 
@@ -98,16 +98,16 @@ class Select extends PureComponent {
 
     if (isMulti) {
       value =
-        value && value.length
-          ? options.filter(option => value.indexOf(option.value) > -1)
-          : [];
+        value && value.length ? options.filter(option => value.indexOf(option.value) > -1) : [];
     } else {
       value = value ? options.find(option => option.value === value) : null;
     }
 
     return (
-      <div className={`${containerClassName} 
-          ${stylesCss[`theme-${theme}`]} ${stylesCss.wrapper}`}>
+      <div
+        className={`${containerClassName}
+          ${stylesCss[`theme-${theme}`]} ${stylesCss.wrapper}`}
+      >
         <Dropdown
           placeholder={placeholder}
           className={`${className} ${isValidationOk() && styles.error}`}
@@ -123,8 +123,7 @@ class Select extends PureComponent {
           joinValues={joinValues}
           defaultValue={defaultValues}
         />
-        {isValidationOk() &&
-          <span className={stylesCss.errorMessage}>{getValidationMessage()}</span>}
+        {renderValidationError()}
       </div>
     );
   }

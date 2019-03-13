@@ -2,7 +2,7 @@
 
 exports[`Select renders properly 1`] = `
 <div
-  className=" 
+  className="
           theme-purple wrapper"
 >
   <div

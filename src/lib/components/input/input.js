@@ -15,7 +15,7 @@ class Input extends PureComponent {
     type: PropTypes.string,
     onChangeFunction: PropTypes.func,
     // props from withValidation HOC
-    getValidationMessage: PropTypes.func,
+    renderValidationError: PropTypes.func,
     handleValidations: PropTypes.func.isRequired,
     isValidationOk: PropTypes.func.isRequired,
   };
@@ -27,7 +27,7 @@ class Input extends PureComponent {
     required: true,
     value: '',
     type: 'text',
-    onChangeFunction: () => { },
+    onChangeFunction: () => {},
   };
 
   handleChange = name => event => {
@@ -50,7 +50,7 @@ class Input extends PureComponent {
       value,
       type,
       isValidationOk,
-      getValidationMessage,
+      renderValidationError,
     } = this.props;
 
     return (
@@ -65,8 +65,7 @@ class Input extends PureComponent {
           onChange={this.handleChange(name)}
           disabled={disabled ? 'disabled' : ''}
         />
-        {isValidationOk() &&
-          <span className={styles.errorMessage}>{getValidationMessage()}</span>}
+        {renderValidationError()}
       </div>
     );
   }

@@ -13,7 +13,7 @@ class TextBox extends PureComponent {
     onChangeFunction: PropTypes.func,
     value: PropTypes.string,
     // props from withValidation HOC
-    getValidationMessage: PropTypes.func,
+    renderValidationError: PropTypes.func.isRequired,
     handleValidations: PropTypes.func.isRequired,
     isValidationOk: PropTypes.func.isRequired,
   };
@@ -22,7 +22,7 @@ class TextBox extends PureComponent {
     ...defaultComponentPropTypes,
     placeholder: '',
     required: true,
-    onChangeFunction: () => { },
+    onChangeFunction: () => {},
     value: '',
   };
 
@@ -43,13 +43,13 @@ class TextBox extends PureComponent {
       value,
       theme,
       isValidationOk,
-      getValidationMessage,
+      renderValidationError,
     } = this.props;
 
     return (
       <div className={`${containerClassName} ${styles[`theme-${theme}`]} ${styles.wrapper}`}>
         <textarea
-          className={`${isValidationOk() && styles.error} 
+          className={`${isValidationOk() && styles.error}
             ${className} ${styles.input} ${styles.textarea}`}
           placeholder={placeholder}
           onChange={this.handleChange}
@@ -57,8 +57,7 @@ class TextBox extends PureComponent {
           value={value}
           required={required || false}
         />
-        {isValidationOk() &&
-          <span className={styles.errorMessage}>{getValidationMessage()}</span>}
+        {renderValidationError()}
       </div>
     );
   }

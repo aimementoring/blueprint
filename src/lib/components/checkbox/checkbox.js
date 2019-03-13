@@ -14,27 +14,21 @@ class Checkbox extends PureComponent {
     value: PropTypes.bool,
     extraParamResponse: PropTypes.string,
     // props from withValidation HOC
-    getValidationMessage: PropTypes.func,
+    renderValidationError: PropTypes.func.isRequired,
     handleValidations: PropTypes.func.isRequired,
     isValidationOk: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
     ...defaultComponentPropTypes,
-    onChangeFunction: () => { },
+    onChangeFunction: () => {},
     value: false,
     extraParamResponse: '',
   };
 
   handleFieldChange = e => {
     e.preventDefault();
-    const {
-      onChangeFunction,
-      name,
-      extraParamResponse,
-      value,
-      handleValidations,
-    } = this.props;
+    const { onChangeFunction, name, extraParamResponse, value, handleValidations } = this.props;
     const isWrongValidation = handleValidations(value);
     onChangeFunction(name, !value, extraParamResponse, isWrongValidation);
   };
@@ -48,7 +42,7 @@ class Checkbox extends PureComponent {
       value,
       theme,
       isValidationOk,
-      getValidationMessage,
+      renderValidationError,
     } = this.props;
 
     return (
@@ -67,14 +61,11 @@ class Checkbox extends PureComponent {
             readOnly
             checked={value}
           />
-          <label
-            htmlFor={customId}
-            className={`${isValidationOk() && styles.error}`}
-          >{placeholder}
+          <label htmlFor={customId} className={`${isValidationOk() && styles.error}`}>
+            {placeholder}
           </label>
         </div>
-        {isValidationOk() &&
-          <span className={styles.errorMessage}>{getValidationMessage()}</span>}
+        {renderValidationError()}
       </div>
     );
   }

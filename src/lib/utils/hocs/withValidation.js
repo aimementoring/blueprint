@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { checkValidations } from '../validation';
-// import styles from './withValidation.module.scss';
+import styles from './withValidation.module.scss';
 
 export default function withValidation(WrappedComponent) {
   return class extends React.Component {
@@ -28,7 +28,8 @@ export default function withValidation(WrappedComponent) {
     static getDerivedStateFromProps(props, state) {
       if (props.validationMessage !== state.validationMessage) {
         return {
-          validationMessage: props.validationMessage || checkValidations(props.validations, state.value),
+          validationMessage:
+            props.validationMessage || checkValidations(props.validations, state.value),
         };
       }
 
@@ -36,7 +37,7 @@ export default function withValidation(WrappedComponent) {
       return null;
     }
 
-    handleValidations = (value) => {
+    handleValidations = value => {
       const { validations } = this.props;
       const validationResultMsg = checkValidations(validations, value);
 
@@ -44,20 +45,25 @@ export default function withValidation(WrappedComponent) {
         validationMessage: validationResultMsg || this.props.validationMessage || '',
         value,
       });
-      return (validationResultMsg || this.props.validationMessage);
-    }
+      return validationResultMsg || this.props.validationMessage;
+    };
 
     getValidationMessage = () => this.state.validationMessage;
 
     isValidationOk = () => !!this.state.validationMessage;
 
+    renderValidationError = () =>
+      this.isValidationOk() && (
+        <span className={styles.errorMessage}>{this.getValidationMessage()}</span>
+      );
+
     render() {
-      // const { validationMessage } = this.state;
       return (
         <WrappedComponent
           handleValidations={this.handleValidations}
           isValidationOk={this.isValidationOk}
           getValidationMessage={this.getValidationMessage}
+          renderValidationError={this.renderValidationError}
           {...this.props}
         />
       );

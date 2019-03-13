@@ -5,7 +5,7 @@ exports[`TextBox renders properly 1`] = `
   className=" theme-purple wrapper"
 >
   <textarea
-    className="false 
+    className="false
             myClass input textarea"
     name="textbox"
     onChange={[Function]}

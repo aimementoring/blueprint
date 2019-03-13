@@ -27,7 +27,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/43</span>
+        <span class='fraction'>0/44</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>0/16</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">34.21% </span>
+        <span class="strong">33.33% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>13/38</span>
+        <span class='fraction'>13/39</span>
       </div>
     </div>
   </div>
@@ -120,8 +120,7 @@
 75
 76
 77
-78
-79</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+78</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -130,18 +129,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -154,9 +141,18 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -172,6 +168,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -188,8 +188,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -211,9 +209,8 @@ const regularExpressions = {
   numeric: /^\d+$/,
 };
 &nbsp;
-export const required = <span class="fstat-no" title="function not covered" >va</span>lue =&gt; (<span class="cstat-no" title="statement not covered" >value !== undefined &amp;&amp; value !== '' &amp;&amp; value !== null</span>
-  ? undefined
-  : 'Required');
+export const required = <span class="fstat-no" title="function not covered" >va</span>lue =&gt;
+<span class="cstat-no" title="statement not covered" >  value !== undefined &amp;&amp; value !== '' &amp;&amp; value !== null &amp;&amp; value !== false ? undefined : 'Required';</span>
 &nbsp;
 export const validateNumeric = <span class="fstat-no" title="function not covered" >va</span>lue =&gt;
 <span class="cstat-no" title="statement not covered" >  regularExpressions.numeric.test(value) ? undefined : 'This value should be a valid number.';</span>
@@ -224,7 +221,9 @@ export const validateAlphanumeric = <span class="fstat-no" title="function not c
     : "This value shouldn't contain special characters.";
 &nbsp;
 export const validateEmail = <span class="fstat-no" title="function not covered" >va</span>lue =&gt;
-<span class="cstat-no" title="statement not covered" >  (value === '' || regularExpressions.email.test(value)) ? undefined : 'This value is not a valid email';</span>
+<span class="cstat-no" title="statement not covered" >  value === '' || regularExpressions.email.test(value)</span>
+    ? undefined
+    : 'This value is not a valid email';
 &nbsp;
 export const validateNonNegative = <span class="fstat-no" title="function not covered" >va</span>lue =&gt;
 <span class="cstat-no" title="statement not covered" >  value &gt;= 0 ? undefined : "This value shouldn't be negative";</span>
@@ -265,9 +264,7 @@ export const validateComponents = <span class="fstat-no" title="function not cov
     const inputField = <span class="cstat-no" title="statement not covered" >Object.keys(componentsObject)[i];</span>
     const componentSelected = <span class="cstat-no" title="statement not covered" >componentsObject[inputField];</span>
 <span class="cstat-no" title="statement not covered" >    if (!(componentSelected.condition &amp;&amp; !componentSelected.condition())) {</span>
-      const validationMessage = <span class="cstat-no" title="statement not covered" >checkValidations(</span>
-        componentSelected.validations,
-        props[inputField]);
+      const validationMessage = <span class="cstat-no" title="statement not covered" >checkValidations(componentSelected.validations, props[inputField]);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >      if (validationMessage) {</span>
 <span class="cstat-no" title="statement not covered" >        componentSelected.errorMessage = validationMessage;</span>
@@ -276,14 +273,14 @@ export const validateComponents = <span class="fstat-no" title="function not cov
     }
   }
 <span class="cstat-no" title="statement not covered" >  return { hasError, componentsObject };</span>
-}
+};
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Mar 12 2019 20:45:52 GMT-0300 (Argentina Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Mar 13 2019 18:12:44 GMT-0300 (Argentina Standard Time)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>
