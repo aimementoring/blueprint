@@ -9,6 +9,7 @@ export default class SideTrack extends PureComponent {
     title: PropTypes.string,
     paragraph: PropTypes.node,
     emoji: PropTypes.node,
+    emojiPosition: PropTypes.oneOf(['left', 'right', 'top', 'bottom']),
     position: PropTypes.oneOf(['left', 'right']),
   };
 
@@ -21,11 +22,20 @@ export default class SideTrack extends PureComponent {
         👇🏿
       </span>
     ),
+    emojiPosition: 'left',
     position: 'left',
   };
 
   render() {
-    const { title, paragraph, emoji, position, className, containerClassName, theme } = this.props;
+    const {
+      title,
+      paragraph,
+      emoji,
+      position,
+      emojiPosition,
+      className,
+      containerClassName,
+      theme } = this.props;
     return (
       <div className={styles[`theme-${theme}`]}>
         <div className={containerClassName}>
@@ -35,7 +45,7 @@ export default class SideTrack extends PureComponent {
                 <h3 className={styles.sideTrackTitle}>{title}</h3>
                 <p>{paragraph}</p>
               </div>
-              <div className={styles.emojiWrap}>{emoji}</div>
+              <div className={`${styles.emojiWrap} ${styles[emojiPosition]}`}>{emoji}</div>
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@
   @include themify() {
     background-color: themed('brandTertiary');
   }
-  
+
   @media only screen and (min-width: 111em) {
     left: auto;
     width: 300px;
@@ -90,5 +90,29 @@
     display: inline-block;
     bottom: 263px;
     right: 154px;
+  }
+
+  @media only screen and (min-width: $md) {
+    bottom: -20px;
+  }
+      
+  &.left {
+    top: 15px;
+    left: -130px;
+  }
+
+  &.right {
+    top: 15px;
+    left: 170px;
+  }
+
+  &.top {
+    top: -15px;
+    left: auto;
+  }
+
+  &.bottom {
+    top: auto;
+    left: auto;
   }
 }

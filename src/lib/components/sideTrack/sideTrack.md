@@ -9,8 +9,8 @@ const paragraph = (
   </span>
 );
 const emoji = (
-  <span role="img" aria-label="point down">
-    👇🏿
+  <span role="img" aria-label="point left">
+    👈🏿
   </span>
 );
 <div style={{ position: 'relative', minHeight: '280px' }}>
@@ -18,6 +18,7 @@ const emoji = (
     title="Hey! Want to do more than just mentoring? Want to lead a mentoring program?"
     paragraph={paragraph}
     emoji={emoji}
+    emojiPosition="left"
   />
 </div>;
 ```
@@ -44,6 +45,7 @@ const emoji = (
     emoji={emoji}
     theme="light"
     position="right"
+    emojiPosition="bottom"
   />
 </div>;
 ```

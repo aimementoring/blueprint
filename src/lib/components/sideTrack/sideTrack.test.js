@@ -11,7 +11,7 @@ describe('SideTrack', () => {
     );
     const tree = renderer
       .create(
-        <SideTrack title="Side track title" paragraph={sideTrackParagraph} position="right" />,
+        <SideTrack title="Side track title" paragraph={sideTrackParagraph} position="right" emojiPosition="left" />,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
