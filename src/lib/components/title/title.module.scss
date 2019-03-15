@@ -14,9 +14,9 @@
     weight: 100;
   }
   @include themify() {
-    background: linear-gradient(135deg, themed('electric-blue'), themed('brand-tertiary'));
-    font-family: themed('gradient-title-font-family');
-    color: themed('white-color');
+    background: themed('gradientTitleBackground');
+    font-family: themed('gradientFontFamily');
+    color: themed('gradientTitleColor');
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
   }
@@ -28,8 +28,8 @@
 
 .blockTitle {
   @include themify() {
-    color: themed('brand-tertiary');
-    font-family: themed('tertiary-font-family');
+    color: themed('brandTertiary');
+    font-family: themed('tertiaryFontFamily');
   }
   position: relative;
   z-index: 2;
@@ -45,8 +45,8 @@
 
 .mainTitle {
   @include themify() {
-    color: themed('white-color');
-    font-family: themed('tertiary-font-family');
+    color: themed('mainTitleColor');
+    font-family: themed('tertiaryFontFamily');
   }
   line-height: 1.125;
   margin-bottom: 2rem;

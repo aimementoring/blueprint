@@ -17,19 +17,19 @@
 
 .button {
   @include themify() {
-    color: themed('white-color');
-    font-family: themed('secondary-font-family');
-    background-color: themed('brand-primary');
-    transition: themed('smooth-transition');
+    color: themed('buttonColor');
+    font-family: themed('secondaryFontFamily');
+    background-color: themed('buttonBackgroundColor');
+    transition: themed('smoothTransition');
 
     &:hover {
-      background-color: themed('brand-tertiary');
+      background-color: themed('elementHoverColor');
     }
 
     &:disabled,
     &[disabled] {
-      background-color: themed('grey-color');
-      color: themed('white-color');
+      background-color: themed('disabledButtonBackgroundColor');
+      color: themed('disabledButtonColor');
     }
   }
 
@@ -49,8 +49,8 @@
 
 .underneathLabel {
   @include themify() {
-    font-family: themed('secondary-font-family');
-    color: themed('brand-primary');
+    font-family: themed('secondaryFontFamily');
+    color: themed('buttonColor');
   }
   text-align: left;
   font-size: 0.8rem;
@@ -60,9 +60,9 @@
 
 .linkButton {
   @include themify() {
-    background-color: themed('brand-primary');
-    font-family: themed('tertiary-font-family');
-    color: themed('white-color');
+    background-color: themed('linkBackgroundColor');
+    font-family: themed('tertiaryFontFamily');
+    color: themed('linkColor');
   }
   cursor: pointer;
   padding: 1rem 2.5rem;

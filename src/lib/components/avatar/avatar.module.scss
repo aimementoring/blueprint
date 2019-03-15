@@ -3,7 +3,7 @@
 
 .profileAvatar {
   @include themify() {
-    background: themed('medium-grey');
+    background: themed('avatarBackground');
   }
   width: 48px;
   height: 48px;

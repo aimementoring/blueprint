@@ -19,7 +19,7 @@
 
     &:hover {
       @include themify() {
-        color: themed('grey-color');
+        color: themed('checkboxColor');
       }
     }
   }
@@ -27,8 +27,8 @@
   &:not(:checked) {
     ~ label:after {
       @include themify() {
-        background-color: themed('white-color');
-        border-color: themed('light-grey');
+        background-color: themed('checkBoxNotCheckedBackgroundColor');
+        border-color: themed('checkBoxNotCheckedBorderColor');
       }
       content: '';
       width: 16px;
@@ -62,15 +62,15 @@
 .customCheckboxDefault input[type='checkbox'] {
   &:focus ~ label:after {
     @include themify() {
-      border-color: themed('brand-primary');
+      border-color: themed('brandPrimary');
     }
   }
 
   &:checked {
     ~ label:after {
       @include themify() {
-        background-color: themed('white-color');
-        border-color: themed('brand-primary');
+        background-color: themed('checkBoxCheckedBackgroundColor');
+        border-color: themed('brandPrimary');
       }
       content: '';
       width: 16px;
@@ -103,11 +103,11 @@
 
 .error {
   @include themify() {
-    color: themed('error-color');
+    color: themed('fieldColorError');
   }
 }
 .errorMessage {
   @include themify() {
-    color: themed('error-color');
+    color: themed('fieldColorError');
   }
 }

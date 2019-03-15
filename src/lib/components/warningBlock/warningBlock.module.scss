@@ -3,9 +3,9 @@
 
 .warningBlock {
   @include themify() {
-    background-color: themed('soft-lavender');
-    color: themed('black-color');
-    font-family: themed('tertiary-font-family');
+    background-color: themed('warningBlockBackground');
+    color: themed('warningBlockColor');
+    font-family: themed('tertiaryFontFamily');
   }
   margin-top: 3em;
   padding: 5em 4em;

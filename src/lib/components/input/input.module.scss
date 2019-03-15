@@ -14,31 +14,23 @@
     color: themed('fieldColor');
     background-color: themed('fieldBackground');
     border: themed('fieldBorder');
-    font-family: themed('fieldFontFamily');
+    font-family: themed('primaryFontFamily');
     font-size: themed('fieldFontSize');
     border-radius: themed('fieldBorderRadius');
-    height: themed('fieldHeight');
+    height: themed('inputHeight');
     font-weight: themed('fieldFontWeight');
-    padding: themed('fieldPadding');
+    padding: themed('inputPadding');
   }
   width: 100%;
 
-  &.error,
-  &.error:focus,
-  &.error:hover {
-    @include themify() {
-      border: themed('fieldBoardError'); // !important
-      border-color: themed('fieldColorError'); // !important
-    }
-  }
-
+  
   &::placeholder {
     @include themify() {
       color: themed('fieldPlaceholderColor');
       font-size: themed('fieldPlaceholderFontSize');
     }
   }
-
+  
   @media only screen and (max-width: $sm) {
     margin-bottom: 0.8em;
   }
@@ -46,8 +38,8 @@
 
 .input:focus {
   @include themify() {
-    background-color: themed('white-color');
-    border-color: themed('brand-primary');
+    background-color: themed('fieldFocusBackgroundColor');
+    border-color: themed('fieldFocusColor');
   }
   outline: none;
 }
@@ -68,8 +60,17 @@ input[type='date']:valid:before {
   }
 }
 
-.errorMessage {
-  @include themify() {
-    color: themed('error-color');
-  }
-}
+// .errorMessage {
+//   @include themify() {
+//     color: themed('error-color');
+//   }
+// }
+    
+// &.error,
+// &.error:focus,
+// &.error:hover {
+//   @include themify() {
+//     border: themed('fieldBoardError'); // !important
+//     border-color: themed('fieldColorError'); // !important
+//   }
+// }

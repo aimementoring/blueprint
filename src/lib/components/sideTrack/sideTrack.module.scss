@@ -3,7 +3,7 @@
 
 .sideTrackCallOut {
   @include themify() {
-    background-color: themed('brand-tertiary');
+    background-color: themed('brandTertiary');
   }
   
   @media only screen and (min-width: 111em) {
@@ -43,8 +43,8 @@
 
 .sideTrackText {
   @include themify() {
-    background-color: themed('brand-tertiary');
-    color: themed('white-color');
+    background-color: themed('brandTertiary');
+    color: themed('sideTrackColor');
   }
   padding: 2em 1.7em 1em;
 
@@ -61,18 +61,12 @@
     margin-bottom: 1.5em;
     line-height: 1.5em;
     font-size: 0.9rem;
-
-    .whiteColor {
-      @include themify() {
-        color: themed('white-color');
-      }
-    }
   }
 }
 
 .sideTrackTitle {
   @include themify() {
-    font-family: themed('tertiary-font-family');
+    font-family: themed('brandTertiary');
   }
   margin-bottom: 1rem;
   font: {
