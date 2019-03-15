@@ -74,9 +74,9 @@ $iconsPath: 'https://d2ylaz7bdw65jx.cloudfront.net/assets/icons';
 
     .country-list {
       @include themify() {
-        box-shadow: 1px 1px 4px rgba(themed('black-color'), 0.2);
-        background-color: themed('white-color');
-        border: 1px solid themed('white-grey');
+        box-shadow: 1px 1px 4px black;
+        background-color: white;
+        border: 1px solid grey;
       }
       position: absolute;
       z-index: 2;
@@ -105,7 +105,7 @@ $iconsPath: 'https://d2ylaz7bdw65jx.cloudfront.net/assets/icons';
 
       .divider {
         @include themify() {
-          border-bottom: 1px solid themed('white-grey');
+          border-bottom: 1px solid grey;
         }
         padding-bottom: 5px;
         margin-bottom: 5px;
@@ -116,13 +116,13 @@ $iconsPath: 'https://d2ylaz7bdw65jx.cloudfront.net/assets/icons';
 
         .dial-code {
           @include themify() {
-            color: themed('soft-grey');
+            color: grey;
           }
         }
 
         &.highlight {
           @include themify() {
-            background-color: rgba(themed('black-color'), 0.05);
+            background-color: black;
           }
         }
       }
@@ -158,7 +158,7 @@ $iconsPath: 'https://d2ylaz7bdw65jx.cloudfront.net/assets/icons';
 
           .selected-flag {
             @include themify() {
-              background-color: rgba(themed('black-color'), 0.05);
+              background-color: black;
             }
           }
         }
@@ -182,7 +182,7 @@ $iconsPath: 'https://d2ylaz7bdw65jx.cloudfront.net/assets/icons';
       &.separate-dial-code {
         .selected-flag {
           @include themify() {
-            background-color: rgba(themed('black-color'), 0.05);
+            background-color: black;
           }
           display: table;
         }
@@ -281,8 +281,8 @@ $iconsPath: 'https://d2ylaz7bdw65jx.cloudfront.net/assets/icons';
 
   .iti-flag {
     @include themify() {
-      box-shadow: 0 0 1px 0 themed('shadow-grey');
-      background-color: themed('white-grey');
+      box-shadow: 0 0 1px 0 grey;
+      background-color: grey;
     }
     width: 20px;
     height: 15px;
