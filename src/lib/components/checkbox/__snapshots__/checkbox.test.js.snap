@@ -15,7 +15,7 @@ exports[`Checkbox renders properly 1`] = `
     />
     <input
       checked={true}
-      className="hide"
+      className="false"
       id="checkbox"
       name="checkbox"
       readOnly={true}
@@ -23,7 +23,6 @@ exports[`Checkbox renders properly 1`] = `
       value="yes"
     />
     <label
-      className="false"
       htmlFor="checkbox"
     >
       Accept terms and conditions

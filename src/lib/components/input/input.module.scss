@@ -11,31 +11,31 @@
 
 .input {
   @include themify() {
-    color: themed('brand-primary');
-    background-color: themed('off-white');
-    border: 1px solid themed('eggplant');
-    font-family: themed('secondary-font-family');
+    color: themed('fieldColor');
+    background-color: themed('fieldBackground');
+    border: themed('fieldBorder');
+    font-family: themed('fieldFontFamily');
+    font-size: themed('fieldFontSize');
+    border-radius: themed('fieldBorderRadius');
+    height: themed('fieldHeight');
+    font-weight: themed('fieldFontWeight');
+    padding: themed('fieldPadding');
   }
-  height: 60px;
-  font-weight: 400;
-  font-size: 0.9rem;
-  border-radius: 6px;
-  padding: 0.1em 1.3em;
-  box-sizing: border-box;
   width: 100%;
 
   &.error,
   &.error:focus,
   &.error:hover {
     @include themify() {
-      border: 1px solid themed('error-color') !important;
-      border-color: themed('error-color') !important;
+      border: themed('fieldBoardError'); // !important
+      border-color: themed('fieldColorError'); // !important
     }
   }
 
   &::placeholder {
     @include themify() {
-      color: themed('eggplant-transparent');
+      color: themed('fieldPlaceholderColor');
+      font-size: themed('fieldPlaceholderFontSize');
     }
   }
 

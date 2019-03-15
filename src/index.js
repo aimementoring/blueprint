@@ -3,20 +3,9 @@ import { render } from 'react-dom';
 import { Components, Utils } from './lib';
 // import { validateEmail, maxCharacters, minCharacters, required } from './lib/utils/validation';
 
-const {
-  Input,
-  Button,
-  Checkbox,
-  TextBox,
-  Select,
-} = Components;
+const { Input, Button, Checkbox, TextBox, Select } = Components;
 
-const {
-  validateEmail,
-  minCharacters,
-  required,
-  maxCharacters,
-} = Utils.Validation;
+const { validateEmail, minCharacters, required, maxCharacters } = Utils.Validation;
 
 const container = document.getElementById('root');
 class App extends Component {
@@ -28,6 +17,7 @@ class App extends Component {
       required: true,
       disabled: false,
       validationMessage: 'there is an error here',
+      theme: 'purple',
     },
     textbox: {
       placeholder: 'Textbox',
@@ -75,8 +65,8 @@ class App extends Component {
       menuList: {
         fontFamily: 'Poppins',
       },
-    }
-  }
+    };
+  };
 
   renderInputComponent = () => {
     const { input } = this.state;
@@ -86,6 +76,14 @@ class App extends Component {
         <h1>Input component</h1>
         <h4>Attributes:</h4>
         <div>
+          theme:
+          <input
+            type="text"
+            value={input.theme}
+            onChange={e => this.handleInputChange('input', e)}
+            name="theme"
+          />
+          <br />
           placeholder:
           <input
             type="text"
@@ -121,6 +119,7 @@ class App extends Component {
           error message:
           <input
             type="text"
+            theme={input.theme}
             value={input.validationMessage}
             onChange={e => this.handleInputChange('input', e)}
             name="validationMessage"
@@ -137,7 +136,7 @@ class App extends Component {
           ]}
           value="Australia"
           placeholder="Select a country"
-          onChangeFunction={() => { }}
+          onChangeFunction={() => {}}
           error={true}
           validationMessage="is Required"
           name="countrySelected"
@@ -146,10 +145,10 @@ class App extends Component {
         <Input
           {...input}
           name="value"
+          theme={input.theme}
           onChangeFunction={(attr, value) => this.updateState('input', attr, value)}
           validations={[required, validateEmail, maxCharacters(10)]}
         />
-
 
         <br />
       </div>
@@ -162,6 +161,7 @@ class App extends Component {
       <TextBox
         {...textbox}
         name="value"
+        theme={this.state.input.theme}
         onChangeFunction={(attr, value) => this.updateState('textbox', attr, value)}
         validations={[maxCharacters(100), minCharacters(10)]}
       />
@@ -172,7 +172,7 @@ class App extends Component {
     return (
       <div>
         <h1>Button component</h1>
-        <Button type="button" onClickFunction={() => { }} text="Back" />
+        <Button type="button" onClickFunction={() => {}} text="Back" />
       </div>
     );
   };

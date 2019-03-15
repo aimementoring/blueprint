@@ -55,15 +55,13 @@ class Checkbox extends PureComponent {
           <input
             id={customId}
             type="checkbox"
-            className="hide"
             name={name}
             value="yes"
             readOnly
+            className={`${isValidationOk() && styles.error}`}
             checked={value}
           />
-          <label htmlFor={customId} className={`${isValidationOk() && styles.error}`}>
-            {placeholder}
-          </label>
+          <label htmlFor={customId}>{placeholder}</label>
         </div>
         {renderValidationError()}
       </div>
