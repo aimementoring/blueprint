@@ -8,7 +8,6 @@ exports[`PhoneInput renders properly 1`] = `
     <input
       checked={false}
       id="notReturningMentor"
-      name="returningMentor"
       onChange={[Function]}
       type="radio"
       value="notReturningMentor"
@@ -23,7 +22,6 @@ exports[`PhoneInput renders properly 1`] = `
     <input
       checked={true}
       id="returningMentor"
-      name="returningMentor"
       onChange={[Function]}
       type="radio"
       value="returningMentor"

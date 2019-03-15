@@ -5,10 +5,7 @@
   @include themify() {
     background-color: themed('brand-tertiary');
   }
-  position: relative;
-  top: -20px;
-  padding-bottom: 3em;
-
+  
   @media only screen and (min-width: 111em) {
     left: auto;
     width: 300px;
@@ -17,7 +14,10 @@
     position: absolute;
   }
 
-  @media only screen and (min-width: $md) {
+  @media only screen and (min-width: $lg) {
+    position: relative;
+    top: -20px;
+    padding-bottom: 3em;
     background-color: transparent;
     padding-bottom: 0;
     transition: all 0.3s ease-in;
@@ -36,7 +36,7 @@
 }
 
 .sideTrackCallOutWrapper {
-  @media only screen and (min-width: $md) {
+  @media only screen and (min-width: $lg) {
     position: absolute;
   }
 }
@@ -90,9 +90,11 @@
   transform: rotate(-9deg);
   font-size: 30px;
   position: absolute;
-  display: inline-block;
+  display: none;
 
-  @media only screen and (min-width: $md) {
-    bottom: -20px;
+  @media only screen and (min-width: $lg) {
+    display: inline-block;
+    bottom: 263px;
+    right: 154px;
   }
 }

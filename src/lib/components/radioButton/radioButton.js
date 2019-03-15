@@ -5,7 +5,7 @@ import styles from './radioButton.module.scss';
 export default class RadioButton extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
-    inputName: PropTypes.string,
+    name: PropTypes.string,
     onChangeFunction: PropTypes.func,
     options: PropTypes.arrayOf(PropTypes.shape({
       value: PropTypes.string,
@@ -26,14 +26,14 @@ export default class RadioButton extends PureComponent {
   }
 
   handleFieldChange = (e) => {
-    const { onChangeFunction, inputName } = this.props;
-    onChangeFunction(inputName, e.target.value);
+    const { onChangeFunction, name } = this.props;
+    onChangeFunction(name, e.target.value);
   }
 
   render() {
     const {
       className,
-      inputName,
+      name,
       value,
       options,
     } = this.props;
@@ -45,7 +45,7 @@ export default class RadioButton extends PureComponent {
             <input
               id={item.value}
               type="radio"
-              name={inputName}
+              name={name}
               value={item.value}
               checked={item.value === value}
               onChange={this.handleFieldChange}
