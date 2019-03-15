@@ -43,6 +43,7 @@ The main idea of this project is to define some standards for all AIME platforms
    - [How to build styleguide](#how-to-build-styleguide)
    - [How to build library](#how-to-build-library)
    - [How to deploy](#how-to-deploy)
+   - [How to test locally from a project](#how-to-test-locally-from-a-project)
 
 6. [NPM Commands](#npm-commands)
 
@@ -122,6 +123,13 @@ Some examples about how to increase versions are:
 1. **MINOR change**: We are on version `1.0.3` and we just fixed an existing component, so it's a minor version we need to publish, we have to run the command `sh publish 1.0.4`.
 2. **MAYOR change**: Ohhh, we change the structure of some components, and added a new theme, so we think it's a major version. Library is in version `1.0.4`. So now we have to run `sh publish 1.1.0`.
 3. **PATCH change**: It's less common to to have this kind of change, but we updated mostly all components, it was a big refactor, and we upgrade versions of some dependencies we have in the project, so it's a big change. We are in version `1.1.8` so the command we run is `sh publish 2.0.0`.
+
+#### How to test locally from a project
+
+1. Run `yarn` and `yarn deploy` to build correctly the library.
+2. If you want to see styleguide running, with hot reload, you should use `yarn start:styleguide`. This is going to run styleguide and every time you make a change, it reloads showing the new changes.
+3. If you want to test it as a website, you can run `yarn start`, and it's going to load the index file from **src/index.js**
+4. If you want to use your component from a different project to test it locally, you can update **"dependencies:"** attribute in your package.json, adding or replacing the line for **"aime-blueprint"** like this: `json "aime-blueprint": "file:/Applications/XAMPP/htdocs/aime/blueprint/lib"`
 
 ### NPM Commands
 
