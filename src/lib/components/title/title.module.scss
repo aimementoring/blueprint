@@ -29,7 +29,7 @@
 .blockTitle {
   @include themify() {
     color: themed('brand-tertiary');
-    font-family: themed('tertiary-font-family');
+    font-family: themed('secondary-font-family');
   }
   position: relative;
   z-index: 2;
