@@ -16,8 +16,8 @@
   &.error:focus,
   &.error:hover {
     @include themify() {
-      border: themed('fieldBorderError');
-      border-color: themed('fieldColorError');
+      border: themed('fieldBorderError') !important; 
+      border-color: themed('fieldColorError') !important; 
     }
   }
 }
