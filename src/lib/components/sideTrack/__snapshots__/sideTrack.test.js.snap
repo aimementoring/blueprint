@@ -34,7 +34,7 @@ exports[`SideTrack renders properly 1`] = `
           </p>
         </div>
         <div
-          className="emojiWrap"
+          className="emojiWrap left"
         >
           <span
             aria-label="point down"
