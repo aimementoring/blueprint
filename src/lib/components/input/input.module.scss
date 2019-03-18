@@ -28,8 +28,8 @@
   &.error:focus,
   &.error:hover {
     @include themify() {
-      border: themed('fieldBorderError'); // !important
-      border-color: themed('fieldColorError'); // !important
+      border: themed('fieldBorderError');
+      border-color: themed('fieldColorError');
     }
   }
   
@@ -68,10 +68,4 @@ input[type='date']:valid:before {
     color: themed('lavender');
   }
 }
-
-// .errorMessage {
-//   @include themify() {
-//     color: themed('error-color');
-//   }
-// }
 

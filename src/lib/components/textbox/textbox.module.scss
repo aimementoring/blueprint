@@ -12,20 +12,13 @@
     height: themed('textAreaHeight');
   }
   margin: 0px;
-  // width: 784px;
   &.error,
   &.error:focus,
   &.error:hover {
     @include themify() {
-      border: 1px solid themed('fieldBorderError');
+      border: themed('fieldBorderError');
       border-color: themed('fieldColorError');
     }
   }
 }
 
-// }
-// .errorMessage {
-//   @include themify() {
-//     color: themed('error-color');
-//   }
-// }
