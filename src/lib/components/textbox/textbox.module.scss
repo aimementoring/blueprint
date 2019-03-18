@@ -13,16 +13,16 @@
   }
   margin: 0px;
   // width: 784px;
+  &.error,
+  &.error:focus,
+  &.error:hover {
+    @include themify() {
+      border: 1px solid themed('fieldBorderError');
+      border-color: themed('fieldColorError');
+    }
+  }
 }
 
-//   &.error,
-//   &.error:focus,
-//   &.error:hover {
-//     @include themify() {
-//       border: 1px solid themed('error-color') !important;
-//       border-color: themed('error-color') !important;
-//     }
-//   }
 // }
 // .errorMessage {
 //   @include themify() {

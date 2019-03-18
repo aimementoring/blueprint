@@ -2,7 +2,7 @@
 
 exports[`Avatar name renders properly 1`] = `
 <div
-  className="theme-purple"
+  className="theme-portal"
 >
   <div
     className="profileAvatar"
@@ -16,7 +16,7 @@ exports[`Avatar name renders properly 1`] = `
 
 exports[`Avatar with photo renders properly 1`] = `
 <div
-  className="theme-purple"
+  className="theme-portal"
 >
   <div
     className="profileAvatar"

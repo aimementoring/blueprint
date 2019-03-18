@@ -4,7 +4,7 @@ exports[`Loading false renders properly 1`] = `null`;
 
 exports[`Loading true renders properly 1`] = `
 <div
-  className="theme-purple"
+  className="theme-portal"
 >
   <div
     className="loading "

@@ -23,7 +23,15 @@
     padding: themed('inputPadding');
   }
   width: 100%;
-
+  &.error,
+  
+  &.error:focus,
+  &.error:hover {
+    @include themify() {
+      border: themed('fieldBorderError'); // !important
+      border-color: themed('fieldColorError'); // !important
+    }
+  }
   
   &::placeholder {
     @include themify() {
@@ -66,12 +74,4 @@ input[type='date']:valid:before {
 //     color: themed('error-color');
 //   }
 // }
-    
-// &.error,
-// &.error:focus,
-// &.error:hover {
-//   @include themify() {
-//     border: themed('fieldBoardError'); // !important
-//     border-color: themed('fieldColorError'); // !important
-//   }
-// }
+
