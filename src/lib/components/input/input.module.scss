@@ -23,8 +23,8 @@
     padding: themed('inputPadding');
   }
   width: 100%;
+
   &.error,
-  
   &.error:focus,
   &.error:hover {
     @include themify() {
@@ -54,13 +54,14 @@
 }
 
 input.input[type='date']:before {
-  content: attr(placeholder) ':' !important;
+  content: attr(placeholder) ':';
   color: #aaa;
   margin-right: 0.5em;
 }
+
 input[type='date']:focus:before,
 input[type='date']:valid:before {
-  content: '' !important;
+  content: '';
 }
 
 ::placeholder {
@@ -68,4 +69,3 @@ input[type='date']:valid:before {
     color: themed('lavender');
   }
 }
-

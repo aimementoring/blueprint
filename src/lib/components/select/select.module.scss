@@ -13,7 +13,7 @@ select {
 
 .error {
   @include themify() {
-    color: themed('error-color') !important;
+    color: themed('error-color');
   }
 }
 
