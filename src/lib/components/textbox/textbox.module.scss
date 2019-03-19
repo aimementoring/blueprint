@@ -1,24 +1,21 @@
 @import '../input/input.module.scss';
 @import '../../styles/themes/themes.module.scss';
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
 .textarea {
   @include themify() {
     padding: themed('textAreaPadding');
     height: themed('textAreaHeight');
   }
-  margin: 0px;
+
+  line-height: 1.5rem;
+  margin-bottom: 0.5em;
+
   &.error,
   &.error:focus,
   &.error:hover {
     @include themify() {
-      border: themed('fieldBorderError') !important; 
-      border-color: themed('fieldColorError') !important; 
+      border: themed('fieldBorderError');
+      border-color: themed('fieldColorError');
     }
   }
 }
-
