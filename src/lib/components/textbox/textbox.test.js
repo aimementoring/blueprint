@@ -11,7 +11,7 @@ describe('TextBox', () => {
           name="textbox"
           required
           className="myClass"
-          onChangeFunction={value => {}}
+          onChangeFunction={() => { }}
         />,
       )
       .toJSON();
