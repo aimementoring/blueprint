@@ -1,5 +1,8 @@
 ---
 sudo: false
+language: node_js
+node_js:
+- "10"
 install:
   - node -v
 before_script:
