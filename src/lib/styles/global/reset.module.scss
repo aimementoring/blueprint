@@ -21,6 +21,10 @@ time, mark, audio, video {
   list-style: none;
 }
 
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   line-height: 1;
 }
