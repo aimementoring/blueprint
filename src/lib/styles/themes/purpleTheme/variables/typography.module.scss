@@ -1,9 +1,23 @@
 // All variables here must start with purpleTheme-
-$purpleTheme-primary-font-family: 'Univers Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$purpleTheme-primary-font-family-bold: 'Univers Bold', 'Helvetica Neue', Helvetica, Arial,
-  sans-serif;
-$purpleTheme-secondary-font-family: 'Poppins Bold Italic', Helvetica, Arial, sans-serif;
-$purpleTheme-tertiary-font-family: 'Poppins', Helvetica, Arial, sans-serif;
-$purpleTheme-feature-font-family: 'Blackhawk', Impact, Haettenschweiler, 'Franklin Gothic Bold',
-  Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-$purpleTheme-gradient-title-font-family: blackhawk_italicregular;
+// $purpleTheme-primary-font-family: 'Univers Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+// $purpleTheme-primary-font-family-bold: 'Univers Bold', 'Helvetica Neue', Helvetica, Arial,
+//   sans-serif;
+// $purpleTheme-secondary-font-family: 'Poppins Bold Italic', Helvetica, Arial, sans-serif;
+// $purpleTheme-tertiary-font-family: 'Poppins', Helvetica, Arial, sans-serif;
+// $purpleTheme-feature-font-family: 'Blackhawk', Impact, Haettenschweiler, 'Franklin Gothic Bold',
+//   Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
+// $purpleTheme-gradient-title-font-family: blackhawk_italicregular;
+
+
+$purpleTheme-feature-font-family: 'Blackhawk', Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
+
+$purpleTheme-primary-font-regular: 'Poppins', Helvetica, Arial, sans-serif;
+$purpleTheme-primary-font-semibold: 'Poppins SemiBold', Helvetica, Arial, sans-serif;
+$purpleTheme-primary-font-semibold-italic: 'Poppins SemiBold Italic', Helvetica, Arial, sans-serif;
+$purpleTheme-primary-font-bold: 'Poppins Bold', Helvetica, Arial, sans-serif;
+$purpleTheme-primary-font-bold-italic: 'Poppins Bold Italic', Helvetica, Arial, sans-serif;
+$purpleTheme-primary-font-extrabold: 'Poppins ExtraBold', Helvetica, Arial, sans-serif;
+$purpleTheme-primary-font-extrabold-italic: 'Poppins ExtraBold Italic', Helvetica, Arial, sans-serif;
+
+$purpleTheme-body-font-family: 'Univers Light', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$purpleTheme-body-font-family-bold: 'Univers Bold', "Helvetica Neue", Helvetica, Arial, sans-serif;
