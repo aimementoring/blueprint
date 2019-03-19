@@ -18,7 +18,7 @@ describe('Select', () => {
         <Select
           placeholder="Select an option"
           name="select"
-          onChangeFunction={value => { }}
+          onChangeFunction={() => { }}
           options={selectOptions}
         />,
       )

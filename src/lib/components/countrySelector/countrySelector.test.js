@@ -8,7 +8,7 @@ describe('CountrySelector', () => {
       .create(
         <CountrySelector
           placeholder="Select a country"
-          onChangeFunction={value => {}}
+          onChangeFunction={() => { }}
           name="country"
         />,
       )
