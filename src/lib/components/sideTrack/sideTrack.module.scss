@@ -2,6 +2,7 @@
 @import '../../styles/themes/themes.module.scss';
 
 .sideTrackCallOut {
+  border-radius: 3px;
   @include themify() {
     background-color: themed('brandTertiary');
   }
