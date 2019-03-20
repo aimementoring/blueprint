@@ -12,6 +12,7 @@ class TextBox extends PureComponent {
     required: PropTypes.bool,
     onChangeFunction: PropTypes.func,
     value: PropTypes.string,
+    autoFocus: PropTypes.bool,
     // props from withValidation HOC
     renderValidationError: PropTypes.func.isRequired,
     handleValidations: PropTypes.func.isRequired,
@@ -42,6 +43,7 @@ class TextBox extends PureComponent {
       className,
       value,
       theme,
+      autoFocus,
       isValidationOk,
       renderValidationError,
     } = this.props;
@@ -56,6 +58,7 @@ class TextBox extends PureComponent {
           name={name}
           value={value}
           required={required || false}
+          autoFocus={autoFocus}
         />
         {renderValidationError()}
       </div>

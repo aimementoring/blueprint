@@ -13,6 +13,7 @@ class Input extends PureComponent {
     name: PropTypes.string.isRequired,
     value: PropTypes.string,
     type: PropTypes.string,
+    autoFocus: PropTypes.bool,
     onChangeFunction: PropTypes.func,
     // props from withValidation HOC
     renderValidationError: PropTypes.func,
@@ -51,6 +52,7 @@ class Input extends PureComponent {
       type,
       isValidationOk,
       renderValidationError,
+      autoFocus,
     } = this.props;
 
     return (
@@ -64,6 +66,7 @@ class Input extends PureComponent {
           required={required}
           onChange={this.handleChange(name)}
           disabled={disabled ? 'disabled' : ''}
+          autoFocus={autoFocus}
         />
         {renderValidationError()}
       </div>
