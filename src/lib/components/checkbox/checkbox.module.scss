@@ -1,10 +1,10 @@
 @import '../../styles/variables/variables.module.scss';
 @import '../../styles/themes/themes.module.scss';
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-}
+// .wrapper {
+//   display: flex;
+//   flex-direction: column;
+// }
 
 .customCheckbox input[type='checkbox'] {
   display: none;
@@ -19,6 +19,7 @@
     padding-left: 1rem;
     margin-left: 1rem;
     transition: ease 0.1s color;
+    display: inline-block;
 
     &:hover {
       @include themify() {
