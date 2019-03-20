@@ -1,32 +1,37 @@
-$brand-primary: rgb(118, 3, 219) !default;
-$brand-secondary: rgb(199, 0, 255) !default;
-$brand-tertiary: rgb(218, 13, 255) !default;
+$brand-primary:        #7603db;
+$brand-secondary:      #c700ff;
+$brand-tertiary:       #da0dff;
 
-$eggplant: rgb(85, 13, 148) !default;
-$eggplant-transparent: rgba(65, 0, 72, 0.769) !default;
+$error-color:          #F84444;
 
-$lavender: rgb(157, 161, 180) !default;
-$electric-blue: rgb(49, 233, 255) !default;
+$eggplant:             #550d94;
+$eggplant-transparent: #410048c4;
 
-$black: rgb(0, 0, 0) !default;
-$darkest-purple: rgb(56, 2, 73) !default;
-$loading-black: rgba(0, 0, 0, 0.3) !default;
-$translucent-black: rgba(0, 0, 0, 0.65) !default;
-$light-grey: rgb(232, 232, 232) !default;
-$white-grey: rgb(217, 217, 217) !default;
-$white-dark-grey: rgb(170, 170, 170) !default;
-$medium-grey: rgb(163, 163, 163) !default;
-$soft-grey: rgb(153, 153, 153) !default;
-$shadow-grey: rgb(136, 136, 136) !default;
-$grey: rgb(102, 102, 102) !default;
+$lavender:             #9da1b4;
+$electric-blue:        #31e9ff;
 
-$white: rgb(255, 255, 255) !default;
-$off-white: rgb(254, 246, 255) !default;
-$soft-lavender: rgb(251, 249, 253) !default;
-$grey-lavender: rgb(241, 238, 243) !default;
+$black:                #1A0024;
+$black-background:     #050301;
+$black-title:          #1a0024;
+$darkest-purple:       #380249;
+$loading-black:        #0000004d;
+$translucent-black:    #000000a6;
+$white-grey:           #d9d9d9;
+$white-middle-grey:    #c5cbd2;
+$white-dark-grey:      #aaaaaa;
+$medium-grey:          #a3a3a3;
+$soft-grey:            #999999;
+$grey:                 #666666;
 
-$error-color: rgb(255,0,0);
+$white:                #ffffff;
+$off-white:            #fef6ff;
+$soft-lavender:        #fbf9fd;
+$grey-lavender:        #f1eef3; 
+$grey:                 #B2BAC3;
+$light-grey:           #e8e8e8;
+$soft-grey:            #999999;
 
-// TODO: check with mischa can we move keyframes sheet into the variables folder?
+$purple:               #7603db;
 
-$smooth-transition: all 0.1s ease-in-out !default;
+$violet-light:         #A863FF;
+$violet-dark:          #8737ED;

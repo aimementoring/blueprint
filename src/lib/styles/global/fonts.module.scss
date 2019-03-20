@@ -1,73 +1,86 @@
-// $fontsPath: 'https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts';
+$fonts-path: 'https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts';
 
 // Univers
 @font-face {
   font-family: 'Univers';
-  src: url('https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts/universal/UniversLTStd.otf');
+  src: url('#{$fonts-path}/universal/UniversLTStd.otf');
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
   font-family: 'Univers Light';
-  src: url('https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts/universal/UniversLTStd-Light.otf');
+  src: url('#{$fonts-path}/universal/UniversLTStd-Light.otf');
   font-style: normal;
   font-weight: 300;
 }
 
 @font-face {
   font-family: 'Univers Bold';
-  src: url('https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts/universal/UniversLTStd-Bold.otf');
+  src: url('#{$fonts-path}/universal/UniversLTStd-Bold.otf');
   font-style: normal;
   font-weight: 500;
 }
 
 // Poppins
+
 @font-face {
   font-family: 'Poppins';
-  src: url('https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts/poppins/Poppins-Medium.ttf');
-  font-style: normal;
-  font-weight: 300;
+  src: url('#{$fonts-path}/poppins/Poppins-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins Regular';
+  src: url('#{$fonts-path}/poppins/Poppins-Regular.ttf');
 }
 
 @font-face {
   font-family: 'Poppins SemiBold';
-  src: url('https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts/poppins/Poppins-SemiBold.ttf');
-  font-style: normal;
-  font-weight: 400;
+  src: url('#{$fonts-path}/poppins/Poppins-SemiBold.ttf');
+}
+@font-face {
+  font-family: 'Poppins SemiBold Italic';
+  src: url('#{$fonts-path}/poppins/Poppins-SemiBoldItalic.ttf');
 }
 
 @font-face {
   font-family: 'Poppins Bold';
-  src: url('https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts/poppins/Poppins-Bold.ttf');
-  font-style: normal;
-  font-weight: 500;
+  src: url('#{$fonts-path}/poppins/Poppins-Bold.ttf');
 }
 
 @font-face {
   font-family: 'Poppins Bold Italic';
-  src: url('https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts/poppins/Poppins-BoldItalic.ttf');
-  font-style: normal;
-  font-weight: 500;
+  src: url('#{$fonts-path}/poppins/Poppins-BoldItalic.ttf');
 }
 
-// Blackhawk
+@font-face {
+  font-family: 'Poppins ExtraBold';
+  src: url('#{$fonts-path}/poppins/Poppins-ExtraBold.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins ExtraBold Italic';
+  src: url('#{$fonts-path}/poppins/Poppins-ExtraBoldItalic.ttf');
+}
+
 @font-face {
   font-family: 'Blackhawk';
-  src: url('https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts/blackhawk/blackhawk_italic-webfont.woff2')
-      format('woff2'),
-    url('https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts/blackhawk/blackhawk_italic-webfont.woff')
-      format('woff');
+  src:
+    url('#{$fonts-path}/blackhawk/blackhawk_italic-webfont.woff2') format('woff2'),
+    url('#{$fonts-path}/blackhawk/blackhawk_italic-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'blackhawk_italicregular';
-  src: url('https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts/blackhawk/blackhawk_italic-webfont.woff2')
-      format('woff2'),
-    url('https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts/blackhawk/blackhawk_italic-webfont.woff')
-      format('woff');
-  font-weight: normal;
+  font-family: 'Material Icons';
   font-style: normal;
+  font-weight: 400;
+  src: url('#{$fonts-path}/material-icons/MaterialIcons-Regular.eot');
+  /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url('#{$fonts-path}/material-icons/MaterialIcons-Regular.woff2') format('woff2'),
+    url('#{$fonts-path}/material-icons/MaterialIcons-Regular.woff') format('woff'),
+    url('#{$fonts-path}/material-icons/MaterialIcons-Regular.ttf') format('truetype');
 }

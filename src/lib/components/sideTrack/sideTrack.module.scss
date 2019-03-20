@@ -15,7 +15,10 @@
     position: absolute;
   }
 
-  @media only screen and (min-width: $lg) {
+  //TODO: When we have more time to look into the positioning of this side-track, remove these $lg media query comments. Leaving here now for reference.
+  // Just a note that I don't think we should be including these positioning things in blueprint at all. But need to look into it more... 
+  // @media only screen and (min-width: $lg) {
+  @media only screen and (min-width: 90em) {
     position: relative;
     top: -20px;
     padding-bottom: 3em;
@@ -37,7 +40,8 @@
 }
 
 .sideTrackCallOutWrapper {
-  @media only screen and (min-width: $lg) {
+  // @media only screen and (min-width: $lg) {
+  @media only screen and (min-width: 90em) {
     position: absolute;
   }
 }
@@ -46,10 +50,12 @@
   @include themify() {
     background-color: themed('brandTertiary');
     color: themed('sideTrackColor');
+    font-family: themed('bodyFontFamily');
   }
   padding: 2em 1.7em 1em;
 
-  @media only screen and (min-width: $lg) {
+  //@media only screen and (min-width: $lg) {
+  @media only screen and (min-width: 90em) {
     padding: 2em 1.7em 1em;
   }
 
@@ -67,7 +73,7 @@
 
 .sideTrackTitle {
   @include themify() {
-    font-family: themed('brandTertiary');
+    font-family: themed('primaryFontFamilyExtraBoldItalic');
   }
   margin-bottom: 1rem;
   font: {
@@ -80,7 +86,6 @@
 .emojiWrap {
   padding: 0;
   bottom: 20px;
-  width: 100%;
   text-align: center;
   transform: rotate(-9deg);
   font-size: 30px;

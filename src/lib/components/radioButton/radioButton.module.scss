@@ -1,8 +1,8 @@
 @import '../input/input.module.scss';
 @import '../../styles/themes/themes.module.scss';
 
-
-.radioButtonContainer {
+.radioButtonContainer { 
+  
   [type="radio"]:checked,
   [type="radio"]:not(:checked) {
     position: absolute;

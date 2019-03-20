@@ -25,8 +25,8 @@ export default class PhoneInput extends PureComponent {
     required: false,
     defaultCountry: 'auto',
     value: '',
-    onCountrySelected: () => {},
-    onChangeFunction: () => {},
+    onCountrySelected: () => { },
+    onChangeFunction: () => { },
   };
 
   lookupGeoIp = callback => {

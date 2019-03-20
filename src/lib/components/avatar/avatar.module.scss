@@ -4,6 +4,7 @@
 .profileAvatar {
   @include themify() {
     background: themed('avatarBackground');
+    font-family: themed('primaryFontFamilyBoldItalic');
   }
   width: 48px;
   height: 48px;

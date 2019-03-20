@@ -27,7 +27,7 @@ class App extends Component {
       disabled: false,
     },
     checkbox: {
-      value: false,
+      value: true,
     },
   };
 
@@ -136,7 +136,7 @@ class App extends Component {
           ]}
           value="Australia"
           placeholder="Select a country"
-          onChangeFunction={() => {}}
+          onChangeFunction={() => { }}
           error={true}
           validationMessage="is Required"
           name="countrySelected"
@@ -172,7 +172,7 @@ class App extends Component {
     return (
       <div>
         <h1>Button component</h1>
-        <Button type="button" onClickFunction={() => {}} text="Back" />
+        <Button type="button" onClickFunction={() => { }} text="Back" />
       </div>
     );
   };

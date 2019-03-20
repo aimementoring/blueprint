@@ -5,3 +5,8 @@
 .errorMessage {
   color: $error-color;
 }
+
+.errorMessage {
+  display: block;
+  padding-top: 0.5em;
+}
