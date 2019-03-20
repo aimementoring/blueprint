@@ -6,7 +6,8 @@
     padding: themed('textAreaPadding');
     height: themed('textAreaHeight');
   }
-
+  
+  box-sizing: border-box;
   line-height: 1.5rem;
   margin-bottom: 1.8em;
 
