@@ -5,7 +5,7 @@
   @include themify() {
     background-color: themed('warningBlockBackground');
     color: themed('warningBlockColor');
-    font-family: themed('tertiaryFontFamily');
+    font-family: themed('primaryFontFamilyRegular');
   }
   margin-top: 3em;
   padding: 5em 4em;

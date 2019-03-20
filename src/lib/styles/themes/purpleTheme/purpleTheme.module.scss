@@ -5,11 +5,20 @@ $purpleTheme: (
   brandSecondary: rgb(199, 0, 255),
   brandTertiary: rgb(218, 13, 255),
   
-  primaryFontFamily: $purpleTheme-primary-font-family-bold,
-  secondaryFontFamily: $purpleTheme-secondary-font-family,
-  tertiaryFontFamily: $purpleTheme-tertiary-font-family,
+  // Old font styles that we should be replacing and then deleting. >
+  // primaryFontFamily: $purpleTheme-primary-font-family-bold,
+  // secondaryFontFamily: $purpleTheme-secondary-font-family,
+  // tertiaryFontFamily: $purpleTheme-tertiary-font-family,
+  // gradientFontFamily: $purpleTheme-gradient-title-font-family,
   
-  gradientFontFamily: $purpleTheme-gradient-title-font-family,
+  // New font styles I'm adding right now. >
+  featureFontFamily: $purpleTheme-feature-font-family,
+  primaryFontFamilySemiBold: $purpleTheme-primary-font-semibold,
+  primaryFontFamilySemiBoldItalic: $purpleTheme-primary-font-semibold-italic,
+  primaryFontFamilyBoldItalic: $purpleTheme-primary-font-bold-italic,
+  primaryFontFamilyRegular: $purpleTheme-primary-font-regular,
+  primaryFontFamilyExtraBoldItalic: $purpleTheme-primary-font-extrabold-italic,
+  bodyFontFamily: $purpleTheme-body-font-family,
   
   gradientTitleColor: rgb(255, 255, 255),
   gradientTitleBackground: linear-gradient(135deg, rgb(49, 233, 255), rgb(218, 13, 255)),

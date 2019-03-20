@@ -5,11 +5,20 @@ $portalTheme: (
   brandSecondary: rgb(199, 0, 255),
   brandTertiary: rgb(218, 13, 255),
   
-  primaryFontFamily: $portalTheme-primary-font-semibold,
-  secondaryFontFamily: $portalTheme-secondary-font-family,
-  tertiaryFontFamily: $portalTheme-tertiary-font-family,
+  // Old font styles that we should be replacing and then deleting. >
+  // primaryFontFamily: $portalTheme-primary-font-semibold,
+  // secondaryFontFamily: $portalTheme-secondary-font-family,
+  // tertiaryFontFamily: $portalTheme-tertiary-font-family,
+  // gradientFontFamily: $purpleTheme-gradient-title-font-family,
   
-  gradientFontFamily: $purpleTheme-gradient-title-font-family,
+  // New font styles I'm adding right now. >
+  featureFontFamily: $portalTheme-feature-font-family,
+  primaryFontFamilySemiBold: $portalTheme-primary-font-semibold,
+  primaryFontFamilySemiBoldItalic: $portalTheme-primary-font-semibold-italic,
+  primaryFontFamilyBoldItalic: $portalTheme-primary-font-bold-italic,
+  primaryFontFamilyRegular: $portalTheme-primary-font-regular,
+  primaryFontFamilyExtraBoldItalic: $portalTheme-primary-font-extrabold-italic,
+  bodyFontFamily: $portalTheme-body-font-family,
   
   gradientTitleColor: rgb(255, 255, 255),
   gradientTitleBackground: linear-gradient(135deg, rgb(49, 233, 255), rgb(218, 13, 255)),

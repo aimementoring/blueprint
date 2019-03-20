@@ -15,7 +15,7 @@
   }
   @include themify() {
     background: themed('gradientTitleBackground');
-    font-family: themed('gradientFontFamily');
+    font-family: themed('featureFontFamily');
     color: themed('gradientTitleColor');
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -29,7 +29,7 @@
 .blockTitle {
   @include themify() {
     color: themed('brandTertiary');
-    font-family: themed('tertiaryFontFamily');
+    font-family: themed('primaryFontFamilyBoldItalic');
   }
   position: relative;
   z-index: 2;
@@ -46,7 +46,7 @@
 .mainTitle {
   @include themify() {
     color: themed('mainTitleColor');
-    font-family: themed('tertiaryFontFamily');
+    font-family: themed('primaryFontFamilyBoldItalic');
   }
   line-height: 1.125;
   margin-bottom: 2rem;

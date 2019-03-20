@@ -11,6 +11,9 @@
   appearance: none;
 
   ~ label {
+    @include themify() {
+      font-family: themed('bodyFontFamily');  
+    }
     position: relative;
     cursor: pointer;
     padding-left: 1rem;
