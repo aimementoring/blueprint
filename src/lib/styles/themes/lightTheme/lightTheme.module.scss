@@ -5,13 +5,6 @@ $lightTheme: (
   brandSecondary: rgb(199, 0, 255),
   brandTertiary: rgb(218, 13, 255),
   
-  // Old font styles that we should be replacing and then deleting. >
-  // primaryFontFamily: $lightTheme-primary-font-family-bold,
-  // secondaryFontFamily: $lightTheme-secondary-font-family,
-  // tertiaryFontFamily: $lightTheme-tertiary-font-family,
-  // gradientFontFamily: $lightTheme-gradient-title-font-family,
-
-  // New font styles I'm adding right now. >
   featureFontFamily: $lightTheme-feature-font-family,
   primaryFontFamilySemiBold: $lightTheme-primary-font-semibold,
   primaryFontFamilySemiBoldItalic: $lightTheme-primary-font-semibold-italic,
@@ -23,8 +16,8 @@ $lightTheme: (
   gradientTitleColor: rgb(255, 255, 255),
   gradientTitleBackground: linear-gradient(135deg, rgb(49, 233, 255), rgb(218, 13, 255)),
   fieldBorder: none,
-  fieldBorderError: 1px solid rgb(255, 0, 0),
-  fieldColorError: rgb(255, 0, 0),
+  fieldBorderError: 1px solid rgb(248, 68, 68),
+  fieldColorError: rgb(248, 68, 68),
   fieldPlaceholderColor: rgb(178, 186, 195),
   fieldPlaceholderFontSize: 0.9rem,
   fieldPlaceholderFontWeight: 400,

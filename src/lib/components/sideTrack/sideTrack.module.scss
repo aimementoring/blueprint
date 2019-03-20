@@ -68,7 +68,6 @@
 
 .sideTrackTitle {
   @include themify() {
-    //font-family: themed('brandTertiary');
     font-family: themed('primaryFontFamilyExtraBoldItalic');
   }
   margin-bottom: 1rem;
