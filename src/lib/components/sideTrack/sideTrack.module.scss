@@ -40,6 +40,7 @@
 }
 
 .sideTrackCallOutWrapper {
+  position: relative;
   // @media only screen and (min-width: $lg) {
   @media only screen and (min-width: 90em) {
     position: absolute;
@@ -85,7 +86,6 @@
 
 .emojiWrap {
   padding: 0;
-  bottom: 20px;
   text-align: center;
   transform: rotate(-9deg);
   font-size: 30px;
@@ -94,31 +94,23 @@
 
   @media only screen and (min-width: $lg) {
     display: inline-block;
-    bottom: 263px;
-    right: 154px;
   }
 
-  @media only screen and (min-width: $md) {
-    bottom: -20px;
-  }
-      
   &.left {
-    top: 15px;
-    left: -130px;
+    top: 0.5em;
+    left: -0.5em;
   }
 
   &.right {
-    top: 15px;
-    left: 170px;
+    top: 0;
+    right: -0.5em;
   }
 
   &.top {
-    top: -15px;
-    left: auto;
+    top: -0.5em;
   }
 
   &.bottom {
-    top: auto;
-    left: auto;
+    bottom: -0.8em;
   }
 }
