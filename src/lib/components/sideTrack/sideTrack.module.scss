@@ -92,7 +92,7 @@
   position: absolute;
   display: none;
 
-  @media only screen and (min-width: $lg) {
+  @media only screen and (min-width: 90em) {
     display: inline-block;
   }
 
