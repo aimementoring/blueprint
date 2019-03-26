@@ -10,19 +10,23 @@ const regularExpressions = {
   numeric: /^\d+$/,
 };
 
+const valueIsEmpty = (value) => (
+  value === '' || value === undefined || value === null
+);
+
 export const required = value =>
-  value !== undefined && value !== '' && value !== null && value !== false ? undefined : 'Required';
+  !valueIsEmpty(value) && value !== false ? undefined : 'Required';
 
 export const validateNumeric = value =>
   regularExpressions.numeric.test(value) ? undefined : 'This value should be a valid number.';
 
 export const validateAlphanumeric = value =>
-  regularExpressions.alphanumeric.test(value)
+  valueIsEmpty(value) || regularExpressions.alphanumeric.test(value)
     ? undefined
     : "This value shouldn't contain special characters.";
 
 export const validateEmail = value =>
-  value === '' || regularExpressions.email.test(value)
+  valueIsEmpty(value) || regularExpressions.email.test(value)
     ? undefined
     : 'This value is not a valid email';
 
