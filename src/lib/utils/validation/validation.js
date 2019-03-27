@@ -52,6 +52,14 @@ export const minCharacters = memoize(min => value =>
   value && value.length < min ? `This value should contain minimum ${min} characters` : undefined,
 );
 
+export const validDate = value => {
+  // we can do this with moment if we want to check an specific format
+  // moment(value, 'YYYY-MM-DD', true).isValid()
+  return (valueIsEmpty(value) || Date.parse(value)
+    ? undefined
+    : 'The date must be in the format yyyy-mm-dd');
+}
+
 export const checkValidations = (validations, value) => {
   let errorMessage = null;
   if (validations.length) {

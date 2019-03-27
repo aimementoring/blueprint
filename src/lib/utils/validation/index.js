@@ -11,6 +11,7 @@ import {
   minCharacters,
   checkValidations,
   validateComponents,
+  validDate,
 } from './validation';
 
 export {
@@ -26,4 +27,5 @@ export {
   minCharacters,
   checkValidations,
   validateComponents,
+  validDate,
 };

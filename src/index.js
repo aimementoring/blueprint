@@ -5,7 +5,13 @@ import { Components, Utils } from './lib';
 
 const { Input, Button, Checkbox, TextBox, Select } = Components;
 
-const { validateEmail, minCharacters, required, maxCharacters } = Utils.Validation;
+const {
+  validateEmail,
+  minCharacters,
+  required,
+  maxCharacters,
+  validDate,
+} = Utils.Validation;
 
 const container = document.getElementById('root');
 class App extends Component {
@@ -29,6 +35,7 @@ class App extends Component {
     checkbox: {
       value: true,
     },
+    date: '',
   };
 
   handleInputChange = (attribute, event) => {
@@ -46,6 +53,8 @@ class App extends Component {
       },
     });
   };
+
+  updateDate = (value) => this.setState({ date: value });
 
   getSelectStyles = () => {
     return {
@@ -148,6 +157,16 @@ class App extends Component {
           theme={input.theme}
           onChangeFunction={(attr, value) => this.updateState('input', attr, value)}
           validations={[required, validateEmail, maxCharacters(10)]}
+        />
+
+        <Input
+          placeholder="date"
+          type="date"
+          name="value"
+          theme={input.theme}
+          onChangeFunction={(attr, value) => this.updateDate(value)}
+          value={this.state.date}
+          validations={[required, validDate, maxCharacters(10)]}
         />
 
         <br />
