@@ -57,7 +57,7 @@ export const validDate = value => {
   // moment(value, 'YYYY-MM-DD', true).isValid()
   return (valueIsEmpty(value) || Date.parse(value)
     ? undefined
-    : 'The date must be in the format yyyy-mm-dd');
+    : 'This should be a valid date (for example: YYYY-MM-DD)');
 }
 
 export const checkValidations = (validations, value) => {
