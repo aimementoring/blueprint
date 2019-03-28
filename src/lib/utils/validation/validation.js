@@ -54,8 +54,6 @@ export const minCharacters = memoize(min => value =>
 );
 
 export const validDate = value => {
-  // we can do this with moment if we want to check an specific format
-  // moment(value, 'YYYY-MM-DD', true).isValid()
   if (typeof value === 'string' && isNaN(value[value.length - 1])) {
     return 'This should be a valid date (for example: YYYY-MM-DD)';
   }
