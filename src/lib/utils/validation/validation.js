@@ -60,10 +60,10 @@ export const validDate = value => {
     return 'This should be a valid date (for example: YYYY-MM-DD)';
   }
   return (valueIsEmpty(value) || !isNaN(Date.parse(value))
-    || moment(value, 'DD-MM-YYYY', true).isValid()
-    || moment(value, 'DD/MM/YYYY', true).isValid()
-    || moment(value, 'DD/MM/YY', true).isValid()
-    || moment(value, 'DD-MM-YY', true).isValid())
+    || moment(value, 'MM-DD-YYYY', true).isValid()
+    || moment(value, 'MM/DD/YYYY', true).isValid()
+    || moment(value, 'MM/DD/YY', true).isValid()
+    || moment(value, 'MM-DD-YY', true).isValid())
     ? undefined
     : 'This should be a valid date (for example: YYYY-MM-DD)';
 }
