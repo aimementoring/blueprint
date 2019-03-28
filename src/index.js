@@ -169,6 +169,16 @@ class App extends Component {
           validations={[required, validDate, maxCharacters(10)]}
         />
 
+        <Input
+          placeholder="text"
+          type="text"
+          name="value"
+          theme={input.theme}
+          onChangeFunction={(attr, value) => this.updateDate(value)}
+          value={this.state.date}
+          validations={[required, validDate, maxCharacters(10)]}
+        />
+
         <br />
       </div>
     );

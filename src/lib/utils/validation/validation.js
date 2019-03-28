@@ -1,6 +1,7 @@
 // Documentation about memoize
 // https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#what-about-memoization
 import memoize from 'memoize-one';
+import moment from 'moment';
 
 const regularExpressions = {
   // eslint-disable-next-line no-useless-escape
@@ -55,9 +56,16 @@ export const minCharacters = memoize(min => value =>
 export const validDate = value => {
   // we can do this with moment if we want to check an specific format
   // moment(value, 'YYYY-MM-DD', true).isValid()
-  return (valueIsEmpty(value) || Date.parse(value)
+  if (typeof value === 'string' && isNaN(value[value.length - 1])) {
+    return 'This should be a valid date (for example: YYYY-MM-DD)';
+  }
+  return (valueIsEmpty(value) || !isNaN(Date.parse(value))
+    || moment(value, 'DD-MM-YYYY', true).isValid()
+    || moment(value, 'DD/MM/YYYY', true).isValid()
+    || moment(value, 'DD/MM/YY', true).isValid()
+    || moment(value, 'DD-MM-YY', true).isValid())
     ? undefined
-    : 'This should be a valid date (for example: YYYY-MM-DD)');
+    : 'This should be a valid date (for example: YYYY-MM-DD)';
 }
 
 export const checkValidations = (validations, value) => {
