@@ -139,7 +139,9 @@ export const videoPlayerDefaultProps = {
       preload: false,
     },
     file: {
-      attributes: {},
+      attributes: {
+        disablepictureinpicture: 'true',
+      },
       tracks: [],
       forceVideo: false,
       forceAudio: false,
