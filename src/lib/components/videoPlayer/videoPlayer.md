@@ -2,7 +2,6 @@
 <VideoPlayer
   url="https://vimeo.com/306075641"
   controls
-  playing
   loop
   progressInterval={2000}
   playsinline
