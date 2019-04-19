@@ -4,7 +4,7 @@
 
 .loading {
   @include themify() {
-    background: themed('loading-black');
+    background: themed('loadingBlack');
   }
   bottom: 0;
   left: 0;
@@ -17,9 +17,8 @@
 
   .spin {
     @include themify() {
-      color: themed('brand-primary');
+      color: themed('brandPrimary');
     }
-    box-sizing: border-box;
     display: none;
     font-size: 14px;
     line-height: 100vh;
@@ -51,7 +50,7 @@
 
       i {
         @include themify() {
-          background-color: themed('brand-primary');
+          background-color: themed('brandPrimary');
         }
         animation: spinMove 1s infinite linear alternate;
         border-radius: 100%;

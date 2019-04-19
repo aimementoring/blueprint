@@ -4,7 +4,6 @@ $lightTheme: (
   brandPrimary: rgb(118, 3, 219),
   brandSecondary: rgb(199, 0, 255),
   brandTertiary: rgb(218, 13, 255),
-  
   featureFontFamily: $lightTheme-feature-font-family,
   primaryFontFamilySemiBold: $lightTheme-primary-font-semibold,
   primaryFontFamilySemiBoldItalic: $lightTheme-primary-font-semibold-italic,
@@ -12,7 +11,6 @@ $lightTheme: (
   primaryFontFamilyRegular: $lightTheme-primary-font-regular,
   primaryFontFamilyExtraBoldItalic: $lightTheme-primary-font-extrabold-italic,
   bodyFontFamily: $lightTheme-body-font-family,
-  
   gradientTitleColor: rgb(255, 255, 255),
   gradientTitleBackground: linear-gradient(135deg, rgb(49, 233, 255), rgb(218, 13, 255)),
   fieldBorder: none,
@@ -42,6 +40,7 @@ $lightTheme: (
   disabledElementColor: rgb(255, 255, 255),
   linkBackgroundColor: rgb(118, 3, 219),
   linkColor: rgb(255, 255, 255),
+  loadingBlack: rgba(0, 0, 0, 0.302),
   avatarBackground: rgb(163, 163, 163),
   checkboxColor: rgb(102, 102, 102),
   checkBoxNotCheckedBorderColor: rgb(232, 232, 232),
@@ -51,5 +50,5 @@ $lightTheme: (
   mainTitleColor: rgb(255, 255, 255),
   warningBlockBackground: rgb(251, 249, 253),
   warningBlockColor: rgb(0, 0, 0),
-  warningBlockPadding: 5em 4em,  
+  warningBlockPadding: 5em 4em,
 );

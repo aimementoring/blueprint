@@ -4,7 +4,6 @@ $portalTheme: (
   brandPrimary: rgb(118, 3, 219),
   brandSecondary: rgb(199, 0, 255),
   brandTertiary: rgb(218, 13, 255),
-  
   featureFontFamily: $portalTheme-feature-font-family,
   primaryFontFamilySemiBold: $portalTheme-primary-font-semibold,
   primaryFontFamilySemiBoldItalic: $portalTheme-primary-font-semibold-italic,
@@ -12,7 +11,6 @@ $portalTheme: (
   primaryFontFamilyRegular: $portalTheme-primary-font-regular,
   primaryFontFamilyExtraBoldItalic: $portalTheme-primary-font-extrabold-italic,
   bodyFontFamily: $portalTheme-body-font-family,
-  
   gradientTitleColor: rgb(255, 255, 255),
   gradientTitleBackground: linear-gradient(135deg, rgb(49, 233, 255), rgb(218, 13, 255)),
   fieldBorder: none,
@@ -42,6 +40,7 @@ $portalTheme: (
   disabledElementColor: rgb(255, 255, 255),
   linkBackgroundColor: rgb(118, 3, 219),
   linkColor: rgb(255, 255, 255),
+  loadingBlack: rgba(0, 0, 0, 0.302),
   avatarBackground: rgb(163, 163, 163),
   checkboxColor: rgb(102, 102, 102),
   checkBoxNotCheckedBorderColor: rgb(232, 232, 232),
