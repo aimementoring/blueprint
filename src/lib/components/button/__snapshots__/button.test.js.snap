@@ -1,5 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Button is backwards compatible (using text prop instead of children) 1`] = `
+<div
+  className="theme-portal"
+>
+  <div
+    className="container "
+  >
+    <div
+      className="buttonGroup"
+    >
+      <button
+        className=" button"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Back
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Button renders button properly 1`] = `
 <div
   className="theme-portal"
