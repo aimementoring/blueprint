@@ -19,7 +19,7 @@ class App extends Component {
     input: {
       placeholder: 'Name',
       value: '',
-      type: 'text',
+      type: 'date',
       required: true,
       disabled: false,
       validationMessage: 'there is an error here',

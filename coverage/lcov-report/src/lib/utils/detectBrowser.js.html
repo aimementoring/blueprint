@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">29.03% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>9/31</span>
+        <span class='fraction'>0/31</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>0/9</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">52.94% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>9/17</span>
+        <span class='fraction'>0/17</span>
       </div>
     </div>
   </div>
@@ -81,34 +81,34 @@
 36
 37
 38</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -118,41 +118,41 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// Opera 8.0+
-export const isOpera = <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >(!!window.opr &amp;&amp;</span>
+export const isOpera = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =&gt; (<span class="cstat-no" title="statement not covered" ></span>!!window.opr &amp;&amp;</span></span>
   !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') &gt;= 0;
 &nbsp;
 // Firefox 1.0+
-export const isFirefox = <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >typeof InstallTrigger !== 'undefined';</span>
+export const isFirefox = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>typeof InstallTrigger !== 'undefined';</span></span>
 &nbsp;
-const isSafariRemoteNotification = <span class="fstat-no" title="function not covered" >(p</span>) =&gt; <span class="cstat-no" title="statement not covered" >p.toString() === "[object SafariRemoteNotification]";</span>
+const isSafariRemoteNotification = (<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >p) =&gt; <span class="cstat-no" title="statement not covered" >p.toString() === "[object SafariRemoteNotification]";</span></span></span>
 &nbsp;
 // Safari 3.0+ "[object HTMLElementConstructor]" 
-export const isSafari = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+export const isSafari = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =&gt; </span>{</span>
 <span class="cstat-no" title="statement not covered" >  return /constructor/i.test(window.HTMLElement) ||</span>
     (isSafariRemoteNotification(!window.safari
       || (typeof safari !== 'undefined' &amp;&amp; safari.pushNotification)));
 }
 &nbsp;
 // Internet Explorer 6-11
-export const isIE = <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >false || !!document.documentMode;</span>
+export const isIE = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>false || !!document.documentMode;</span></span>
 &nbsp;
 // Edge 20+
-export const isEdge = <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >!isIE &amp;&amp; !!window.StyleMedia;</span>
+export const isEdge = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>!isIE &amp;&amp; !!window.StyleMedia;</span></span>
 &nbsp;
 // Chrome 1 - 71
-export const isChrome = <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >!!window.chrome &amp;&amp; (!!window.chrome.webstore || !!window.chrome.runtime);</span>
+export const isChrome = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>!!window.chrome &amp;&amp; (!!window.chrome.webstore || !!window.chrome.runtime);</span></span>
 &nbsp;
 // Blink engine detection
-export const isBlink = <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >(isChrome || isOpera) &amp;&amp; !!window.CSS;</span>
+export const isBlink = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>(isChrome || isOpera) &amp;&amp; !!window.CSS;</span></span>
 &nbsp;
-export const getBrowser = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >  if (isChrome) <span class="cstat-no" title="statement not covered" >return 'Chrome';</span></span>
-<span class="cstat-no" title="statement not covered" >  if (isFirefox) <span class="cstat-no" title="statement not covered" >return 'Firefox';</span></span>
-<span class="cstat-no" title="statement not covered" >  if (isSafari) <span class="cstat-no" title="statement not covered" >return 'Safari';</span></span>
-<span class="cstat-no" title="statement not covered" >  if (isIE) <span class="cstat-no" title="statement not covered" >return 'IE';</span></span>
-<span class="cstat-no" title="statement not covered" >  if (isOpera) <span class="cstat-no" title="statement not covered" >return 'Opera';</span></span>
-<span class="cstat-no" title="statement not covered" >  if (isEdge) <span class="cstat-no" title="statement not covered" >return 'Edge';</span></span>
-<span class="cstat-no" title="statement not covered" >  if (isBlink) <span class="cstat-no" title="statement not covered" >return 'Blink';</span></span>
+export const getBrowser = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =&gt; </span>{</span>
+<span class="cstat-no" title="statement not covered" >  if (isChrome) <span class="cstat-no" title="statement not covered" >r</span>eturn 'Chrome';</span>
+<span class="cstat-no" title="statement not covered" >  if (isFirefox) <span class="cstat-no" title="statement not covered" >r</span>eturn 'Firefox';</span>
+<span class="cstat-no" title="statement not covered" >  if (isSafari) <span class="cstat-no" title="statement not covered" >r</span>eturn 'Safari';</span>
+<span class="cstat-no" title="statement not covered" >  if (isIE) <span class="cstat-no" title="statement not covered" >r</span>eturn 'IE';</span>
+<span class="cstat-no" title="statement not covered" >  if (isOpera) <span class="cstat-no" title="statement not covered" >r</span>eturn 'Opera';</span>
+<span class="cstat-no" title="statement not covered" >  if (isEdge) <span class="cstat-no" title="statement not covered" >r</span>eturn 'Edge';</span>
+<span class="cstat-no" title="statement not covered" >  if (isBlink) <span class="cstat-no" title="statement not covered" >r</span>eturn 'Blink';</span>
 }
 &nbsp;</pre></td></tr>
 </table></pre>
@@ -160,7 +160,7 @@ export const getBrowser = <span class="fstat-no" title="function not covered" >(
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue May 14 2019 15:24:44 GMT-0300 (Argentina Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue May 14 2019 16:53:10 GMT-0300 (Argentina Standard Time)
 </div>
 </div>
 <script src="../../../prettify.js"></script>

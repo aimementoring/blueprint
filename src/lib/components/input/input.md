@@ -1,8 +1,8 @@
 ```js
-const value = 'abcd';
+let value = 'abcd';
 
-function updateValue(name, value) {
-  setState({ [name]: value });  
+function updateValue(name, newValue) {
+  value = newValue;
 }
 
 <Input

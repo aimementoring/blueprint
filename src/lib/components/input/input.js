@@ -2,10 +2,10 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
-import {
-  isSafari,
-  isIE,
-} from '../../utils/detectBrowser';
+// import {
+//   isSafari,
+//   isIE,
+// } from '../../utils/detectBrowser';
 import { withValidation } from '../../utils/hocs';
 import styles from './input.module.scss';
 import 'react-day-picker/lib/style.css';
@@ -37,12 +37,29 @@ class Input extends PureComponent {
     onChangeFunction: () => { },
   };
 
-  handleChange = name => event => {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const { onChangeFunction, handleValidations } = this.props;
+  datePickerChange = (newDate) => {
+    if (!newDate) return;
+    const date = new Date(newDate);
+    const day = date.getDate();
+    const monthIndex = date.getMonth() + 1;
+    const year = date.getFullYear();
+    const dateFormated = `${year}-${monthIndex}-${day}`;
+    this.applyChange(dateFormated);
+  }
+
+  applyChange = (value) => {
+    const { onChangeFunction, handleValidations, name } = this.props;
     const isWrongValidation = handleValidations(value);
     onChangeFunction(name, value, isWrongValidation);
+  }
+
+  handleChange = event => {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    this.applyChange(value, name);
+    // const { onChangeFunction, handleValidations } = this.props;
+    // const isWrongValidation = handleValidations(value);
+    // onChangeFunction(name, value, isWrongValidation);
   };
 
   renderInput = () => {
@@ -58,9 +75,13 @@ class Input extends PureComponent {
       autoFocus,
     } = this.props;
 
-    if (type === 'date' && (isSafari() || isIE())) {
+    // if (type === 'date' && (isSafari() || isIE())) {
+    if (type === 'date') {
+      console.log(value);
+      console.log(typeof value);
+
       return <DayPickerInput
-        onDayChange={this.handleChange(name)}
+        onDayChange={this.datePickerChange}
         value={value} />;
     }
     return <input
@@ -70,7 +91,7 @@ class Input extends PureComponent {
       name={name}
       type={type}
       required={required}
-      onChange={this.handleChange(name)}
+      onChange={this.handleChange}
       disabled={disabled ? 'disabled' : ''}
       autoFocus={autoFocus}
     />
