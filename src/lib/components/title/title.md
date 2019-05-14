@@ -1,13 +1,13 @@
 ```js
-<Title type="gradient" text="Gradient title" />
+<Title type="gradient">Gradient title</Title>
 ```
 
 ```js
-<Title type="blockTitle" text="Block title" />
+<Title type="blockTitle">Block title</Title>
 ```
 
 ```js
 <div style={{ backgroundColor: 'black', width: '100%' }}>
-  <Title type="mainTitle" text="Main title" />
+  <Title type="mainTitle">Main title</Title>
 </div>
 ```
