@@ -44,6 +44,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-app-polyfill": "^0.2.0",
+    "react-day-picker": "^7.3.0",
     "react-dev-utils": "^7.0.1",
     "react-dom": "^16.7.0",
     "react-intl-tel-input": "^7.0.1",

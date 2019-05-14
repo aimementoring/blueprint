@@ -40,12 +40,12 @@ function updateValue(name, value) {
 ```
 
 ```js
-const value = 'abcd';
+const value = '';
 
 <Input
   placeholder="Light theme"
   value={value}
-  type="text"
+  type="date"
   required={true}
   name="value"
   onChangeFunction={(attr, value) => this.updateState('input', attr, value)}

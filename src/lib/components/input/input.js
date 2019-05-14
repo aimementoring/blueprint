@@ -1,8 +1,14 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import DayPickerInput from 'react-day-picker/DayPickerInput';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
+import {
+  isSafari,
+  isIE,
+} from '../../utils/detectBrowser';
 import { withValidation } from '../../utils/hocs';
 import styles from './input.module.scss';
+import 'react-day-picker/lib/style.css';
 
 class Input extends PureComponent {
   static propTypes = {
@@ -28,7 +34,7 @@ class Input extends PureComponent {
     required: true,
     value: '',
     type: 'text',
-    onChangeFunction: () => {},
+    onChangeFunction: () => { },
   };
 
   handleChange = name => event => {
@@ -39,11 +45,9 @@ class Input extends PureComponent {
     onChangeFunction(name, value, isWrongValidation);
   };
 
-  render() {
+  renderInput = () => {
     const {
-      containerClassName,
       className,
-      theme,
       placeholder,
       disabled,
       required,
@@ -51,23 +55,37 @@ class Input extends PureComponent {
       value,
       type,
       isValidationOk,
-      renderValidationError,
       autoFocus,
+    } = this.props;
+
+    if (type === 'date' && (isSafari() || isIE())) {
+      return <DayPickerInput
+        onDayChange={this.handleChange(name)}
+        value={value} />;
+    }
+    return <input
+      placeholder={placeholder}
+      className={`${isValidationOk() && styles.error} ${className} ${styles.input}`}
+      value={value}
+      name={name}
+      type={type}
+      required={required}
+      onChange={this.handleChange(name)}
+      disabled={disabled ? 'disabled' : ''}
+      autoFocus={autoFocus}
+    />
+  }
+
+  render() {
+    const {
+      containerClassName,
+      theme,
+      renderValidationError,
     } = this.props;
 
     return (
       <div className={`${containerClassName} ${styles[`theme-${theme}`]} ${styles.inputWrapper}`}>
-        <input
-          placeholder={placeholder}
-          className={`${isValidationOk() && styles.error} ${className} ${styles.input}`}
-          value={value}
-          name={name}
-          type={type}
-          required={required}
-          onChange={this.handleChange(name)}
-          disabled={disabled ? 'disabled' : ''}
-          autoFocus={autoFocus}
-        />
+        {this.renderInput()}
         {renderValidationError()}
       </div>
     );

@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">37.5% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>3/8</span>
+        <span class='fraction'>6/12</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">33.33% </span>
+        <span class="strong">36.36% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>2/6</span>
+        <span class='fraction'>4/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">60% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/5</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">50% </span>
-        <span class="quiet">Functions</span>
-        <span class='fraction'>2/4</span>
-      </div>
-      <div class='fl pad1y space-right2'>
-        <span class="strong">37.5% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>3/8</span>
+        <span class='fraction'>6/12</span>
       </div>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -120,7 +120,31 @@
 75
 76
 77
-78</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -172,22 +196,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -199,9 +235,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import DayPickerInput from 'react-day-picker/DayPickerInput';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
+import {
+  isSafari,
+  isIE,
+} from '../../utils/detectBrowser';
 import { withValidation } from '../../utils/hocs';
 import styles from './input.module.scss';
+import 'react-day-picker/lib/style.css';
 &nbsp;
 class Input extends PureComponent {
   static propTypes = {
@@ -227,7 +269,7 @@ class Input extends PureComponent {
     required: true,
     value: '',
     type: 'text',
-    onChangeFunction: <span class="fstat-no" title="function not covered" >()</span> =&gt; {},
+    onChangeFunction: <span class="fstat-no" title="function not covered" >()</span> =&gt; { },
   };
 &nbsp;
   handleChange = name =&gt; <span class="fstat-no" title="function not covered" >ev</span>ent =&gt; {
@@ -238,11 +280,9 @@ class Input extends PureComponent {
 <span class="cstat-no" title="statement not covered" >    onChangeFunction(name, value, isWrongValidation);</span>
   };
 &nbsp;
-  render() {
+  renderInput = () =&gt; {
     const {
-      containerClassName,
       className,
-      theme,
       placeholder,
       disabled,
       required,
@@ -250,23 +290,37 @@ class Input extends PureComponent {
       value,
       type,
       isValidationOk,
-      renderValidationError,
       autoFocus,
+    } = this.props;
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (type === 'date' &amp;&amp; (<span class="branch-1 cbranch-no" title="branch not covered" >isSafari() </span>|| <span class="branch-2 cbranch-no" title="branch not covered" >isIE())</span>) {
+<span class="cstat-no" title="statement not covered" >      return &lt;DayPickerInput</span>
+        onDayChange={this.handleDayChange(name)}
+        value={value} /&gt;;
+    }
+    return &lt;input
+      placeholder={placeholder}
+      className={`${isValidationOk() &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >styles.error}</span> ${className} ${styles.input}`}
+      value={value}
+      name={name}
+      type={type}
+      required={required}
+      onChange={this.handleChange(name)}
+      disabled={disabled ? 'disabled' : <span class="branch-1 cbranch-no" title="branch not covered" >''}</span>
+      autoFocus={autoFocus}
+    /&gt;
+  }
+&nbsp;
+  render() {
+    const {
+      containerClassName,
+      theme,
+      renderValidationError,
     } = this.props;
 &nbsp;
     return (
       &lt;div className={`${containerClassName} ${styles[`theme-${theme}`]} ${styles.inputWrapper}`}&gt;
-        &lt;input
-          placeholder={placeholder}
-          className={`${isValidationOk() &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >styles.error}</span> ${className} ${styles.input}`}
-          value={value}
-          name={name}
-          type={type}
-          required={required}
-          onChange={this.handleChange(name)}
-          disabled={disabled ? 'disabled' : <span class="branch-1 cbranch-no" title="branch not covered" >''}</span>
-          autoFocus={autoFocus}
-        /&gt;
+        {this.renderInput()}
         {renderValidationError()}
       &lt;/div&gt;
     );
@@ -280,7 +334,7 @@ export default withValidation(Input);
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue May 14 2019 11:05:12 GMT-0300 (Argentina Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue May 14 2019 15:24:44 GMT-0300 (Argentina Standard Time)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>
