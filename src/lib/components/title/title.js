@@ -12,8 +12,9 @@ const titleTypeClass = {
 export default class Title extends PureComponent {
   static propTypes = {
     ...componentPropTypes,
-    text: PropTypes.string.isRequired,
+    text: PropTypes.string,
     type: PropTypes.oneOf(['gradient', 'blockTitle', 'mainTitle']),
+    children: PropTypes.node,
   };
 
   static defaultProps = {
@@ -22,11 +23,11 @@ export default class Title extends PureComponent {
   };
 
   render() {
-    const { text, type, className, theme } = this.props;
+    const { text, type, className, theme, children } = this.props;
     const titleClass = titleTypeClass[type];
     return (
       <div className={styles[`theme-${theme}`]}>
-        <span className={`${titleClass} ${className}`}>{text}</span>
+        <span className={`${titleClass} ${className}`}>{children || text}</span>
       </div>
     );
   }
