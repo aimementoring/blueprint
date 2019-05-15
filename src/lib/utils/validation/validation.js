@@ -61,7 +61,11 @@ export const validDate = value => {
     || moment(value, 'MM-DD-YYYY', true).isValid()
     || moment(value, 'MM/DD/YYYY', true).isValid()
     || moment(value, 'MM/DD/YY', true).isValid()
-    || moment(value, 'MM-DD-YY', true).isValid())
+    || moment(value, 'MM-DD-YY', true).isValid()
+    || moment(value, 'YYYY-MM-DD', true).isValid()
+    || moment(value, 'YYYY-M-D', true).isValid()
+    || moment(value, 'YYYY-MM-D', true).isValid()
+    || moment(value, 'YYYY-M-DD', true).isValid())
     ? undefined
     : 'This should be a valid date (for example: YYYY-MM-DD)';
 }

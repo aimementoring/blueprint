@@ -7,16 +7,17 @@ export default class Button extends PureComponent {
   static propTypes = {
     ...componentPropTypes,
     onClickFunction: PropTypes.func,
-    text: PropTypes.string.isRequired,
+    text: PropTypes.string,
     type: PropTypes.oneOf(['button', 'submit', 'reset', 'link']).isRequired,
     underneathLabel: PropTypes.string,
     disabled: PropTypes.bool,
     url: PropTypes.string,
+    children: PropTypes.node,
   };
 
   static defaultProps = {
     ...defaultComponentPropTypes,
-    onClickFunction: () => {},
+    onClickFunction: () => { },
     underneathLabel: null,
     disabled: false,
     url: null,
@@ -33,6 +34,7 @@ export default class Button extends PureComponent {
       containerClassName,
       className,
       theme,
+      children,
     } = this.props;
 
     return (
@@ -40,7 +42,7 @@ export default class Button extends PureComponent {
         <div className={`${styles.container} ${containerClassName}`}>
           {type === 'link' && url ? (
             <a href={url} className={`${className} ${styles.linkButton}`}>
-              {text}
+              {text || children}
             </a>
           ) : (
             <div className={styles.buttonGroup}>
@@ -50,7 +52,7 @@ export default class Button extends PureComponent {
                 onClick={onClickFunction}
                 disabled={disabled}
               >
-                {text}
+                {text || children}
               </button>
               {underneathLabel && (
                 <label className={styles.underneathLabel}>{underneathLabel}</label>

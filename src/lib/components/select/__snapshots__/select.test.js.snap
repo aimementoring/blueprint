@@ -6,11 +6,11 @@ exports[`Select renders properly 1`] = `
           theme-purple wrapper"
 >
   <div
-    className="css-1pcexqc-container false"
+    className="css-10nd86i false"
     onKeyDown={[Function]}
   >
     <div
-      className="css-1ebt9em-control"
+      className="css-1y2qrkb"
       onMouseDown={[Function]}
       onTouchEnd={[Function]}
     >
@@ -18,7 +18,7 @@ exports[`Select renders properly 1`] = `
         className="css-1hwfws3"
       >
         <div
-          className="css-151xaom-placeholder"
+          className="css-1492t68"
         >
           Select an option
         </div>
@@ -51,7 +51,6 @@ exports[`Select renders properly 1`] = `
                   "boxSizing": "content-box",
                   "color": "inherit",
                   "fontSize": "inherit",
-                  "label": "input",
                   "opacity": 1,
                   "outline": 0,
                   "padding": 0,
@@ -84,11 +83,11 @@ exports[`Select renders properly 1`] = `
         className="css-1wy0on6"
       >
         <span
-          className="css-bgvzuu-indicatorSeparator"
+          className="css-d8oujb"
         />
         <div
           aria-hidden="true"
-          className="css-16pqwjk-indicatorContainer"
+          className="css-1ep9fjw"
           onMouseDown={[Function]}
           onTouchEnd={[Function]}
         >

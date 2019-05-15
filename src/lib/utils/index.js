@@ -1,13 +1,13 @@
 import * as AirtableLoader from './airtableLoader';
 import * as LocalStorage from './localStorage';
 import * as Validation from './validation';
-// import bugsnag from './bugsnag';
+import * as BrowserDetector from './detectBrowser';
 import request from './request';
 
 export {
   AirtableLoader,
   LocalStorage,
-  // bugsnag,
+  BrowserDetector,
   request,
   Validation,
 };
