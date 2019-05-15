@@ -10,6 +10,10 @@
     "jest": true,
     "jasmine": true
   },
+  "globals": {
+    "opr": true,
+    "safari": true
+  },
   "rules": {
     "compat/compat": "error",
     "generator-star-spacing": [0],
