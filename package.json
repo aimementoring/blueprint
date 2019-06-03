@@ -125,7 +125,7 @@
     "fix-lint": "eslint --fix --ext .js",
     "fix-code": "prettier-eslint --write 'src/**/*.{js,jsx}' ",
     "fix-styles": "prettier-stylelint --write 'src/**/*.{css,scss}' ",
-    "test": "cross-env NODE_ENV=test BABEL_ENV=test jest --coverage",
+    "test": "cross-env NODE_ENV=test BABEL_ENV=test jest",
     "test:update-snapshot": "cross-env NODE_ENV=test BABEL_ENV=test jest -u",
     "deploy": "yarn test && yarn build",
     "release": "release-it",

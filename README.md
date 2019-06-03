@@ -12,7 +12,8 @@
   <img src="https://img.shields.io/badge/module%20formats-umd%2C%20cjs%2C%20esm-green.svg">
 </a>
 
-[![Build Status](https://travis-ci.com/aimementoring/blueprint.svg?branch=master)](https://travis-ci.com/aimementoring/blueprint) [![Coverage Status](https://coveralls.io/repos/github/aimementoring/blueprint/badge.svg?branch=master)](https://coveralls.io/github/aimementoring/blueprint?branch=master)
+[![Build Status](https://travis-ci.com/aimementoring/blueprint.svg?branch=master)](https://travis-ci.com/aimementoring/blueprint)
+[![Coverage Status](https://coveralls.io/repos/github/aimementoring/blueprint/badge.svg?branch=master)](https://coveralls.io/github/aimementoring/blueprint?branch=master)
 
 [![https://nodei.co/npm/aime-blueprint.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/aime-blueprint.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/aime-blueprint)
 
