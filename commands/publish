@@ -4,6 +4,7 @@ VERSION=$1
 
 cd ..
 npm version $VERSION
+git tag v$VERSION -m "Publish new version of blueprint library $VERSION"
 git add package.json
 git commit -m "Publish new version of blueprint library $VERSION"
 git push origin master
