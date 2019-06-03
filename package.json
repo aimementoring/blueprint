@@ -77,7 +77,6 @@
     "eslint-plugin-react": "^7.13.0",
     "husky": "^2.2.0",
     "jest": "^24.8.0",
-    "jest-coverage-badges": "^1.1.2",
     "jest-pnp-resolver": "^1.2.1",
     "jest-resolve": "^24.8.0",
     "lint-staged": "^8.1.6",
@@ -126,12 +125,12 @@
     "fix-lint": "eslint --fix --ext .js",
     "fix-code": "prettier-eslint --write 'src/**/*.{js,jsx}' ",
     "fix-styles": "prettier-stylelint --write 'src/**/*.{css,scss}' ",
-    "test": "cross-env NODE_ENV=test BABEL_ENV=test jest --coverage && jest-coverage-badges",
+    "test": "cross-env NODE_ENV=test BABEL_ENV=test jest --coverage",
     "test:update-snapshot": "cross-env NODE_ENV=test BABEL_ENV=test jest -u",
     "deploy": "yarn test && yarn build",
     "release": "release-it",
     "upgrade-all": "yarn yarn-upgrade-all",
-    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
+    "coveralls": "node node_modules/.bin/coveralls"
   },
   "browserslist": [
     ">0.2%",
