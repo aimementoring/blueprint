@@ -130,7 +130,7 @@
     "deploy": "yarn test && yarn build",
     "release": "release-it",
     "upgrade-all": "yarn yarn-upgrade-all",
-    "coveralls": "node node_modules/.bin/coveralls"
+    "coveralls": "cross-env NODE_ENV=test BABEL_ENV=test jest --coverage --coverageReporters=text-lcov | coveralls"
   },
   "browserslist": [
     ">0.2%",
