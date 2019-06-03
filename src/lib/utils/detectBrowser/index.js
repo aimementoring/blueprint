@@ -6,16 +6,7 @@ import {
   isEdge,
   isChrome,
   isBlink,
-  getBrowser
+  getBrowser,
 } from './detectBrowser';
 
-export {
-  isOpera,
-  isFirefox,
-  isSafari,
-  isIE,
-  isEdge,
-  isChrome,
-  isBlink,
-  getBrowser
-};
+export { isOpera, isFirefox, isSafari, isIE, isEdge, isChrome, isBlink, getBrowser };
