@@ -15,47 +15,56 @@ const valueIsEmpty = (value) => (
   value === '' || value === undefined || value === null
 );
 
-export const required = value =>
-  !valueIsEmpty(value) && value !== false ? undefined : 'Required';
+export const required = customMessage => value =>
+  !valueIsEmpty(value) && value !== false ? undefined : customMessage || 'Required';
 
-export const validateNumeric = value =>
-  regularExpressions.numeric.test(value) ? undefined : 'This value should be a valid number.';
+export const validateNumeric = customMessage => value =>
+  regularExpressions.numeric.test(value) ? undefined : customMessage
+    || 'This value should be a valid number.';
 
-export const validateAlphanumeric = value =>
+export const validateAlphanumeric = customMessage => value =>
   valueIsEmpty(value) || regularExpressions.alphanumeric.test(value)
     ? undefined
-    : "This value shouldn't contain special characters.";
+    : customMessage || "This value shouldn't contain special characters.";
 
-export const validateEmail = value =>
+export const validateEmail = customMessage => value =>
   valueIsEmpty(value) || regularExpressions.email.test(value)
     ? undefined
-    : 'This value is not a valid email';
+    : customMessage || 'This value is not a valid email';
 
-export const validateNonNegative = value =>
-  value >= 0 ? undefined : "This value shouldn't be negative";
+export const validateNonNegative = customMessage => value =>
+  value >= 0 ? undefined : customMessage || "This value shouldn't be negative";
 
-export const validateHigherThanZero = value =>
-  value > 0 ? undefined : 'This value should be higher than zero';
+export const validateHigherThanZero = customMessage => value =>
+  value > 0 ? undefined : customMessage || 'This value should be higher than zero';
 
-export const minAmount = memoize(min => value =>
-  value && value < min ? `This value should not be less than ${min}` : undefined,
+export const minAmount = memoize((min, customMessage) => value =>
+  value && value < min
+    ? customMessage || `This value should not be less than ${min}`
+    : undefined,
 );
 
-export const maxAmount = memoize(max => value =>
-  value && value > max ? `This value should not be more than ${max}` : undefined,
+export const maxAmount = memoize((max, customMessage) => value =>
+  value && value > max
+    ? customMessage || `This value should not be more than ${max}`
+    : undefined,
 );
 
-export const maxCharacters = memoize(max => value =>
-  value && value.length > max ? `This value should contain maximum ${max} characters` : undefined,
+export const maxCharacters = memoize((max, customMessage) => value =>
+  value && value.length > max
+    ? customMessage || `This value should contain maximum ${max} characters`
+    : undefined,
 );
 
-export const minCharacters = memoize(min => value =>
-  value && value.length < min ? `This value should contain minimum ${min} characters` : undefined,
+export const minCharacters = memoize((min, customMessage) => value =>
+  value && value.length < min
+    ? customMessage || `This value should contain minimum ${min} characters`
+    : undefined,
 );
 
-export const validDate = value => {
+export const validDate = customMessage => value => {
   if (typeof value === 'string' && isNaN(value[value.length - 1])) {
-    return 'This should be a valid date (for example: YYYY-MM-DD)';
+    return customMessage || 'This should be a valid date (for example: YYYY-MM-DD)';
   }
   return (valueIsEmpty(value) || !isNaN(Date.parse(value))
     || moment(value, 'MM-DD-YYYY', true).isValid()
@@ -67,7 +76,7 @@ export const validDate = value => {
     || moment(value, 'YYYY-MM-D', true).isValid()
     || moment(value, 'YYYY-M-DD', true).isValid())
     ? undefined
-    : 'This should be a valid date (for example: YYYY-MM-DD)';
+    : customMessage || 'This should be a valid date (for example: YYYY-MM-DD)';
 }
 
 export const checkValidations = (validations, value) => {

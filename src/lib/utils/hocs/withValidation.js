@@ -9,6 +9,7 @@ export default function withValidation(WrappedComponent) {
       validations: PropTypes.array,
       validationMessage: PropTypes.string,
       theme: PropTypes.string,
+      hasErrorAfterSubmit: PropTypes.bool,
     };
 
     static defaultProps = {
@@ -26,10 +27,11 @@ export default function withValidation(WrappedComponent) {
     }
 
     static getDerivedStateFromProps(props, state) {
-      if (props.validationMessage !== state.validationMessage) {
+      if ((props.validationMessage !== state.validationMessage)
+        || (props.hasErrorAfterSubmit && !state.validationMessage)) {
         return {
           validationMessage:
-            props.validationMessage || checkValidations(props.validations, state.value),
+            props.validationMessage || checkValidations(props.validations, props.value),
         };
       }
 
