@@ -103,9 +103,9 @@ submit = () => {
   />
   <button onClick={this.submit}
 ```
-Take into account that in this case we use an object `validationObject` where we save every field with the name of the key as the name of the component. After that when the user submit the data we re-evaluate all the fields calling to `validateComponents` where we send the object with the validations we need to make and another object (in this case the state) with the values of the fields (this is make like that because usually we have all the values of the fields in the state or in the props of the components).
+Take into account that in this case we use an object `validationObject` where we save every field with the name of the key as the name of the component. After that, when the user submit the data we re-evaluate all the fields calling to `validateComponents` where we send the object with the validations we need to make and another object (in this case the state) with the values of the fields (this was made like that because usually we have all the values of the fields in the state or in the props of the components).
 
-When the validation after the submition failed, we set in the state a variable `hasErrorAfterSubmit` to true and we send that as parameter to one of our component. In this case you are saying to the component: 'please validate your self' (without having to type in the field).
+When the validations after the submition failed, we set in the state a variable `hasErrorAfterSubmit` to true and we send that as parameter to one of our component. In this case you are forcing every component to validate their selves (without having to type in the fields).
 
 ## Types of Validations
 The validations available are:
@@ -121,11 +121,14 @@ The validations available are:
 - minCharacters
 - validDate
 
+The min and max validation receive as param the min or max value that you want to evaluate. For example, maxCharacters(300) receive the number 300 to know that this is the maximum amount of characters. 
+All validation receive the custom message (if they have another param, it would be the second) and this is optional.
 
 
 ## The validations object
-This object should have the `validations` field and it could have a field call `condition` for every field we want to validate. 
-The field `condition` is a condition to evaluate if you want to execute that validation or not. In the previous example, let suppose that you have another input that is `amount` and you just want to validate this Input when your variable `count` is less than 4. Let me show you:
+This object should have the `validations` field and it could have another field call `condition` for every field we want to validate. 
+The field `condition` is a condition to evaluate if you want to execute that validation or not. 
+In the previous example, let's suppose that you have another input that is `amount` and you just want to validate this Input when your variable `count` is less than 4. Let me show you:
 
 ```jsx static
 let count = 0
