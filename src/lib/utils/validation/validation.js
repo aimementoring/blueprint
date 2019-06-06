@@ -19,13 +19,13 @@ export const required = customMessage => value =>
   !valueIsEmpty(value) && value !== false ? undefined : customMessage || 'Required';
 
 export const validateNumeric = customMessage => value =>
-  regularExpressions.numeric.test(value) ? undefined : customMessage
-    || 'This value should be a valid number.';
+  (!value || regularExpressions.numeric.test(value)) ? undefined : customMessage
+    || 'This value should be a valid number';
 
 export const validateAlphanumeric = customMessage => value =>
   valueIsEmpty(value) || regularExpressions.alphanumeric.test(value)
     ? undefined
-    : customMessage || "This value shouldn't contain special characters.";
+    : customMessage || "This value shouldn't contain special characters";
 
 export const validateEmail = customMessage => value =>
   valueIsEmpty(value) || regularExpressions.email.test(value)
@@ -36,7 +36,9 @@ export const validateNonNegative = customMessage => value =>
   value >= 0 ? undefined : customMessage || "This value shouldn't be negative";
 
 export const validateHigherThanZero = customMessage => value =>
-  value > 0 ? undefined : customMessage || 'This value should be higher than zero';
+  ((!value && value !== 0) || value > 0)
+    ? undefined
+    : customMessage || 'This value should be higher than zero';
 
 export const minAmount = memoize((min, customMessage) => value =>
   value && value < min
@@ -63,20 +65,24 @@ export const minCharacters = memoize((min, customMessage) => value =>
 );
 
 export const validDate = customMessage => value => {
+  if (!value) {
+    return undefined;
+  }
   if (typeof value === 'string' && isNaN(value[value.length - 1])) {
     return customMessage || 'This should be a valid date (for example: YYYY-MM-DD)';
   }
-  return (valueIsEmpty(value) || !isNaN(Date.parse(value))
-    || moment(value, 'MM-DD-YYYY', true).isValid()
-    || moment(value, 'MM/DD/YYYY', true).isValid()
-    || moment(value, 'MM/DD/YY', true).isValid()
-    || moment(value, 'MM-DD-YY', true).isValid()
-    || moment(value, 'YYYY-MM-DD', true).isValid()
-    || moment(value, 'YYYY-M-D', true).isValid()
-    || moment(value, 'YYYY-MM-D', true).isValid()
-    || moment(value, 'YYYY-M-DD', true).isValid())
+  return ((typeof value === 'string') &&
+    (valueIsEmpty(value) || !isNaN(Date.parse(value))
+      || moment(value, 'MM-DD-YYYY', true).isValid()
+      || moment(value, 'MM/DD/YYYY', true).isValid()
+      || moment(value, 'MM/DD/YY', true).isValid()
+      || moment(value, 'MM-DD-YY', true).isValid()
+      || moment(value, 'YYYY-MM-DD', true).isValid()
+      || moment(value, 'YYYY-M-D', true).isValid()
+      || moment(value, 'YYYY-MM-D', true).isValid()
+      || moment(value, 'YYYY-M-DD', true).isValid())
     ? undefined
-    : customMessage || 'This should be a valid date (for example: YYYY-MM-DD)';
+    : customMessage || 'This should be a valid date (for example: YYYY-MM-DD)');
 }
 
 export const checkValidations = (validations, value) => {
