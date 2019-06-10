@@ -38,6 +38,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "pnp-webpack-plugin": "^1.4.3",
     "prop-types": "^15.7.2",
+    "rc-table": "^6.6.0",
     "react": "^16.8.6",
     "react-app-polyfill": "^1.0.1",
     "react-dev-utils": "^9.0.1",
@@ -62,6 +63,7 @@
     "babel-eslint": "^10.0.1",
     "babel-preset-react-app": "^9.0.0",
     "babel-runtime": "^6.26.0",
+    "bundlesize": "^0.17.2",
     "coveralls": "^3.0.3",
     "cross-env": "^5.2.0",
     "eslint": "^5.16.0",
@@ -130,8 +132,15 @@
     "deploy": "yarn test && yarn build",
     "release": "release-it",
     "upgrade-all": "yarn yarn-upgrade-all",
-    "coveralls": "cross-env NODE_ENV=test BABEL_ENV=test jest --coverage --coverageReporters=text-lcov | coveralls"
+    "coveralls": "cross-env NODE_ENV=test BABEL_ENV=test jest --coverage --coverageReporters=text-lcov | coveralls",
+    "checksize": "bundlesize"
   },
+  "bundlesize": [
+    {
+      "path": "./lib/*.js",
+      "maxSize": "3 MB"
+    }
+  ],
   "browserslist": [
     ">0.2%",
     "not dead",
