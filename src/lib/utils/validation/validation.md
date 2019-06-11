@@ -19,9 +19,7 @@ const {
     placeholder="First Name"
     onChangeFunction={this.updateForm}
     name="firstName"
-    validations={{
-      validations: [maxCharacters(300), required('Complete First Name')],
-    }}
+    validations={[maxCharacters(300), required('Complete First Name')]}
     hasErrorAfterSubmit={hasErrorAfterSubmit}
     autoFocus
   />
@@ -76,7 +74,7 @@ submit = () => {
     placeholder="First Name"
     onChangeFunction={this.updateState}
     name="firstName"
-    validations={this.validationObject[firstName]}
+    validations={this.validationObject.firstName.validations}
     hasErrorAfterSubmit={hasErrorAfterSubmit}
     autoFocus
   />
@@ -87,7 +85,7 @@ submit = () => {
     onChangeFunction={this.updateState}
     name="universityEmail"
     type="email"
-    validations={this.validationObject[universityEmail]}
+    validations={this.validationObject.universityEmail.validations}
     hasErrorAfterSubmit={hasErrorAfterSubmit}
   />
   <button onClick={this.submit}
@@ -115,11 +113,23 @@ All validation receive the custom message (if they have another param, it would 
 
 ## The validations object
 This object should have the `validations` field and it could have another field call `condition` for every field we want to validate. 
-The field `condition` is used to check if you want to execute that validation or not. 
+The field `condition` is used to check if you want to execute that validation or not after the user click on the submit button. 
 In the previous example, let's suppose that you have another input that is `amount` and you just want to validate this Input when your variable `count` is less than 4. Let me show you:
 
 ```jsx static
 let count = 0
+this.validationObject = {
+  firstName: {
+    validations: [maxCharacters(300), required()],
+  },
+  universityEmail: {
+    validations: [maxCharacters(300), validateEmail()],
+  }
+  amount: {
+    validations: [maxCharacters(300), required('Complete First Name')],
+    condition: () => { count < 4 },
+  }
+}
 // ... code
 count++
 // ... more code
@@ -129,15 +139,23 @@ count++
     placeholder="Amount"
     onChangeFunction={this.updateForm}
     name="amount"
-    validations={{
-      validations: [maxCharacters(300), required('Complete First Name')],
-      condition: () => (
-        count < 4  
-      ),
-    }}
+    validations={this.validationObject.amount.condition() 
+      ? this.validationObject.amount.validations
+      : []}
     hasErrorAfterSubmit={hasErrorAfterSubmit}
     autoFocus
-  />
+  />  
 ```
 
-In this case you will just validate the Input component when the variable count is less than 4. Take into account that condition should be a function.
+In this case you will just validate the Input component when the variable count is less than 4. Take into account that condition should be a function. So when the user click on submit button and it calls the validateComponents function it will only execute this validation if the count is less than 4 (the function of condition in the validationObject is true).
+
+```jsx static
+submit = () => {
+  const validateObject = validateComponents(this.validationsObject, this.state);
+  if (validateObject.hasError) {
+    this.setState({ hasErrorAfterSubmit: true })
+    return;
+  }
+  submitData(this.state);
+}
+```
