@@ -42,7 +42,6 @@ export default function withValidation(WrappedComponent) {
     handleValidations = value => {
       const { validations } = this.props;
       const validationResultMsg = checkValidations(validations, value);
-      console.log(`validationResulMsg: ${validationResultMsg}`)
       this.setState({
         validationMessage: validationResultMsg || this.props.validationMessage || '',
         value,
