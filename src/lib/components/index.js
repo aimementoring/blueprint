@@ -15,3 +15,6 @@ export { default as WarningBlock } from './warningBlock';
 export { default as RadioButton } from './radioButton';
 // export { default as PhoneInput } from './phoneInput';
 export { default as Table } from './table';
+
+import { countriesList } from './countrySelector';
+export { countriesList };
