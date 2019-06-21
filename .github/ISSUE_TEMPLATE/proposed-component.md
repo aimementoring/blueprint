@@ -2,13 +2,13 @@
 name: Proposed Component
 about: 'Use this issue to propose a new component for Blueprint '
 title: "[Proposed] Example Component "
-labels: proposed
+labels: component-proposed
 assignees: ''
 
 ---
 
 **Why is this component a good candidate for Blueprint?**
-A clear and concise description of what the problem is and how this component will solve it. Establish that it is a repeatable pattern that will be used in more than one project. Try to name it as you would in code. 
+A clear and concise description of what the problem is and how this component will solve it. Establish that it is a repeatable pattern that will be used in more than one project. Try to name it as you would in code or give an indication of what it should be named. 
 
 **Describe the solution you'd like**
 A clear and concise description of what you want it to be.
