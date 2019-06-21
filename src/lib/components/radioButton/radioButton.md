@@ -1,4 +1,12 @@
 ```js
+initialState = {
+  value: 'notReturningMentor',
+};
+
+function updateValue(name, value) {
+  setState({ [name]: value });
+}
+
 const radioButtonsOptions = [
   {
     value: 'notReturningMentor',
@@ -6,14 +14,16 @@ const radioButtonsOptions = [
   },
   {
     value: 'returningMentor',
-    text: 'I’ve mentored with AIME before and will register with the same email I used then. I also can’t flippin’ wait!',
+    text:
+      'I’ve mentored with AIME before and will register with the same email I used then. I also can’t flippin’ wait!',
   },
 ];
 <RadioButton
   className=""
-  onChangeFunction={() => {}}
+  name="value"
+  onChangeFunction={updateValue}
   inputName="returningMentor"
   options={radioButtonsOptions}
-  value={'returningMentor'} 
-/>
+  value={state.value}
+/>;
 ```

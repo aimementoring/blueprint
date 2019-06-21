@@ -1,19 +1,37 @@
 ```js
+initialState = {
+  textbox1: '',
+};
+
+function updateValue(name, value) {
+  setState({ [name]: value });
+}
+
 <TextBox
   placeholder="Write area"
-  name="textbox"
+  name="textbox1"
   required
   className="myClass"
-  onChangeFunction={value => {}}
-/>
+  onChangeFunction={updateValue}
+  value={state.textbox1}
+/>;
 ```
 
 ```js
+initialState = {
+  textbox2: '',
+};
+
+function updateValue(name, value) {
+  setState({ [name]: value });
+}
+
 <TextBox
   placeholder="Write area light theme"
-  name="textbox"
+  name="textbox2"
   required
   theme="light"
-  onChangeFunction={value => {}}
-/>
+  onChangeFunction={updateValue}
+  value={state.textbox2}
+/>;
 ```
