@@ -1,5 +1,7 @@
 @import 'variables/variables.module.scss';
 
+/// Definition of all variables used on LightTheme
+/// @group LightTheme
 $lightTheme: (
   brandPrimary: rgb(118, 3, 219),
   brandSecondary: rgb(199, 0, 255),

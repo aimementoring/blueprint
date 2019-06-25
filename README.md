@@ -32,6 +32,7 @@ The main idea of this project is to define some standards for all AIME platforms
    - [How to create a new component](#how-to-create-a-new-component)
    - [How to test components](#how-to-test-components)
    - [How to build styleguide](#how-to-build-styleguide)
+   - [How to build sassdoc](#how-to-build-sassdoc)
    - [How to build library](#how-to-build-library)
    - [How to deploy](#how-to-deploy)
    - [How to test locally from a project](#how-to-test-locally-from-a-project)
@@ -94,6 +95,12 @@ If your javascript is ok (and it should be ok because unit tests are passing), i
 
 It's time to generate styleguide documentation, and the command is `yarn build:styleguide` (this command generates automatically **styleguide** folder)
 Lets see our component!!! :tada: We run `serve -s styleguide` (you have to previously install serve command, you can use `npm i serve -g` if you don't have it). This command loads your styleguide folder, and copies in your clipboard the url to open the project...so you can open now your browser and paste the url. You should find in components list the component you created, with the example you wrote in markdown file, proptypes specs and example code.
+
+Does it work? :clap::clap:
+
+#### How to build sassdoc
+
+Execute command `yarn build:sassdoc`
 
 Does it work? :clap::clap:
 
