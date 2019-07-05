@@ -22,12 +22,13 @@ const columns = [
   },
 ];
 
-const header = <h1>Testing Header</h1>;
+const header = <h1>This is where you could place your table title - not always needed</h1>;
+
+/// Hey Kevin, for this header ^ we would eventually use the title component within this table component, right?
 
 const footer = () => (
   <div>
-    <h1>Testing Footer</h1>
-    <p>Rows quantity: {data.length}</p>
+    <p>Testing Footer - rows quantity: {data.length}</p>
   </div>
 );
 
