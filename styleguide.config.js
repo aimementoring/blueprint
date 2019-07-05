@@ -15,6 +15,7 @@ module.exports = {
       base: '"Poppins Bold Italic", Helvetica, Arial, sans-serif',
     },
   },
+  // Temporary reminder for Lara - this is where you can change the framework styles
   // styles: {
   //   Logo: {
   //     // We're changing the LogoRenderer component

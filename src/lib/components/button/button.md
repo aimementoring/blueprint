@@ -1,3 +1,9 @@
+
+<div class="component-description">
+  <h1>Hey Kevin!</h1>
+  <p>This is where we could put the description text like we were talking about on the call maybe?</p>
+<div>
+
 ```js
 <Button type="button" onClickFunction={this.handleClick}>
   Action
