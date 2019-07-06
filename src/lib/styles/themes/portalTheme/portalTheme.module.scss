@@ -1,5 +1,7 @@
 @import './variables/variables.module.scss';
 
+/// Definition of all variables used on PortalTheme
+/// @group PortalTheme
 $portalTheme: (
   brandPrimary: rgb(118, 3, 219),
   brandSecondary: rgb(199, 0, 255),
@@ -51,4 +53,6 @@ $portalTheme: (
   warningBlockBackground: rgb(251, 249, 253),
   warningBlockColor: rgb(0, 0, 0),
   warningBlockPadding: 5em 4em,
+  tableBackground: red,
+  tableText: blue,
 );

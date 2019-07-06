@@ -1,0 +1,43 @@
+@import '../../styles/global/global.module.scss';
+@import '../../styles/variables/variables.module.scss';
+@import '../../styles/themes/themes.module.scss';
+@import '../../styles/node_components/rcTable.scss';
+
+.tableContainer {
+  background: $white;
+  color: $black;
+  font-family: $body-font-family;
+  border-radius: 20px;
+  line-height: 1.4rem;
+  font-size: 0.95rem;
+  letter-spacing: -0.3px;
+  text-align: left;
+
+  th {
+    background-color: $grey-lavender;
+  }
+
+  tr {
+    &:hover {
+      background-color: $lilac;
+    }
+  }
+}
+
+.footerContainer {
+  display: block;
+  font-family: $purpleTheme-primary-font-semibold-italic;
+  color: $black;
+  margin: 0 0 2em;
+  padding: 1.5em;
+  text-align: center;
+  font-size: 0.9rem;
+  border-bottom: 1px solid $grey-lavender;
+}
+
+.headerContainer {
+  display: block;
+  font-family: $purpleTheme-primary-font-bold;
+  margin: 1em 0 2em;
+  font-size: 1.1rem;
+}

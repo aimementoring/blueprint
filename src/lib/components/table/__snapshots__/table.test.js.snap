@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table renders properly 1`] = `
+<div
+  className="theme-portal"
+>
+  <div
+    className=""
+  >
+    <div
+      className="tableContainer"
+    >
+      <div
+        className="rc-table rc-table-scroll-position-left"
+        style={Object {}}
+      >
+        <div
+          className="rc-table-content"
+        >
+          <div
+            className="rc-table-body"
+            onScroll={[Function]}
+            onWheel={[Function]}
+            style={Object {}}
+          >
+            <table
+              className=""
+              style={Object {}}
+            >
+              <colgroup />
+              <thead
+                className="rc-table-thead"
+              />
+              <tbody
+                className="rc-table-tbody"
+              />
+            </table>
+          </div>
+          <div
+            className="rc-table-placeholder"
+          >
+            No data available
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

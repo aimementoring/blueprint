@@ -1,10 +1,18 @@
 ```js
+initialState = {
+  checkbox: true,
+};
+
+function updateValue(name, value) {
+  setState({ [name]: value });
+}
+
 <Checkbox
   elementClassName="classname"
-  onChangeFunction={() => {}}
+  onChangeFunction={updateValue}
   placeholder="Accept terms and conditions"
   name="checkbox"
   customId="checkbox"
-  value={true}
-/>
+  value={state.checkbox}
+/>;
 ```
