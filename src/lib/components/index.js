@@ -1,6 +1,7 @@
 import '../styles.module.scss';
 import { countriesList } from './countrySelector';
 
+export { countriesList };
 export { default as Button } from './button';
 export { default as Checkbox } from './checkbox';
 export { default as CountrySelector } from './countrySelector';
@@ -16,4 +17,4 @@ export { default as WarningBlock } from './warningBlock';
 export { default as RadioButton } from './radioButton';
 // export { default as PhoneInput } from './phoneInput';
 export { default as Table } from './table';
-export { countriesList };
+export { default as AnimatedCircleText } from './animatedCircleText';
