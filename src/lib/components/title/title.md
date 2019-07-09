@@ -7,7 +7,7 @@
 ```
 
 ```js
-<div style={{ backgroundColor: 'black', width: '100%' }}>
+// <div style={{ backgroundColor: 'black', width: '100%' }}>
   <Title type="mainTitle">Main title</Title>
-</div>
+// </div>
 ```

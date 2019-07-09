@@ -5,6 +5,8 @@
 $portalTheme: (
   brandPrimary: rgb(118, 3, 219),
   brandSecondary: rgb(199, 0, 255),
+  // rather than naming this brandTertiary,  
+  // shouldn't we be naming these variables like "TitleColor" or something?
   brandTertiary: rgb(218, 13, 255),
   featureFontFamily: $portalTheme-feature-font-family,
   primaryFontFamilySemiBold: $portalTheme-primary-font-semibold,

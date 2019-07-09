@@ -6,7 +6,7 @@
   display: inline-block;
   padding: 0.2em 0.5em 0.4em 0;
   outline: none;
-  transform: rotate(-20deg);
+  transform: rotate(-6.73deg);
   position: relative;
   z-index: 1;
   font: {
@@ -28,7 +28,7 @@
 
 .blockTitle {
   @include themify() {
-    color: themed('brandTertiary');
+    // color: themed('brandTertiary');
     font-family: themed('primaryFontFamilyBoldItalic');
   }
   position: relative;
@@ -45,7 +45,7 @@
 
 .mainTitle {
   @include themify() {
-    color: themed('mainTitleColor');
+    // color: themed('mainTitleColor');
     font-family: themed('primaryFontFamilyBoldItalic');
   }
   line-height: 1.125;
