@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paragraph is backwards compatible (text passed as prop) 1`] = `
+<div
+  className="theme-portal"
+>
+  <span
+    className="paragraph "
+  >
+    Gradient default Paragraph
+  </span>
+</div>
+`;
+
+exports[`Paragraph renders properly 1`] = `
+<div
+  className="theme-portal"
+>
+  <span
+    className="paragraph "
+  >
+    Gradient default Paragraph
+  </span>
+</div>
+`;
