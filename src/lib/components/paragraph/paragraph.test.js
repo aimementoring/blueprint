@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Paragraph from './title.js.js';
+import Paragraph from './paragraph';
 
 describe('Paragraph', () => {
   it('renders properly', () => {

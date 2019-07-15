@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Loading from './loading.js';
+import Loading from './loading';
 
 describe('Loading false', () => {
   it('renders properly', () => {

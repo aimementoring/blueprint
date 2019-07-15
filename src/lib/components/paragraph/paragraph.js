@@ -1,34 +1,22 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './paragraph.module.scss';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
 
-const paragraphTypeClass = {
-  // gradient: styles.gradientparagraph,
-  // blockparagraph: styles.blockparagraph,
-  paragraph: styles.paragraph,
+const Paragraph = ({ text, className, theme, children }) => (
+  <div className={styles[`theme-${theme}`]}>
+    <span className={`${styles.paragraph} ${className}`}>{children || text}</span>
+  </div>
+);
+
+Paragraph.propTypes = {
+  ...componentPropTypes,
+  text: PropTypes.string,
+  children: PropTypes.node,
 };
 
-export default class paragraph extends PureComponent {
-  static propTypes = {
-    ...componentPropTypes,
-    text: PropTypes.string,
-    type: PropTypes.oneOf(['gradient', 'blockparagraph', 'paragraph']),
-    children: PropTypes.node,
-  };
+Paragraph.defaultProps = {
+  ...defaultComponentPropTypes,
+};
 
-  static defaultProps = {
-    ...defaultComponentPropTypes,
-    // type: 'gradient',
-  };
-
-  render() {
-    const { text, type, className, theme, children } = this.props;
-    const paragraphClass = paragraphTypeClass[type];
-    return (
-      <div className={styles[`theme-${theme}`]}>
-        <span className={`${paragraphClass} ${className}`}>{children || text}</span>
-      </div>
-    );
-  }
-}
+export default Paragraph;
