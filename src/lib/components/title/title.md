@@ -7,7 +7,37 @@
 ```
 
 ```js
-<div style={{ backgroundColor: 'black', width: '100%' }}>
+// <div style={{ backgroundColor: 'black', width: '100%' }}>
   <Title type="mainTitle">Main title</Title>
-</div>
+// </div>
+```
+
+
+```js
+<Title type="h1Title">H1 Title</Title>
+```
+
+
+```js
+<Title type="h2Title">H2 Title</Title>
+```
+
+
+```js
+<Title type="h3Title">H3 Title</Title>
+```
+
+
+```js
+<Title type="h4Title">H4 Title</Title>
+```
+
+
+```js
+<Title type="h5Title">H5 Title</Title>
+```
+
+
+```js
+<Title type="h6Title">H6 Title</Title>
 ```

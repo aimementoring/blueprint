@@ -63,6 +63,16 @@ $fonts-path: 'https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts';
   font-family: 'Poppins ExtraBold Italic';
   src: url('#{$fonts-path}/poppins/Poppins-ExtraBoldItalic.ttf');
 }
+/// @group Poppins
+@font-face {
+  font-family: 'Poppins Black';
+  src: url('#{$fonts-path}/poppins/Poppins-Black.ttf');
+}
+/// @group Poppins
+@font-face {
+  font-family: 'Poppins Black Italic';
+  src: url('#{$fonts-path}/poppins/Poppins-BlackItalic.ttf');
+}
 /// @group Blackhawk
 @font-face {
   font-family: 'Blackhawk';
