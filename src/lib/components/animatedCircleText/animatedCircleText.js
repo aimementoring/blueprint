@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
+import Title from '../title';
 import styles from './animatedCircleText.module.scss';
 
 const AnimatedCircleText = ({
@@ -30,19 +31,21 @@ const AnimatedCircleText = ({
             animationDirection: reverse ? 'reverse' : 'normal',
           }}
         >
-          {chars.map((char, index) => (
-            <span
-              style={{
-                transform: `rotate(${qty * (index + 1)}deg)`,
-                height: `${size / 2}px`,
-                fontSize: `${fontSize}px`,
-              }}
-              className={className}
-              key={index}
-            >
-              {char}
-            </span>
-          ))}
+          <Title type="blockTitle">
+            {chars.map((char, index) => (
+              <span
+                style={{
+                  transform: `rotate(${qty * (index + 1)}deg)`,
+                  height: `${size / 2}px`,
+                  fontSize: `${fontSize}px`,
+                }}
+                className={className}
+                key={index}
+              >
+                {char}
+              </span>
+            ))}
+          </Title>
         </div>
       </div>
     </div>

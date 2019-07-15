@@ -6,7 +6,7 @@
   display: inline-block;
   padding: 0.2em 0.5em 0.4em 0;
   outline: none;
-  transform: rotate(-20deg);
+  transform: rotate(-6.73deg);
   position: relative;
   z-index: 1;
   font: {
@@ -28,7 +28,7 @@
 
 .blockTitle {
   @include themify() {
-    color: themed('brandTertiary');
+    // color: themed('brandTertiary');
     font-family: themed('primaryFontFamilyBoldItalic');
   }
   position: relative;
@@ -45,7 +45,7 @@
 
 .mainTitle {
   @include themify() {
-    color: themed('mainTitleColor');
+    // color: themed('mainTitleColor');
     font-family: themed('primaryFontFamilyBoldItalic');
   }
   line-height: 1.125;
@@ -64,4 +64,61 @@
   @media screen and (min-width: 64em) {
     font-size: 2.8rem;
   }
+}
+
+.h1Title {
+  @include themify() {
+    font-family: themed('primaryFontFamilyBlackItalic');
+  }
+  font-size: 4rem;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.h2Title {
+  @include themify() {
+    font-family: themed('primaryFontFamilyBlackItalic');
+  }
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.h3Title {
+  @include themify() {
+    font-family: themed('primaryFontFamilyRegular');
+  }
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.h4Title {
+  @include themify() {
+    font-family: themed('primaryFontFamilyBlackItalic');
+  }
+  font-size: 2rem;
+  letter-spacing: -0.02rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.h5Title {
+  @include themify() {
+    font-family: themed('primaryFontFamilyRegular');
+  }
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.h6Title {
+  @include themify() {
+    font-family: themed('primaryFontFamilyExtraBoldItalic');
+  }
+  font-size: 1rem;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  font-style: italic;
 }
