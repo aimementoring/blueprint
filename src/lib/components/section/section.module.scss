@@ -1,0 +1,22 @@
+@import '../../styles/variables/variables.module.scss';
+
+.section {
+  background-color: $white;
+  border-radius: 2px;
+  padding: 1em 0.5em;
+  display: flex;
+}
+
+.sectionRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sectionStack {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+}

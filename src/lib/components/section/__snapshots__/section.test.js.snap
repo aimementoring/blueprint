@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Section renders properly with align items 1`] = `
+<div
+  className="section undefined"
+  style={
+    Object {
+      "alignItems": "center",
+    }
+  }
+/>
+`;
+
+exports[`Section renders properly with all 3 params 1`] = `
+<div
+  className="section undefined"
+  style={
+    Object {
+      "alignItems": "start",
+      "flexGrow": 2,
+      "justifyContent": "flex-start",
+    }
+  }
+/>
+`;
+
+exports[`Section renders properly with grow value 1`] = `
+<div
+  className="section undefined"
+  style={
+    Object {
+      "flexGrow": true,
+    }
+  }
+/>
+`;
+
+exports[`Section renders properly with justify content 1`] = `
+<div
+  className="section undefined"
+  style={
+    Object {
+      "justifyContent": "flex-end",
+    }
+  }
+/>
+`;
+
+exports[`Section renders properly without custom properties 1`] = `
+<div
+  className="section undefined"
+  style={Object {}}
+/>
+`;

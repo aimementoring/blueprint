@@ -1,0 +1,214 @@
+@import '../../styles/variables/variables.module.scss';
+@import '../../styles/themes/themes.module.scss';
+
+.footerBackground {
+  background-color: $black;
+}
+
+.outerLinksContainer {
+  padding-top: 4rem;
+  max-width: 100%;
+  position: relative;
+
+  @media screen and (min-width: $lg) {
+    padding-bottom: 4rem;
+  }
+}
+
+.innerLinksContainer {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1120px;
+  overflow: visible;
+  padding: 0 2rem;
+}
+
+.fullWidth {
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  display: flex;
+}
+
+.flex {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
+}
+
+.rightContainer {
+  @media screen and (min-width: $lg) {
+    justify-content: flex-end;
+  }
+  @media screen and (max-width: $lg) {
+    justify-content: flex-start;
+  }
+}
+
+.becomeFriend {
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+  max-width: 350px;
+}
+
+.formContainer {
+  margin-bottom: 2rem;
+  flex-direction: column;
+}
+
+.informativeParagraph {
+  color: $white;
+  font-size: 14px;
+  padding-bottom: 1rem;
+}
+
+.emailInput {
+  color: unquote('#410048c4');
+  &::placeholder {
+    color: unquote('#410048c4');
+  }
+  height: 60px;
+  background-color: $off-white;
+  border: 1px solid $eggplant;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: $primary-font-regular;
+  border-radius: 6px;
+  padding: 1rem;
+  vertical-align: middle;
+  outline: none;
+  box-sizing: border-box;
+  appearance: none;
+  width: 100%;
+}
+
+.submitEmail {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  font-size: 16px;
+  margin: 0;
+  padding: 0 2rem;
+  border: 1px solid #7603db;
+  background: #7603db;
+  background-image: url($cdnRoot+'assets/images/arrow.svg');
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 50%;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-align: center;
+}
+
+.relative {
+  position: relative;
+}
+
+.navColumn {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  margin-bottom: 2rem;
+  display: block;
+  @media screen and (min-width: $sm) {
+    width: unset;
+  }
+}
+
+.navTitle {
+  color: $white;
+  font-weight: 500;
+  font-size: 15px;
+  font-family: $feature-font-family;
+  padding-bottom: 1rem;
+}
+
+.link {
+  color: $white;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.001em;
+  opacity: 1;
+  transition: opacity 0.1s ease-in;
+
+  &:hover {
+    color: $brand-secondary;
+  }
+}
+
+.navList {
+  font-size: 14px;
+  list-style: none;
+  padding-left: 0;
+
+  .navItem {
+    margin-bottom: 1rem;
+  }
+}
+
+.copyrightContainer {
+  @media screen and (min-width: $lg) {
+    padding: 0.5rem 2rem;
+  }
+
+  .maxWidthContainer {
+    font-size: 12px;
+    max-width: 1300px;
+    margin: 0 auto;
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+    padding-top: 0.5rem;
+
+    @media screen and (min-width: $lg) {
+      flex-direction: row;
+      padding: 0;
+      padding-top: 0;
+    }
+  }
+
+  .footerText {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-family: $feature-font-family;
+    font-weight: 400;
+    text-decoration: none;
+    color: $white;
+    transition: color 0.2s ease-in;
+  }
+
+  .footerLinksList {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    padding: 0;
+
+    @media screen and (min-width: $lg) {
+      flex-direction: row;
+    }
+
+    .footerLink {
+      @extend .footerText;
+      margin-right: 2rem;
+      display: flex;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

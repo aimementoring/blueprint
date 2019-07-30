@@ -1,0 +1,258 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer renders properly 1`] = `
+<div
+  className="theme-portal"
+>
+  <footer
+    className="footerBackground"
+    role="contentinfo"
+  >
+    <div
+      className="outerLinksContainer"
+    >
+      <div
+        className="innerLinksContainer"
+      >
+        <div
+          className="fullWidth"
+        >
+          <div
+            className="flex wrap"
+          >
+            <nav
+              className="navColumn"
+            >
+              <h4
+                className="navTitle"
+              >
+                Pitch In
+              </h4>
+              <ul
+                className="navList"
+              >
+                <li
+                  className="navItem"
+                >
+                  <a
+                    className="link"
+                    href="/be-a-mentor"
+                  >
+                    Become a &lt;strong&gt;Mentor&lt;/strong&gt;
+                  </a>
+                </li>
+                <li
+                  className="navItem"
+                >
+                  <a
+                    className="link"
+                    href="/contact"
+                  >
+                    Become a &lt;strong&gt;Partner&lt;/strong&gt;
+                  </a>
+                </li>
+                <li
+                  className="navItem"
+                >
+                  <a
+                    className="link"
+                    href="/donate"
+                  >
+                    Make a Donation
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <nav
+              className="navColumn"
+            >
+              <h4
+                className="navTitle"
+              >
+                What Else?
+              </h4>
+              <ul
+                className="navList"
+              >
+                <li
+                  className="navItem"
+                >
+                  <a
+                    className="link"
+                    href="/apparel-products"
+                  >
+                    Shop Apparel
+                  </a>
+                </li>
+                <li
+                  className="navItem"
+                >
+                  <a
+                    className="link"
+                    href="/the-mentor"
+                  >
+                    Read the book
+                  </a>
+                </li>
+                <li
+                  className="navItem"
+                >
+                  <a
+                    className="link"
+                    href="/about"
+                  >
+                    About AIME
+                  </a>
+                </li>
+                <li
+                  className="navItem"
+                >
+                  <a
+                    className="link"
+                    href="/jack-manning-bancroft"
+                  >
+                    Founder &amp; CEO
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <nav
+              className="navColumn"
+            >
+              <h4
+                className="navTitle"
+              >
+                Go Further
+              </h4>
+              <ul
+                className="navList"
+              >
+                <li
+                  className="navItem"
+                >
+                  <a
+                    className="link"
+                    href="/positions"
+                  >
+                    Work with AIME
+                  </a>
+                </li>
+                <li
+                  className="navItem"
+                >
+                  <a
+                    className="link"
+                    href="/faq"
+                  >
+                    FAQs
+                  </a>
+                </li>
+                <li
+                  className="navItem"
+                >
+                  <a
+                    className="link"
+                    href="/contact"
+                  >
+                    Contact &amp; CEO
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div
+            className="flex rightContainer"
+          >
+            <div
+              className="becomeFriend"
+            >
+              <div
+                className="flex formContainer"
+              >
+                <h4
+                  className="navTitle"
+                >
+                  Become an AIME friend
+                </h4>
+                <p
+                  className="informativeParagraph"
+                >
+                  Subscribe to our newsletter
+                </p>
+                <form
+                  acceptCharset="UTF-8"
+                  action="https://formkeep.com/f/0f2fe2a1cd09"
+                  className="relative"
+                  method="POST"
+                >
+                  <input
+                    name="utf8"
+                    type="hidden"
+                    value="✓"
+                  />
+                  <input
+                    name="submissionmessage"
+                    type="hidden"
+                    value="footernewslettersubscription"
+                  />
+                  <input
+                    className="emailInput"
+                    id="subscribe"
+                    name="email"
+                    placeholder="Enter your email"
+                    required={true}
+                    type="email"
+                  />
+                  <button
+                    className="submitEmail"
+                    type="submit"
+                  />
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="copyrightContainer"
+    >
+      <div
+        className="maxWidthContainer"
+      >
+        <span
+          className="footerText"
+        >
+          2019 © AIME
+        </span>
+        <div>
+          <ul
+            className="footerLinksList"
+          >
+            <li
+              className="footerLink"
+            >
+              <a
+                className="link"
+                href="/terms-of-service"
+              >
+                Terms of Service
+              </a>
+            </li>
+            <li
+              className="footerLink"
+            >
+              ABN 31 081 797 652
+            </li>
+            <li
+              className="footerLink"
+            >
+              ICN 7040
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+`;
