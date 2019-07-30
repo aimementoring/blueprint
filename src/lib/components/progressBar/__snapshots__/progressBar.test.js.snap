@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressBar renders properly using all available props 1`] = `
+<div
+  className="theme-portal"
+>
+  <div
+    className="progress"
+    style={
+      Object {
+        "backgroundColor": "green",
+        "height": "40px",
+      }
+    }
+  >
+    <div
+      className="progressBar"
+      style={
+        Object {
+          "backgroundColor": "red",
+          "color": "yellow",
+          "fontSize": "30px",
+          "lineHeight": "40px",
+          "width": "45%",
+        }
+      }
+    >
+      45%
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ProgressBar renders properly with just progress value 1`] = `
+<div
+  className="theme-portal"
+>
+  <div
+    className="progress"
+    style={
+      Object {
+        "height": "20px",
+      }
+    }
+  >
+    <div
+      className="progressBar"
+      style={
+        Object {
+          "fontSize": "12px",
+          "lineHeight": "20px",
+          "width": "10%",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`ProgressBar renders properly with just progress value and display number on true 1`] = `
+<div
+  className="theme-portal"
+>
+  <div
+    className="progress"
+    style={
+      Object {
+        "height": "20px",
+      }
+    }
+  >
+    <div
+      className="progressBar"
+      style={
+        Object {
+          "fontSize": "12px",
+          "lineHeight": "20px",
+          "width": "40%",
+        }
+      }
+    >
+      40%
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ProgressBar renders properly with no props 1`] = `
+<div
+  className="theme-portal"
+>
+  <div
+    className="progress"
+    style={
+      Object {
+        "height": "20px",
+      }
+    }
+  >
+    <div
+      className="progressBar"
+      style={
+        Object {
+          "fontSize": "12px",
+          "lineHeight": "20px",
+          "width": "0%",
+        }
+      }
+    />
+  </div>
+</div>
+`;

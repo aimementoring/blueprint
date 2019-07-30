@@ -1,6 +1,5 @@
 import { plugin as analyze } from 'rollup-plugin-analyzer';
 import visualizer from 'rollup-plugin-visualizer';
-import clean from 'rollup-plugin-delete';
 import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import filesize from 'rollup-plugin-filesize';
@@ -77,6 +76,9 @@ const generateConfig = async () => {
             'PropTypes',
             'createElement',
             'Fragment',
+            'useState',
+            'useEffect',
+            'useRef',
           ],
           'node_modules/react-dom/index.js': ['createPortal', 'findDOMNode'],
         },

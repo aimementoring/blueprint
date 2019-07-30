@@ -20,3 +20,5 @@ export { default as Table } from './table';
 export { default as AnimatedCircleText } from './animatedCircleText';
 export { default as Section } from './section';
 export { default as Footer } from './footer';
+export { default as ProgressBar } from './progressBar';
+export { default as PdfViewer } from './pdfViewer';
