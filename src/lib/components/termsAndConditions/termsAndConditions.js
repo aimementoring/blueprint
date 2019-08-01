@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Checkbox from '../checkbox';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
-import styles from './pdfViewer.module.scss';
+import styles from './termsAndConditions.module.scss';
 
-const PdfViewer = ({
+const TermsAndConditions = ({
   theme,
   pdf,
+  children,
   checkboxLabel,
   onChange,
   className,
@@ -25,15 +26,22 @@ const PdfViewer = ({
   return (
     <div className={containerClassName}>
       <div className={styles[`theme-${theme}`]}>
-        <div className={`${styles.pdfContainer} ${className}`} style={containerStyle}>
-          <object
-            data={`${pdf}#view=FitH`}
-            type="application/pdf"
-            className={styles.objectContainer}
-          >
-            <embed src={`${pdf}#view=FitH`} type="application/pdf" />
-          </object>
-        </div>
+        {pdf && (
+          <div className={`${styles.termsContainer} ${className}`} style={containerStyle}>
+            <object
+              data={`${pdf}#view=FitH`}
+              type="application/pdf"
+              className={styles.objectContainer}
+            >
+              <embed src={`${pdf}#view=FitH`} type="application/pdf" />
+            </object>
+          </div>
+        )}
+        {children && (
+          <div className={`${styles.textContainer} ${className}`} style={containerStyle}>
+            {children}
+          </div>
+        )}
         {checkboxLabel && (
           <Checkbox
             onChangeFunction={handleChange}
@@ -47,19 +55,22 @@ const PdfViewer = ({
   );
 };
 
-PdfViewer.propTypes = {
+TermsAndConditions.propTypes = {
   ...componentPropTypes,
-  pdf: PropTypes.string.isRequired,
+  pdf: PropTypes.string,
+  children: PropTypes.node,
   checkboxLabel: PropTypes.string,
   onChange: PropTypes.func,
   height: PropTypes.number,
 };
 
-PdfViewer.defaultProps = {
+TermsAndConditions.defaultProps = {
   ...defaultComponentPropTypes,
+  pdf: null,
+  children: null,
   checkboxLabel: null,
   onChange: () => {},
   height: null,
 };
 
-export default PdfViewer;
+export default TermsAndConditions;
