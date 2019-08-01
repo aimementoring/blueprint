@@ -5,7 +5,7 @@
 $portalTheme: (
   brandPrimary: rgb(118, 3, 219),
   brandSecondary: rgb(199, 0, 255),
-  // rather than naming this brandTertiary,  
+  // rather than naming this brandTertiary,
   // shouldn't we be naming these variables like "TitleColor" or something?
   brandTertiary: rgb(218, 13, 255),
   featureFontFamily: $portalTheme-feature-font-family,
@@ -59,4 +59,6 @@ $portalTheme: (
   warningBlockPadding: 5em 4em,
   tableBackground: red,
   tableText: blue,
+  progressBarBackgroundColor: rgb(118, 3, 219),
+  progressBarColor: rgb(255, 255, 255),
 );

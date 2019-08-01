@@ -11,7 +11,7 @@ $themes: (
   portal: $portalTheme,
 );
 
-/// @return {object} Generated css styles for each available theme in $themes variable
+/// Generated css styles for each available theme in $themes variable
 @mixin themify() {
   @each $theme, $map in $themes {
     .theme-#{$theme} & {
