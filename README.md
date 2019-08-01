@@ -21,6 +21,13 @@
 
 The main idea of this project is to define some standards for all AIME platforms. Here you'll find design definitions and React components which are used across all the platforms.
 
+## Guides
+
+We have some guides which could be useful for you
+
+- [Components guide](docs/components/index.html) This guide shows all existing components and how to use them
+- [Styles guide](docs/styles/index.html) This guide shows current variables, themes and styles that can be used to build a new component
+
 ## Table of Contents
 
 1. [Installation](#installation)
