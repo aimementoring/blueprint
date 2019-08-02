@@ -9,7 +9,11 @@ exports[`TermsAndConditions renders properly only with pdf value, without checkb
   >
     <div
       className="termsContainer "
-      style={Object {}}
+      style={
+        Object {
+          "backgroundColor": "#eee",
+        }
+      }
     >
       <object
         className="objectContainer"
@@ -35,7 +39,11 @@ exports[`TermsAndConditions renders properly with all props used 1`] = `
   >
     <div
       className="textContainer "
-      style={Object {}}
+      style={
+        Object {
+          "backgroundColor": "#eee",
+        }
+      }
     >
       <strong>
         Lorem ipsum dolor sit amet
@@ -65,6 +73,7 @@ exports[`TermsAndConditions renders properly with all props used 2`] = `
       className="textContainer "
       style={
         Object {
+          "backgroundColor": "#eee",
           "height": "150px",
         }
       }
@@ -122,6 +131,7 @@ exports[`TermsAndConditions renders properly with all props used 3`] = `
       className="termsContainer "
       style={
         Object {
+          "backgroundColor": "#eee",
           "height": "300px",
         }
       }
@@ -175,7 +185,11 @@ exports[`TermsAndConditions renders properly with pdf, and checkbox 1`] = `
   >
     <div
       className="termsContainer "
-      style={Object {}}
+      style={
+        Object {
+          "backgroundColor": "#eee",
+        }
+      }
     >
       <object
         className="objectContainer"

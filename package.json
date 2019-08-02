@@ -45,6 +45,8 @@
     "resolve": "^1.10.1",
     "styled-jsx": "^3.2.1",
     "url-loader": "^1.1.2",
+    "webpack": "^4.31.0",
+    "webpack-dev-server": "^3.3.1",
     "workbox-webpack-plugin": "^4.3.1"
   },
   "devDependencies": {
@@ -109,8 +111,6 @@
     "stylelint": "^10.0.1",
     "stylelint-config-standard": "^18.3.0",
     "yarn-upgrade-all": "^0.5.0",
-    "webpack": "^4.31.0",
-    "webpack-dev-server": "^3.3.1",
     "webpack-manifest-plugin": "^2.0.4"
   },
   "lint-staged": {
@@ -197,8 +197,7 @@
   },
   "files": [
     "lib",
-    "README.md",
-    "styleguide"
+    "README.md"
   ],
   "repository": {
     "type": "git",

@@ -49,6 +49,10 @@
 ```
 
 ```js
+<TermsAndConditions drive="2PACX-1vRvWKxJfAav1AuArdiyMcSR7znvOOo-ytMLASr3L5zw8bUdvYgBtSwzV7ME5FtWGlTQNVVsIvv4ukMh" />
+```
+
+```js
 <TermsAndConditions pdf="https://archive.org/download/starrover00lond/starrover00lond.pdf" />
 ```
 

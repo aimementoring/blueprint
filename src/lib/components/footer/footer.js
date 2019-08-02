@@ -15,7 +15,7 @@ const Footer = ({ location, theme, menuItems, copyright }) => (
             <div className={styles.fullWidth}>
               <div className={`${styles.flex} ${styles.wrap}`}>
                 {menuItems.map(columnMenu => (
-                  <nav className={columnMenu.className || styles.navColumn}>
+                  <nav className={columnMenu.className || styles.navColumn} key={columnMenu.title}>
                     <h4 className={columnMenu.titleClassName || styles.navTitle}>
                       {columnMenu.title}
                     </h4>

@@ -8,4 +8,5 @@ git tag v$VERSION -m "Publish new version of blueprint library $VERSION"
 git add package.json
 git commit -m "Publish new version of blueprint library $VERSION"
 git push origin master
+git subtree push --prefix docs origin gh-pages
 npm publish
