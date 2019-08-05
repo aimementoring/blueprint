@@ -99,6 +99,14 @@
     }
   }
 
+  .helperMessage {
+    display: block;
+    margin-top: 0.5em;
+    @include themify() {
+      color: themed('helperTextColor');
+    }
+  }
+
   label {
     overflow: hidden;
     text-overflow: ellipsis;

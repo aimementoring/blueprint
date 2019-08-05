@@ -163,6 +163,77 @@ exports[`LabeledInput renders properly when type is number 1`] = `
 </div>
 `;
 
+exports[`LabeledInput renders properly with error and helper text 1`] = `
+<div
+  className="theme-portal"
+>
+  <div
+    className="wrapper"
+  >
+    <input
+      className=" error"
+      containerClassName=""
+      id="testing"
+      name="testing"
+      onChange={[Function]}
+      type="text"
+      value={null}
+    />
+    <label
+      for="testing"
+    >
+      <span
+        className="fieldName"
+      >
+        Testing input
+      </span>
+    </label>
+    <span
+      className="errorMessage active"
+    >
+      There is an error
+    </span>
+  </div>
+</div>
+`;
+
+exports[`LabeledInput renders properly with helper text 1`] = `
+<div
+  className="theme-portal"
+>
+  <div
+    className="wrapper"
+  >
+    <input
+      className=" null"
+      containerClassName=""
+      id="testing"
+      name="testing"
+      onChange={[Function]}
+      type="text"
+      value={null}
+    />
+    <label
+      for="testing"
+    >
+      <span
+        className="fieldName"
+      >
+        Testing input
+      </span>
+    </label>
+    <span
+      className="errorMessage null"
+    />
+    <span
+      className="helperMessage"
+    >
+      My awesome helper text
+    </span>
+  </div>
+</div>
+`;
+
 exports[`LabeledInput renders properly with required 1`] = `
 <div
   className="theme-portal"

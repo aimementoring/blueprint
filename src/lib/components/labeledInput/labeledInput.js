@@ -13,6 +13,7 @@ const LabeledInput = ({
   type,
   onChangeFunction,
   handleValidations,
+  helperText,
   ...inputProps
 }) => {
   const handleChange = event => {
@@ -37,6 +38,7 @@ const LabeledInput = ({
           <span className={styles.fieldName}>{label}</span>
         </label>
         <span className={`${styles.errorMessage} ${error && styles.active}`}>{error}</span>
+        {!error && helperText && <span className={styles.helperMessage}>{helperText}</span>}
       </div>
     </div>
   );
@@ -50,6 +52,9 @@ LabeledInput.propTypes = {
   label: PropTypes.string.isRequired,
   className: PropTypes.string,
   type: PropTypes.string,
+  helperText: PropTypes.string,
+  handleValidations: PropTypes.func,
+  onChangeFunction: PropTypes.func,
 };
 
 LabeledInput.defaultProps = {
@@ -58,6 +63,9 @@ LabeledInput.defaultProps = {
   error: null,
   className: '',
   type: 'text',
+  helperText: null,
+  handleValidations: () => true,
+  onChangeFunction: () => {},
 };
 
 export default LabeledInput;

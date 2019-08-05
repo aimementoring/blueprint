@@ -25,6 +25,24 @@ function updateValue(name, value) {
 }
 
 <LabeledInput
+  name="testing"
+  value={state.value}
+  onChangeFunction={updateValue}
+  label="Placeholder input"
+  helperText="My super helper text"
+/>;
+```
+
+```js
+initialState = {
+  value: '',
+};
+
+function updateValue(name, value) {
+  setState({ [name]: value });
+}
+
+<LabeledInput
   name="required"
   value={state.value}
   onChangeFunction={updateValue}

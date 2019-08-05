@@ -59,4 +59,27 @@ describe('LabeledInput', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('renders properly with helper text', () => {
+    const tree = renderer
+      .create(
+        <LabeledInput name="testing" label="Testing input" helperText="My awesome helper text" />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders properly with error and helper text', () => {
+    const tree = renderer
+      .create(
+        <LabeledInput
+          name="testing"
+          label="Testing input"
+          error="There is an error"
+          helperText="My awesome helper text"
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
