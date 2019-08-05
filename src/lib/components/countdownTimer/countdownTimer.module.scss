@@ -1,0 +1,59 @@
+@import '../../styles/variables/variables.module.scss';
+@import '../../styles/themes/themes.module.scss';
+
+.countDownContainerFeatureBoard {
+  margin-top: 1rem;
+  padding-top: 1rem;
+
+  .countdownColElement {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+
+    @media screen and (max-width: $md) {
+      margin: 0 3px;
+    }
+  }
+
+  .countdownCol {
+    display: inline-block;
+  }
+
+  .countdown {
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+  }
+
+  .countdownNumber {
+    font-family: $primary-font-regular;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 2.5rem;
+    color: $grey;
+    background: $white;
+    padding: 8px 0;
+    text-align: center;
+    border-radius: 8px;
+    width: 64px;
+
+    @media screen and (max-width: $md) {
+      font-size: 1.5rem;
+      width: 48px;
+    }
+  }
+
+  .countdownLabel {
+    font-family: $primary-font-regular;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 10px;
+
+    @media screen and (max-width: $md) {
+      font-size: 1rem;
+    }
+  }
+}
