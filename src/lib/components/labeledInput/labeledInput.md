@@ -8,7 +8,7 @@ function updateValue(name, value) {
 }
 
 <LabeledInput
-  name="testing"
+  name="value"
   value={state.value}
   onChangeFunction={updateValue}
   label="Placeholder input"
@@ -25,7 +25,7 @@ function updateValue(name, value) {
 }
 
 <LabeledInput
-  name="testing"
+  name="value"
   value={state.value}
   onChangeFunction={updateValue}
   label="Placeholder input"
@@ -35,7 +35,7 @@ function updateValue(name, value) {
 
 ```js
 initialState = {
-  value: '',
+  required: '',
 };
 
 function updateValue(name, value) {
@@ -44,7 +44,7 @@ function updateValue(name, value) {
 
 <LabeledInput
   name="required"
-  value={state.value}
+  value={state.required}
   onChangeFunction={updateValue}
   label="Required input"
   required
@@ -54,7 +54,7 @@ function updateValue(name, value) {
 
 ```js
 initialState = {
-  value: '',
+  error: '',
 };
 
 function updateValue(name, value) {
@@ -63,7 +63,7 @@ function updateValue(name, value) {
 
 <LabeledInput
   name="error"
-  value={state.value}
+  value={state.error}
   onChangeFunction={updateValue}
   label="With error"
   error="Required input"

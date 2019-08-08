@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
+import { handleInputChange } from '../input/utils.ignore';
 import styles from './labeledInput.module.scss';
 
 const LabeledInput = ({
@@ -16,11 +17,7 @@ const LabeledInput = ({
   helperText,
   ...inputProps
 }) => {
-  const handleChange = event => {
-    const inputValue = event.target.value;
-    const isWrongValidation = handleValidations(inputValue);
-    onChangeFunction(name, inputValue, isWrongValidation);
-  };
+  const handleChange = event => handleInputChange(event, name, handleValidations, onChangeFunction);
 
   return (
     <div className={styles[`theme-${theme}`]}>

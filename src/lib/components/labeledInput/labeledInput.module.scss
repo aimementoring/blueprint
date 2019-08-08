@@ -9,14 +9,6 @@
   width: 100%;
   margin-top: 40px;
 
-  // &.noLabel {
-  //   margin-top: 10px;
-  // }
-
-  // &.topLabel {
-  //   margin-top: 20px;
-  // }
-
   textarea {
     min-height: 100px;
   }
@@ -42,7 +34,8 @@
       transform: translate3d(0, -24px, 0) scale(0.75);
     }
 
-    &[required] ~ label::after {
+    &[required] ~ label::after,
+    &.required ~ label::after {
       content: ' *';
       vertical-align: text-top;
       @include themify() {
@@ -112,12 +105,12 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     color: $black-title;
-    left: 5px;
+    left: 0.3125em;
     pointer-events: none;
     position: absolute;
     right: auto;
     text-align: left;
-    top: 5px;
+    top: 0.3125em;
     transform: translate3d(0, 0, 0) scale(1);
     transform-origin: left top;
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
