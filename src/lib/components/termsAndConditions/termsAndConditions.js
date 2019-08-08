@@ -44,7 +44,7 @@ class TermsAndConditions extends PureComponent {
               <iframe
                 src={`https://docs.google.com/document/d/e/${drive}/pub?embedded=true`}
                 title="drive"
-                style={{ width: '100%', height: '100%', }}
+                style={{ width: '100%', height: '100%' }}
               />
             </div>
           )}

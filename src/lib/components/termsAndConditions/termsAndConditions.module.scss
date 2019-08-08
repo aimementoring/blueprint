@@ -1,22 +1,17 @@
 @import '../../styles/variables/variables.module.scss';
 
-.termsContainer {
-  display: block;
-  width: 100%;
-  margin-bottom: 1em;
-}
-
-.driveContainer {
-  display: block;
-  margin-bottom: 1em;
-  padding: 0;
-  width: 100%;
-}
-
+.termsContainer,
+.driveContainer,
 .textContainer {
   display: block;
   width: 100%;
-  margin-bottom: 1em;
+}
+
+.driveContainer {
+  padding: 0;
+}
+
+.textContainer {
   background-color: $white-middle-grey;
   padding: 1em;
   overflow-y: auto;
