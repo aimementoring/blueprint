@@ -1,0 +1,130 @@
+@import '../../styles/variables/variables.module.scss';
+@import '../../styles/themes/themes.module.scss';
+@import '../../styles/global/reset.module.scss';
+
+.wrapper {
+  display: inline-block;
+  font-size: 16px;
+  position: relative;
+  width: 100%;
+  margin-top: 40px;
+
+  textarea {
+    min-height: 100px;
+  }
+
+  textarea,
+  input {
+    -webkit-appearance: none;
+    border: 0;
+    outline: none;
+    width: 100%;
+
+    @include themify() {
+      color: themed('fieldColor');
+      background-color: themed('fieldBackground');
+      border-bottom: 1px solid themed('borderColor');
+      font-family: themed('primaryFontFamilySemiBold');
+      font-size: themed('fieldFontSize');
+      font-weight: themed('fieldFontWeight');
+      padding: themed('inputPadding');
+    }
+
+    &[placeholder] ~ label {
+      transform: translate3d(0, -24px, 0) scale(0.75);
+    }
+
+    &[required] ~ label::after,
+    &.required ~ label::after {
+      content: ' *';
+      vertical-align: text-top;
+      @include themify() {
+        color: themed('fieldColorError');
+        font-size: themed('fieldFontSize');
+        font-weight: themed('fieldFontWeight');
+      }
+    }
+
+    &:focus {
+      @include themify() {
+        border-bottom: 1px solid themed('fieldBorderFocused');
+        box-shadow: inset 0 -1px 0 0 themed('fieldBorderFocused');
+      }
+    }
+
+    &:not([value='']),
+    &:focus,
+    &:valid:not([value='']) {
+      ~ label {
+        @include themify() {
+          color: themed('fieldColor');
+        }
+        transform: translate3d(0, -24px, 0) scale(0.75);
+      }
+    }
+
+    &:not([value='']):invalid,
+    &.error {
+      @include themify() {
+        border-bottom: 1px solid themed('fieldColorError');
+        box-shadow: inset 0 -1px 0 0 themed('fieldColorError');
+      }
+
+      ~ label {
+        @include themify() {
+          color: themed('fieldColorError');
+        }
+        transform: translate3d(0, -24px, 0) scale(0.75);
+      }
+    }
+  }
+
+  .errorMessage {
+    display: block;
+    visibility: hidden;
+    margin-top: 0.5em;
+    @include themify() {
+      color: themed('fieldColorError');
+    }
+
+    &.active {
+      visibility: visible;
+    }
+  }
+
+  .helperMessage {
+    display: block;
+    margin-top: 0.5em;
+    @include themify() {
+      color: themed('helperTextColor');
+    }
+  }
+
+  label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: $black-title;
+    left: 0.3125em;
+    pointer-events: none;
+    position: absolute;
+    right: auto;
+    text-align: left;
+    top: 0.3125em;
+    transform: translate3d(0, 0, 0) scale(1);
+    transform-origin: left top;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    width: 100%;
+    z-index: 1;
+
+    &.required::after {
+      content: ' *';
+      vertical-align: text-top;
+      @include themify() {
+        color: themed('fieldColorError');
+        font-size: themed('fieldFontSize');
+        font-weight: themed('fieldFontWeight');
+      }
+    }
+  }
+}
