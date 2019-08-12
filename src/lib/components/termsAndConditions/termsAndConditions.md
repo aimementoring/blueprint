@@ -22,7 +22,6 @@
     ultrices posuere cubilia Curae;
   </p>
 </TermsAndConditions>
-<p>blah blah1 </p>
 ```
 
 ```js
@@ -39,17 +38,14 @@
     Duis vel pharetra urna. Nam finibus risus egestas tortor interdum rhoncus ut sed dolor. Integer quis porta nulla. Maecenas dignissim purus ac nisi viverra tristique. Cras dapibus est commodo est lobortis, consectetur faucibus odio fermentum. Donec tincidunt quis augue ut tempor. Nam consectetur faucibus nisl, vitae hendrerit metus venenatis id. In facilisis lacinia elit sed tempor.`}
   </p>
 </TermsAndConditions>
-<p>blah blah 2</p>
 ```
 
 ```js
 <TermsAndConditions drive="2PACX-1vRvWKxJfAav1AuArdiyMcSR7znvOOo-ytMLASr3L5zw8bUdvYgBtSwzV7ME5FtWGlTQNVVsIvv4ukMh" />
-<p>blah blah 3</p>
 ```
 
 ```js
 <TermsAndConditions pdf="https://archive.org/download/starrover00lond/starrover00lond.pdf" />
-<p>blah blah 4</p>
 ```
 
 ```js
@@ -59,7 +55,6 @@
   onChange={value => console.log(value)}
   height={300}
 />
-<p>blah blah 5</p>
 ```
 
 ```js
@@ -68,5 +63,4 @@
   checkboxLabel="Testing my checkbox"
   onChange={value => console.log(value)}
 />
-<p>blah blah 6</p>
 ```
