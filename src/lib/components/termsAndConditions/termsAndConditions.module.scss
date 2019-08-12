@@ -5,15 +5,19 @@
 .textContainer {
   display: block;
   width: 100%;
+  border: none;
+  margin-bottom: 2em;
 }
 
 .driveContainer {
   padding: 0;
+  border: 1px solid $off-white;
 }
 
 .textContainer {
-  background-color: $white-middle-grey;
-  padding: 1em;
+  background-color: $soft-lavender;
+  padding: 1.5em;
+  border-radius: 3px;
   overflow-y: auto;
 }
 

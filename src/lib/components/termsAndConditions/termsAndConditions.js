@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Checkbox from '../checkbox';
+// TODO: import paragraph component instead of using <p>
+// import Paragraph from '../paragraph';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
 import styles from './termsAndConditions.module.scss';
 
@@ -16,14 +18,16 @@ class TermsAndConditions extends PureComponent {
       drive,
       children,
       checkboxLabel,
-      backgroundColor,
+      // backgroundColor,
       className,
       containerClassName,
       value,
+      // paragraph,
       height,
     } = this.props;
 
-    const containerStyle = { backgroundColor };
+    // const containerStyle = { backgroundColor };
+    const containerStyle = {};
     if (height) containerStyle.height = `${height}px`;
     return (
       <div className={containerClassName}>
@@ -50,7 +54,9 @@ class TermsAndConditions extends PureComponent {
           )}
           {children && (
             <div className={`${styles.textContainer} ${className}`} style={containerStyle}>
+              {/* <Paragraph> */}
               {children}
+              {/* </Paragraph> */}
             </div>
           )}
           {checkboxLabel && (
@@ -73,10 +79,11 @@ TermsAndConditions.propTypes = {
   drive: PropTypes.string,
   children: PropTypes.node,
   checkboxLabel: PropTypes.string,
+  // paragraph: PropTypes.string,
   onChange: PropTypes.func,
   height: PropTypes.number,
   value: PropTypes.bool,
-  backgroundColor: PropTypes.string,
+  // backgroundColor: PropTypes.string,
 };
 
 TermsAndConditions.defaultProps = {
@@ -85,10 +92,11 @@ TermsAndConditions.defaultProps = {
   drive: null,
   children: null,
   checkboxLabel: null,
+  // paragraph: null,
   onChange: () => { },
   height: null,
   value: false,
-  backgroundColor: '#eee',
+  // backgroundColor: '#eee',
 };
 
 export default TermsAndConditions;

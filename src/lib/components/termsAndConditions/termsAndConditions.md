@@ -1,8 +1,7 @@
 ```js
 <TermsAndConditions>
-  <strong>Lorem ipsum dolor sit amet</strong>
   <p>
-    consectetur adipiscing elit. Nullam vitae augue commodo, euismod erat in, mollis diam.
+    Duis consectetur adipiscing elit. Nullam vitae augue commodo, euismod erat in, mollis diam.
     Suspendisse tristique justo sem, id commodo lectus porttitor et. In tempus libero lacus. Proin
     viverra facilisis ultricies. Phasellus aliquet efficitur ante, ac dignissim velit sollicitudin
     eu. Curabitur non nunc dictum, eleifend ligula feugiat, convallis augue. Ut accumsan arcu ac
@@ -22,14 +21,8 @@
     nulla nec, fringilla porttitor est. Vestibulum ante ipsum primis in faucibus orci luctus et
     ultrices posuere cubilia Curae;
   </p>
-  <p>
-    Duis vel pharetra urna. Nam finibus risus egestas tortor interdum rhoncus ut sed dolor. Integer
-    quis porta nulla. Maecenas dignissim purus ac nisi viverra tristique. Cras dapibus est commodo
-    est lobortis, consectetur faucibus odio fermentum. Donec tincidunt quis augue ut tempor. Nam
-    consectetur faucibus nisl, vitae hendrerit metus venenatis id. In facilisis lacinia elit sed
-    tempor.
-  </p>
 </TermsAndConditions>
+<p>blah blah1 </p>
 ```
 
 ```js
@@ -46,14 +39,17 @@
     Duis vel pharetra urna. Nam finibus risus egestas tortor interdum rhoncus ut sed dolor. Integer quis porta nulla. Maecenas dignissim purus ac nisi viverra tristique. Cras dapibus est commodo est lobortis, consectetur faucibus odio fermentum. Donec tincidunt quis augue ut tempor. Nam consectetur faucibus nisl, vitae hendrerit metus venenatis id. In facilisis lacinia elit sed tempor.`}
   </p>
 </TermsAndConditions>
+<p>blah blah 2</p>
 ```
 
 ```js
 <TermsAndConditions drive="2PACX-1vRvWKxJfAav1AuArdiyMcSR7znvOOo-ytMLASr3L5zw8bUdvYgBtSwzV7ME5FtWGlTQNVVsIvv4ukMh" />
+<p>blah blah 3</p>
 ```
 
 ```js
 <TermsAndConditions pdf="https://archive.org/download/starrover00lond/starrover00lond.pdf" />
+<p>blah blah 4</p>
 ```
 
 ```js
@@ -63,6 +59,7 @@
   onChange={value => console.log(value)}
   height={300}
 />
+<p>blah blah 5</p>
 ```
 
 ```js
@@ -71,4 +68,5 @@
   checkboxLabel="Testing my checkbox"
   onChange={value => console.log(value)}
 />
+<p>blah blah 6</p>
 ```
