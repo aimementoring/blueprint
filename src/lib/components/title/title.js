@@ -30,8 +30,16 @@ export default class Title extends PureComponent {
   };
 
   render() {
-    const { text, type, className, theme, children } = this.props;
+    const {
+      text,
+      type,
+      className,
+      theme,
+      children,
+    } = this.props;
+
     const titleClass = titleTypeClass[type];
+
     return (
       <div className={styles[`theme-${theme}`]}>
         <span className={`${titleClass} ${className}`}>{children || text}</span>
