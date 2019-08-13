@@ -8,9 +8,12 @@
   position: relative;
   width: 100%;
   margin-top: 40px;
+  border: 1px dashed chocolate;
 
   textarea {
     min-height: 100px;
+    border: 1px solid blue;
+    // set up an example of this in the md file
   }
 
   textarea,
@@ -19,7 +22,8 @@
     border: 0;
     outline: none;
     width: 100%;
-
+    border: 1px double forestgreen;
+    
     @include themify() {
       color: themed('fieldColor');
       background-color: themed('fieldBackground');
@@ -46,6 +50,7 @@
     }
 
     &:focus {
+      border: 2px solid yellow;
       @include themify() {
         border-bottom: 1px solid themed('fieldBorderFocused');
         box-shadow: inset 0 -1px 0 0 themed('fieldBorderFocused');
