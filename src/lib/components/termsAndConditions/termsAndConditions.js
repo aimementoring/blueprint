@@ -30,7 +30,9 @@ class TermsAndConditions extends PureComponent {
     const containerStyle = {};
     if (height) containerStyle.height = `${height}px`;
     return (
+      // <div className={containerClassName}>
       <div className={containerClassName}>
+
         <div className={styles[`theme-${theme}`]}>
           {pdf && (
             <div className={`${styles.termsContainer} ${className}`} style={containerStyle}>
@@ -60,12 +62,14 @@ class TermsAndConditions extends PureComponent {
             </div>
           )}
           {checkboxLabel && (
-            <Checkbox
-              onChangeFunction={this.handleChange}
-              placeholder={checkboxLabel}
-              name="checkbox"
-              value={value}
-            />
+            <div className={styles.termsCheckbox}>
+              <Checkbox
+                onChangeFunction={this.handleChange}
+                placeholder={checkboxLabel}
+                name="checkbox"
+                value={value}
+              />
+            </div>
           )}
         </div>
       </div>
