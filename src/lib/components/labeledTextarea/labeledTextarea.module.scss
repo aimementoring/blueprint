@@ -3,13 +3,26 @@
 @import '../../styles/global/reset.module.scss';
 
 .wrapper {
+  display: inline-block;
+  font-size: 16px;
   position: relative;
-  
+  width: 100%;
+  margin-top: 40px;
+  border: 5px dashed violet;
+
+  textarea {
+    min-height: 100px;
+    border: 3px solid blue;
+    // set up an example of this in the md file
+  }
+
+  textarea,
   input {
     -webkit-appearance: none;
-    border: none;
+    border: 0;
     outline: none;
     width: 100%;
+    border: 1px double forestgreen;
     
     @include themify() {
       color: themed('fieldColor');
@@ -30,7 +43,6 @@
       content: ' *';
       vertical-align: text-top;
       @include themify() {
-        font-family: themed('primaryFontFamilySemiBold');
         color: themed('fieldColorError');
         font-size: themed('fieldFontSize');
         font-weight: themed('fieldFontWeight');
@@ -38,6 +50,7 @@
     }
 
     &:focus {
+      border: 2px solid yellow;
       @include themify() {
         border-bottom: 1px solid themed('fieldBorderFocused');
         box-shadow: inset 0 -1px 0 0 themed('fieldBorderFocused');
@@ -49,7 +62,6 @@
     &:valid:not([value='']) {
       ~ label {
         @include themify() {
-          font-family: themed('primaryFontFamilySemiBold');
           color: themed('fieldColor');
         }
         transform: translate3d(0, -24px, 0) scale(0.75);
@@ -65,7 +77,6 @@
 
       ~ label {
         @include themify() {
-          font-family: themed('primaryFontFamilySemiBold');
           color: themed('fieldColorError');
         }
         transform: translate3d(0, -24px, 0) scale(0.75);
@@ -78,7 +89,6 @@
     visibility: hidden;
     margin-top: 0.5em;
     @include themify() {
-      font-family: themed('primaryFontFamilySemiBold');
       color: themed('fieldColorError');
     }
 
@@ -90,9 +100,7 @@
   .helperMessage {
     display: block;
     margin-top: 0.5em;
-    font-size: 0.75rem;
     @include themify() {
-      font-family: themed('primaryFontFamilySemiBold');
       color: themed('helperTextColor');
     }
   }
@@ -113,19 +121,11 @@
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     width: 100%;
     z-index: 1;
-    @include themify() {
-      color: themed('fieldPlaceholderColor');
-      font-family: themed('primaryFontFamilySemiBold');
-      font-size: themed('fieldFontSize');
-      // padding: themed('inputPadding');
-    }
 
-    // i've played around with the below and i'm not sure what it's for... usually i would just delete but it looks like maybe i could be misssing something?
     &.required::after {
       content: ' *';
       vertical-align: text-top;
       @include themify() {
-        font-family: themed('primaryFontFamilySemiBold');
         color: themed('fieldColorError');
         font-size: themed('fieldFontSize');
         font-weight: themed('fieldFontWeight');
