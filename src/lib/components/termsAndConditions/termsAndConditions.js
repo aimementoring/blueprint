@@ -1,8 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Checkbox from '../checkbox';
-// TODO: import paragraph component instead of using <p>
-// import Paragraph from '../paragraph';
+import Paragraph from '../paragraph';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
 import styles from './termsAndConditions.module.scss';
 
@@ -18,21 +17,17 @@ class TermsAndConditions extends PureComponent {
       drive,
       children,
       checkboxLabel,
-      // backgroundColor,
       className,
       containerClassName,
       value,
-      // paragraph,
+      paragraph,
       height,
     } = this.props;
 
-    // const containerStyle = { backgroundColor };
     const containerStyle = {};
     if (height) containerStyle.height = `${height}px`;
     return (
-      // <div className={containerClassName}>
       <div className={containerClassName}>
-
         <div className={styles[`theme-${theme}`]}>
           {pdf && (
             <div className={`${styles.termsContainer} ${className}`} style={containerStyle}>
@@ -56,9 +51,16 @@ class TermsAndConditions extends PureComponent {
           )}
           {children && (
             <div className={`${styles.textContainer} ${className}`} style={containerStyle}>
-              {/* <Paragraph> */}
               {children}
-              {/* </Paragraph> */}
+            </div>
+          )}
+          {paragraph && (
+            <div className={`${styles.textContainer} ${className}`} style={containerStyle}>
+              {typeof paragraph === 'string' ? (
+                <Paragraph text={paragraph} />
+              ) : (
+                paragraph.map(item => <Paragraph text={item} />)
+              )}
             </div>
           )}
           {checkboxLabel && (
@@ -83,11 +85,10 @@ TermsAndConditions.propTypes = {
   drive: PropTypes.string,
   children: PropTypes.node,
   checkboxLabel: PropTypes.string,
-  // paragraph: PropTypes.string,
+  paragraph: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
   onChange: PropTypes.func,
   height: PropTypes.number,
   value: PropTypes.bool,
-  // backgroundColor: PropTypes.string,
 };
 
 TermsAndConditions.defaultProps = {
@@ -96,11 +97,10 @@ TermsAndConditions.defaultProps = {
   drive: null,
   children: null,
   checkboxLabel: null,
-  // paragraph: null,
-  onChange: () => { },
+  paragraph: null,
+  onChange: () => {},
   height: null,
   value: false,
-  // backgroundColor: '#eee',
 };
 
 export default TermsAndConditions;
