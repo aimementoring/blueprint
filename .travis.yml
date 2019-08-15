@@ -24,7 +24,7 @@ script:
   - yarn test
   - yarn build:lib
   - yarn build:styleguide
+  - yarn checksize
 
 after_success:
-  - yarn checksize
   - yarn coveralls

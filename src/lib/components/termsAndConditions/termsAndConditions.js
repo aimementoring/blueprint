@@ -5,10 +5,6 @@ import { componentPropTypes, defaultComponentPropTypes } from '../../utils/compo
 import styles from './termsAndConditions.module.scss';
 
 class TermsAndConditions extends PureComponent {
-  handleChange = (name, inputValue) => {
-    this.props.onChange(inputValue);
-  };
-
   render() {
     const {
       theme,
@@ -21,6 +17,8 @@ class TermsAndConditions extends PureComponent {
       containerClassName,
       value,
       height,
+      onChange,
+      name,
     } = this.props;
 
     const containerStyle = { backgroundColor };
@@ -55,9 +53,9 @@ class TermsAndConditions extends PureComponent {
           )}
           {checkboxLabel && (
             <Checkbox
-              onChangeFunction={this.handleChange}
+              onChangeFunction={onChange}
               placeholder={checkboxLabel}
-              name="checkbox"
+              name={name}
               value={value}
             />
           )}
@@ -77,6 +75,7 @@ TermsAndConditions.propTypes = {
   height: PropTypes.number,
   value: PropTypes.bool,
   backgroundColor: PropTypes.string,
+  name: PropTypes.string,
 };
 
 TermsAndConditions.defaultProps = {
@@ -89,6 +88,7 @@ TermsAndConditions.defaultProps = {
   height: null,
   value: false,
   backgroundColor: '#eee',
+  name: 'checkbox',
 };
 
 export default TermsAndConditions;

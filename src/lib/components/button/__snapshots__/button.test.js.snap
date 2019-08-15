@@ -46,6 +46,34 @@ exports[`Button renders button properly 1`] = `
 </div>
 `;
 
+exports[`Button renders button properly with underneath label 1`] = `
+<div
+  className="theme-portal"
+>
+  <div
+    className="container "
+  >
+    <div
+      className="buttonGroup"
+    >
+      <button
+        className=" button"
+        disabled={false}
+        onClick={[Function]}
+        type="link"
+      >
+        Button
+      </button>
+      <label
+        className="underneathLabel"
+      >
+        My label
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Button renders link properly 1`] = `
 <div
   className="theme-portal"

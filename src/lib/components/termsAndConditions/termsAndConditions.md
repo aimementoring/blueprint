@@ -33,9 +33,19 @@
 ```
 
 ```js
+initialState = {
+  terms: false,
+};
+
+function updateValue(name, value) {
+  setState({ [name]: value });
+}
+
 <TermsAndConditions
   checkboxLabel="Testing my checkbox"
-  onChange={value => console.log(value)}
+  onChange={updateValue}
+  value={state.terms}
+  name="terms"
   height={150}
 >
   <strong>Lorem ipsum dolor sit amet</strong>
@@ -45,7 +55,7 @@
     Morbi vehicula id neque quis fermentum. Cras mauris metus, rutrum id auctor id, molestie vitae ante. Ut pretium egestas pellentesque. Integer placerat ullamcorper massa, nec maximus arcu efficitur vitae. Quisque odio est, vehicula quis justo at, tempus vulputate lectus. Vivamus sagittis metus et aliquam interdum. Nam in pharetra risus. Proin lectus ligula, pellentesque non nulla nec, fringilla porttitor est. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;\n
     Duis vel pharetra urna. Nam finibus risus egestas tortor interdum rhoncus ut sed dolor. Integer quis porta nulla. Maecenas dignissim purus ac nisi viverra tristique. Cras dapibus est commodo est lobortis, consectetur faucibus odio fermentum. Donec tincidunt quis augue ut tempor. Nam consectetur faucibus nisl, vitae hendrerit metus venenatis id. In facilisis lacinia elit sed tempor.`}
   </p>
-</TermsAndConditions>
+</TermsAndConditions>;
 ```
 
 ```js
@@ -57,18 +67,38 @@
 ```
 
 ```js
+initialState = {
+  terms2: false,
+};
+
+function updateValue(name, value) {
+  setState({ [name]: value });
+}
+
 <TermsAndConditions
   pdf="https://archive.org/download/starrover00lond/starrover00lond.pdf"
   checkboxLabel="Testing my checkbox"
-  onChange={value => console.log(value)}
+  onChange={updateValue}
   height={300}
-/>
+  value={state.terms2}
+  name="terms2"
+/>;
 ```
 
 ```js
+initialState = {
+  terms3: false,
+};
+
+function updateValue(name, value) {
+  setState({ [name]: value });
+}
+
 <TermsAndConditions
   pdf="https://archive.org/download/starrover00lond/starrover00lond.pdf"
   checkboxLabel="Testing my checkbox"
-  onChange={value => console.log(value)}
-/>
+  onChange={updateValue}
+  value={state.terms3}
+  name="terms3"
+/>;
 ```

@@ -32,14 +32,14 @@
     font-size: 2.5rem;
     color: $grey;
     background: $white;
-    padding: 8px 0;
+    padding: 0.5em 0;
     text-align: center;
-    border-radius: 8px;
-    width: 64px;
+    border-radius: 0.5em;
+    width: 4em;
 
     @media screen and (max-width: $md) {
       font-size: 1.5rem;
-      width: 48px;
+      width: 3em;
     }
   }
 

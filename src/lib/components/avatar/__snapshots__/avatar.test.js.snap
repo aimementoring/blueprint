@@ -1,5 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Avatar empty renders properly 1`] = `
+<div
+  className="theme-portal"
+>
+  <div
+    className="profileAvatar"
+  >
+    <span>
+      UNDEFINEDUNDEFINED
+    </span>
+  </div>
+</div>
+`;
+
 exports[`Avatar name renders properly 1`] = `
 <div
   className="theme-portal"
