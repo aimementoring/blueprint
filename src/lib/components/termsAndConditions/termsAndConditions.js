@@ -7,7 +7,7 @@ import styles from './termsAndConditions.module.scss';
 
 class TermsAndConditions extends PureComponent {
   handleChange = (name, inputValue) => {
-    this.props.onChange(inputValue);
+    this.props.onChange(name, inputValue);
   };
 
   render() {
@@ -20,6 +20,7 @@ class TermsAndConditions extends PureComponent {
       className,
       containerClassName,
       value,
+      name,
       paragraph,
       height,
     } = this.props;
@@ -68,7 +69,7 @@ class TermsAndConditions extends PureComponent {
               <Checkbox
                 onChangeFunction={this.handleChange}
                 placeholder={checkboxLabel}
-                name="checkbox"
+                name={name}
                 value={value}
               />
             </div>
