@@ -1,5 +1,3 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
 import calculateCountdown from './countdownTimerUtils.ignore';
 
 describe('CountdownTimerUtils', () => {
