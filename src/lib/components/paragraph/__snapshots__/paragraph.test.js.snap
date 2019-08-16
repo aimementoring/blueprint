@@ -4,11 +4,11 @@ exports[`Paragraph is backwards compatible (text passed as prop) 1`] = `
 <div
   className="theme-portal"
 >
-  <span
+  <p
     className="paragraph "
   >
     Gradient default Paragraph
-  </span>
+  </p>
 </div>
 `;
 
@@ -16,10 +16,10 @@ exports[`Paragraph renders properly 1`] = `
 <div
   className="theme-portal"
 >
-  <span
+  <p
     className="paragraph "
   >
     Gradient default Paragraph
-  </span>
+  </p>
 </div>
 `;

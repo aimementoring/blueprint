@@ -184,7 +184,7 @@ exports[`TermsAndConditions renders properly with paragraph props 1`] = `
       <div
         className="theme-portal"
       >
-        <span
+        <p
           className="paragraph "
         >
           
@@ -196,7 +196,7 @@ exports[`TermsAndConditions renders properly with paragraph props 1`] = `
 
             Duis vel pharetra urna. Nam finibus risus egestas tortor interdum rhoncus ut sed dolor. Integer quis porta nulla. Maecenas dignissim purus ac nisi viverra tristique. Cras dapibus est commodo est lobortis, consectetur faucibus odio fermentum. Donec tincidunt quis augue ut tempor. Nam consectetur faucibus nisl, vitae hendrerit metus venenatis id. In facilisis lacinia elit sed tempor.
           
-        </span>
+        </p>
       </div>
     </div>
   </div>
