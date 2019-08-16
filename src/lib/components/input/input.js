@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
 import { withValidation } from '../../utils/hocs';
+import { handleInputChange } from './utils.ignore';
 import styles from './input.module.scss';
 
 class Input extends PureComponent {
@@ -31,13 +32,8 @@ class Input extends PureComponent {
     onChangeFunction: () => {},
   };
 
-  handleChange = name => event => {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const { onChangeFunction, handleValidations } = this.props;
-    const isWrongValidation = handleValidations(value);
-    onChangeFunction(name, value, isWrongValidation);
-  };
+  handleChange = name => event =>
+    handleInputChange(event, name, this.props.handleValidations, this.props.onChangeFunction);
 
   render() {
     const {

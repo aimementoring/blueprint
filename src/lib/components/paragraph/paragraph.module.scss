@@ -3,17 +3,13 @@
 
 .paragraph {
   @include themify() {
-    color: themed('brandTertiary');
-    font-family: themed('primaryFontFamilyBoldItalic');
+    // TODO: we need to create a baseTheme and that's where we can define the below variable. 
+    // but for now have just styled it within the component
+    // color: themed('paragraphColor');
+    font-family: themed('primaryFontFamilyRegular');
   }
-  position: relative;
-  z-index: 2;
-  margin-bottom: 1rem;
-  text-align: left;
-  display: block;
-  font: {
-    weight: 900;
-    size: 1.6rem;
-    style: italic;
-  }
+  color: $black;
+  font-size: 0.875rem;
+  line-height: 1.5em;
+  margin-bottom: 1.5em;
 }
