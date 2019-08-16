@@ -6,7 +6,7 @@
   display: block;
   width: 100%;
   border: none;
-  margin-bottom: 2em;
+  margin: 1em 0 2em;
 }
 
 .driveContainer {
@@ -26,6 +26,7 @@
   width: 100%;
 }
 
-.textContainer + .termsCheckbox {
+.textContainer + .termsCheckbox,
+.driveContainer + .termsCheckbox {
   margin-top: -1em;
 }
