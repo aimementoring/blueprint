@@ -1,28 +1,32 @@
 @import '../../styles/variables/variables.module.scss';
 
-.termsContainer {
-  display: block;
-  width: 100%;
-  margin-bottom: 1em;
-}
-
-.driveContainer {
-  display: block;
-  margin-bottom: 1em;
-  padding: 0;
-  width: 100%;
-}
-
+.termsContainer,
+.driveContainer,
 .textContainer {
   display: block;
   width: 100%;
-  margin-bottom: 1em;
-  background-color: $white-middle-grey;
-  padding: 1em;
+  border: none;
+  margin: 1em 0 2em;
+}
+
+.driveContainer {
+  padding: 0;
+  border: 1px solid $off-white;
+}
+
+.textContainer {
+  background-color: $soft-lavender;
+  padding: 1.5em;
+  border-radius: 3px;
   overflow-y: auto;
 }
 
 .objectContainer {
   height: 100%;
   width: 100%;
+}
+
+.textContainer + .termsCheckbox,
+.driveContainer + .termsCheckbox {
+  margin-top: -1em;
 }

@@ -1,3 +1,7 @@
 ```js
-<Paragraph type="paragrapah">blahblahblah blah title</Paragraph>
+<Paragraph>blahblahblah blah title</Paragraph>
+```
+
+```js
+<Paragraph text="Text blahblahblah blah title" />
 ```

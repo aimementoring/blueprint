@@ -1,7 +1,7 @@
 {
-  "main.css": "/static/css/main.9cf52e2b.css",
-  "main.js": "/build/bundle.7732cd47.js",
+  "main.css": "/static/css/main.5f51525a.css",
+  "main.js": "/build/bundle.21f9da86.js",
   "index.html": "/index.html",
-  "precache-manifest.254b924783095f8f0bf3c2e86052ed78.js": "/precache-manifest.254b924783095f8f0bf3c2e86052ed78.js",
+  "precache-manifest.3b2b84ddca1166ded81abfd58cf5a58e.js": "/precache-manifest.3b2b84ddca1166ded81abfd58cf5a58e.js",
   "service-worker.js": "/service-worker.js"
 }
