@@ -9,11 +9,7 @@ exports[`TermsAndConditions renders properly only with pdf value, without checkb
   >
     <div
       className="termsContainer "
-      style={
-        Object {
-          "backgroundColor": "#eee",
-        }
-      }
+      style={Object {}}
     >
       <object
         className="objectContainer"
@@ -39,11 +35,7 @@ exports[`TermsAndConditions renders properly with all props used 1`] = `
   >
     <div
       className="textContainer "
-      style={
-        Object {
-          "backgroundColor": "#eee",
-        }
-      }
+      style={Object {}}
     >
       <strong>
         Lorem ipsum dolor sit amet
@@ -73,7 +65,6 @@ exports[`TermsAndConditions renders properly with all props used 2`] = `
       className="textContainer "
       style={
         Object {
-          "backgroundColor": "#eee",
           "height": "150px",
         }
       }
@@ -92,28 +83,30 @@ exports[`TermsAndConditions renders properly with all props used 2`] = `
       </p>
     </div>
     <div
-      className="theme-purple wrapper"
+      className="termsCheckbox"
     >
       <div
-        className=" customCheckbox customCheckboxDefault"
-        onClick={[Function]}
+        className="theme-purple wrapper"
       >
-        <input
-          name="checkbox"
-          type="hidden"
-          value="no"
-        />
-        <input
-          checked={false}
-          className="false"
-          name="checkbox"
-          readOnly={true}
-          type="checkbox"
-          value="yes"
-        />
-        <label>
-          Testing my checkbox
-        </label>
+        <div
+          className=" customCheckbox customCheckboxDefault"
+          onClick={[Function]}
+        >
+          <input
+            type="hidden"
+            value="no"
+          />
+          <input
+            checked={false}
+            className="false"
+            readOnly={true}
+            type="checkbox"
+            value="yes"
+          />
+          <label>
+            Testing my checkbox
+          </label>
+        </div>
       </div>
     </div>
   </div>
@@ -131,7 +124,6 @@ exports[`TermsAndConditions renders properly with all props used 3`] = `
       className="termsContainer "
       style={
         Object {
-          "backgroundColor": "#eee",
           "height": "300px",
         }
       }
@@ -148,28 +140,63 @@ exports[`TermsAndConditions renders properly with all props used 3`] = `
       </object>
     </div>
     <div
-      className="theme-purple wrapper"
+      className="termsCheckbox"
     >
       <div
-        className=" customCheckbox customCheckboxDefault"
-        onClick={[Function]}
+        className="theme-purple wrapper"
       >
-        <input
-          name="checkbox"
-          type="hidden"
-          value="no"
-        />
-        <input
-          checked={false}
-          className="false"
-          name="checkbox"
-          readOnly={true}
-          type="checkbox"
-          value="yes"
-        />
-        <label>
-          Testing my checkbox
-        </label>
+        <div
+          className=" customCheckbox customCheckboxDefault"
+          onClick={[Function]}
+        >
+          <input
+            type="hidden"
+            value="no"
+          />
+          <input
+            checked={false}
+            className="false"
+            readOnly={true}
+            type="checkbox"
+            value="yes"
+          />
+          <label>
+            Testing my checkbox
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TermsAndConditions renders properly with paragraph props 1`] = `
+<div
+  className=""
+>
+  <div
+    className="theme-portal"
+  >
+    <div
+      className="textContainer "
+      style={Object {}}
+    >
+      <div
+        className="theme-portal"
+      >
+        <span
+          className="paragraph "
+        >
+          
+            consectetur adipiscing elit. Nullam vitae augue commodo, euismod erat in, mollis diam. Suspendisse tristique justo sem, id commodo lectus porttitor et. In tempus libero lacus. Proin viverra facilisis ultricies. Phasellus aliquet efficitur ante, ac dignissim velit sollicitudin eu. Curabitur non nunc dictum, eleifend ligula feugiat, convallis augue. Ut accumsan arcu ac lobortis lacinia. Donec vulputate ligula vel elit maximus, non eleifend lorem sagittis. Praesent dapibus ante ac lectus fermentum blandit.
+
+            Duis mollis dignissim elit eget rhoncus. Sed consectetur metus et ipsum sodales, non lacinia nulla varius. Curabitur dictum fringilla tellus, eu feugiat urna convallis nec. Donec at massa at metus accumsan finibus sit amet vel magna.
+
+            Morbi vehicula id neque quis fermentum. Cras mauris metus, rutrum id auctor id, molestie vitae ante. Ut pretium egestas pellentesque. Integer placerat ullamcorper massa, nec maximus arcu efficitur vitae. Quisque odio est, vehicula quis justo at, tempus vulputate lectus. Vivamus sagittis metus et aliquam interdum. Nam in pharetra risus. Proin lectus ligula, pellentesque non nulla nec, fringilla porttitor est. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+
+            Duis vel pharetra urna. Nam finibus risus egestas tortor interdum rhoncus ut sed dolor. Integer quis porta nulla. Maecenas dignissim purus ac nisi viverra tristique. Cras dapibus est commodo est lobortis, consectetur faucibus odio fermentum. Donec tincidunt quis augue ut tempor. Nam consectetur faucibus nisl, vitae hendrerit metus venenatis id. In facilisis lacinia elit sed tempor.
+          
+        </span>
       </div>
     </div>
   </div>
@@ -185,11 +212,7 @@ exports[`TermsAndConditions renders properly with pdf, and checkbox 1`] = `
   >
     <div
       className="termsContainer "
-      style={
-        Object {
-          "backgroundColor": "#eee",
-        }
-      }
+      style={Object {}}
     >
       <object
         className="objectContainer"
@@ -203,28 +226,30 @@ exports[`TermsAndConditions renders properly with pdf, and checkbox 1`] = `
       </object>
     </div>
     <div
-      className="theme-purple wrapper"
+      className="termsCheckbox"
     >
       <div
-        className=" customCheckbox customCheckboxDefault"
-        onClick={[Function]}
+        className="theme-purple wrapper"
       >
-        <input
-          name="checkbox"
-          type="hidden"
-          value="no"
-        />
-        <input
-          checked={false}
-          className="false"
-          name="checkbox"
-          readOnly={true}
-          type="checkbox"
-          value="yes"
-        />
-        <label>
-          Testing my checkbox
-        </label>
+        <div
+          className=" customCheckbox customCheckboxDefault"
+          onClick={[Function]}
+        >
+          <input
+            type="hidden"
+            value="no"
+          />
+          <input
+            checked={false}
+            className="false"
+            readOnly={true}
+            type="checkbox"
+            value="yes"
+          />
+          <label>
+            Testing my checkbox
+          </label>
+        </div>
       </div>
     </div>
   </div>
