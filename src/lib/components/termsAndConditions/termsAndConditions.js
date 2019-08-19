@@ -24,6 +24,8 @@ class TermsAndConditions extends PureComponent {
       paragraph,
       height,
       validations,
+      validationMessage,
+      hasErrorAfterSubmit,
     } = this.props;
 
     const containerStyle = {};
@@ -73,6 +75,8 @@ class TermsAndConditions extends PureComponent {
                 name={name}
                 value={value}
                 validations={validations}
+                validationMessage={validationMessage}
+                hasErrorAfterSubmit={hasErrorAfterSubmit}
               />
             </div>
           )}
