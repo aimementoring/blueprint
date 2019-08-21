@@ -17,6 +17,9 @@ const TermsAndConditions = ({
   name,
   paragraph,
   height,
+  validations,
+  validationMessage,
+  hasErrorAfterSubmit,
   onChange,
 }) => {
   const containerStyle = {};
@@ -65,6 +68,9 @@ const TermsAndConditions = ({
               placeholder={checkboxLabel}
               name={name}
               value={value}
+              validations={validations}
+              validationMessage={validationMessage}
+              hasErrorAfterSubmit={hasErrorAfterSubmit}
             />
           </div>
         )}
@@ -83,6 +89,9 @@ TermsAndConditions.propTypes = {
   onChange: PropTypes.func,
   height: PropTypes.number,
   value: PropTypes.bool,
+  validations: PropTypes.array,
+  validationMessage: PropTypes.string,
+  hasErrorAfterSubmit: PropTypes.bool,
 };
 
 TermsAndConditions.defaultProps = {
@@ -95,6 +104,9 @@ TermsAndConditions.defaultProps = {
   onChange: () => {},
   height: null,
   value: false,
+  validations: [],
+  validationMessage: '',
+  hasErrorAfterSubmit: false,
 };
 
 export default TermsAndConditions;
