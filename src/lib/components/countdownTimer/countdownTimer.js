@@ -5,6 +5,8 @@ import calculateCountdown from './countdownTimerUtils.ignore';
 import TimeColumn from './timeColumn.ignore';
 import styles from './countdownTimer.module.scss';
 
+const columnsIndex = ['year', 'day', 'hour', 'month', 'second'];
+
 const CountdownTimer = ({ theme, date }) => {
   const [countDown, setCountDown] = useState([0, 0, 0, 0, 0]);
   let interval;
@@ -27,7 +29,7 @@ const CountdownTimer = ({ theme, date }) => {
       <div className={styles.countDownContainerFeatureBoard}>
         <div className={styles.countdown}>
           {countDown.map((time, index) => (
-            <TimeColumn time={time} key={index} index={index} />
+            <TimeColumn time={time} key={columnsIndex[index]} index={index} />
           ))}
         </div>
       </div>
