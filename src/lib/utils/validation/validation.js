@@ -2,6 +2,7 @@
 // https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#what-about-memoization
 import memoize from 'memoize-one';
 import moment from 'moment';
+import { parsePhoneNumberFromString } from 'libphonenumber-js/mobile';
 
 const regularExpressions = {
   // eslint-disable-next-line no-useless-escape
@@ -11,16 +12,15 @@ const regularExpressions = {
   numeric: /^\d+$/,
 };
 
-const valueIsEmpty = (value) => (
-  value === '' || value === undefined || value === null
-);
+export const valueIsEmpty = value => value === '' || value === undefined || value === null;
 
 export const required = customMessage => value =>
   !valueIsEmpty(value) && value !== false ? undefined : customMessage || 'Required';
 
 export const validateNumeric = customMessage => value =>
-  (!value || regularExpressions.numeric.test(value)) ? undefined : customMessage
-    || 'This value should be a valid number';
+  !value || regularExpressions.numeric.test(value)
+    ? undefined
+    : customMessage || 'This value should be a valid number';
 
 export const validateAlphanumeric = customMessage => value =>
   valueIsEmpty(value) || regularExpressions.alphanumeric.test(value)
@@ -32,36 +32,41 @@ export const validateEmail = customMessage => value =>
     ? undefined
     : customMessage || 'This value is not a valid email';
 
+export const validateMobilePhone = customMessage => value => {
+  if (valueIsEmpty(value)) return undefined;
+
+  const phoneNumber = parsePhoneNumberFromString(value);
+  return phoneNumber && phoneNumber.isValid()
+    ? undefined
+    : customMessage || 'This value is not a valid phone number';
+};
+
 export const validateNonNegative = customMessage => value =>
   value >= 0 ? undefined : customMessage || "This value shouldn't be negative";
 
 export const validateHigherThanZero = customMessage => value =>
-  ((!value && value !== 0) || value > 0)
+  (!value && value !== 0) || value > 0
     ? undefined
     : customMessage || 'This value should be higher than zero';
 
 export const minAmount = memoize((min, customMessage) => value =>
-  value && value < min
-    ? customMessage || `This value should not be less than ${min}`
-    : undefined,
+  value && value < min ? customMessage || `This value should not be less than ${min}` : undefined
 );
 
 export const maxAmount = memoize((max, customMessage) => value =>
-  value && value > max
-    ? customMessage || `This value should not be more than ${max}`
-    : undefined,
+  value && value > max ? customMessage || `This value should not be more than ${max}` : undefined
 );
 
 export const maxCharacters = memoize((max, customMessage) => value =>
   value && value.length > max
     ? customMessage || `This value should contain maximum ${max} characters`
-    : undefined,
+    : undefined
 );
 
 export const minCharacters = memoize((min, customMessage) => value =>
   value && value.length < min
     ? customMessage || `This value should contain minimum ${min} characters`
-    : undefined,
+    : undefined
 );
 
 export const validDate = customMessage => value => {
@@ -71,19 +76,20 @@ export const validDate = customMessage => value => {
   if (typeof value === 'string' && isNaN(value[value.length - 1])) {
     return customMessage || 'This should be a valid date (for example: YYYY-MM-DD)';
   }
-  return ((typeof value === 'string') &&
-    (valueIsEmpty(value) || !isNaN(Date.parse(value))
-      || moment(value, 'MM-DD-YYYY', true).isValid()
-      || moment(value, 'MM/DD/YYYY', true).isValid()
-      || moment(value, 'MM/DD/YY', true).isValid()
-      || moment(value, 'MM-DD-YY', true).isValid()
-      || moment(value, 'YYYY-MM-DD', true).isValid()
-      || moment(value, 'YYYY-M-D', true).isValid()
-      || moment(value, 'YYYY-MM-D', true).isValid()
-      || moment(value, 'YYYY-M-DD', true).isValid())
+  return typeof value === 'string' &&
+    (valueIsEmpty(value) ||
+      !isNaN(Date.parse(value)) ||
+      moment(value, 'MM-DD-YYYY', true).isValid() ||
+      moment(value, 'MM/DD/YYYY', true).isValid() ||
+      moment(value, 'MM/DD/YY', true).isValid() ||
+      moment(value, 'MM-DD-YY', true).isValid() ||
+      moment(value, 'YYYY-MM-DD', true).isValid() ||
+      moment(value, 'YYYY-M-D', true).isValid() ||
+      moment(value, 'YYYY-MM-D', true).isValid() ||
+      moment(value, 'YYYY-M-DD', true).isValid())
     ? undefined
-    : customMessage || 'This should be a valid date (for example: YYYY-MM-DD)');
-}
+    : customMessage || 'This should be a valid date (for example: YYYY-MM-DD)';
+};
 
 export const checkValidations = (validations, value) => {
   let errorMessage = null;

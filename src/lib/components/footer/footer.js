@@ -21,7 +21,7 @@ const Footer = ({ location, theme, menuItems, copyright }) => (
                     </h4>
                     <ul className={columnMenu.listClassName || styles.navList}>
                       {columnMenu.menu.map(item => (
-                        <li className={styles.navItem}>
+                        <li className={styles.navItem} key={item.title}>
                           <a href={item.link} className={item.className || styles.link}>
                             {item.title}
                           </a>
@@ -72,7 +72,7 @@ const Footer = ({ location, theme, menuItems, copyright }) => (
               <ul className={copyright.className || styles.footerLinksList}>
                 {copyright.items &&
                   copyright.items.map(item => (
-                    <li className={item.className || styles.footerLink}>
+                    <li className={item.className || styles.footerLink} key={item.title}>
                       {item.link ? (
                         <a href={item.link} className={styles.link}>
                           {item.title}

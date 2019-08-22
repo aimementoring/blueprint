@@ -23,11 +23,7 @@ describe('TermsAndConditions', () => {
   it('renders properly with all props used', () => {
     const tree = renderer
       .create(
-        <TermsAndConditions
-          checkboxLabel="Testing my checkbox"
-          onChange={value => console.log(value)}
-          height={150}
-        >
+        <TermsAndConditions checkboxLabel="Testing my checkbox" height={150}>
           <strong>Lorem ipsum dolor sit amet</strong>
           <p>
             {`consectetur adipiscing elit. Nullam vitae augue commodo, euismod erat in, mollis diam. Suspendisse tristique justo sem, id commodo lectus porttitor et. In tempus libero lacus. Proin viverra facilisis ultricies. Phasellus aliquet efficitur ante, ac dignissim velit sollicitudin eu. Curabitur non nunc dictum, eleifend ligula feugiat, convallis augue. Ut accumsan arcu ac lobortis lacinia. Donec vulputate ligula vel elit maximus, non eleifend lorem sagittis. Praesent dapibus ante ac lectus fermentum blandit.\n
@@ -47,7 +43,6 @@ describe('TermsAndConditions', () => {
         <TermsAndConditions
           pdf="https://archive.org/download/starrover00lond/starrover00lond.pdf"
           checkboxLabel="Testing my checkbox"
-          onChange={value => console.log(value)}
           height={300}
         />,
       )
@@ -70,7 +65,6 @@ describe('TermsAndConditions', () => {
         <TermsAndConditions
           pdf="https://archive.org/download/starrover00lond/starrover00lond.pdf"
           checkboxLabel="Testing my checkbox"
-          onChange={value => console.log(value)}
         />,
       )
       .toJSON();

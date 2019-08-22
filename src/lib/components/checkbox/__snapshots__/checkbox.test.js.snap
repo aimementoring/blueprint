@@ -30,3 +30,34 @@ exports[`Checkbox renders properly 1`] = `
   </div>
 </div>
 `;
+
+exports[`Checkbox renders properly when value is invalid 1`] = `
+<div
+  className="theme-purple wrapper"
+>
+  <div
+    className=" customCheckbox customCheckboxDefault"
+    onClick={[Function]}
+  >
+    <input
+      name="checkbox"
+      type="hidden"
+      value="no"
+    />
+    <input
+      checked={true}
+      className="error"
+      id="checkbox"
+      name="checkbox"
+      readOnly={true}
+      type="checkbox"
+      value="yes"
+    />
+    <label
+      htmlFor="checkbox"
+    >
+      Accept terms and conditions
+    </label>
+  </div>
+</div>
+`;
