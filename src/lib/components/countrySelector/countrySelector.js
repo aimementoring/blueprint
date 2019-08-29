@@ -64,7 +64,7 @@ export default class CountrySelector extends Component {
           placeholder={placeholder}
           name={name}
           className={className}
-          classNameFromParent={containerClassName}
+          containerClassName={containerClassName}
           onChangeFunction={this.handleChange}
           value={value}
           options={countries}

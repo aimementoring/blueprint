@@ -55,7 +55,7 @@ class Input extends PureComponent {
       <div className={`${containerClassName} ${styles[`theme-${theme}`]} ${styles.inputWrapper}`}>
         <input
           placeholder={placeholder}
-          className={`${isValidationOk() && styles.error} ${className} ${styles.input}`}
+          className={`${isValidationOk() && styles.error} ${styles.input} ${className}`}
           value={value}
           name={name}
           type={type}
