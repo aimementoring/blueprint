@@ -14,11 +14,13 @@ class Select extends PureComponent {
     renderValidationError: PropTypes.func,
     handleValidations: PropTypes.func.isRequired,
     isValidationOk: PropTypes.func.isRequired,
+    customStyles: PropTypes.shape,
   };
 
   static defaultProps = {
     ...defaultComponentPropTypes,
     ...selectDefaultProps,
+    customStyles: {},
   };
 
   handleChange = value => {
@@ -50,13 +52,13 @@ class Select extends PureComponent {
       isValidationOk,
       renderValidationError,
     } = this.props;
-    let { value } = this.props;
+    let { value, customStyles } = this.props;
 
     if (error) {
       delete styles.control.border;
     }
 
-    const customStyles = {
+    customStyles = {
       control: (base, state) => ({
         ...base,
         maxHeight: '60px',
@@ -94,6 +96,7 @@ class Select extends PureComponent {
         padding: 0,
         ...styles.menuList,
       }),
+      ...customStyles,
     };
 
     if (isMulti) {

@@ -22,7 +22,7 @@ exports[`AnimatedCircleText renders properly in reverse mode 1`] = `
         className="theme-portal"
       >
         <span
-          className="blockTitle "
+          className="blockTitle"
         >
           <span
             className=""
@@ -269,7 +269,7 @@ exports[`AnimatedCircleText renders properly in standard mode 1`] = `
         className="theme-portal"
       >
         <span
-          className="blockTitle "
+          className="blockTitle"
         >
           <span
             className=""

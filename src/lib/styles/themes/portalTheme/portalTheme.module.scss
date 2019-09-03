@@ -25,6 +25,8 @@ $portalTheme: (
   fieldBorderError: 1px solid rgb(248, 68, 68),
   fieldBorderFocused: rgb(118, 3, 219),
   fieldColorError: rgb(248, 68, 68),
+  errorColor: rgb(248, 68, 68),
+  errorFont: $portalTheme-primary-font-regular,
   fieldPlaceholderColor: rgb(178, 186, 195),
   fieldPlaceholderFontSize: 0.9rem,
   fieldPlaceholderFontWeight: 400,

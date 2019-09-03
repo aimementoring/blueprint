@@ -1,0 +1,13 @@
+@import '../../styles/themes/themes.module.scss';
+
+.selectContainer {
+  width: 100px;
+}
+
+.select {
+  position: relative;
+
+  .indicatorContainer {
+    display: none;
+  }
+}

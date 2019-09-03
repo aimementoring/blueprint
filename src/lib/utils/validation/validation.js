@@ -41,6 +41,9 @@ export const validateMobilePhone = customMessage => value => {
     : customMessage || 'This value is not a valid phone number';
 };
 
+export const getFormattedMobilePhone = value =>
+  valueIsEmpty(value) ? {} : parsePhoneNumberFromString(value);
+
 export const validateNonNegative = customMessage => value =>
   value >= 0 ? undefined : customMessage || "This value shouldn't be negative";
 
