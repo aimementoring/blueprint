@@ -26,3 +26,4 @@ export { default as LabeledInput } from './labeledInput';
 export { default as CountryFlag } from './countryFlag';
 export { default as CountryFlagSelector } from './countryFlag';
 export { default as ErrorMessage } from './errorMessage';
+export { default as HelpToolTip } from './helpToolTip';
