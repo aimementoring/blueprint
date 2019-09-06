@@ -46,7 +46,7 @@ const generateConfig = async () => {
     output: {
       file,
       globals: { react: 'React' },
-      format: 'cjs',
+      format: 'esm',
       name: 'ui-core',
     },
     plugins: [

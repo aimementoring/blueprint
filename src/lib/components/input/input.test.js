@@ -4,9 +4,10 @@ import Input from './input';
 
 describe('Input', () => {
   it('renders properly', () => {
-    const tree = renderer
-      .create(<Input placeholder="Name" value="" name="name" type="text" required disabled />)
-      .toJSON();
+    const component = (
+      <Input placeholder="Name" value="" name="name" type="text" required disabled />
+    );
+    const tree = renderer.create(component).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

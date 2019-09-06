@@ -1,0 +1,43 @@
+@import '../../styles/variables/variables.module.scss';
+@import '../../styles/themes/themes.module.scss';
+@import '../../styles/global/reset.module.scss';
+
+.uppyUploadContainer {
+  :global(.uppy-Dashboard-innerWrap) {
+    overflow: visible !important;
+  }
+
+  :global(.uppy-DashboardContent-panel) {
+    overflow: visible !important;
+  }
+
+  :global(.uppy-Webcam-video) {
+    max-width: 100%;
+  }
+}
+
+.documentItemButton {
+  font-family: $primary-font-regular;
+  color: $white;
+  font-size: 0.9rem;
+  letter-spacing: 0.001rem;
+  background-color: $brand-primary;
+  border-radius: 3px;
+  padding: 0.6em 1.5em;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+}
+
+.fileLabel {
+  font-family: $body-font-family;
+  color: $brand-secondary;
+  font-size: 0.9rem;
+  margin-top: 1em;
+}
+
+.fileLink {
+  font-family: $body-font-family;
+  color: $brand-secondary;
+  font-size: 0.9rem;
+}
