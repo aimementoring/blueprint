@@ -1,0 +1,32 @@
+@import '../../styles/variables/variables.module.scss';
+@import '../../styles/themes/themes.module.scss';
+
+.tableContainer {
+  background: $white;
+  border-radius: 3px;
+  font-family: $body-font-family;
+  line-height: 1.4rem;
+  font-size: 0.95rem;
+  letter-spacing: -0.3px;
+  text-align: left;
+  color: $black;
+  td {
+    padding: 1em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  table thead tr th {
+    padding: 1em;
+  }
+}
+
+.activeRow {
+  background-color: $electric-blue;
+}
+
+.firstColumn {
+  color: $black;
+  font-weight: bold;
+}

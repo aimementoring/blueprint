@@ -1,0 +1,798 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecordList renders properly, keyProperty defaults to id 1`] = `
+<div
+  className="theme-portal"
+>
+  <div
+    className=""
+  >
+    <div
+      className="tableContainer"
+    >
+      <div
+        className="rc-table rc-table-scroll-position-left"
+        style={Object {}}
+      >
+        <div
+          className="rc-table-content"
+        >
+          <div
+            className="rc-table-body"
+            onScroll={[Function]}
+            onWheel={[Function]}
+            style={Object {}}
+          >
+            <table
+              className=""
+              style={Object {}}
+            >
+              <colgroup>
+                <col
+                  style={
+                    Object {
+                      "minWidth": undefined,
+                      "width": undefined,
+                    }
+                  }
+                />
+                <col
+                  style={
+                    Object {
+                      "minWidth": undefined,
+                      "width": undefined,
+                    }
+                  }
+                />
+                <col
+                  style={
+                    Object {
+                      "minWidth": undefined,
+                      "width": undefined,
+                    }
+                  }
+                />
+                <col
+                  style={
+                    Object {
+                      "minWidth": undefined,
+                      "width": undefined,
+                    }
+                  }
+                />
+              </colgroup>
+              <thead
+                className="rc-table-thead"
+              >
+                <tr
+                  style={
+                    Object {
+                      "height": null,
+                    }
+                  }
+                >
+                  <th
+                    className="firstColumn recordsName"
+                  >
+                    Name
+                  </th>
+                  <th
+                    className=" recordsWearsSuit"
+                  >
+                    Wears Suit
+                  </th>
+                  <th
+                    className=" recordsPortrayedBy"
+                  >
+                    Portrayed By
+                  </th>
+                  <th
+                    className=" recordsId"
+                  >
+                    Id
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                className="rc-table-tbody"
+              >
+                <tr
+                  className="rc-table-row rc-table-row-level-0"
+                  data-row-key="iron-man"
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onDoubleClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  style={
+                    Object {
+                      "height": null,
+                    }
+                  }
+                >
+                  <td
+                    className="firstColumn recordsName"
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="rc-table-row-indent indent-level-0"
+                      style={
+                        Object {
+                          "paddingLeft": "0px",
+                        }
+                      }
+                    />
+                    Ironman
+                  </td>
+                  <td
+                    className=" recordsWearsSuit"
+                    onClick={[Function]}
+                  >
+                    ✅
+                  </td>
+                  <td
+                    className=" recordsPortrayedBy"
+                    onClick={[Function]}
+                  >
+                    Robert Downey Jr.
+                  </td>
+                  <td
+                    className=" recordsId"
+                    onClick={[Function]}
+                  >
+                    iron-man
+                  </td>
+                </tr>
+                <tr
+                  className="rc-table-row rc-table-row-level-0"
+                  data-row-key="captain-marvel"
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onDoubleClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  style={
+                    Object {
+                      "height": null,
+                    }
+                  }
+                >
+                  <td
+                    className="firstColumn recordsName"
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="rc-table-row-indent indent-level-0"
+                      style={
+                        Object {
+                          "paddingLeft": "0px",
+                        }
+                      }
+                    />
+                    Captain Marvel
+                  </td>
+                  <td
+                    className=" recordsWearsSuit"
+                    onClick={[Function]}
+                  >
+                    ✅
+                  </td>
+                  <td
+                    className=" recordsPortrayedBy"
+                    onClick={[Function]}
+                  >
+                    Carol Danvers
+                  </td>
+                  <td
+                    className=" recordsId"
+                    onClick={[Function]}
+                  >
+                    captain-marvel
+                  </td>
+                </tr>
+                <tr
+                  className="rc-table-row rc-table-row-level-0"
+                  data-row-key="hulk"
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onDoubleClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  style={
+                    Object {
+                      "height": null,
+                    }
+                  }
+                >
+                  <td
+                    className="firstColumn recordsName"
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="rc-table-row-indent indent-level-0"
+                      style={
+                        Object {
+                          "paddingLeft": "0px",
+                        }
+                      }
+                    />
+                    Hulk
+                  </td>
+                  <td
+                    className=" recordsWearsSuit"
+                    onClick={[Function]}
+                  >
+                    ❌
+                  </td>
+                  <td
+                    className=" recordsPortrayedBy"
+                    onClick={[Function]}
+                  >
+                    Mark Ruffalo
+                  </td>
+                  <td
+                    className=" recordsId"
+                    onClick={[Function]}
+                  >
+                    hulk
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div
+            className="rc-table-footer"
+          >
+            3 records found.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RecordList uses records name 1`] = `
+<div
+  className="theme-portal"
+>
+  <div
+    className=""
+  >
+    <div
+      className="tableContainer"
+    >
+      <div
+        className="rc-table rc-table-scroll-position-left"
+        style={Object {}}
+      >
+        <div
+          className="rc-table-content"
+        >
+          <div
+            className="rc-table-body"
+            onScroll={[Function]}
+            onWheel={[Function]}
+            style={Object {}}
+          >
+            <table
+              className=""
+              style={Object {}}
+            >
+              <colgroup>
+                <col
+                  style={
+                    Object {
+                      "minWidth": undefined,
+                      "width": undefined,
+                    }
+                  }
+                />
+                <col
+                  style={
+                    Object {
+                      "minWidth": undefined,
+                      "width": undefined,
+                    }
+                  }
+                />
+                <col
+                  style={
+                    Object {
+                      "minWidth": undefined,
+                      "width": undefined,
+                    }
+                  }
+                />
+                <col
+                  style={
+                    Object {
+                      "minWidth": undefined,
+                      "width": undefined,
+                    }
+                  }
+                />
+              </colgroup>
+              <thead
+                className="rc-table-thead"
+              >
+                <tr
+                  style={
+                    Object {
+                      "height": null,
+                    }
+                  }
+                >
+                  <th
+                    className="firstColumn heroesName"
+                  >
+                    Name
+                  </th>
+                  <th
+                    className=" heroesWearsSuit"
+                  >
+                    Wears Suit
+                  </th>
+                  <th
+                    className=" heroesPortrayedBy"
+                  >
+                    Portrayed By
+                  </th>
+                  <th
+                    className=" heroesId"
+                  >
+                    Id
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                className="rc-table-tbody"
+              >
+                <tr
+                  className="rc-table-row rc-table-row-level-0"
+                  data-row-key="iron-man"
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onDoubleClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  style={
+                    Object {
+                      "height": null,
+                    }
+                  }
+                >
+                  <td
+                    className="firstColumn heroesName"
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="rc-table-row-indent indent-level-0"
+                      style={
+                        Object {
+                          "paddingLeft": "0px",
+                        }
+                      }
+                    />
+                    Ironman
+                  </td>
+                  <td
+                    className=" heroesWearsSuit"
+                    onClick={[Function]}
+                  >
+                    ✅
+                  </td>
+                  <td
+                    className=" heroesPortrayedBy"
+                    onClick={[Function]}
+                  >
+                    Robert Downey Jr.
+                  </td>
+                  <td
+                    className=" heroesId"
+                    onClick={[Function]}
+                  >
+                    iron-man
+                  </td>
+                </tr>
+                <tr
+                  className="rc-table-row rc-table-row-level-0"
+                  data-row-key="captain-marvel"
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onDoubleClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  style={
+                    Object {
+                      "height": null,
+                    }
+                  }
+                >
+                  <td
+                    className="firstColumn heroesName"
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="rc-table-row-indent indent-level-0"
+                      style={
+                        Object {
+                          "paddingLeft": "0px",
+                        }
+                      }
+                    />
+                    Captain Marvel
+                  </td>
+                  <td
+                    className=" heroesWearsSuit"
+                    onClick={[Function]}
+                  >
+                    ✅
+                  </td>
+                  <td
+                    className=" heroesPortrayedBy"
+                    onClick={[Function]}
+                  >
+                    Carol Danvers
+                  </td>
+                  <td
+                    className=" heroesId"
+                    onClick={[Function]}
+                  >
+                    captain-marvel
+                  </td>
+                </tr>
+                <tr
+                  className="rc-table-row rc-table-row-level-0"
+                  data-row-key="hulk"
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onDoubleClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  style={
+                    Object {
+                      "height": null,
+                    }
+                  }
+                >
+                  <td
+                    className="firstColumn heroesName"
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="rc-table-row-indent indent-level-0"
+                      style={
+                        Object {
+                          "paddingLeft": "0px",
+                        }
+                      }
+                    />
+                    Hulk
+                  </td>
+                  <td
+                    className=" heroesWearsSuit"
+                    onClick={[Function]}
+                  >
+                    ❌
+                  </td>
+                  <td
+                    className=" heroesPortrayedBy"
+                    onClick={[Function]}
+                  >
+                    Mark Ruffalo
+                  </td>
+                  <td
+                    className=" heroesId"
+                    onClick={[Function]}
+                  >
+                    hulk
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div
+            className="rc-table-footer"
+          >
+            3 heroes found.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RecordList works with select 1`] = `
+<div
+  className="theme-portal"
+>
+  <div
+    className=""
+  >
+    <div
+      className="tableContainer"
+    >
+      <div
+        className="rc-table rc-table-scroll-position-left"
+        style={Object {}}
+      >
+        <div
+          className="rc-table-content"
+        >
+          <div
+            className="rc-table-body"
+            onScroll={[Function]}
+            onWheel={[Function]}
+            style={Object {}}
+          >
+            <table
+              className=""
+              style={Object {}}
+            >
+              <colgroup>
+                <col
+                  style={
+                    Object {
+                      "minWidth": undefined,
+                      "width": undefined,
+                    }
+                  }
+                />
+                <col
+                  style={
+                    Object {
+                      "minWidth": undefined,
+                      "width": undefined,
+                    }
+                  }
+                />
+                <col
+                  style={
+                    Object {
+                      "minWidth": undefined,
+                      "width": undefined,
+                    }
+                  }
+                />
+                <col
+                  style={
+                    Object {
+                      "minWidth": undefined,
+                      "width": undefined,
+                    }
+                  }
+                />
+                <col
+                  style={
+                    Object {
+                      "minWidth": undefined,
+                      "width": undefined,
+                    }
+                  }
+                />
+              </colgroup>
+              <thead
+                className="rc-table-thead"
+              >
+                <tr
+                  style={
+                    Object {
+                      "height": null,
+                    }
+                  }
+                >
+                  <th
+                    className=""
+                  />
+                  <th
+                    className="firstColumn recordsName"
+                  >
+                    Name
+                  </th>
+                  <th
+                    className=" recordsWearsSuit"
+                  >
+                    Wears Suit
+                  </th>
+                  <th
+                    className=" recordsPortrayedBy"
+                  >
+                    Portrayed By
+                  </th>
+                  <th
+                    className=" recordsId"
+                  >
+                    Id
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                className="rc-table-tbody"
+              >
+                <tr
+                  className="rc-table-row rc-table-row-level-0"
+                  data-row-key="iron-man"
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onDoubleClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  style={
+                    Object {
+                      "height": null,
+                    }
+                  }
+                >
+                  <td
+                    className=""
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="rc-table-row-indent indent-level-0"
+                      style={
+                        Object {
+                          "paddingLeft": "0px",
+                        }
+                      }
+                    />
+                    <input
+                      checked={false}
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                  </td>
+                  <td
+                    className="firstColumn recordsName"
+                    onClick={[Function]}
+                  >
+                    Ironman
+                  </td>
+                  <td
+                    className=" recordsWearsSuit"
+                    onClick={[Function]}
+                  >
+                    ✅
+                  </td>
+                  <td
+                    className=" recordsPortrayedBy"
+                    onClick={[Function]}
+                  >
+                    Robert Downey Jr.
+                  </td>
+                  <td
+                    className=" recordsId"
+                    onClick={[Function]}
+                  >
+                    iron-man
+                  </td>
+                </tr>
+                <tr
+                  className="rc-table-row rc-table-row-level-0"
+                  data-row-key="captain-marvel"
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onDoubleClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  style={
+                    Object {
+                      "height": null,
+                    }
+                  }
+                >
+                  <td
+                    className=""
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="rc-table-row-indent indent-level-0"
+                      style={
+                        Object {
+                          "paddingLeft": "0px",
+                        }
+                      }
+                    />
+                    <input
+                      checked={false}
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                  </td>
+                  <td
+                    className="firstColumn recordsName"
+                    onClick={[Function]}
+                  >
+                    Captain Marvel
+                  </td>
+                  <td
+                    className=" recordsWearsSuit"
+                    onClick={[Function]}
+                  >
+                    ✅
+                  </td>
+                  <td
+                    className=" recordsPortrayedBy"
+                    onClick={[Function]}
+                  >
+                    Carol Danvers
+                  </td>
+                  <td
+                    className=" recordsId"
+                    onClick={[Function]}
+                  >
+                    captain-marvel
+                  </td>
+                </tr>
+                <tr
+                  className="rc-table-row rc-table-row-level-0"
+                  data-row-key="hulk"
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onDoubleClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  style={
+                    Object {
+                      "height": null,
+                    }
+                  }
+                >
+                  <td
+                    className=""
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="rc-table-row-indent indent-level-0"
+                      style={
+                        Object {
+                          "paddingLeft": "0px",
+                        }
+                      }
+                    />
+                    <input
+                      checked={false}
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                  </td>
+                  <td
+                    className="firstColumn recordsName"
+                    onClick={[Function]}
+                  >
+                    Hulk
+                  </td>
+                  <td
+                    className=" recordsWearsSuit"
+                    onClick={[Function]}
+                  >
+                    ❌
+                  </td>
+                  <td
+                    className=" recordsPortrayedBy"
+                    onClick={[Function]}
+                  >
+                    Mark Ruffalo
+                  </td>
+                  <td
+                    className=" recordsId"
+                    onClick={[Function]}
+                  >
+                    hulk
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div
+            className="rc-table-footer"
+          >
+            3 records found. 0 records selected.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
