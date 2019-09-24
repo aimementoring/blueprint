@@ -49,6 +49,7 @@ class Input extends PureComponent {
       isValidationOk,
       renderValidationError,
       autoFocus,
+      ...inputProps
     } = this.props;
 
     return (
@@ -63,6 +64,7 @@ class Input extends PureComponent {
           onChange={this.handleChange(name)}
           disabled={disabled ? 'disabled' : ''}
           autoFocus={autoFocus}
+          {...inputProps}
         />
         {renderValidationError()}
       </div>

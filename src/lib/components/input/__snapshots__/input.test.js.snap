@@ -7,11 +7,16 @@ exports[`Input renders properly 1`] = `
   <input
     className="false input "
     disabled="disabled"
+    getValidationMessage={[Function]}
+    handleValidations={[Function]}
     name="name"
     onChange={[Function]}
+    onChangeFunction={[Function]}
     placeholder="Name"
     required={true}
     type="text"
+    validationMessage=""
+    validations={Array []}
     value=""
   />
 </div>
