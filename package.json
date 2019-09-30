@@ -237,7 +237,7 @@
       "requireUpstream":false
     },
     "github": {
-      "release": true,
+      "release": true
     }
   },
   "publishConfig": {
