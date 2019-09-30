@@ -32,17 +32,3 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
           GITHUB_TOKEN:  81c54f0f97dda0c4e9d8343697e07eb08dbf81f7
-
-  publish-gpr:
-     needs: build
-     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: https://npm.pkg.github.com/
-          scope: '@your-github-username'
-      - run: npm publish
-        env:
-           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
