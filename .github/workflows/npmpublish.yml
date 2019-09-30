@@ -30,6 +30,7 @@ jobs:
       - run: git config --global user.email "kba@aimementoring.com"
       - run: git config --global user.name "Automatic Deploy"
       - run: npm install
+      - run: export GITHUB_TOKEN="81c54f0f97dda0c4e9d8343697e07eb08dbf81f7"
       - run: npm run release
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
