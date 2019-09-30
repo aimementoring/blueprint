@@ -234,8 +234,8 @@
   "release-it": {
     "git": {
       "tagName": "v${version}",
-      "requireUpstream": false,
-      "requireCleanWorkingDir": false
+      "requireCleanWorkingDir": false,
+      "pushRepo": "https://github.com/aimementoring/blueprint.git"
     },
     "github": {
       "release": true
