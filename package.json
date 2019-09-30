@@ -236,7 +236,8 @@
       "tagName": "v${version}"
     },
     "github": {
-      "release": true
+      "release": true,
+      "upstream": false
     }
   },
   "publishConfig": {
