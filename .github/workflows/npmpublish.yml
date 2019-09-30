@@ -27,6 +27,8 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
+      - run: git config --global user.email "kba@aimementoring.com"
+      - run: git config --global user.name "Automatic Deploy"
       - run: npm install
       - run: npm run release
         env:
