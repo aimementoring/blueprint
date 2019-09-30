@@ -233,11 +233,11 @@
   },
   "release-it": {
     "git": {
-      "tagName": "v${version}"
+      "tagName": "v${version}",
+      "requireUpstream":false
     },
     "github": {
       "release": true,
-      "upstream": false
     }
   },
   "publishConfig": {
