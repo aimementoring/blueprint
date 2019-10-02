@@ -5,7 +5,7 @@ import { componentPropTypes, defaultComponentPropTypes } from '../../utils/compo
 
 const Paragraph = ({ text, className, theme, children }) => (
   <div className={styles[`theme-${theme}`]}>
-    <span className={`${styles.paragraph} ${className}`}>{children || text}</span>
+    <p className={`${styles.paragraph} ${className}`}>{children || text}</p>
   </div>
 );
 

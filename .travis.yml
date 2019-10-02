@@ -26,5 +26,5 @@ script:
   - yarn build:styleguide
 
 after_success:
-  - yarn checksize
   - yarn coveralls
+  - yarn checksize

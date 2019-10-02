@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import styles from './title.module.scss';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
 
@@ -48,6 +49,7 @@ class Title extends PureComponent {
       text,
       type,
       className,
+      containerClassName,
       theme,
       children,
     } = this.props;
@@ -55,8 +57,8 @@ class Title extends PureComponent {
     const { style, tag: Component } = titleTypeClass[type];
 
     return (
-      <div className={styles[`theme-${theme}`]}>
-        <Component className={`${style} ${className}`}>{children || text}</Component>
+      <div className={classNames(styles[`theme-${theme}`], containerClassName)}>
+        <Component className={classNames(style, className)}>{children || text}</Component>
       </div>
     );
   }
