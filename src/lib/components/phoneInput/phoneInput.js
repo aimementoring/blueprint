@@ -49,6 +49,7 @@ export default class PhoneInput extends PureComponent {
       className,
       theme,
       placeholder,
+      ...inputProps
     } = this.props;
 
     return (
@@ -70,6 +71,7 @@ export default class PhoneInput extends PureComponent {
             separateDialCode={true}
             format={true}
             style={{ width: '100%' }}
+            {...inputProps}
           />
         </div>
       </div>

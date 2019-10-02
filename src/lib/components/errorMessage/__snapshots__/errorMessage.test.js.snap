@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorMessage renders properly 1`] = `
+<div
+  className="theme-portal"
+>
+  <div
+    className="textContainer active"
+  >
+    <span
+      className="errorMessage"
+    >
+      ERROR: Testing error message
+    </span>
+  </div>
+</div>
+`;

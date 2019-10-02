@@ -49,13 +49,14 @@ class Input extends PureComponent {
       isValidationOk,
       renderValidationError,
       autoFocus,
+      ...inputProps
     } = this.props;
 
     return (
       <div className={`${containerClassName} ${styles[`theme-${theme}`]} ${styles.inputWrapper}`}>
         <input
           placeholder={placeholder}
-          className={`${isValidationOk() && styles.error} ${className} ${styles.input}`}
+          className={`${isValidationOk() && styles.error} ${styles.input} ${className}`}
           value={value}
           name={name}
           type={type}
@@ -63,6 +64,7 @@ class Input extends PureComponent {
           onChange={this.handleChange(name)}
           disabled={disabled ? 'disabled' : ''}
           autoFocus={autoFocus}
+          {...inputProps}
         />
         {renderValidationError()}
       </div>

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AnimatedCircleText renders properly 1`] = `
+exports[`AnimatedCircleText renders properly in reverse mode 1`] = `
 <div
   className="theme-portal"
 >
@@ -22,7 +22,254 @@ exports[`AnimatedCircleText renders properly 1`] = `
         className="theme-portal"
       >
         <span
-          className="blockTitle "
+          className="blockTitle"
+        >
+          <span
+            className=""
+            style={
+              Object {
+                "fontSize": "20px",
+                "height": "100px",
+                "transform": "rotate(20deg)",
+              }
+            }
+          >
+            T
+          </span>
+          <span
+            className=""
+            style={
+              Object {
+                "fontSize": "20px",
+                "height": "100px",
+                "transform": "rotate(40deg)",
+              }
+            }
+          >
+            e
+          </span>
+          <span
+            className=""
+            style={
+              Object {
+                "fontSize": "20px",
+                "height": "100px",
+                "transform": "rotate(60deg)",
+              }
+            }
+          >
+            s
+          </span>
+          <span
+            className=""
+            style={
+              Object {
+                "fontSize": "20px",
+                "height": "100px",
+                "transform": "rotate(80deg)",
+              }
+            }
+          >
+            t
+          </span>
+          <span
+            className=""
+            style={
+              Object {
+                "fontSize": "20px",
+                "height": "100px",
+                "transform": "rotate(100deg)",
+              }
+            }
+          >
+            i
+          </span>
+          <span
+            className=""
+            style={
+              Object {
+                "fontSize": "20px",
+                "height": "100px",
+                "transform": "rotate(120deg)",
+              }
+            }
+          >
+            n
+          </span>
+          <span
+            className=""
+            style={
+              Object {
+                "fontSize": "20px",
+                "height": "100px",
+                "transform": "rotate(140deg)",
+              }
+            }
+          >
+            g
+          </span>
+          <span
+            className=""
+            style={
+              Object {
+                "fontSize": "20px",
+                "height": "100px",
+                "transform": "rotate(160deg)",
+              }
+            }
+          >
+             
+          </span>
+          <span
+            className=""
+            style={
+              Object {
+                "fontSize": "20px",
+                "height": "100px",
+                "transform": "rotate(180deg)",
+              }
+            }
+          >
+            m
+          </span>
+          <span
+            className=""
+            style={
+              Object {
+                "fontSize": "20px",
+                "height": "100px",
+                "transform": "rotate(200deg)",
+              }
+            }
+          >
+            y
+          </span>
+          <span
+            className=""
+            style={
+              Object {
+                "fontSize": "20px",
+                "height": "100px",
+                "transform": "rotate(220deg)",
+              }
+            }
+          >
+             
+          </span>
+          <span
+            className=""
+            style={
+              Object {
+                "fontSize": "20px",
+                "height": "100px",
+                "transform": "rotate(240deg)",
+              }
+            }
+          >
+            c
+          </span>
+          <span
+            className=""
+            style={
+              Object {
+                "fontSize": "20px",
+                "height": "100px",
+                "transform": "rotate(260deg)",
+              }
+            }
+          >
+            i
+          </span>
+          <span
+            className=""
+            style={
+              Object {
+                "fontSize": "20px",
+                "height": "100px",
+                "transform": "rotate(280deg)",
+              }
+            }
+          >
+            r
+          </span>
+          <span
+            className=""
+            style={
+              Object {
+                "fontSize": "20px",
+                "height": "100px",
+                "transform": "rotate(300deg)",
+              }
+            }
+          >
+            c
+          </span>
+          <span
+            className=""
+            style={
+              Object {
+                "fontSize": "20px",
+                "height": "100px",
+                "transform": "rotate(320deg)",
+              }
+            }
+          >
+            l
+          </span>
+          <span
+            className=""
+            style={
+              Object {
+                "fontSize": "20px",
+                "height": "100px",
+                "transform": "rotate(340deg)",
+              }
+            }
+          >
+            e
+          </span>
+          <span
+            className=""
+            style={
+              Object {
+                "fontSize": "20px",
+                "height": "100px",
+                "transform": "rotate(360deg)",
+              }
+            }
+          >
+             
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AnimatedCircleText renders properly in standard mode 1`] = `
+<div
+  className="theme-portal"
+>
+  <div
+    className="animatedContainer "
+  >
+    <div
+      className="circleContainer"
+      style={
+        Object {
+          "animationDirection": "normal",
+          "animationDuration": "8s",
+          "height": "200px",
+          "width": "200px",
+        }
+      }
+    >
+      <div
+        className="theme-portal"
+      >
+        <span
+          className="blockTitle"
         >
           <span
             className=""
