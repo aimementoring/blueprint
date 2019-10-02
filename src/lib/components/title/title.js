@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import styles from './title.module.scss';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
 
@@ -20,7 +21,17 @@ export default class Title extends PureComponent {
     ...componentPropTypes,
     text: PropTypes.string,
     // setting up headings as per design system but they will probably change again
-    type: PropTypes.oneOf(['gradient', 'blockTitle', 'mainTitle', 'h1Title', 'h2Title', 'h3Title', 'h4Title', 'h5Title', 'h6Title']),
+    type: PropTypes.oneOf([
+      'gradient',
+      'blockTitle',
+      'mainTitle',
+      'h1Title',
+      'h2Title',
+      'h3Title',
+      'h4Title',
+      'h5Title',
+      'h6Title',
+    ]),
     children: PropTypes.node,
   };
 
@@ -30,11 +41,11 @@ export default class Title extends PureComponent {
   };
 
   render() {
-    const { text, type, className, theme, children } = this.props;
+    const { text, type, className, containerClassName, theme, children } = this.props;
     const titleClass = titleTypeClass[type];
     return (
-      <div className={styles[`theme-${theme}`]}>
-        <span className={`${titleClass} ${className}`}>{children || text}</span>
+      <div className={classNames(styles[`theme-${theme}`], containerClassName)}>
+        <span className={classNames(titleClass, className)}>{children || text}</span>
       </div>
     );
   }

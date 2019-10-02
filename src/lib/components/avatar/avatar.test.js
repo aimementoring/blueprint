@@ -27,3 +27,10 @@ describe('Avatar with photo', () => {
     expect(tree).toMatchSnapshot();
   });
 });
+
+describe('Avatar empty', () => {
+  it('renders properly', () => {
+    const tree = renderer.create(<Avatar text="" />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+});

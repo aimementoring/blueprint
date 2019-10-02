@@ -46,6 +46,7 @@ class TextBox extends PureComponent {
       autoFocus,
       isValidationOk,
       renderValidationError,
+      ...textareaProps
     } = this.props;
 
     return (
@@ -59,6 +60,7 @@ class TextBox extends PureComponent {
           value={value}
           required={required || false}
           autoFocus={autoFocus}
+          {...textareaProps}
         />
         {renderValidationError()}
       </div>

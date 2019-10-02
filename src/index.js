@@ -6,7 +6,7 @@ const { Input, Button, Checkbox, TextBox, Select, TermsAndConditions } = Compone
 
 const { validateEmail, minCharacters, required, maxCharacters, validDate } = Utils.Validation;
 
-const container = document.getElementById('root');
+const container = document.getElementById('root'); //test
 class App extends Component {
   state = {
     input: {
@@ -28,6 +28,7 @@ class App extends Component {
     checkbox: {
       value: true,
     },
+    terms: false,
     date: '',
   };
 
@@ -48,6 +49,8 @@ class App extends Component {
   };
 
   updateDate = value => this.setState({ date: value });
+
+  updateTermsAndConditions = value => this.setState({ terms: value });
 
   getSelectStyles = () => {
     return {
@@ -173,8 +176,10 @@ class App extends Component {
         />
         <TermsAndConditions
           checkboxLabel="Testing my checkbox"
-          onChange={value => console.log(value)}
+          onChange={(name, value) => this.updateTermsAndConditions(value)}
           height={150}
+          value={this.state.terms}
+          name="terms"
         >
           <strong>Lorem ipsum dolor sit amet</strong>
           <p>

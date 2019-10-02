@@ -8,6 +8,7 @@ import url from 'rollup-plugin-url';
 import resolve from 'rollup-plugin-node-resolve';
 import external from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
+import json from 'rollup-plugin-json';
 import svgr from '@svgr/rollup';
 import fs from 'fs';
 
@@ -85,6 +86,10 @@ const generateConfig = async () => {
       }),
       url(),
       svgr(),
+      json({
+        include: 'node_modules/**',
+        compact: true,
+      }),
       babel({
         runtimeHelpers: true,
         exclude: 'node_modules/**',
