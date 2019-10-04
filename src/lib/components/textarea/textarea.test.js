@@ -1,14 +1,14 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import TextBox from './textbox';
+import Textarea from './textarea';
 
-describe('TextBox', () => {
+describe('Textarea', () => {
   it('renders properly', () => {
     const tree = renderer
       .create(
-        <TextBox
+        <Textarea
           placeholder="Write area"
-          name="textbox"
+          name="textarea"
           required
           className="myClass"
           onChangeFunction={() => { }}
