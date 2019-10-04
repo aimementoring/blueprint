@@ -3,31 +3,30 @@
 @import "../../styles/global/reset.module.scss";
 
 .wrapper {
-  display: inline-block;
-  font-size: 16px;
   position: relative;
   width: 100%;
-  margin-top: 40px;
+  margin-top: 1.5em; //TODO: need to test how these input components appear in a form
   font-family: $primary-font-regular;
 
   textarea {
-    min-height: 100px;
     -webkit-appearance: none;
     outline: none;
     width: 100%;
-    box-sizing: border-box;
+    // box-sizing: border-box;
+    border: none;
+    padding: 0 0 0.5em;
 
     @include themify() {
       color: themed("fieldColor");
       background-color: themed("fieldBackground");
+      border-bottom: 1px solid themed("borderColor");
       font-family: themed("primaryFontFamilyRegular");
       font-size: themed("fieldFontSize");
       font-weight: themed("fieldFontWeight");
-      padding: themed("inputPadding");
     }
 
     &[placeholder] ~ label {
-      transform: translate3d(0, -24px, 0) scale(0.75);
+      // transform: translate3d(0, -24px, 0) scale(0.75);
     }
 
     &[required] ~ label::after,
@@ -40,18 +39,18 @@
         font-weight: themed("fieldFontWeight");
       }
     }
-
+    &:not(:focus) {
+      height: 2em;
+    }
     &:focus {
-      border: 2px solid yellow;
       @include themify() {
         border-bottom: 1px solid themed("fieldBorderFocused");
         box-shadow: inset 0 -1px 0 0 themed("fieldBorderFocused");
       }
     }
 
-    &:not([value=""]),
     &:focus,
-    &:valid:not([value=""]) {
+    &:not(:empty) {
       ~ label {
         @include themify() {
           color: themed("fieldColor");
@@ -60,7 +59,6 @@
       }
     }
 
-    &:not([value=""]):invalid,
     &.error {
       @include themify() {
         border-bottom: 1px solid themed("fieldColorError");
@@ -113,6 +111,11 @@
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     width: 100%;
     z-index: 1;
+    @include themify() {
+      color: themed("fieldPlaceholderColor");
+      font-family: themed("primaryFontFamilyRegular");
+      font-size: themed("fieldFontSize");
+    }
 
     &.required::after {
       content: " *";
