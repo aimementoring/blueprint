@@ -5,18 +5,6 @@ import styles from './title.module.scss';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
 
 const titleTypeClass = {
-  gradient: {
-    style: styles.gradientTitle,
-    tag: 'span',
-  },
-  blockTitle: {
-    style: styles.blockTitle,
-    tag: 'div',
-  },
-  mainTitle: {
-    style: styles.mainTitle,
-    tag: 'div',
-  },
   h1Title: {
     style: styles.h1Title,
     tag: 'h1',
@@ -68,13 +56,13 @@ Title.propTypes = {
   ...componentPropTypes,
   text: PropTypes.string,
   // setting up headings as per design system but they will probably change again
-  type: PropTypes.oneOf(['gradient', 'blockTitle', 'mainTitle', 'h1Title', 'h2Title', 'h3Title', 'h4Title', 'h5Title', 'h6Title']),
+  type: PropTypes.oneOf(['h1Title', 'h2Title', 'h3Title', 'h4Title', 'h5Title', 'h6Title']),
   children: PropTypes.node,
 };
 
 Title.defaultProps = {
   ...defaultComponentPropTypes,
-  type: 'gradient',
+  type: 'h1Title',
 };
 
 export default Title;

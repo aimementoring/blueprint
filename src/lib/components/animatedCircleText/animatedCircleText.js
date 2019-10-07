@@ -31,7 +31,7 @@ const AnimatedCircleText = ({
             animationDirection: reverse ? 'reverse' : 'normal',
           }}
         >
-          <Title type="blockTitle">
+          <Title type="h3Title">
             {chars.map((char, index) => (
               <span
                 style={{
