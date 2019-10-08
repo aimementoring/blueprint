@@ -15,15 +15,14 @@ const listTypeClass = {
   },
 };
 
-class Title extends PureComponent {
+class List extends PureComponent {
   render() {
     const {
-      text,
+      list,
       type,
       className,
       containerClassName,
       theme,
-      children,
     } = this.props;
 
     const { style, tag: Component } = listTypeClass[type];
@@ -31,24 +30,22 @@ class Title extends PureComponent {
     return (
       <div className={classNames(styles[`theme-${theme}`], containerClassName)}>
         <Component className={classNames(style, className)}>
-          <li>{children || text}</li>
+          {list && list.map(item => <li>{item}</li>)}
         </Component>
       </div>
     );
   }
 }
 
-Title.propTypes = {
+List.propTypes = {
   ...componentPropTypes,
-  text: PropTypes.string,
-  // setting up headings as per design system but they will probably change again
+  list: PropTypes.array,
   type: PropTypes.oneOf(['ulList', 'olList']),
-  children: PropTypes.node,
 };
 
-Title.defaultProps = {
+List.defaultProps = {
   ...defaultComponentPropTypes,
   type: 'ulList',
 };
 
-export default Title;
+export default List;

@@ -1,2 +1,10 @@
 @import "../../styles/variables/variables.module.scss";
 @import "../../styles/themes/themes.module.scss";
+
+.ulList {
+  border: 2px solid red;
+}
+
+.olList {
+  border: 2px solid blue;
+}
