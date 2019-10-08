@@ -50,6 +50,12 @@ module.exports = {
       ],
     },
     {
+      name: 'Patterns',
+      description: 'Patterns to be used in React websites',
+      components: 'src/lib/patterns/**/*.js',
+      ignore: ['**/*.spec.js', '**/*.test.js', '**/index.js', '**/*.ignore.js'],
+    },
+    {
       name: 'Utils',
       description: 'Utils functions',
       components: 'src/lib/utils/**/*.js',
