@@ -1,11 +1,13 @@
-@import 'variables/variables.module.scss';
+@import "variables/variables.module.scss";
+
+@import "../../variables/variables.module.scss";
 
 /// Definition of all variables used on BaseTheme
 /// @group BaseTheme
 $baseTheme: (
-  brandPrimary: rgb(118, 3, 219),
-  brandSecondary: rgb(199, 0, 255),
-  brandTertiary: rgb(218, 13, 255),
+  brandPrimary: $black,
+  brandSecondary: $grey-90,
+  brandTertiary: $grey-80,
   featureFontFamily: $baseTheme-feature-font-family,
   primaryFontFamilySemiBold: $baseTheme-primary-font-semibold,
   primaryFontFamilySemiBoldItalic: $baseTheme-primary-font-semibold-italic,
@@ -20,9 +22,9 @@ $baseTheme: (
   fieldBorder: none,
   borderColor: rgb(102, 102, 102),
   helperTextColor: rgb(102, 102, 102),
-  fieldBorderError: 1px solid rgb(248, 68, 68),
-  fieldBorderFocused: rgb(118, 3, 219),
-  fieldColorError: rgb(248, 68, 68),
+  fieldBorderError: 1px solid $error-color,
+  fieldBorderFocused: $grey-90,
+  fieldColorError: $error-color,
   fieldPlaceholderColor: rgb(178, 186, 195),
   fieldPlaceholderFontSize: 0.9rem,
   fieldPlaceholderFontWeight: 400,
@@ -37,8 +39,8 @@ $baseTheme: (
   inputHeight: 60px,
   textAreaHeight: 259px,
   fieldBorderRadius: 6px,
-  buttonColor: rgb(255, 255, 255),
-  buttonBackgroundColor: rgb(118, 3, 219),
+  buttonColor: $white,
+  buttonBackgroundColor: $black,
   smoothTransition: all 0.1s ease-in-out,
   elementHoverColor: rgb(218, 13, 255),
   disabledButtonBackgroundColor: rgb(102, 102, 102),
@@ -58,8 +60,8 @@ $baseTheme: (
   warningBlockBackground: rgb(251, 249, 253),
   warningBlockColor: rgb(0, 0, 0),
   warningBlockPadding: 5em 4em,
-  tableBackground: blue,
-  tableText: red,
-  progressBarBackgroundColor: rgb(118, 3, 219),
-  progressBarColor: rgb(255, 255, 255),
+  tableBackground: $grey-20,
+  tableText: $grey-90,
+  progressBarBackgroundColor: $black,
+  progressBarColor: rgb(255, 255, 255)
 );
