@@ -11,6 +11,7 @@ export { default as Select } from './select';
 export { default as Loading } from './loading';
 export { default as Avatar } from './avatar';
 export { default as Title } from './title';
+export { default as List } from './list';
 export { default as VideoPlayer } from './videoPlayer';
 export { default as SideTrack } from './sideTrack';
 export { default as WarningBlock } from './warningBlock';
