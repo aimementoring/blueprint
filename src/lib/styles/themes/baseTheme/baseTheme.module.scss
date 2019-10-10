@@ -52,14 +52,15 @@ $baseTheme: (
   checkboxColor: $grey-80,
   checkBoxNotCheckedBorderColor: $grey-30,
   checkBoxNotCheckedBackgroundColor: $white,
-  checkBoxCheckedBackgroundColor: $white,
+  checkBoxCheckedBackgroundColor: $grey-90,
+  radioCheckedColor: $grey-90,
   sideTrackColor: $white,
   mainTitleColor: $white,
   warningBlockBackground: $grey-20,
   warningBlockColor: $black,
   warningBlockPadding: 5em 4em,
   tableBackground: $grey-20,
-  tableText: $grey-90,
+  tableText: $black,
   progressBarBackgroundColor: $black,
   progressBarColor: $white
 );

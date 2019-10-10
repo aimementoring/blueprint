@@ -1,4 +1,4 @@
-@import './variables/variables.module.scss';
+@import "./variables/variables.module.scss";
 
 /// Definition of all variables used on PortalTheme
 /// @group PortalTheme
@@ -57,13 +57,14 @@ $portalTheme: (
   checkBoxNotCheckedBorderColor: rgb(232, 232, 232),
   checkBoxNotCheckedBackgroundColor: rgb(255, 255, 255),
   checkBoxCheckedBackgroundColor: rgb(255, 255, 255),
+  radioCheckedColor: rgb(118, 3, 219),
   sideTrackColor: rgb(255, 255, 255),
   mainTitleColor: rgb(255, 255, 255),
   warningBlockBackground: rgb(251, 249, 253),
   warningBlockColor: rgb(0, 0, 0),
   warningBlockPadding: 5em 4em,
-  tableBackground: red,
-  tableText: blue,
+  tableBackground: $grey-lavender,
+  tableText: $black,
   progressBarBackgroundColor: rgb(118, 3, 219),
   progressBarColor: rgb(255, 255, 255),
 );

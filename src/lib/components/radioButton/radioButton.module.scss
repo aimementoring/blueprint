@@ -1,8 +1,8 @@
-@import '../input/input.module.scss';
-@import '../../styles/themes/themes.module.scss';
+@import "../input/input.module.scss";
 
-.radioButtonContainer { 
-  
+@import "../../styles/themes/themes.module.scss";
+
+.radioButtonContainer {
   [type="radio"]:checked,
   [type="radio"]:not(:checked) {
     position: absolute;
@@ -20,7 +20,7 @@
 
   [type="radio"]:checked + label:before,
   [type="radio"]:not(:checked) + label:before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
@@ -33,15 +33,18 @@
 
   [type="radio"]:checked + label:after,
   [type="radio"]:not(:checked) + label:after {
-    content: '';
+    content: "";
     width: 12px;
     height: 12px;
-    background: $brand-primary;
     position: absolute;
     top: 4px;
     left: 4px;
     border-radius: 100%;
     transition: all 0.2s ease;
+
+    @include themify() {
+      background-color: themed("radioCheckedColor");
+    }
   }
 
   [type="radio"]:not(:checked) + label:after {

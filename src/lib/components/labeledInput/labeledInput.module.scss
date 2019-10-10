@@ -1,6 +1,6 @@
-@import '../../styles/variables/variables.module.scss';
-@import '../../styles/themes/themes.module.scss';
-@import '../../styles/global/reset.module.scss';
+@import "../../styles/variables/variables.module.scss";
+@import "../../styles/themes/themes.module.scss";
+@import "../../styles/global/reset.module.scss";
 
 .wrapper {
   display: inline-block;
@@ -21,13 +21,13 @@
     width: 100%;
 
     @include themify() {
-      color: themed('fieldColor');
-      background-color: themed('fieldBackground');
-      border-bottom: 1px solid themed('borderColor');
-      font-family: themed('primaryFontFamilySemiBold');
-      font-size: themed('fieldFontSize');
-      font-weight: themed('fieldFontWeight');
-      padding: themed('inputPadding');
+      color: themed("fieldColor");
+      background-color: themed("fieldBackground");
+      border-bottom: 1px solid themed("borderColor");
+      font-family: themed("primaryFontFamilySemiBold");
+      font-size: themed("fieldFontSize");
+      font-weight: themed("fieldFontWeight");
+      padding: themed("inputPadding");
     }
 
     &[placeholder] ~ label {
@@ -36,43 +36,43 @@
 
     &[required] ~ label::after,
     &.required ~ label::after {
-      content: ' *';
+      content: " *";
       vertical-align: text-top;
       @include themify() {
-        color: themed('fieldColorError');
-        font-size: themed('fieldFontSize');
-        font-weight: themed('fieldFontWeight');
+        color: themed("fieldColorError");
+        font-size: themed("fieldFontSize");
+        font-weight: themed("fieldFontWeight");
       }
     }
 
     &:focus {
       @include themify() {
-        border-bottom: 1px solid themed('fieldBorderFocused');
-        box-shadow: inset 0 -1px 0 0 themed('fieldBorderFocused');
+        border-bottom: 1px solid themed("fieldBorderFocused");
+        box-shadow: inset 0 -1px 0 0 themed("fieldBorderFocused");
       }
     }
 
-    &:not([value='']),
+    &:not([value=""]),
     &:focus,
-    &:valid:not([value='']) {
+    &:valid:not([value=""]) {
       ~ label {
         @include themify() {
-          color: themed('fieldColor');
+          color: themed("fieldColor");
         }
         transform: translate3d(0, -24px, 0) scale(0.75);
       }
     }
 
-    &:not([value='']):invalid,
+    &:not([value=""]):invalid,
     &.error {
       @include themify() {
-        border-bottom: 1px solid themed('fieldColorError');
-        box-shadow: inset 0 -1px 0 0 themed('fieldColorError');
+        border-bottom: 1px solid themed("fieldColorError");
+        box-shadow: inset 0 -1px 0 0 themed("fieldColorError");
       }
 
       ~ label {
         @include themify() {
-          color: themed('fieldColorError');
+          color: themed("fieldColorError");
         }
         transform: translate3d(0, -24px, 0) scale(0.75);
       }
@@ -84,7 +84,7 @@
     visibility: hidden;
     margin-top: 0.5em;
     @include themify() {
-      color: themed('fieldColorError');
+      color: themed("fieldColorError");
     }
 
     &.active {
@@ -96,7 +96,7 @@
     display: block;
     margin-top: 0.5em;
     @include themify() {
-      color: themed('helperTextColor');
+      color: themed("helperTextColor");
     }
   }
 
@@ -118,12 +118,12 @@
     z-index: 1;
 
     &.required::after {
-      content: ' *';
+      content: " *";
       vertical-align: text-top;
       @include themify() {
-        color: themed('fieldColorError');
-        font-size: themed('fieldFontSize');
-        font-weight: themed('fieldFontWeight');
+        color: themed("fieldColorError");
+        font-size: themed("fieldFontSize");
+        font-weight: themed("fieldFontWeight");
       }
     }
   }
