@@ -60,7 +60,10 @@ $baseTheme: (
   warningBlockColor: $black,
   warningBlockPadding: 5em 4em,
   tableBackground: $grey-20,
+  tableBorder: 1px solid $grey-lavender,
   tableText: $black,
-  progressBarBackgroundColor: $black,
-  progressBarColor: $white
+  progressBarBackgroundColor: $grey-60,
+  progressBarFillColor: $black,
+  progressBarColor: $white,
+  progressFontSize: 1em
 );

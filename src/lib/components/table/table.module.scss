@@ -36,10 +36,10 @@
   padding: 1.5em;
   text-align: center;
   font-size: 0.9rem;
-  border-bottom: 1px solid $grey-lavender;
 
   @include themify() {
     border-color: themed("tableBackground");
+    border-bottom: themed("tableBorder");
   }
 }
 
