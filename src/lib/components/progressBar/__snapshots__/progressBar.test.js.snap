@@ -2,7 +2,7 @@
 
 exports[`ProgressBar renders properly using all available props 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
   <div
     className="progress"
@@ -33,7 +33,7 @@ exports[`ProgressBar renders properly using all available props 1`] = `
 
 exports[`ProgressBar renders properly with just progress value 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
   <div
     className="progress"
@@ -59,7 +59,7 @@ exports[`ProgressBar renders properly with just progress value 1`] = `
 
 exports[`ProgressBar renders properly with just progress value and display number on true 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
   <div
     className="progress"
@@ -87,7 +87,7 @@ exports[`ProgressBar renders properly with just progress value and display numbe
 
 exports[`ProgressBar renders properly with no props 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
   <div
     className="progress"

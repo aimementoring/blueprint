@@ -1,33 +1,24 @@
-@import "../../styles/variables/variables.module.scss";
-@import "../../styles/themes/themes.module.scss";
-@import "../../styles/global/reset.module.scss";
+@import '../../styles/variables/variables.module.scss';
+@import '../../styles/themes/themes.module.scss';
+@import '../../styles/global/reset.module.scss';
 
 .wrapper {
-  display: inline-block;
-  font-size: 16px;
   position: relative;
-  width: 100%;
-  margin-top: 40px;
 
-  textarea {
-    min-height: 100px;
-  }
-
-  textarea,
   input {
     -webkit-appearance: none;
-    border: 0;
+    border: none;
     outline: none;
     width: 100%;
 
     @include themify() {
-      color: themed("fieldColor");
-      background-color: themed("fieldBackground");
-      border-bottom: 1px solid themed("borderColor");
-      font-family: themed("primaryFontFamilySemiBold");
-      font-size: themed("fieldFontSize");
-      font-weight: themed("fieldFontWeight");
-      padding: themed("inputPadding");
+      color: themed('fieldColor');
+      background-color: themed('fieldBackground');
+      border-bottom: 1px solid themed('borderColor');
+      font-family: themed('primaryFontFamilyRegular');
+      font-size: themed('fieldFontSize');
+      font-weight: themed('fieldFontWeight');
+      padding: themed('inputPadding');
     }
 
     &[placeholder] ~ label {
@@ -36,67 +27,84 @@
 
     &[required] ~ label::after,
     &.required ~ label::after {
-      content: " *";
+      content: ' *';
       vertical-align: text-top;
+
       @include themify() {
-        color: themed("fieldColorError");
-        font-size: themed("fieldFontSize");
-        font-weight: themed("fieldFontWeight");
+        font-family: themed('primaryFontFamilyRegular');
+        color: themed('fieldColorError');
+        font-size: themed('fieldFontSize');
+        font-weight: themed('fieldFontWeight');
       }
     }
 
     &:focus {
       @include themify() {
-        border-bottom: 1px solid themed("fieldBorderFocused");
-        box-shadow: inset 0 -1px 0 0 themed("fieldBorderFocused");
+        border-bottom: 1px solid themed('fieldBorderFocused');
+        box-shadow: inset 0 -1px 0 0 themed('fieldBorderFocused');
       }
     }
 
-    &:not([value=""]),
+    &:not([value='']),
     &:focus,
-    &:valid:not([value=""]) {
+    &:valid:not([value='']) {
       ~ label {
         @include themify() {
-          color: themed("fieldColor");
+          color: themed('fieldColor');
         }
+        background-color: $white;
+        padding: 0 5px;
+        width: auto;
         transform: translate3d(0, -24px, 0) scale(0.75);
       }
     }
 
-    &:not([value=""]):invalid,
+    &:not([value='']):invalid,
     &.error {
       @include themify() {
-        border-bottom: 1px solid themed("fieldColorError");
-        box-shadow: inset 0 -1px 0 0 themed("fieldColorError");
+        border-bottom: 1px solid themed('fieldColorError');
+        box-shadow: inset 0 -1px 0 0 themed('fieldColorError');
       }
 
       ~ label {
         @include themify() {
-          color: themed("fieldColorError");
+          font-family: themed('primaryFontFamilySemiBold');
+          color: themed('fieldColorError');
         }
+        background-color: $white;
+        padding: 0 5px;
+        width: auto;
         transform: translate3d(0, -24px, 0) scale(0.75);
       }
     }
   }
 
+  .helperMessage,
   .errorMessage {
     display: block;
-    visibility: hidden;
     margin-top: 0.5em;
-    @include themify() {
-      color: themed("fieldColorError");
-    }
+    font-size: 0.75rem;
 
-    &.active {
-      visibility: visible;
+    @include themify() {
+      color: themed('fieldColorError');
+      font-family: themed('primaryFontFamilySemiBold');
     }
   }
 
   .helperMessage {
-    display: block;
-    margin-top: 0.5em;
     @include themify() {
-      color: themed("helperTextColor");
+      color: themed('helperTextColor');
+    }
+  }
+
+  .errorMessage {
+    visibility: hidden;
+    @include themify() {
+      color: themed('fieldColorError');
+    }
+
+    &.active {
+      visibility: visible;
     }
   }
 
@@ -105,25 +113,33 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     color: $black-title;
-    left: 0.3125em;
-    pointer-events: none;
     position: absolute;
+    top: 0.3em;
+    left: 0.3em;
+    pointer-events: none;
     right: auto;
     text-align: left;
-    top: 0.3125em;
     transform: translate3d(0, 0, 0) scale(1);
     transform-origin: left top;
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     width: 100%;
     z-index: 1;
+    @include themify() {
+      color: themed('fieldPlaceholderColor');
+      font-family: themed('primaryFontFamilyRegular');
+      font-size: themed('fieldFontSize');
+      // padding: themed('inputPadding');
+    }
 
+    // i've played around with the below and i'm not sure what it's for... usually i would just delete but it looks like maybe i could be misssing something? It doesn't effect the *asterix* after the required input label so... not sure
     &.required::after {
-      content: " *";
+      content: ' *';
       vertical-align: text-top;
       @include themify() {
-        color: themed("fieldColorError");
-        font-size: themed("fieldFontSize");
-        font-weight: themed("fieldFontWeight");
+        font-family: themed('primaryFontFamilySemiBold');
+        color: themed('fieldColorError');
+        font-size: themed('fieldFontSize');
+        font-weight: themed('fieldFontWeight');
       }
     }
   }

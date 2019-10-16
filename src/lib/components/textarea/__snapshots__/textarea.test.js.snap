@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TextBox renders properly 1`] = `
+exports[`Textarea renders properly 1`] = `
 <div
   className=" theme-purple wrapper"
 >
@@ -9,7 +9,7 @@ exports[`TextBox renders properly 1`] = `
             myClass input textarea"
     getValidationMessage={[Function]}
     handleValidations={[Function]}
-    name="textbox"
+    name="textarea"
     onChange={[Function]}
     onChangeFunction={[Function]}
     placeholder="Write area"

@@ -2,7 +2,7 @@
 
 exports[`LabeledInput renders properly 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
   <div
     className="wrapper"
@@ -100,7 +100,7 @@ exports[`LabeledInput renders properly when it has an error 1`] = `
 
 exports[`LabeledInput renders properly when it is disabled 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
   <div
     className="wrapper"
@@ -133,7 +133,7 @@ exports[`LabeledInput renders properly when it is disabled 1`] = `
 
 exports[`LabeledInput renders properly when type is number 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
   <div
     className="wrapper"
@@ -165,7 +165,7 @@ exports[`LabeledInput renders properly when type is number 1`] = `
 
 exports[`LabeledInput renders properly with error and helper text 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
   <div
     className="wrapper"
@@ -199,7 +199,7 @@ exports[`LabeledInput renders properly with error and helper text 1`] = `
 
 exports[`LabeledInput renders properly with helper text 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
   <div
     className="wrapper"
@@ -236,7 +236,7 @@ exports[`LabeledInput renders properly with helper text 1`] = `
 
 exports[`LabeledInput renders properly with required 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
   <div
     className="wrapper"
@@ -269,7 +269,7 @@ exports[`LabeledInput renders properly with required 1`] = `
 
 exports[`LabeledInput renders properly with required and a value 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
   <div
     className="wrapper"
