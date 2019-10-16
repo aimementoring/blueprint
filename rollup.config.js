@@ -62,6 +62,7 @@ const generateConfig = async () => {
       external(),
       resolve({
         preferBuiltins: true,
+        browser: true,
       }),
       postcss({
         modules: true,
