@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { Components, Utils } from './lib';
 
-const { Input, Button, Checkbox, TextBox, Select, TermsAndConditions } = Components;
+const { Input, Button, Checkbox, Textarea, Select, TermsAndConditions } = Components;
 
 const { validateEmail, minCharacters, required, maxCharacters, validDate } = Utils.Validation;
 
@@ -18,8 +18,8 @@ class App extends Component {
       validationMessage: 'there is an error here',
       theme: 'purple',
     },
-    textbox: {
-      placeholder: 'Textbox',
+    textarea: {
+      placeholder: 'Textarea',
       value: '',
       type: 'text',
       required: true,
@@ -194,14 +194,14 @@ class App extends Component {
     );
   };
 
-  renderTextboxComponent = () => {
-    const { textbox } = this.state;
+  renderTextareaComponent = () => {
+    const { textarea } = this.state;
     return (
-      <TextBox
-        {...textbox}
+      <Textarea
+        {...textarea}
         name="value"
         theme={this.state.input.theme}
-        onChangeFunction={(attr, value) => this.updateState('textbox', attr, value)}
+        onChangeFunction={(attr, value) => this.updateState('textarea', attr, value)}
         validations={[maxCharacters(100), minCharacters(10)]}
       />
     );
@@ -240,7 +240,7 @@ class App extends Component {
         {this.renderInputComponent()}
         {this.renderButtonComponent()}
         {this.renderCheckboxComponent()}
-        {this.renderTextboxComponent()}
+        {this.renderTextareaComponent()}
       </div>
     );
   }

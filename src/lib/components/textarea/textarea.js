@@ -2,9 +2,9 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
 import { withValidation } from '../../utils/hocs';
-import styles from './textbox.module.scss';
+import styles from './textarea.module.scss';
 
-class TextBox extends PureComponent {
+class Textarea extends PureComponent {
   static propTypes = {
     ...componentPropTypes,
     placeholder: PropTypes.string,
@@ -68,4 +68,4 @@ class TextBox extends PureComponent {
   }
 }
 
-export default withValidation(TextBox);
+export default withValidation(Textarea);
