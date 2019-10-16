@@ -6,7 +6,7 @@ const { Input, Button, Checkbox, TextBox, Select, TermsAndConditions } = Compone
 
 const { validateEmail, minCharacters, required, maxCharacters, validDate } = Utils.Validation;
 
-const container = document.getElementById('root'); //test
+const container = document.getElementById('root');
 class App extends Component {
   state = {
     input: {
