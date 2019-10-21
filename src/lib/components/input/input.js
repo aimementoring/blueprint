@@ -49,9 +49,19 @@ class Input extends PureComponent {
       isValidationOk,
       renderValidationError,
       autoFocus,
-      ...inputProps
+      ...restProps
     } = this.props;
 
+    // removing props that are not valid for DOM elements
+    // to hand the rest to the input
+    const {
+      handleValidations,
+      onChangeFunction,
+      getValidationMessage,
+      validationMessage,
+      hasErrorAfterSubmit,
+      ...inputProps
+    } = restProps;
     return (
       <div className={`${containerClassName} ${styles[`theme-${theme}`]} ${styles.inputWrapper}`}>
         <input
