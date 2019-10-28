@@ -2,7 +2,7 @@
 
 exports[`Footer renders properly 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
   <footer
     className="footerBackground"

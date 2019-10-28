@@ -2,7 +2,7 @@
 
 exports[`SideTrack is backwards compatible (paragraph passed as prop) 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
   <div
     className=""
@@ -51,7 +51,7 @@ exports[`SideTrack is backwards compatible (paragraph passed as prop) 1`] = `
 
 exports[`SideTrack renders properly 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
   <div
     className=""

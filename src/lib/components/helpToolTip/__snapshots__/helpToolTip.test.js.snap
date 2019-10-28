@@ -2,7 +2,7 @@
 
 exports[`HelpToolTip renders with children 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
   <span
     className="trigger trigger"
@@ -36,7 +36,7 @@ exports[`HelpToolTip renders with children 1`] = `
 
 exports[`HelpToolTip uses placement and trigger argument 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
   <span
     className="trigger trigger"
