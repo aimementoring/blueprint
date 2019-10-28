@@ -2,37 +2,41 @@
 
 exports[`StarsFeedback renders properly 1`] = `
 <div
-  className="rating "
+  className="theme-base"
 >
-  <span
-    className=""
-    onClick={[Function]}
+  <div
+    className="rating "
   >
-    ☆
-  </span>
-  <span
-    className=""
-    onClick={[Function]}
-  >
-    ☆
-  </span>
-  <span
-    className=""
-    onClick={[Function]}
-  >
-    ☆
-  </span>
-  <span
-    className=""
-    onClick={[Function]}
-  >
-    ☆
-  </span>
-  <span
-    className=""
-    onClick={[Function]}
-  >
-    ☆
-  </span>
+    <span
+      className="star"
+      onClick={[Function]}
+    >
+      ☆
+    </span>
+    <span
+      className="star"
+      onClick={[Function]}
+    >
+      ☆
+    </span>
+    <span
+      className="star"
+      onClick={[Function]}
+    >
+      ☆
+    </span>
+    <span
+      className="star"
+      onClick={[Function]}
+    >
+      ☆
+    </span>
+    <span
+      className="star"
+      onClick={[Function]}
+    >
+      ☆
+    </span>
+  </div>
 </div>
 `;

@@ -2,7 +2,7 @@
 
 exports[`Avatar empty renders properly 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
   <div
     className="profileAvatar"
@@ -16,7 +16,7 @@ exports[`Avatar empty renders properly 1`] = `
 
 exports[`Avatar name renders properly 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
   <div
     className="profileAvatar"
@@ -30,7 +30,7 @@ exports[`Avatar name renders properly 1`] = `
 
 exports[`Avatar with photo renders properly 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
   <div
     className="profileAvatar"

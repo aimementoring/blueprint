@@ -1,5 +1,5 @@
-@import '../input/input.module.scss';
-@import '../../styles/themes/themes.module.scss';
+@import "../input/input.module.scss";
+@import "../../styles/themes/themes.module.scss";
 
 select {
   appearance: none;
@@ -13,12 +13,12 @@ select {
 
 .error {
   @include themify() {
-    color: themed('error-color');
+    color: themed("error-color");
   }
 }
 
 .errorMessage {
   @include themify() {
-    color: themed('error-color');
+    color: themed("error-color");
   }
 }

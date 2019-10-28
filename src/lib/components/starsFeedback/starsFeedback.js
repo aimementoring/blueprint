@@ -1,62 +1,55 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
 import styles from './starsFeedback.module.scss';
 
+const Star = ({ onSelect, star, starSelected }) => (
+  <span
+    className={classNames(styles.star, { [styles.starSelected]: star <= starSelected })}
+    onClick={() => onSelect(star)}
+    key={star}
+  >
+    ☆
+  </span>
+);
+
 export default class StarsFeedback extends PureComponent {
-  static propTypes = {
-    className: PropTypes.string,
-    handleStarSelected: PropTypes.func,
-    starSelected: PropTypes.number.isRequired,
+  handleStarSelected = starSelected => {
+    this.props.handleStarSelected(starSelected);
   };
 
-  static defaultProps = {
-    className: '',
-    // eslint-disable-next-line no-unused-vars
-    handleStarSelected: (starSelected) => { },
-  }
-
-  getStarStyle = (starSelected, number) => (
-    (starSelected > number) ? styles.ratingSelected : ''
-  );
-
-  handleStarSelected = (starSelected) => () => {
-    this.props.handleStarSelected(starSelected);
-  }
-
   render() {
-    const {
-      starSelected,
-      className,
-    } = this.props;
+    const { starSelected, className, theme, stars } = this.props;
+    const starsList = [...Array(stars).keys()].reverse();
 
     return (
-      <div className={`${styles.rating} ${className}`}>
-        <span
-          className={this.getStarStyle(starSelected, 4)}
-          onClick={this.handleStarSelected(5)}>
-          ☆
-        </span>
-        <span
-          className={this.getStarStyle(starSelected, 3)}
-          onClick={this.handleStarSelected(4)}>
-          ☆
-        </span>
-        <span
-          className={this.getStarStyle(starSelected, 2)}
-          onClick={this.handleStarSelected(3)}>
-          ☆
-        </span>
-        <span
-          className={this.getStarStyle(starSelected, 1)}
-          onClick={this.handleStarSelected(2)}>
-          ☆
-        </span>
-        <span
-          className={this.getStarStyle(starSelected, 0)}
-          onClick={this.handleStarSelected(1)}>
-          ☆
-        </span>
+      <div className={styles[`theme-${theme}`]}>
+        <div className={`${styles.rating} ${className}`}>
+          {starsList.map(star => (
+            <Star
+              onSelect={this.handleStarSelected}
+              star={star + 1}
+              starSelected={starSelected}
+              key={star}
+            />
+          ))}
+        </div>
       </div>
     );
   }
 }
+
+StarsFeedback.propTypes = {
+  ...componentPropTypes,
+  handleStarSelected: PropTypes.func,
+  starSelected: PropTypes.number.isRequired,
+  stars: PropTypes.number,
+};
+
+StarsFeedback.defaultProps = {
+  ...defaultComponentPropTypes,
+  // eslint-disable-next-line no-unused-vars
+  handleStarSelected: starSelected => {},
+  stars: 5,
+};
