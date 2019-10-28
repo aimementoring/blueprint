@@ -9,5 +9,5 @@ export const componentPropTypes = {
 export const defaultComponentPropTypes = {
   containerClassName: '',
   className: '',
-  theme: 'portal',
+  theme: 'base',
 };

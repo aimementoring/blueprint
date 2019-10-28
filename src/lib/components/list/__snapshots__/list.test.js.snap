@@ -2,7 +2,7 @@
 
 exports[`List is backwards compatible (text passed as prop) 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
   <ul
     className="ulList"
@@ -12,7 +12,7 @@ exports[`List is backwards compatible (text passed as prop) 1`] = `
 
 exports[`List renders properly 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
   <ul
     className="ulList"
