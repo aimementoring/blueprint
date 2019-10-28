@@ -14,7 +14,7 @@ class Select extends PureComponent {
     renderValidationError: PropTypes.func,
     handleValidations: PropTypes.func.isRequired,
     isValidationOk: PropTypes.func.isRequired,
-    customStyles: PropTypes.shape,
+    customStyles: PropTypes.object,
   };
 
   static defaultProps = {

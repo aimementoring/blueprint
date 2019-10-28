@@ -21,8 +21,8 @@ exports[`AnimatedCircleText renders properly in reverse mode 1`] = `
       <div
         className="theme-portal"
       >
-        <span
-          className="blockTitle"
+        <h3
+          className="h3Title"
         >
           <span
             className=""
@@ -240,7 +240,7 @@ exports[`AnimatedCircleText renders properly in reverse mode 1`] = `
           >
              
           </span>
-        </span>
+        </h3>
       </div>
     </div>
   </div>
@@ -268,8 +268,8 @@ exports[`AnimatedCircleText renders properly in standard mode 1`] = `
       <div
         className="theme-portal"
       >
-        <span
-          className="blockTitle"
+        <h3
+          className="h3Title"
         >
           <span
             className=""
@@ -487,7 +487,7 @@ exports[`AnimatedCircleText renders properly in standard mode 1`] = `
           >
              
           </span>
-        </span>
+        </h3>
       </div>
     </div>
   </div>

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List is backwards compatible (text passed as prop) 1`] = `
+<div
+  className="theme-portal"
+>
+  <ul
+    className="ulList"
+  />
+</div>
+`;
+
+exports[`List renders properly 1`] = `
+<div
+  className="theme-portal"
+>
+  <ul
+    className="ulList"
+  />
+</div>
+`;
