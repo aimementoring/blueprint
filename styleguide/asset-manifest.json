@@ -1,8 +1,8 @@
 {
-  "main.css": "/static/css/main.73603161.css",
-  "main.js": "/build/bundle.ab33fe9b.js",
+  "main.css": "/static/css/main.41fad60c.css",
+  "main.js": "/build/bundle.cdd12857.js",
   "index.html": "/index.html",
-  "precache-manifest.c2961c414230a5c0ea8192e194372fc1.js": "/precache-manifest.c2961c414230a5c0ea8192e194372fc1.js",
+  "precache-manifest.07e9e939f122c3368f44a3a82bc0a854.js": "/precache-manifest.07e9e939f122c3368f44a3a82bc0a854.js",
   "service-worker.js": "/service-worker.js",
   "static/media/countryFlag.module.scss": "/static/media/zw.a21f533d.svg"
 }
