@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
+import Title from '../../components/title';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
 import styles from './footer.module.scss';
 
@@ -16,6 +17,7 @@ const Footer = ({ location, theme, menuItems, copyright }) => (
               <div className={`${styles.flex} ${styles.wrap}`}>
                 {menuItems.map(columnMenu => (
                   <nav className={columnMenu.className || styles.navColumn} key={columnMenu.title}>
+                    <Title type="h4Title">H4 Title</Title>
                     <h4 className={columnMenu.titleClassName || styles.navTitle}>
                       {columnMenu.title}
                     </h4>
