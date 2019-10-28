@@ -7,7 +7,7 @@ export const selectProps = {
     PropTypes.shape({
       value: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
-    }),
+    })
   ).isRequired,
   onChangeFunction: PropTypes.func,
   isMulti: PropTypes.bool,
@@ -28,14 +28,15 @@ export const selectProps = {
     PropTypes.shape({
       value: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
-    }),
+    })
   ),
   borderColor: PropTypes.string,
   borderColorInError: PropTypes.string,
+  withGroups: PropTypes.bool,
 };
 
 export const selectDefaultProps = {
-  onChangeFunction: () => { },
+  onChangeFunction: () => {},
   isMulti: false,
   error: false,
   isClearable: false,
@@ -52,4 +53,5 @@ export const selectDefaultProps = {
   defaultValues: [],
   borderColor: '#550d94',
   borderColorInError: '#DC143C',
+  withGroups: false,
 };
