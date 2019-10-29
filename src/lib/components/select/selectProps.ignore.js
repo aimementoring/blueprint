@@ -50,6 +50,5 @@ export const selectDefaultProps = {
   },
   joinValues: false,
   defaultValues: [],
-  borderColor: '#550d94',
-  borderColorInError: '#DC143C',
+
 };

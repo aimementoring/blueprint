@@ -2,7 +2,7 @@
 
 exports[`Paragraph is backwards compatible (text passed as prop) 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
   <p
     className="paragraph "
@@ -14,7 +14,7 @@ exports[`Paragraph is backwards compatible (text passed as prop) 1`] = `
 
 exports[`Paragraph renders properly 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
   <p
     className="paragraph "

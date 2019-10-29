@@ -5,7 +5,7 @@ exports[`TermsAndConditions renders properly only with pdf value, without checkb
   className=""
 >
   <div
-    className="theme-portal"
+    className="theme-base"
   >
     <div
       className="termsContainer "
@@ -31,7 +31,7 @@ exports[`TermsAndConditions renders properly with all props used 1`] = `
   className=""
 >
   <div
-    className="theme-portal"
+    className="theme-base"
   >
     <div
       className="textContainer "
@@ -59,7 +59,7 @@ exports[`TermsAndConditions renders properly with all props used 2`] = `
   className=""
 >
   <div
-    className="theme-portal"
+    className="theme-base"
   >
     <div
       className="textContainer "
@@ -118,7 +118,7 @@ exports[`TermsAndConditions renders properly with all props used 3`] = `
   className=""
 >
   <div
-    className="theme-portal"
+    className="theme-base"
   >
     <div
       className="termsContainer "
@@ -175,14 +175,14 @@ exports[`TermsAndConditions renders properly with paragraph props 1`] = `
   className=""
 >
   <div
-    className="theme-portal"
+    className="theme-base"
   >
     <div
       className="textContainer "
       style={Object {}}
     >
       <div
-        className="theme-portal"
+        className="theme-base"
       >
         <p
           className="paragraph "
@@ -208,7 +208,7 @@ exports[`TermsAndConditions renders properly with pdf, and checkbox 1`] = `
   className=""
 >
   <div
-    className="theme-portal"
+    className="theme-base"
   >
     <div
       className="termsContainer "

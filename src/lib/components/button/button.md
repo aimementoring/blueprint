@@ -22,3 +22,8 @@
 <Button type="button" onClickFunction={this.handleClick} theme="light">
 Light theme</Button>
 ```
+
+```js
+<Button type="button" onClickFunction={this.handleClick} theme="base">
+Base theme</Button>
+```

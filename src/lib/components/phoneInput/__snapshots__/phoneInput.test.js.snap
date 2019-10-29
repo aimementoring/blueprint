@@ -2,7 +2,7 @@
 
 exports[`PhoneInput renders properly 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
   <div
     className=" inputWrapper"
