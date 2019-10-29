@@ -95,8 +95,6 @@ const selectOptions = [
   isMulti
   withGroups
   placeholder="Country?"
-  classNames="select-auto-complete-country"
-  className="select-auto-complete-country"
   name="groupValue"
   onChangeFunction={updateValue}
   value={state.groupValue}
