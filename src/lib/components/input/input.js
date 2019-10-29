@@ -49,19 +49,17 @@ class Input extends PureComponent {
       isValidationOk,
       renderValidationError,
       autoFocus,
-      ...restProps
-    } = this.props;
-
-    // removing props that are not valid for DOM elements
-    // to hand the rest to the input
-    const {
+      // removing props that are not valid for DOM elements
+      // to hand the rest to the input
       handleValidations,
       onChangeFunction,
       getValidationMessage,
       validationMessage,
       hasErrorAfterSubmit,
-      ...inputProps
-    } = restProps;
+      // props handed to the input DOM element
+      ...restProps
+    } = this.props;
+
     return (
       <div className={`${containerClassName} ${styles[`theme-${theme}`]} ${styles.inputWrapper}`}>
         <input
@@ -74,7 +72,7 @@ class Input extends PureComponent {
           onChange={this.handleChange(name)}
           disabled={disabled ? 'disabled' : ''}
           autoFocus={autoFocus}
-          {...inputProps}
+          {...restProps}
         />
         {renderValidationError()}
       </div>
