@@ -15,7 +15,7 @@ CountryFlag.propTypes = {
 };
 
 CountryFlag.defaultProps = {
-  number: false,
+  number: '',
 };
 
 export default CountryFlag;

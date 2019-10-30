@@ -1,35 +1,35 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Dropdown from 'react-select';
+import flatten from 'lodash.flatten';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
 import { selectProps, selectDefaultProps } from './selectProps.ignore';
 import { withValidation } from '../../utils/hocs';
 import stylesCss from './select.module.scss';
 
 class Select extends PureComponent {
-  static propTypes = {
-    ...componentPropTypes,
-    ...selectProps,
-    // props from withValidation HOC
-    renderValidationError: PropTypes.func,
-    handleValidations: PropTypes.func.isRequired,
-    isValidationOk: PropTypes.func.isRequired,
-    customStyles: PropTypes.object,
-  };
-
-  static defaultProps = {
-    ...defaultComponentPropTypes,
-    ...selectDefaultProps,
-    customStyles: {},
-  };
-
   handleChange = value => {
-    const { onChangeFunction, name } = this.props;
+    const { onChangeFunction, name, handleValidations } = this.props;
     if (value) {
       const newValue = value.length ? value.map(item => item.value) : value.value;
-      const isWrongValidation = this.props.handleValidations(value);
+      const isWrongValidation = handleValidations(value);
       onChangeFunction(name, newValue, isWrongValidation);
     }
+  };
+
+  getValue = () => {
+    const { withGroups, value, isMulti } = this.props;
+    let { options } = this.props;
+    let result = null;
+    if (withGroups) options = flatten(options.map(group => group.options));
+
+    if (isMulti) {
+      result =
+        value && value.length ? options.filter(option => value.indexOf(option.value) > -1) : [];
+    } else {
+      result = value ? options.find(option => option.value === value) : null;
+    }
+    return result;
   };
 
   render() {
@@ -52,11 +52,9 @@ class Select extends PureComponent {
       isValidationOk,
       renderValidationError,
     } = this.props;
-    let { value, customStyles } = this.props;
+    let { customStyles } = this.props;
 
-    if (error) {
-      delete styles.control.border;
-    }
+    if (error) delete styles.control.border;
 
     customStyles = {
       control: (base, state) => ({
@@ -99,13 +97,6 @@ class Select extends PureComponent {
       ...customStyles,
     };
 
-    if (isMulti) {
-      value =
-        value && value.length ? options.filter(option => value.indexOf(option.value) > -1) : [];
-    } else {
-      value = value ? options.find(option => option.value === value) : null;
-    }
-
     return (
       <div
         className={`${containerClassName}
@@ -117,7 +108,7 @@ class Select extends PureComponent {
           styles={customStyles}
           onChange={this.handleChange}
           options={options}
-          value={value}
+          value={this.getValue()}
           isMulti={isMulti}
           isClearable={isClearable}
           isDisabled={disabled}
@@ -131,5 +122,21 @@ class Select extends PureComponent {
     );
   }
 }
+
+Select.propTypes = {
+  ...componentPropTypes,
+  ...selectProps,
+  // props from withValidation HOC
+  renderValidationError: PropTypes.func,
+  handleValidations: PropTypes.func.isRequired,
+  isValidationOk: PropTypes.func.isRequired,
+  customStyles: PropTypes.object,
+};
+
+Select.defaultProps = {
+  ...defaultComponentPropTypes,
+  ...selectDefaultProps,
+  customStyles: {},
+};
 
 export default withValidation(Select);

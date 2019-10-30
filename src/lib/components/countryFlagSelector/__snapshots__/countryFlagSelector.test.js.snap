@@ -13,7 +13,7 @@ exports[`CountrySelector renders properly 1`] = `
       onKeyDown={[Function]}
     >
       <div
-        className="css-xwjp6l-control"
+        className="css-1ebt9em-control"
         onMouseDown={[Function]}
         onTouchEnd={[Function]}
       >
