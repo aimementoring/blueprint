@@ -6,7 +6,6 @@ const { Input, Button, Checkbox, Textarea, Select, TermsAndConditions } = Compon
 
 const { validateEmail, minCharacters, required, maxCharacters, validDate } = Utils.Validation;
 
-const container = document.getElementById('root');
 class App extends Component {
   state = {
     input: {
@@ -246,6 +245,6 @@ class App extends Component {
   }
 }
 
-render(<App />, container);
+render(<App />);
 
 export { Button, Checkbox, Input };
