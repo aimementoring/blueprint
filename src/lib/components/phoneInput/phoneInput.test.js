@@ -5,7 +5,7 @@ import PhoneInput from './phoneInput.js';
 describe('PhoneInput', () => {
   it('renders properly', () => {
     const tree = renderer
-      .create(<PhoneInput currentSite="au" placeholder="Phone" name="phone" value="" required />)
+      .create(<PhoneInput placeholder="Enter phone number" value={null} onChange={() => {}} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

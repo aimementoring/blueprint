@@ -2,7 +2,7 @@
 // https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#what-about-memoization
 import memoize from 'memoize-one';
 import moment from 'moment';
-import { parsePhoneNumberFromString } from 'libphonenumber-js/mobile';
+import { parsePhoneNumberFromString } from 'libphonenumber-js/max';
 
 const regularExpressions = {
   // eslint-disable-next-line no-useless-escape
@@ -35,14 +35,14 @@ export const validateEmail = customMessage => value =>
 export const validateMobilePhone = customMessage => value => {
   if (valueIsEmpty(value)) return undefined;
 
-  const phoneNumber = parsePhoneNumberFromString(value);
+  const phoneNumber = parsePhoneNumberFromString(value, 'AU');
   return phoneNumber && phoneNumber.isValid()
     ? undefined
     : customMessage || 'This value is not a valid phone number';
 };
 
 export const getFormattedMobilePhone = value =>
-  valueIsEmpty(value) ? {} : parsePhoneNumberFromString(value);
+  valueIsEmpty(value) ? {} : parsePhoneNumberFromString(value, 'AU');
 
 export const validateNonNegative = customMessage => value =>
   value >= 0 ? undefined : customMessage || "This value shouldn't be negative";

@@ -1,20 +1,22 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import IntlTelInput from 'react-intl-tel-input';
+import ReactPhoneInput from 'react-phone-number-input';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
+import { withValidation } from '../../utils/hocs';
 import styles from './phoneInput.module.scss';
+import 'react-phone-number-input/style.css';
 
-export default class PhoneInput extends PureComponent {
+class PhoneInput extends PureComponent {
   static propTypes = {
     ...componentPropTypes,
     placeholder: PropTypes.string,
-    currentSite: PropTypes.string.isRequired,
     name: PropTypes.string,
     required: PropTypes.bool,
     defaultCountry: PropTypes.string,
     value: PropTypes.string,
     onChangeFunction: PropTypes.func,
     onCountrySelected: PropTypes.func,
+    // http://catamphetamine.github.io/react-phone-number-input/docs/styleguide/index.html#phoneinput
   };
 
   static defaultProps = {
@@ -25,17 +27,16 @@ export default class PhoneInput extends PureComponent {
     required: false,
     defaultCountry: 'auto',
     value: '',
-    onCountrySelected: () => { },
-    onChangeFunction: () => { },
+    onCountrySelected: () => {},
+    onChangeFunction: () => {},
+    // http://catamphetamine.github.io/react-phone-number-input/docs/styleguide/index.html#phoneinput
   };
 
-  lookupGeoIp = callback => {
-    callback(this.props.currentSite);
-  };
+  handleChange = value => {
+    const { name, onChangeFunction, handleValidations } = this.props;
 
-  handleChange = (status, value) => {
-    const { name, onChangeFunction } = this.props;
-    onChangeFunction(name, value);
+    const isWrongValidation = handleValidations(value);
+    onChangeFunction(name, value, isWrongValidation);
   };
 
   render() {
@@ -43,38 +44,33 @@ export default class PhoneInput extends PureComponent {
       containerClassName,
       required,
       defaultCountry,
-      name,
       value,
-      onCountrySelected,
       className,
       theme,
       placeholder,
+      isValidationOk,
+      renderValidationError,
+      onCountrySelected,
       ...inputProps
     } = this.props;
-
     return (
       <div className={styles[`theme-${theme}`]}>
         <div className={`${containerClassName} ${styles.inputWrapper}`}>
-          <IntlTelInput
-            inputClassName={className}
-            value={value}
-            fieldName={name}
-            defaultCountry={defaultCountry}
-            autoPlaceholder={true}
-            geoIpLookup={this.lookupGeoIp}
-            utilsScript="libphonenumber.js"
-            onPhoneNumberChange={this.handleChange}
-            onSelectFlag={onCountrySelected}
-            type="number"
-            telInputProps={{ required }}
+          <ReactPhoneInput
+            country={defaultCountry}
             placeholder={placeholder}
-            separateDialCode={true}
-            format={true}
-            style={{ width: '100%' }}
+            value={value}
+            onChange={this.handleChange}
+            error={isValidationOk() && ''}
+            className={className}
+            onCountryChange={onCountrySelected}
             {...inputProps}
           />
+          {renderValidationError()}
         </div>
       </div>
     );
   }
 }
+
+export default withValidation(PhoneInput);
