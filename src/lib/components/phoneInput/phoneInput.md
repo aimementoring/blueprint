@@ -2,7 +2,7 @@
 import { getFormattedMobilePhone } from '../../utils/validation/validation';
 
 initialState = {
-  value: '',
+  phone: '',
   formatted: null,
 };
 
@@ -16,8 +16,8 @@ function updateValue(name, value) {
 }
 
 <div>
-  <PhoneInput placeholder="Enter phone number" value={state.value} onChangeFunction={updateValue} />
-  {state.formatted && (
+  <PhoneInput placeholder="Enter phone number" value={state.phone} onChangeFunction={updateValue} />
+  {state.formatted && state.phone && (
     <div style={{ display: 'block' }}>
       <div>Country: {state.formatted.country}</div>
       <div>Country calling code: {state.formatted.countryCallingCode}</div>
