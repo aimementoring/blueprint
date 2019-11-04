@@ -50,6 +50,7 @@ class PhoneInput extends PureComponent {
       placeholder,
       isValidationOk,
       renderValidationError,
+      getValidationMessage,
       onCountrySelected,
       ...inputProps
     } = this.props;
@@ -61,12 +62,12 @@ class PhoneInput extends PureComponent {
             placeholder={placeholder}
             value={value}
             onChange={this.handleChange}
-            error={isValidationOk() && ''}
+            error={isValidationOk() ? '' : getValidationMessage()}
             className={className}
             onCountryChange={onCountrySelected}
             {...inputProps}
           />
-          {renderValidationError()}
+          {/* {renderValidationError()} */}
         </div>
       </div>
     );

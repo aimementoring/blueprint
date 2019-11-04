@@ -13,6 +13,7 @@ import {
   checkValidations,
   validateComponents,
   validDate,
+  getFormattedMobilePhone,
 } from './validation';
 
 export {
@@ -30,4 +31,5 @@ export {
   checkValidations,
   validateComponents,
   validDate,
+  getFormattedMobilePhone,
 };
