@@ -82,6 +82,10 @@ const generateConfig = async () => {
             'useRef',
           ],
           'node_modules/react-dom/index.js': ['createPortal', 'findDOMNode'],
+          'node_modules/react-phone-number-input/modules/libphonenumber/RFC3966.js': [
+            'parseRFC3966',
+            'formatRFC3966',
+          ],
         },
       }),
       url(),
