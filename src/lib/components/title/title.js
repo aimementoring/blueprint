@@ -5,6 +5,18 @@ import styles from './title.module.scss';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
 
 const titleTypeClass = {
+  gradient: {
+    style: styles.gradientTitle,
+    tag: 'span',
+  },
+  blockTitle: {
+    style: styles.blockTitle,
+    tag: 'span',
+  },
+  mainTitle: {
+    style: styles.mainTitle,
+    tag: 'span',
+  },
   h1Title: {
     style: styles.h1Title,
     tag: 'h1',
@@ -33,16 +45,9 @@ const titleTypeClass = {
 
 class Title extends PureComponent {
   render() {
-    const {
-      text,
-      type,
-      className,
-      containerClassName,
-      theme,
-      children,
-    } = this.props;
+    const { text, type, className, containerClassName, theme, children } = this.props;
 
-    const { style, tag: Component } = titleTypeClass[type];
+    const { style, tag: Component } = titleTypeClass[type] || { style: {}, tag: 'span' };
 
     return (
       <div className={classNames(styles[`theme-${theme}`], containerClassName)}>
@@ -56,7 +61,17 @@ Title.propTypes = {
   ...componentPropTypes,
   text: PropTypes.string,
   // setting up headings as per design system but they will probably change again
-  type: PropTypes.oneOf(['h1Title', 'h2Title', 'h3Title', 'h4Title', 'h5Title', 'h6Title']),
+  type: PropTypes.oneOf([
+    'h1Title',
+    'h2Title',
+    'h3Title',
+    'h4Title',
+    'h5Title',
+    'h6Title',
+    'gradient',
+    'blockTitle',
+    'mainTitle',
+  ]),
   children: PropTypes.node,
 };
 

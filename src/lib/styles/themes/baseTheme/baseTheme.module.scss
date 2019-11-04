@@ -1,6 +1,6 @@
-@import "variables/variables.module.scss";
+@import 'variables/variables.module.scss';
 
-@import "../../variables/variables.module.scss";
+@import '../../variables/variables.module.scss';
 
 /// Definition of all variables used on BaseTheme
 /// @group BaseTheme
@@ -65,5 +65,5 @@ $baseTheme: (
   progressBarBackgroundColor: $grey-60,
   progressBarFillColor: $black,
   progressBarColor: $white,
-  progressFontSize: 1em
+  progressFontSize: 1em,
 );

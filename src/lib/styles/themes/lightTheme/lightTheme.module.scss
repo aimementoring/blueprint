@@ -1,4 +1,4 @@
-@import "variables/variables.module.scss";
+@import 'variables/variables.module.scss';
 
 /// Definition of all variables used on LightTheme
 /// @group LightTheme
@@ -66,5 +66,6 @@ $lightTheme: (
   progressBarBackgroundColor: $grey-60,
   progressBarFillColor: rgb(118, 3, 219),
   progressBarColor: rgb(255, 255, 255),
-  progressFontSize: 1em
+  progressFontSize: 1em,
+  mainTitleColor: $white,
 );
