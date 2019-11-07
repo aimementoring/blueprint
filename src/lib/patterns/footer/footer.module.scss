@@ -212,3 +212,11 @@
     }
   }
 }
+
+.pinkFlashing {
+  border: 5px solid pink;
+  
+  @include themify {
+    background-color: themed('tableBackground');
+  }
+}
