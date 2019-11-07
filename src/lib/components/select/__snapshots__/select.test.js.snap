@@ -10,7 +10,7 @@ exports[`Select renders properly 1`] = `
     onKeyDown={[Function]}
   >
     <div
-      className="css-1ebt9em-control"
+      className="css-xwjp6l-control"
       onMouseDown={[Function]}
       onTouchEnd={[Function]}
     >

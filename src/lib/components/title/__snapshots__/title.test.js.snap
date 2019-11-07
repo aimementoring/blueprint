@@ -2,24 +2,24 @@
 
 exports[`Title is backwards compatible (text passed as prop) 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
-  <span
-    className="gradientTitle"
+  <h1
+    className="h1Title"
   >
-    Gradient default title
-  </span>
+    h1 default title
+  </h1>
 </div>
 `;
 
 exports[`Title renders properly 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
-  <span
-    className="gradientTitle"
+  <h1
+    className="h1Title"
   >
-    Gradient default title
-  </span>
+    h1 default title
+  </h1>
 </div>
 `;

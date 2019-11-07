@@ -2,7 +2,7 @@
 
 exports[`Footer renders properly 1`] = `
 <div
-  className="theme-portal"
+  className="theme-base"
 >
   <footer
     className="footerBackground"
@@ -23,6 +23,15 @@ exports[`Footer renders properly 1`] = `
             <nav
               className="navColumn"
             >
+              <div
+                className="theme-base"
+              >
+                <h4
+                  className="h4Title"
+                >
+                  H4 Title
+                </h4>
+              </div>
               <h4
                 className="navTitle"
               >
@@ -66,6 +75,15 @@ exports[`Footer renders properly 1`] = `
             <nav
               className="navColumn"
             >
+              <div
+                className="theme-base"
+              >
+                <h4
+                  className="h4Title"
+                >
+                  H4 Title
+                </h4>
+              </div>
               <h4
                 className="navTitle"
               >
@@ -119,6 +137,15 @@ exports[`Footer renders properly 1`] = `
             <nav
               className="navColumn"
             >
+              <div
+                className="theme-base"
+              >
+                <h4
+                  className="h4Title"
+                >
+                  H4 Title
+                </h4>
+              </div>
               <h4
                 className="navTitle"
               >

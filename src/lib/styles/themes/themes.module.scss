@@ -1,11 +1,16 @@
 /// @group theme-general
 
+@import 'baseTheme/baseTheme.module.scss';
+
 @import 'lightTheme/lightTheme.module.scss';
+
 @import 'purpleTheme/purpleTheme.module.scss';
+
 @import 'portalTheme/portalTheme.module.scss';
 
 /// List of themes available with corresponding values
 $themes: (
+  base: $baseTheme,
   purple: $purpleTheme,
   light: $lightTheme,
   portal: $portalTheme,
