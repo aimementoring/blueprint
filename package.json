@@ -58,12 +58,18 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.4",
-    "@babel/plugin-external-helpers": "^7.2.0",
     "@svgr/rollup": "^4.2.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "babel-preset-react-app": "^9.0.0",
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-external-helpers": "^7.2.0",
+    "@storybook/addon-actions": "^5.2.5",
+    "@storybook/addon-links": "^5.2.5",
+    "@storybook/addon-notes": "^5.2.5",
+    "@storybook/addons": "^5.2.5",
+    "@storybook/preset-scss": "^1.0.2",
+    "@storybook/react": "^5.2.5",
     "babel-runtime": "^6.26.0",
     "bundlesize": "^0.17.2",
     "case-sensitive-paths-webpack-plugin": "^2.2.0",
@@ -145,7 +151,9 @@
     "upgrade-all": "yarn yarn-upgrade-all",
     "coverage": "node scripts/test.js --coverage",
     "coveralls": "cross-env NODE_ENV=test BABEL_ENV=test jest --coverage --coverageReporters=text-lcov | coveralls",
-    "checksize": "bundlesize"
+    "checksize": "bundlesize",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "bundlesize": [
     {
