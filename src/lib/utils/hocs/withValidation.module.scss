@@ -4,6 +4,7 @@
 .error,
 .errorMessage {
   color: $error-color;
+  font-family: $body-font-family;
 }
 
 .errorMessage {
