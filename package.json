@@ -11,8 +11,10 @@
     "node": ">=10.0"
   },
   "dependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.7.0",
     "@bugsnag/js": "^6.2.0",
     "@bugsnag/plugin-react": "^6.2.0",
+    "@storybook/addon-docs": "^5.2.5",
     "@svgr/webpack": "^4.2.0",
     "airtable": "^0.6.0",
     "babel-core": "^6.26.3",
@@ -23,7 +25,7 @@
     "chalk": "^2.4.2",
     "classnames": "^2.2.6",
     "cross-fetch": "^3.0.2",
-    "css-loader": "^2.1.1",
+    "css-loader": "^3.2.0",
     "dotenv": "^8.0.0",
     "dotenv-expand": "^5.1.0",
     "enzyme-adapter-react-16": "^1.14.0",
@@ -60,6 +62,12 @@
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
     "@babel/plugin-external-helpers": "^7.2.0",
+    "@mdx-js/loader": "^1.5.1",
+    "@storybook/addon-actions": "^5.2.5",
+    "@storybook/addon-info": "^5.2.6",
+    "@storybook/addon-links": "^5.2.5",
+    "@storybook/addons": "^5.2.5",
+    "@storybook/react": "^5.2.5",
     "@svgr/rollup": "^4.2.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
@@ -113,9 +121,9 @@
     "rollup-plugin-progress": "^1.1.1",
     "rollup-plugin-url": "^2.2.1",
     "rollup-plugin-visualizer": "^1.1.1",
-    "sass-loader": "^7.1.0",
+    "sass-loader": "^8.0.0",
     "sassdoc": "^2.7.0",
-    "style-loader": "^0.23.1",
+    "style-loader": "^1.0.0",
     "stylelint": "^10.0.1",
     "stylelint-config-standard": "^18.3.0",
     "terser-webpack-plugin": "^1.2.3",
@@ -145,7 +153,9 @@
     "upgrade-all": "yarn yarn-upgrade-all",
     "coverage": "node scripts/test.js --coverage",
     "coveralls": "cross-env NODE_ENV=test BABEL_ENV=test jest --coverage --coverageReporters=text-lcov | coveralls",
-    "checksize": "bundlesize"
+    "checksize": "bundlesize",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "bundlesize": [
     {

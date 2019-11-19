@@ -16,6 +16,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/aimementoring/blueprint/badge.svg?branch=master)](https://coveralls.io/github/aimementoring/blueprint?branch=master)
 
 [![https://nodei.co/npm/aime-blueprint.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/aime-blueprint.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/aime-blueprint)
+[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://blueprint.aimementoring.com/)
 
 ## Blueprint
 
@@ -69,13 +70,13 @@ Now you are ready to use them :)!
 We have a folder called **commands** where I added a command to create a new component with all folder structure. The way you can use it is running in the terminal inside commands folder `sh createComponent componentName` replacing componentName by your component. You have to write the component name in _camelCase_ notation.
 After you run the command, you will see inside **src/lib/components** folder a new folder with your component, and 5 files inside:
 
-| Filename | Description |
-| --- | --- |
-| **componentName.module.scss** | SASS file for your component styles  |
-| **componentName.test.js** | Unit tests for your component. Includes some default settings, but you have to update with your component props, and you should add custom unit test there (Please, it's important you add those unit test) |
-| **componentName.md** | Used by styleguide to generate the example of your component. Fill this file with a complete example of the usage of your component. |
-| **componentName.js** | Rhe React component itself, should contain all the logic of your component. |
-| **index.js** | File responsible for exporting your component – you probably don't need to change anything here. |
+| Filename                      | Description                                                                                                                                                                                                 |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **componentName.module.scss** | SASS file for your component styles                                                                                                                                                                         |
+| **componentName.test.js**     | Unit tests for your component. Includes some default settings, but you have to update with your component props, and you should add custom unit test there (Please, it's important you add those unit test) |
+| **componentName.md**          | Used by styleguide to generate the example of your component. Fill this file with a complete example of the usage of your component.                                                                        |
+| **componentName.js**          | Rhe React component itself, should contain all the logic of your component.                                                                                                                                 |
+| **index.js**                  | File responsible for exporting your component – you probably don't need to change anything here.                                                                                                            |
 
 After you created the component structure folder, you wrote unit test, you wrote your full react component and you added the markdown example, we are ready to test everything, so we go to the [next step](#how-to-test-components)
 
