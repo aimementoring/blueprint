@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.11]
+### Added
+- Font family to validation error messages.
+
+### Removed
+- "ERROR:" from in front of error messages.
+
 ## [2.1.6]
 ### Added
 
