@@ -152,4 +152,13 @@ Some examples about how to increase versions are:
 ## Storybook
 
 We are documenting the project with styleguidist and storybook. For storybook, you need to create a file `componentName.stories.js` inside your component folder.
-We use multiple addons, some of them are
+We use multiple addons, some of them are:
+
+- `addon-a11y`
+- `addon-actions`
+- `addon-info`
+- `addon-knobs`
+- `addon-links`
+- `addon-storysource`
+
+You can run the project locally with `yarn storybook`
