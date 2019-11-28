@@ -12,12 +12,10 @@
   [type="radio"]:checked + label,
   [type="radio"]:not(:checked) + label {
     position: relative;
-    display: inline-block;
-    font-family: $body-font-family;
-    line-height: 1.5em;
-    padding-left: 1.75em;
-    margin-bottom: 1em;
+    padding-left: 28px;
     cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
   }
 
   [type="radio"]:checked + label:before,
