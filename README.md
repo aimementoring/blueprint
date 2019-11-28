@@ -148,3 +148,8 @@ Some examples about how to increase versions are:
 | `yarn run test`             | Run all unit tests, and generates coverage report                                           |
 | `yarn run deploy`           | Execute all unit test and run build to generate lib and styleguide folder                   |
 | `yarn run release`          | Generate a release with a new version (Still not ready to use)                              |
+
+## Storybook
+
+We are documenting the project with styleguidist and storybook. For storybook, you need to create a file `componentName.stories.js` inside your component folder.
+We use multiple addons, some of them are

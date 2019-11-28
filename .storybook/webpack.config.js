@@ -20,6 +20,11 @@ module.exports = {
           { loader: 'sass-loader' },
         ],
       },
+      {
+        test: /\.stories\.jsx?$/,
+        loaders: [require.resolve('@storybook/source-loader')],
+        enforce: 'pre',
+      },
     ],
   },
 };
