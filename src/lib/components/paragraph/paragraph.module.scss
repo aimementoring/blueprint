@@ -6,7 +6,7 @@
     // TODO: we need to create a baseTheme and that's where we can define the below variable. 
     // but for now have just styled it within the component
     // color: themed('paragraphColor');
-    font-family: themed('primaryFontFamilyRegular');
+    font-family: themed('bodyFontFamily');
   }
   color: $black;
   font-size: 0.875rem;

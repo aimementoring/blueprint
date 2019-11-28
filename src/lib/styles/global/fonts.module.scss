@@ -81,6 +81,15 @@ $fonts-path: 'https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts';
   font-weight: normal;
   font-style: normal;
 }
+
+/// @group GT-Pressura-Mono
+@font-face {
+  font-family: 'GT Pressura Mono';
+  src: url('#{$fonts-path}/gt-pressura/gt-pressura-mono-regular-webfont.ttf');
+  font-style: normal;
+  font-weight: 400;
+}
+
 /// @group Material-Icons
 @font-face {
   font-family: 'Material Icons';
