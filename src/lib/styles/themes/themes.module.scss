@@ -8,12 +8,15 @@
 
 @import 'portalTheme/portalTheme.module.scss';
 
+@import 'websiteTheme/websiteTheme.module.scss';
+
 /// List of themes available with corresponding values
 $themes: (
   base: $baseTheme,
   purple: $purpleTheme,
   light: $lightTheme,
   portal: $portalTheme,
+  website: $websiteTheme,
 );
 
 /// Generated css styles for each available theme in $themes variable
