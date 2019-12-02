@@ -71,7 +71,9 @@ input[type='date']:valid:before {
 }
 
 .input[readonly], .input[readonly]:focus {
-  background: $grey-30;
-  color: $grey-60;
   cursor: not-allowed;
+  @include themify() {
+    background: themed('fieldReadOnlyBackgroundColor');
+    color: themed('fieldReadOnlyColor');
+  }
 }

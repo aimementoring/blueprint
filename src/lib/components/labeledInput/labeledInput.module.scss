@@ -80,10 +80,12 @@
   }
 
   input[readonly], input[readonly]:focus {
-    background: $grey-30;
-    color: $grey-60;
     cursor: not-allowed;
-    border-bottom: 1px solid $grey-60;
+    @include themify() {
+      background: themed('fieldReadOnlyBackgroundColor');
+      color: themed('fieldReadOnlyColor');
+      border-bottom: 1px solid themed('fieldReadOnlyColor');
+    }
   }
 
   .helperMessage,
