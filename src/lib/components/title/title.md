@@ -23,10 +23,6 @@
 ```
 
 ```js
-<Title type="gradient">Gradient title</Title>
-```
-
-```js
 <Title type="blockTitle">Block title</Title>
 ```
 

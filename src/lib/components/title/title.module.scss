@@ -58,31 +58,6 @@
   font-style: italic;
 }
 
-.gradientTitle {
-  line-height: 2rem;
-  display: inline-block;
-  padding: 0.2em 0.5em 0.4em 0;
-  outline: none;
-  transform: rotate(-6.73deg);
-  position: relative;
-  z-index: 1;
-  font: {
-    size: 4rem;
-    weight: 100;
-  }
-  @include themify() {
-    background: themed('gradientTitleBackground');
-    font-family: themed('featureFontFamily');
-    color: themed('gradientTitleColor');
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-  }
-
-  @media screen and (min-width: 40em) {
-    line-height: 3rem;
-  }
-}
-
 .blockTitle {
   @include themify() {
     // color: themed('brandTertiary');

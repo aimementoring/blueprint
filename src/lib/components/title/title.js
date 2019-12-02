@@ -5,10 +5,6 @@ import styles from './title.module.scss';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
 
 const titleTypeClass = {
-  gradient: {
-    style: styles.gradientTitle,
-    tag: 'span',
-  },
   blockTitle: {
     style: styles.blockTitle,
     tag: 'span',
@@ -68,7 +64,6 @@ Title.propTypes = {
     'h4Title',
     'h5Title',
     'h6Title',
-    'gradient',
     'blockTitle',
     'mainTitle',
   ]),
