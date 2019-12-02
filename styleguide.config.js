@@ -7,9 +7,9 @@ module.exports = {
   theme: {
     color: {
       sidebarBackground: '#F1F3F4',
-      base: '#FFA235', //this style doesn't seem to update anything
+      base: '#9135F0',
       link: '#0B0B0B',
-      linkHover: '#FF91C5', //this style doesn't seem to update anything
+      linkHover: '#FF91C5',
     },
     fontFamily: {
       base: '"Univers Light", "Poppins Bold Italic", Helvetica, Arial, sans-serif',
