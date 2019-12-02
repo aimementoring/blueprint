@@ -32,14 +32,14 @@
       border-color: themed('fieldColorError');
     }
   }
-  
+
   &::placeholder {
     @include themify() {
       color: themed('fieldPlaceholderColor');
       font-size: themed('fieldPlaceholderFontSize');
     }
   }
-  
+
   @media only screen and (max-width: $sm) {
     margin-bottom: 0.8em;
   }
@@ -68,4 +68,10 @@ input[type='date']:valid:before {
   @include themify() {
     color: themed('lavender');
   }
+}
+
+.input[readonly], .input[readonly]:focus {
+  background: $grey-30;
+  color: $grey-60;
+  cursor: not-allowed;
 }
