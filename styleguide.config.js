@@ -6,13 +6,13 @@ module.exports = {
   // Customisable attributes: https://github.com/styleguidist/react-styleguidist/blob/master/src/client/styles/theme.js
   theme: {
     color: {
-      sidebarBackground: '#a863ff',
-      base: '#da0dff',
-      link: '#fff',
-      linkHover: '#da0dff',
+      sidebarBackground: '#F1F3F4',
+      base: '#FFA235', //this style doesn't seem to update anything
+      link: '#0B0B0B',
+      linkHover: '#FF91C5', //this style doesn't seem to update anything
     },
     fontFamily: {
-      base: '"Poppins Bold Italic", Helvetica, Arial, sans-serif',
+      base: '"Univers Light", "Poppins Bold Italic", Helvetica, Arial, sans-serif',
     },
   },
   // Temporary reminder for Lara - this is where you can change the framework styles
