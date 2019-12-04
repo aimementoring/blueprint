@@ -35,6 +35,8 @@ $portalTheme: (
   fieldColor: rgb(0, 0, 0),
   fieldBackground: rgb(255, 255, 255),
   fieldFocusColor: rgb(0, 0, 0),
+  fieldReadOnlyBackgroundColor: $grey-30,
+  fieldReadOnlyColor: $grey-60,
   fieldFocusBackgroundColor: rgb(255, 255, 255),
   inputPadding: 0.1em 1.3em,
   textAreaPadding: 1rem,

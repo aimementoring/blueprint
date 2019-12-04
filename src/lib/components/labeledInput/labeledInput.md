@@ -12,7 +12,7 @@ function updateValue(name, value) {
   value={state.value}
   onChangeFunction={updateValue}
   label="Placeholder input"
-/>;
+/>
 ```
 
 ```js
@@ -30,7 +30,7 @@ function updateValue(name, value) {
   onChangeFunction={updateValue}
   label="Placeholder input"
   helperText="My super helper text"
-/>;
+/>
 ```
 
 ```js
@@ -49,7 +49,7 @@ function updateValue(name, value) {
   label="Required input"
   required
   theme="purple"
-/>;
+/>
 ```
 
 ```js
@@ -67,5 +67,14 @@ function updateValue(name, value) {
   onChangeFunction={updateValue}
   label="With error"
   error="Required input"
-/>;
+/>
+```
+
+```js
+<LabeledInput
+  name="cant-change-me"
+  value="I also work with readOnly"
+  label="Can't change me"
+  readOnly
+/>
 ```

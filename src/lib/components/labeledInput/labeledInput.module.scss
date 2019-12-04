@@ -79,6 +79,15 @@
     }
   }
 
+  input[readonly], input[readonly]:focus {
+    cursor: not-allowed;
+    @include themify() {
+      background: themed('fieldReadOnlyBackgroundColor');
+      color: themed('fieldReadOnlyColor');
+      border-bottom: 1px solid themed('fieldReadOnlyColor');
+    }
+  }
+
   .helperMessage,
   .errorMessage {
     display: block;

@@ -32,6 +32,8 @@ $baseTheme: (
   fieldBackground: $white,
   fieldFocusColor: $black,
   fieldFocusBackgroundColor: $white,
+  fieldReadOnlyBackgroundColor: $grey-30,
+  fieldReadOnlyColor: $grey-60,
   inputPadding: 0.1em 1.3em,
   textAreaPadding: 1rem,
   inputHeight: 60px,
