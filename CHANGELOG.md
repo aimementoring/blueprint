@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.13]
+### Added
+- Styles for read only input fields
+
 ## [2.1.11]
 ### Added
 - Font family to validation error messages.
@@ -15,12 +19,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.1.6]
 ### Added
-
 - Pass props to input components
 
 ## [2.1.3]
 ### Added
-
 - HelpToolTip component.
 - ErrorMessage component
 - CountdownTimer component.
@@ -28,6 +30,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - validations for Terms & Conditions component.
 
-[Unreleased]: https://github.com/aimementoring/aime-portal-api/compare/v2.1.6...HEAD
-[Unreleased]: https://github.com/aimementoring/aime-portal-api/compare/v2.1.3...v.2.1.6
+[Unreleased]: https://github.com/aimementoring/aime-portal-api/compare/v2.1.13...HEAD
+[2.1.13]: https://github.com/aimementoring/aime-portal-api/compare/v2.1.11...v.2.1.13
+[2.1.11]: https://github.com/aimementoring/aime-portal-api/compare/v2.1.6...v.2.1.11
+[2.1.6]: https://github.com/aimementoring/aime-portal-api/compare/v2.1.3...v.2.1.6
 [2.1.3]: https://github.com/aimementoring/aime-portal-api/releases/tag/v2.1.3
