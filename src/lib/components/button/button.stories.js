@@ -6,6 +6,8 @@ import Button from './button';
 export default {
   title: 'Button',
   parameters: {
+    notes: 'My super custom button',
+    jest: ['button.test.js'],
     componentSubtitle:
       'Different buttons types to be used with according styles for the selected theme',
   },

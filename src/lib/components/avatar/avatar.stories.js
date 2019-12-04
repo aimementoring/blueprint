@@ -3,6 +3,9 @@ import Avatar from './avatar';
 
 export default {
   title: 'Avatar',
+  parameters: {
+    jest: ['avatar.test.js'],
+  },
 };
 
 export const initialsAvatar = () => <Avatar text="Kevin Bardi" />;

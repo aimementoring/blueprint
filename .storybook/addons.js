@@ -4,4 +4,6 @@ import '@utilitywarehouse/storybook-addon-prop-types/register';
 import '@storybook/addon-a11y/register';
 import '@storybook/addon-knobs/register';
 import '@storybook/addon-storysource/register';
+import '@storybook/addon-notes/register-panel';
+import '@storybook/addon-jest/register';
 // import '@storybook/addon-docs/register';
