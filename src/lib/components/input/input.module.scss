@@ -70,7 +70,7 @@ input[type='date']:valid:before {
   }
 }
 
-.input[readonly], .input[readonly]:focus {
+input.input[readonly], input.input[readonly]:focus {
   cursor: not-allowed;
   @include themify() {
     background: themed('fieldReadOnlyBackgroundColor');
