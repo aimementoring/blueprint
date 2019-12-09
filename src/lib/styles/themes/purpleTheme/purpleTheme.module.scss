@@ -1,4 +1,4 @@
-@import 'variables/variables.module.scss';
+@import '../../variables/variables.module.scss';
 
 /// Definition of all variables used on PurpleTheme
 /// @group PurpleTheme
@@ -6,15 +6,15 @@ $purpleTheme: (
   brandPrimary: rgb(118, 3, 219),
   brandSecondary: rgb(199, 0, 255),
   brandTertiary: rgb(218, 13, 255),
-  featureFontFamily: $purpleTheme-feature-font-family,
-  primaryFontFamilySemiBold: $purpleTheme-primary-font-semibold,
-  primaryFontFamilySemiBoldItalic: $purpleTheme-primary-font-semibold-italic,
-  primaryFontFamilyBoldItalic: $purpleTheme-primary-font-bold-italic,
-  primaryFontFamilyRegular: $purpleTheme-primary-font-regular,
-  primaryFontFamilyExtraBoldItalic: $purpleTheme-primary-font-extrabold-italic,
-  primaryFontFamilyBlack: $purpleTheme-primary-font-black,
-  primaryFontFamilyBlackItalic: $purpleTheme-primary-font-black-italic,
-  bodyFontFamily: $purpleTheme-body-font-family,
+  featureFontFamily: $feature-font-family,
+  primaryFontFamilySemiBold: $primary-font-semibold,
+  primaryFontFamilySemiBoldItalic: $primary-font-semibold-italic,
+  primaryFontFamilyBoldItalic: $primary-font-bold-italic,
+  primaryFontFamilyRegular: $primary-font-regular,
+  primaryFontFamilyExtraBoldItalic: $primary-font-extrabold-italic,
+  primaryFontFamilyBlack: $primary-font-black,
+  primaryFontFamilyBlackItalic: $primary-font-black-italic,
+  bodyFontFamily: $body-font-family,
   gradientTitleColor: rgb(255, 255, 255),
   gradientTitleBackground: linear-gradient(135deg, rgb(49, 233, 255), rgb(218, 13, 255)),
   fieldBorder: none,
@@ -24,7 +24,7 @@ $purpleTheme: (
   fieldBorderFocused: rgb(118, 3, 219),
   fieldColorError: rgb(248, 68, 68),
   errorColor: rgb(248, 68, 68),
-  errorFont: $purpleTheme-tertiary-font-family,
+  errorFont: $primary-font-semibold,
   fieldPlaceholderColor: rgb(178, 186, 195),
   fieldPlaceholderFontSize: 0.9rem,
   fieldPlaceholderFontWeight: 400,

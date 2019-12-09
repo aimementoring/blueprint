@@ -1,5 +1,3 @@
-@import 'variables/variables.module.scss';
-
 @import '../../variables/variables.module.scss';
 
 /// Definition of all variables used on BaseTheme
@@ -8,15 +6,15 @@ $baseTheme: (
   brandPrimary: $black,
   brandSecondary: $grey-90,
   brandTertiary: $grey-80,
-  featureFontFamily: $baseTheme-feature-font-family,
-  primaryFontFamilySemiBold: $baseTheme-primary-font-semibold,
-  primaryFontFamilySemiBoldItalic: $baseTheme-primary-font-semibold-italic,
-  primaryFontFamilyBoldItalic: $baseTheme-primary-font-bold-italic,
-  primaryFontFamilyRegular: $baseTheme-primary-font-regular,
-  primaryFontFamilyExtraBoldItalic: $baseTheme-primary-font-extrabold-italic,
-  primaryFontFamilyBlack: $baseTheme-primary-font-black,
-  primaryFontFamilyBlackItalic: $baseTheme-primary-font-black-italic,
-  bodyFontFamily: $baseTheme-body-font-family,
+  featureFontFamily: $feature-font-family,
+  primaryFontFamilySemiBold: $primary-font-semibold,
+  primaryFontFamilySemiBoldItalic: $primary-font-semibold-italic,
+  primaryFontFamilyBoldItalic: $primary-font-bold-italic,
+  primaryFontFamilyRegular: $primary-font-regular,
+  primaryFontFamilyExtraBoldItalic: $primary-font-extrabold-italic,
+  primaryFontFamilyBlack: $primary-font-black,
+  primaryFontFamilyBlackItalic: $primary-font-black-italic,
+  bodyFontFamily: $body-font-family,
   fieldBorder: none,
   borderColor: $grey-80,
   helperTextColor: $grey-80,

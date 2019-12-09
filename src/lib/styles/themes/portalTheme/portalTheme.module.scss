@@ -1,4 +1,4 @@
-@import './variables/variables.module.scss';
+@import '../../variables/variables.module.scss';
 
 /// Definition of all variables used on PortalTheme
 /// @group PortalTheme
@@ -8,15 +8,15 @@ $portalTheme: (
   // rather than naming this brandTertiary,
   // shouldn't we be naming these variables like "TitleColor" or something?
   brandTertiary: rgb(218, 13, 255),
-  featureFontFamily: $portalTheme-feature-font-family,
-  primaryFontFamilySemiBold: $portalTheme-primary-font-semibold,
-  primaryFontFamilySemiBoldItalic: $portalTheme-primary-font-semibold-italic,
-  primaryFontFamilyBoldItalic: $portalTheme-primary-font-bold-italic,
-  primaryFontFamilyRegular: $portalTheme-primary-font-regular,
-  primaryFontFamilyExtraBoldItalic: $portalTheme-primary-font-extrabold-italic,
-  primaryFontFamilyBlack: $portalTheme-primary-font-black,
-  primaryFontFamilyBlackItalic: $portalTheme-primary-font-black-italic,
-  bodyFontFamily: $portalTheme-body-font-family,
+  featureFontFamily: $feature-font-family,
+  primaryFontFamilySemiBold: $primary-font-semibold,
+  primaryFontFamilySemiBoldItalic: $primary-font-semibold-italic,
+  primaryFontFamilyBoldItalic: $primary-font-bold-italic,
+  primaryFontFamilyRegular: $primary-font-regular,
+  primaryFontFamilyExtraBoldItalic: $primary-font-extrabold-italic,
+  primaryFontFamilyBlack: $primary-font-black,
+  primaryFontFamilyBlackItalic: $primary-font-black-italic,
+  bodyFontFamily: $body-font-family,
   gradientTitleColor: rgb(255, 255, 255),
   gradientTitleBackground: linear-gradient(135deg, rgb(49, 233, 255), rgb(218, 13, 255)),
   fieldBorder: none,
@@ -26,7 +26,7 @@ $portalTheme: (
   fieldBorderFocused: rgb(118, 3, 219),
   fieldColorError: rgb(248, 68, 68),
   errorColor: rgb(248, 68, 68),
-  errorFont: $portalTheme-primary-font-regular,
+  errorFont: $primary-font-regular,
   fieldPlaceholderColor: rgb(178, 186, 195),
   fieldPlaceholderFontSize: 0.9rem,
   fieldPlaceholderFontWeight: 400,
