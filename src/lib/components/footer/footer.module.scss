@@ -131,8 +131,10 @@
   color: $white;
   font-weight: 500;
   font-size: 15px;
-  font-family: $feature-font-family;
   padding-bottom: 1rem;
+  @include themify() {
+    font-family: themed('featureFontFamily');
+  }
 }
 
 .link {
@@ -182,11 +184,13 @@
   .footerText {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
-    font-family: $feature-font-family;
     font-weight: 400;
     text-decoration: none;
     color: $white;
     transition: color 0.2s ease-in;
+    @include themify() {
+      font-family: themed('featureFontFamily');
+    }
   }
 
   .footerLinksList {
