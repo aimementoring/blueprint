@@ -33,9 +33,9 @@ const titleTypeClass = {
     style: styles.h5Title,
     tag: 'h5',
   },
-  h6Title: {
-    style: styles.h6Title,
-    tag: 'h6',
+  headingLockup: {
+    style: styles.headingLockup,
+    tag: 'h1',
   },
 };
 
@@ -63,9 +63,9 @@ Title.propTypes = {
     'h3Title',
     'h4Title',
     'h5Title',
-    'h6Title',
     'blockTitle',
     'mainTitle',
+    'headingLockup',
   ]),
   children: PropTypes.node,
 };

@@ -1,3 +1,17 @@
+
+
+```js
+<Title type="mainTitle">Main title</Title>
+```
+
+```js
+<Title type="blockTitle">Block title</Title>
+```
+
+```js
+<Title type="headingLockup">The Featured <strong>Heading Lockup</strong></Title>
+```
+
 ```js
 <Title type="h1Title">H1 Title</Title>
 ```
@@ -16,16 +30,4 @@
 
 ```js
 <Title type="h5Title">H5 Title</Title>
-```
-
-```js
-<Title type="h6Title">H6 Title</Title>
-```
-
-```js
-<Title type="blockTitle">Block title</Title>
-```
-
-```js
-<Title type="mainTitle">Main title</Title>
 ```

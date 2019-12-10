@@ -78,7 +78,7 @@
   border: 1px solid $eggplant;
   font-weight: 400;
   font-size: 16px;
-  font-family: $primary-font-regular;
+  font-family: $sans-serif-font;
   border-radius: 6px;
   padding: 1rem;
   vertical-align: middle;
@@ -133,7 +133,7 @@
   font-size: 15px;
   padding-bottom: 1rem;
   @include themify() {
-    font-family: themed('featureFontFamily');
+    font-family: themed('featureFont');
   }
 }
 
@@ -189,7 +189,7 @@
     color: $white;
     transition: color 0.2s ease-in;
     @include themify() {
-      font-family: themed('featureFontFamily');
+      font-family: themed('featureFont');
     }
   }
 
