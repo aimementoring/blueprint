@@ -5,14 +5,6 @@ import styles from './title.module.scss';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
 
 const titleTypeClass = {
-  blockTitle: {
-    style: styles.blockTitle,
-    tag: 'span',
-  },
-  mainTitle: {
-    style: styles.mainTitle,
-    tag: 'span',
-  },
   h1Title: {
     style: styles.h1Title,
     tag: 'h1',
@@ -63,8 +55,6 @@ Title.propTypes = {
     'h3Title',
     'h4Title',
     'h5Title',
-    'blockTitle',
-    'mainTitle',
     'headingLockup',
   ]),
   children: PropTypes.node,

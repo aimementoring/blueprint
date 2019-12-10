@@ -1,13 +1,4 @@
 
-
-```js
-<Title type="mainTitle">Main title</Title>
-```
-
-```js
-<Title type="blockTitle">Block title</Title>
-```
-
 ```js
 <Title type="headingLockup">The Featured <strong>Heading Lockup</strong></Title>
 ```

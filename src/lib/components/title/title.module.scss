@@ -10,29 +10,6 @@
   margin-bottom: 1rem;
 }
 
-.headingLockup {
-  position: relative;
-  margin-bottom: 1rem;
-  transform: rotate(0);
-  font-size: 2.5rem;
-  line-height: 1;
-  letter-spacing: -0.1em;
-  
-  @include themify() {
-    font-family: themed('featureFont');
-  }
-  
-  strong {
-    position: relative;
-    transform: rotate(-7deg);
-    font-size: 5rem;
-    clear: both;
-    display: block;
-    top: -0.4em;
-    left: -0.5em;
-  }
-}
-
 .h2Title {
   @include themify() {
     font-family: themed('featureFont');
@@ -71,42 +48,25 @@
   font-style: italic;
 }
 
-.blockTitle {
-  @include themify() {
-    // color: themed('brandTertiary');
-    font-family: themed('primaryFontFamilyBoldItalic');
-  }
+.headingLockup {
   position: relative;
-  z-index: 2;
   margin-bottom: 1rem;
-  text-align: left;
-  display: block;
-  font: {
-    weight: 900;
-    size: 1.6rem;
-    style: italic;
-  }
-}
-
-.mainTitle {
+  transform: rotate(0);
+  font-size: 2.5rem;
+  line-height: 1;
+  letter-spacing: -0.1em;
+  
   @include themify() {
-    // color: themed('mainTitleColor');
-    font-family: themed('primaryFontFamilyBoldItalic');
+    font-family: themed('featureFont');
   }
-  line-height: 1.125;
-  margin-bottom: 2rem;
-  display: inline-block;
-  font: {
-    size: 1rem;
-    weight: 700;
-    style: italic;
-  }
-
-  @media screen and (min-width: 52em) {
-    font-size: 1.6rem;
-  }
-
-  @media screen and (min-width: 64em) {
-    font-size: 2.8rem;
+  
+  strong {
+    position: relative;
+    transform: rotate(-7deg);
+    font-size: 5rem;
+    clear: both;
+    display: block;
+    top: -0.4em;
+    left: -0.5em;
   }
 }
