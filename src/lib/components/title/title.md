@@ -1,24 +1,24 @@
 
 ```js
-<Title type="headingLockup">The Featured <strong>Heading Lockup</strong></Title>
+<Title type="headingLockup">The featured <strong>Heading lockup</strong></Title>
 ```
 
 ```js
-<Title type="h1Title">H1 Title</Title>
+<Title type="h1Title">Heading 1</Title>
 ```
 
 ```js
-<Title type="h2Title">H2 Title</Title>
+<Title type="h2Title">Heading 2</Title>
 ```
 
 ```js
-<Title type="h3Title">H3 Title</Title>
+<Title type="h3Title">Heading 3</Title>
 ```
 
 ```js
-<Title type="h4Title">H4 Title</Title>
+<Title type="h4Title">Heading 4</Title>
 ```
 
 ```js
-<Title type="h5Title">H5 Title</Title>
+<Title type="h5Title">Heading 5</Title>
 ```
