@@ -12,7 +12,7 @@ $lightTheme: (
   primaryFontBold: $serif-font-bold,
   primaryFontBoldItalic: $serif-font-bold-italic,
   bodyFontFamily: $serif-font,
-  // eventually we won't use these but can't delete them yet...
+  // #legacy @deprecated - eventually we won't use these but can't delete them yet...
   primaryFontFamilySemiBold: $sans-serif-font-semibold,
   primaryFontFamilySemiBoldItalic: $sans-serif-font-semibold-italic,
   primaryFontFamilyBoldItalic: $sans-serif-font-bold-italic,
@@ -20,12 +20,12 @@ $lightTheme: (
   primaryFontFamilyExtraBoldItalic: $sans-serif-font-extrabold-italic,
   primaryFontFamilyBlack: $sans-serif-font-black,
   primaryFontFamilyBlackItalic: $sans-serif-font-black-italic,
-  //
+  // #/endlegacy
   gradientTitleColor: rgb(255, 255, 255),
   gradientTitleBackground: linear-gradient(135deg, rgb(49, 233, 255), rgb(218, 13, 255)),
   fieldBorder: none,
   borderColor: rgb(102, 102, 102),
-  helperTextColor: rgb(102, 102, 102),
+  helperTextColor: rgba(102, 102, 102, 0.418),
   fieldBorderError: 1px solid rgb(248, 68, 68),
   fieldBorderFocused: rgb(118, 3, 219),
   fieldColorError: rgb(248, 68, 68),
@@ -75,4 +75,5 @@ $lightTheme: (
   progressFontSize: 1em,
   mainTitleColor: $white,
   paragraphColor: $grey-90,
+  // paraHighlight: -1em 0.3em 0 -0.3em $yellow, inset 0 -1.06em 0 -0.6em $yellow, 1em 0.3em 0 -0.3em $yellow,
 );
