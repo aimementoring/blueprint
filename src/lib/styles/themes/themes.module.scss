@@ -8,7 +8,7 @@
 
 @import 'purplePlainTheme/purplePlainTheme.module.scss';
 
-@import 'websiteTheme/websiteTheme.module.scss';
+@import 'imaginationRainbowTheme/imaginationRainbowTheme.module.scss';
 
 /// List of themes available with corresponding values
 $themes: (
@@ -16,7 +16,7 @@ $themes: (
   purple: $purpleStormTheme,
   light: $lightTheme,
   portal: $purplePlainTheme,
-  website: $websiteTheme,
+  website: $imaginationRainbowTheme,
 );
 
 /// Generated css styles for each available theme in $themes variable
