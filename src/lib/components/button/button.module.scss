@@ -18,9 +18,10 @@
 .button {
   @include themify() {
     color: themed('buttonColor');
-    font-family: themed('primaryFontFamilySemiBoldItalic');
+    font-family: themed('bodyFontFamily');
     background-color: themed('buttonBackgroundColor');
     transition: themed('smoothTransition');
+    border-radius: themed('buttonRadius');
 
     &:hover {
       background-color: themed('elementHoverColor');
