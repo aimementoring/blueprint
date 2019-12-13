@@ -6,9 +6,9 @@ import { componentPropTypes, defaultComponentPropTypes } from '../../utils/compo
 const Paragraph = ({ text, className, theme, children }) => (
   <div className={styles[`theme-${theme}`]}>
     <p className={`${styles.paragraph} ${className}`}>
-      <strong className={styles.textHighlighted}>
-        {children || text}
-      </strong>
+      {/* <strong className={`${styles.textHighlighted} ${styles[`theme-${theme}`]}`}> */}
+      {children || text}
+      {/* </strong> */}
     </p>
   </div>
 );

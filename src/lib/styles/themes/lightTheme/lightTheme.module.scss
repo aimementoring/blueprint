@@ -12,6 +12,8 @@ $lightTheme: (
   primaryFontBold: $serif-font-bold,
   primaryFontBoldItalic: $serif-font-bold-italic,
   bodyFontFamily: $serif-font,
+  bodyFontFamilyBold: $serif-font-bold,
+  bodyFontFamilyItalic: $serif-font-italic,
   // #legacy @deprecated - eventually we won't use these but can't delete them yet...
   primaryFontFamilySemiBold: $sans-serif-font-semibold,
   primaryFontFamilySemiBoldItalic: $sans-serif-font-semibold-italic,
