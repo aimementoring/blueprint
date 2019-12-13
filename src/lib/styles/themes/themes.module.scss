@@ -13,10 +13,10 @@
 /// List of themes available with corresponding values
 $themes: (
   base: $baseTheme,
-  purple: $purpleStormTheme,
+  storm: $purpleStormTheme,
   light: $lightTheme,
-  portal: $purplePlainTheme,
-  website: $imaginationRainbowTheme,
+  plain: $purplePlainTheme,
+  rainbow: $imaginationRainbowTheme,
 );
 
 /// Generated css styles for each available theme in $themes variable
