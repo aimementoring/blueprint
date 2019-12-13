@@ -2,8 +2,6 @@
 
 @import 'baseTheme/baseTheme.module.scss';
 
-@import 'lightTheme/lightTheme.module.scss';
-
 @import 'purpleStormTheme/purpleStormTheme.module.scss';
 
 @import 'purplePlainTheme/purplePlainTheme.module.scss';
@@ -14,7 +12,6 @@
 $themes: (
   base: $baseTheme,
   storm: $purpleStormTheme,
-  light: $lightTheme,
   plain: $purplePlainTheme,
   rainbow: $imaginationRainbowTheme,
 );
