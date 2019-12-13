@@ -1,35 +1,10 @@
 /// @group colors
-$brand-primary: #7603db;
-/// @group colors
-$brand-secondary: #c700ff;
-/// @group colors
-$brand-tertiary: #da0dff;
-
-/// @group colors
-$error-color: #f84444;
-
-/// @group colors
-$eggplant: #550d94;
-/// @group colors
-$eggplant-transparent: #410048c4;
-
-/// @group colors
-$lavender: #9da1b4;
-/// @group colors
-$electric-blue: #31e9ff;
-
-/// @group colors
 $black: #0b0b0b;
-/// @group colors
 $black-background: #050301;
-/// @group colors
 $black-title: #1a0024;
-/// @group colors
-$darkest-purple: #380249;
-/// @group colors
-$loading-black: #0000004d;
-/// @group colors
 $translucent-black: #000000a6;
+$loading-black: #0000004d;
+
 /// @group colors
 $grey: #3e4345;
 $grey-90: #3e4345;
@@ -38,22 +13,29 @@ $grey-60: #919699;
 $grey-40: #c6cacc;
 $grey-30: #e3e5e5;
 $grey-20: #f1f3f4;
+
 /// @group colors
 $white: #ffffff;
-/// @group colors
 $off-white: #fef6ff;
 
 /// @group colors
+$eggplant: #550d94;
+$eggplant-transparent: #410048c4;
+$lavender: #9da1b4;
+$electric-blue: #31e9ff;
+$darkest-purple: #380249;
 $soft-lavender: #fbf9fd;
-/// @group colors
 $grey-lavender: #f1eef3;
-
-/// @group colors
-$purple: #7603db;
-///
+$purple: #9135F0;
 $lilac: #f9ebff;
+$violet-light: #a863ff;
+$violet-dark: #8737ed;
 
 /// @group colors
-$violet-light: #a863ff;
+$brand-primary: #7603db;
+$brand-secondary: #c700ff;
+$brand-tertiary: #da0dff;
+$yellow: #FCC606;
+
 /// @group colors
-$violet-dark: #8737ed;
+$error-color: #f84444;

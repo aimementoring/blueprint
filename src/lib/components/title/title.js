@@ -5,18 +5,6 @@ import styles from './title.module.scss';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
 
 const titleTypeClass = {
-  gradient: {
-    style: styles.gradientTitle,
-    tag: 'span',
-  },
-  blockTitle: {
-    style: styles.blockTitle,
-    tag: 'span',
-  },
-  mainTitle: {
-    style: styles.mainTitle,
-    tag: 'span',
-  },
   h1Title: {
     style: styles.h1Title,
     tag: 'h1',
@@ -37,9 +25,9 @@ const titleTypeClass = {
     style: styles.h5Title,
     tag: 'h5',
   },
-  h6Title: {
-    style: styles.h6Title,
-    tag: 'h6',
+  headingLockup: {
+    style: styles.headingLockup,
+    tag: 'h1',
   },
 };
 
@@ -67,10 +55,7 @@ Title.propTypes = {
     'h3Title',
     'h4Title',
     'h5Title',
-    'h6Title',
-    'gradient',
-    'blockTitle',
-    'mainTitle',
+    'headingLockup',
   ]),
   children: PropTypes.node,
 };

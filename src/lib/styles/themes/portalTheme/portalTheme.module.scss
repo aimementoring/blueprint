@@ -1,22 +1,27 @@
-@import './variables/variables.module.scss';
+@import '../../variables/variables.module.scss';
 
 /// Definition of all variables used on PortalTheme
 /// @group PortalTheme
 $portalTheme: (
   brandPrimary: rgb(118, 3, 219),
   brandSecondary: rgb(199, 0, 255),
-  // rather than naming this brandTertiary,
-  // shouldn't we be naming these variables like "TitleColor" or something?
   brandTertiary: rgb(218, 13, 255),
-  featureFontFamily: $portalTheme-feature-font-family,
-  primaryFontFamilySemiBold: $portalTheme-primary-font-semibold,
-  primaryFontFamilySemiBoldItalic: $portalTheme-primary-font-semibold-italic,
-  primaryFontFamilyBoldItalic: $portalTheme-primary-font-bold-italic,
-  primaryFontFamilyRegular: $portalTheme-primary-font-regular,
-  primaryFontFamilyExtraBoldItalic: $portalTheme-primary-font-extrabold-italic,
-  primaryFontFamilyBlack: $portalTheme-primary-font-black,
-  primaryFontFamilyBlackItalic: $portalTheme-primary-font-black-italic,
-  bodyFontFamily: $portalTheme-body-font-family,
+  featureFont: $stylised-font,
+  primaryFont: $serif-font,
+  primaryFontItalic: $serif-font-italic,
+  primaryFontBold: $serif-font-bold,
+  primaryFontBoldItalic: $serif-font-bold-italic,
+  bodyFontFamily: $serif-font,
+  bodyFontFamilyBold: $serif-font-bold,
+  bodyFontFamilyItalic: $serif-font-italic,
+  //
+  primaryFontFamilySemiBold: $sans-serif-font-semibold,
+  primaryFontFamilySemiBoldItalic: $sans-serif-font-semibold-italic,
+  primaryFontFamilyBoldItalic: $sans-serif-font-bold-italic,
+  primaryFontFamilyRegular: $sans-serif-font,
+  primaryFontFamilyExtraBoldItalic: $sans-serif-font-extrabold-italic,
+  primaryFontFamilyBlack: $sans-serif-font-black,
+  primaryFontFamilyBlackItalic: $sans-serif-font-black-italic,
   gradientTitleColor: rgb(255, 255, 255),
   gradientTitleBackground: linear-gradient(135deg, rgb(49, 233, 255), rgb(218, 13, 255)),
   fieldBorder: none,
@@ -26,7 +31,7 @@ $portalTheme: (
   fieldBorderFocused: rgb(118, 3, 219),
   fieldColorError: rgb(248, 68, 68),
   errorColor: rgb(248, 68, 68),
-  errorFont: $portalTheme-primary-font-regular,
+  errorFont: $sans-serif-font,
   fieldPlaceholderColor: rgb(178, 186, 195),
   fieldPlaceholderFontSize: 0.9rem,
   fieldPlaceholderFontWeight: 400,
@@ -72,4 +77,6 @@ $portalTheme: (
   progressBarColor: rgb(255, 255, 255),
   progressFontSize: 1em,
   mainTitleColor: $white,
+  paragraphColor: $grey-90,
+  // paraHighlight: -1em 0.3em 0 -0.3em $purple, inset 0 -1.06em 0 -0.6em $purple, 1em 0.3em 0 -0.3em $purple,
 );

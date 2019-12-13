@@ -1,4 +1,4 @@
-@import 'variables/variables.module.scss';
+@import '../../variables/variables.module.scss';
 
 /// Definition of all variables used on LightTheme
 /// @group LightTheme
@@ -6,25 +6,33 @@ $lightTheme: (
   brandPrimary: rgb(118, 3, 219),
   brandSecondary: rgb(199, 0, 255),
   brandTertiary: rgb(218, 13, 255),
-  featureFontFamily: $lightTheme-feature-font-family,
-  primaryFontFamilySemiBold: $lightTheme-primary-font-semibold,
-  primaryFontFamilySemiBoldItalic: $lightTheme-primary-font-semibold-italic,
-  primaryFontFamilyBoldItalic: $lightTheme-primary-font-bold-italic,
-  primaryFontFamilyRegular: $lightTheme-primary-font-regular,
-  primaryFontFamilyExtraBoldItalic: $lightTheme-primary-font-extrabold-italic,
-  primaryFontFamilyBlack: $lightTheme-primary-font-black,
-  primaryFontFamilyBlackItalic: $lightTheme-primary-font-black-italic,
-  bodyFontFamily: $lightTheme-body-font-family,
+  featureFont: $stylised-font,
+  primaryFont: $serif-font,
+  primaryFontItalic: $serif-font-italic,
+  primaryFontBold: $serif-font-bold,
+  primaryFontBoldItalic: $serif-font-bold-italic,
+  bodyFontFamily: $serif-font,
+  bodyFontFamilyBold: $serif-font-bold,
+  bodyFontFamilyItalic: $serif-font-italic,
+  // #legacy @deprecated - eventually we won't use these but can't delete them yet...
+  primaryFontFamilySemiBold: $sans-serif-font-semibold,
+  primaryFontFamilySemiBoldItalic: $sans-serif-font-semibold-italic,
+  primaryFontFamilyBoldItalic: $sans-serif-font-bold-italic,
+  primaryFontFamilyRegular: $sans-serif-font,
+  primaryFontFamilyExtraBoldItalic: $sans-serif-font-extrabold-italic,
+  primaryFontFamilyBlack: $sans-serif-font-black,
+  primaryFontFamilyBlackItalic: $sans-serif-font-black-italic,
+  // #/endlegacy
   gradientTitleColor: rgb(255, 255, 255),
   gradientTitleBackground: linear-gradient(135deg, rgb(49, 233, 255), rgb(218, 13, 255)),
   fieldBorder: none,
   borderColor: rgb(102, 102, 102),
-  helperTextColor: rgb(102, 102, 102),
+  helperTextColor: rgba(102, 102, 102, 0.418),
   fieldBorderError: 1px solid rgb(248, 68, 68),
   fieldBorderFocused: rgb(118, 3, 219),
   fieldColorError: rgb(248, 68, 68),
   errorColor: rgb(248, 68, 68),
-  errorFont: $lightTheme-primary-font-regular,
+  errorFont: $sans-serif-font,
   fieldPlaceholderColor: rgb(178, 186, 195),
   fieldPlaceholderFontSize: 0.9rem,
   fieldPlaceholderFontWeight: 400,
@@ -70,4 +78,6 @@ $lightTheme: (
   progressBarColor: rgb(255, 255, 255),
   progressFontSize: 1em,
   mainTitleColor: $white,
+  paragraphColor: $grey-90,
+  // paraHighlight: -1em 0.3em 0 -0.3em $yellow, inset 0 -1.06em 0 -0.6em $yellow, 1em 0.3em 0 -0.3em $yellow,
 );

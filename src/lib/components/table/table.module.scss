@@ -5,7 +5,6 @@
 
 .tableContainer {
   background: $white;
-  font-family: $body-font-family;
   border-radius: 20px;
   line-height: 1.4rem;
   font-size: 0.95rem;
@@ -14,6 +13,7 @@
 
   @include themify() {
     color: themed("tableText");
+    font-family: themed('bodyFontFamily');
   }
 
   th {
@@ -30,7 +30,6 @@
 
 .footerContainer {
   display: block;
-  font-family: $purpleTheme-primary-font-semibold-italic;
   color: $black;
   margin: 0 0 2em;
   padding: 1.5em;
@@ -40,12 +39,15 @@
   @include themify() {
     border-color: themed("tableBackground");
     border-bottom: themed("tableBorder");
+    font-family: themed('primaryFontFamilySemiBoldItalic');
   }
 }
 
 .headerContainer {
   display: block;
-  font-family: $purpleTheme-primary-font-bold;
   margin: 1em 0 2em;
   font-size: 1.1rem;
+  @include themify() {
+    font-family: themed('primaryFontFamilyBold');
+  }
 }

@@ -4,7 +4,9 @@
 .error,
 .errorMessage {
   color: $error-color;
-  font-family: $body-font-family;
+  @include themify() {
+    font-family: themed('bodyFontFamily');
+  }
 }
 
 .errorMessage {
