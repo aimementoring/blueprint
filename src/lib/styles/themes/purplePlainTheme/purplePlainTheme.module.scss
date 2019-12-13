@@ -6,6 +6,7 @@ $purplePlainTheme: (
   brandPrimary: rgb(118, 3, 219),
   brandSecondary: rgb(199, 0, 255),
   brandTertiary: rgb(218, 13, 255),
+<<<<<<< HEAD:src/lib/styles/themes/purplePlainTheme/purplePlainTheme.module.scss
   featureFont: $stylised-font,
   primaryFont: $serif-font,
   primaryFontItalic: $serif-font-italic,
@@ -22,6 +23,17 @@ $purplePlainTheme: (
   primaryFontFamilyExtraBoldItalic: $sans-serif-font-extrabold-italic,
   primaryFontFamilyBlack: $sans-serif-font-black,
   primaryFontFamilyBlackItalic: $sans-serif-font-black-italic,
+=======
+  featureFontFamily: $websiteTheme-feature-font-family,
+  primaryFontFamilySemiBold: $websiteTheme-primary-font-semibold,
+  primaryFontFamilySemiBoldItalic: $websiteTheme-primary-font-semibold-italic,
+  primaryFontFamilyBoldItalic: $websiteTheme-primary-font-bold-italic,
+  primaryFontFamilyRegular: $websiteTheme-primary-font-regular,
+  primaryFontFamilyExtraBoldItalic: $websiteTheme-primary-font-extrabold-italic,
+  primaryFontFamilyBlack: $websiteTheme-primary-font-black,
+  primaryFontFamilyBlackItalic: $websiteTheme-primary-font-black-italic,
+  bodyFontFamily: $serif-font,
+>>>>>>> WIP button updates for website:src/lib/styles/themes/websiteTheme/websiteTheme.module.scss
   gradientTitleColor: rgb(255, 255, 255),
   gradientTitleBackground: linear-gradient(135deg, rgb(49, 233, 255), rgb(218, 13, 255)),
   fieldBorder: none,
@@ -40,6 +52,10 @@ $purplePlainTheme: (
   fieldColor: rgb(0, 0, 0),
   fieldBackground: rgb(255, 255, 255),
   fieldFocusColor: rgb(0, 0, 0),
+<<<<<<< HEAD:src/lib/styles/themes/purplePlainTheme/purplePlainTheme.module.scss
+=======
+  fieldFocusBackgroundColor: rgb(255, 255, 255),
+>>>>>>> WIP button updates for website:src/lib/styles/themes/websiteTheme/websiteTheme.module.scss
   fieldReadOnlyBackgroundColor: $grey-30,
   fieldReadOnlyColor: $grey-60,
   fieldFocusBackgroundColor: rgb(255, 255, 255),
@@ -48,11 +64,12 @@ $purplePlainTheme: (
   inputHeight: 60px,
   textAreaHeight: 259px,
   fieldBorderRadius: 6px,
-  buttonColor: rgb(255, 255, 255),
-  buttonBackgroundColor: rgb(118, 3, 219),
+  buttonColor: $white,
+  buttonBackgroundColor: $watermelon,
+  buttonRadius: 3px,
   smoothTransition: all 0.1s ease-in-out,
-  elementHoverColor: rgb(218, 13, 255),
-  disabledButtonBackgroundColor: rgb(102, 102, 102),
+  elementHoverColor: $pink,
+  disabledButtonBackgroundColor: $grey-80,
   disabledElementBackgroundColor: rgb(102, 102, 102),
   disabledButtonColor: rgb(255, 255, 255),
   disabledElementColor: rgb(255, 255, 255),
