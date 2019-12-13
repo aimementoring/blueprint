@@ -7,11 +7,7 @@ exports[`Paragraph is backwards compatible (text passed as prop) 1`] = `
   <p
     className="paragraph "
   >
-    <strong
-      className="textHighlighted"
-    >
-      Gradient default Paragraph
-    </strong>
+    Gradient default Paragraph
   </p>
 </div>
 `;
@@ -23,11 +19,7 @@ exports[`Paragraph renders properly 1`] = `
   <p
     className="paragraph "
   >
-    <strong
-      className="textHighlighted"
-    >
-      Gradient default Paragraph
-    </strong>
+    Gradient default Paragraph
   </p>
 </div>
 `;
