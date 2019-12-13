@@ -4,18 +4,18 @@
 
 @import 'lightTheme/lightTheme.module.scss';
 
-@import 'purpleTheme/purpleTheme.module.scss';
+@import 'purpleStormTheme/purpleStormTheme.module.scss';
 
-@import 'portalTheme/portalTheme.module.scss';
+@import 'purplePlainTheme/purplePlainTheme.module.scss';
 
 @import 'websiteTheme/websiteTheme.module.scss';
 
 /// List of themes available with corresponding values
 $themes: (
   base: $baseTheme,
-  purple: $purpleTheme,
+  purple: $purpleStormTheme,
   light: $lightTheme,
-  portal: $portalTheme,
+  portal: $purplePlainTheme,
   website: $websiteTheme,
 );
 
