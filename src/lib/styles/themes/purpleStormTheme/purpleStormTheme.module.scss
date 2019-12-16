@@ -6,7 +6,6 @@ $purpleStormTheme: (
   brandPrimary: rgb(118, 3, 219),
   brandSecondary: rgb(199, 0, 255),
   brandTertiary: rgb(218, 13, 255),
-<<<<<<< HEAD:src/lib/styles/themes/purpleStormTheme/purpleStormTheme.module.scss
   featureFont: $stylised-font,
   primaryFont: $serif-font,
   primaryFontItalic: $serif-font-italic,
@@ -23,17 +22,6 @@ $purpleStormTheme: (
   primaryFontFamilyExtraBoldItalic: $sans-serif-font-extrabold-italic,
   primaryFontFamilyBlack: $sans-serif-font-black,
   primaryFontFamilyBlackItalic: $sans-serif-font-black-italic,
-=======
-  featureFontFamily: $websiteTheme-feature-font-family,
-  primaryFontFamilySemiBold: $websiteTheme-primary-font-semibold,
-  primaryFontFamilySemiBoldItalic: $websiteTheme-primary-font-semibold-italic,
-  primaryFontFamilyBoldItalic: $websiteTheme-primary-font-bold-italic,
-  primaryFontFamilyRegular: $websiteTheme-primary-font-regular,
-  primaryFontFamilyExtraBoldItalic: $websiteTheme-primary-font-extrabold-italic,
-  primaryFontFamilyBlack: $websiteTheme-primary-font-black,
-  primaryFontFamilyBlackItalic: $websiteTheme-primary-font-black-italic,
-  bodyFontFamily: $serif-font,
->>>>>>> WIP button updates for website:src/lib/styles/themes/websiteTheme/websiteTheme.module.scss
   gradientTitleColor: rgb(255, 255, 255),
   gradientTitleBackground: linear-gradient(135deg, rgb(49, 233, 255), rgb(218, 13, 255)),
   fieldBorder: none,
