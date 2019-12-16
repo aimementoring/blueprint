@@ -13,11 +13,13 @@
   [type="radio"]:not(:checked) + label {
     position: relative;
     display: inline-block;
-    font-family: $body-font-family;
     line-height: 1.5em;
     padding-left: 1.75em;
     margin-bottom: 1em;
     cursor: pointer;
+    @include themify() {
+      font-family: themed('bodyFontFamily');
+    }
   }
 
   [type="radio"]:checked + label:before,
