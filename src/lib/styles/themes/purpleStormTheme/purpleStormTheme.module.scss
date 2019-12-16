@@ -1,20 +1,27 @@
-@import 'variables/variables.module.scss';
+@import '../../variables/variables.module.scss';
 
-/// Definition of all variables used on WebsiteTheme
-/// @group WebsiteTheme
-$websiteTheme: (
+/// Definition of all variables used on PurpleStormTheme
+/// @group PurpleStormTheme
+$purpleStormTheme: (
   brandPrimary: rgb(118, 3, 219),
   brandSecondary: rgb(199, 0, 255),
   brandTertiary: rgb(218, 13, 255),
-  featureFontFamily: $websiteTheme-feature-font-family,
-  primaryFontFamilySemiBold: $websiteTheme-primary-font-semibold,
-  primaryFontFamilySemiBoldItalic: $websiteTheme-primary-font-semibold-italic,
-  primaryFontFamilyBoldItalic: $websiteTheme-primary-font-bold-italic,
-  primaryFontFamilyRegular: $websiteTheme-primary-font-regular,
-  primaryFontFamilyExtraBoldItalic: $websiteTheme-primary-font-extrabold-italic,
-  primaryFontFamilyBlack: $websiteTheme-primary-font-black,
-  primaryFontFamilyBlackItalic: $websiteTheme-primary-font-black-italic,
-  bodyFontFamily: $websiteTheme-body-font-family,
+  featureFont: $stylised-font,
+  primaryFont: $serif-font,
+  primaryFontItalic: $serif-font-italic,
+  primaryFontBold: $serif-font-bold,
+  primaryFontBoldItalic: $serif-font-bold-italic,
+  bodyFontFamily: $serif-font,
+  bodyFontFamilyBold: $serif-font-bold,
+  bodyFontFamilyItalic: $serif-font-italic,
+  //
+  primaryFontFamilySemiBold: $sans-serif-font-semibold,
+  primaryFontFamilySemiBoldItalic: $sans-serif-font-semibold-italic,
+  primaryFontFamilyBoldItalic: $sans-serif-font-bold-italic,
+  primaryFontFamilyRegular: $sans-serif-font,
+  primaryFontFamilyExtraBoldItalic: $sans-serif-font-extrabold-italic,
+  primaryFontFamilyBlack: $sans-serif-font-black,
+  primaryFontFamilyBlackItalic: $sans-serif-font-black-italic,
   gradientTitleColor: rgb(255, 255, 255),
   gradientTitleBackground: linear-gradient(135deg, rgb(49, 233, 255), rgb(218, 13, 255)),
   fieldBorder: none,
@@ -24,7 +31,7 @@ $websiteTheme: (
   fieldBorderFocused: rgb(118, 3, 219),
   fieldColorError: rgb(248, 68, 68),
   errorColor: rgb(248, 68, 68),
-  errorFont: $websiteTheme-tertiary-font-family,
+  errorFont: $sans-serif-font-semibold,
   fieldPlaceholderColor: rgb(178, 186, 195),
   fieldPlaceholderFontSize: 0.9rem,
   fieldPlaceholderFontWeight: 400,
@@ -35,6 +42,7 @@ $websiteTheme: (
   fieldFocusColor: rgb(0, 0, 0),
   fieldFocusBackgroundColor: rgb(255, 255, 255),
   fieldReadOnlyBackgroundColor: $grey-30,
+  fieldReadOnlyColor: $grey-60,
   inputPadding: 0.1em 1.3em,
   textAreaPadding: 1rem,
   inputHeight: 60px,
@@ -69,4 +77,6 @@ $websiteTheme: (
   progressBarColor: rgb(255, 255, 255),
   progressFontSize: 1em,
   mainTitleColor: $white,
+  paragraphColor: $black,
+  // paraHighlight: -1em 0.3em 0 -0.3em $purple, inset 0 -1.06em 0 -0.6em $purple, 1em 0.3em 0 -0.3em $purple,
 );

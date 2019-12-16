@@ -1,8 +1,8 @@
 @import '../../variables/variables.module.scss';
 
-/// Definition of all variables used on PurpleTheme
-/// @group PurpleTheme
-$purpleTheme: (
+/// Definition of all variables used on ImaginationRainbowTheme
+/// @group ImaginationRainbowTheme
+$imaginationRainbowTheme: (
   brandPrimary: rgb(118, 3, 219),
   brandSecondary: rgb(199, 0, 255),
   brandTertiary: rgb(218, 13, 255),
@@ -14,7 +14,7 @@ $purpleTheme: (
   bodyFontFamily: $serif-font,
   bodyFontFamilyBold: $serif-font-bold,
   bodyFontFamilyItalic: $serif-font-italic,
-  //
+  // #legacy @deprecated - eventually we won't use these but can't delete them yet...
   primaryFontFamilySemiBold: $sans-serif-font-semibold,
   primaryFontFamilySemiBoldItalic: $sans-serif-font-semibold-italic,
   primaryFontFamilyBoldItalic: $sans-serif-font-bold-italic,
@@ -22,16 +22,17 @@ $purpleTheme: (
   primaryFontFamilyExtraBoldItalic: $sans-serif-font-extrabold-italic,
   primaryFontFamilyBlack: $sans-serif-font-black,
   primaryFontFamilyBlackItalic: $sans-serif-font-black-italic,
+  // #/endlegacy
   gradientTitleColor: rgb(255, 255, 255),
   gradientTitleBackground: linear-gradient(135deg, rgb(49, 233, 255), rgb(218, 13, 255)),
   fieldBorder: none,
   borderColor: rgb(102, 102, 102),
-  helperTextColor: rgb(102, 102, 102),
+  helperTextColor: rgba(102, 102, 102, 0.418),
   fieldBorderError: 1px solid rgb(248, 68, 68),
   fieldBorderFocused: rgb(118, 3, 219),
   fieldColorError: rgb(248, 68, 68),
   errorColor: rgb(248, 68, 68),
-  errorFont: $sans-serif-font-semibold,
+  errorFont: $sans-serif-font,
   fieldPlaceholderColor: rgb(178, 186, 195),
   fieldPlaceholderFontSize: 0.9rem,
   fieldPlaceholderFontWeight: 400,
@@ -77,6 +78,6 @@ $purpleTheme: (
   progressBarColor: rgb(255, 255, 255),
   progressFontSize: 1em,
   mainTitleColor: $white,
-  paragraphColor: $black,
-  // paraHighlight: -1em 0.3em 0 -0.3em $purple, inset 0 -1.06em 0 -0.6em $purple, 1em 0.3em 0 -0.3em $purple,
+  paragraphColor: $grey-90,
+  // paraHighlight: -1em 0.3em 0 -0.3em $yellow, inset 0 -1.06em 0 -0.6em $yellow, 1em 0.3em 0 -0.3em $yellow,
 );
