@@ -17,15 +17,18 @@
     }
     font-weight: 700;
   }
+
+  mark {
+    background-color: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    color: inherit;
+    box-shadow: -0.5em 0.32em 0 -0.325em $yellow, inset 0 -0.52em 0 -0.1em $yellow, 0.5em 0.33em 0 -0.32em $yellow;
+    //TODO: how can we themify the box-shadow highlight... 
+    // @include themify() {
+    //   box-shadow: themed('paraHighlight');
+    //   font-family: themed('bodyFontFamily');
+    // }
+  }
 }
 
-.textHighlighted {
-  font-weight: 100;
-  // box-shadow: -0.5em 0.3em 0 -0.3em $yellow, inset 0 -1.06em 0 -0.6em $yellow, 0.5em 0.3em 0 -0.3em $yellow;
-  box-shadow: -0.5em 0.32em 0 -0.325em $yellow, inset 0 -0.52em 0 -0.1em $yellow, 0.5em 0.33em 0 -0.32em $yellow;
-  //TODO: how can we themify the box-shadow highlight... 
-  // @include themify() {
-  //   box-shadow: themed('paraHighlight');
-  //   font-family: themed('bodyFontFamily');
-  // }
-} 
