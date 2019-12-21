@@ -15,15 +15,16 @@
   display: block;
 }
 
-.button {
+.button, .linkButton {
   @include themify() {
     color: themed('buttonColor');
-    font-family: themed('primaryFontFamilySemiBoldItalic');
+    font-family: themed('bodyFontFamily');
     background-color: themed('buttonBackgroundColor');
     transition: themed('smoothTransition');
+    border-radius: themed('buttonRadius');
 
     &:hover {
-      background-color: themed('elementHoverColor');
+      opacity: 0.9;
     }
 
     &:disabled,
@@ -34,6 +35,7 @@
   }
 
   font-size: 0.8rem;
+  text-decoration: none;
   text-align: center;
   padding: 1rem 4rem;
   cursor: pointer;
@@ -59,25 +61,8 @@
 }
 
 .linkButton {
-  @include themify() {
-    background-color: themed('linkBackgroundColor');
-    font-family: themed('primaryFontFamilyRegular');
-    color: themed('linkColor');
-  }
-  cursor: pointer;
   padding: 1rem 2.5rem;
-  text-align: center;
-  transition: all 0.1s linear;
-  border-radius: 90px;
-  margin-top: 2rem;
-  display: inline-block;
-  text-decoration: none;
-  opacity: 1;
-  font: {
-    weight: 500;
-    size: 14px;
-  }
-
+  
   @media screen and (min-width: 52em) {
     padding: 0.7rem 2.2rem;
   }
