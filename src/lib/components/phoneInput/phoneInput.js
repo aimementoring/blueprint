@@ -56,8 +56,7 @@ class PhoneInput extends PureComponent {
       onCountrySelected,
       ...inputProps
     } = this.props;
-    // eslint-disable-next-line no-console
-    console.log({ theme, style: styles[`theme-${theme}`], styles });
+
     return (
       <div
         className={`${containerClassName} ${styles[`theme-${theme}`]} ${
