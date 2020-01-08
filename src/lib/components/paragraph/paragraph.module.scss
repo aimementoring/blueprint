@@ -3,13 +3,32 @@
 
 .paragraph {
   @include themify() {
-    // TODO: we need to create a baseTheme and that's where we can define the below variable. 
-    // but for now have just styled it within the component
-    // color: themed('paragraphColor');
-    font-family: themed('primaryFontFamilyRegular');
+    font-family: themed('bodyFontFamily');
+    color: themed('paragraphColor');
   }
-  color: $black;
   font-size: 0.875rem;
   line-height: 1.5em;
   margin-bottom: 1.5em;
+  font-weight: 100;
+
+  strong {
+    @include themify() {
+      font-family: themed('bodyFontFamilyBold');
+    }
+    font-weight: 700;
+  }
+
+  mark {
+    background-color: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    color: inherit;
+    box-shadow: -0.5em 0.32em 0 -0.325em $yellow, inset 0 -0.52em 0 -0.1em $yellow, 0.5em 0.33em 0 -0.32em $yellow;
+    //TODO: how can we themify the box-shadow highlight... 
+    // @include themify() {
+    //   box-shadow: themed('paraHighlight');
+    //   font-family: themed('bodyFontFamily');
+    // }
+  }
 }
+

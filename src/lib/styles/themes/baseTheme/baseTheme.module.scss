@@ -1,5 +1,3 @@
-@import 'variables/variables.module.scss';
-
 @import '../../variables/variables.module.scss';
 
 /// Definition of all variables used on BaseTheme
@@ -8,15 +6,22 @@ $baseTheme: (
   brandPrimary: $black,
   brandSecondary: $grey-90,
   brandTertiary: $grey-80,
-  featureFontFamily: $baseTheme-feature-font-family,
-  primaryFontFamilySemiBold: $baseTheme-primary-font-semibold,
-  primaryFontFamilySemiBoldItalic: $baseTheme-primary-font-semibold-italic,
-  primaryFontFamilyBoldItalic: $baseTheme-primary-font-bold-italic,
-  primaryFontFamilyRegular: $baseTheme-primary-font-regular,
-  primaryFontFamilyExtraBoldItalic: $baseTheme-primary-font-extrabold-italic,
-  primaryFontFamilyBlack: $baseTheme-primary-font-black,
-  primaryFontFamilyBlackItalic: $baseTheme-primary-font-black-italic,
-  bodyFontFamily: $baseTheme-body-font-family,
+  featureFont: $stylised-font,
+  primaryFont: $serif-font,
+  primaryFontItalic: $serif-font-italic,
+  primaryFontBold: $serif-font-bold,
+  primaryFontBoldItalic: $serif-font-bold-italic,
+  bodyFontFamily: $serif-font,
+  bodyFontFamilyBold: $serif-font-bold,
+  bodyFontFamilyItalic: $serif-font-italic,
+  //
+  primaryFontFamilySemiBold: $sans-serif-font-semibold,
+  primaryFontFamilySemiBoldItalic: $sans-serif-font-semibold-italic,
+  primaryFontFamilyBoldItalic: $sans-serif-font-bold-italic,
+  primaryFontFamilyRegular: $sans-serif-font,
+  primaryFontFamilyExtraBoldItalic: $sans-serif-font-extrabold-italic,
+  primaryFontFamilyBlack: $sans-serif-font-black,
+  primaryFontFamilyBlackItalic: $sans-serif-font-black-italic,
   fieldBorder: none,
   borderColor: $grey-80,
   helperTextColor: $grey-80,
@@ -32,6 +37,8 @@ $baseTheme: (
   fieldBackground: $white,
   fieldFocusColor: $black,
   fieldFocusBackgroundColor: $white,
+  fieldReadOnlyBackgroundColor: $grey-30,
+  fieldReadOnlyColor: $grey-60,
   inputPadding: 0.1em 1.3em,
   textAreaPadding: 1rem,
   inputHeight: 60px,
@@ -43,7 +50,7 @@ $baseTheme: (
   elementHoverColor: $grey-60,
   disabledButtonBackgroundColor: $grey-80,
   disabledElementBackgroundColor: $grey-80,
-  disabledButtonColor: $white,
+  disabledButtonColor: $grey-60,
   disabledElementColor: $white,
   linkBackgroundColor: $grey-80,
   linkColor: $white,
@@ -66,4 +73,6 @@ $baseTheme: (
   progressBarFillColor: $black,
   progressBarColor: $white,
   progressFontSize: 1em,
+  paragraphColor: $black,
+  // paraHighlight: -1em 0.3em 0 -0.3em $yellow, inset 0 -1.06em 0 -0.6em $yellow, 1em 0.3em 0 -0.3em $yellow,
 );

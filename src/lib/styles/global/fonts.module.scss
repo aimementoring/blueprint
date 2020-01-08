@@ -1,5 +1,5 @@
 /// URL to load fonts
-$fonts-path: 'https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts';
+$fonts-path: 'https://d3kott46cqreik.cloudfront.net/assets/fonts';
 
 /// @group Univers
 @font-face {
@@ -8,14 +8,14 @@ $fonts-path: 'https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts';
   font-style: normal;
   font-weight: 400;
 }
-/// @group Univers
+
 @font-face {
   font-family: 'Univers Light';
   src: url('#{$fonts-path}/universal/UniversLTStd-Light.otf');
   font-style: normal;
   font-weight: 300;
 }
-/// @group Univers
+
 @font-face {
   font-family: 'Univers Bold';
   src: url('#{$fonts-path}/universal/UniversLTStd-Bold.otf');
@@ -24,63 +24,101 @@ $fonts-path: 'https://d2ylaz7bdw65jx.cloudfront.net/assets/fonts';
 }
 
 /// @group Poppins
+
 @font-face {
   font-family: 'Poppins';
   src: url('#{$fonts-path}/poppins/Poppins-Regular.ttf');
 }
-/// @group Poppins
+
 @font-face {
   font-family: 'Poppins Regular';
   src: url('#{$fonts-path}/poppins/Poppins-Regular.ttf');
 }
-/// @group Poppins
+
 @font-face {
   font-family: 'Poppins SemiBold';
   src: url('#{$fonts-path}/poppins/Poppins-SemiBold.ttf');
 }
-/// @group Poppins
+
 @font-face {
   font-family: 'Poppins SemiBold Italic';
   src: url('#{$fonts-path}/poppins/Poppins-SemiBoldItalic.ttf');
 }
-/// @group Poppins
+
 @font-face {
   font-family: 'Poppins Bold';
   src: url('#{$fonts-path}/poppins/Poppins-Bold.ttf');
 }
-/// @group Poppins
+
 @font-face {
   font-family: 'Poppins Bold Italic';
   src: url('#{$fonts-path}/poppins/Poppins-BoldItalic.ttf');
 }
-/// @group Poppins
+
 @font-face {
   font-family: 'Poppins ExtraBold';
   src: url('#{$fonts-path}/poppins/Poppins-ExtraBold.ttf');
 }
-/// @group Poppins
+
 @font-face {
   font-family: 'Poppins ExtraBold Italic';
   src: url('#{$fonts-path}/poppins/Poppins-ExtraBoldItalic.ttf');
 }
-/// @group Poppins
+
 @font-face {
   font-family: 'Poppins Black';
   src: url('#{$fonts-path}/poppins/Poppins-Black.ttf');
 }
-/// @group Poppins
+
 @font-face {
   font-family: 'Poppins Black Italic';
   src: url('#{$fonts-path}/poppins/Poppins-BlackItalic.ttf');
 }
-/// @group Blackhawk
+
+/// @group LunaEmu
+
 @font-face {
-  font-family: 'Blackhawk';
-  src: url('#{$fonts-path}/blackhawk/blackhawk_italic-webfont.woff2') format('woff2'),
-    url('#{$fonts-path}/blackhawk/blackhawk_italic-webfont.woff') format('woff');
+  font-family: 'Luna Emu';
+  src: url('#{$fonts-path}/luna-emu/lunaemu2-regular-webfont.woff2') format('woff2'),
+    url('#{$fonts-path}/luna-emu/lunaemu2-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
+/// @group GTPressuraMono
+
+@font-face {
+  font-family: 'GT Pressura Mono';
+  src: url('#{$fonts-path}/gt-pressura/gt-pressura-mono-regular-webfont.woff2') format('woff2'),
+    url('#{$fonts-path}/gt-pressura/gt-pressura-mono-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GT Pressura Mono Italic';
+  src: url('#{$fonts-path}/gt-pressura/gt-pressura-mono-regular-italic-webfont.woff2') format('woff2'),
+    url('#{$fonts-path}/gt-pressura/gt-pressura-mono-regular-italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GT Pressura Mono Bold';
+  src: url('#{$fonts-path}/gt-pressura/gt-pressura-mono-bold-webfont.woff2') format('woff2'),
+    url('#{$fonts-path}/gt-pressura/gt-pressura-mono-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GT Pressura Mono Bold Italic';
+  src: url('#{$fonts-path}/gt-pressura/gt-pressura-mono-bold-italic-webfont.woff2') format('woff2'),
+    url('#{$fonts-path}/gt-pressura/gt-pressura-mono-bold-italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /// @group Material-Icons
 @font-face {
   font-family: 'Material Icons';

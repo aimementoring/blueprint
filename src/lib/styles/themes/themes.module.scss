@@ -2,18 +2,18 @@
 
 @import 'baseTheme/baseTheme.module.scss';
 
-@import 'lightTheme/lightTheme.module.scss';
+@import 'purpleStormTheme/purpleStormTheme.module.scss';
 
-@import 'purpleTheme/purpleTheme.module.scss';
+@import 'purplePlainTheme/purplePlainTheme.module.scss';
 
-@import 'portalTheme/portalTheme.module.scss';
+@import 'imaginationRainbowTheme/imaginationRainbowTheme.module.scss';
 
 /// List of themes available with corresponding values
 $themes: (
   base: $baseTheme,
-  purple: $purpleTheme,
-  light: $lightTheme,
-  portal: $portalTheme,
+  storm: $purpleStormTheme,
+  plain: $purplePlainTheme,
+  rainbow: $imaginationRainbowTheme,
 );
 
 /// Generated css styles for each available theme in $themes variable

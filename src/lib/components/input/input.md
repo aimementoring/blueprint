@@ -1,6 +1,6 @@
 ```js
 initialState = {
-  value: 'abcd',
+  value: 'Hey! I am an input',
 };
 
 function updateValue(name, value) {
@@ -10,20 +10,17 @@ function updateValue(name, value) {
 <Input
   placeholder="Name"
   value={state.value}
-  type="text"
   required={true}
   name="value"
-  onChangeFunction={updateValue}
 />;
 ```
 
 ```jsx inside Markdown
 import React from 'react';
-import Dropdown from 'react-select';
 import { validateEmail } from '../../utils/validation';
 
 initialState = {
-  value: 'asdas',
+  value: 'You need to enter an email here!',
 };
 
 function updateValue(name, value) {
@@ -31,9 +28,8 @@ function updateValue(name, value) {
 }
 
 <Input
-  placeholder="Name"
+  placeholder="Email"
   value={state.value}
-  type="text"
   required={true}
   name="value"
   onChangeFunction={updateValue}
@@ -43,7 +39,7 @@ function updateValue(name, value) {
 
 ```js
 initialState = {
-  value: 'abcd',
+  value: 'Hey! I am a light themed input.',
 };
 
 function updateValue(name, value) {
@@ -53,10 +49,17 @@ function updateValue(name, value) {
 <Input
   placeholder="Light theme"
   value={state.value}
-  type="text"
   required={true}
   name="value"
   onChangeFunction={updateValue}
   theme="light"
 />;
+```
+
+```js
+<Input
+  value="I am read only. Don't try to change me!"
+  name="value"
+  readOnly
+/>
 ```
