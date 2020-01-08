@@ -1,11 +1,12 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
-import ReactPhoneInput from "react-phone-number-input";
+import ReactPhoneInput, { parsePhoneNumber } from "react-phone-number-input";
 import {
   componentPropTypes,
   defaultComponentPropTypes,
 } from "../../utils/componentPropTypes";
 import { withValidation } from "../../utils/hocs";
+import countriesList from "../countrySelector/countryCollection.ignore";
 import styles from "./phoneInput.module.scss";
 
 class PhoneInput extends PureComponent {
@@ -38,7 +39,32 @@ class PhoneInput extends PureComponent {
     const { name, onChangeFunction, handleValidations } = this.props;
 
     const isWrongValidation = handleValidations(value);
+    // eslint-disable-next-line no-console
+    console.log({ value });
     onChangeFunction(name, value, isWrongValidation);
+  };
+
+  handleCountryChange = iso2 => {
+    const { onCountrySelected, value } = this.props;
+    const parsedValue = parsePhoneNumber(value);
+    const country = countriesList.find(
+      item => item.code.toUpperCase() === iso2.toUpperCase()
+    );
+    if (parsedValue && parsedValue.country) {
+      // eslint-disable-next-line no-console
+      console.log({
+        iso2,
+        parsed: parsedValue.country,
+      });
+    }
+    onCountrySelected(value, {
+      iso2,
+      name: country ? country.name : "",
+      dialCode: parsedValue
+        ? parsedValue.countryCallingCode
+        : country && country.phoneCode,
+      nationalNumber: parsedValue ? parsedValue.nationalNumber : value,
+    });
   };
 
   render() {
@@ -53,7 +79,6 @@ class PhoneInput extends PureComponent {
       isValidationOk,
       renderValidationError,
       getValidationMessage,
-      onCountrySelected,
       ...inputProps
     } = this.props;
 
@@ -64,13 +89,13 @@ class PhoneInput extends PureComponent {
         }`}
       >
         <ReactPhoneInput
-          country={defaultCountry}
+          defaultCountry={defaultCountry}
           placeholder={placeholder}
           value={value}
           onChange={this.handleChange}
           error={isValidationOk() ? "" : getValidationMessage()}
           className={className}
-          onCountryChange={onCountrySelected}
+          onCountryChange={this.handleCountryChange}
           {...inputProps}
         />
       </div>
