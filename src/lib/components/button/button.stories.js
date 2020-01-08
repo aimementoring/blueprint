@@ -14,11 +14,10 @@ export default {
 };
 
 const themeOptions = {
-  purple: 'purple',
+  storm: 'storm',
   base: 'base',
-  website: 'website',
-  light: 'light',
-  portal: 'portal',
+  rainbow: 'rainbow',
+  plain: 'plain',
 };
 
 const typeOptions = {
@@ -58,11 +57,11 @@ export const WithLabelUnderneathButton = () => (
   </Button>
 );
 
-export const LightThemeButton = () => (
+export const StormThemeButton = () => (
   <Button
     type={select('type', typeOptions, 'button')}
     onClickFunction={action('clicked')}
-    theme={select('theme', themeOptions, 'light')}
+    theme={select('theme', themeOptions, 'storm')}
   >
     Light theme
   </Button>
