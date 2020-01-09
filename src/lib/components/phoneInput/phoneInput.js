@@ -6,7 +6,6 @@ import {
   defaultComponentPropTypes,
 } from "../../utils/componentPropTypes";
 import { withValidation } from "../../utils/hocs";
-import countriesList from "../countrySelector/countryCollection.ignore";
 import styles from "./phoneInput.module.scss";
 
 class PhoneInput extends PureComponent {
@@ -37,34 +36,13 @@ class PhoneInput extends PureComponent {
 
   handleChange = value => {
     const { name, onChangeFunction, handleValidations } = this.props;
-
+    let parsedValue = {};
     const isWrongValidation = handleValidations(value);
-    // eslint-disable-next-line no-console
-    console.log({ value });
-    onChangeFunction(name, value, isWrongValidation);
-  };
 
-  handleCountryChange = iso2 => {
-    const { onCountrySelected, value } = this.props;
-    const parsedValue = parsePhoneNumber(value);
-    const country = countriesList.find(
-      item => item.code.toUpperCase() === iso2.toUpperCase()
-    );
-    if (parsedValue && parsedValue.country) {
-      // eslint-disable-next-line no-console
-      console.log({
-        iso2,
-        parsed: parsedValue.country,
-      });
+    if (value) {
+      parsedValue = parsePhoneNumber(value);
     }
-    onCountrySelected(value, {
-      iso2,
-      name: country ? country.name : "",
-      dialCode: parsedValue
-        ? parsedValue.countryCallingCode
-        : country && country.phoneCode,
-      nationalNumber: parsedValue ? parsedValue.nationalNumber : value,
-    });
+    onChangeFunction(name, value, isWrongValidation, parsedValue);
   };
 
   render() {
@@ -89,14 +67,13 @@ class PhoneInput extends PureComponent {
         }`}
       >
         <ReactPhoneInput
-          defaultCountry={defaultCountry}
           placeholder={placeholder}
           value={value}
           onChange={this.handleChange}
           error={isValidationOk() ? "" : getValidationMessage()}
           className={className}
-          onCountryChange={this.handleCountryChange}
           {...inputProps}
+          country={defaultCountry}
         />
       </div>
     );

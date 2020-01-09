@@ -12,7 +12,6 @@ function updateValue(name, value) {
     [name]: value,
     formatted
   });
-  console.log({ value, name, formatted });
 }
 
 <div>
@@ -21,6 +20,7 @@ function updateValue(name, value) {
     value={state.phone}
     onChangeFunction={updateValue}
     theme="purple"
+    defaultCountry="AU"
   />
   {state.formatted && state.phone && (
     <div style={{ display: "block" }}>
