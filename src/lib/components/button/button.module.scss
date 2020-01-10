@@ -1,13 +1,15 @@
 @import '../../styles/variables/variables.module.scss';
 @import '../../styles/themes/themes.module.scss';
 
-.container {
-  margin: 0 auto;
-  text-align: center;
-  float: left;
-  width: 100%;
-  position: relative;
-}
+// this should be moved into a pattern... 
+
+// .container {
+//   margin: 0 auto;
+//   text-align: center;
+//   float: left;
+//   width: 100%;
+//   position: relative;
+// }
 
 .buttonGroup {
   position: relative;
