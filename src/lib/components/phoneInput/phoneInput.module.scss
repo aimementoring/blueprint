@@ -19,13 +19,12 @@
     @include themify() {
       color: themed("fieldColor");
       background-color: themed("fieldBackground");
-      border: themed("fieldBorder");
+      border: 1px solid themed('borderColor');
       font-family: themed("primaryFont");
       font-size: themed("fieldFontSize");
-      border-radius: themed("fieldBorderRadius");
-      height: themed("inputHeight");
-      font-weight: themed("fieldFontWeight");
-      padding: themed("inputPadding");
+      font-weight: themed('fieldFontWeight');
+      padding: 0.4em 1em;
+      border-radius: 3px;
     }
   }
 
@@ -128,26 +127,19 @@
   }
 
   .react-phone-number-input__input {
-    height: calc(0.3rem * 6);
     outline: none;
     border-radius: 0;
-    padding: 0;
     appearance: none;
     border: none;
-    border-bottom: 1px solid $grey-40;
     transition: border 0.1s;
     font-size: inherit;
+    padding: 0.5em;
     
-    @include themify() {
-      color: themed('fieldColor');
-      background-color: themed('fieldBackground');
-      border: themed('fieldBorder');
-      font-family: themed('primaryFont');
-      font-size: themed('fieldFontSize');
-      border-radius: themed('fieldBorderRadius');
-      height: themed('inputHeight');
+    @include themify() {    
+      color: themed("fieldColor");
+      font-family: themed("primaryFont");
+      font-size: themed("fieldFontSize");
       font-weight: themed('fieldFontWeight');
-      padding: themed('inputPadding');
     }
   }
 
