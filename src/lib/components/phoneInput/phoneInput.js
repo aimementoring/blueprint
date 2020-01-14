@@ -27,7 +27,7 @@ class PhoneInput extends PureComponent {
     className: styles.input,
     name: "phone",
     required: false,
-    defaultCountry: "auto",
+    defaultCountry: "AU",
     value: "",
     onCountrySelected: () => {},
     onChangeFunction: () => {},

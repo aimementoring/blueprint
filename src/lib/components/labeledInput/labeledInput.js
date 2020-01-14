@@ -1,8 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
-import { handleInputChange } from '../input/utils.ignore';
-import styles from './labeledInput.module.scss';
+import React from "react";
+import PropTypes from "prop-types";
+import {
+  componentPropTypes,
+  defaultComponentPropTypes,
+} from "../../utils/componentPropTypes";
+import { handleInputChange } from "../input/utils.ignore";
+import styles from "./labeledInput.module.scss";
 
 const LabeledInput = ({
   theme,
@@ -15,16 +18,18 @@ const LabeledInput = ({
   onChangeFunction,
   handleValidations,
   helperText,
+  containerClassName,
   ...inputProps
 }) => {
-  const handleChange = event => handleInputChange(event, name, handleValidations, onChangeFunction);
+  const handleChange = event =>
+    handleInputChange(event, name, handleValidations, onChangeFunction);
 
   return (
     <div className={styles[`theme-${theme}`]}>
       <div className={styles.wrapper}>
         <input
           className={`${className} ${error && styles.error}`}
-          type={type || 'text'}
+          type={type || "text"}
           id={name}
           name={name}
           onChange={handleChange}
@@ -34,8 +39,12 @@ const LabeledInput = ({
         <label for={name}>
           <span className={styles.fieldName}>{label}</span>
         </label>
-        <span className={`${styles.errorMessage} ${error && styles.active}`}>{error}</span>
-        {!error && helperText && <span className={styles.helperMessage}>{helperText}</span>}
+        <span className={`${styles.errorMessage} ${error && styles.active}`}>
+          {error}
+        </span>
+        {!error && helperText && (
+          <span className={styles.helperMessage}>{helperText}</span>
+        )}
       </div>
     </div>
   );
@@ -58,8 +67,8 @@ LabeledInput.defaultProps = {
   ...defaultComponentPropTypes,
   value: null,
   error: null,
-  className: '',
-  type: 'text',
+  className: "",
+  type: "text",
   helperText: null,
   handleValidations: () => true,
   onChangeFunction: () => {},
