@@ -80,3 +80,71 @@
     left: -0.5em;
   }
 }
+
+/// @deprecated
+.gradientTitle {
+  line-height: 2rem;
+  display: inline-block;
+  padding: 0.2em 0.5em 0.4em 0;
+  outline: none;
+  transform: rotate(-20deg);
+  position: relative;
+  z-index: 1;
+  font: {
+    size: 4rem;
+    weight: 100;
+  }
+  @include themify() {
+    background: themed('gradientTitleBackground');
+    font-family: themed('featureFontFamily');
+    color: themed('gradientTitleColor');
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+
+  @media screen and (min-width: 40em) {
+    line-height: 3rem;
+  }
+}
+
+/// @deprecated
+.blockTitle {
+  @include themify() {
+    color: themed('brandTertiary');
+    font-family: themed('primaryFontFamilyBoldItalic');
+  }
+  position: relative;
+  z-index: 2;
+  margin-bottom: 1rem;
+  text-align: left;
+  display: block;
+  font: {
+    weight: 900;
+    size: 1.6rem;
+    style: italic;
+  }
+}
+
+/// @deprecated
+.mainTitle {
+  @include themify() {
+    color: themed('mainTitleColor');
+    font-family: themed('primaryFontFamilyBoldItalic');
+  }
+  line-height: 1.125;
+  margin-bottom: 2rem;
+  display: inline-block;
+  font: {
+    size: 1rem;
+    weight: 700;
+    style: italic;
+  }
+
+  @media screen and (min-width: 52em) {
+    font-size: 1.6rem;
+  }
+
+  @media screen and (min-width: 64em) {
+    font-size: 2.8rem;
+  }
+}

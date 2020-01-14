@@ -29,6 +29,21 @@ const titleTypeClass = {
     style: styles.headingLockup,
     tag: 'h1',
   },
+  // @deprecated Adds those types again until Portal styles are updated
+  gradient: {
+    style: styles.gradientTitle,
+    tag: 'h1',
+  },
+  // @deprecated Adds those types again until Portal styles are updated
+  blockTitle: {
+    style: styles.blockTitle,
+    tag: 'h1',
+  },
+  // @deprecated Adds those types again until Portal styles are updated
+  mainTitle: {
+    style: styles.mainTitle,
+    tag: 'h1',
+  },
 };
 
 class Title extends PureComponent {
@@ -56,6 +71,12 @@ Title.propTypes = {
     'h4Title',
     'h5Title',
     'headingLockup',
+    // @deprecated Adds those types again until Portal styles are updated
+    'gradient',
+    // @deprecated Adds those types again until Portal styles are updated
+    'blockTitle',
+    // @deprecated Adds those types again until Portal styles are updated
+    'mainTitle',
   ]),
   children: PropTypes.node,
 };

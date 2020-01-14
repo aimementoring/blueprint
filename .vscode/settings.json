@@ -1,6 +1,6 @@
 {
   "editor.tabSize": 2,
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.insertSpaces": true,
   "editor.autoClosingBrackets": "languageDefined",
   "editor.autoClosingQuotes": "languageDefined",
@@ -64,7 +64,7 @@
   "scss.lint.idSelector": "error",
   "scss.lint.important": "warning",
   "scss.validate": true,
-  "eslint.autoFixOnSave": true,
+  "eslint.autoFixOnSave": false,
   "eslint.enable": true,
   "eslint.packageManager": "yarn",
   "eslint.provideLintTask": true,
@@ -75,6 +75,5 @@
   "prettier.endOfLine": "cr",
   "prettier.printWidth": 100,
   "prettier.tabWidth": 2,
-  "prettier.trailingComma": "all",
-  "prettier.stylelintIntegration": false
+  "prettier.trailingComma": "all"
 }
