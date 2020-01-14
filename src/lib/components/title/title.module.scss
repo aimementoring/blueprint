@@ -61,22 +61,33 @@
 .headingLockup {
   position: relative;
   transform: rotate(0);
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   line-height: 1.4em;
   letter-spacing: -0.1em;
   font-style: normal;
+  font-weight: normal;
   
   @include themify() {
     font-family: themed('featureFont');
   }
   
+  @media all and(min-width: $md) {
+    font-size: 2.5rem;
+  }
+  
   strong {
+    font-weight: normal;
     position: relative;
     transform: rotate(-7deg);
-    font-size: 5rem;
+    font-size: 3rem;
     clear: both;
     display: block;
     top: -0.4em;
     left: -0.5em;
+    letter-spacing: -0.12em;
+    
+    @media all and(min-width: $md) {
+      font-size: 5rem;
+    }
   }
 }
