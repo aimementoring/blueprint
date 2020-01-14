@@ -12,21 +12,22 @@
     -webkit-appearance: none;
     outline: none;
     width: 100%;
-    // box-sizing: border-box;
-    border: none;
-    padding: 0 0 0.5em;
+    box-sizing: border-box;
+    border-radius: 3px;
+    padding: 0.9em 2em;
+    min-height: 3em;
 
     @include themify() {
       color: themed("fieldColor");
       background-color: themed("fieldBackground");
-      border-bottom: 1px solid themed("borderColor");
+      border: 1px solid themed("borderColor");
       font-family: themed("primaryFont");
       font-size: themed("fieldFontSize");
       font-weight: themed("fieldFontWeight");
     }
 
     &[placeholder] ~ label {
-      // transform: translate3d(0, -24px, 0) scale(0.75);
+      // transform: translate3d(0, -1.2em, 0) scale(0.75);
     }
 
     &[required] ~ label::after,
@@ -44,8 +45,7 @@
     }
     &:focus {
       @include themify() {
-        border-bottom: 1px solid themed("fieldBorderFocused");
-        box-shadow: inset 0 -1px 0 0 themed("fieldBorderFocused");
+        border-width: 2px;
       }
     }
 
@@ -53,33 +53,42 @@
     &:not(:empty) {
       ~ label {
         @include themify() {
-          color: themed("fieldColor");
+          color: themed('borderColor');
         }
-        transform: translate3d(0, -24px, 0) scale(0.75);
+        background-color: $white;
+        padding: 0 0.3em;
+        width: auto;
+        transform: translate3d(0, -1.2em, 0) scale(0.75);
       }
     }
 
     &.error {
       @include themify() {
-        border-bottom: 1px solid themed("fieldColorError");
-        box-shadow: inset 0 -1px 0 0 themed("fieldColorError");
+        border-width: 2px;
+        border-color: $error-color;
       }
 
       ~ label {
         @include themify() {
           color: themed("fieldColorError");
         }
-        transform: translate3d(0, -24px, 0) scale(0.75);
+        background-color: $white;
+        padding: 0 0.3em;
+        width: auto;
+        transform: translate3d(0, -1.2em, 0) scale(0.75);
       }
     }
   }
 
+  .helperMessage,
   .errorMessage {
     display: block;
-    visibility: hidden;
-    margin-top: 0.5em;
+    font-size: 0.6rem;
+    margin: 0.7em 0 0 1.5em;
+
     @include themify() {
-      color: themed("fieldColorError");
+      font-family: themed('primaryFont');
+      color: themed('fieldColorError');
     }
 
     &.active {
@@ -88,10 +97,8 @@
   }
 
   .helperMessage {
-    display: block;
-    margin-top: 0.5em;
     @include themify() {
-      color: themed("helperTextColor");
+      color: themed('helperTextColor');
     }
   }
 
@@ -99,13 +106,12 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color: $black-title;
-    left: 0.3125em;
+    color: $black;
     pointer-events: none;
     position: absolute;
-    right: auto;
+    top: 1em;
+    left: 1em;
     text-align: left;
-    top: 0.3125em;
     transform: translate3d(0, 0, 0) scale(1);
     transform-origin: left top;
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
