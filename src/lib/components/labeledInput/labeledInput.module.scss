@@ -10,19 +10,20 @@
     border: none;
     outline: none;
     width: 100%;
+    padding: 0.9em 2em;
+    border-radius: 3px;
 
     @include themify() {
       color: themed('fieldColor');
       background-color: themed('fieldBackground');
-      border-bottom: 1px solid themed('borderColor');
-      font-family: themed('primaryFontFamilyRegular');
+      border: 1px solid themed('borderColor');
+      font-family: themed('primaryFont');
       font-size: themed('fieldFontSize');
       font-weight: themed('fieldFontWeight');
-      padding: themed('inputPadding');
     }
 
     &[placeholder] ~ label {
-      transform: translate3d(0, -24px, 0) scale(0.75);
+      transform: translate3d(0, -1.2em, 0) scale(0.75);
     }
 
     &[required] ~ label::after,
@@ -31,7 +32,7 @@
       vertical-align: text-top;
 
       @include themify() {
-        font-family: themed('primaryFontFamilyRegular');
+        font-family: themed('primaryFont');
         color: themed('fieldColorError');
         font-size: themed('fieldFontSize');
         font-weight: themed('fieldFontWeight');
@@ -40,8 +41,7 @@
 
     &:focus {
       @include themify() {
-        border-bottom: 1px solid themed('fieldBorderFocused');
-        box-shadow: inset 0 -1px 0 0 themed('fieldBorderFocused');
+        border-width: 2px;
       }
     }
 
@@ -50,31 +50,31 @@
     &:valid:not([value='']) {
       ~ label {
         @include themify() {
-          color: themed('fieldColor');
+          color: themed('borderColor');
         }
         background-color: $white;
-        padding: 0 5px;
+        padding: 0 0.3em;
         width: auto;
-        transform: translate3d(0, -24px, 0) scale(0.75);
+        transform: translate3d(0, -1.2em, 0) scale(0.75);
       }
     }
 
     &:not([value='']):invalid,
     &.error {
       @include themify() {
-        border-bottom: 1px solid themed('fieldColorError');
-        box-shadow: inset 0 -1px 0 0 themed('fieldColorError');
+        border-width: 2px;
+        border-color: $error-color;
       }
 
       ~ label {
         @include themify() {
-          font-family: themed('primaryFontFamilySemiBold');
+          font-family: themed('primaryFont');
           color: themed('fieldColorError');
         }
         background-color: $white;
-        padding: 0 5px;
+        padding: 0 0.3em;
         width: auto;
-        transform: translate3d(0, -24px, 0) scale(0.75);
+        transform: translate3d(0, -1.2em, 0) scale(0.75);
       }
     }
   }
@@ -84,19 +84,19 @@
     @include themify() {
       background: themed('fieldReadOnlyBackgroundColor');
       color: themed('fieldReadOnlyColor');
-      border-bottom: 1px solid themed('fieldReadOnlyColor');
+      border-width: 2px;
     }
   }
 
   .helperMessage,
   .errorMessage {
     display: block;
-    margin-top: 0.5em;
-    font-size: 0.75rem;
+    font-size: 0.6rem;
+    margin: 0.7em 0 0 1.5em;
 
     @include themify() {
       color: themed('fieldColorError');
-      font-family: themed('primaryFontFamilySemiBold');
+      font-family: themed('primaryFont');
     }
   }
 
@@ -121,10 +121,10 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color: $black-title;
+    color: $black;
     position: absolute;
-    top: 0.3em;
-    left: 0.3em;
+    top: 1em;
+    left: 1em;
     pointer-events: none;
     right: auto;
     text-align: left;
@@ -135,17 +135,17 @@
     z-index: 1;
     @include themify() {
       color: themed('fieldPlaceholderColor');
-      font-family: themed('primaryFontFamilyRegular');
+      font-family: themed('primaryFont');
       font-size: themed('fieldFontSize');
       // padding: themed('inputPadding');
     }
 
     // i've played around with the below and i'm not sure what it's for... usually i would just delete but it looks like maybe i could be misssing something? It doesn't effect the *asterix* after the required input label so... not sure
     &.required::after {
-      content: ' *';
+      content: ' * ';
       vertical-align: text-top;
       @include themify() {
-        font-family: themed('primaryFontFamilySemiBold');
+        font-family: themed('primaryFont');
         color: themed('fieldColorError');
         font-size: themed('fieldFontSize');
         font-weight: themed('fieldFontWeight');

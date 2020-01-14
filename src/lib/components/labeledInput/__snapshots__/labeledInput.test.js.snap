@@ -9,7 +9,6 @@ exports[`LabeledInput renders properly 1`] = `
   >
     <input
       className=" null"
-      containerClassName=""
       id="testing"
       name="testing"
       onChange={[Function]}
@@ -41,7 +40,6 @@ exports[`LabeledInput renders properly when different theme 1`] = `
   >
     <input
       className=" null"
-      containerClassName=""
       id="testing"
       name="testing"
       onChange={[Function]}
@@ -73,7 +71,6 @@ exports[`LabeledInput renders properly when it has an error 1`] = `
   >
     <input
       className=" error"
-      containerClassName=""
       id="testing"
       name="testing"
       onChange={[Function]}
@@ -107,7 +104,6 @@ exports[`LabeledInput renders properly when it is disabled 1`] = `
   >
     <input
       className=" null"
-      containerClassName=""
       disabled={true}
       id="testing"
       name="testing"
@@ -140,7 +136,6 @@ exports[`LabeledInput renders properly when type is number 1`] = `
   >
     <input
       className=" null"
-      containerClassName=""
       id="testing"
       name="testing"
       onChange={[Function]}
@@ -172,7 +167,6 @@ exports[`LabeledInput renders properly with error and helper text 1`] = `
   >
     <input
       className=" error"
-      containerClassName=""
       id="testing"
       name="testing"
       onChange={[Function]}
@@ -206,7 +200,6 @@ exports[`LabeledInput renders properly with helper text 1`] = `
   >
     <input
       className=" null"
-      containerClassName=""
       id="testing"
       name="testing"
       onChange={[Function]}
@@ -243,7 +236,6 @@ exports[`LabeledInput renders properly with required 1`] = `
   >
     <input
       className=" null"
-      containerClassName=""
       id="testing"
       name="testing"
       onChange={[Function]}
@@ -276,7 +268,6 @@ exports[`LabeledInput renders properly with required and a value 1`] = `
   >
     <input
       className=" null"
-      containerClassName=""
       id="testing"
       name="testing"
       onChange={[Function]}

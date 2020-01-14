@@ -1,6 +1,6 @@
 ```js
 initialState = {
-  value: '',
+  value: ""
 };
 
 function updateValue(name, value) {
@@ -12,12 +12,12 @@ function updateValue(name, value) {
   value={state.value}
   onChangeFunction={updateValue}
   label="Placeholder input"
-/>
+/>;
 ```
 
 ```js
 initialState = {
-  value: '',
+  value: ""
 };
 
 function updateValue(name, value) {
@@ -30,12 +30,12 @@ function updateValue(name, value) {
   onChangeFunction={updateValue}
   label="Placeholder input"
   helperText="My super helper text"
-/>
+/>;
 ```
 
 ```js
 initialState = {
-  required: '',
+  required: ""
 };
 
 function updateValue(name, value) {
@@ -48,13 +48,12 @@ function updateValue(name, value) {
   onChangeFunction={updateValue}
   label="Required input"
   required
-  theme="purple"
-/>
+/>;
 ```
 
 ```js
 initialState = {
-  error: '',
+  error: ""
 };
 
 function updateValue(name, value) {
@@ -67,7 +66,7 @@ function updateValue(name, value) {
   onChangeFunction={updateValue}
   label="With error"
   error="Required input"
-/>
+/>;
 ```
 
 ```js
