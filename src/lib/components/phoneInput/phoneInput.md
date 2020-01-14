@@ -19,7 +19,7 @@ function updateValue(name, value) {
     placeholder="Enter phone number"
     value={state.phone}
     onChangeFunction={updateValue}
-    theme="purple"
+    theme="rainbow"
     defaultCountry="AU"
   />
   {state.formatted && state.phone && (
