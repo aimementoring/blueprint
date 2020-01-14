@@ -22,3 +22,18 @@
 ```js
 <Title type="h5Title">Heading 5</Title>
 ```
+
+@deprecated
+```js
+<Title type="gradient">Gradient</Title>
+```
+
+@deprecated
+```js
+<Title type="blockTitle">Block Title</Title>
+```
+
+@deprecated
+```js
+<Title type="mainTitle">Main Title</Title>
+```

@@ -223,7 +223,7 @@ exports[`Footer renders properly 1`] = `
         <span
           className="footerText"
         >
-          2019 © AIME
+          2020 © AIME
         </span>
         <div>
           <ul
