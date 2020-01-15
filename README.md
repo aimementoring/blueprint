@@ -35,9 +35,10 @@ The main idea of this project is to define some standards for all AIME platforms
    - [How to build sassdoc](#how-to-build-sassdoc)
    - [How to build library](#how-to-build-library)
    - [How to deploy](#how-to-deploy)
-   - [How to locally test blueprint library in your project](#how-to-locally-test-blueprint-library-in-your-project)
+   - [How to locally test blueprint components in your project](#how-to-locally-test-blueprint-components-in-your-project)
 
 6. [NPM Commands](#npm-commands)
+7. [Troubleshooting](#troubleshooting)
 
 ### Installation
 
@@ -84,9 +85,11 @@ After you created the component structure folder, you wrote unit test, you wrote
 Nice, so you have already created a new component :+1:, that is great!
 It's time to check if everything works as expected.
 
+*If you want to **locally test a component from within your project**. See [How to locally test blueprint library in your project](#how-to-locally-test-blueprint-library-in-your-project) Otherwise, read on to test your built component in blueprint.*
+
 1. First we should check if unit test are passing, so we run `yarn test`. It will create by default a **_snapshot_** folder inside our component folder. This folder is used by jest to speed up unit test, and check that everything is working as it is expected. Also this command will show you the whole project test coverage, and it will show an error if any unit test detect an error.
 2. Now we generate our build package. Read [How to build library](#how-to-build-library) for that.
-3. Also it's time to build the styleguide docs, and we can read how to do it in [How to build styleguide](#how-to-build-styleguide)
+3. Also it's time to build the styleguide docs, and we can read how to do it in [How to build styleguide](#how-to-build-styleguide) 
 
 #### How to build library
 
@@ -124,12 +127,20 @@ Some examples about how to increase versions are:
 2. **MAYOR change**: Ohhh, we change the structure of some components, and added a new theme, so we think it's a major version. Library is in version `1.0.4`. So now we have to run `sh publish 1.1.0`.
 3. **PATCH change**: It's less common to to have this kind of change, but we updated mostly all components, it was a big refactor, and we upgrade versions of some dependencies we have in the project, so it's a big change. We are in version `1.1.8` so the command we run is `sh publish 2.0.0`.
 
-#### How to locally test blueprint library in your project
+#### How to locally test blueprint components in your project
 
-1. Run `yarn` and `yarn deploy` to build correctly the library.
-2. If you want to see styleguide running, with hot reload, you should use `yarn start:styleguide`. This is going to run styleguide and every time you make a change, it reloads showing the new changes.
-3. If you want to test it as a website, you can run `yarn start`, and it's going to load the index file from **src/index.js**
-4. If you want to use your component from a different project to test it locally, you can update **"dependencies:"** attribute in your package.json, adding or replacing the line for **"aime-blueprint"** like this: `json "aime-blueprint": "file:/Applications/XAMPP/htdocs/aime/blueprint/lib"`
+1. In blueprint, make sure you're on the branch that includes the updates you're wanting to test in your local project.
+2. Run `yarn` in case you need to update your install.
+3. Test blueprint is loading properly by building the styleguide locally with `yarn start:styleguide`.
+4. If having errors, you might need to switch your node version. See [Troubleshooting](#troubleshooting).
+5. If everything is looking good in blueprint, you're ready! Run `yarn link` to set it up for linking with your local project.
+6. Now time to build it. Run `yarn build:lib`
+7. Now time for you to switch to your local project where you're wanting to link blueprint. Let's say it's the website. Open up a new tab in your terminal and go to your local `website` folder. Again, make sure you're on the branch that you want to test blueprint with. 
+8. Run `yarn link "aime-blueprint"` to link to your local blueprint build.
+9. Now run `yarn dev` or whatever command builds your local project. That's it :clap: Now you should be seeing your local blueprint components within your project! 
+
+*NB: Blueprint will be linked until you run…`yarn unlink “aime-blueprint”`*
+ 
 
 ### NPM Commands
 
@@ -147,3 +158,18 @@ Some examples about how to increase versions are:
 | `yarn run test`             | Run all unit tests, and generates coverage report                                           |
 | `yarn run deploy`           | Execute all unit test and run build to generate lib and styleguide folder                   |
 | `yarn run release`          | Generate a release with a new version (Still not ready to use)                              |
+
+
+### Troubleshooting
+
+## Maybe you need to switch node versions
+
+1. Run `nvm list` to see what node version your local blueprint is currently using. Right now, we're using `v12+`.
+2. If you don't have a version of `v12`, you will need to install it. To do this run `nvm install [version number]`.
+3. Now you can switch to the right version by `nvm use [version number]`
+3. Run `yarn` again to install what you need with the new node switch. The end!
+
+## Maybe someone has updated the .env variables. 
+
+1. Checkout `.env.example` and copy in any new variables you might need in `.env`
+
