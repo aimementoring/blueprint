@@ -162,14 +162,14 @@ Some examples about how to increase versions are:
 
 ### Troubleshooting
 
-## Maybe you need to switch node versions
+#### Maybe you need to switch node versions
 
 1. Run `nvm list` to see what node version your local blueprint is currently using. Right now, we're using `v12+`.
 2. If you don't have a version of `v12`, you will need to install it. To do this run `nvm install [version number]`.
 3. Now you can switch to the right version by `nvm use [version number]`
 3. Run `yarn` again to install what you need with the new node switch. The end!
 
-## Maybe someone has updated the .env variables. 
+#### Maybe someone has updated the .env variables. 
 
 1. Checkout `.env.example` and copy in any new variables you might need in `.env`
 
