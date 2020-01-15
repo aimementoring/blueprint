@@ -35,7 +35,7 @@ The main idea of this project is to define some standards for all AIME platforms
    - [How to build sassdoc](#how-to-build-sassdoc)
    - [How to build library](#how-to-build-library)
    - [How to deploy](#how-to-deploy)
-   - [How to test locally from a project](#how-to-test-locally-from-a-project)
+   - [How to locally test blueprint library in your project](#how-to-locally-test-blueprint-library-in-your-project)
 
 6. [NPM Commands](#npm-commands)
 
@@ -124,7 +124,7 @@ Some examples about how to increase versions are:
 2. **MAYOR change**: Ohhh, we change the structure of some components, and added a new theme, so we think it's a major version. Library is in version `1.0.4`. So now we have to run `sh publish 1.1.0`.
 3. **PATCH change**: It's less common to to have this kind of change, but we updated mostly all components, it was a big refactor, and we upgrade versions of some dependencies we have in the project, so it's a big change. We are in version `1.1.8` so the command we run is `sh publish 2.0.0`.
 
-#### How to test locally from a project
+#### How to locally test blueprint library in your project
 
 1. Run `yarn` and `yarn deploy` to build correctly the library.
 2. If you want to see styleguide running, with hot reload, you should use `yarn start:styleguide`. This is going to run styleguide and every time you make a change, it reloads showing the new changes.
