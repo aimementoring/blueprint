@@ -1,7 +1,6 @@
 /// @group colors
 $black: #0b0b0b;
 $black-background: #050301;
-$black-title: #1a0024;
 $translucent-black: #000000a6;
 $loading-black: #0000004d;
 
@@ -19,23 +18,32 @@ $white: #ffffff;
 $off-white: #fef6ff;
 
 /// @group colors
+$purple: #9135F0;
+$magenta: #E82A9E;
+$watermelon: #FF6187;
+$pink: #FF91C5;
+$orange: #FFA235;
+$yellow: #FCC606;
+$green: #09CD7B;
+$cyan: #24D1F6;
+
+/// @group colors
+$error-color: #f84444;
+
+/// @group colors
 $eggplant: #550d94;
 $eggplant-transparent: #410048c4;
 $lavender: #9da1b4;
-$electric-blue: #31e9ff;
 $darkest-purple: #380249;
 $soft-lavender: #fbf9fd;
 $grey-lavender: #f1eef3;
-$purple: #9135F0;
 $lilac: #f9ebff;
 $violet-light: #a863ff;
 $violet-dark: #8737ed;
 
+//should remove the below slowly
 /// @group colors
 $brand-primary: #7603db;
 $brand-secondary: #c700ff;
 $brand-tertiary: #da0dff;
-$yellow: #FCC606;
-
-/// @group colors
-$error-color: #f84444;
+//

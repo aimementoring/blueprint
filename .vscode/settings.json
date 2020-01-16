@@ -58,23 +58,14 @@
   "typescript.suggestionActions.enabled": true,
   "typescript.tsc.autoDetect": "on",
   "typescript.validate.enable": true,
-  "scss.lint.argumentsInColorFunction": "error",
-  "scss.lint.duplicateProperties": "warning",
-  "scss.lint.emptyRules": "warning",
-  "scss.lint.idSelector": "error",
-  "scss.lint.important": "warning",
-  "scss.validate": true,
   "eslint.autoFixOnSave": true,
   "eslint.enable": true,
   "eslint.packageManager": "yarn",
   "eslint.provideLintTask": true,
   "eslint.run": "onType",
   "eslint.runtime": "yarn lint",
-  "prettier.singleQuote": true,
-  "prettier.arrowParens": "avoid",
-  "prettier.endOfLine": "cr",
-  "prettier.printWidth": 100,
-  "prettier.tabWidth": 2,
-  "prettier.trailingComma": "all",
-  "prettier.stylelintIntegration": false
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.fixAll.eslint": false
+  }
 }

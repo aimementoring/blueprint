@@ -9,6 +9,7 @@
   line-height: 0.8em;
   letter-spacing: -0.105em;
   font-weight: 100;
+  font-style: normal;
 }
 
 .h2Title {
@@ -19,6 +20,7 @@
   line-height: 0.8em;
   letter-spacing: -0.095em;
   font-weight: 100;
+  font-style: normal;
 }
 
 .h3Title {
@@ -29,6 +31,7 @@
   line-height: 1em;
   letter-spacing: -0.07em;
   font-weight: 100;
+  font-style: normal;
 }
 
 .h4Title {
@@ -40,6 +43,7 @@
   text-transform: uppercase;
   letter-spacing: -0.01em;
   font-weight: 900;
+  font-style: normal;
 }
 
 .h5Title {
@@ -51,26 +55,39 @@
   text-transform: uppercase;
   letter-spacing: -0.01em;
   font-weight: 900;
+  font-style: normal;
 }
 
 .headingLockup {
   position: relative;
   transform: rotate(0);
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   line-height: 1.4em;
   letter-spacing: -0.1em;
+  font-style: normal;
+  font-weight: normal;
   
   @include themify() {
     font-family: themed('featureFont');
   }
   
+  @media all and(min-width: $md) {
+    font-size: 2.5rem;
+  }
+  
   strong {
+    font-weight: normal;
     position: relative;
     transform: rotate(-7deg);
-    font-size: 5rem;
+    font-size: 3rem;
     clear: both;
     display: block;
     top: -0.4em;
     left: -0.5em;
+    letter-spacing: -0.12em;
+    
+    @media all and(min-width: $md) {
+      font-size: 5rem;
+    }
   }
 }
