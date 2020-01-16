@@ -139,7 +139,7 @@ Some examples about how to increase versions are:
 8. Run `yarn link "aime-blueprint"` to link to your local blueprint build.
 9. Now run `yarn dev` or whatever command builds your local project. That's it :clap: Now you should be seeing your local blueprint components within your project! 
 
-*NB: Blueprint will be linked until you run…`yarn unlink “aime-blueprint”`*
+*NB: Blueprint will be linked until you run…`yarn unlink` in your `blueprint` terminal **as well as** `yarn unlink “aime-blueprint”` in your local project (`website` or `portal`)*
  
 
 ### NPM Commands
