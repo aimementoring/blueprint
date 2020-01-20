@@ -42,7 +42,9 @@
   font-weight: bold;
   text-decoration: none;
   text-align: center;
-  padding: 1.1em 3em;
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 1.1em 2.5em;
   cursor: pointer;
   opacity: 1;
   border-radius: 90px;
@@ -62,16 +64,5 @@
   text-align: left;
   font-size: 0.8rem;
   display: block;
-  margin-top: 1rem;
-}
-
-.linkButton {
-  padding: 1rem 2.5rem;
-  
-  @media screen and (min-width: 52em) {
-    padding: 0.7rem 2.2rem;
-  }
-  @media screen and (min-width: 64em) {
-    padding: 1rem 2.5rem;
-  }
+  margin-top: 1em;
 }
