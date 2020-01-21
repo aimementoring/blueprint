@@ -10,6 +10,10 @@
   letter-spacing: -0.105em;
   font-weight: 100;
   font-style: normal;
+  
+  @media only screen and (max-width: $sm) {
+    font-size: 3rem;
+  }
 }
 
 .h2Title {
