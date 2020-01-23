@@ -4,7 +4,7 @@
   "editor.insertSpaces": true,
   "editor.autoClosingBrackets": "languageDefined",
   "editor.autoClosingQuotes": "languageDefined",
-  "editor.autoIndent": true,
+  "editor.autoIndent": "none",
   "editor.colorDecorators": true,
   "editor.quickSuggestions": {
     "other": true,
@@ -58,10 +58,10 @@
   "typescript.suggestionActions.enabled": true,
   "typescript.tsc.autoDetect": "on",
   "typescript.validate.enable": true,
-  "eslint.autoFixOnSave": true,
+  "eslint.codeActionsOnSave": true,
   "eslint.enable": true,
   "eslint.packageManager": "yarn",
-  "eslint.provideLintTask": true,
+  "eslint.lintTask.enable": true,
   "eslint.run": "onType",
   "eslint.runtime": "yarn lint",
   "editor.codeActionsOnSave": {
