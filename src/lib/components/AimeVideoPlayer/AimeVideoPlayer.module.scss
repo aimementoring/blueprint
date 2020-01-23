@@ -1,0 +1,21 @@
+@import "../../styles/variables/variables.module.scss";
+
+@import "../../styles/themes/themes.module.scss";
+
+.playerContainer {
+  display: flex;
+  height: auto;
+  text-align: center;
+  align-self: center;
+  align-content: center;
+
+  .playerBoarder {
+    width: 58em;
+    height: 33em;
+    padding: 1rem 1rem 1rem 1rem;
+    background-color: #666464;
+    border: solid #666464 1px;
+
+    /* iframe {} */
+  }
+}

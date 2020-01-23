@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AimeVideoPlayer renders properly 1`] = `
+<div
+  className="theme-base"
+>
+  <div
+    style={
+      Object {
+        "height": "360px",
+        "width": "640px",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "backgroundColor": "black",
+          "height": "100%",
+          "overflow": "hidden",
+          "width": "100%",
+        }
+      }
+    />
+  </div>
+</div>
+`;
