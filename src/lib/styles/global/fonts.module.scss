@@ -79,8 +79,8 @@ $fonts-path: 'https://d3kott46cqreik.cloudfront.net/assets/fonts';
 
 @font-face {
   font-family: 'Luna Emu';
-  src: url('#{$fonts-path}/luna-emu/lunaemu2-regular-webfont.woff2') format('woff2'),
-    url('#{$fonts-path}/luna-emu/lunaemu2-regular-webfont.woff') format('woff');
+  src: url('#{$fonts-path}/luna-emu/LunaEmu-Regular.woff2') format('woff2'),
+    url('#{$fonts-path}/luna-emu/LunaEmu-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
