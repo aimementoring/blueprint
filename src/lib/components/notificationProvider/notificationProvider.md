@@ -11,7 +11,7 @@ In your app, you can then either export your components using `withNotifications
 ## HOC example
 
 ```js
-import { withNotifications } from 'blueprint';
+// import { withNotifications } from 'blueprint';
 
 class MyComponent extends Component {
     handleConnectionLoss = () => {
@@ -35,7 +35,7 @@ export default withNotifications(MyComponent);
 
 ```js
 
-import { useNotifications } from 'blueprint';
+// import { useNotifications } from 'blueprint';
 
 const MyButton = () => {
     const { enqueueNotification, closeNotification } = useNotifications();
