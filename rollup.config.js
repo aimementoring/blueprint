@@ -17,6 +17,15 @@ import pkg from './package.json';
 const getFilteredFolders = files => files.filter(name => name.indexOf('.') === -1);
 
 const getFiles = path => {
+  // eslint-disable-next-line compat/compat
+  // eslint-disable-next-line no-shadow
+  // eslint-disable-next-line compat/compat
+  // eslint-disable-next-line no-shadow
+  // eslint-disable-next-line compat/compat
+  // eslint-disable-next-line no-shadow
+  // eslint-disable-next-line compat/compat
+  // eslint-disable-next-line no-shadow
+  // eslint-disable-next-line compat/compat
   return new Promise(resolve => {
     const componentFolder = /[^/]*$/.exec(path)[0];
     const folder = fs.readdirSync(path);
@@ -36,6 +45,7 @@ const mainFile = [
 ];
 
 const generateConfig = async () => {
+  // eslint-disable-next-line compat/compat
   const [components, utils] = await Promise.all([
     getFiles('src/lib/components'),
     getFiles('src/lib/utils'),
@@ -80,6 +90,14 @@ const generateConfig = async () => {
             'useState',
             'useEffect',
             'useRef',
+            'isValidElement',
+            'cloneElement',
+          ],
+          'node_modules/@material-ui/utils/node_modules/react-is/index.js': [
+            'ForwardRef',
+          ],
+          'node_modules/notistack/build/index.js': [
+            'withSnackbar',
           ],
           'node_modules/react-dom/index.js': ['createPortal', 'findDOMNode'],
           'node_modules/react-phone-number-input/modules/libphonenumber/RFC3966.js': [
