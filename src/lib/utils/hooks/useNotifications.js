@@ -1,6 +1,6 @@
 import { useSnackbar } from 'notistack';
 
-export function useNotifications() {
+export default function useNotifications() {
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();  
   return ({
     enqueueNotification: enqueueSnackbar,

@@ -26,6 +26,8 @@ const getFiles = path => {
   // eslint-disable-next-line compat/compat
   // eslint-disable-next-line no-shadow
   // eslint-disable-next-line compat/compat
+  // eslint-disable-next-line no-shadow
+  // eslint-disable-next-line compat/compat
   return new Promise(resolve => {
     const componentFolder = /[^/]*$/.exec(path)[0];
     const folder = fs.readdirSync(path);
@@ -98,6 +100,8 @@ const generateConfig = async () => {
           ],
           'node_modules/notistack/build/index.js': [
             'withSnackbar',
+            'SnackbarProvider',
+            'useSnackbar',
           ],
           'node_modules/react-dom/index.js': ['createPortal', 'findDOMNode'],
           'node_modules/react-phone-number-input/modules/libphonenumber/RFC3966.js': [
