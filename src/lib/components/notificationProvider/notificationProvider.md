@@ -11,33 +11,23 @@ In your app, you can then either export your components using `withNotifications
 ## HOC example
 
 ```js
-// import { withNotifications } from 'blueprint';
-
-class MyComponent extends Component {
-    handleConnectionLoss = () => {
-        this.key = this.props.enqueueNotification("You're offline.");
-    };
-
-    handleBackOnline = () => {
-        this.props.closeNotification(this.key);
-    };
-
+  class MyComponent extends Component {
+    componentDidMount(){
+      this.key = this.props.enqueueNotification("Yo!");
+    }
     render() {
-        //...
+        <p>Hi</p>
     };
-}
+  }
 
-export default withNotifications(MyComponent);
+  export default withNotifications(MyComponent);
 ```
 
 
 ## Hook Example
 
 ```js
-
-// import { useNotifications } from 'blueprint';
-
-const MyButton = () => {
+  const MyButton = () => {
     const { enqueueNotification, closeNotification } = useNotifications();
 
     const handleClick = () => {
@@ -47,5 +37,5 @@ const MyButton = () => {
     return (
         <Button onClick={handleClick}>Show Notification</Button>
     );
-}
+  }
 ```
