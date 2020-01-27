@@ -7,7 +7,6 @@
   }
   font-size: 8rem;
   line-height: 0.8em;
-  letter-spacing: -0.105em;
   font-weight: 100;
   font-style: normal;
 }
@@ -18,7 +17,6 @@
   }
   font-size: 6rem;
   line-height: 0.8em;
-  letter-spacing: -0.095em;
   font-weight: 100;
   font-style: normal;
 }
@@ -29,7 +27,6 @@
   }
   font-size: 2.5rem;
   line-height: 1em;
-  letter-spacing: -0.07em;
   font-weight: 100;
   font-style: normal;
 }
@@ -63,7 +60,6 @@
   transform: rotate(0);
   font-size: 1.5rem;
   line-height: 1.4em;
-  letter-spacing: -0.1em;
   font-style: normal;
   font-weight: normal;
   
@@ -85,7 +81,7 @@
     display: block;
     top: -0.3em;
     left: -0.5em;
-    letter-spacing: -0.12em;
+
     
     @media all and(min-width: $md) {
       font-size: 5rem;
