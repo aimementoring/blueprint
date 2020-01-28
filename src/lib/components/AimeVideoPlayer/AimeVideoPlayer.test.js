@@ -4,7 +4,9 @@ import AimeVideoPlayer from "./AimeVideoPlayer.js";
 
 describe("AimeVideoPlayer", () => {
   it("renders properly", () => {
-    const tree = renderer.create(<AimeVideoPlayer />).toJSON();
+    const tree = renderer
+      .create(<AimeVideoPlayer url="https://vimeo.com/169599296" />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

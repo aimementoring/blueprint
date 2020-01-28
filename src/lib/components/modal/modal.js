@@ -3,29 +3,31 @@ import PropTypes from "prop-types";
 import styles from "./modal.module.scss";
 
 const Modal = props => {
-  const { children, handleModal } = props;
-
-  if (!handleModal) {
-    return null;
-  }
+  const { children, showModal, handleModal } = props;
 
   return (
-    <div className={styles.modalOverlay}>
-      <div className={styles.modalBody} onClick={handleModal}>
-        {children}
-      </div>
-    </div>
+    <>
+      {showModal && (
+        <div className={styles.modalOverlay}>
+          <div className={styles.modalBody} onClick={handleModal}>
+            {children}
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
 Modal.propTypes = {
-  handleModal: PropTypes.func,
   children: PropTypes.node,
+  handleModal: PropTypes.func,
+  showModal: PropTypes.bool,
 };
 
 Modal.defaultProps = {
   children: null,
   handleModal: null,
+  showModal: false,
 };
 
 export default Modal;

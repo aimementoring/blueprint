@@ -5,23 +5,47 @@ exports[`AimeVideoPlayer renders properly 1`] = `
   className="theme-base"
 >
   <div
-    style={
-      Object {
-        "height": "360px",
-        "width": "640px",
-      }
-    }
+    className="playerContainer"
   >
     <div
-      style={
-        Object {
-          "backgroundColor": "black",
-          "height": "100%",
-          "overflow": "hidden",
-          "width": "100%",
+      className="playerBoarder"
+    >
+      <div
+        className="reactPlayer"
+        onContextMenu={[Function]}
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
         }
-      }
-    />
+      >
+        <div
+          className="react-player__preview"
+          onClick={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundImage": undefined,
+              "backgroundPosition": "center",
+              "backgroundSize": "cover",
+              "cursor": "pointer",
+              "display": "flex",
+              "height": "100%",
+              "justifyContent": "center",
+              "width": "100%",
+            }
+          }
+        >
+          <span>
+            <img
+              alt="play video"
+              src="https://aime-website.s3.amazonaws.com/assets/images/play-btn-white.svg"
+            />
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;

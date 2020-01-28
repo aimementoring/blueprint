@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import ReactPlayer from "react-player";
@@ -12,17 +11,20 @@ import styles from "./AimeVideoPlayer.module.scss";
 
 const AimeVideoPlayer = props => {
   const {
-    theme,
     url,
-    controlsVimeo,
-    autoPlayVimeo,
-    loopVimeo,
-    bylineVimeo,
-    titleVimeo,
-    muteVimeo,
-    backgroundVimeo,
+    mute,
+    loop,
+    title,
+    theme,
+    byLine,
+    listType,
+    imageUrl,
+    controls,
+    autoPlay,
     withModal,
-    playsInPictureVimeo,
+    playListID,
+    playsInPicture,
+    backgroundVimeo,
   } = props;
   const [showModal, setShowModal] = useState(false);
   const [urlWithModal, setUrlWithModal] = useState(url);
@@ -57,87 +59,114 @@ const AimeVideoPlayer = props => {
   const videoPlayersConfig = {
     vimeo: {
       playerOptions: {
-        controls: controlsVimeo,
-        autoplay: autoPlayVimeo,
-        loop: loopVimeo,
-        byline: bylineVimeo,
-        title: titleVimeo,
-        mute: muteVimeo,
+        loop,
+        mute,
+        title,
+        controls,
+        byline: byLine,
+        frameborder: false,
+        autoplay: autoPlay,
         background: backgroundVimeo,
+      },
+      preload: true,
+    },
+    youtube: {
+      playerVars: {
+        loop,
+        rel: 0,
+        controls,
+        preload: true,
+        color: "white",
+        autoplay: autoPlay,
+        frameborder: false,
+        modestbranding: true,
+        listType,
+        list:
+          playListID && playListID.indexOf("PL") > -1
+            ? playListID
+            : `PL${playListID}`,
       },
     },
   };
+  // User ID: DL9R_msvYDyHF7lx0NEyow
+  // Channel ID: UCDL9R_msvYDyHF7lx0NEyow
+  const lightMode =
+    withModal && !showModal ? withModal : !withModal && !showModal;
+  const withPlaceHolderimage =
+    imageUrl === "" ? lightMode : !showModal && imageUrl;
 
-  // TODO: light="some url for placeholderimage"
   return (
     <div className={styles[`theme-${theme}`]}>
       <div className={styles.playerContainer}>
         <div className={styles.playerBoarder}>
           {withModal && customPlayIcon}
           <ReactPlayer
-            url={`${url}`}
-            className={styles.reactPlayer}
-            loop
-            light={!withModal}
-            playing={!withModal}
             playsinline
+            volume="0.7"
             width="100%"
             height="100%"
-            controls={false}
-            playIcon={!withModal && customPlayIcon}
-            pip={playsInPictureVimeo}
+            url={`${url}`}
+            light={withPlaceHolderimage}
+            playing={!withModal}
+            pip={playsInPicture}
+            playIcon={lightMode && customPlayIcon}
+            config={videoPlayersConfig}
+            className={styles.reactPlayer}
             onContextMenu={e => e.preventDefault()}
           />
         </div>
       </div>
-      {showModal && (
-        <Modal handleModal={handleModal}>
-          <div className={styles.playerContainer}>
-            <div className={styles.playerBoarder}>
-              <ReactPlayer
-                url={`${urlWithModal}`}
-                className="react-player"
-                loop
-                width="100%"
-                height="100%"
-                playing={showModal}
-                controls={false}
-                playsinline
-                config={videoPlayersConfig}
-                onContextMenu={e => e.preventDefault()}
-              />
-            </div>
+      <Modal showModal={showModal} handleModal={handleModal}>
+        <div className={styles.playerContainer}>
+          <div className={styles.playerBoarder}>
+            <ReactPlayer
+              playsinline
+              volume="0.7"
+              width="100%"
+              height="100%"
+              playing={showModal}
+              url={`${urlWithModal}`}
+              config={videoPlayersConfig}
+              className={styles.reactPlayer}
+              onContextMenu={e => e.preventDefault()}
+            />
           </div>
-        </Modal>
-      )}
+        </div>
+      </Modal>
     </div>
   );
 };
 
 AimeVideoPlayer.propTypes = {
-  url: PropTypes.string.isRequired,
-  controlsVimeo: PropTypes.bool,
-  autoPlayVimeo: PropTypes.bool,
-  loopVimeo: PropTypes.bool,
-  bylineVimeo: PropTypes.bool,
-  titleVimeo: PropTypes.bool,
-  muteVimeo: PropTypes.bool,
-  backgroundVimeo: PropTypes.bool,
+  loop: PropTypes.bool,
+  mute: PropTypes.bool,
+  title: PropTypes.bool,
+  byLine: PropTypes.bool,
+  controls: PropTypes.bool,
+  autoPlay: PropTypes.bool,
   withModal: PropTypes.bool,
-  playsInPictureVimeo: PropTypes.bool,
+  listType: PropTypes.string,
+  imageUrl: PropTypes.string,
+  playListID: PropTypes.string,
+  playsInPicture: PropTypes.bool,
+  backgroundVimeo: PropTypes.bool,
+  url: PropTypes.string.isRequired,
   ...componentPropTypes,
 };
 
 AimeVideoPlayer.defaultProps = {
-  controlsVimeo: false,
-  autoPlayVimeo: false,
-  loopVimeo: false,
-  bylineVimeo: false,
-  titleVimeo: false,
-  muteVimeo: false,
-  backgroundVimeo: false,
+  loop: false,
+  mute: false,
+  title: false,
+  imageUrl: "",
+  listType: "",
+  byLine: false,
+  playListID: "",
+  controls: false,
+  autoPlay: false,
   withModal: false,
-  playsInPictureVimeo: false,
+  playsInPicture: false,
+  backgroundVimeo: false,
   ...defaultComponentPropTypes,
 };
 
