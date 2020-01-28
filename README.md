@@ -152,6 +152,8 @@ Some examples about how to increase versions are:
 
 _NB: Blueprint will be linked until you run…`yarn unlink` in your `blueprint` terminal **as well as** `yarn unlink “aime-blueprint”` in your local project (`website` or `portal`)_
 
+##### Having issues? Try one of the [Troubleshooting](#troubleshooting) tips below.
+
 ### NPM Commands
 
 | Command                     | Description                                                                                 |
