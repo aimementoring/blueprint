@@ -129,6 +129,8 @@ Some examples about how to increase versions are:
 
 #### How to locally test blueprint components in your project
 
+##### You can test using your *local* blueprint branch...
+
 1. In blueprint, make sure you're on the branch that includes the updates you're wanting to test in your local project.
 2. Run `yarn` in case you need to update your install.
 3. Test blueprint is loading properly by building the styleguide locally with `yarn start:styleguide`.
@@ -138,6 +140,15 @@ Some examples about how to increase versions are:
 7. Now time for you to switch to your local project where you're wanting to link blueprint. Let's say it's the website. Open up a new tab in your terminal and go to your local `website` folder. Again, make sure you're on the branch that you want to test blueprint with.
 8. Run `yarn link "aime-blueprint"` to link to your local blueprint build.
 9. Now run `yarn dev` or whatever command builds your local project. That's it :clap: Now you should be seeing your local blueprint components within your project!
+
+##### Or you can test using a *remote* blueprint branch...
+
+1. Same as steps 1-3 above
+2. Now that you're happy with everything on your local branch, you need to run `yarn build:lib` to build your blueprint library
+3. Then you need to commit and push all your blueprint lib files to your remote branch
+4. Now switch to your local project you want to link with blueprint. Let's say it's the website. Open up a new tab in your terminal and go to your local `website` folder. Again, make sure you're on the branch that you want to test blueprint with.
+5. Run `yarn add git://github.com/aimementoring/blueprint.git#feature/title-improvements --save` but swap out `feature/title-improvements` with the name of the branch you're wanting to test in your project. 
+6. Now run `yarn dev` or whatever command builds your local project. That's it :clap: Now you should be seeing your local blueprint components within your project!
 
 _NB: Blueprint will be linked until you run…`yarn unlink` in your `blueprint` terminal **as well as** `yarn unlink “aime-blueprint”` in your local project (`website` or `portal`)_
 
@@ -170,3 +181,9 @@ _NB: Blueprint will be linked until you run…`yarn unlink` in your `blueprint` 
 #### Maybe someone has updated the .env variables.
 
 1. Checkout `.env.example` and copy in any new variables you might need in `.env`
+
+#### Maybe you have something corrupt in your node_modules folder and you want to start fresh.
+
+1. Delete your local `node_modules` folder (on the project you might be testing with too). 
+2. Empty your local trashcan
+3. Start fresh by installing `yarn` again. 
