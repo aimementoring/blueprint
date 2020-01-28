@@ -85,7 +85,7 @@ After you created the component structure folder, you wrote unit test, you wrote
 Nice, so you have already created a new component :+1:, that is great!
 It's time to check if everything works as expected.
 
-_If you want to **locally test a component from within your project**. See [How to locally test blueprint library in your project](#how-to-locally-test-blueprint-library-in-your-project) Otherwise, read on to test your built component in blueprint._
+_If you want to **locally test a component from within your project**. See [How to locally test blueprint library in your project](#how-to-locally-test-blueprint-components-in-your-project) Otherwise, read on to test your built component in blueprint._
 
 1. First we should check if unit test are passing, so we run `yarn test`. It will create by default a **_snapshot_** folder inside our component folder. This folder is used by jest to speed up unit test, and check that everything is working as it is expected. Also this command will show you the whole project test coverage, and it will show an error if any unit test detect an error.
 2. Now we generate our build package. Read [How to build library](#how-to-build-library) for that.
