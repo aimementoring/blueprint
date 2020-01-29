@@ -24,148 +24,230 @@
     stroke-linejoin: round;
     stroke-width: 26px;
   }
-  .letterA {
-    stroke-dasharray: 3323.349;
-    stroke-dashoffset: 3323.349;
-    animation: logo-A 3s linear forwards infinite;
-  }
-  .letterADash {
-    stroke-dasharray: 218.185;
-    stroke-dashoffset: 218.185;
-    animation: logo-ADash 3s linear forwards infinite;
-  }
-  .letterI {
-    stroke-dasharray: 253.984;
-    stroke-dashoffset: 253.984;
-    animation: logo-I 3s linear forwards infinite;
-  }
-  .letterM {
-    stroke-dasharray: 1037.734;
-    stroke-dashoffset: 1037.734;
-    animation: logo-M 3s linear forwards infinite;
-  }
-  .letterE {
-    stroke-dasharray: 461.997;
-    stroke-dashoffset: 461.997;
-    animation: logo-E 3s linear forwards infinite;
-  }
-  .letterEDash {
-    stroke-dasharray: 119.921;
-    stroke-dashoffset: 119.921;
-    animation: logo-EDash 3s linear forwards infinite;
-  }
-  @keyframes dash {
-    10% {
-      stroke-dashoffset: 0;
-    }
-    90% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-      stroke-dashoffset: 0;
-    }
-  }
-  @keyframes logo-A {
+  .loader {
+  fill:none;
+stroke:url(#gradient);
+stroke-linecap:round;
+stroke-linejoin:round;
+stroke-width:26px;
+}
+
+.letterA{
+  stroke-dasharray: 3323.349;
+stroke-dashoffset: 9970.047;
+animation: logo-A 3s linear forwards infinite;
+
+}
+
+.letterADash{
+  stroke-dasharray: 218.185;
+stroke-dashoffset: 654.555;
+  animation: logo-ADash 3s linear forwards infinite;
+}
+
+.letterI{
+  stroke-dasharray: 253.984;
+stroke-dashoffset: 761.952;
+animation: logo-I 3s linear forwards infinite;
+}
+
+.letterM{
+  stroke-dasharray: 1037.734;
+stroke-dashoffset: 3113.203;
+animation: logo-M 3s linear forwards infinite;
+}
+
+.letterE{
+  stroke-dasharray: 461.997;
+stroke-dashoffset: 1385.992;
+animation: logo-E 3s linear forwards infinite;
+}
+
+.letterEDash{
+  stroke-dasharray: 119.921;
+stroke-dashoffset: 359.7634;
+animation: logo-EDash 3s linear forwards infinite;
+}
+
+.letterAA{
+stroke-dasharray: 3323.349;
+stroke-dashoffset: 9970.048;
+animation: logo-A 3s linear forwards infinite;
+animation-delay:1.5s;
+
+}
+
+.letterAADash{
+  stroke-dasharray: 218.185;
+stroke-dashoffset: 654.555;
+  animation: logo-ADash 3s linear forwards infinite;
+  animation-delay:1.5s;
+}
+
+.letterII{
+  stroke-dasharray: 253.984;
+stroke-dashoffset: 761.952;
+animation: logo-I 3s linear forwards infinite;
+  animation-delay:1.5s;
+}
+
+.letterMM{
+  stroke-dasharray: 1037.734;
+stroke-dashoffset: 3113.203;
+animation: logo-M 3s linear forwards infinite;
+  animation-delay:1.5s;
+}
+
+.letterEE{
+  stroke-dasharray: 461.997;
+stroke-dashoffset: 1385.992;
+animation: logo-E 3s linear forwards infinite;
+  animation-delay:1.5s;
+}
+
+.letterEEDash{
+stroke-dasharray: 119.921;
+stroke-dashoffset: 359.7634;
+animation: logo-EDash 3s linear forwards infinite;
+  animation-delay:1.5s;
+}
+
+
+@keyframes logo-A {
+
+
     29.47% {
-      stroke-dashoffset: 663.84;
+      stroke-dashoffset: 7310.511;
     }
-    36.82% {
-      stroke-dashoffset: 0;
-    }
-    40% {
-      stroke-dashoffset: 0;
-    }
-    69.47% {
-      stroke-dashoffset: -2659.536;
-    }
-    76.82% {
-      stroke-dashoffset: -3323.349;
-    }
+
+    36.82%{
+    stroke-dashoffset: 6646.698;
+  }
+
+    40%{
+    stroke-dashoffset: 6646.698;
+  }
+
+    69.47%{
+    stroke-dashoffset: 3987.189;
+  }
+
+    76.82%{
+    stroke-dashoffset: 3323.349;
+  }
+
     100% {
-      stroke-dashoffset: -3323.349;
+      stroke-dashoffset: 3323.349;
     }
   }
+
   @keyframes logo-ADash {
+
     36.82% {
+      stroke-dashoffset: 654.555;
+    }
+
+    39.24% {
+        stroke-dashoffset: 436.37;
+    }
+
+    76.82% {
+      stroke-dashoffset: 436.37;
+    }
+    79.24% {
       stroke-dashoffset: 218.185;
     }
-    39.24% {
-      stroke-dashoffset: 0;
-    }
-    76.82% {
-      stroke-dashoffset: 0;
-    }
-    79.24% {
-      stroke-dashoffset: -218.185;
-    }
     100% {
-      stroke-dashoffset: -218.185;
+      stroke-dashoffset: 218.185;
     }
   }
+
   @keyframes logo-I {
+
     39.24% {
+      stroke-dashoffset: 761.952;
+    }
+
+    42.05% {
+        stroke-dashoffset: 507.968;
+    }
+
+    79.24% {
+      stroke-dashoffset: 507.968;
+    }
+
+    82.05% {
       stroke-dashoffset: 253.984;
     }
-    42.05% {
-      stroke-dashoffset: 0;
-    }
-    79.24% {
-      stroke-dashoffset: 0;
-    }
-    82.05% {
-      stroke-dashoffset: -253.984;
-    }
+
     100% {
-      stroke-dashoffset: -253.984;
+      stroke-dashoffset: 253.984;
     }
   }
+
   @keyframes logo-M {
+
     42.05% {
+      stroke-dashoffset: 3113.203;
+    }
+
+    53.55% {
+        stroke-dashoffset: 2075.468;
+    }
+
+    82.05% {
+      stroke-dashoffset: 2075.468;
+    }
+
+    93.55% {
       stroke-dashoffset: 1037.734;
     }
-    53.55% {
-      stroke-dashoffset: 0;
-    }
-    82.05% {
-      stroke-dashoffset: 0;
-    }
-    93.55% {
-      stroke-dashoffset: -1037.734;
-    }
+
     100% {
-      stroke-dashoffset: -1037.734;
+      stroke-dashoffset: 1037.734;
     }
   }
+
   @keyframes logo-E {
+
     53.55% {
+      stroke-dashoffset: 1385.991;
+    }
+
+    58.67% {
+        stroke-dashoffset: 923.994;
+    }
+
+    93.55% {
+      stroke-dashoffset: 923.994;
+    }
+
+    98.67% {
       stroke-dashoffset: 461.997;
     }
-    58.67% {
-      stroke-dashoffset: 0;
-    }
-    93.55% {
-      stroke-dashoffset: 0;
-    }
-    98.67% {
-      stroke-dashoffset: -461.997;
-    }
+
+
     100% {
-      stroke-dashoffset: -461.997;
+      stroke-dashoffset: 461.997;
     }
   }
+
   @keyframes logo-EDash {
+
     58.67% {
-      stroke-dashoffset: 119.921;
+      stroke-dashoffset: 359.763;
     }
+
     60% {
-      stroke-dashoffset: 0;
+        stroke-dashoffset: 239.842;
     }
+
     98.67% {
-      stroke-dashoffset: 0;
+      stroke-dashoffset: 239.842;
     }
+
     100% {
-      stroke-dashoffset: -119.921;
+      stroke-dashoffset: 119.921;
     }
   }
 }
