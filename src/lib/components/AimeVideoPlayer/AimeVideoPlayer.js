@@ -23,8 +23,11 @@ const AimeVideoPlayer = props => {
     autoPlay,
     withModal,
     playListID,
+    videoTitle,
     playsInPicture,
     backgroundVimeo,
+    modalWithImage,
+    videoDescription,
   } = props;
   const [showModal, setShowModal] = useState(false);
   const [urlWithModal, setUrlWithModal] = useState(url);
@@ -39,7 +42,7 @@ const AimeVideoPlayer = props => {
   }, [showModal]);
 
   const customPlayIcon = (
-    <span>
+    <>
       {withModal ? (
         <img
           className={styles.playButton}
@@ -53,7 +56,7 @@ const AimeVideoPlayer = props => {
           alt="play video"
         />
       )}
-    </span>
+    </>
   );
 
   const videoPlayersConfig = {
@@ -88,24 +91,39 @@ const AimeVideoPlayer = props => {
       },
     },
   };
-  // User ID: DL9R_msvYDyHF7lx0NEyow
-  // Channel ID: UCDL9R_msvYDyHF7lx0NEyow
+
   const lightMode =
     withModal && !showModal ? withModal : !withModal && !showModal;
+
   const withPlaceHolderimage =
     imageUrl === "" ? lightMode : !showModal && imageUrl;
+
+  const backGroundStyle = {
+    background: `url(${imageUrl})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundAttachment: "fixed",
+  };
 
   return (
     <div className={styles[`theme-${theme}`]}>
       <div className={styles.playerContainer}>
         <div className={styles.playerBoarder}>
+          <div
+            className={styles.bgImage}
+            style={imageUrl !== "" ? backGroundStyle : null}
+          />
           {withModal && customPlayIcon}
+          {videoTitle && (
+            <span className={styles.videoTitle}>{videoTitle}</span>
+          )}
           <ReactPlayer
             playsinline
             volume="0.7"
             width="100%"
             height="100%"
-            url={`${url}`}
+            url={url}
             light={withPlaceHolderimage}
             playing={!withModal}
             pip={playsInPicture}
@@ -114,9 +132,19 @@ const AimeVideoPlayer = props => {
             className={styles.reactPlayer}
             onContextMenu={e => e.preventDefault()}
           />
+          {videoDescription && (
+            <div className={styles.videoDescription}>{videoDescription}</div>
+          )}
         </div>
       </div>
-      <Modal showModal={showModal} handleModal={handleModal}>
+
+      <Modal
+        showModal={showModal}
+        handleModal={handleModal}
+        backGroundStyle={
+          modalWithImage && imageUrl !== "" ? backGroundStyle : null
+        }
+      >
         <div className={styles.playerContainer}>
           <div className={styles.playerBoarder}>
             <ReactPlayer
@@ -125,7 +153,7 @@ const AimeVideoPlayer = props => {
               width="100%"
               height="100%"
               playing={showModal}
-              url={`${urlWithModal}`}
+              url={urlWithModal}
               config={videoPlayersConfig}
               className={styles.reactPlayer}
               onContextMenu={e => e.preventDefault()}
@@ -148,9 +176,12 @@ AimeVideoPlayer.propTypes = {
   listType: PropTypes.string,
   imageUrl: PropTypes.string,
   playListID: PropTypes.string,
+  videoTitle: PropTypes.string,
   playsInPicture: PropTypes.bool,
+  modalWithImage: PropTypes.bool,
   backgroundVimeo: PropTypes.bool,
   url: PropTypes.string.isRequired,
+  videoDescription: PropTypes.string,
   ...componentPropTypes,
 };
 
@@ -162,10 +193,13 @@ AimeVideoPlayer.defaultProps = {
   listType: "",
   byLine: false,
   playListID: "",
+  videoTitle: "",
   controls: false,
   autoPlay: false,
   withModal: false,
+  videoDescription: "",
   playsInPicture: false,
+  modalWithImage: false,
   backgroundVimeo: false,
   ...defaultComponentPropTypes,
 };

@@ -1,14 +1,29 @@
 ```js
 <AimeVideoPlayer
-  listType="playlist"
-  playListID="PLjfNcXcq0TORvhTeJV_dgZrU2mjCeTqg2"
-  url="https://www.youtube.com/watch?time_continue=24&v=FUWwQv1kklY"
-  imageUrl="https://aime-website.s3.amazonaws.com/assets/images/homepage-grid/background-becomeamentor@2x.jpg"
+  url="https://vimeo.com/22439234"
+  imageUrl="https://aime-website.s3.amazonaws.com/assets/images/know-aime/white-paper.jpg"
+  videoTitle="This is a title"
+  videoDescription="This is a video description"
+  withModal
 />
 ```
 
+Required prop:
+
+- `url` = string
+
+Optional props:
+
+- `imageUrl` = string
+- `listType` = string
+- `withModal` = bool
+- `videoTitle` = string
+- `playListID` = string
+- `modalWithImage` = bool
+- `videoDescription` = string
+
 To play video with modal add this prop => `withModal`  
-To change the placeholder image update this prop => `imageUrl`
+To change the placeholder image update this prop => `imageUrl` or for a more simple player remove custom placeholder image by removing `imageUrl` prop.
 
 VIMEO:  
 Depending on video owners settings on vimeo, controls can be hidden.  
@@ -17,7 +32,8 @@ controls for `vimeo.com/169599296` are hidden, change to this video `vimeo.com/2
 
 YOUTUBE:  
 If you want other videos to play after the "inital video" (intial video = video in url prop)  
-then update this prop => `playListID` with the playlist ID you want to play through.
+then add this prop => `listType="playlist"` with the playlist ID you want to play through, e.g. `playListID="PLjfNcXcq0TORvhTeJV_dgZrU2mjCeTqg2"`.
 
-youTube url: `https://www.youtube.com/watch?time_continue=24&v=FUWwQv1kklY`  
-vimeo url: `https://vimeo.com/169599296` || `https://vimeo.com/22439234`
+Test URL's:  
+youTube url: `https://www.youtube.com/embed/FUWwQv1kklY`  
+vimeo url: `https://vimeo.com/169599296` | | `https://vimeo.com/22439234`
