@@ -4,7 +4,7 @@
 
 .loading {
   @include themify() {
-    background: themed('loadingWhite');
+    background: themed('loadingBlack');
   }
   bottom: 0;
   left: 0;
