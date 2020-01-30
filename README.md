@@ -67,23 +67,43 @@ Now you are ready to use them :)!
 
 #### How to create a new component
 
-We have a folder called **commands** where I added a command to create a new component with all folder structure. The way you can use it is running in the terminal inside commands folder `sh createComponent componentName` replacing componentName by your component. You have to write the component name in _camelCase_ notation.
-After you run the command, you will see inside **src/lib/components** folder a new folder with your component, and 5 files inside:
+To begin you will need to navigate to the folder named **commands**, this can be done via [vscode](https://code.visualstudio.com/docs/editor/integrated-terminal) build in terminal (Windows: command line with the command instruction
+`cd commands`.
+Once you are in the `commands` folder you can run all the following command instructions from this folder.
+
+All naming conventions for Blueprint `folders` and `files` are: _camelCase_
+
+To automatically create the files required to add components to blueprint you can run the following command `sh createComponent [yourComponent]` replacing `[yourComponent]` with the name of your new component.
+
+Automating the initial creation process is preferred but not a must the files can be manually created also. (Manual creation for Windows is the only option)
+
+The files that are expected in a component folder when creating a new component, are listed below;
+
+- `yourComponent.js`
+- `yourComponent.md`
+- `yourComponent.module.scss`
+- `yourComponent.test.js`
+- `index.js`
+
+After you run your initial test you will also see the folder `__snapshots__` this folder is where all the test snapshots of your component live.
+
+All component files are located in **src/lib/components/yourComponent** folder.
 
 | Filename                      | Description                                                                                                                                                                                                 |
 | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **componentName.module.scss** | SASS file for your component styles                                                                                                                                                                         |
-| **componentName.test.js**     | Unit tests for your component. Includes some default settings, but you have to update with your component props, and you should add custom unit test there (Please, it's important you add those unit test) |
-| **componentName.md**          | Used by styleguide to generate the example of your component. Fill this file with a complete example of the usage of your component.                                                                        |
-| **componentName.js**          | Rhe React component itself, should contain all the logic of your component.                                                                                                                                 |
+| **yourComponent.module.scss** | SASS file for your component styles                                                                                                                                                                         |
+| **yourComponent.test.js**     | Unit tests for your component. Includes some default settings, but you have to update with your component props, and you should add custom unit test there (Please, it's important you add those unit test) |
+| **yourComponent.md**          | Used by styleguide to generate the example of your component. Fill this file with a complete example of the usage of your component.                                                                        |
+| **yourComponent.js**          | Rhe React component itself, should contain all the logic of your component.                                                                                                                                 |
 | **index.js**                  | File responsible for exporting your component – you probably don't need to change anything here.                                                                                                            |
 
-After you created the component structure folder, you wrote unit test, you wrote your full react component and you added the markdown example, we are ready to test everything, so we go to the [next step](#how-to-test-components)
+After your component has been created and all supporting files along with it.
+After writing the unit test, your full react component and you have added the markdown example.
+We are ready to test everything, so we go to the [next step](#how-to-test-components)
 
 #### How to test components
 
-Nice, so you have already created a new component :+1:, that is great!
-It's time to check if everything works as expected.
+Nice, so your new component is ready for testing :+1:, that is great! It's time to check if everything works as expected.
 
 _If you want to **locally test a component from within your project**. See [How to locally test blueprint library in your project](#how-to-locally-test-blueprint-components-in-your-project) Otherwise, read on to test your built component in blueprint._
 
@@ -129,7 +149,7 @@ Some examples about how to increase versions are:
 
 #### How to locally test blueprint components in your project
 
-##### You can test using your *local* blueprint branch...
+##### You can test using your _local_ blueprint branch...
 
 1. In blueprint, make sure you're on the branch that includes the updates you're wanting to test in your local project.
 2. Run `yarn` in case you need to update your install.
@@ -141,13 +161,13 @@ Some examples about how to increase versions are:
 8. Run `yarn link "aime-blueprint"` to link to your local blueprint build.
 9. Now run `yarn dev` or whatever command builds your local project. That's it :clap: Now you should be seeing your local blueprint components within your project!
 
-##### Or you can test using a *remote* blueprint branch...
+##### Or you can test using a _remote_ blueprint branch...
 
 1. Same as steps 1-3 above
 2. Now that you're happy with everything on your local branch, you need to run `yarn build:lib` to build your blueprint library
 3. Then you need to commit and push all your blueprint lib files to your remote branch
 4. Now switch to your local project you want to link with blueprint. Let's say it's the website. Open up a new tab in your terminal and go to your local `website` folder. Again, make sure you're on the branch that you want to test blueprint with.
-5. Run `yarn add git://github.com/aimementoring/blueprint.git#feature/title-improvements --save` but swap out `feature/title-improvements` with the name of the branch you're wanting to test in your project. 
+5. Run `yarn add git://github.com/aimementoring/blueprint.git#feature/title-improvements --save` but swap out `feature/title-improvements` with the name of the branch you're wanting to test in your project.
 6. Now run `yarn dev` or whatever command builds your local project. That's it :clap: Now you should be seeing your local blueprint components within your project!
 
 _NB: Blueprint will be linked until you run…`yarn unlink` in your `blueprint` terminal **as well as** `yarn unlink “aime-blueprint”` in your local project (`website` or `portal`)_
@@ -186,6 +206,6 @@ _NB: Blueprint will be linked until you run…`yarn unlink` in your `blueprint` 
 
 #### Maybe you have something corrupt in your node_modules folder and you want to start fresh.
 
-1. Delete your local `node_modules` folder (on the project you might be testing with too). 
+1. Delete your local `node_modules` folder (on the project you might be testing with too).
 2. Empty your local trashcan
-3. Start fresh by installing `yarn` again. 
+3. Start fresh by installing `yarn` again.
