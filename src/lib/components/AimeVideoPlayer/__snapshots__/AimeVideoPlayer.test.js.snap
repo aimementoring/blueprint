@@ -11,6 +11,11 @@ exports[`AimeVideoPlayer renders properly 1`] = `
       className="playerBoarder"
     >
       <div
+        className="bgImage"
+        style={null}
+      />
+      
+      <div
         className="reactPlayer"
         onContextMenu={[Function]}
         style={
@@ -37,14 +42,13 @@ exports[`AimeVideoPlayer renders properly 1`] = `
             }
           }
         >
-          <span>
-            <img
-              alt="play video"
-              src="https://aime-website.s3.amazonaws.com/assets/images/play-btn-white.svg"
-            />
-          </span>
+          <img
+            alt="play video"
+            src="https://aime-website.s3.amazonaws.com/assets/images/play-btn-white.svg"
+          />
         </div>
       </div>
+      
     </div>
   </div>
 </div>

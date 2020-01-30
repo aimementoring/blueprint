@@ -120,7 +120,7 @@ const AimeVideoPlayer = props => {
           )}
           <ReactPlayer
             playsinline
-            volume="0.7"
+            volume={0.7}
             width="100%"
             height="100%"
             url={url}
@@ -149,7 +149,7 @@ const AimeVideoPlayer = props => {
           <div className={styles.playerBoarder}>
             <ReactPlayer
               playsinline
-              volume="0.7"
+              volume={0.7}
               width="100%"
               height="100%"
               playing={showModal}
