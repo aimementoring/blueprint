@@ -36,7 +36,7 @@ const LabeledInput = ({
           value={value}
           {...inputProps}
         />
-        <label for={name}>
+        <label htmlFor={name}>
           <span className={styles.fieldName}>{label}</span>
         </label>
         <span className={`${styles.errorMessage} ${error && styles.active}`}>
