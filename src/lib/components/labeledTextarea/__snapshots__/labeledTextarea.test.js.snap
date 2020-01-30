@@ -16,7 +16,7 @@ exports[`LabeledTextarea renders properly 1`] = `
       value=""
     />
     <label
-      for="testing"
+      htmlFor="testing"
     >
       <span
         className="fieldName"
@@ -47,7 +47,7 @@ exports[`LabeledTextarea renders properly when different theme 1`] = `
       value=""
     />
     <label
-      for="testing"
+      htmlFor="testing"
     >
       <span
         className="fieldName"
@@ -78,7 +78,7 @@ exports[`LabeledTextarea renders properly when it has an error 1`] = `
       value=""
     />
     <label
-      for="testing"
+      htmlFor="testing"
     >
       <span
         className="fieldName"
@@ -112,7 +112,7 @@ exports[`LabeledTextarea renders properly when it is disabled 1`] = `
       value=""
     />
     <label
-      for="testing"
+      htmlFor="testing"
     >
       <span
         className="fieldName"
@@ -144,7 +144,7 @@ exports[`LabeledTextarea renders properly when type is number 1`] = `
       value=""
     />
     <label
-      for="testing"
+      htmlFor="testing"
     >
       <span
         className="fieldName"
@@ -175,7 +175,7 @@ exports[`LabeledTextarea renders properly with error and helper text 1`] = `
       value={null}
     />
     <label
-      for="testing"
+      htmlFor="testing"
     >
       <span
         className="fieldName"
@@ -208,7 +208,7 @@ exports[`LabeledTextarea renders properly with helper text 1`] = `
       value={null}
     />
     <label
-      for="testing"
+      htmlFor="testing"
     >
       <span
         className="fieldName"
@@ -245,7 +245,7 @@ exports[`LabeledTextarea renders properly with required 1`] = `
       value=""
     />
     <label
-      for="testing"
+      htmlFor="testing"
     >
       <span
         className="fieldName"
@@ -277,7 +277,7 @@ exports[`LabeledTextarea renders properly with required and a value 1`] = `
       value="ABCD"
     />
     <label
-      for="testing"
+      htmlFor="testing"
     >
       <span
         className="fieldName"
