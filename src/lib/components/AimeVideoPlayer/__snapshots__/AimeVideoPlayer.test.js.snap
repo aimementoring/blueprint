@@ -16,7 +16,6 @@ exports[`AimeVideoPlayer renders properly 1`] = `
       />
       
       <div
-        className="reactPlayer"
         onContextMenu={[Function]}
         style={
           Object {
