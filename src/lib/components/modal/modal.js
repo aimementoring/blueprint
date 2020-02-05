@@ -1,9 +1,24 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { useEffect } from "react";
+import PropTypes, { element } from "prop-types";
 import styles from "./modal.module.scss";
 
 const Modal = props => {
-  const { children, showModal, handleModal, backGroundStyle } = props;
+  const {
+    children,
+    showModal,
+    handleModal,
+    backGroundStyle,
+    hideBodyOverflowY,
+  } = props;
+
+  useEffect(() => {
+    // This is manipulating the parent DOM of the react virtual DOM, so I think its going to be OK for what we need?
+    // we would have to hide overflow for the body and app and then make them fill the page and then adjust the react elements to be able to controll overflow-y in css, I think.
+    document.body.style.overflowY =
+      showModal && hideBodyOverflowY ? "hidden" : "auto";
+  }, [showModal]);
+
+  // TODO: Maybe add close X or icon for handleModal and remove from modalBody.
 
   return (
     <>
@@ -22,7 +37,10 @@ const Modal = props => {
 };
 
 Modal.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.oneOfType([
+    PropTypes.instanceOf(element),
+    PropTypes.node,
+  ]),
   handleModal: PropTypes.func,
   showModal: PropTypes.bool,
   backGroundStyle: PropTypes.objectOf({
@@ -32,6 +50,7 @@ Modal.propTypes = {
     backgroundRepeat: PropTypes.string,
     backgroundAttachment: PropTypes.string,
   }),
+  hideBodyOverflowY: PropTypes.bool,
 };
 
 Modal.defaultProps = {
@@ -39,6 +58,7 @@ Modal.defaultProps = {
   handleModal: null,
   showModal: false,
   backGroundStyle: null,
+  hideBodyOverflowY: true,
 };
 
 export default Modal;

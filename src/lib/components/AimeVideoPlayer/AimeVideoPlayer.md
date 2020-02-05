@@ -1,6 +1,6 @@
 ```js
 <AimeVideoPlayer
-  url="https://vimeo.com/22439234"
+  url="https://www.youtube.com/embed/FUWwQv1kklY"
   imageUrl="https://aime-website.s3.amazonaws.com/assets/images/know-aime/white-paper.jpg"
   videoTitle="This is a title"
   videoDescription="This is a video description"
@@ -34,6 +34,9 @@ YOUTUBE:
 If you want other videos to play after the "inital video" (intial video = video in url prop)  
 then add this prop => `listType="playlist"` with the playlist ID you want to play through, e.g. `playListID="PLjfNcXcq0TORvhTeJV_dgZrU2mjCeTqg2"`.
 
+AIME:
+
 Test URL's:  
 youTube url: `https://www.youtube.com/embed/FUWwQv1kklY`  
 vimeo url: `https://vimeo.com/169599296` | | `https://vimeo.com/22439234`
+aime url: `https://s3-ap-southeast-2.amazonaws.com/video-api-production/encoding-output/161-8ea8db58-451f-43fb-a351-5f18cd0dcad4-1000290001/web.mp4`

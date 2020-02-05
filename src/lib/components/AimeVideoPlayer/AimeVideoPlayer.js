@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import ReactPlayer from "react-player";
 import {
@@ -8,6 +8,8 @@ import {
 import Modal from "../modal";
 
 import styles from "./AimeVideoPlayer.module.scss";
+
+// HLS info not sure if we want to add this might help performance? - https://www.dacast.com/blog/hls-streaming-protocol/
 
 const AimeVideoPlayer = props => {
   const {
@@ -37,9 +39,9 @@ const AimeVideoPlayer = props => {
     setUrlWithModal(url);
   };
 
-  useEffect(() => {
-    document.body.style.overflow = showModal ? "hidden" : "auto";
-  }, [showModal]);
+  const handleContextMenu = event => {
+    event.preventDefault();
+  };
 
   const customPlayIcon = (
     <>
@@ -90,6 +92,14 @@ const AimeVideoPlayer = props => {
             : `PL${playListID}`,
       },
     },
+    file: {
+      /* attributes: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#Attributes */
+      // tracks: [
+      //   { kind: 'subtitles', src: 'subs/subtitles.en.vtt', srcLang: 'en', default: true },
+      //   { kind: 'subtitles', src: 'subs/subtitles.ja.vtt', srcLang: 'ja' },
+      //   { kind: 'subtitles', src: 'subs/subtitles.de.vtt', srcLang: 'de' },
+      // ],
+    },
   };
 
   const lightMode =
@@ -108,42 +118,43 @@ const AimeVideoPlayer = props => {
 
   return (
     <div className={styles[`theme-${theme}`]}>
-      <div className={styles.playerContainer}>
-        <div className={styles.playerBoarder}>
-          <div
-            className={styles.bgImage}
-            style={imageUrl !== "" ? backGroundStyle : null}
-          />
-          {withModal && customPlayIcon}
-          {videoTitle && (
-            <span className={styles.videoTitle}>{videoTitle}</span>
-          )}
-          <ReactPlayer
-            playsinline
-            volume={0.7}
-            width="100%"
-            height="100%"
-            url={url}
-            light={withPlaceHolderimage}
-            playing={!withModal}
-            pip={playsInPicture}
-            playIcon={lightMode && customPlayIcon}
-            config={videoPlayersConfig}
-            className={styles.reactPlayer}
-            onContextMenu={e => e.preventDefault()}
-          />
-          {videoDescription && (
-            <div className={styles.videoDescription}>{videoDescription}</div>
-          )}
+      {!showModal && (
+        <div className={styles.playerContainer}>
+          <div className={styles.playerBoarder}>
+            <div
+              className={styles.bgImage}
+              style={imageUrl !== "" ? backGroundStyle : null}
+            />
+            {withModal && customPlayIcon}
+            {videoTitle && (
+              <span className={styles.videoTitle}>{videoTitle}</span>
+            )}
+            <ReactPlayer
+              playsinline
+              volume={0.7}
+              width="100%"
+              height="100%"
+              url={url}
+              light={withPlaceHolderimage}
+              playing={!withModal}
+              pip={playsInPicture}
+              playIcon={lightMode && customPlayIcon}
+              config={videoPlayersConfig}
+              onContextMenu={handleContextMenu}
+            />
+            {videoDescription && (
+              <div className={styles.videoDescription}>{videoDescription}</div>
+            )}
+          </div>
         </div>
-      </div>
-
+      )}
       <Modal
         showModal={showModal}
         handleModal={handleModal}
         backGroundStyle={
           modalWithImage && imageUrl !== "" ? backGroundStyle : null
         }
+        hideBodyOverflowY
       >
         <div className={styles.playerContainer}>
           <div className={styles.playerBoarder}>
@@ -155,8 +166,7 @@ const AimeVideoPlayer = props => {
               playing={showModal}
               url={urlWithModal}
               config={videoPlayersConfig}
-              className={styles.reactPlayer}
-              onContextMenu={e => e.preventDefault()}
+              onContextMenu={handleContextMenu}
             />
           </div>
         </div>
