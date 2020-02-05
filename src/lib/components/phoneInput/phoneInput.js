@@ -18,6 +18,7 @@ class PhoneInput extends PureComponent {
     value: PropTypes.string,
     onChangeFunction: PropTypes.func,
     onCountrySelected: PropTypes.func,
+    handleValidations: PropTypes.func,
     // http://catamphetamine.github.io/react-phone-number-input/docs/styleguide/index.html#phoneinput
   };
 
@@ -31,6 +32,7 @@ class PhoneInput extends PureComponent {
     value: "",
     onCountrySelected: () => {},
     onChangeFunction: () => {},
+    handleValidations: () => true,
     // http://catamphetamine.github.io/react-phone-number-input/docs/styleguide/index.html#phoneinput
   };
 
