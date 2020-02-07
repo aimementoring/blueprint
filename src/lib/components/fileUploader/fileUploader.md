@@ -1,0 +1,12 @@
+```js
+<FileUploader
+  name="wwccFiles"
+  folderInS3Name="test/blueprint"
+  maxNumberOfFiles={2}
+  allowMultipleUploads={true}
+  filesUploaded=""
+  height={500}
+  companionUrl="https://uppy-file-uploader.herokuapp.com/"
+  theme="rainbow"
+/>
+```

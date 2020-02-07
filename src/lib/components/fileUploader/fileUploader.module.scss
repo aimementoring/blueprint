@@ -1,0 +1,97 @@
+@import "../../styles/variables/variables.module.scss";
+
+@import "../../styles/themes/themes.module.scss";
+
+@import "../../styles/global/reset.module.scss";
+
+.uppyUploadContainer {
+
+  :global(.uppy-Dashboard-innerWrap) {
+    overflow: visible !important;
+  }
+
+  :global(.uppy-DashboardContent-panel) {
+    overflow: visible !important;
+  }
+
+  :global(.uppy-Webcam-video) {
+    max-width: 100%;
+  }
+}
+
+.errorMessage {
+
+  @include themify() {
+    color: themed("errorColor") !important;
+  }
+}
+
+.fileLabelList {
+
+  @include themify() {
+    font-family: themed("primaryFontBold");
+  }
+  margin-bottom: 1em;
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+
+.documentItemButton {
+
+  @include themify() {
+    background-color: themed("brandPrimary");
+    font-family: themed("primaryFont");
+  }
+  color: $white;
+  font-size: 0.9rem;
+  letter-spacing: 0.001rem;
+  border-radius: 3px;
+  padding: 0.6em 1.5em;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 1em;
+}
+
+.documentItemButton.withErrors {
+
+  @include themify() {
+    background-color: themed("errorColor");
+  }
+}
+
+.fileLabel .fileLink {
+
+  @include themify() {
+    font-family: themed("primaryFont");
+    background: themed("fieldReadOnlyColor");
+  }
+  font-size: 0.9rem;
+  margin: 0.5em;
+  padding: 0.5em;
+  border-radius: 0.25em;
+  color: $white;
+  max-width: 10em;
+  text-overflow: ellipsis;
+  display: inline-block;
+  direction: rtl;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &:hover {
+
+    @include themify() {
+      background: themed("brandSecondary");
+      color: $white;
+    }
+  }
+
+  &::before {
+    content: "×";
+    font-weight: bold;
+    margin-left: 0.25em;
+    padding: 0 3px;
+    vertical-align: middle;
+  }
+}
