@@ -55,7 +55,9 @@ export default function withValidation(WrappedComponent) {
 
     renderValidationError = () =>
       this.isValidationOk() && (
-        <span className={styles.errorMessage}>{this.getValidationMessage()}</span>
+        <span className={styles[`theme-${this.props.theme}`]}>
+          <span className={styles.errorMessage}>{this.getValidationMessage()}</span>
+        </span>
       );
 
     render() {
