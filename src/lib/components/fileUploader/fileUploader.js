@@ -4,8 +4,6 @@ import Uppy from "@uppy/core";
 import AwsS3 from "@uppy/aws-s3";
 import Webcam from "@uppy/webcam";
 import { DashboardModal, Dashboard } from "@uppy/react";
-import "@uppy/core/dist/style.css";
-import "@uppy/dashboard/dist/style.css";
 import { checkValidations } from "../../utils/validation";
 import {
   componentPropTypes,
@@ -230,7 +228,6 @@ FileUploader.defaultProps = {
   isDashboard: false,
   webcam: false,
   validations: [],
-  // eslint-disable-next-line no-tabs
   companionUrl: "https://uppy-file-uploader.herokuapp.com/",
 };
 

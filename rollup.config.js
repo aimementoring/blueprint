@@ -36,6 +36,7 @@ const mainFile = [
 ];
 
 const generateConfig = async () => {
+  // eslint-disable-next-line compat/compat
   const [components, utils] = await Promise.all([
     getFiles('src/lib/components'),
     getFiles('src/lib/utils'),
@@ -62,6 +63,7 @@ const generateConfig = async () => {
       external(),
       resolve({
         preferBuiltins: true,
+        browser: true,
       }),
       postcss({
         modules: true,
