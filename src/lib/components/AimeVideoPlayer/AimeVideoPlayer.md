@@ -1,10 +1,9 @@
 ```js
 <AimeVideoPlayer
-  url="https://www.youtube.com/embed/FUWwQv1kklY"
-  imageUrl="https://aime-website.s3.amazonaws.com/assets/images/know-aime/white-paper.jpg"
   videoTitle="This is a title"
   videoDescription="This is a video description"
-  withModal
+  url="https://www.youtube.com/embed/FUWwQv1kklY"
+  imageUrl="https://aime-website.s3.amazonaws.com/assets/images/know-aime/white-paper.jpg"
 />
 ```
 
@@ -21,6 +20,18 @@ Optional props:
 - `playListID` = string
 - `modalWithImage` = bool
 - `videoDescription` = string
+
+videoPlayersConfig props (optional) most likley these will not need to be changed, but the option is available.
+
+- `loop` = bool
+- `mute` = bool
+- `byLine` = bool
+- `controls` = bool
+- `autoPlay` = bool
+- `listType` = string
+- `playListID` = string
+- `playsInPicture` = bool
+- `backgroundVimeo` = bool
 
 To play video with modal add this prop => `withModal`  
 To change the placeholder image update this prop => `imageUrl` or for a more simple player remove custom placeholder image by removing `imageUrl` prop.

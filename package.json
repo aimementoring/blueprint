@@ -46,7 +46,7 @@
     "react-dom": "^16.8.6",
     "react-intl-tel-input": "^7.0.1",
     "react-phone-number-input": "^2.4.1",
-    "react-player": "^1.11.0",
+    "react-player": "^1.15.2",
     "react-popper-tooltip": "^2.8.3",
     "react-select": "^2.4.3",
     "resolve": "^1.10.1",

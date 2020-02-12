@@ -43,22 +43,18 @@ const AimeVideoPlayer = props => {
     event.preventDefault();
   };
 
-  const customPlayIcon = (
-    <>
-      {withModal ? (
-        <img
-          className={styles.playButton}
-          src="https://aime-website.s3.amazonaws.com/assets/images/play-btn-white.svg"
-          alt="play video"
-          onClick={handleModal}
-        />
-      ) : (
-        <img
-          src="https://aime-website.s3.amazonaws.com/assets/images/play-btn-white.svg"
-          alt="play video"
-        />
-      )}
-    </>
+  const customPlayIcon = withModal ? (
+    <img
+      className={styles.playButton}
+      src="https://aime-website.s3.amazonaws.com/assets/images/play-btn-white.svg"
+      alt="play video"
+      onClick={handleModal}
+    />
+  ) : (
+    <img
+      src="https://aime-website.s3.amazonaws.com/assets/images/play-btn-white.svg"
+      alt="play video"
+    />
   );
 
   const videoPlayersConfig = {
@@ -138,7 +134,7 @@ const AimeVideoPlayer = props => {
               light={withPlaceHolderimage}
               playing={!withModal}
               pip={playsInPicture}
-              playIcon={lightMode && customPlayIcon}
+              playIcon={withPlaceHolderimage && customPlayIcon}
               config={videoPlayersConfig}
               onContextMenu={handleContextMenu}
             />
