@@ -10,8 +10,6 @@ import {
   componentPropTypes,
   defaultComponentPropTypes,
 } from "../../utils/componentPropTypes";
-// import "@uppy/core/dist/style.css";
-// import "@uppy/dashboard/dist/style.css";
 
 import styles from "./fileUploader.module.scss";
 
@@ -22,60 +20,7 @@ class FileUploader extends Component {
       modalOpen: false,
       validationErrors: "",
     };
-    this.uppy = Uppy({
-      restrictions: {
-        maxNumberOfFiles: props.maxNumberOfFiles,
-        allowMultipleUploads: props.allowMultipleUploads,
-        autoProceed: props.autoProceed,
-        maxFileSize: props.maxFileSize || undefined,
-        minNumberOfFiles: props.minNumberOfFiles || undefined,
-        allowedFileTypes: props.allowedFileTypes || undefined,
-      },
-      onBeforeUpload: files => {
-        return Object.keys(files).reduce((accum, key) => {
-          if (!files[key].meta.isUploaded) {
-            accum[key] = files[key];
-          }
-          return accum;
-        }, {});
-      },
-    });
-    this.uppy.use(Webcam);
-    this.uppy.use(AwsS3, {
-      companionUrl: props.companionUrl,
-      // serversHeader I couldn't get them into the server
-      serverHeaders: {
-        folderName: props.folderInS3Name,
-      },
-    });
-    this.uppy.on("upload-success", (file, data) =>
-      this.handleUploadFiles(file, data)
-    );
-    this.uppy.on("cancel-all", () => this.handleUploadFiles());
-    this.uppy.on("file-added", file => {
-      if (file.meta.isUploaded) {
-        this.uppy.setFileState(file.id, {
-          progress: { uploadComplete: true, uploadStarted: false },
-        });
-      }
-    });
-
-    const filesUploadedArray = this.getFilesUploadedAsArray(this.props);
-    if (filesUploadedArray.length) {
-      filesUploadedArray.forEach(file => {
-        this.uppy.addFile({
-          name: file,
-          type: "",
-          data: {},
-          meta: {
-            isUploaded: true,
-          },
-          source: "Local", // optional, determines the source of the file, for example, Instagram
-          isRemote: true, // optional, set to true if actual file is not in the browser, but on
-          // some remote server, for example, when using companion in combination with Instagram
-        });
-      });
-    }
+    this.initializeUppy();
   }
 
   componentDidUpdate(prevProps) {
@@ -86,6 +31,17 @@ class FileUploader extends Component {
       this.setState({ validationErrors });
     }
   }
+
+  componentWillUnmount() {
+    this.uppy.close();
+  }
+
+  handleModalClick = () => {
+    const { modalOpen } = this.state;
+    this.setState({
+      modalOpen: !modalOpen,
+    });
+  };
 
   getFilesUploadedAsArray = props => {
     if (props.filesUploaded && props.filesUploaded.length) {
@@ -134,20 +90,68 @@ class FileUploader extends Component {
     });
   };
 
-  handleOpen = () => this.setState({ modalOpen: true });
+  initializeUppy() {
+    this.uppy = Uppy({
+      debug: true,
+      id: this.props.uppyInstanceId,
+      restrictions: {
+        maxNumberOfFiles: this.props.maxNumberOfFiles,
+        allowMultipleUploads: this.props.allowMultipleUploads,
+        autoProceed: this.props.autoProceed,
+        maxFileSize: this.props.maxFileSize || undefined,
+        minNumberOfFiles: this.props.minNumberOfFiles || undefined,
+        allowedFileTypes: this.props.allowedFileTypes || undefined,
+      },
+      onBeforeUpload: files => {
+        return Object.keys(files).reduce((accum, key) => {
+          if (!files[key].meta.isUploaded) {
+            accum[key] = files[key];
+          }
+          return accum;
+        }, {});
+      },
+    });
+    this.uppy.use(Webcam);
+    this.uppy.use(AwsS3, {
+      companionUrl: this.props.companionUrl,
+      serverHeaders: {
+        folderName: this.props.folderInS3Name,
+      },
+    });
+    this.uppy.on("upload-success", (file, data) =>
+      this.handleUploadFiles(file, data)
+    );
+    this.uppy.on("cancel-all", () => this.handleUploadFiles());
+    this.uppy.on("file-added", file => {
+      if (file.meta.isUploaded) {
+        this.uppy.setFileState(file.id, {
+          progress: { uploadComplete: true, uploadStarted: false },
+        });
+      }
+    });
 
-  handleClose = () => {
-    // eslint-disable-next-line no-console
-    console.log("Handle close triggered");
-    this.setState({ modalOpen: false });
-  };
+    const filesUploadedArray = this.getFilesUploadedAsArray(this.props);
+    if (filesUploadedArray.length) {
+      filesUploadedArray.forEach(file => {
+        this.uppy.addFile({
+          name: file,
+          type: "",
+          data: {},
+          meta: {
+            isUploaded: true,
+          },
+          source: "Local", // optional, determines the source of the file, for example, Instagram
+          isRemote: true, // optional, set to true if actual file is not in the browser, but on
+          // some remote server, for example, when using companion in combination with Instagram
+        });
+      });
+    }
+  }
 
   render() {
     const { isDashboard, height, webcam, placeholder, theme } = this.props;
     const filesUploadedArray = this.getFilesUploadedAsArray(this.props);
     const { validationErrors, modalOpen } = this.state;
-    // eslint-disable-next-line no-console
-    console.log({ modalOpen });
 
     return (
       <div
@@ -160,24 +164,26 @@ class FileUploader extends Component {
             uppy={this.uppy}
             plugins={webcam ? ["s3", "Webcam"] : ["s3"]}
             height={height}
+            proudlyDisplayPoweredByUppy={false}
           />
         ) : (
           <React.Fragment>
             <button
               className={`${styles.documentItemButton} ${validationErrors &&
                 styles.withErrors}`}
-              onClick={this.handleOpen}
+              onClick={this.handleModalClick}
               type="button"
             >
               {placeholder || "Upload Files"}
             </button>
-            <div className={`${!modalOpen && styles.closed}`}>  
+            <div className={`${!modalOpen && styles.closed}`}>
               <DashboardModal
                 uppy={this.uppy}
                 plugins={webcam ? ["s3", "Webcam"] : ["s3"]}
                 closeModalOnClickOutside={true}
                 open={modalOpen}
-                onRequestClose={this.handleClose}
+                proudlyDisplayPoweredByUppy={false}
+                onRequestClose={this.handleModalClick}
                 note={`When you're done, click the x in the
                   top right to return to the form.`}
               />
@@ -210,6 +216,7 @@ class FileUploader extends Component {
 
 FileUploader.propTypes = {
   ...componentPropTypes,
+  uppyInstanceId: PropTypes.string.isRequired,
   name: PropTypes.string,
   placeholder: PropTypes.string,
   folderInS3Name: PropTypes.string.isRequired,
