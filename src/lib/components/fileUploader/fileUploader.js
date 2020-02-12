@@ -132,9 +132,9 @@ class FileUploader extends Component {
 
     const filesUploadedArray = this.getFilesUploadedAsArray(this.props);
     if (filesUploadedArray.length) {
-      filesUploadedArray.forEach(file => {
+      filesUploadedArray.forEach(name => {
         this.uppy.addFile({
-          name: file,
+          name,
           type: "",
           data: {},
           meta: {
