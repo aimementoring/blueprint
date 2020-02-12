@@ -3,12 +3,15 @@ import PropTypes from "prop-types";
 import Uppy from "@uppy/core";
 import AwsS3 from "@uppy/aws-s3";
 import Webcam from "@uppy/webcam";
-import { DashboardModal, Dashboard } from "@uppy/react";
+import DashboardModal from "@uppy/react/lib/DashboardModal";
+import Dashboard from "@uppy/react/lib/Dashboard";
 import { checkValidations } from "../../utils/validation";
 import {
   componentPropTypes,
   defaultComponentPropTypes,
 } from "../../utils/componentPropTypes";
+// import "@uppy/core/dist/style.css";
+// import "@uppy/dashboard/dist/style.css";
 
 import styles from "./fileUploader.module.scss";
 
@@ -133,12 +136,18 @@ class FileUploader extends Component {
 
   handleOpen = () => this.setState({ modalOpen: true });
 
-  handleClose = () => this.setState({ modalOpen: false });
+  handleClose = () => {
+    // eslint-disable-next-line no-console
+    console.log("Handle close triggered");
+    this.setState({ modalOpen: false });
+  };
 
   render() {
     const { isDashboard, height, webcam, placeholder, theme } = this.props;
     const filesUploadedArray = this.getFilesUploadedAsArray(this.props);
-    const { validationErrors } = this.state;
+    const { validationErrors, modalOpen } = this.state;
+    // eslint-disable-next-line no-console
+    console.log({ modalOpen });
 
     return (
       <div
@@ -162,15 +171,17 @@ class FileUploader extends Component {
             >
               {placeholder || "Upload Files"}
             </button>
-            <DashboardModal
-              uppy={this.uppy}
-              plugins={webcam ? ["s3", "Webcam"] : ["s3"]}
-              closeModalOnClickOutside
-              open={this.state.modalOpen}
-              onRequestClose={this.handleClose}
-              note={`When you're done, click the x in the
-                top right to return to the form.`}
-            />
+            <div className={`${!modalOpen && styles.closed}`}>  
+              <DashboardModal
+                uppy={this.uppy}
+                plugins={webcam ? ["s3", "Webcam"] : ["s3"]}
+                closeModalOnClickOutside={true}
+                open={modalOpen}
+                onRequestClose={this.handleClose}
+                note={`When you're done, click the x in the
+                  top right to return to the form.`}
+              />
+            </div>
             {validationErrors && (
               <p className={styles.errorMessage}>{validationErrors}</p>
             )}
