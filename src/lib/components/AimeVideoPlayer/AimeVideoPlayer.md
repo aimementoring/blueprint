@@ -2,8 +2,9 @@
 <AimeVideoPlayer
   videoTitle="This is a title"
   videoDescription="This is a video description"
-  url="https://www.youtube.com/embed/FUWwQv1kklY"
+  url="https://s3-ap-southeast-2.amazonaws.com/video-api-production/encoding-output/161-8ea8db58-451f-43fb-a351-5f18cd0dcad4-1000290001/web.mp4"
   imageUrl="https://aime-website.s3.amazonaws.com/assets/images/know-aime/white-paper.jpg"
+  withModal
 />
 ```
 
@@ -20,6 +21,8 @@ Optional props:
 - `playListID` = string
 - `modalWithImage` = bool
 - `videoDescription` = string
+
+- (prop for modal color) `backgroundColor="red"` = string - this is set to `"black"` by default.
 
 videoPlayersConfig props (optional) most likley these will not need to be changed, but the option is available.
 
@@ -49,5 +52,5 @@ AIME:
 
 Test URL's:  
 youTube url: `https://www.youtube.com/embed/FUWwQv1kklY`  
-vimeo url: `https://vimeo.com/169599296` | | `https://vimeo.com/22439234`
+vimeo url: `https://vimeo.com/169599296` | | `https://vimeo.com/22439234`  
 aime url: `https://s3-ap-southeast-2.amazonaws.com/video-api-production/encoding-output/161-8ea8db58-451f-43fb-a351-5f18cd0dcad4-1000290001/web.mp4`

@@ -7,6 +7,7 @@ const Modal = props => {
     children,
     showModal,
     handleModal,
+    backgroundColor,
     backGroundStyle,
     hideBodyOverflowY,
   } = props;
@@ -23,14 +24,14 @@ const Modal = props => {
   return (
     <>
       {showModal && (
-        <div
-          className={styles.modalOverlay}
-          style={!backGroundStyle ? null : backGroundStyle}
-        >
-          <div className={styles.modalBody} onClick={handleModal}>
-            {children}
-          </div>
-        </div>
+        <>
+          <div
+            className={styles.modalOverlay}
+            onClick={handleModal}
+            style={!backGroundStyle ? { backgroundColor } : backGroundStyle}
+          />
+          <div className={styles.modalBody}>{children}</div>
+        </>
       )}
     </>
   );
@@ -51,6 +52,7 @@ Modal.propTypes = {
     backgroundAttachment: PropTypes.string,
   }),
   hideBodyOverflowY: PropTypes.bool,
+  backgroundColor: PropTypes.string,
 };
 
 Modal.defaultProps = {
@@ -59,6 +61,7 @@ Modal.defaultProps = {
   showModal: false,
   backGroundStyle: null,
   hideBodyOverflowY: true,
+  backgroundColor: "black",
 };
 
 export default Modal;

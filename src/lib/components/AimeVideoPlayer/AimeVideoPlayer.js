@@ -26,6 +26,7 @@ const AimeVideoPlayer = props => {
     withModal,
     playListID,
     videoTitle,
+    backgroundColor,
     playsInPicture,
     backgroundVimeo,
     modalWithImage,
@@ -90,6 +91,9 @@ const AimeVideoPlayer = props => {
     },
     file: {
       /* attributes: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#Attributes */
+      attributes: {
+        controls: true,
+      },
       // tracks: [
       //   { kind: 'subtitles', src: 'subs/subtitles.en.vtt', srcLang: 'en', default: true },
       //   { kind: 'subtitles', src: 'subs/subtitles.ja.vtt', srcLang: 'ja' },
@@ -151,6 +155,7 @@ const AimeVideoPlayer = props => {
           modalWithImage && imageUrl !== "" ? backGroundStyle : null
         }
         hideBodyOverflowY
+        backgroundColor={!backgroundColor ? null : backgroundColor}
       >
         <div className={styles.playerContainer}>
           <div className={styles.playerBoarder}>
@@ -187,6 +192,7 @@ AimeVideoPlayer.propTypes = {
   modalWithImage: PropTypes.bool,
   backgroundVimeo: PropTypes.bool,
   url: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string,
   videoDescription: PropTypes.string,
   ...componentPropTypes,
 };
@@ -207,6 +213,7 @@ AimeVideoPlayer.defaultProps = {
   playsInPicture: false,
   modalWithImage: false,
   backgroundVimeo: false,
+  backgroundColor: "black",
   ...defaultComponentPropTypes,
 };
 

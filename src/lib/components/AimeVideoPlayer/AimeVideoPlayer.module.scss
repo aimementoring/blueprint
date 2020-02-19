@@ -4,15 +4,14 @@
 
 .playerContainer {
   width: 100%;
-  z-index: 20;
   height: 100%;
   display: flex;
+  z-index: 12000;
   position: relative;
   align-items: center;
   justify-content: center;
 
   .playerBoarder {
-    z-index: 30;
     width: 60em;
     height: 35em;
     padding: 3.2rem;
