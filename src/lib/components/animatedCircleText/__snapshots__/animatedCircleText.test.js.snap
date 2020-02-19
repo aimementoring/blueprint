@@ -20,6 +20,7 @@ exports[`AnimatedCircleText renders properly in reverse mode 1`] = `
     >
       <div
         className="theme-base"
+        onClick={[Function]}
       >
         <h3
           className="h3Title"
@@ -267,6 +268,7 @@ exports[`AnimatedCircleText renders properly in standard mode 1`] = `
     >
       <div
         className="theme-base"
+        onClick={[Function]}
       >
         <h3
           className="h3Title"
