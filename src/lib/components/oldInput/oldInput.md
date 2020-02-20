@@ -7,11 +7,12 @@ function updateValue(name, value) {
   setState({ [name]: value });
 }
 
-<Input
+<OldInput
   placeholder="Name"
   value={state.value}
   required={true}
   name="value"
+  theme="rainbow"
 />;
 ```
 
@@ -27,13 +28,14 @@ function updateValue(name, value) {
   setState({ [name]: value });
 }
 
-<Input
+<OldInput
   placeholder="Email"
   value={state.value}
   required={true}
   name="value"
   onChangeFunction={updateValue}
   validations={[validateEmail]}
+  theme="rainbow"
 />;
 ```
 
@@ -46,20 +48,21 @@ function updateValue(name, value) {
   setState({ [name]: value });
 }
 
-<Input
+<OldInput
   placeholder="Light theme"
   value={state.value}
   required={true}
   name="value"
   onChangeFunction={updateValue}
-  theme="light"
+  theme="rainbow"
 />;
 ```
 
 ```js
-<Input
+<OldInput
   value="I am read only. Don't try to change me!"
   name="value"
   readOnly
+  theme="rainbow"
 />
 ```

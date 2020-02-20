@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
 import { withValidation } from '../../utils/hocs';
 import { handleInputChange } from './utils.ignore';
-import styles from './input.module.scss';
+import styles from './oldInput.module.scss';
 
-class Input extends PureComponent {
+class OldInput extends PureComponent {
   static propTypes = {
     ...componentPropTypes,
     placeholder: PropTypes.string,
@@ -29,7 +29,7 @@ class Input extends PureComponent {
     required: true,
     value: '',
     type: 'text',
-    onChangeFunction: () => {},
+    onChangeFunction: () => { },
   };
 
   handleChange = name => event =>
@@ -80,4 +80,4 @@ class Input extends PureComponent {
   }
 }
 
-export default withValidation(Input);
+export default withValidation(OldInput);

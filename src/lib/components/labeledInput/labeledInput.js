@@ -4,7 +4,7 @@ import {
   componentPropTypes,
   defaultComponentPropTypes,
 } from "../../utils/componentPropTypes";
-import { handleInputChange } from "../input/utils.ignore";
+import { handleInputChange } from "../oldInput/utils.ignore";
 import styles from "./labeledInput.module.scss";
 
 const LabeledInput = ({
@@ -71,7 +71,7 @@ LabeledInput.defaultProps = {
   type: "text",
   helperText: null,
   handleValidations: () => true,
-  onChangeFunction: () => {},
+  onChangeFunction: () => { },
 };
 
 export default LabeledInput;
