@@ -5,9 +5,9 @@ import {
   defaultComponentPropTypes,
 } from "../../utils/componentPropTypes";
 import { handleInputChange } from "../oldInput/utils.ignore";
-import styles from "./labeledInput.module.scss";
+import styles from "./input.module.scss";
 
-const LabeledInput = ({
+const Input = ({
   theme,
   name,
   value,
@@ -50,7 +50,7 @@ const LabeledInput = ({
   );
 };
 
-LabeledInput.propTypes = {
+Input.propTypes = {
   ...componentPropTypes,
   name: PropTypes.string.isRequired,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -63,7 +63,7 @@ LabeledInput.propTypes = {
   onChangeFunction: PropTypes.func,
 };
 
-LabeledInput.defaultProps = {
+Input.defaultProps = {
   ...defaultComponentPropTypes,
   value: null,
   error: null,
@@ -74,4 +74,4 @@ LabeledInput.defaultProps = {
   onChangeFunction: () => { },
 };
 
-export default LabeledInput;
+export default Input;

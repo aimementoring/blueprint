@@ -7,7 +7,7 @@ function updateValue(name, value) {
   setState({ [name]: value });
 }
 
-<LabeledInput
+<Input
   name="value"
   value={state.value}
   onChangeFunction={updateValue}
@@ -24,7 +24,7 @@ function updateValue(name, value) {
   setState({ [name]: value });
 }
 
-<LabeledInput
+<Input
   name="value"
   value={state.value}
   onChangeFunction={updateValue}
@@ -42,7 +42,7 @@ function updateValue(name, value) {
   setState({ [name]: value });
 }
 
-<LabeledInput
+<Input
   name="required"
   value={state.required}
   onChangeFunction={updateValue}
@@ -60,7 +60,7 @@ function updateValue(name, value) {
   setState({ [name]: value });
 }
 
-<LabeledInput
+<Input
   name="error"
   value={state.error}
   onChangeFunction={updateValue}
@@ -70,7 +70,7 @@ function updateValue(name, value) {
 ```
 
 ```js
-<LabeledInput
+<Input
   name="cant-change-me"
   value="I also work with readOnly"
   label="Can't change me"
