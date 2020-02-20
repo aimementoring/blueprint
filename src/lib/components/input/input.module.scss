@@ -84,7 +84,11 @@
     @include themify() {
       background: themed('fieldReadOnlyBackgroundColor');
       color: themed('fieldReadOnlyColor');
-      border-width: 2px;
+    }
+    ~ label {
+      @include themify() {
+        color: themed('fieldReadOnlyColor');
+      }
     }
   }
 
@@ -138,18 +142,6 @@
       font-family: themed('primaryFont');
       font-size: themed('fieldFontSize');
       // padding: themed('inputPadding');
-    }
-
-    // i've played around with the below and i'm not sure what it's for... usually i would just delete but it looks like maybe i could be misssing something? It doesn't effect the *asterix* after the required input label so... not sure
-    &.required::after {
-      content: ' * ';
-      vertical-align: text-top;
-      @include themify() {
-        font-family: themed('primaryFont');
-        color: themed('fieldColorError');
-        font-size: themed('fieldFontSize');
-        font-weight: themed('fieldFontWeight');
-      }
     }
   }
 }
