@@ -53,7 +53,7 @@ ProgressBar.defaultProps = {
   backgroundColor: null,
   barColor: null,
   color: null,
-  height: 20,
+  height: 50,
 };
 
 export default ProgressBar;
