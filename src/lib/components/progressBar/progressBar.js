@@ -13,21 +13,21 @@ const ProgressBar = ({
   height,
   fontSize,
 }) => {
-  const progressBarStyle = {
+  const progressStyle = {
     width: `${progress}%`,
     fontSize: `${fontSize}px`,
     lineHeight: `${height}px`,
   };
-  const progressStyle = {
+  const progressBarStyle = {
     height: `${height}px`,
   };
-  if (color) progressBarStyle.color = color;
-  if (barColor) progressBarStyle.backgroundColor = barColor;
-  if (backgroundColor) progressStyle.backgroundColor = backgroundColor;
+  if (color) progressStyle.color = color;
+  if (barColor) progressStyle.backgroundColor = barColor;
+  if (backgroundColor) progressBarStyle.backgroundColor = backgroundColor;
   return (
     <div className={styles[`theme-${theme}`]}>
-      <div className={styles.progress} style={progressStyle}>
-        <div className={styles.progressBar} style={progressBarStyle}>
+      <div className={styles.progressBar} style={progressBarStyle}>
+        <div className={styles.progress} style={progressStyle}>
           {displayNumber && `${progress}%`}
         </div>
       </div>
