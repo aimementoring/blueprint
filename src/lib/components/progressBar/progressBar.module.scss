@@ -12,10 +12,10 @@
 }
 
 .progress {
-  float: left;
-  width: 0;
   height: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+  box-sizing: border-box;
   @include themify() {
     background-color: themed("progressBarFillColor");
     color: themed("progressBarColor");

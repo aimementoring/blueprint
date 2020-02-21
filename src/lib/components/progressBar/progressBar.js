@@ -54,7 +54,6 @@ ProgressBar.defaultProps = {
   barColor: null,
   color: null,
   height: 20,
-  fontSize: 12,
 };
 
 export default ProgressBar;
