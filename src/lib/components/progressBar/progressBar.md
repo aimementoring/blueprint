@@ -17,3 +17,11 @@
   fontSize={30}
 />
 ```
+
+```js
+<ProgressBar
+  progress={5}
+  displayNumber
+  theme="rainbow"
+/>
+```
