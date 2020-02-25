@@ -19,6 +19,7 @@ const Input = ({
   handleValidations,
   helperText,
   containerClassName,
+  placeholder,
   ...inputProps
 }) => {
   const handleChange = event =>
@@ -37,7 +38,7 @@ const Input = ({
           {...inputProps}
         />
         <label htmlFor={name}>
-          <span className={styles.fieldName}>{label}</span>
+          <span className={styles.fieldName}>{label || placeholder}</span>
         </label>
         <span className={`${styles.errorMessage} ${error && styles.active}`}>
           {error}
