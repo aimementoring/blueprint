@@ -4,7 +4,7 @@ import {
   componentPropTypes,
   defaultComponentPropTypes,
 } from "../../utils/componentPropTypes";
-import { handleInputChange } from "../oldInput/utils.ignore";
+import { handleInputChange } from './utils.ignore';
 import { withValidation } from '../../utils/hocs';
 import styles from "./input.module.scss";
 
@@ -32,7 +32,7 @@ const Input = ({
 }) => {
   const handleChange = event =>
     handleInputChange(event, name, handleValidations, onChangeFunction);
-    
+
   return (
     <div className={`${styles[`theme-${theme}`]} ${containerClassName}`}>
       <div className={styles.wrapper}>
