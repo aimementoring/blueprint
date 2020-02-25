@@ -111,7 +111,6 @@
   }
 
   .errorMessage {
-    visibility: hidden;
     @include themify() {
       color: themed('fieldColorError');
     }

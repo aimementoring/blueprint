@@ -24,15 +24,17 @@ const Input = ({
   autoFocus,
   // props from withValidation HOC
   renderValidationError,
+  validationMessage,
   handleValidations,
   isValidationOk,
+  // aaand the rest,
   ...inputProps
 }) => {
   const handleChange = event =>
     handleInputChange(event, name, handleValidations, onChangeFunction);
-
+    
   return (
-    <div className={styles[`theme-${theme}`]}>
+    <div className={`${styles[`theme-${theme}`]} ${containerClassName}`}>
       <div className={styles.wrapper}>
         <input
           className={`${className} ${error && styles.error}`}
@@ -49,7 +51,8 @@ const Input = ({
           <span className={styles.fieldName}>{label || placeholder}</span>
         </label>
         <span className={`${isValidationOk() && styles.error} ${styles.input} ${className} ${styles.errorMessage} ${error && styles.active}`}>
-          {`${error} ${renderValidationError()}`}
+          {error}
+          {renderValidationError()}
         </span>
         {!error && helperText && (
           <span className={styles.helperMessage}>{helperText}</span>
@@ -62,14 +65,18 @@ const Input = ({
 Input.propTypes = {
   ...componentPropTypes,
   name: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   error: PropTypes.string,
   label: PropTypes.string.isRequired,
   className: PropTypes.string,
   type: PropTypes.string,
   helperText: PropTypes.string,
+  disabled: PropTypes.bool,
+  autoFocus: PropTypes.bool,
   onChangeFunction: PropTypes.func,
   // props from withValidation HOC
+  validationMessage: PropTypes.string,
   renderValidationError: PropTypes.func,
   handleValidations: PropTypes.func.isRequired,
   isValidationOk: PropTypes.func.isRequired,
@@ -82,6 +89,7 @@ Input.defaultProps = {
   className: "",
   type: "text",
   disabled: false,
+  placeholder: '',
   helperText: null,
   handleValidations: () => true,
   onChangeFunction: () => { },
