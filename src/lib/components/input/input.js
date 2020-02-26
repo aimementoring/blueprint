@@ -4,8 +4,8 @@ import {
   componentPropTypes,
   defaultComponentPropTypes,
 } from "../../utils/componentPropTypes";
-import { handleInputChange } from './utils.ignore';
-import { withValidation } from '../../utils/hocs';
+import { handleInputChange } from "./utils.ignore";
+import { withValidation } from "../../utils/hocs";
 import styles from "./input.module.scss";
 
 const Input = ({
@@ -13,7 +13,7 @@ const Input = ({
   name,
   value,
   label,
-  error,
+  // error,
   className,
   type,
   onChangeFunction,
@@ -37,26 +37,26 @@ const Input = ({
     <div className={`${styles[`theme-${theme}`]} ${containerClassName}`}>
       <div className={styles.wrapper}>
         <input
-          className={`${className} ${error && styles.error}`}
+          className={`${className} ${isValidationOk() && styles.error}`}
           type={type || "text"}
           id={name}
           name={name}
           onChange={handleChange}
           value={value}
-          disabled={disabled ? 'disabled' : ''}
+          disabled={disabled ? "disabled" : ""}
           autoFocus={autoFocus}
           {...inputProps}
         />
         <label htmlFor={name}>
           <span className={styles.fieldName}>{label || placeholder}</span>
         </label>
-        <span className={`${isValidationOk() && styles.error} ${styles.input} ${className} ${styles.errorMessage} ${error && styles.active}`}>
+        {/* <span className={`${isValidationOk() && styles.error} ${styles.input} ${className} ${styles.errorMessage} ${error && styles.active}`}>
           {error}
-          {renderValidationError()}
-        </span>
-        {!error && helperText && (
+        </span> */}
+        {helperText && (
           <span className={styles.helperMessage}>{helperText}</span>
         )}
+        {renderValidationError()}
       </div>
     </div>
   );
@@ -89,10 +89,10 @@ Input.defaultProps = {
   className: "",
   type: "text",
   disabled: false,
-  placeholder: '',
+  placeholder: "",
   helperText: null,
   handleValidations: () => true,
-  onChangeFunction: () => { },
+  onChangeFunction: () => {},
 };
 
 export default withValidation(Input);

@@ -1,18 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LabeledInput renders properly 1`] = `
+exports[`Input renders properly 1`] = `
 <div
-  className="theme-base"
+  className="theme-purple "
 >
   <div
     className="wrapper"
   >
     <input
-      className=" null"
+      className=" false"
+      disabled=""
+      error={null}
+      getValidationMessage={[Function]}
       id="testing"
       name="testing"
       onChange={[Function]}
       type="text"
+      validations={Array []}
       value=""
     />
     <label
@@ -24,26 +28,27 @@ exports[`LabeledInput renders properly 1`] = `
         Testing input
       </span>
     </label>
-    <span
-      className="errorMessage null"
-    />
   </div>
 </div>
 `;
 
-exports[`LabeledInput renders properly when different theme 1`] = `
+exports[`Input renders properly when different theme 1`] = `
 <div
-  className="theme-purple"
+  className="theme-purple "
 >
   <div
     className="wrapper"
   >
     <input
-      className=" null"
+      className=" false"
+      disabled=""
+      error={null}
+      getValidationMessage={[Function]}
       id="testing"
       name="testing"
       onChange={[Function]}
       type="text"
+      validations={Array []}
       value=""
     />
     <label
@@ -55,26 +60,27 @@ exports[`LabeledInput renders properly when different theme 1`] = `
         Testing input
       </span>
     </label>
-    <span
-      className="errorMessage null"
-    />
   </div>
 </div>
 `;
 
-exports[`LabeledInput renders properly when it has an error 1`] = `
+exports[`Input renders properly when it has an error 1`] = `
 <div
-  className="theme-purple"
+  className="theme-purple "
 >
   <div
     className="wrapper"
   >
     <input
-      className=" error"
+      className=" false"
+      disabled=""
+      error="It is a required field"
+      getValidationMessage={[Function]}
       id="testing"
       name="testing"
       onChange={[Function]}
       type="text"
+      validations={Array []}
       value=""
     />
     <label
@@ -86,29 +92,27 @@ exports[`LabeledInput renders properly when it has an error 1`] = `
         Testing input
       </span>
     </label>
-    <span
-      className="errorMessage active"
-    >
-      It is a required field
-    </span>
   </div>
 </div>
 `;
 
-exports[`LabeledInput renders properly when it is disabled 1`] = `
+exports[`Input renders properly when it is disabled 1`] = `
 <div
-  className="theme-base"
+  className="theme-purple "
 >
   <div
     className="wrapper"
   >
     <input
-      className=" null"
-      disabled={true}
+      className=" false"
+      disabled="disabled"
+      error={null}
+      getValidationMessage={[Function]}
       id="testing"
       name="testing"
       onChange={[Function]}
       type="text"
+      validations={Array []}
       value=""
     />
     <label
@@ -120,26 +124,27 @@ exports[`LabeledInput renders properly when it is disabled 1`] = `
         Testing input
       </span>
     </label>
-    <span
-      className="errorMessage null"
-    />
   </div>
 </div>
 `;
 
-exports[`LabeledInput renders properly when type is number 1`] = `
+exports[`Input renders properly when type is number 1`] = `
 <div
-  className="theme-base"
+  className="theme-purple "
 >
   <div
     className="wrapper"
   >
     <input
-      className=" null"
+      className=" false"
+      disabled=""
+      error={null}
+      getValidationMessage={[Function]}
       id="testing"
       name="testing"
       onChange={[Function]}
       type="number"
+      validations={Array []}
       value=""
     />
     <label
@@ -151,26 +156,27 @@ exports[`LabeledInput renders properly when type is number 1`] = `
         Testing input
       </span>
     </label>
-    <span
-      className="errorMessage null"
-    />
   </div>
 </div>
 `;
 
-exports[`LabeledInput renders properly with error and helper text 1`] = `
+exports[`Input renders properly with error and helper text 1`] = `
 <div
-  className="theme-base"
+  className="theme-purple "
 >
   <div
     className="wrapper"
   >
     <input
-      className=" error"
+      className=" false"
+      disabled=""
+      error="There is an error"
+      getValidationMessage={[Function]}
       id="testing"
       name="testing"
       onChange={[Function]}
       type="text"
+      validations={Array []}
       value={null}
     />
     <label
@@ -182,42 +188,6 @@ exports[`LabeledInput renders properly with error and helper text 1`] = `
         Testing input
       </span>
     </label>
-    <span
-      className="errorMessage active"
-    >
-      There is an error
-    </span>
-  </div>
-</div>
-`;
-
-exports[`LabeledInput renders properly with helper text 1`] = `
-<div
-  className="theme-base"
->
-  <div
-    className="wrapper"
-  >
-    <input
-      className=" null"
-      id="testing"
-      name="testing"
-      onChange={[Function]}
-      type="text"
-      value={null}
-    />
-    <label
-      htmlFor="testing"
-    >
-      <span
-        className="fieldName"
-      >
-        Testing input
-      </span>
-    </label>
-    <span
-      className="errorMessage null"
-    />
     <span
       className="helperMessage"
     >
@@ -227,20 +197,61 @@ exports[`LabeledInput renders properly with helper text 1`] = `
 </div>
 `;
 
-exports[`LabeledInput renders properly with required 1`] = `
+exports[`Input renders properly with helper text 1`] = `
 <div
-  className="theme-base"
+  className="theme-purple "
 >
   <div
     className="wrapper"
   >
     <input
-      className=" null"
+      className=" false"
+      disabled=""
+      error={null}
+      getValidationMessage={[Function]}
+      id="testing"
+      name="testing"
+      onChange={[Function]}
+      type="text"
+      validations={Array []}
+      value={null}
+    />
+    <label
+      htmlFor="testing"
+    >
+      <span
+        className="fieldName"
+      >
+        Testing input
+      </span>
+    </label>
+    <span
+      className="helperMessage"
+    >
+      My awesome helper text
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Input renders properly with required 1`] = `
+<div
+  className="theme-purple "
+>
+  <div
+    className="wrapper"
+  >
+    <input
+      className=" false"
+      disabled=""
+      error={null}
+      getValidationMessage={[Function]}
       id="testing"
       name="testing"
       onChange={[Function]}
       required={true}
       type="text"
+      validations={Array []}
       value=""
     />
     <label
@@ -252,27 +263,28 @@ exports[`LabeledInput renders properly with required 1`] = `
         Testing required input
       </span>
     </label>
-    <span
-      className="errorMessage null"
-    />
   </div>
 </div>
 `;
 
-exports[`LabeledInput renders properly with required and a value 1`] = `
+exports[`Input renders properly with required and a value 1`] = `
 <div
-  className="theme-base"
+  className="theme-purple "
 >
   <div
     className="wrapper"
   >
     <input
-      className=" null"
+      className=" false"
+      disabled=""
+      error={null}
+      getValidationMessage={[Function]}
       id="testing"
       name="testing"
       onChange={[Function]}
       required={true}
       type="text"
+      validations={Array []}
       value="ABCD"
     />
     <label
@@ -284,9 +296,6 @@ exports[`LabeledInput renders properly with required and a value 1`] = `
         Testing input
       </span>
     </label>
-    <span
-      className="errorMessage null"
-    />
   </div>
 </div>
 `;
