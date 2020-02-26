@@ -1,6 +1,6 @@
 ```js
 initialState = {
-  value: 'Hey! I am an input',
+  value: ""
 };
 
 function updateValue(name, value) {
@@ -8,38 +8,16 @@ function updateValue(name, value) {
 }
 
 <Input
-  placeholder="Name"
-  value={state.value}
-  required={true}
   name="value"
-/>;
-```
-
-```jsx inside Markdown
-import React from 'react';
-import { validateEmail } from '../../utils/validation';
-
-initialState = {
-  value: 'You need to enter an email here!',
-};
-
-function updateValue(name, value) {
-  setState({ [name]: value });
-}
-
-<Input
-  placeholder="Email"
   value={state.value}
-  required={true}
-  name="value"
   onChangeFunction={updateValue}
-  validations={[validateEmail]}
+  label="Placeholder input"
 />;
 ```
 
 ```js
 initialState = {
-  value: 'Hey! I am a light themed input.',
+  value: ""
 };
 
 function updateValue(name, value) {
@@ -47,19 +25,55 @@ function updateValue(name, value) {
 }
 
 <Input
-  placeholder="Light theme"
-  value={state.value}
-  required={true}
   name="value"
+  value={state.value}
   onChangeFunction={updateValue}
-  theme="light"
+  label="Placeholder input"
+  helperText="My super helper text"
+/>;
+```
+
+```js
+initialState = {
+  required: ""
+};
+
+function updateValue(name, value) {
+  setState({ [name]: value });
+}
+
+<Input
+  name="required"
+  value={state.required}
+  onChangeFunction={updateValue}
+  label="Required input"
+  required
+/>;
+```
+
+```js
+initialState = {
+  error: ""
+};
+
+function updateValue(name, value) {
+  setState({ [name]: value });
+}
+
+<Input
+  name="error"
+  value={state.error}
+  onChangeFunction={updateValue}
+  label="With error"
+  error="Required input"
 />;
 ```
 
 ```js
 <Input
-  value="I am read only. Don't try to change me!"
-  name="value"
+  name="cant-change-me"
+  value="I also work with readOnly"
+  label="Can't change me"
   readOnly
 />
 ```

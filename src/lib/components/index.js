@@ -23,7 +23,6 @@ export { default as Footer } from './footer';
 export { default as ProgressBar } from './progressBar';
 export { default as TermsAndConditions } from './termsAndConditions';
 export { default as CountdownTimer } from './countdownTimer';
-export { default as LabeledInput } from './labeledInput';
 export { default as CountryFlag } from './countryFlag';
 export { default as CountryFlagSelector } from './countryFlag';
 export { default as ErrorMessage } from './errorMessage';

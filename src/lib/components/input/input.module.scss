@@ -2,76 +2,145 @@
 @import '../../styles/themes/themes.module.scss';
 @import '../../styles/global/reset.module.scss';
 
-.inputWrapper {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 0.5em;
-}
+.wrapper {
+  position: relative;
 
-.input {
-  @include themify() {
-    color: themed('fieldColor');
-    background-color: themed('fieldBackground');
-    border: themed('fieldBorder');
-    font-family: themed('primaryFont');
-    font-size: themed('fieldFontSize');
-    border-radius: themed('fieldBorderRadius');
-    height: themed('inputHeight');
-    font-weight: themed('fieldFontWeight');
-    padding: themed('inputPadding');
-  }
-  width: 100%;
+  input {
+    -webkit-appearance: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 0.9em 2em;
+    border-radius: 3px;
 
-  &.error,
-  &.error:focus,
-  &.error:hover {
     @include themify() {
-      border: themed('fieldBorderError');
-      border-color: themed('fieldColorError');
+      color: themed('fieldColor');
+      background-color: themed('fieldBackground');
+      border: 1px solid themed('borderColor');
+      font-family: themed('primaryFont');
+      font-size: themed('fieldFontSize');
+      font-weight: themed('fieldFontWeight');
+    }
+
+    &[placeholder] ~ label {
+      transform: translate3d(0, -1.2em, 0) scale(0.75);
+    }
+
+    &[required] ~ label::after,
+    &.required ~ label::after {
+      content: ' *';
+      vertical-align: text-top;
+
+      @include themify() {
+        font-family: themed('primaryFont');
+        color: themed('fieldColorError');
+        font-size: themed('fieldFontSize');
+        font-weight: themed('fieldFontWeight');
+      }
+    }
+
+    &:focus {
+      @include themify() {
+        border-width: 2px;
+      }
+    }
+
+    &:not([value='']),
+    &:focus,
+    &:valid:not([value='']) {
+      ~ label {
+        @include themify() {
+          color: themed('borderColor');
+        }
+        background-color: $white;
+        padding: 0 0.3em;
+        width: auto;
+        transform: translate3d(0, -1.2em, 0) scale(0.75);
+      }
+    }
+
+    &:not([value='']):invalid,
+    &.error {
+      @include themify() {
+        border-width: 2px;
+        border-color: $error-color;
+      }
+
+      ~ label {
+        @include themify() {
+          font-family: themed('primaryFont');
+          color: themed('fieldColorError');
+        }
+        background-color: $white;
+        padding: 0 0.3em;
+        width: auto;
+        transform: translate3d(0, -1.2em, 0) scale(0.75);
+      }
     }
   }
 
-  &::placeholder {
+  input[readonly], input[readonly]:focus {
+    cursor: not-allowed;
+    @include themify() {
+      background: themed('fieldReadOnlyBackgroundColor');
+      color: themed('fieldReadOnlyColor');
+    }
+    ~ label {
+      @include themify() {
+        color: themed('fieldReadOnlyColor');
+      }
+    }
+  }
+
+  .helperMessage,
+  .errorMessage {
+    display: block;
+    font-size: 0.6rem;
+    margin: 0.7em 0 0 1.5em;
+
+    @include themify() {
+      color: themed('fieldColorError');
+      font-family: themed('primaryFont');
+    }
+  }
+
+  .helperMessage {
+    @include themify() {
+      color: themed('helperTextColor');
+    }
+  }
+
+  .errorMessage {
+    @include themify() {
+      color: themed('fieldColorError');
+    }
+
+    &.active {
+      visibility: visible;
+    }
+  }
+
+  label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: $black;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    pointer-events: none;
+    right: auto;
+    text-align: left;
+    transform: translate3d(0, 0, 0) scale(1);
+    transform-origin: left top;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    width: 100%;
+    z-index: 1;
     @include themify() {
       color: themed('fieldPlaceholderColor');
-      font-size: themed('fieldPlaceholderFontSize');
+      font-family: themed('primaryFont');
+      font-size: themed('fieldFontSize');
+      // padding: themed('inputPadding');
     }
-  }
-
-  @media only screen and (max-width: $sm) {
-    margin-bottom: 0.8em;
-  }
-}
-
-.input:focus {
-  @include themify() {
-    background-color: themed('fieldFocusBackgroundColor');
-    border-color: themed('fieldFocusColor');
-  }
-  outline: none;
-}
-
-input.input[type='date']:before {
-  content: attr(placeholder) ':';
-  color: #aaa;
-  margin-right: 0.5em;
-}
-
-input[type='date']:focus:before,
-input[type='date']:valid:before {
-  content: '';
-}
-
-::placeholder {
-  @include themify() {
-    color: themed('lavender');
-  }
-}
-
-input.input[readonly], input.input[readonly]:focus {
-  cursor: not-allowed;
-  @include themify() {
-    background: themed('fieldReadOnlyBackgroundColor');
-    color: themed('fieldReadOnlyColor');
   }
 }

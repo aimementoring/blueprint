@@ -4,7 +4,7 @@ import {
   componentPropTypes,
   defaultComponentPropTypes,
 } from "../../utils/componentPropTypes";
-import { handleInputChange } from "../input/utils.ignore";
+import { handleInputChange } from "../oldInput/utils.ignore";
 import styles from "./labeledTextarea.module.scss";
 
 const LabeledTextarea = ({
@@ -70,7 +70,7 @@ LabeledTextarea.defaultProps = {
   // type: 'textarea',
   helperText: null,
   handleValidations: () => true,
-  onChangeFunction: () => {},
+  onChangeFunction: () => { },
 };
 
 export default LabeledTextarea;
