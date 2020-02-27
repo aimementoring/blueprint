@@ -71,6 +71,7 @@ const TermsAndConditions = ({
               validations={validations}
               validationMessage={validationMessage}
               hasErrorAfterSubmit={hasErrorAfterSubmit}
+              theme={theme}
             />
           </div>
         )}
