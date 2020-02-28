@@ -17,7 +17,8 @@ export default class Button extends PureComponent {
 
   static defaultProps = {
     ...defaultComponentPropTypes,
-    onClickFunction: () => { },
+    containerClassName: '',
+    onClickFunction: () => {},
     underneathLabel: null,
     disabled: false,
     url: null,
@@ -39,7 +40,7 @@ export default class Button extends PureComponent {
 
     return (
       <div className={styles[`theme-${theme}`]}>
-        <div className={`${styles.container} ${containerClassName}`}>
+        <div className={containerClassName}>
           {type === 'link' && url ? (
             <a href={url} className={`${className} ${styles.linkButton}`}>
               {text || children}
