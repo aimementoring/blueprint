@@ -28,3 +28,4 @@ export { default as CountryFlagSelector } from './countryFlag';
 export { default as ErrorMessage } from './errorMessage';
 export { default as HelpToolTip } from './helpToolTip';
 export { default as PhoneInput } from './phoneInput';
+export { default as Paragraph } from './paragraph';
