@@ -46,6 +46,9 @@ class Textarea extends PureComponent {
       autoFocus,
       isValidationOk,
       renderValidationError,
+      validationMessage,
+      onChangeFunction,
+      handleValidations,
       ...textareaProps
     } = this.props;
 
