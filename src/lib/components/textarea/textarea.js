@@ -47,6 +47,8 @@ class Textarea extends PureComponent {
       isValidationOk,
       renderValidationError,
       validationMessage,
+      hasErrorAfterSubmit,
+      getValidationMessage,
       onChangeFunction,
       handleValidations,
       ...textareaProps
