@@ -27,6 +27,8 @@ const Input = ({
   validationMessage,
   handleValidations,
   isValidationOk,
+  hasErrorAfterSubmit,
+  getValidationMessage,
   // aaand the rest,
   ...inputProps
 }) => {
