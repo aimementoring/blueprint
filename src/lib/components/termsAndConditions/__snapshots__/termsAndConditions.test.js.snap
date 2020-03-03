@@ -89,7 +89,7 @@ exports[`TermsAndConditions renders properly with all props used 2`] = `
         className="theme-purple wrapper"
       >
         <div
-          className=" customCheckbox customCheckboxDefault"
+          className=" customCheckbox customCheckboxDefault false"
           onClick={[Function]}
         >
           <input
@@ -103,8 +103,14 @@ exports[`TermsAndConditions renders properly with all props used 2`] = `
             type="checkbox"
             value="yes"
           />
-          <label>
-            Testing my checkbox
+          <label
+            className="false"
+          >
+            <span
+              className="false"
+            >
+              Testing my checkbox
+            </span>
           </label>
         </div>
       </div>
@@ -146,7 +152,7 @@ exports[`TermsAndConditions renders properly with all props used 3`] = `
         className="theme-purple wrapper"
       >
         <div
-          className=" customCheckbox customCheckboxDefault"
+          className=" customCheckbox customCheckboxDefault false"
           onClick={[Function]}
         >
           <input
@@ -160,8 +166,14 @@ exports[`TermsAndConditions renders properly with all props used 3`] = `
             type="checkbox"
             value="yes"
           />
-          <label>
-            Testing my checkbox
+          <label
+            className="false"
+          >
+            <span
+              className="false"
+            >
+              Testing my checkbox
+            </span>
           </label>
         </div>
       </div>
@@ -232,7 +244,7 @@ exports[`TermsAndConditions renders properly with pdf, and checkbox 1`] = `
         className="theme-purple wrapper"
       >
         <div
-          className=" customCheckbox customCheckboxDefault"
+          className=" customCheckbox customCheckboxDefault false"
           onClick={[Function]}
         >
           <input
@@ -246,8 +258,14 @@ exports[`TermsAndConditions renders properly with pdf, and checkbox 1`] = `
             type="checkbox"
             value="yes"
           />
-          <label>
-            Testing my checkbox
+          <label
+            className="false"
+          >
+            <span
+              className="false"
+            >
+              Testing my checkbox
+            </span>
           </label>
         </div>
       </div>
