@@ -1,6 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
+import {
+  componentPropTypes,
+  defaultComponentPropTypes,
+} from '../../utils/componentPropTypes';
 import { withValidation } from '../../utils/hocs';
 import styles from './checkbox.module.scss';
 
@@ -28,7 +31,13 @@ class Checkbox extends PureComponent {
 
   handleFieldChange = e => {
     e.preventDefault();
-    const { onChangeFunction, name, extraParamResponse, value, handleValidations } = this.props;
+    const {
+      onChangeFunction,
+      name,
+      extraParamResponse,
+      value,
+      handleValidations,
+    } = this.props;
     const isWrongValidation = handleValidations(value);
     onChangeFunction(name, !value, extraParamResponse, isWrongValidation);
   };
@@ -48,7 +57,9 @@ class Checkbox extends PureComponent {
     return (
       <div className={`${styles[`theme-${theme}`]} ${styles.wrapper}`}>
         <div
-          className={`${className} ${styles.customCheckbox} ${styles.customCheckboxDefault}`}
+          className={`${className} ${styles.customCheckbox} ${
+            styles.customCheckboxDefault
+          } ${isValidationOk() && styles.error}`}
           onClick={this.handleFieldChange}
         >
           <input type="hidden" name={name} value="no" />
@@ -61,7 +72,12 @@ class Checkbox extends PureComponent {
             className={`${isValidationOk() && styles.error}`}
             checked={value}
           />
-          <label htmlFor={customId}>{placeholder}</label>
+          <label
+            className={`${isValidationOk() && styles.error}`}
+            htmlFor={customId}
+          >
+            {placeholder}
+          </label>
         </div>
         {renderValidationError()}
       </div>

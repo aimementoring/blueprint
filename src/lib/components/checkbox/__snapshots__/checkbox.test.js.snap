@@ -5,7 +5,7 @@ exports[`Checkbox renders properly 1`] = `
   className="theme-purple wrapper"
 >
   <div
-    className=" customCheckbox customCheckboxDefault"
+    className=" customCheckbox customCheckboxDefault false"
     onClick={[Function]}
   >
     <input
@@ -23,9 +23,14 @@ exports[`Checkbox renders properly 1`] = `
       value="yes"
     />
     <label
+      className="false"
       htmlFor="checkbox"
     >
-      Accept terms and conditions
+      <span
+        className="false"
+      >
+        Accept terms and conditions
+      </span>
     </label>
   </div>
 </div>
@@ -36,7 +41,7 @@ exports[`Checkbox renders properly when value is invalid 1`] = `
   className="theme-purple wrapper"
 >
   <div
-    className=" customCheckbox customCheckboxDefault"
+    className=" customCheckbox customCheckboxDefault error"
     onClick={[Function]}
   >
     <input
@@ -54,9 +59,14 @@ exports[`Checkbox renders properly when value is invalid 1`] = `
       value="yes"
     />
     <label
+      className="error"
       htmlFor="checkbox"
     >
-      Accept terms and conditions
+      <span
+        className="error"
+      >
+        Accept terms and conditions
+      </span>
     </label>
   </div>
 </div>

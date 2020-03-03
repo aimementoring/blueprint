@@ -1,12 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 import {
   componentPropTypes,
   defaultComponentPropTypes,
-} from "../../utils/componentPropTypes";
-import { handleInputChange } from "./utils.ignore";
-import { withValidation } from "../../utils/hocs";
-import styles from "./input.module.scss";
+} from '../../utils/componentPropTypes';
+import { handleInputChange } from './utils.ignore';
+import { withValidation } from '../../utils/hocs';
+import styles from './input.module.scss';
 
 const Input = ({
   theme,
@@ -38,21 +38,19 @@ const Input = ({
       <div className={styles.wrapper}>
         <input
           className={`${className} ${isValidationOk() && styles.error}`}
-          type={type || "text"}
+          type={type || 'text'}
           id={name}
           name={name}
           onChange={handleChange}
-          value={value}
-          disabled={disabled ? "disabled" : ""}
+          value={type !== 'date' ? value : undefined}
+          defaultValue={type === 'date' ? value : undefined}
+          disabled={disabled ? 'disabled' : ''}
           autoFocus={autoFocus}
           {...inputProps}
         />
         <label htmlFor={name}>
           <span className={styles.fieldName}>{label || placeholder}</span>
         </label>
-        {/* <span className={`${isValidationOk() && styles.error} ${styles.input} ${className} ${styles.errorMessage} ${error && styles.active}`}>
-          {error}
-        </span> */}
         {helperText && (
           <span className={styles.helperMessage}>{helperText}</span>
         )}
@@ -86,10 +84,10 @@ Input.defaultProps = {
   ...defaultComponentPropTypes,
   value: null,
   error: null,
-  className: "",
-  type: "text",
+  className: '',
+  type: 'text',
   disabled: false,
-  placeholder: "",
+  placeholder: '',
   helperText: null,
   handleValidations: () => true,
   onChangeFunction: () => {},
