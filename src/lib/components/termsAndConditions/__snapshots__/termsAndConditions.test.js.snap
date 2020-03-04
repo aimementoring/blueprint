@@ -106,11 +106,7 @@ exports[`TermsAndConditions renders properly with all props used 2`] = `
           <label
             className="false"
           >
-            <span
-              className="false"
-            >
-              Testing my checkbox
-            </span>
+            Testing my checkbox
           </label>
         </div>
       </div>
@@ -169,11 +165,7 @@ exports[`TermsAndConditions renders properly with all props used 3`] = `
           <label
             className="false"
           >
-            <span
-              className="false"
-            >
-              Testing my checkbox
-            </span>
+            Testing my checkbox
           </label>
         </div>
       </div>
@@ -261,11 +253,7 @@ exports[`TermsAndConditions renders properly with pdf, and checkbox 1`] = `
           <label
             className="false"
           >
-            <span
-              className="false"
-            >
-              Testing my checkbox
-            </span>
+            Testing my checkbox
           </label>
         </div>
       </div>
