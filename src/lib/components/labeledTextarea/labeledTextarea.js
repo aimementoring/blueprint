@@ -15,6 +15,7 @@ const LabeledTextarea = ({
   label,
   className,
   // type,
+  validationMessage,
   onChangeFunction,
   handleValidations,
   helperText,

@@ -26,11 +26,7 @@ exports[`Checkbox renders properly 1`] = `
       className="false"
       htmlFor="checkbox"
     >
-      <span
-        className="false"
-      >
-        Accept terms and conditions
-      </span>
+      Accept terms and conditions
     </label>
   </div>
 </div>
@@ -62,11 +58,7 @@ exports[`Checkbox renders properly when value is invalid 1`] = `
       className="error"
       htmlFor="checkbox"
     >
-      <span
-        className="error"
-      >
-        Accept terms and conditions
-      </span>
+      Accept terms and conditions
     </label>
   </div>
 </div>

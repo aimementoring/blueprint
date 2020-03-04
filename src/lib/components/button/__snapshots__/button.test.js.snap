@@ -5,7 +5,7 @@ exports[`Button is backwards compatible (using text prop instead of children) 1`
   className="theme-base"
 >
   <div
-    className="container "
+    className=""
   >
     <div
       className="buttonGroup"
@@ -28,7 +28,7 @@ exports[`Button renders button properly 1`] = `
   className="theme-base"
 >
   <div
-    className="container "
+    className=""
   >
     <div
       className="buttonGroup"
@@ -51,7 +51,7 @@ exports[`Button renders button properly with underneath label 1`] = `
   className="theme-base"
 >
   <div
-    className="container "
+    className=""
   >
     <div
       className="buttonGroup"
@@ -79,7 +79,7 @@ exports[`Button renders link properly 1`] = `
   className="theme-base"
 >
   <div
-    className="container "
+    className=""
   >
     <a
       className=" linkButton"
