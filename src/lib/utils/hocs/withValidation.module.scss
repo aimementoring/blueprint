@@ -1,16 +1,18 @@
 @import '../../styles/variables/variables.module.scss';
 @import '../../styles/themes/themes.module.scss';
 
+.errorMessage {
+  display: block;
+  padding-top: 0.5em;
+  font-size: .8rem;
+  color: $error-color;
+  font-family: $serif-font-bold;
+}
+
 .error,
 .errorMessage {
   @include themify() {
     font-family: themed('errorFont');
     color: themed('errorColor');
   }
-}
-
-.errorMessage {
-  display: block;
-  padding-top: 0.5em;
-  font-size: .8rem;
 }
