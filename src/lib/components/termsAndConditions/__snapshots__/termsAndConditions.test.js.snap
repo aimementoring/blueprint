@@ -86,7 +86,7 @@ exports[`TermsAndConditions renders properly with all props used 2`] = `
       className="termsCheckbox"
     >
       <div
-        className="theme-purple wrapper"
+        className="theme-base wrapper"
       >
         <div
           className=" customCheckbox customCheckboxDefault false"
@@ -145,7 +145,7 @@ exports[`TermsAndConditions renders properly with all props used 3`] = `
       className="termsCheckbox"
     >
       <div
-        className="theme-purple wrapper"
+        className="theme-base wrapper"
       >
         <div
           className=" customCheckbox customCheckboxDefault false"
@@ -233,7 +233,7 @@ exports[`TermsAndConditions renders properly with pdf, and checkbox 1`] = `
       className="termsCheckbox"
     >
       <div
-        className="theme-purple wrapper"
+        className="theme-base wrapper"
       >
         <div
           className=" customCheckbox customCheckboxDefault false"
