@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
+import {
+  componentPropTypes,
+  defaultComponentPropTypes,
+} from '../../utils/componentPropTypes';
 import styles from './progressBar.module.scss';
 
 const ProgressBar = ({
@@ -14,7 +17,7 @@ const ProgressBar = ({
   fontSize,
 }) => {
   const progressStyle = {
-    width: `${progress}%`,
+    width: `${Math.min(progress, 100)}%`,
     fontSize: `${fontSize}px`,
     lineHeight: `${height}px`,
   };
@@ -28,7 +31,7 @@ const ProgressBar = ({
     <div className={styles[`theme-${theme}`]}>
       <div className={styles.progressBar} style={progressBarStyle}>
         <div className={styles.progress} style={progressStyle}>
-          {displayNumber && `${progress}%`}
+          {displayNumber && `${Math.min(progress, 100)}%`}
         </div>
       </div>
     </div>
