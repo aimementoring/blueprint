@@ -14,7 +14,16 @@ describe('ProgressBar', () => {
   });
 
   it('renders properly with just progress value and display number on true', () => {
-    const tree = renderer.create(<ProgressBar progress={40} displayNumber />).toJSON();
+    const tree = renderer
+      .create(<ProgressBar progress={40} displayNumber />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders properly even if the progress is > 100', () => {
+    const tree = renderer
+      .create(<ProgressBar progress={120} displayNumber />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
