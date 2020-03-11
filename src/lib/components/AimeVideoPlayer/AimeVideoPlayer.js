@@ -6,7 +6,7 @@ import {
   defaultComponentPropTypes,
 } from "../../utils/componentPropTypes";
 import Modal from "../modal";
-
+import CustomPlayIcon from "./customPlayIcon";
 import styles from "./AimeVideoPlayer.module.scss";
 
 // HLS info not sure if we want to add this might help performance? - https://www.dacast.com/blog/hls-streaming-protocol/
@@ -43,20 +43,6 @@ const AimeVideoPlayer = props => {
   const handleContextMenu = event => {
     event.preventDefault();
   };
-
-  const customPlayIcon = withModal ? (
-    <img
-      className={styles.playButton}
-      src="https://aime-website.s3.amazonaws.com/assets/images/play-btn-white.svg"
-      alt="play video"
-      onClick={handleModal}
-    />
-  ) : (
-    <img
-      src="https://aime-website.s3.amazonaws.com/assets/images/play-btn-white.svg"
-      alt="play video"
-    />
-  );
 
   const videoPlayersConfig = {
     vimeo: {
@@ -110,10 +96,6 @@ const AimeVideoPlayer = props => {
 
   const backGroundStyle = {
     background: `url(${imageUrl})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    backgroundAttachment: "fixed",
   };
 
   return (
@@ -125,7 +107,13 @@ const AimeVideoPlayer = props => {
               className={styles.bgImage}
               style={imageUrl !== "" ? backGroundStyle : null}
             />
-            {withModal && customPlayIcon}
+            {withModal && (
+              <CustomPlayIcon
+                onClick={handleModal}
+                withModal={withModal}
+                stylesPlayButton={styles.playButton}
+              />
+            )}
             {videoTitle && (
               <span className={styles.videoTitle}>{videoTitle}</span>
             )}
@@ -138,7 +126,15 @@ const AimeVideoPlayer = props => {
               light={withPlaceHolderimage}
               playing={!withModal}
               pip={playsInPicture}
-              playIcon={withPlaceHolderimage && customPlayIcon}
+              playIcon={
+                withPlaceHolderimage && (
+                  <CustomPlayIcon
+                    onClick={handleModal}
+                    withModal={withModal}
+                    stylesPlayButton={styles.playButton}
+                  />
+                )
+              }
               config={videoPlayersConfig}
               onContextMenu={handleContextMenu}
             />

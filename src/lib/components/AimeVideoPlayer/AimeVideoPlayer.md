@@ -4,7 +4,6 @@
   videoDescription="This is a video description"
   url="https://s3-ap-southeast-2.amazonaws.com/video-api-production/encoding-output/161-8ea8db58-451f-43fb-a351-5f18cd0dcad4-1000290001/web.mp4"
   imageUrl="https://aime-website.s3.amazonaws.com/assets/images/know-aime/white-paper.jpg"
-  withModal
 />
 ```
 
