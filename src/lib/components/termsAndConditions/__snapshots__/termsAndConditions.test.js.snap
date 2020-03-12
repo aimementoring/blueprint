@@ -35,7 +35,6 @@ exports[`TermsAndConditions renders properly with all props used 1`] = `
   >
     <div
       className="textContainer "
-      style={Object {}}
     >
       <strong>
         Lorem ipsum dolor sit amet
@@ -63,11 +62,6 @@ exports[`TermsAndConditions renders properly with all props used 2`] = `
   >
     <div
       className="textContainer "
-      style={
-        Object {
-          "height": "150px",
-        }
-      }
     >
       <strong>
         Lorem ipsum dolor sit amet
@@ -183,7 +177,6 @@ exports[`TermsAndConditions renders properly with paragraph props 1`] = `
   >
     <div
       className="textContainer "
-      style={Object {}}
     >
       <div
         className="theme-base"
