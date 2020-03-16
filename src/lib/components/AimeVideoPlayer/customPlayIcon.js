@@ -3,7 +3,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const CustomPlayIcon = ({ withModal, onClick, stylesPlayButton }) => {
-  console.log("CustomPlayIcon -> withModal", withModal);
   const iconProps = {
     alt: "play video",
     src:

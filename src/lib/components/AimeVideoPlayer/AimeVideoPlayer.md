@@ -2,7 +2,7 @@
 <AimeVideoPlayer
   videoTitle="This is a title"
   videoDescription="This is a video description"
-  url="https://s3-ap-southeast-2.amazonaws.com/video-api-production/encoding-output/161-8ea8db58-451f-43fb-a351-5f18cd0dcad4-1000290001/web.mp4"
+  url="https://www.youtube.com/watch?v=EEIk7gwjgIM"
   imageUrl="https://aime-website.s3.amazonaws.com/assets/images/know-aime/white-paper.jpg"
 />
 ```
@@ -53,3 +53,5 @@ Test URL's:
 youTube url: `https://www.youtube.com/embed/FUWwQv1kklY`  
 vimeo url: `https://vimeo.com/169599296` | | `https://vimeo.com/22439234`  
 aime url: `https://s3-ap-southeast-2.amazonaws.com/video-api-production/encoding-output/161-8ea8db58-451f-43fb-a351-5f18cd0dcad4-1000290001/web.mp4`
+hls url: `https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8`
+hls youTube url: `https://www.youtube.com/watch?v=EEIk7gwjgIM`

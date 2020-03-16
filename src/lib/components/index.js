@@ -30,3 +30,4 @@ export { default as ErrorMessage } from './errorMessage';
 export { default as HelpToolTip } from './helpToolTip';
 export { default as PhoneInput } from './phoneInput';
 export { default as AimeVideoPlayer } from './AimeVideoPlayer';
+export { default as Modal } from './modal';
