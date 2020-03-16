@@ -7,7 +7,7 @@ import {
 } from "../../utils/componentPropTypes";
 import Modal from "../modal";
 import CustomPlayIcon from "./customPlayIcon";
-import styles from "./AimeVideoPlayer.module.scss";
+import styles from "./aimeVideoPlayer.module.scss";
 
 // HLS info not sure if we want to add this might help performance? - https://www.dacast.com/blog/hls-streaming-protocol/
 

@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import AimeVideoPlayer from "./AimeVideoPlayer.js";
+import AimeVideoPlayer from "./aimeVideoPlayer.js";
 
 describe("AimeVideoPlayer", () => {
   it("renders properly", () => {
