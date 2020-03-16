@@ -19,7 +19,7 @@ exports[`Video renders properly 1`] = `
       <div
         style={
           Object {
-            "display": undefined,
+            "backgroundColor": "black",
             "height": "100%",
             "overflow": "hidden",
             "width": "100%",
