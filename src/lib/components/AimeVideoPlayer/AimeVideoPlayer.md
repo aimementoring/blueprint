@@ -2,7 +2,7 @@
 <AimeVideoPlayer
   videoTitle="This is a title"
   videoDescription="This is a video description"
-  url="https://www.youtube.com/watch?v=EEIk7gwjgIM"
+  url="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
   imageUrl="https://aime-website.s3.amazonaws.com/assets/images/know-aime/white-paper.jpg"
 />
 ```

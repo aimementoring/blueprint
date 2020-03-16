@@ -1,3 +1,1 @@
-import AimeVideoPlayer from './aimeVideoPlayer';
-
-export default AimeVideoPlayer;
+export { default as AimeVideoPlayer } from "./AimeVideoPlayer";

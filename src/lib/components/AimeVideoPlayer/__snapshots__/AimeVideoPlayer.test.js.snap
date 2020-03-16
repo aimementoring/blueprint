@@ -17,13 +17,6 @@ exports[`AimeVideoPlayer renders properly 1`] = `
       
       <div
         onContextMenu={[Function]}
-        playIcon={
-          <CustomPlayIcon
-            onClick={[Function]}
-            stylesPlayButton="playButton"
-            withModal={false}
-          />
-        }
         style={
           Object {
             "height": "100%",
@@ -48,32 +41,10 @@ exports[`AimeVideoPlayer renders properly 1`] = `
             }
           }
         >
-          <div
-            className="react-player__shadow"
-            style={
-              Object {
-                "alignItems": "center",
-                "background": "radial-gradient(rgb(0, 0, 0, 0.3), rgba(0, 0, 0, 0) 60%)",
-                "borderRadius": "64px",
-                "display": "flex",
-                "height": "64px",
-                "justifyContent": "center",
-                "width": "64px",
-              }
-            }
-          >
-            <div
-              className="react-player__play-icon"
-              style={
-                Object {
-                  "borderColor": "transparent transparent transparent white",
-                  "borderStyle": "solid",
-                  "borderWidth": "16px 0 16px 26px",
-                  "marginLeft": "7px",
-                }
-              }
-            />
-          </div>
+          <img
+            alt="play video"
+            src="https://aime-website.s3.amazonaws.com/assets/images/play-btn-white.svg"
+          />
         </div>
       </div>
       

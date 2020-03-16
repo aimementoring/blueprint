@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import ReactPlayer from "react-player";
@@ -6,8 +7,7 @@ import {
   defaultComponentPropTypes,
 } from "../../utils/componentPropTypes";
 import Modal from "../modal";
-import CustomPlayIcon from "./customPlayIcon";
-import styles from "./aimeVideoPlayer.module.scss";
+import styles from "./AimeVideoPlayer.module.scss";
 
 // HLS info not sure if we want to add this might help performance? - https://www.dacast.com/blog/hls-streaming-protocol/
 
@@ -214,3 +214,26 @@ AimeVideoPlayer.defaultProps = {
 };
 
 export default AimeVideoPlayer;
+
+const CustomPlayIcon = ({ withModal, onClick, stylesPlayButton }) => {
+  const iconProps = {
+    alt: "play video",
+    src:
+      "https://aime-website.s3.amazonaws.com/assets/images/play-btn-white.svg",
+  };
+  if (withModal) {
+    iconProps.className = stylesPlayButton;
+    iconProps.onClick = onClick;
+  }
+  return <img {...iconProps} />;
+};
+
+CustomPlayIcon.propTypes = {
+  withModal: PropTypes.bool,
+  onClick: PropTypes.func.isRequired,
+  stylesPlayButton: PropTypes.string.isRequired,
+};
+
+CustomPlayIcon.defaultProps = {
+  withModal: false,
+};
