@@ -1,5 +1,6 @@
 import {
   required,
+  requiredIf,
   validateNumeric,
   validateAlphanumeric,
   validateEmail,
@@ -48,12 +49,82 @@ describe('Validation Required', () => {
   });
 });
 
+describe('Validation Required Under Condition', () => {
+  describe('If the condition is true', () => {
+    describe('It should return an error message when', () => {
+      it('a field is empty string', () => {
+        const value = '';
+        const responseOfTheValidation = requiredIf(true)()(value);
+        expect(responseOfTheValidation).toEqual('Required');
+      });
+      it('a field is null', () => {
+        const value = null;
+        const responseOfTheValidation = requiredIf(true)()(value);
+        expect(responseOfTheValidation).toEqual('Required');
+      });
+      it('a field is null and it has a custom message', () => {
+        const value = null;
+        const customMessage = 'This field is Required!';
+        const responseOfTheValidation = requiredIf(true)(customMessage)(value);
+        expect(responseOfTheValidation).toEqual(customMessage);
+      });
+    });
+
+    describe('It should success (return undefined) when', () => {
+      it('a field is required and it is not empty', () => {
+        const value = 'something wrote';
+        const responseOfTheValidation = requiredIf(true)()(value);
+        expect(responseOfTheValidation).toBeUndefined();
+      });
+
+      it('a field is required and it is a number', () => {
+        const value = 1234;
+        const responseOfTheValidation = requiredIf(true)()(value);
+        expect(responseOfTheValidation).toBeUndefined();
+      });
+    });
+  });
+  describe('If the condition is false', () => {
+    describe('It should never return an error', () => {
+      it('a field is empty string', () => {
+        const value = '';
+        const responseOfTheValidation = requiredIf(false)()(value);
+        expect(responseOfTheValidation).toBeUndefined();
+      });
+      it('a field is null', () => {
+        const value = null;
+        const responseOfTheValidation = requiredIf(false)()(value);
+        expect(responseOfTheValidation).toBeUndefined();
+      });
+      it('a field is null and it has a custom message', () => {
+        const value = null;
+        const customMessage = 'This field is Required!';
+        const responseOfTheValidation = requiredIf(false)(customMessage)(value);
+        expect(responseOfTheValidation).toBeUndefined();
+      });
+
+      it('a field is not empty', () => {
+        const value = 'something wrote';
+        const responseOfTheValidation = requiredIf(false)()(value);
+        expect(responseOfTheValidation).toBeUndefined();
+      });
+      it('a field is a number', () => {
+        const value = 1234;
+        const responseOfTheValidation = requiredIf(false)()(value);
+        expect(responseOfTheValidation).toBeUndefined();
+      });
+    });
+  });
+});
+
 describe('Validate Numeric', () => {
   describe('It should return a message error when', () => {
     it('a field is a string with characters that are not numbers', () => {
       const value = 'asdsad12313 asdas';
       const responseOfTheValidation = validateNumeric()(value);
-      expect(responseOfTheValidation).toEqual('This value should be a valid number');
+      expect(responseOfTheValidation).toEqual(
+        'This value should be a valid number',
+      );
     });
     it('a field is a boolean (with custom message)', () => {
       const value = true;
@@ -99,7 +170,9 @@ describe('Validate Alphanumeric', () => {
     it('a field is a string with strange characters as #, $', () => {
       const value = '##asdsad12313 asda$s$$$';
       const responseOfTheValidation = validateAlphanumeric()(value);
-      expect(responseOfTheValidation).toEqual("This value shouldn't contain special characters");
+      expect(responseOfTheValidation).toEqual(
+        "This value shouldn't contain special characters",
+      );
     });
     it('a field is a boolean (with custom message)', () => {
       const value = true;
@@ -113,7 +186,9 @@ describe('Validate Alphanumeric', () => {
     it('a field is undefined with custom message', () => {
       const value = undefined;
       const customMessage = 'This field should be alphanumeric not undefined!';
-      const responseOfTheValidation = validateAlphanumeric(customMessage)(value);
+      const responseOfTheValidation = validateAlphanumeric(customMessage)(
+        value,
+      );
       expect(responseOfTheValidation).toBeUndefined();
     });
     it('a field is null', () => {
@@ -146,7 +221,9 @@ describe('Validate Email', () => {
     it('a field is a string that is not an email', () => {
       const value = 'asdaasd';
       const responseOfTheValidation = validateEmail()(value);
-      expect(responseOfTheValidation).toEqual('This value is not a valid email');
+      expect(responseOfTheValidation).toEqual(
+        'This value is not a valid email',
+      );
     });
     it('a field is a string with a@b', () => {
       const value = 'david@paley';
@@ -176,12 +253,16 @@ describe('Validate No Negative numbers', () => {
     it('a field is a negative number', () => {
       const value = -123;
       const responseOfTheValidation = validateNonNegative()(value);
-      expect(responseOfTheValidation).toEqual("This value shouldn't be negative");
+      expect(responseOfTheValidation).toEqual(
+        "This value shouldn't be negative",
+      );
     });
     it('a field is a string with a negative number', () => {
       const value = '-555';
       const responseOfTheValidation = validateNonNegative()(value);
-      expect(responseOfTheValidation).toEqual("This value shouldn't be negative");
+      expect(responseOfTheValidation).toEqual(
+        "This value shouldn't be negative",
+      );
     });
   });
 
@@ -214,18 +295,24 @@ describe('Validate numbers higher than zero', () => {
     it('a field is a negative number', () => {
       const value = -123;
       const responseOfTheValidation = validateHigherThanZero()(value);
-      expect(responseOfTheValidation).toEqual('This value should be higher than zero');
+      expect(responseOfTheValidation).toEqual(
+        'This value should be higher than zero',
+      );
     });
     it('a field is a string with value 0', () => {
       const value = '0';
       const responseOfTheValidation = validateHigherThanZero()(value);
-      expect(responseOfTheValidation).toEqual('This value should be higher than zero');
+      expect(responseOfTheValidation).toEqual(
+        'This value should be higher than zero',
+      );
     });
 
     it('a field is a 0', () => {
       const value = 0;
       const responseOfTheValidation = validateHigherThanZero()(value);
-      expect(responseOfTheValidation).toEqual('This value should be higher than zero');
+      expect(responseOfTheValidation).toEqual(
+        'This value should be higher than zero',
+      );
     });
   });
 
@@ -259,13 +346,17 @@ describe('Validate Min Amount', () => {
       const value = 11;
       const min = 12;
       const responseOfTheValidation = minAmount(min)(value);
-      expect(responseOfTheValidation).toEqual(`This value should not be less than ${min}`);
+      expect(responseOfTheValidation).toEqual(
+        `This value should not be less than ${min}`,
+      );
     });
     it('a field is higher than a number (beeing a string', () => {
       const value = '11';
       const min = '12';
       const responseOfTheValidation = minAmount(min)(value);
-      expect(responseOfTheValidation).toEqual(`This value should not be less than ${min}`);
+      expect(responseOfTheValidation).toEqual(
+        `This value should not be less than ${min}`,
+      );
     });
   });
 
@@ -302,13 +393,17 @@ describe('Validate Max Amount', () => {
       const value = 12;
       const max = 11;
       const responseOfTheValidation = maxAmount(max)(value);
-      expect(responseOfTheValidation).toEqual(`This value should not be more than ${max}`);
+      expect(responseOfTheValidation).toEqual(
+        `This value should not be more than ${max}`,
+      );
     });
     it('a field is higher than a number (beeing a string', () => {
       const value = '12';
       const max = '11';
       const responseOfTheValidation = maxAmount(max)(value);
-      expect(responseOfTheValidation).toEqual(`This value should not be more than ${max}`);
+      expect(responseOfTheValidation).toEqual(
+        `This value should not be more than ${max}`,
+      );
     });
   });
   describe('It should success (return undefined) when', () => {
@@ -346,7 +441,7 @@ describe('Validate Max Characters', () => {
       const max = 1;
       const responseOfTheValidation = maxCharacters(max)(value);
       expect(responseOfTheValidation).toEqual(
-        `This value should contain maximum ${max} characters`
+        `This value should contain maximum ${max} characters`,
       );
     });
   });
@@ -379,7 +474,7 @@ describe('Validate Min Characters', () => {
       const max = 10;
       const responseOfTheValidation = minCharacters(max)(value);
       expect(responseOfTheValidation).toEqual(
-        `This value should contain minimum ${max} characters`
+        `This value should contain minimum ${max} characters`,
       );
     });
   });
@@ -411,14 +506,14 @@ describe('Validate Min Characters', () => {
       const value = 'asdas';
       const responseOfTheValidation = validDate()(value);
       expect(responseOfTheValidation).toEqual(
-        'This should be a valid date (for example: YYYY-MM-DD)'
+        'This should be a valid date (for example: YYYY-MM-DD)',
       );
     });
     it('a field is not a string', () => {
       const value = 3;
       const responseOfTheValidation = validDate()(value);
       expect(responseOfTheValidation).toEqual(
-        'This should be a valid date (for example: YYYY-MM-DD)'
+        'This should be a valid date (for example: YYYY-MM-DD)',
       );
     });
   });
@@ -442,7 +537,9 @@ describe('Validate Mobile phone', () => {
     it('a field is a string that is not a phone', () => {
       const value = '11221122112211221';
       const responseOfTheValidation = validateMobilePhone()(value);
-      expect(responseOfTheValidation).toEqual('This value is not a valid phone number');
+      expect(responseOfTheValidation).toEqual(
+        'This value is not a valid phone number',
+      );
     });
     it('a field is a phone number with unexisting phone format', () => {
       const value = '+54999911112';

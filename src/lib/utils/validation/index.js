@@ -1,5 +1,6 @@
 import {
   required,
+  requiredIf,
   validateNumeric,
   validateAlphanumeric,
   validateEmail,
@@ -18,6 +19,7 @@ import {
 
 export {
   required,
+  requiredIf,
   validateNumeric,
   validateAlphanumeric,
   validateEmail,
