@@ -15,7 +15,12 @@ const regularExpressions = {
 export const valueIsEmpty = value => value === '' || value === undefined || value === null;
 
 export const required = customMessage => value =>
-  !valueIsEmpty(value) && value !== false ? undefined : customMessage || 'Required';
+  !valueIsEmpty(value) && value !== false
+    ? undefined
+    : customMessage || 'Required';
+
+export const requiredIf = condition => customMessage => value =>
+  condition ? required(customMessage)(value) : undefined;
 
 export const validateNumeric = customMessage => value =>
   !value || regularExpressions.numeric.test(value)

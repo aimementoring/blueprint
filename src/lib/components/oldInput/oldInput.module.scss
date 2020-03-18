@@ -1,0 +1,77 @@
+@import '../../styles/variables/variables.module.scss';
+@import '../../styles/themes/themes.module.scss';
+@import '../../styles/global/reset.module.scss';
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5em;
+}
+
+.input {
+  @include themify() {
+    color: themed('fieldColor');
+    background-color: themed('fieldBackground');
+    border: themed('fieldBorder');
+    font-family: themed('primaryFont');
+    font-size: themed('fieldFontSize');
+    border-radius: themed('fieldBorderRadius');
+    height: themed('inputHeight');
+    font-weight: themed('fieldFontWeight');
+    padding: themed('inputPadding');
+  }
+  width: 100%;
+
+  &.error,
+  &.error:focus,
+  &.error:hover {
+    @include themify() {
+      border: themed('fieldBorderError');
+      border-color: themed('fieldColorError');
+    }
+  }
+
+  &::placeholder {
+    @include themify() {
+      color: themed('fieldPlaceholderColor');
+      font-size: themed('fieldPlaceholderFontSize');
+    }
+  }
+
+  @media only screen and (max-width: $sm) {
+    margin-bottom: 0.8em;
+  }
+}
+
+.input:focus {
+  @include themify() {
+    background-color: themed('fieldFocusBackgroundColor');
+    border-color: themed('fieldFocusColor');
+  }
+  outline: none;
+}
+
+input.input[type='date']:before {
+  content: attr(placeholder) ':';
+  color: #aaa;
+  margin-right: 0.5em;
+}
+
+input[type='date']:focus:before,
+input[type='date']:valid:before {
+  content: '';
+}
+
+::placeholder {
+  @include themify() {
+    color: themed('lavender');
+  }
+}
+
+input.input[readonly], input.input[readonly]:focus {
+  cursor: not-allowed;
+  @include themify() {
+    background: themed('fieldReadOnlyBackgroundColor');
+    color: themed('fieldReadOnlyColor');
+  }
+}

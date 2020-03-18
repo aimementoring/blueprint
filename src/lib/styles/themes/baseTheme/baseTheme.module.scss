@@ -54,7 +54,7 @@ $baseTheme: (
   disabledElementColor: $white,
   linkBackgroundColor: $grey-80,
   linkColor: $white,
-  loadingBlack: $black,
+  loadingWhite: rgba(241, 241, 241, 0.7),
   avatarBackground: $grey-40,
   checkboxColor: $grey-80,
   checkBoxNotCheckedBorderColor: $grey-30,
@@ -72,7 +72,7 @@ $baseTheme: (
   progressBarBackgroundColor: $grey-60,
   progressBarFillColor: $black,
   progressBarColor: $white,
-  progressFontSize: 1em,
+  progressFontSize: 1rem,
   paragraphColor: $black,
   // paraHighlight: -1em 0.3em 0 -0.3em $yellow, inset 0 -1.06em 0 -0.6em $yellow, 1em 0.3em 0 -0.3em $yellow,
 );

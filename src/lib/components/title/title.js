@@ -2,7 +2,10 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styles from './title.module.scss';
-import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
+import {
+  componentPropTypes,
+  defaultComponentPropTypes,
+} from '../../utils/componentPropTypes';
 
 const titleTypeClass = {
   h1Title: {
@@ -33,13 +36,29 @@ const titleTypeClass = {
 
 class Title extends PureComponent {
   render() {
-    const { text, type, className, containerClassName, theme, children } = this.props;
+    const {
+      text,
+      type,
+      className,
+      containerClassName,
+      theme,
+      children,
+      onClick,
+    } = this.props;
 
-    const { style, tag: Component } = titleTypeClass[type] || { style: {}, tag: 'span' };
+    const { style, tag: Component } = titleTypeClass[type] || {
+      style: {},
+      tag: 'span',
+    };
 
     return (
-      <div className={classNames(styles[`theme-${theme}`], containerClassName)}>
-        <Component className={classNames(style, className)}>{children || text}</Component>
+      <div
+        className={classNames(styles[`theme-${theme}`], containerClassName)}
+        onClick={onClick}
+      >
+        <Component className={classNames(style, className)}>
+          {children || text}
+        </Component>
       </div>
     );
   }
@@ -48,6 +67,7 @@ class Title extends PureComponent {
 Title.propTypes = {
   ...componentPropTypes,
   text: PropTypes.string,
+  onClick: PropTypes.func,
   // setting up headings as per design system but they will probably change again
   type: PropTypes.oneOf([
     'h1Title',
@@ -62,6 +82,7 @@ Title.propTypes = {
 
 Title.defaultProps = {
   ...defaultComponentPropTypes,
+  onClick: () => {},
   type: 'h1Title',
 };
 

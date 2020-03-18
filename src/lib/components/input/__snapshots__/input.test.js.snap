@@ -2,18 +2,291 @@
 
 exports[`Input renders properly 1`] = `
 <div
-  className=" theme-purple inputWrapper"
+  className="theme-purple "
 >
-  <input
-    className="false input "
-    disabled="disabled"
-    name="name"
-    onChange={[Function]}
-    placeholder="Name"
-    required={true}
-    type="text"
-    validations={Array []}
-    value=""
-  />
+  <div
+    className="wrapper"
+  >
+    <input
+      className=" false"
+      disabled=""
+      error={null}
+      id="testing"
+      name="testing"
+      onChange={[Function]}
+      type="text"
+      validations={Array []}
+      value=""
+    />
+    <label
+      htmlFor="testing"
+    >
+      <span
+        className="fieldName"
+      >
+        Testing input
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Input renders properly when different theme 1`] = `
+<div
+  className="theme-purple "
+>
+  <div
+    className="wrapper"
+  >
+    <input
+      className=" false"
+      disabled=""
+      error={null}
+      id="testing"
+      name="testing"
+      onChange={[Function]}
+      type="text"
+      validations={Array []}
+      value=""
+    />
+    <label
+      htmlFor="testing"
+    >
+      <span
+        className="fieldName"
+      >
+        Testing input
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Input renders properly when it has an error 1`] = `
+<div
+  className="theme-purple "
+>
+  <div
+    className="wrapper"
+  >
+    <input
+      className=" false"
+      disabled=""
+      error="It is a required field"
+      id="testing"
+      name="testing"
+      onChange={[Function]}
+      type="text"
+      validations={Array []}
+      value=""
+    />
+    <label
+      htmlFor="testing"
+    >
+      <span
+        className="fieldName"
+      >
+        Testing input
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Input renders properly when it is disabled 1`] = `
+<div
+  className="theme-purple "
+>
+  <div
+    className="wrapper"
+  >
+    <input
+      className=" false"
+      disabled="disabled"
+      error={null}
+      id="testing"
+      name="testing"
+      onChange={[Function]}
+      type="text"
+      validations={Array []}
+      value=""
+    />
+    <label
+      htmlFor="testing"
+    >
+      <span
+        className="fieldName"
+      >
+        Testing input
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Input renders properly when type is number 1`] = `
+<div
+  className="theme-purple "
+>
+  <div
+    className="wrapper"
+  >
+    <input
+      className=" false"
+      disabled=""
+      error={null}
+      id="testing"
+      name="testing"
+      onChange={[Function]}
+      type="number"
+      validations={Array []}
+      value=""
+    />
+    <label
+      htmlFor="testing"
+    >
+      <span
+        className="fieldName"
+      >
+        Testing input
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Input renders properly with error and helper text 1`] = `
+<div
+  className="theme-purple "
+>
+  <div
+    className="wrapper"
+  >
+    <input
+      className=" false"
+      disabled=""
+      error="There is an error"
+      id="testing"
+      name="testing"
+      onChange={[Function]}
+      type="text"
+      validations={Array []}
+      value={null}
+    />
+    <label
+      htmlFor="testing"
+    >
+      <span
+        className="fieldName"
+      >
+        Testing input
+      </span>
+    </label>
+    <span
+      className="helperMessage"
+    >
+      My awesome helper text
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Input renders properly with helper text 1`] = `
+<div
+  className="theme-purple "
+>
+  <div
+    className="wrapper"
+  >
+    <input
+      className=" false"
+      disabled=""
+      error={null}
+      id="testing"
+      name="testing"
+      onChange={[Function]}
+      type="text"
+      validations={Array []}
+      value={null}
+    />
+    <label
+      htmlFor="testing"
+    >
+      <span
+        className="fieldName"
+      >
+        Testing input
+      </span>
+    </label>
+    <span
+      className="helperMessage"
+    >
+      My awesome helper text
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Input renders properly with required 1`] = `
+<div
+  className="theme-purple "
+>
+  <div
+    className="wrapper"
+  >
+    <input
+      className=" false"
+      disabled=""
+      error={null}
+      id="testing"
+      name="testing"
+      onChange={[Function]}
+      required={true}
+      type="text"
+      validations={Array []}
+      value=""
+    />
+    <label
+      htmlFor="testing"
+    >
+      <span
+        className="fieldName"
+      >
+        Testing required input
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Input renders properly with required and a value 1`] = `
+<div
+  className="theme-purple "
+>
+  <div
+    className="wrapper"
+  >
+    <input
+      className=" false"
+      disabled=""
+      error={null}
+      id="testing"
+      name="testing"
+      onChange={[Function]}
+      required={true}
+      type="text"
+      validations={Array []}
+      value="ABCD"
+    />
+    <label
+      htmlFor="testing"
+    >
+      <span
+        className="fieldName"
+      >
+        Testing input
+      </span>
+    </label>
+  </div>
 </div>
 `;

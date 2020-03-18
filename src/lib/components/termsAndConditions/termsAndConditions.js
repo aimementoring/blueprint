@@ -48,12 +48,12 @@ const TermsAndConditions = ({
           </div>
         )}
         {children && (
-          <div className={`${styles.textContainer} ${className}`} style={containerStyle}>
+          <div className={`${styles.textContainer} ${className}`}>
             {children}
           </div>
         )}
         {paragraph && (
-          <div className={`${styles.textContainer} ${className}`} style={containerStyle}>
+          <div className={`${styles.textContainer} ${className}`}>
             {typeof paragraph === 'string' ? (
               <Paragraph text={paragraph} />
             ) : (
@@ -71,6 +71,7 @@ const TermsAndConditions = ({
               validations={validations}
               validationMessage={validationMessage}
               hasErrorAfterSubmit={hasErrorAfterSubmit}
+              theme={theme}
             />
           </div>
         )}

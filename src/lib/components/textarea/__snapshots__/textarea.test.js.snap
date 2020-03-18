@@ -7,14 +7,10 @@ exports[`Textarea renders properly 1`] = `
   <textarea
     className="false
             myClass input textarea"
-    getValidationMessage={[Function]}
-    handleValidations={[Function]}
     name="textarea"
     onChange={[Function]}
-    onChangeFunction={[Function]}
     placeholder="Write area"
     required={true}
-    validationMessage=""
     validations={Array []}
     value=""
   />

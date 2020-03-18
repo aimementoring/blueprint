@@ -30,7 +30,8 @@ class List extends PureComponent {
     return (
       <div className={classNames(styles[`theme-${theme}`], containerClassName)}>
         <Component className={classNames(style, className)}>
-          {list && list.map(item => <li>{item}</li>)}
+          {list &&
+            list.map((item, index) => <li key={`${index}-${item}`}>{item}</li>)}
         </Component>
       </div>
     );

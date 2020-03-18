@@ -1,8 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
-import { handleInputChange } from '../input/utils.ignore';
-import styles from './labeledTextarea.module.scss';
+import React from "react";
+import PropTypes from "prop-types";
+import {
+  componentPropTypes,
+  defaultComponentPropTypes,
+} from "../../utils/componentPropTypes";
+import { handleInputChange } from "../oldInput/utils.ignore";
+import styles from "./labeledTextarea.module.scss";
 
 const LabeledTextarea = ({
   theme,
@@ -12,12 +15,14 @@ const LabeledTextarea = ({
   label,
   className,
   // type,
+  validationMessage,
   onChangeFunction,
   handleValidations,
   helperText,
   ...inputProps
 }) => {
-  const handleChange = event => handleInputChange(event, name, handleValidations, onChangeFunction);
+  const handleChange = event =>
+    handleInputChange(event, name, handleValidations, onChangeFunction);
 
   return (
     <div className={styles[`theme-${theme}`]}>
@@ -31,11 +36,15 @@ const LabeledTextarea = ({
           value={value}
           {...inputProps}
         />
-        <label for={name}>
+        <label htmlFor={name}>
           <span className={styles.fieldName}>{label}</span>
         </label>
-        <span className={`${styles.errorMessage} ${error && styles.active}`}>{error}</span>
-        {!error && helperText && <span className={styles.helperMessage}>{helperText}</span>}
+        <span className={`${styles.errorMessage} ${error && styles.active}`}>
+          {error}
+        </span>
+        {!error && helperText && (
+          <span className={styles.helperMessage}>{helperText}</span>
+        )}
       </div>
     </div>
   );
@@ -58,7 +67,7 @@ LabeledTextarea.defaultProps = {
   ...defaultComponentPropTypes,
   value: null,
   error: null,
-  className: '',
+  className: "",
   // type: 'textarea',
   helperText: null,
   handleValidations: () => true,

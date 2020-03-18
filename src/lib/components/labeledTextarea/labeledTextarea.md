@@ -1,6 +1,6 @@
 ```js
 initialState = {
-  value: '',
+  value: ""
 };
 
 function updateValue(name, value) {
@@ -17,7 +17,7 @@ function updateValue(name, value) {
 
 ```js
 initialState = {
-  value: '',
+  value: ""
 };
 
 function updateValue(name, value) {
@@ -35,7 +35,7 @@ function updateValue(name, value) {
 
 ```js
 initialState = {
-  required: '',
+  required: ""
 };
 
 function updateValue(name, value) {
@@ -48,13 +48,12 @@ function updateValue(name, value) {
   onChangeFunction={updateValue}
   label="Required input"
   required
-  theme="purple"
 />;
 ```
 
 ```js
 initialState = {
-  error: '',
+  error: ""
 };
 
 function updateValue(name, value) {

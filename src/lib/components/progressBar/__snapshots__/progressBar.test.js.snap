@@ -5,7 +5,7 @@ exports[`ProgressBar renders properly using all available props 1`] = `
   className="theme-base"
 >
   <div
-    className="progress"
+    className="progressBar"
     style={
       Object {
         "backgroundColor": "green",
@@ -14,7 +14,7 @@ exports[`ProgressBar renders properly using all available props 1`] = `
     }
   >
     <div
-      className="progressBar"
+      className="progress"
       style={
         Object {
           "backgroundColor": "red",
@@ -36,19 +36,19 @@ exports[`ProgressBar renders properly with just progress value 1`] = `
   className="theme-base"
 >
   <div
-    className="progress"
+    className="progressBar"
     style={
       Object {
-        "height": "20px",
+        "height": "50px",
       }
     }
   >
     <div
-      className="progressBar"
+      className="progress"
       style={
         Object {
-          "fontSize": "12px",
-          "lineHeight": "20px",
+          "fontSize": "undefinedpx",
+          "lineHeight": "50px",
           "width": "10%",
         }
       }
@@ -62,19 +62,19 @@ exports[`ProgressBar renders properly with just progress value and display numbe
   className="theme-base"
 >
   <div
-    className="progress"
+    className="progressBar"
     style={
       Object {
-        "height": "20px",
+        "height": "50px",
       }
     }
   >
     <div
-      className="progressBar"
+      className="progress"
       style={
         Object {
-          "fontSize": "12px",
-          "lineHeight": "20px",
+          "fontSize": "undefinedpx",
+          "lineHeight": "50px",
           "width": "40%",
         }
       }
@@ -90,19 +90,19 @@ exports[`ProgressBar renders properly with no props 1`] = `
   className="theme-base"
 >
   <div
-    className="progress"
+    className="progressBar"
     style={
       Object {
-        "height": "20px",
+        "height": "50px",
       }
     }
   >
     <div
-      className="progressBar"
+      className="progress"
       style={
         Object {
-          "fontSize": "12px",
-          "lineHeight": "20px",
+          "fontSize": "undefinedpx",
+          "lineHeight": "50px",
           "width": "0%",
         }
       }

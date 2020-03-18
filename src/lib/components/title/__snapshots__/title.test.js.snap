@@ -3,6 +3,7 @@
 exports[`Title is backwards compatible (text passed as prop) 1`] = `
 <div
   className="theme-base"
+  onClick={[Function]}
 >
   <h1
     className="h1Title"
@@ -15,6 +16,7 @@ exports[`Title is backwards compatible (text passed as prop) 1`] = `
 exports[`Title renders properly 1`] = `
 <div
   className="theme-base"
+  onClick={[Function]}
 >
   <h1
     className="h1Title"

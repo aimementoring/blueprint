@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`oldInput renders properly 1`] = `
+<div
+  className=" theme-purple inputWrapper"
+>
+  <input
+    className="false input "
+    disabled="disabled"
+    name="name"
+    onChange={[Function]}
+    placeholder="Name"
+    required={true}
+    type="text"
+    validations={Array []}
+    value=""
+  />
+</div>
+`;

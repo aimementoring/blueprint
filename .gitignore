@@ -11,6 +11,7 @@
 # production
 /build
 /docs
+/lib
 
 # misc
 .DS_Store
@@ -26,3 +27,4 @@ yarn-error.log*
 
 # Tests results
 .jest-test-results.json
+.history

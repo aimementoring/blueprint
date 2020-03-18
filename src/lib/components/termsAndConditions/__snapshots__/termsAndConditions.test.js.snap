@@ -35,7 +35,6 @@ exports[`TermsAndConditions renders properly with all props used 1`] = `
   >
     <div
       className="textContainer "
-      style={Object {}}
     >
       <strong>
         Lorem ipsum dolor sit amet
@@ -63,11 +62,6 @@ exports[`TermsAndConditions renders properly with all props used 2`] = `
   >
     <div
       className="textContainer "
-      style={
-        Object {
-          "height": "150px",
-        }
-      }
     >
       <strong>
         Lorem ipsum dolor sit amet
@@ -86,10 +80,10 @@ exports[`TermsAndConditions renders properly with all props used 2`] = `
       className="termsCheckbox"
     >
       <div
-        className="theme-purple wrapper"
+        className="theme-base wrapper"
       >
         <div
-          className=" customCheckbox customCheckboxDefault"
+          className=" customCheckbox customCheckboxDefault false"
           onClick={[Function]}
         >
           <input
@@ -103,7 +97,9 @@ exports[`TermsAndConditions renders properly with all props used 2`] = `
             type="checkbox"
             value="yes"
           />
-          <label>
+          <label
+            className="false"
+          >
             Testing my checkbox
           </label>
         </div>
@@ -143,10 +139,10 @@ exports[`TermsAndConditions renders properly with all props used 3`] = `
       className="termsCheckbox"
     >
       <div
-        className="theme-purple wrapper"
+        className="theme-base wrapper"
       >
         <div
-          className=" customCheckbox customCheckboxDefault"
+          className=" customCheckbox customCheckboxDefault false"
           onClick={[Function]}
         >
           <input
@@ -160,7 +156,9 @@ exports[`TermsAndConditions renders properly with all props used 3`] = `
             type="checkbox"
             value="yes"
           />
-          <label>
+          <label
+            className="false"
+          >
             Testing my checkbox
           </label>
         </div>
@@ -179,7 +177,6 @@ exports[`TermsAndConditions renders properly with paragraph props 1`] = `
   >
     <div
       className="textContainer "
-      style={Object {}}
     >
       <div
         className="theme-base"
@@ -229,10 +226,10 @@ exports[`TermsAndConditions renders properly with pdf, and checkbox 1`] = `
       className="termsCheckbox"
     >
       <div
-        className="theme-purple wrapper"
+        className="theme-base wrapper"
       >
         <div
-          className=" customCheckbox customCheckboxDefault"
+          className=" customCheckbox customCheckboxDefault false"
           onClick={[Function]}
         >
           <input
@@ -246,7 +243,9 @@ exports[`TermsAndConditions renders properly with pdf, and checkbox 1`] = `
             type="checkbox"
             value="yes"
           />
-          <label>
+          <label
+            className="false"
+          >
             Testing my checkbox
           </label>
         </div>

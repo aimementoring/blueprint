@@ -2,13 +2,9 @@
 @import '../../styles/themes/themes.module.scss';
 
 // .wrapper {
-//   display: flex;
-//   flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
 // }
-
-.customCheckbox {
-  margin-bottom: 2em;
-}
 
 .customCheckbox input[type='checkbox'] {
   display: none;
@@ -29,6 +25,14 @@
       @include themify() {
         color: themed('checkboxColor');
       }
+    }
+  }
+
+  &.error {
+
+    ~ label {
+      margin: 0.8em 1.5em;
+      color: $black;
     }
   }
 
@@ -109,13 +113,20 @@
   }
 }
 
-.error {
-  @include themify() {
-    color: themed('fieldColorError');
-  }
-}
-.errorMessage {
-  @include themify() {
-    color: themed('fieldColorError');
+.customCheckbox.error {
+  position: relative;
+  border: 2px solid $error-color;
+  border-radius: 3px;
+  padding: 0.5em;
+  
+  // this should be targetted with .errorMessage however
+  // .errorMessage is in withValidations component
+  // so won't work here because css modules
+  span span {
+    position: absolute;
+    top: -1em;
+    left: 1em;
+    background: $white;
+    padding: 0.5em;
   }
 }
