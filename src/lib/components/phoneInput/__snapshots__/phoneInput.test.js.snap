@@ -5,7 +5,7 @@ exports[`PhoneInput renders properly 1`] = `
   className=" theme-purple inputWrapper"
 >
   <div
-    className="react-phone-number-input input"
+    className="react-phone-number-input input PEPITOO"
   >
     <div
       className="react-phone-number-input__row"

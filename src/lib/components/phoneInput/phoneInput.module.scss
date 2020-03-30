@@ -11,7 +11,6 @@
 }
 
 :global {
-
   .react-phone-number-input__row {
     display: flex;
     align-items: center;
@@ -26,6 +25,7 @@
       padding: 0.4em 1em;
       border-radius: 3px;
     }
+    
   }
 
   .react-phone-number-input__phone {
@@ -163,5 +163,13 @@
 
   .react-phone-number-input__country .rrui__select__button {
     border-bottom: none;
+  }
+}
+
+.error {
+  :global {
+    .react-phone-number-input__row {
+      border-color: $error-color;
+    }
   }
 }
