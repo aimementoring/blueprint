@@ -1,12 +1,12 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import ReactPhoneInput, { parsePhoneNumber } from "react-phone-number-input";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import ReactPhoneInput, { parsePhoneNumber } from 'react-phone-number-input';
 import {
   componentPropTypes,
   defaultComponentPropTypes,
-} from "../../utils/componentPropTypes";
-import { withValidation } from "../../utils/hocs";
-import styles from "./phoneInput.module.scss";
+} from '../../utils/componentPropTypes';
+import { withValidation } from '../../utils/hocs';
+import styles from './phoneInput.module.scss';
 
 class PhoneInput extends PureComponent {
   static propTypes = {
@@ -24,12 +24,12 @@ class PhoneInput extends PureComponent {
 
   static defaultProps = {
     ...defaultComponentPropTypes,
-    placeholder: "phone",
+    placeholder: 'phone',
     className: styles.input,
-    name: "phone",
+    name: 'phone',
     required: false,
-    defaultCountry: "AU",
-    value: "",
+    defaultCountry: 'AU',
+    value: '',
     onCountrySelected: () => {},
     onChangeFunction: () => {},
     handleValidations: () => true,
@@ -72,11 +72,12 @@ class PhoneInput extends PureComponent {
           placeholder={placeholder}
           value={value}
           onChange={this.handleChange}
-          error={isValidationOk() ? "" : getValidationMessage()}
-          className={className}
+          error={isValidationOk() ? '' : getValidationMessage()}
+          className={`${className} ${isValidationOk() && styles.error}`}
           {...inputProps}
           country={defaultCountry}
         />
+        {renderValidationError()}
       </div>
     );
   }
