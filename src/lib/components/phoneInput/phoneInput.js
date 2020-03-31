@@ -73,9 +73,7 @@ class PhoneInput extends PureComponent {
           value={value}
           onChange={this.handleChange}
           error={isValidationOk() ? '' : getValidationMessage()}
-          className={`${className} ${
-            isValidationOk() && styles.error ? styles.error : 'PEPITOO'
-          }`}
+          className={`${className} ${isValidationOk() && styles.error}`}
           {...inputProps}
           country={defaultCountry}
         />
