@@ -37,14 +37,40 @@ class PhoneInput extends PureComponent {
   };
 
   handleChange = value => {
-    const { name, onChangeFunction, handleValidations } = this.props;
+    console.log({ value, currentValue: this.props.value });
+    const {
+      name,
+      onChangeFunction,
+      handleValidations,
+      value: currentValue,
+    } = this.props;
+
     let parsedValue = {};
     const isWrongValidation = handleValidations(value);
-
+    let valueToReturn = value;
     if (value) {
       parsedValue = parsePhoneNumber(value);
+      // check if the country code change and we have to change the country code wrote in the input
+      if (currentValue && currentValue.indexOf('+') > -1 && parsedValue) {
+        const parsedCurrentValue = parsePhoneNumber(currentValue);
+        // change the flag of the country
+        console.log({ parsedCurrentValue });
+        if (
+          (parsedCurrentValue &&
+            parsedCurrentValue.countryCallingCode !==
+              parsedValue.countryCallingCode) ||
+          (!parsedCurrentValue && value.indexOf(currentValue) === -1)
+        ) {
+          valueToReturn = parsedCurrentValue
+            ? `+${parsedValue.countryCallingCode}${
+              currentValue.split(parsedCurrentValue.countryCallingCode)[1]
+            }`
+            : `+${parsedValue.countryCallingCode}`;
+        }
+      }
     }
-    onChangeFunction(name, value, isWrongValidation, parsedValue);
+
+    onChangeFunction(name, valueToReturn, isWrongValidation, parsedValue);
   };
 
   render() {
