@@ -37,7 +37,6 @@ class PhoneInput extends PureComponent {
   };
 
   handleChange = value => {
-    console.log({ value, currentValue: this.props.value });
     const {
       name,
       onChangeFunction,
@@ -54,7 +53,6 @@ class PhoneInput extends PureComponent {
       if (currentValue && currentValue.indexOf('+') > -1 && parsedValue) {
         const parsedCurrentValue = parsePhoneNumber(currentValue);
         // change the flag of the country
-        console.log({ parsedCurrentValue });
         if (
           (parsedCurrentValue &&
             parsedCurrentValue.countryCallingCode !==
