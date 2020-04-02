@@ -36,10 +36,14 @@ const Input = ({
     handleInputChange(event, name, handleValidations, onChangeFunction);
 
   return (
-    <div className={`${styles[`theme-${theme}`]} ${containerClassName}`}>
+    <div
+      className={`${
+        styles[`theme-${theme}`] ? styles[`theme-${theme}`] : ''
+      } ${containerClassName}`}
+    >
       <div className={styles.wrapper}>
         <input
-          className={`${className} ${isValidationOk() && styles.error}`}
+          className={`${className} ${isValidationOk() ? styles.error : ''}`}
           type={type || 'text'}
           id={name}
           name={name}

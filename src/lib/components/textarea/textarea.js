@@ -1,6 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
+import {
+  componentPropTypes,
+  defaultComponentPropTypes,
+} from '../../utils/componentPropTypes';
 import { withValidation } from '../../utils/hocs';
 import styles from './textarea.module.scss';
 
@@ -55,9 +58,13 @@ class Textarea extends PureComponent {
     } = this.props;
 
     return (
-      <div className={`${containerClassName} ${styles[`theme-${theme}`]} ${styles.wrapper}`}>
+      <div
+        className={`${containerClassName} ${
+          styles[`theme-${theme}`] ? styles[`theme-${theme}`] : ''
+        } ${styles.wrapper}`}
+      >
         <textarea
-          className={`${isValidationOk() && styles.error}
+          className={`${isValidationOk() ? styles.error : ''}
             ${className} ${styles.input} ${styles.textarea}`}
           placeholder={placeholder}
           onChange={this.handleChange}

@@ -2,7 +2,10 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Dropdown from 'react-select';
 import flatten from 'lodash.flatten';
-import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
+import {
+  componentPropTypes,
+  defaultComponentPropTypes,
+} from '../../utils/componentPropTypes';
 import { selectProps, selectDefaultProps } from './selectProps.ignore';
 import { withValidation } from '../../utils/hocs';
 import stylesCss from './select.module.scss';
@@ -11,7 +14,9 @@ class Select extends PureComponent {
   handleChange = value => {
     const { onChangeFunction, name, handleValidations } = this.props;
     if (value) {
-      const newValue = value.length ? value.map(item => item.value) : value.value;
+      const newValue = value.length
+        ? value.map(item => item.value)
+        : value.value;
       const isWrongValidation = handleValidations(value);
       onChangeFunction(name, newValue, isWrongValidation);
     }
@@ -25,7 +30,9 @@ class Select extends PureComponent {
 
     if (isMulti) {
       result =
-        value && value.length ? options.filter(option => value.indexOf(option.value) > -1) : [];
+        value && value.length
+          ? options.filter(option => value.indexOf(option.value) > -1)
+          : [];
     } else {
       result = value ? options.find(option => option.value === value) : null;
     }
@@ -100,11 +107,13 @@ class Select extends PureComponent {
     return (
       <div
         className={`${containerClassName}
-          ${stylesCss[`theme-${theme}`]} ${stylesCss.wrapper}`}
+          ${stylesCss[`theme-${theme}`] ? stylesCss[`theme-${theme}`] : ''} ${
+          stylesCss.wrapper
+        }`}
       >
         <Dropdown
           placeholder={placeholder}
-          className={`${className} ${isValidationOk() && styles.error}`}
+          className={`${className} ${isValidationOk() ? styles.error : ''}`}
           styles={customStyles}
           onChange={this.handleChange}
           options={options}

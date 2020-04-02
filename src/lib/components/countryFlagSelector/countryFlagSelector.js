@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import countriesList from '../countrySelector/countryCollection.ignore';
 import Select from '../select';
 import CountryFlag from '../countryFlag';
-import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
+import {
+  componentPropTypes,
+  defaultComponentPropTypes,
+} from '../../utils/componentPropTypes';
 import styles from './countryFlagSelector.module.scss';
 
 const CountryFlagSelector = ({
@@ -20,8 +23,10 @@ const CountryFlagSelector = ({
     setCountries(
       countriesList.map(country => ({
         value: country.code,
-        label: <CountryFlag country={country.code} number={country.phoneCode} />,
-      }))
+        label: (
+          <CountryFlag country={country.code} number={country.phoneCode} />
+        ),
+      })),
     );
   }, []);
 
@@ -38,14 +43,22 @@ const CountryFlagSelector = ({
   };
 
   return (
-    <div className={styles[`theme-${theme} ${containerClassName}`]}>
+    <div
+      className={`${
+        styles[`theme-${theme}`] ? styles[`theme-${theme}`] : ''
+      } ${containerClassName}`}
+    >
       <Select
         placeholder=""
         name={name}
         className={`${styles.select} ${className}`}
         containerClassName={`${styles.selectContainer}`}
         onChangeFunction={handleChange}
-        value={!value || !countries.find(country => country.text === value) ? null : value}
+        value={
+          !value || !countries.find(country => country.text === value)
+            ? null
+            : value
+        }
         options={countries}
         required
         customStyles={customStyles}
@@ -67,6 +80,7 @@ CountryFlagSelector.defaultProps = {
   onChangeFunction: () => {},
   value: '',
   name: 'country-name',
+  containerClassName: '',
 };
 
 export default CountryFlagSelector;

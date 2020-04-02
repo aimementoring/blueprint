@@ -1,6 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
+import {
+  componentPropTypes,
+  defaultComponentPropTypes,
+} from '../../utils/componentPropTypes';
 import styles from './button.module.scss';
 
 export default class Button extends PureComponent {
@@ -17,6 +20,7 @@ export default class Button extends PureComponent {
 
   static defaultProps = {
     ...defaultComponentPropTypes,
+    type: 'button',
     containerClassName: '',
     onClickFunction: () => {},
     underneathLabel: null,
@@ -56,7 +60,9 @@ export default class Button extends PureComponent {
                 {text || children}
               </button>
               {underneathLabel && (
-                <label className={styles.underneathLabel}>{underneathLabel}</label>
+                <label className={styles.underneathLabel}>
+                  {underneathLabel}
+                </label>
               )}
             </div>
           )}
