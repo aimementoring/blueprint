@@ -1,18 +1,34 @@
 module.exports = {
-  title: 'AIME Portal Style Guide',
+  title: 'AIME Blueprint',
   template: {
-    favicon: 'https://d2ylaz7bdw65jx.cloudfront.net/assets/images/favicon/favicon.ico',
+    favicon:
+      'https://d2ylaz7bdw65jx.cloudfront.net/assets/images/favicon/favicon.ico',
   },
   // Customisable attributes: https://github.com/styleguidist/react-styleguidist/blob/master/src/client/styles/theme.js
   theme: {
+    borderRadius: '3px',
     color: {
-      sidebarBackground: '#a863ff',
-      base: '#da0dff',
-      link: '#fff',
-      linkHover: '#da0dff',
+      border: '#939393',
+      baseBackground: '#ffffff',
+      sidebarBackground: '#fed333', // yellow '#ff99cb', // pastel pink
+      link: '#00000',
+      name: '#09CD7B', // green
+      type: '#E82A9E', // violet
+      linkHover: '#9135F0', // purple
+      light: '#6d6d6d',
+      lightest: '#9135F0',
     },
     fontFamily: {
-      base: '"Poppins Bold Italic", Helvetica, Arial, sans-serif',
+      base: `"GT Pressura Mono", "Univers Light", "Helvetica Neue", Helvetica, Arial, sans-serif`,
+    },
+  },
+  styles: {
+    Logo: {
+      logo: {
+        fontFamily: `"Luna Emu", "Poppins Black", "Arial Black", "sans serif"`,
+        fontSize: '2.5em',
+        color: '#516bf0',
+      },
     },
   },
   // Temporary reminder for Lara - this is where you can change the framework styles
@@ -38,8 +54,8 @@ module.exports = {
   },
   sections: [
     {
-      name: 'Components',
-      description: 'Visual components to be used in React websites',
+      name: 'UI Components',
+      description: 'UI components for our React projects',
       components: 'src/lib/components/**/*.js',
       ignore: [
         '**/*.spec.js',
@@ -51,7 +67,7 @@ module.exports = {
     },
     {
       name: 'Utils',
-      description: 'Utils functions',
+      description: 'Utility functions',
       components: 'src/lib/utils/**/*.js',
       ignore: [
         '**/*.spec.js',
