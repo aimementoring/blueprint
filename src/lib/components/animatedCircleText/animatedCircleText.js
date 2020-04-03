@@ -24,7 +24,7 @@ const AnimatedCircleText = ({
     height: `${size}px`,
   };
   return (
-    <div className={styles[`theme-${theme}`] ? styles[`theme-${theme}`] : ''}>
+    <div className={styles[`theme-${theme}`]}>
       <div className={containerClassName}>
         <div
           className={styles.circleContainer}

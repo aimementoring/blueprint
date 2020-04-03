@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import countriesList from '../countrySelector/countryCollection.ignore';
 import Select from '../select';
 import CountryFlag from '../countryFlag';
@@ -43,11 +44,7 @@ const CountryFlagSelector = ({
   };
 
   return (
-    <div
-      className={`${
-        styles[`theme-${theme}`] ? styles[`theme-${theme}`] : ''
-      } ${containerClassName}`}
-    >
+    <div className={classNames(styles[`theme-${theme}`], containerClassName)}>
       <Select
         placeholder=""
         name={name}

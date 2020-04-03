@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import {
   componentPropTypes,
   defaultComponentPropTypes,
@@ -58,11 +59,7 @@ class Textarea extends PureComponent {
     } = this.props;
 
     return (
-      <div
-        className={`${containerClassName} ${
-          styles[`theme-${theme}`] ? styles[`theme-${theme}`] : ''
-        } ${styles.wrapper}`}
-      >
+      <div className={classNames(containerClassName, styles[`theme-${theme}`])}>
         <textarea
           className={`${isValidationOk() ? styles.error : ''}
             ${className} ${styles.input} ${styles.textarea}`}

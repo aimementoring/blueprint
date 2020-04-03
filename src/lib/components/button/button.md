@@ -1,5 +1,7 @@
 ```js
-<Button onClickFunction={this.handleClick}>Action</Button>
+<Button type="button" onClickFunction={this.handleClick}>
+  Action
+</Button>
 ```
 
 ```js
@@ -9,19 +11,19 @@
 ```
 
 ```js
-<Button onClickFunction={this.handleClick} underneathLabel="Label here...">
-  With Label underneath
-</Button>
+<Button
+  type="button"
+  onClickFunction={this.handleClick}
+  underneathLabel="Label here..."
+>With Label underneath</Button>
 ```
 
 ```js
-<Button onClickFunction={this.handleClick} theme="light">
-  Light theme
-</Button>
+<Button type="button" onClickFunction={this.handleClick} theme="light">
+Light theme</Button>
 ```
 
 ```js
-<Button onClickFunction={this.handleClick} theme="base">
-  Base theme
-</Button>
+<Button type="button" onClickFunction={this.handleClick} theme="base">
+Base theme</Button>
 ```

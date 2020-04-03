@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import {
-  componentPropTypes,
-  defaultComponentPropTypes,
-} from '../../utils/componentPropTypes';
+import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
 import styles from './errorMessage.module.scss';
 
 class ErrorMessage extends React.PureComponent {
