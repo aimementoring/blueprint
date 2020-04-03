@@ -2,13 +2,13 @@
 
 exports[`Input renders properly 1`] = `
 <div
-  className="theme-purple "
+  className="theme-purple"
 >
   <div
     className="wrapper"
   >
     <input
-      className=" false"
+      className=" "
       disabled=""
       error={null}
       id="testing"
@@ -33,13 +33,13 @@ exports[`Input renders properly 1`] = `
 
 exports[`Input renders properly when different theme 1`] = `
 <div
-  className="theme-purple "
+  className="theme-purple"
 >
   <div
     className="wrapper"
   >
     <input
-      className=" false"
+      className=" "
       disabled=""
       error={null}
       id="testing"
@@ -64,13 +64,13 @@ exports[`Input renders properly when different theme 1`] = `
 
 exports[`Input renders properly when it has an error 1`] = `
 <div
-  className="theme-purple "
+  className="theme-purple"
 >
   <div
     className="wrapper"
   >
     <input
-      className=" false"
+      className=" "
       disabled=""
       error="It is a required field"
       id="testing"
@@ -95,13 +95,13 @@ exports[`Input renders properly when it has an error 1`] = `
 
 exports[`Input renders properly when it is disabled 1`] = `
 <div
-  className="theme-purple "
+  className="theme-purple"
 >
   <div
     className="wrapper"
   >
     <input
-      className=" false"
+      className=" "
       disabled="disabled"
       error={null}
       id="testing"
@@ -126,13 +126,13 @@ exports[`Input renders properly when it is disabled 1`] = `
 
 exports[`Input renders properly when type is number 1`] = `
 <div
-  className="theme-purple "
+  className="theme-purple"
 >
   <div
     className="wrapper"
   >
     <input
-      className=" false"
+      className=" "
       disabled=""
       error={null}
       id="testing"
@@ -157,13 +157,13 @@ exports[`Input renders properly when type is number 1`] = `
 
 exports[`Input renders properly with error and helper text 1`] = `
 <div
-  className="theme-purple "
+  className="theme-purple"
 >
   <div
     className="wrapper"
   >
     <input
-      className=" false"
+      className=" "
       disabled=""
       error="There is an error"
       id="testing"
@@ -193,13 +193,13 @@ exports[`Input renders properly with error and helper text 1`] = `
 
 exports[`Input renders properly with helper text 1`] = `
 <div
-  className="theme-purple "
+  className="theme-purple"
 >
   <div
     className="wrapper"
   >
     <input
-      className=" false"
+      className=" "
       disabled=""
       error={null}
       id="testing"
@@ -229,13 +229,13 @@ exports[`Input renders properly with helper text 1`] = `
 
 exports[`Input renders properly with required 1`] = `
 <div
-  className="theme-purple "
+  className="theme-purple"
 >
   <div
     className="wrapper"
   >
     <input
-      className=" false"
+      className=" "
       disabled=""
       error={null}
       id="testing"
@@ -261,13 +261,13 @@ exports[`Input renders properly with required 1`] = `
 
 exports[`Input renders properly with required and a value 1`] = `
 <div
-  className="theme-purple "
+  className="theme-purple"
 >
   <div
     className="wrapper"
   >
     <input
-      className=" false"
+      className=" "
       disabled=""
       error={null}
       id="testing"

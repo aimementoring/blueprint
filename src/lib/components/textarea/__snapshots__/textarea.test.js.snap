@@ -2,10 +2,10 @@
 
 exports[`Textarea renders properly 1`] = `
 <div
-  className=" theme-purple wrapper"
+  className="theme-purple"
 >
   <textarea
-    className="false
+    className="
             myClass input textarea"
     name="textarea"
     onChange={[Function]}

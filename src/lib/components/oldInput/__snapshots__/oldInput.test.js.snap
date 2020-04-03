@@ -5,7 +5,7 @@ exports[`oldInput renders properly 1`] = `
   className=" theme-purple inputWrapper"
 >
   <input
-    className="false input "
+    className="error input "
     disabled="disabled"
     name="name"
     onChange={[Function]}
