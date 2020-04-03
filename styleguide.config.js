@@ -10,8 +10,8 @@ module.exports = {
     color: {
       border: '#939393',
       baseBackground: '#ffffff',
-      sidebarBackground: '#fed333', // yellow '#ff99cb', // pastel pink
-      link: '#00000',
+      sidebarBackground: '#516bf0',
+      link: '#fff',
       name: '#09CD7B', // green
       type: '#E82A9E', // violet
       linkHover: '#9135F0', // purple
@@ -27,7 +27,6 @@ module.exports = {
       logo: {
         fontFamily: `"Luna Emu", "Poppins Black", "Arial Black", "sans serif"`,
         fontSize: '2.5em',
-        color: '#516bf0',
       },
     },
   },
