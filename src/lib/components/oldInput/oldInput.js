@@ -1,6 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
+import classNames from 'classnames';
+import {
+  componentPropTypes,
+  defaultComponentPropTypes,
+} from '../../utils/componentPropTypes';
 import { withValidation } from '../../utils/hocs';
 import { handleInputChange } from './utils.ignore';
 import styles from './oldInput.module.scss';
@@ -29,11 +33,16 @@ class OldInput extends PureComponent {
     required: true,
     value: '',
     type: 'text',
-    onChangeFunction: () => { },
+    onChangeFunction: () => {},
   };
 
   handleChange = name => event =>
-    handleInputChange(event, name, this.props.handleValidations, this.props.onChangeFunction);
+    handleInputChange(
+      event,
+      name,
+      this.props.handleValidations,
+      this.props.onChangeFunction,
+    );
 
   render() {
     const {
@@ -68,9 +77,9 @@ class OldInput extends PureComponent {
       >
         <input
           placeholder={placeholder}
-          className={`${isValidationOk() ? '' : styles.error} ${
-            styles.input
-          } ${className}`}
+          className={classNames(className, styles.input, {
+            [styles.error]: isValidationOk(),
+          })}
           value={value}
           name={name}
           type={type}

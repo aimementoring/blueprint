@@ -11,7 +11,7 @@ export default class Button extends PureComponent {
     ...componentPropTypes,
     onClickFunction: PropTypes.func,
     text: PropTypes.string,
-    type: PropTypes.oneOf(['button', 'submit', 'reset', 'link']).isRequired,
+    type: PropTypes.oneOf(['button', 'submit', 'reset', 'link']),
     underneathLabel: PropTypes.string,
     disabled: PropTypes.bool,
     url: PropTypes.string,

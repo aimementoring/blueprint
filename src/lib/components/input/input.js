@@ -40,7 +40,9 @@ const Input = ({
     <div className={classNames(styles[`theme-${theme}`], containerClassName)}>
       <div className={styles.wrapper}>
         <input
-          className={`${className} ${isValidationOk() ? styles.error : ''}`}
+          className={classNames(className, {
+            [styles.error]: isValidationOk(),
+          })}
           type={type || 'text'}
           id={name}
           name={name}

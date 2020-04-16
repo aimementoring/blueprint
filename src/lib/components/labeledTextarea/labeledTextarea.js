@@ -1,11 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import {
   componentPropTypes,
   defaultComponentPropTypes,
-} from "../../utils/componentPropTypes";
-import { handleInputChange } from "../oldInput/utils.ignore";
-import styles from "./labeledTextarea.module.scss";
+} from '../../utils/componentPropTypes';
+import { handleInputChange } from '../oldInput/utils.ignore';
+import styles from './labeledTextarea.module.scss';
 
 const LabeledTextarea = ({
   theme,
@@ -28,7 +29,7 @@ const LabeledTextarea = ({
     <div className={styles[`theme-${theme}`]}>
       <div className={styles.wrapper}>
         <textarea
-          className={`${className} ${error ? styles.error : ''}`}
+          className={classNames(className, { [styles.error]: error })}
           // type={type || 'text'}
           id={name}
           name={name}
@@ -69,11 +70,11 @@ LabeledTextarea.defaultProps = {
   ...defaultComponentPropTypes,
   value: null,
   error: null,
-  className: "",
+  className: '',
   // type: 'textarea',
   helperText: null,
   handleValidations: () => true,
-  onChangeFunction: () => { },
+  onChangeFunction: () => {},
 };
 
 export default LabeledTextarea;

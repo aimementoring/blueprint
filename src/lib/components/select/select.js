@@ -15,7 +15,9 @@ class Select extends PureComponent {
   handleChange = value => {
     const { onChangeFunction, name, handleValidations } = this.props;
     if (value) {
-      const newValue = value.length ? value.map(item => item.value) : value.value;
+      const newValue = value.length
+        ? value.map(item => item.value)
+        : value.value;
       const isWrongValidation = handleValidations(value);
       onChangeFunction(name, newValue, isWrongValidation);
     }
@@ -29,7 +31,9 @@ class Select extends PureComponent {
 
     if (isMulti) {
       result =
-        value && value.length ? options.filter(option => value.indexOf(option.value) > -1) : [];
+        value && value.length
+          ? options.filter(option => value.indexOf(option.value) > -1)
+          : [];
     } else {
       result = value ? options.find(option => option.value === value) : null;
     }
@@ -111,7 +115,9 @@ class Select extends PureComponent {
       >
         <Dropdown
           placeholder={placeholder}
-          className={`${className} ${isValidationOk() ? styles.error : ''}`}
+          className={classNames(className, {
+            [styles.error]: isValidationOk(),
+          })}
           styles={customStyles}
           onChange={this.handleChange}
           options={options}
