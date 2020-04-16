@@ -8,7 +8,7 @@ exports[`Input renders properly 1`] = `
     className="wrapper"
   >
     <input
-      className=" "
+      className=""
       disabled=""
       error={null}
       id="testing"
@@ -39,7 +39,7 @@ exports[`Input renders properly when different theme 1`] = `
     className="wrapper"
   >
     <input
-      className=" "
+      className=""
       disabled=""
       error={null}
       id="testing"
@@ -70,7 +70,7 @@ exports[`Input renders properly when it has an error 1`] = `
     className="wrapper"
   >
     <input
-      className=" "
+      className=""
       disabled=""
       error="It is a required field"
       id="testing"
@@ -101,7 +101,7 @@ exports[`Input renders properly when it is disabled 1`] = `
     className="wrapper"
   >
     <input
-      className=" "
+      className=""
       disabled="disabled"
       error={null}
       id="testing"
@@ -132,7 +132,7 @@ exports[`Input renders properly when type is number 1`] = `
     className="wrapper"
   >
     <input
-      className=" "
+      className=""
       disabled=""
       error={null}
       id="testing"
@@ -163,7 +163,7 @@ exports[`Input renders properly with error and helper text 1`] = `
     className="wrapper"
   >
     <input
-      className=" "
+      className=""
       disabled=""
       error="There is an error"
       id="testing"
@@ -199,7 +199,7 @@ exports[`Input renders properly with helper text 1`] = `
     className="wrapper"
   >
     <input
-      className=" "
+      className=""
       disabled=""
       error={null}
       id="testing"
@@ -235,7 +235,7 @@ exports[`Input renders properly with required 1`] = `
     className="wrapper"
   >
     <input
-      className=" "
+      className=""
       disabled=""
       error={null}
       id="testing"
@@ -267,7 +267,7 @@ exports[`Input renders properly with required and a value 1`] = `
     className="wrapper"
   >
     <input
-      className=" "
+      className=""
       disabled=""
       error={null}
       id="testing"

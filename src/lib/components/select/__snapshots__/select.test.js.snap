@@ -5,7 +5,7 @@ exports[`Select renders properly 1`] = `
   className="theme-purple wrapper"
 >
   <div
-    className="css-1pcexqc-container "
+    className="css-1pcexqc-container"
     onKeyDown={[Function]}
   >
     <div
