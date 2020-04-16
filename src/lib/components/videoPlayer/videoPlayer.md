@@ -1,6 +1,6 @@
 ```js
 <VideoPlayer
-  url="https://vimeo.com/306075641"
+  url="https://player.vimeo.com/video/300970506"
   controls
   playing={false}
   loop
@@ -10,9 +10,9 @@
 ```
 
 ```js
-<VideoPlayer url="https://www.youtube.com/embed/FrFvzopmifk" />
+<VideoPlayer url="https://www.youtube.com/watch?v=FHCd_XdFLjE" />
 ```
 
 ```js
-<VideoPlayer url="https://www.youtube.com/embed/FrFvzopmifk" light />
+<VideoPlayer url="https://www.youtube.com/watch?v=FHCd_XdFLjE" light />
 ```
