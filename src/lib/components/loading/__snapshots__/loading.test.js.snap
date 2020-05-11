@@ -8,6 +8,7 @@ exports[`Loading true renders properly 1`] = `
 >
   <div
     className="loading"
+    style={Object {}}
   >
     <svg
       className="loadingSvg"
