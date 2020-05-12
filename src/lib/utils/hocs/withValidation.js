@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { checkValidations } from '../validation';
 import styles from './withValidation.module.scss';
 
@@ -53,9 +54,9 @@ export default function withValidation(WrappedComponent) {
 
     isValidationOk = () => !!this.state.validationMessage;
 
-    renderValidationError = () =>
+    renderValidationError = (customStyle = '') =>
       this.isValidationOk() && (
-        <span className={styles[`theme-${this.props.theme}`]}>
+        <span className={classNames(styles[`theme-${this.props.theme}`], customStyle)}>
           <span className={styles.errorMessage}>{this.getValidationMessage()}</span>
         </span>
       );

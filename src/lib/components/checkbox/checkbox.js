@@ -63,7 +63,7 @@ class Checkbox extends PureComponent {
           } ${isValidationOk() ? styles.error : ''}`}
           onClick={this.handleFieldChange}
         >
-          {renderValidationError()}
+          {renderValidationError(styles.errorMessage)}
           <input type="hidden" name={name} value="no" />
           <input
             id={customId}

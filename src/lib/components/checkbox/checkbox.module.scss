@@ -12,7 +12,7 @@
 
   ~ label {
     @include themify() {
-      font-family: themed('bodyFontFamily');  
+      font-family: themed('bodyFontFamily');
     }
     position: relative;
     cursor: pointer;
@@ -118,11 +118,8 @@
   border: 2px solid $error-color;
   border-radius: 3px;
   padding: 0.5em;
-  
-  // this should be targetted with .errorMessage however
-  // .errorMessage is in withValidations component
-  // so won't work here because css modules
-  span span {
+
+  .errorMessage span {
     position: absolute;
     top: -1em;
     left: 1em;
