@@ -11,19 +11,27 @@ export default class Loading extends PureComponent {
   static propTypes = {
     ...componentPropTypes,
     loading: PropTypes.bool.isRequired,
+    backgroundColor: PropTypes.string,
+    opacity: PropTypes.number,
   };
 
   static defaultProps = {
     ...defaultComponentPropTypes,
+    backgroundColor: null,
+    opacity: null,
   };
 
   render() {
-    const { loading, theme } = this.props;
+    const { loading, theme, backgroundColor, opacity } = this.props;
+
+    const style = {};
+    if (backgroundColor) style.backgroundColor = backgroundColor;
+    if (opacity) style.opacity = opacity;
 
     if (loading) {
       return (
         <div className={styles[`theme-${theme}`]}>
-          <div className={styles.loading}>
+          <div className={styles.loading} style={style}>
             <svg
               className={styles.loadingSvg}
               xmlns="http://www.w3.org/2000/svg"

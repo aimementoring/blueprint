@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.2.9]
+### Added
+- Phone Input component working with validations
+
+
 ## [2.1.13]
 ### Added
 - Styles for read only input fields

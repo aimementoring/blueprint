@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { select } from '@storybook/addon-knobs';
 import Textarea from './textarea';
-import { validateEmail } from '../../utils/validation';
 
 export default {
   title: 'Textarea',

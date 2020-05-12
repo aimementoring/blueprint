@@ -1,5 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ProgressBar renders properly even if the progress is > 100 1`] = `
+<div
+  className="theme-base"
+>
+  <div
+    className="progressBar"
+    style={
+      Object {
+        "height": "50px",
+      }
+    }
+  >
+    <div
+      className="progress"
+      style={
+        Object {
+          "fontSize": "undefinedpx",
+          "lineHeight": "50px",
+          "width": "100%",
+        }
+      }
+    >
+      100%
+    </div>
+  </div>
+</div>
+`;
+
 exports[`ProgressBar renders properly using all available props 1`] = `
 <div
   className="theme-base"
