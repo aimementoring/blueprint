@@ -4,10 +4,11 @@
 
 ```js
 <Avatar
-  text="Lionel Messi"
+  text="AIME Global"
   photo={[
     {
-      url: 'https://e00-marca.uecdn.es/assets/multimedia/imagenes/2018/08/19/15347041965884.jpg',
+      url:
+        'https://d1muvgoqe3g8vw.cloudfront.net/website/assets/images/illustrations/pinky-earth.png',
     },
   ]}
 />

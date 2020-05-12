@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
+import {
+  componentPropTypes,
+  defaultComponentPropTypes,
+} from '../../utils/componentPropTypes';
 import Title from '../title';
 import styles from './animatedCircleText.module.scss';
 
@@ -22,7 +25,7 @@ const AnimatedCircleText = ({
   };
   return (
     <div className={styles[`theme-${theme}`]}>
-      <div className={`${styles.animatedContainer} ${containerClassName}`}>
+      <div className={containerClassName}>
         <div
           className={styles.circleContainer}
           style={{

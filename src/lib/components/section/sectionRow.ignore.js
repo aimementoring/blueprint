@@ -2,7 +2,7 @@ import React from 'react';
 import getFlexStylesFromProps from './sectionUtils.ignore';
 import styles from './section.module.scss';
 
-const SectionRow = ({ children, className, ...props }) => {
+const SectionRow = ({ children, className = '', ...props }) => {
   return (
     <div
       {...props}

@@ -24,6 +24,7 @@ class Checkbox extends PureComponent {
 
   static defaultProps = {
     ...defaultComponentPropTypes,
+    className: '',
     onChangeFunction: () => {},
     value: false,
     extraParamResponse: '',
@@ -55,14 +56,14 @@ class Checkbox extends PureComponent {
     } = this.props;
 
     return (
-      <div className={`${styles[`theme-${theme}`]} ${styles.wrapper}`}>
+      <div className={styles[`theme-${theme}`]}>
         <div
           className={`${className} ${styles.customCheckbox} ${
             styles.customCheckboxDefault
-          } ${isValidationOk() && styles.error}`}
+          } ${isValidationOk() ? styles.error : ''}`}
           onClick={this.handleFieldChange}
         >
-          {renderValidationError()}
+          {renderValidationError(styles.errorMessage)}
           <input type="hidden" name={name} value="no" />
           <input
             id={customId}
@@ -70,11 +71,11 @@ class Checkbox extends PureComponent {
             name={name}
             value="yes"
             readOnly
-            className={`${isValidationOk() && styles.error}`}
+            className={`${isValidationOk() ? styles.error : ''}`}
             checked={value}
           />
           <label
-            className={`${isValidationOk() && styles.error}`}
+            className={`${isValidationOk() ? styles.error : ''}`}
             htmlFor={customId}
           >
             {placeholder}
