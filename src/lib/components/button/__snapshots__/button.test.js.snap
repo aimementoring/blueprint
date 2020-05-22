@@ -83,7 +83,8 @@ exports[`Button renders link properly 1`] = `
   >
     <a
       className=" linkButton"
-      href="www.aimementoring.com"
+      href="http://www.aimementoring.com"
+      target="_blank"
     >
       Link button
     </a>

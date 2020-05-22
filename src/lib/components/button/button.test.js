@@ -24,7 +24,7 @@ describe('Button', () => {
   it('renders link properly', () => {
     const tree = renderer
       .create(
-        <Button type="link" url="www.aimementoring.com">
+        <Button type="link" target="_blank" url="http://www.aimementoring.com">
           Link button
         </Button>,
       )
