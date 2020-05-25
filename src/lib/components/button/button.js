@@ -15,6 +15,7 @@ export default class Button extends PureComponent {
     underneathLabel: PropTypes.string,
     disabled: PropTypes.bool,
     url: PropTypes.string,
+    target: PropTypes.oneOf(['_blank', '_self']),
     children: PropTypes.node,
   };
 
@@ -25,6 +26,7 @@ export default class Button extends PureComponent {
     onClickFunction: () => {},
     underneathLabel: null,
     disabled: false,
+    target: '_self',
     url: null,
   };
 
@@ -40,13 +42,18 @@ export default class Button extends PureComponent {
       className,
       theme,
       children,
+      target,
     } = this.props;
 
     return (
       <div className={styles[`theme-${theme}`]}>
         <div className={containerClassName}>
           {type === 'link' && url ? (
-            <a href={url} className={`${className} ${styles.linkButton}`}>
+            <a
+              href={url}
+              target={target}
+              className={`${className} ${styles.linkButton}`}
+            >
               {text || children}
             </a>
           ) : (
