@@ -9,7 +9,22 @@ describe('List', () => {
   });
 
   it('is backwards compatible (text passed as prop)', () => {
-    const tree = renderer.create(<List text="Gradient default List" />).toJSON();
+    const tree = renderer
+      .create(<List text="Gradient default List" />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('works with children (even without a WWCC!)', () => {
+    const tree = renderer
+      .create(
+        <List>
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+        </List>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
