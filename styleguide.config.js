@@ -57,6 +57,7 @@ module.exports = {
       description: 'UI components for our React projects',
       components: 'src/lib/components/**/*.js',
       ignore: [
+        '**/labeledTextarea/index.js',
         '**/*.spec.js',
         '**/*.test.js',
         '**/index.js',

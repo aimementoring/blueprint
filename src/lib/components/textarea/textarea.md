@@ -1,6 +1,6 @@
 ```js
 initialState = {
-  textarea1: '',
+  value: '',
 };
 
 function updateValue(name, value) {
@@ -8,18 +8,17 @@ function updateValue(name, value) {
 }
 
 <Textarea
-  placeholder="Write area"
-  name="textarea1"
-  required
-  className="myClass"
+  theme="base"
+  name="value"
+  value={state.value}
   onChangeFunction={updateValue}
-  value={state.textarea1}
+  label="Tell us more!"
 />;
 ```
 
 ```js
 initialState = {
-  textarea2: '',
+  story: '',
 };
 
 function updateValue(name, value) {
@@ -27,11 +26,46 @@ function updateValue(name, value) {
 }
 
 <Textarea
-  placeholder="Write area light theme"
-  name="textarea2"
-  required
-  theme="light"
+  theme="rainbow"
+  name="story"
+  value={state.story}
   onChangeFunction={updateValue}
-  value={state.textarea2}
+  label="Tell us your story."
+  required
+  helperText="If you want, you can also tell us about your pet."
+/>;
+```
+
+```js
+initialState = {
+  dontchangeme: 'This is just how I am.',
+};
+
+<Textarea
+  name="dontchangeme"
+  theme="rainbow"
+  value={state.dontchangeme}
+  label="You won't change me."
+  readOnly
+/>;
+```
+
+```js
+initialState = {
+  error: '',
+};
+
+function updateValue(name, value) {
+  setState({ [name]: value });
+}
+
+<Textarea
+  name="error"
+  theme="rainbow"
+  value={state.error}
+  onChangeFunction={updateValue}
+  label="With error"
+  validationMessage="Please fill out this field."
+  isValidationOk={() => true}
 />;
 ```
