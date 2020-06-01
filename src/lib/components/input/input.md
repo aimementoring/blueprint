@@ -1,6 +1,6 @@
 ```js
 initialState = {
-  value: ""
+  value: '',
 };
 
 function updateValue(name, value) {
@@ -8,6 +8,7 @@ function updateValue(name, value) {
 }
 
 <Input
+  theme="base"
   name="value"
   value={state.value}
   onChangeFunction={updateValue}
@@ -17,7 +18,7 @@ function updateValue(name, value) {
 
 ```js
 initialState = {
-  value: ""
+  value: '',
 };
 
 function updateValue(name, value) {
@@ -25,6 +26,7 @@ function updateValue(name, value) {
 }
 
 <Input
+  theme="rainbow"
   name="value"
   value={state.value}
   onChangeFunction={updateValue}
@@ -35,7 +37,7 @@ function updateValue(name, value) {
 
 ```js
 initialState = {
-  required: ""
+  required: '',
 };
 
 function updateValue(name, value) {
@@ -43,6 +45,7 @@ function updateValue(name, value) {
 }
 
 <Input
+  theme="rainbow"
   name="required"
   value={state.required}
   onChangeFunction={updateValue}
@@ -53,7 +56,7 @@ function updateValue(name, value) {
 
 ```js
 initialState = {
-  error: ""
+  error: '',
 };
 
 function updateValue(name, value) {
@@ -61,6 +64,7 @@ function updateValue(name, value) {
 }
 
 <Input
+  theme="base"
   name="error"
   value={state.error}
   onChangeFunction={updateValue}
@@ -71,6 +75,7 @@ function updateValue(name, value) {
 
 ```js
 <Input
+  theme="rainbow"
   name="cant-change-me"
   value="I also work with readOnly"
   label="Can't change me"
