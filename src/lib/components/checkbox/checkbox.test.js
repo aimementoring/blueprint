@@ -30,7 +30,7 @@ describe('Checkbox', () => {
           name="checkbox"
           customId="checkbox"
           value={true}
-          isValidationOk={() => true}
+          hasValidationError={() => true}
         />,
       )
       .toJSON();

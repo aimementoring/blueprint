@@ -27,7 +27,7 @@ const Input = ({
   renderValidationError,
   validationMessage,
   handleValidations,
-  isValidationOk,
+  hasValidationError,
   hasErrorAfterSubmit,
   getValidationMessage,
   // aaand the rest,
@@ -41,7 +41,7 @@ const Input = ({
       <div className={styles.wrapper}>
         <input
           className={classNames(className, {
-            [styles.error]: isValidationOk(),
+            [styles.error]: hasValidationError(),
           })}
           type={type || 'text'}
           id={name}
@@ -82,7 +82,7 @@ Input.propTypes = {
   validationMessage: PropTypes.string,
   renderValidationError: PropTypes.func,
   handleValidations: PropTypes.func.isRequired,
-  isValidationOk: PropTypes.func.isRequired,
+  hasValidationError: PropTypes.func.isRequired,
 };
 
 Input.defaultProps = {

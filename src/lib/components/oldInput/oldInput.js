@@ -23,7 +23,7 @@ class OldInput extends PureComponent {
     // props from withValidation HOC
     renderValidationError: PropTypes.func,
     handleValidations: PropTypes.func.isRequired,
-    isValidationOk: PropTypes.func.isRequired,
+    hasValidationError: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -55,7 +55,7 @@ class OldInput extends PureComponent {
       name,
       value,
       type,
-      isValidationOk,
+      hasValidationError,
       renderValidationError,
       autoFocus,
       // removing props that are not valid for DOM elements
@@ -78,7 +78,7 @@ class OldInput extends PureComponent {
         <input
           placeholder={placeholder}
           className={classNames(className, styles.input, {
-            [styles.error]: isValidationOk(),
+            [styles.error]: hasValidationError(),
           })}
           value={value}
           name={name}
