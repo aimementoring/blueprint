@@ -16,9 +16,9 @@ export const phoneInput = () => {
   const [formatted, setFormatted] = useState(null);
 
   const updatePhone = (name, value) => {
-    const formatted = getFormattedMobilePhone(value, "AU");
+    const formattedValue = getFormattedMobilePhone(value, "AU");
     setPhone(value);
-    setFormatted(formatted);
+    setFormatted(formattedValue);
   };
 
   return (
