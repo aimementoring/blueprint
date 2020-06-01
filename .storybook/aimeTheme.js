@@ -1,3 +1,4 @@
+// https://storybook.js.org/docs/configurations/theming/#docs-content
 import { create } from '@storybook/theming/create';
 
 export default create({

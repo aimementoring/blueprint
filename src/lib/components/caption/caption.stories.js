@@ -1,5 +1,5 @@
 import React from 'react';
-import { select } from '@storybook/addon-knobs';
+import { select, text } from '@storybook/addon-knobs';
 import Caption from './caption';
 import themeOptions from '../../styles/themeOptions';
 
@@ -13,15 +13,15 @@ export default {
 /**
  * Action Button Description??
  */
-export const ActionButton = () => (
+export const ChildrenText = () => (
   <Caption theme={select('theme', themeOptions, 'base')}>
-    We do not want to inherit a world that is in pain. We do not want to stare down huge inequality feeling powerless to our fate.
+    {text('childrenText', 'We do not want to inherit a world that is in pain. We do not want to stare down huge inequality feeling powerless to our fate.')}
   </Caption>
 );
 
-export const LinkButton = () => (
+export const TextProperty = () => (
   <Caption
     theme={select('theme', themeOptions, 'base')}
-    text="Location contract TBC"
+    text={text('textProperty', 'Location contract TBC')}
   />
 );

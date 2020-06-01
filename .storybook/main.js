@@ -8,5 +8,5 @@ module.exports = {
     });
     return config;
   },
-  addons: ['@storybook/addon-docs'],
+  addons: ['@storybook/addon-docs', 'storybook-addon-react-live-edit/dist/register'],
 };

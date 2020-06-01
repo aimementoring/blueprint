@@ -130,6 +130,7 @@
     "rollup-plugin-visualizer": "^1.1.1",
     "sass-loader": "^8.0.0",
     "sassdoc": "^2.7.0",
+    "storybook-addon-react-live-edit": "^2.0.4",
     "style-loader": "^1.0.0",
     "stylelint": "^10.0.1",
     "stylelint-config-standard": "^18.3.0",

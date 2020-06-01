@@ -1,4 +1,5 @@
 import React from 'react';
+import { text } from "@storybook/addon-knobs";
 import Avatar from './avatar';
 
 export default {
@@ -8,14 +9,14 @@ export default {
   },
 };
 
-export const initialsAvatar = () => <Avatar text="Kevin Bardi" />;
+export const initialsAvatar = () => <Avatar text={text('Name', 'Kevin Bardi')} />;
 
 export const imageAvatar = () => (
   <Avatar
-    text="Lionel Messi"
+    text="AIME Global"
     photo={[
       {
-        url: 'https://e00-marca.uecdn.es/assets/multimedia/imagenes/2018/08/19/15347041965884.jpg',
+        url: text('url', 'https://d1muvgoqe3g8vw.cloudfront.net/website/assets/images/illustrations/pinky-earth.png'),
       },
     ]}
   />

@@ -1387,6 +1387,11 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/standalone@^7.0.0":
+  version "7.10.2"
+  resolved "https://registry.yarnpkg.com/@babel/standalone/-/standalone-7.10.2.tgz#49dbbadcbc4b199df064d7d8b3e21c915b84abdb"
+  integrity sha512-PNQuj9oQH6BL/3l9iiL8hJLQwX14woA2/FHcPtNIZAc7IgFZYJdtMBMXiy4xcefADHTSvoBnmc2AybrHRW1IKQ==
+
 "@babel/standalone@^7.4.5":
   version "7.8.8"
   resolved "https://registry.yarnpkg.com/@babel/standalone/-/standalone-7.8.8.tgz#1f69a58a1736b336206d86b4d8cf3f7f77317075"
@@ -5457,6 +5462,11 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
+
+codemirror@^5.40.0:
+  version "5.54.0"
+  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.54.0.tgz#82b6adf662b29eeb7b867fe7839d49e25e4a0b38"
+  integrity sha512-Pgf3surv4zvw+KaW3doUU7pGjF0BPU8/sj7eglWJjzni46U/DDW8pu3nZY0QgQKUcICDXRkq8jZmq0y6KhxM3Q==
 
 collapse-white-space@^1.0.0, collapse-white-space@^1.0.2:
   version "1.0.6"
@@ -17170,6 +17180,14 @@ store2@^2.7.1:
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/store2/-/store2-2.10.0.tgz#46b82bb91878daf1b0d56dec2f1d41e54d5103cf"
   integrity sha512-tWEpK0snS2RPUq1i3R6OahfJNjWCQYNxq0+by1amCSuw0mXtymJpzmZIeYpA1UAa+7B0grCpNYIbDcd7AgTbFg==
+
+storybook-addon-react-live-edit@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/storybook-addon-react-live-edit/-/storybook-addon-react-live-edit-2.0.4.tgz#6e195894f26c4e2ac6bc2235e359913d07cd2cb1"
+  integrity sha512-VcLMipZD75euQn5t38VLPmttutdLgoTuWaz8nson4G1gdg2uHnC/B7Mq0ZXsldduxZBcMmEuSAydayfabNgkeQ==
+  dependencies:
+    "@babel/standalone" "^7.0.0"
+    codemirror "^5.40.0"
 
 stream-browserify@^2.0.1:
   version "2.0.2"

@@ -28,7 +28,7 @@ export const headingLockupTitle = () => (
   </Title>
 );
 
-export const h1TitleTitle = () => (
+export const h1Title = () => (
   <Title
     theme={select('theme', themeOptions, 'plain')}
     type={select('type', typeOptions, 'h1Title')}
@@ -37,7 +37,7 @@ export const h1TitleTitle = () => (
   </Title>
 );
 
-export const h2TitleTitle = () => (
+export const h2Title = () => (
   <Title
     theme={select('theme', themeOptions, 'plain')}
     type={select('type', typeOptions, 'h2Title')}
@@ -46,7 +46,7 @@ export const h2TitleTitle = () => (
   </Title>
 );
 
-export const h3TitleTitle = () => (
+export const h3Title = () => (
   <Title
     theme={select('theme', themeOptions, 'plain')}
     type={select('type', typeOptions, 'h3Title')}
@@ -55,7 +55,7 @@ export const h3TitleTitle = () => (
   </Title>
 );
 
-export const h4TitleTitle = () => (
+export const h4Title = () => (
   <Title
     theme={select('theme', themeOptions, 'plain')}
     type={select('type', typeOptions, 'h4Title')}
@@ -64,7 +64,7 @@ export const h4TitleTitle = () => (
   </Title>
 );
 
-export const h5TitleTitle = () => (
+export const h5Title = () => (
   <Title
     theme={select('theme', themeOptions, 'plain')}
     type={select('type', typeOptions, 'h5Title')}
