@@ -143,7 +143,7 @@
   },
   "scripts": {
     "start": "PORT=3001 node scripts/start.js",
-    "build:sassdoc": "sassdoc src/lib/**/*.scss",
+    "build:sassdoc": "sassdoc src/lib/**/*.scss -d docs/sassdoc",
     "build:lib": "cross-env NODE_ENV=production BABEL_ENV=production rollup -c",
     "build": "yarn build:lib && yarn build:storybook && yarn build:sassdoc",
     "lint-staged": "lint-staged",
@@ -162,7 +162,7 @@
     "checksize": "bundlesize",
     "storybook": "start-storybook -p 6006",
     "prebuild:storybook": "yarn test:generate-output",
-    "build:storybook": "build-storybook -c .storybook -o docs/",
+    "build:storybook": "build-storybook -c .storybook -o docs/storybook",
     "final": "gh-pages -d docs/"
   },
   "bundlesize": [
