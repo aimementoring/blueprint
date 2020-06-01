@@ -2,19 +2,13 @@ import React, { useState } from 'react';
 import { select } from '@storybook/addon-knobs';
 import LabeledTextarea from './labeledTextarea';
 import { validateEmail } from '../../utils/validation';
+import themeOptions from '../../styles/themeOptions';
 
 export default {
   title: 'LabeledTextarea',
   parameters: {
     jest: ['labeledTextarea.test.js'],
   },
-};
-
-const themeOptions = {
-  storm: 'storm',
-  base: 'base',
-  rainbow: 'rainbow',
-  plain: 'plain',
 };
 
 export const textarea = () => {

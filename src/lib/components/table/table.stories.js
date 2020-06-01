@@ -1,13 +1,7 @@
 import React from 'react';
 import { select } from '@storybook/addon-knobs';
 import Table from './table';
-
-const themeOptions = {
-  storm: 'storm',
-  base: 'base',
-  rainbow: 'rainbow',
-  plain: 'plain',
-};
+import themeOptions from '../../styles/themeOptions';
 
 export default {
   title: 'Table',

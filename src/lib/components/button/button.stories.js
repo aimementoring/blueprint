@@ -2,6 +2,7 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { select } from '@storybook/addon-knobs';
 import Button from './button';
+import themeOptions from '../../styles/themeOptions';
 
 export default {
   title: 'Button',
@@ -11,13 +12,6 @@ export default {
     componentSubtitle:
       'Different buttons types to be used with according styles for the selected theme',
   },
-};
-
-const themeOptions = {
-  storm: 'storm',
-  base: 'base',
-  rainbow: 'rainbow',
-  plain: 'plain',
 };
 
 const typeOptions = {

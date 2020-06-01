@@ -2,19 +2,13 @@ import React, { useState } from 'react';
 import { select } from '@storybook/addon-knobs';
 import Input from './input';
 import { validateEmail } from '../../utils/validation';
+import themeOptions from '../../styles/themeOptions';
 
 export default {
   title: 'Input',
   parameters: {
     jest: ['input.test.js'],
   },
-};
-
-const themeOptions = {
-  storm: 'storm',
-  base: 'base',
-  rainbow: 'rainbow',
-  plain: 'plain',
 };
 
 export const input = () => {

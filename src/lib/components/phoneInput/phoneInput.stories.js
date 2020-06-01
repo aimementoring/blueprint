@@ -2,19 +2,13 @@ import React, { useState } from 'react';
 import { select } from '@storybook/addon-knobs';
 import PhoneInput from './phoneInput';
 import { getFormattedMobilePhone } from "../../utils/validation/validation";
+import themeOptions from '../../styles/themeOptions';
 
 export default {
   title: 'PhoneInput',
   parameters: {
     jest: ['phoneInput.test.js'],
   },
-};
-
-const themeOptions = {
-  storm: 'storm',
-  base: 'base',
-  rainbow: 'rainbow',
-  plain: 'plain',
 };
 
 export const phoneInput = () => {

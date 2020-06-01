@@ -1,19 +1,13 @@
 import React, { useState } from 'react';
 import { select } from '@storybook/addon-knobs';
 import Textarea from './textarea';
+import themeOptions from '../../styles/themeOptions';
 
 export default {
   title: 'Textarea',
   parameters: {
     jest: ['textarea.test.js'],
   },
-};
-
-const themeOptions = {
-  storm: 'storm',
-  base: 'base',
-  rainbow: 'rainbow',
-  plain: 'plain',
 };
 
 export const textarea = () => {
