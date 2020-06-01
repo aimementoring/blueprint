@@ -6,7 +6,11 @@ exports[`List is backwards compatible (text passed as prop) 1`] = `
 >
   <ul
     className="ulList"
-  />
+  >
+    <li>
+      Gradient default List
+    </li>
+  </ul>
 </div>
 `;
 
@@ -16,6 +20,36 @@ exports[`List renders properly 1`] = `
 >
   <ul
     className="ulList"
-  />
+  >
+    <li>
+      Gradient default List
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List works with children (even without a WWCC!) 1`] = `
+<div
+  className="theme-base"
+>
+  <ul
+    className="ulList"
+  >
+    <li>
+      <span>
+        1
+      </span>
+    </li>
+    <li>
+      <span>
+        2
+      </span>
+    </li>
+    <li>
+      <span>
+        3
+      </span>
+    </li>
+  </ul>
 </div>
 `;
