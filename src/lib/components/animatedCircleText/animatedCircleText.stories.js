@@ -10,7 +10,7 @@ export default {
 
 export const circleWithCustomOptions = () => (
   <AnimatedCircleText
-    text="Testing my circle"
+    text="- - - - - - - - - - - - - - -"
     size={200}
     duration={8}
     fontSize={20}
@@ -19,5 +19,5 @@ export const circleWithCustomOptions = () => (
 );
 
 export const defaultCircle = () => (
-  <AnimatedCircleText text="Loading Loading Loading..." />
+  <AnimatedCircleText text="Loading ... Loading ... Loading ..." />
 );

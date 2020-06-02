@@ -15,7 +15,7 @@ export const WithChildrenTerms = () => {
 
   return (
     <TermsAndConditions
-      checkboxLabel="Testing my checkbox"
+      checkboxLabel="With children"
       onChange={(_name, value) => setCheckbox(value)}
       name="value"
       value={checkbox}
@@ -52,7 +52,7 @@ export const PdfFileTerms = () => {
 
   return (
     <TermsAndConditions
-      pdf="https://archive.org/download/starrover00lond/starrover00lond.pdf"
+      pdf="https://d1muvgoqe3g8vw.cloudfront.net/website/assets/pdf/strategy/AIME_strat_1401.pdf"
       onChange={(_name, value) => setCheckbox(value)}
       name="value"
       value={checkbox}
@@ -66,8 +66,8 @@ export const PdfFileTermsWithLabelAndHeight = () => {
 
   return (
     <TermsAndConditions
-      pdf="https://archive.org/download/starrover00lond/starrover00lond.pdf"
-      checkboxLabel="Testing my checkbox"
+      pdf="https://d1muvgoqe3g8vw.cloudfront.net/website/assets/pdf/strategy/AIME_strat_1401.pdf"
+      checkboxLabel="With a checkbox to check"
       onChange={(_name, value) => setCheckbox(value)}
       name="value"
       value={checkbox}
@@ -82,7 +82,7 @@ export const ParagraphTerms = () => {
 
   return (
     <TermsAndConditions
-      checkboxLabel="Testing with paragraph"
+      checkboxLabel="Testing with a paragraph"
       height={150}
       paragraph={`
         consectetur adipiscing elit. Nullam vitae augue commodo, euismod erat in, mollis diam. Suspendisse tristique justo sem, id commodo lectus porttitor et. In tempus libero lacus. Proin viverra facilisis ultricies. Phasellus aliquet efficitur ante, ac dignissim velit sollicitudin eu. Curabitur non nunc dictum, eleifend ligula feugiat, convallis augue. Ut accumsan arcu ac lobortis lacinia. Donec vulputate ligula vel elit maximus, non eleifend lorem sagittis. Praesent dapibus ante ac lectus fermentum blandit.\n
@@ -94,6 +94,25 @@ export const ParagraphTerms = () => {
       name="value"
       value={checkbox}
       theme={select('theme', themeOptions, 'plain')}
+    />
+  );
+};
+
+export const MultipleParagraphTerms = () => {
+  const [checkbox, setCheckbox] = useState(true);
+  return (
+    <TermsAndConditions
+      checkboxLabel="Multiple Paragraphs as Array"
+      onChange={(_name, value) => setCheckbox(value)}
+      name="value"
+      value={checkbox}
+      height={150}
+      paragraph={[
+        `Nullam vitae augue commodo, euismod erat in, mollis diam. Suspendisse tristique justo sem, id commodo lectus porttitor et. In tempus libero lacus. Proin viverra facilisis ultricies. Phasellus aliquet efficitur ante, ac dignissim velit sollicitudin eu. Curabitur non nunc dictum, eleifend ligula feugiat, convallis augue. Ut accumsan arcu ac lobortis lacinia. Donec vulputate ligula vel elit maximus, non eleifend lorem sagittis. Praesent dapibus ante ac lectus fermentum blandit.`,
+        `Duis mollis dignissim elit eget rhoncus. Sed consectetur metus et ipsum sodales, non lacinia nulla varius. Curabitur dictum fringilla tellus, eu feugiat urna convallis nec. Donec at massa at metus accumsan finibus sit amet vel magna.`,
+        `Morbi vehicula id neque quis fermentum. Cras mauris metus, rutrum id auctor id, molestie vitae ante.`,
+        `Duis vel pharetra urna. Nam finibus risus egestas tortor interdum rhoncus ut sed dolor. Integer quis porta nulla. Maecenas dignissim purus ac nisi viverra tristique. Cras dapibus est commodo est lobortis, consectetur faucibus odio fermentum. Donec tincidunt quis augue ut tempor. Nam consectetur faucibus nisl, vitae hendrerit metus venenatis id. In facilisis lacinia elit sed tempor.`,
+      ]}
     />
   );
 };
