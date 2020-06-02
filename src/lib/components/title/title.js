@@ -9,33 +9,41 @@ import {
 
 const titleTypeClass = {
   h1Title: {
-    style: styles.h1Title,
+    classes: [styles.h1Title],
     tag: 'h1',
   },
   h2Title: {
-    style: styles.h2Title,
+    classes: [styles.h2Title],
     tag: 'h2',
   },
   h3Title: {
-    style: styles.h3Title,
+    classes: [styles.h3Title],
     tag: 'h3',
   },
   h4Title: {
-    style: styles.h4Title,
+    classes: [styles.h4Title],
     tag: 'h4',
   },
   h5Title: {
-    style: styles.h5Title,
+    classes: [styles.h5Title],
     tag: 'h5',
   },
   headingLockup: {
-    style: styles.headingLockup,
+    classes: [styles.headingLockup, styles.headingLockupLeft],
     tag: 'h1',
   },
-  // headingLockupCenter: {
-  //   style: styles.headingLockup, styles.headingLockupCenter,
-  //   tag: 'h1',
-  // },
+  headingLockupCenter: {
+    classes: [styles.headingLockup, styles.headingLockupCenter],
+    tag: 'h1',
+  },
+  headingLockupRight: {
+    classes: [styles.headingLockup, styles.headingLockupRight],
+    tag: 'h1',
+  },
+  headingLockupLeft: {
+    classes: [styles.headingLockup, styles.headingLockupLeft],
+    tag: 'h1',
+  },
 };
 
 class Title extends PureComponent {
@@ -50,8 +58,8 @@ class Title extends PureComponent {
       onClick,
     } = this.props;
 
-    const { style, tag: Component } = titleTypeClass[type] || {
-      style: {},
+    const { classes, tag: Component } = titleTypeClass[type] || {
+      classes: [classes],
       tag: 'span',
     };
 
@@ -60,7 +68,7 @@ class Title extends PureComponent {
         className={classNames(styles[`theme-${theme}`], containerClassName)}
         onClick={onClick}
       >
-        <Component className={classNames(style, className)}>
+        <Component className={classNames([...classes], className)}>
           {children || text}
         </Component>
       </div>
@@ -72,7 +80,6 @@ Title.propTypes = {
   ...componentPropTypes,
   text: PropTypes.string,
   onClick: PropTypes.func,
-  // setting up headings as per design system but they will probably change again
   type: PropTypes.oneOf([
     'h1Title',
     'h2Title',
@@ -80,14 +87,16 @@ Title.propTypes = {
     'h4Title',
     'h5Title',
     'headingLockup',
-    // 'headingLockupCenter',
+    'headingLockupCenter',
+    'headingLockupRight',
+    'headingLockupLeft',
   ]),
   children: PropTypes.node,
 };
 
 Title.defaultProps = {
   ...defaultComponentPropTypes,
-  onClick: () => { },
+  onClick: () => {},
   type: 'h1Title',
 };
 

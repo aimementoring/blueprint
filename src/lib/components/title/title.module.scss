@@ -88,7 +88,27 @@
     }
   }
   
-  // &.headingLockupCenter {
-    
-  // }
+  &.headingLockupCenter {
+    text-align: center;
+    strong {
+      top: -0.2em;
+      left: 0em;
+    }
+  }
+  
+  &.headingLockupLeft {
+    text-align: left;
+    strong {
+      top: -0.5em;
+      left: 0em;
+    }
+  }
+  
+  &.headingLockupRight {
+    text-align: right;
+    strong {
+      top: 0.1em;
+      left: 0;
+    }
+  }
 }

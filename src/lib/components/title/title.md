@@ -1,11 +1,26 @@
-
 ```js
-<Title type="headingLockup">The featured <strong>Heading lockup</strong></Title>
+<Title type="headingLockup">
+  The featured <strong>Heading Lockup</strong>
+</Title>
 ```
 
-<!-- ```js
-<Title type="headingLockupCenter">The featured <strong>Heading lockup</strong></Title>
-``` -->
+```js
+<Title type="headingLockupCenter">
+  The centered <strong>Heading Lockup</strong>
+</Title>
+```
+
+```js
+<Title type="headingLockupLeft">
+  The left-aligned <strong>Heading Lockup</strong>
+</Title>
+```
+
+```js
+<Title type="headingLockupRight">
+  The right-aligned<strong>Heading Lockup</strong>
+</Title>
+```
 
 ```js
 <Title type="h1Title">Heading 1</Title>
