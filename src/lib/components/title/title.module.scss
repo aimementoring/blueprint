@@ -101,27 +101,18 @@
     }
   }
   
-  &.alignCenter {
-    text-align: center;
-    strong {
-      top: -0.2em;
-      left: 0em;
-    }
+  &.alignCenter strong {
+    top: -0.2em;
+    left: 0em;
   }
   
-  &.alignLeft {
-    text-align: left;
-    strong {
-      top: -0.5em;
-      left: 0em;
-    }
+  &.alignLeft strong {
+    top: -0.5em;
+    left: 0em;
   }
   
-  &.alignRight {
-    text-align: right;
-    strong {
-      top: 0.1em;
-      left: 0;
-    }
+  &.alignRight strong {
+    top: 0.1em;
+    left: 0;
   }
 }
