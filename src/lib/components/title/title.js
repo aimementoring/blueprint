@@ -39,6 +39,7 @@ class Title extends PureComponent {
     const {
       text,
       type,
+      align,
       className,
       containerClassName,
       theme,
@@ -47,16 +48,25 @@ class Title extends PureComponent {
     } = this.props;
 
     const { style, tag: Component } = titleTypeClass[type] || {
-      style: {},
+      classes: style,
       tag: 'span',
     };
+
+    const capitalise = ([firstChar, ...rest]) =>
+      `${firstChar.toLocaleUpperCase()}${rest.join('')}`;
 
     return (
       <div
         className={classNames(styles[`theme-${theme}`], containerClassName)}
         onClick={onClick}
       >
-        <Component className={classNames(style, className)}>
+        <Component
+          className={classNames(
+            style,
+            className,
+            styles[`align${capitalise(align)}`],
+          )}
+        >
           {children || text}
         </Component>
       </div>
@@ -68,7 +78,7 @@ Title.propTypes = {
   ...componentPropTypes,
   text: PropTypes.string,
   onClick: PropTypes.func,
-  // setting up headings as per design system but they will probably change again
+  align: PropTypes.oneOf(['center', 'left', 'right']),
   type: PropTypes.oneOf([
     'h1Title',
     'h2Title',
@@ -76,6 +86,9 @@ Title.propTypes = {
     'h4Title',
     'h5Title',
     'headingLockup',
+    'headingLockupCenter',
+    'headingLockupRight',
+    'headingLockupLeft',
   ]),
   children: PropTypes.node,
 };
@@ -84,6 +97,7 @@ Title.defaultProps = {
   ...defaultComponentPropTypes,
   onClick: () => {},
   type: 'h1Title',
+  align: 'center',
 };
 
 export default Title;

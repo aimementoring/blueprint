@@ -1,6 +1,19 @@
 @import '../../styles/variables/variables.module.scss';
 @import '../../styles/themes/themes.module.scss';
 
+
+.alignCenter {
+  text-align: center;
+}
+
+.alignLeft  {
+  text-align: left;
+}
+
+.alignRight {
+  text-align: right;
+}
+
 .h1Title {
   @include themify() {
     font-family: themed('featureFont');
@@ -86,5 +99,20 @@
     @media all and(min-width: $md) {
       font-size: 5rem;
     }
+  }
+  
+  &.alignCenter strong {
+    top: -0.2em;
+    left: 0em;
+  }
+  
+  &.alignLeft strong {
+    top: -0.5em;
+    left: 0em;
+  }
+  
+  &.alignRight strong {
+    top: 0.1em;
+    left: 0;
   }
 }
