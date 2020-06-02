@@ -28,7 +28,7 @@ const Textarea = ({
   renderValidationError,
   validationMessage,
   handleValidations,
-  hasValidaationError,
+  hasValidationError,
   hasErrorAfterSubmit,
   getValidationMessage,
   // the rest
@@ -42,7 +42,7 @@ const Textarea = ({
       <div className={classNames(containerClassName, styles.wrapper)}>
         <textarea
           className={classNames(className, styles.input, styles.textarea, {
-            [styles.error]: hasValidaationError(),
+            [styles.error]: hasValidationError(),
           })}
           id={name}
           name={name}
@@ -85,7 +85,7 @@ Textarea.propTypes = {
   validationMessage: PropTypes.string,
   renderValidationError: PropTypes.func,
   handleValidations: PropTypes.func.isRequired,
-  hasValidaationError: PropTypes.func.isRequired,
+  hasValidationError: PropTypes.func.isRequired,
 };
 
 Textarea.defaultProps = {

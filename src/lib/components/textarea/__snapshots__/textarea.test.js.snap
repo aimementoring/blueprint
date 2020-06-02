@@ -117,9 +117,7 @@ exports[`Textarea renders properly with autofocus 1`] = `
     >
       <span
         className="fieldName"
-      >
-        
-      </span>
+      />
     </label>
   </div>
 </div>
@@ -246,9 +244,7 @@ exports[`Textarea uses validations 1`] = `
     >
       <span
         className="fieldName"
-      >
-        
-      </span>
+      />
     </label>
     <span
       className="theme-purple"
