@@ -20,7 +20,7 @@ class Textarea extends PureComponent {
     // props from withValidation HOC
     renderValidationError: PropTypes.func.isRequired,
     handleValidations: PropTypes.func.isRequired,
-    isValidationOk: PropTypes.func.isRequired,
+    hasValidationError: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -48,7 +48,7 @@ class Textarea extends PureComponent {
       value,
       theme,
       autoFocus,
-      isValidationOk,
+      hasValidationError,
       renderValidationError,
       validationMessage,
       hasErrorAfterSubmit,
@@ -61,7 +61,7 @@ class Textarea extends PureComponent {
     return (
       <div className={classNames(containerClassName, styles[`theme-${theme}`])}>
         <textarea
-          className={`${isValidationOk() ? styles.error : ''}
+          className={`${hasValidationError() ? styles.error : ''}
             ${className} ${styles.input} ${styles.textarea}`}
           placeholder={placeholder}
           onChange={this.handleChange}

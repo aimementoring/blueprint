@@ -57,7 +57,7 @@ class Select extends PureComponent {
       borderColor,
       borderColorInError,
       error,
-      isValidationOk,
+      hasValidationError,
       renderValidationError,
     } = this.props;
     let { customStyles } = this.props;
@@ -116,7 +116,7 @@ class Select extends PureComponent {
         <Dropdown
           placeholder={placeholder}
           className={classNames(className, {
-            [styles.error]: isValidationOk(),
+            [styles.error]: hasValidationError(),
           })}
           styles={customStyles}
           onChange={this.handleChange}
@@ -142,7 +142,7 @@ Select.propTypes = {
   // props from withValidation HOC
   renderValidationError: PropTypes.func,
   handleValidations: PropTypes.func.isRequired,
-  isValidationOk: PropTypes.func.isRequired,
+  hasValidationError: PropTypes.func.isRequired,
   customStyles: PropTypes.object,
 };
 
