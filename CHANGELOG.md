@@ -6,6 +6,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.2.7]
+### Added
+- Logo component
+- Children prop to list component
+- Caption component
+
+### Fixed
+- Styles on error messages
+- Updates documented components
+- Improve styleguide styles
+- Update some tests
+- Add/fix target for buttons
+
+### Removed
+- Undefined classes
+
 ## [2.1.13]
 ### Added
 - Styles for read only input fields
