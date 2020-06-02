@@ -12,4 +12,11 @@ describe('Title', () => {
     const tree = renderer.create(<Title text="h1 default title" />).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('works with align', () => {
+    const tree = renderer
+      .create(<Title text="h1 default title" align="left" />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

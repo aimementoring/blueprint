@@ -1,6 +1,19 @@
 @import '../../styles/variables/variables.module.scss';
 @import '../../styles/themes/themes.module.scss';
 
+
+.alignCenter {
+  text-align: center;
+}
+
+.alignLeft  {
+  text-align: left;
+}
+
+.alignRight {
+  text-align: right;
+}
+
 .h1Title {
   @include themify() {
     font-family: themed('featureFont');
@@ -88,7 +101,7 @@
     }
   }
   
-  &.headingLockupCenter {
+  &.alignCenter {
     text-align: center;
     strong {
       top: -0.2em;
@@ -96,7 +109,7 @@
     }
   }
   
-  &.headingLockupLeft {
+  &.alignLeft {
     text-align: left;
     strong {
       top: -0.5em;
@@ -104,7 +117,7 @@
     }
   }
   
-  &.headingLockupRight {
+  &.alignRight {
     text-align: right;
     strong {
       top: 0.1em;

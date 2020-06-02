@@ -9,39 +9,27 @@ import {
 
 const titleTypeClass = {
   h1Title: {
-    classes: [styles.h1Title],
+    style: styles.h1Title,
     tag: 'h1',
   },
   h2Title: {
-    classes: [styles.h2Title],
+    style: styles.h2Title,
     tag: 'h2',
   },
   h3Title: {
-    classes: [styles.h3Title],
+    style: styles.h3Title,
     tag: 'h3',
   },
   h4Title: {
-    classes: [styles.h4Title],
+    style: styles.h4Title,
     tag: 'h4',
   },
   h5Title: {
-    classes: [styles.h5Title],
+    style: styles.h5Title,
     tag: 'h5',
   },
   headingLockup: {
-    classes: [styles.headingLockup, styles.headingLockupLeft],
-    tag: 'h1',
-  },
-  headingLockupCenter: {
-    classes: [styles.headingLockup, styles.headingLockupCenter],
-    tag: 'h1',
-  },
-  headingLockupRight: {
-    classes: [styles.headingLockup, styles.headingLockupRight],
-    tag: 'h1',
-  },
-  headingLockupLeft: {
-    classes: [styles.headingLockup, styles.headingLockupLeft],
+    style: styles.headingLockup,
     tag: 'h1',
   },
 };
@@ -51,6 +39,7 @@ class Title extends PureComponent {
     const {
       text,
       type,
+      align,
       className,
       containerClassName,
       theme,
@@ -58,17 +47,26 @@ class Title extends PureComponent {
       onClick,
     } = this.props;
 
-    const { classes, tag: Component } = titleTypeClass[type] || {
-      classes: [classes],
+    const { style, tag: Component } = titleTypeClass[type] || {
+      classes: style,
       tag: 'span',
     };
+
+    const capitalise = ([firstChar, ...rest]) =>
+      `${firstChar.toLocaleUpperCase()}${rest.join('')}`;
 
     return (
       <div
         className={classNames(styles[`theme-${theme}`], containerClassName)}
         onClick={onClick}
       >
-        <Component className={classNames([...classes], className)}>
+        <Component
+          className={classNames(
+            style,
+            className,
+            styles[`align${capitalise(align)}`],
+          )}
+        >
           {children || text}
         </Component>
       </div>
@@ -80,6 +78,7 @@ Title.propTypes = {
   ...componentPropTypes,
   text: PropTypes.string,
   onClick: PropTypes.func,
+  align: PropTypes.oneOf(['center', 'left', 'right']),
   type: PropTypes.oneOf([
     'h1Title',
     'h2Title',
@@ -98,6 +97,7 @@ Title.defaultProps = {
   ...defaultComponentPropTypes,
   onClick: () => {},
   type: 'h1Title',
+  align: 'center',
 };
 
 export default Title;
