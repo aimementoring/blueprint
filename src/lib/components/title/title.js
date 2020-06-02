@@ -32,6 +32,10 @@ const titleTypeClass = {
     style: styles.headingLockup,
     tag: 'h1',
   },
+  // headingLockupCenter: {
+  //   style: styles.headingLockup, styles.headingLockupCenter,
+  //   tag: 'h1',
+  // },
 };
 
 class Title extends PureComponent {
@@ -76,13 +80,14 @@ Title.propTypes = {
     'h4Title',
     'h5Title',
     'headingLockup',
+    // 'headingLockupCenter',
   ]),
   children: PropTypes.node,
 };
 
 Title.defaultProps = {
   ...defaultComponentPropTypes,
-  onClick: () => {},
+  onClick: () => { },
   type: 'h1Title',
 };
 

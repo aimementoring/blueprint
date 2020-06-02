@@ -3,6 +3,10 @@
 <Title type="headingLockup">The featured <strong>Heading lockup</strong></Title>
 ```
 
+<!-- ```js
+<Title type="headingLockupCenter">The featured <strong>Heading lockup</strong></Title>
+``` -->
+
 ```js
 <Title type="h1Title">Heading 1</Title>
 ```
