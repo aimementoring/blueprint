@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import {
@@ -6,75 +6,101 @@ import {
   defaultComponentPropTypes,
 } from '../../utils/componentPropTypes';
 import { withValidation } from '../../utils/hocs';
+import { handleInputChange } from './utils.ignore';
 import styles from './textarea.module.scss';
 
-class Textarea extends PureComponent {
-  static propTypes = {
-    ...componentPropTypes,
-    placeholder: PropTypes.string,
-    name: PropTypes.string.isRequired,
-    required: PropTypes.bool,
-    onChangeFunction: PropTypes.func,
-    value: PropTypes.string,
-    autoFocus: PropTypes.bool,
-    // props from withValidation HOC
-    renderValidationError: PropTypes.func.isRequired,
-    handleValidations: PropTypes.func.isRequired,
-    hasValidationError: PropTypes.func.isRequired,
-  };
+const Textarea = ({
+  theme,
+  name,
+  value,
+  className,
+  containerClassName,
+  onChangeFunction,
+  label,
+  helperText,
+  autoFocus,
+  required,
+  disabled,
+  readOnly,
+  placeholder,
+  // props from withValidation HOC
+  validations,
+  renderValidationError,
+  validationMessage,
+  handleValidations,
+  hasValidationError,
+  hasErrorAfterSubmit,
+  getValidationMessage,
+  // the rest
+  ...inputProps
+}) => {
+  const handleChange = event =>
+    handleInputChange(event, name, handleValidations, onChangeFunction);
 
-  static defaultProps = {
-    ...defaultComponentPropTypes,
-    placeholder: '',
-    required: true,
-    onChangeFunction: () => {},
-    value: '',
-  };
-
-  handleChange = event => {
-    const { onChangeFunction, name, handleValidations } = this.props;
-    const value = event.target.value;
-    const isWrongValidation = handleValidations(value);
-    onChangeFunction(name, value, isWrongValidation);
-  };
-
-  render() {
-    const {
-      containerClassName,
-      placeholder,
-      name,
-      required,
-      className,
-      value,
-      theme,
-      autoFocus,
-      hasValidationError,
-      renderValidationError,
-      validationMessage,
-      hasErrorAfterSubmit,
-      getValidationMessage,
-      onChangeFunction,
-      handleValidations,
-      ...textareaProps
-    } = this.props;
-
-    return (
-      <div className={classNames(containerClassName, styles[`theme-${theme}`])}>
+  return (
+    <div className={styles[`theme-${theme}`]}>
+      <div className={classNames(containerClassName, styles.wrapper)}>
         <textarea
-          className={`${hasValidationError() ? styles.error : ''}
-            ${className} ${styles.input} ${styles.textarea}`}
-          placeholder={placeholder}
-          onChange={this.handleChange}
+          className={classNames(className, styles.input, styles.textarea, {
+            [styles.error]: hasValidationError(),
+          })}
+          id={name}
           name={name}
+          onChange={handleChange}
           value={value}
           required={required || false}
           autoFocus={autoFocus}
-          {...textareaProps}
+          readOnly={readOnly}
+          disabled={disabled}
+          {...inputProps}
         />
+        <label htmlFor={name}>
+          <span className={styles.fieldName}>{label || placeholder}</span>
+        </label>
         {renderValidationError()}
+        {helperText && (
+          <span className={styles.helperMessage}>{helperText}</span>
+        )}
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+Textarea.propTypes = {
+  ...componentPropTypes,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  label: PropTypes.string,
+  className: PropTypes.string,
+  autoFocus: PropTypes.bool,
+  required: PropTypes.bool,
+  disabled: PropTypes.bool,
+  readOnly: PropTypes.bool,
+  containerClassName: PropTypes.string,
+  // to make the "old usage" work in Portal
+  placeholder: PropTypes.string,
+  helperText: PropTypes.string,
+  onChangeFunction: PropTypes.func,
+  // props from withValidation HOC
+  validationMessage: PropTypes.string,
+  renderValidationError: PropTypes.func,
+  handleValidations: PropTypes.func.isRequired,
+  hasValidationError: PropTypes.func.isRequired,
+};
+
+Textarea.defaultProps = {
+  ...defaultComponentPropTypes,
+  value: null,
+  label: '',
+  className: '',
+  containerClassName: '',
+  required: false,
+  autoFocus: false,
+  helperText: null,
+  disabled: false,
+  readOnly: false,
+  handleValidations: () => true,
+  onChangeFunction: () => {},
+};
 
 export default withValidation(Textarea);
