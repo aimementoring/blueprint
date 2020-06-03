@@ -86,18 +86,15 @@ Title.propTypes = {
     'h4Title',
     'h5Title',
     'headingLockup',
-    'headingLockupCenter',
-    'headingLockupRight',
-    'headingLockupLeft',
   ]),
   children: PropTypes.node,
 };
 
 Title.defaultProps = {
   ...defaultComponentPropTypes,
-  onClick: () => {},
+  onClick: () => { },
   type: 'h1Title',
-  align: 'center',
+  align: 'left',
 };
 
 export default Title;
