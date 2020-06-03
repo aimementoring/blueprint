@@ -12,7 +12,8 @@ const regularExpressions = {
   numeric: /^\d+$/,
 };
 
-export const valueIsEmpty = value => value === '' || value === undefined || value === null;
+export const valueIsEmpty = value =>
+  value === '' || value === undefined || value === null;
 
 export const required = customMessage => value =>
   !valueIsEmpty(value) && value !== false
@@ -37,6 +38,13 @@ export const validateEmail = customMessage => value =>
     ? undefined
     : customMessage || 'This value is not a valid email';
 
+export const validateInclusionIn = array => customMessage => value => {
+  if (!value) return undefined;
+  return array.indexOf(value) !== -1
+    ? undefined
+    : customMessage || `Could not find "${value}" in ${array.join(', ')}`;
+};
+
 export const validateMobilePhone = customMessage => value => {
   if (valueIsEmpty(value)) return undefined;
 
@@ -58,23 +66,27 @@ export const validateHigherThanZero = customMessage => value =>
     : customMessage || 'This value should be higher than zero';
 
 export const minAmount = memoize((min, customMessage) => value =>
-  value && value < min ? customMessage || `This value should not be less than ${min}` : undefined
+  value && value < min
+    ? customMessage || `This value should not be less than ${min}`
+    : undefined,
 );
 
 export const maxAmount = memoize((max, customMessage) => value =>
-  value && value > max ? customMessage || `This value should not be more than ${max}` : undefined
+  value && value > max
+    ? customMessage || `This value should not be more than ${max}`
+    : undefined,
 );
 
 export const maxCharacters = memoize((max, customMessage) => value =>
   value && value.length > max
     ? customMessage || `This value should contain maximum ${max} characters`
-    : undefined
+    : undefined,
 );
 
 export const minCharacters = memoize((min, customMessage) => value =>
   value && value.length < min
     ? customMessage || `This value should contain minimum ${min} characters`
-    : undefined
+    : undefined,
 );
 
 export const validDate = customMessage => value => {
@@ -82,7 +94,9 @@ export const validDate = customMessage => value => {
     return undefined;
   }
   if (typeof value === 'string' && isNaN(value[value.length - 1])) {
-    return customMessage || 'This should be a valid date (for example: YYYY-MM-DD)';
+    return (
+      customMessage || 'This should be a valid date (for example: YYYY-MM-DD)'
+    );
   }
   return typeof value === 'string' &&
     (valueIsEmpty(value) ||
@@ -116,7 +130,10 @@ export const validateComponents = (componentsObject, props) => {
     const inputField = Object.keys(componentsObject)[i];
     const componentSelected = componentsObject[inputField];
     if (!(componentSelected.condition && !componentSelected.condition())) {
-      const validationMessage = checkValidations(componentSelected.validations, props[inputField]);
+      const validationMessage = checkValidations(
+        componentSelected.validations,
+        props[inputField],
+      );
 
       if (validationMessage) {
         componentSelected.errorMessage = validationMessage;

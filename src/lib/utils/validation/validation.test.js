@@ -13,6 +13,7 @@ import {
   minCharacters,
   validDate,
 } from './index';
+import { validateInclusionIn } from './validation';
 
 describe('Validation Required', () => {
   describe('It should return a message error when', () => {
@@ -559,6 +560,46 @@ describe('Validate Mobile phone', () => {
     it('a field is null', () => {
       const value = null;
       const responseOfTheValidation = validateMobilePhone()(value);
+      expect(responseOfTheValidation).toBeUndefined();
+    });
+  });
+});
+
+describe('Validate Inclusion of Element in Array', () => {
+  describe('It should return an error message when', () => {
+    it('the array does not contain the element', () => {
+      const value = 'watermelon';
+      const array = ['peach', 'banana', 'coconut'];
+      const responseOfTheValidation = validateInclusionIn(array)()(value);
+      expect(responseOfTheValidation).toEqual(
+        'Could not find "watermelon" in peach, banana, coconut',
+      );
+    });
+    it('the array is empty', () => {
+      const value = 'watermelon';
+      const array = [];
+      const customMessage = 'The fruit basket is empty.';
+      const responseOfTheValidation = validateInclusionIn(array)(customMessage)(
+        value,
+      );
+      expect(responseOfTheValidation).toEqual(customMessage);
+    });
+  });
+
+  describe('It should success (return undefined) when', () => {
+    it('the array contains the element', () => {
+      const value = 'watermelon';
+      const array = ['peach', 'banana', 'coconut', 'watermelon'];
+      const customMessage = 'Custom message error ...';
+      const responseOfTheValidation = validateInclusionIn(array)(customMessage)(
+        value,
+      );
+      expect(responseOfTheValidation).toBeUndefined();
+    });
+    it('element is empty', () => {
+      const value = null;
+      const array = ['peach', 'banana', 'coconut'];
+      const responseOfTheValidation = validateInclusionIn(array)()(value);
       expect(responseOfTheValidation).toBeUndefined();
     });
   });
