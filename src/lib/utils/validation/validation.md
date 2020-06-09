@@ -95,11 +95,15 @@ Take into account that in this case we use an object `validationObject` where we
 If the validations after the submition failed, we set in the state a variable `hasErrorAfterSubmit` to true and we send that as parameter to one of our component. In this case you are forcing every component to be validated (without having to type in the fields).
 
 ## Types of Validations
+
 The validations available are:
+
 - required
+- requiredIf
 - validateNumeric
 - validateAlphanumeric
 - validateEmail
+- validateInclusionIn
 - validateNonNegative
 - validateHigherThanZero
 - minAmount
