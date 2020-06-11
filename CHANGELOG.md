@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Phone Input component working with validations
+- InclusionIn validation
 
 ## [2.2.7]
 
@@ -67,7 +68,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - validations for Terms & Conditions component.
 
-[unreleased]: https://github.com/aimementoring/aime-portal-api/compare/v2.1.13...HEAD
+[unreleased]: https://github.com/aimementoring/aime-portal-api/compare/v2.2.9...HEAD
+[2.2.9]: https://github.com/aimementoring/aime-portal-api/compare/v2.2.7...v.2.2.9
+[2.2.7]: https://github.com/aimementoring/aime-portal-api/compare/v2.1.13...v.2.2.7
 [2.1.13]: https://github.com/aimementoring/aime-portal-api/compare/v2.1.11...v.2.1.13
 [2.1.11]: https://github.com/aimementoring/aime-portal-api/compare/v2.1.6...v.2.1.11
 [2.1.6]: https://github.com/aimementoring/aime-portal-api/compare/v2.1.3...v.2.1.6
