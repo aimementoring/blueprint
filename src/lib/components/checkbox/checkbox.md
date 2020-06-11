@@ -36,3 +36,23 @@ function updateValue(name, value) {
   theme="base"
 />;
 ```
+
+```js
+initialState = {
+  checkbox: null,
+};
+
+function updateValue(name, value) {
+  setState({ [name]: value });
+}
+
+<Checkbox
+  elementClassName="classname"
+  onChangeFunction={updateValue}
+  placeholder="Accept terms and conditions"
+  name="checkbox"
+  customId="checkbox"
+  value={state.checkbox}
+  validationMessage="required"
+/>;
+```

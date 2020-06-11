@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Caption also works when text is passed as a prop 1`] = `
+<div
+  className="theme-base"
+>
+  <p
+    className="caption "
+  >
+    Default Caption
+  </p>
+</div>
+`;
+
+exports[`Caption renders properly 1`] = `
+<div
+  className="theme-base"
+>
+  <p
+    className="caption "
+  >
+    Default caption
+  </p>
+</div>
+`;

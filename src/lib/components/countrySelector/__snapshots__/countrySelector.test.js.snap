@@ -5,11 +5,10 @@ exports[`CountrySelector renders properly 1`] = `
   className="theme-base"
 >
   <div
-    className="
-          theme-purple wrapper"
+    className="theme-purple wrapper"
   >
     <div
-      className="css-1pcexqc-container false"
+      className="css-1pcexqc-container"
       onKeyDown={[Function]}
     >
       <div

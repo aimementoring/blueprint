@@ -1,22 +1,155 @@
-@import '../oldInput/oldInput.module.scss';
-@import '../../styles/themes/themes.module.scss';
+@import "../../styles/variables/variables.module.scss";
+@import "../../styles/themes/themes.module.scss";
+@import "../../styles/global/reset.module.scss";
 
-.textarea {
-  @include themify() {
-    padding: themed('textAreaPadding');
-    height: themed('textAreaHeight');
-  }
-  
-  box-sizing: border-box;
-  line-height: 1.5rem;
-  margin-bottom: 1.8em;
+.wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 1.5em; //TODO: need to test how these input components appear in a form
+  font-family: $sans-serif-font;
 
-  &.error,
-  &.error:focus,
-  &.error:hover {
+  textarea {
+    -webkit-appearance: none;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 3px;
+    padding: 0.9em 2em;
+    min-height: 3em;
+    line-height: 1.5rem;
+    margin-bottom: 1.8em;
+
     @include themify() {
-      border: themed('fieldBorderError');
-      border-color: themed('fieldColorError');
+      padding: themed('textAreaPadding');
+      height: themed('textAreaHeight');
+      color: themed("fieldColor");
+      background-color: themed("fieldBackground");
+      border: 1px solid themed("borderColor");
+      font-family: themed("primaryFont");
+      font-size: themed("fieldFontSize");
+      font-weight: themed("fieldFontWeight");
+      &.error,
+      &.error:focus,
+      &.error:hover {
+        @include themify() {
+          border: themed('fieldBorderError');
+          border-color: themed('fieldColorError');
+        }
+      }
+    }
+  
+    &[required] ~ label::after,
+    &.required ~ label::after {
+      content: " *";
+      vertical-align: text-top;
+      @include themify() {
+        color: themed("fieldColorError");
+        font-size: themed("fieldFontSize");
+        font-weight: themed("fieldFontWeight");
+      }
+    }
+    &:focus {
+      @include themify() {
+        border-width: 2px;
+      }
+    }
+    
+    &[readonly], &[readonly]:focus {
+      cursor: not-allowed;
+      @include themify() {
+        background: themed('fieldReadOnlyBackgroundColor');
+        color: themed('fieldReadOnlyColor');
+      }
+      ~ label {
+        @include themify() {
+          color: themed('fieldReadOnlyColor');
+        }
+      }
+    }
+
+    &:focus,
+    &:not(:empty) {
+      ~ label {
+        @include themify() {
+          color: themed('borderColor');
+        }
+        background-color: $white;
+        padding: 0 0.3em;
+        width: auto;
+        transform: translate3d(0, -1.2em, 0) scale(0.75);
+      }
+    }
+
+    &.error {
+      @include themify() {
+        border-width: 2px;
+        border-color: $error-color;
+      }
+
+      ~ label {
+        @include themify() {
+          color: themed("fieldColorError");
+        }
+        background-color: $white;
+        padding: 0 0.3em;
+        width: auto;
+        transform: translate3d(0, -1.2em, 0) scale(0.75);
+      }
+    }
+  }
+
+  .helperMessage,
+  .errorMessage {
+    display: block;
+    font-size: 0.6rem;
+    margin-top: -1.5em;
+    margin-bottom: 1.5em;
+
+    @include themify() {
+      font-family: themed('primaryFont');
+      color: themed('fieldColorError');
+    }
+
+    &.active {
+      visibility: visible;
+    }
+  }
+
+  .helperMessage {
+    @include themify() {
+      color: themed('helperTextColor');
+    }
+  }
+
+  label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: $black;
+    pointer-events: none;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    text-align: left;
+    transform: translate3d(0, 0, 0) scale(1);
+    transform-origin: left top;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    width: 100%;
+    z-index: 1;
+    @include themify() {
+      color: themed("fieldPlaceholderColor");
+      font-family: themed("primaryFont");
+      font-size: themed("fieldFontSize");
+    }
+
+    &.required::after {
+      content: " *";
+      vertical-align: text-top;
+      @include themify() {
+        color: themed("fieldColorError");
+        font-size: themed("fieldFontSize");
+        font-weight: themed("fieldFontWeight");
+      }
     }
   }
 }

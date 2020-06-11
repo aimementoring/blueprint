@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { checkValidations } from '../validation';
 import styles from './withValidation.module.scss';
 
@@ -27,11 +28,14 @@ export default function withValidation(WrappedComponent) {
     }
 
     static getDerivedStateFromProps(props, state) {
-      if ((props.validationMessage !== state.validationMessage)
-        || (props.hasErrorAfterSubmit && !state.validationMessage)) {
+      if (
+        props.validationMessage !== state.validationMessage ||
+        (props.hasErrorAfterSubmit && !state.validationMessage)
+      ) {
         return {
           validationMessage:
-            props.validationMessage || checkValidations(props.validations, props.value),
+            props.validationMessage ||
+            checkValidations(props.validations, props.value),
         };
       }
 
@@ -43,7 +47,8 @@ export default function withValidation(WrappedComponent) {
       const { validations } = this.props;
       const validationResultMsg = checkValidations(validations, value);
       this.setState({
-        validationMessage: validationResultMsg || this.props.validationMessage || '',
+        validationMessage:
+          validationResultMsg || this.props.validationMessage || '',
         value,
       });
       return validationResultMsg || this.props.validationMessage;
@@ -51,12 +56,19 @@ export default function withValidation(WrappedComponent) {
 
     getValidationMessage = () => this.state.validationMessage;
 
-    isValidationOk = () => !!this.state.validationMessage;
+    hasValidationError = () => !!this.state.validationMessage;
 
-    renderValidationError = () =>
-      this.isValidationOk() && (
-        <span className={styles[`theme-${this.props.theme}`]}>
-          <span className={styles.errorMessage}>{this.getValidationMessage()}</span>
+    renderValidationError = (customStyle = '') =>
+      this.hasValidationError() && (
+        <span
+          className={classNames(
+            styles[`theme-${this.props.theme}`],
+            customStyle,
+          )}
+        >
+          <span className={styles.errorMessage}>
+            {this.getValidationMessage()}
+          </span>
         </span>
       );
 
@@ -64,7 +76,7 @@ export default function withValidation(WrappedComponent) {
       return (
         <WrappedComponent
           handleValidations={this.handleValidations}
-          isValidationOk={this.isValidationOk}
+          hasValidationError={this.hasValidationError}
           getValidationMessage={this.getValidationMessage}
           renderValidationError={this.renderValidationError}
           {...this.props}

@@ -80,10 +80,10 @@ exports[`TermsAndConditions renders properly with all props used 2`] = `
       className="termsCheckbox"
     >
       <div
-        className="theme-base wrapper"
+        className="theme-base"
       >
         <div
-          className=" customCheckbox customCheckboxDefault false"
+          className=" customCheckbox customCheckboxDefault "
           onClick={[Function]}
         >
           <input
@@ -92,13 +92,13 @@ exports[`TermsAndConditions renders properly with all props used 2`] = `
           />
           <input
             checked={false}
-            className="false"
+            className=""
             readOnly={true}
             type="checkbox"
             value="yes"
           />
           <label
-            className="false"
+            className=""
           >
             Testing my checkbox
           </label>
@@ -139,10 +139,10 @@ exports[`TermsAndConditions renders properly with all props used 3`] = `
       className="termsCheckbox"
     >
       <div
-        className="theme-base wrapper"
+        className="theme-base"
       >
         <div
-          className=" customCheckbox customCheckboxDefault false"
+          className=" customCheckbox customCheckboxDefault "
           onClick={[Function]}
         >
           <input
@@ -151,13 +151,13 @@ exports[`TermsAndConditions renders properly with all props used 3`] = `
           />
           <input
             checked={false}
-            className="false"
+            className=""
             readOnly={true}
             type="checkbox"
             value="yes"
           />
           <label
-            className="false"
+            className=""
           >
             Testing my checkbox
           </label>
@@ -226,10 +226,10 @@ exports[`TermsAndConditions renders properly with pdf, and checkbox 1`] = `
       className="termsCheckbox"
     >
       <div
-        className="theme-base wrapper"
+        className="theme-base"
       >
         <div
-          className=" customCheckbox customCheckboxDefault false"
+          className=" customCheckbox customCheckboxDefault "
           onClick={[Function]}
         >
           <input
@@ -238,13 +238,13 @@ exports[`TermsAndConditions renders properly with pdf, and checkbox 1`] = `
           />
           <input
             checked={false}
-            className="false"
+            className=""
             readOnly={true}
             type="checkbox"
             value="yes"
           />
           <label
-            className="false"
+            className=""
           >
             Testing my checkbox
           </label>

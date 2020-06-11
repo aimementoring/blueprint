@@ -2,10 +2,10 @@
 
 exports[`Checkbox renders properly 1`] = `
 <div
-  className="theme-purple wrapper"
+  className="theme-purple"
 >
   <div
-    className=" customCheckbox customCheckboxDefault false"
+    className=" customCheckbox customCheckboxDefault "
     onClick={[Function]}
   >
     <input
@@ -15,7 +15,7 @@ exports[`Checkbox renders properly 1`] = `
     />
     <input
       checked={true}
-      className="false"
+      className=""
       id="checkbox"
       name="checkbox"
       readOnly={true}
@@ -23,7 +23,7 @@ exports[`Checkbox renders properly 1`] = `
       value="yes"
     />
     <label
-      className="false"
+      className=""
       htmlFor="checkbox"
     >
       Accept terms and conditions
@@ -34,7 +34,7 @@ exports[`Checkbox renders properly 1`] = `
 
 exports[`Checkbox renders properly when value is invalid 1`] = `
 <div
-  className="theme-purple wrapper"
+  className="theme-purple"
 >
   <div
     className=" customCheckbox customCheckboxDefault error"

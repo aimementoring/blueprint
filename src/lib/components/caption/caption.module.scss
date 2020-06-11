@@ -1,0 +1,20 @@
+@import '../../styles/variables/variables.module.scss';
+@import '../../styles/themes/themes.module.scss';
+
+.caption {
+  @include themify() {
+    font-family: themed('bodyFontFamily');
+    color: themed('captionColor');
+  }
+  font-size: 0.7rem;
+  line-height: 1.1em;
+  margin-bottom: 1.5em;
+  font-weight: 100;
+
+  strong {
+    @include themify() {
+      font-family: themed('bodyFontFamilyBold');
+    }
+    font-weight: 700;
+  }
+}

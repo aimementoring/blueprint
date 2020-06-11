@@ -1,90 +1,98 @@
 @import '../../styles/variables/variables.module.scss';
 @import '../../styles/themes/themes.module.scss';
 
-.h1Title {
+.alignLeft {
+  text-align: left;
+}
+
+.alignCenter {
+  text-align: center;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+.featureTitleAttributes {
   @include themify() {
     font-family: themed('featureFont');
   }
-  font-size: 8rem;
-  line-height: 0.8em;
   font-weight: 100;
   font-style: normal;
+}
+
+.primaryTitleAttributes {
+  @include themify() {
+    font-family: themed('primaryFontBold');
+  }
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.h1Title {
+  composes: featureTitleAttributes;
+  font-size: 8rem;
+  line-height: 0.8em;
 }
 
 .h2Title {
-  @include themify() {
-    font-family: themed('featureFont');
-  }
+  composes: featureTitleAttributes;
   font-size: 6rem;
   line-height: 0.8em;
-  font-weight: 100;
-  font-style: normal;
 }
 
 .h3Title {
-  @include themify() {
-    font-family: themed('featureFont');
-  }
+  composes: featureTitleAttributes;
   font-size: 2.5rem;
   line-height: 1em;
-  font-weight: 100;
-  font-style: normal;
 }
 
 .h4Title {
-  @include themify() {
-    font-family: themed('primaryFontBold');
-  }
+  composes: primaryTitleAttributes;
   font-size: 1.5rem;
   line-height: 1.3em;
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
-  font-weight: 900;
-  font-style: normal;
 }
 
 .h5Title {
-  @include themify() {
-    font-family: themed('primaryFontBold');
-  }
+  composes: primaryTitleAttributes;
   font-size: 1rem;
   line-height: 1.5em;
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
-  font-weight: 900;
-  font-style: normal;
 }
 
 .headingLockup {
+  @include themify() {
+    font-family: themed('featureFont');
+  }
   position: relative;
   transform: rotate(0);
   font-size: 1.5rem;
   line-height: 1.4em;
   font-style: normal;
   font-weight: normal;
-  
-  @include themify() {
-    font-family: themed('featureFont');
-  }
-  
+
   @media all and(min-width: $md) {
     font-size: 2.5rem;
   }
-  
+
   strong {
-    font-weight: normal;
     position: relative;
     transform: rotate(-7deg);
+    display: block;
+    clear: both;
+    top: -0.3em;
     font-size: 3rem;
     line-height: 1em;
-    clear: both;
-    display: block;
-    top: -0.3em;
-    left: -0.5em;
+    font-weight: normal;
 
-    
     @media all and(min-width: $md) {
       font-size: 5rem;
     }
+  }
+
+  &.alignRight strong {
+    transform: rotate(-4deg);
+    top: -0.15em;
   }
 }

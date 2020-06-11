@@ -2,17 +2,259 @@
 
 exports[`Textarea renders properly 1`] = `
 <div
-  className=" theme-purple wrapper"
+  className="theme-purple"
 >
-  <textarea
-    className="false
-            myClass input textarea"
-    name="textarea"
-    onChange={[Function]}
-    placeholder="Write area"
-    required={true}
-    validations={Array []}
-    value=""
-  />
+  <div
+    className="wrapper"
+  >
+    <textarea
+      autoFocus={false}
+      className="input textarea"
+      disabled={false}
+      id="testing"
+      name="testing"
+      onChange={[Function]}
+      readOnly={false}
+      required={false}
+      value=""
+    />
+    <label
+      htmlFor="testing"
+    >
+      <span
+        className="fieldName"
+      >
+        Testing input
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Textarea renders properly when different theme 1`] = `
+<div
+  className="theme-purple"
+>
+  <div
+    className="wrapper"
+  >
+    <textarea
+      autoFocus={false}
+      className="input textarea"
+      disabled={false}
+      id="testing"
+      name="testing"
+      onChange={[Function]}
+      readOnly={false}
+      required={false}
+      value=""
+    />
+    <label
+      htmlFor="testing"
+    >
+      <span
+        className="fieldName"
+      >
+        Testing input
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Textarea renders properly when it is disabled 1`] = `
+<div
+  className="theme-purple"
+>
+  <div
+    className="wrapper"
+  >
+    <textarea
+      autoFocus={false}
+      className="input textarea"
+      disabled={true}
+      id="testing"
+      name="testing"
+      onChange={[Function]}
+      readOnly={false}
+      required={false}
+      value=""
+    />
+    <label
+      htmlFor="testing"
+    >
+      <span
+        className="fieldName"
+      >
+        Testing input
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Textarea renders properly with autofocus 1`] = `
+<div
+  className="theme-purple"
+>
+  <div
+    className="wrapper"
+  >
+    <textarea
+      autoFocus={false}
+      autofocus={true}
+      className="input textarea"
+      disabled={false}
+      id="testing"
+      name="testing"
+      onChange={[Function]}
+      readOnly={false}
+      required={false}
+      value=""
+    />
+    <label
+      htmlFor="testing"
+    >
+      <span
+        className="fieldName"
+      />
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Textarea renders properly with class name and container class name 1`] = `
+<div
+  className="theme-purple"
+>
+  <div
+    className="myClassContainer wrapper"
+  >
+    <textarea
+      autoFocus={false}
+      className="myClass input textarea"
+      disabled={false}
+      id="testing"
+      name="testing"
+      onChange={[Function]}
+      readOnly={false}
+      required={false}
+      value=""
+    />
+    <label
+      htmlFor="testing"
+    >
+      <span
+        className="fieldName"
+      >
+        Testing input
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Textarea renders properly with helper text 1`] = `
+<div
+  className="theme-purple"
+>
+  <div
+    className="wrapper"
+  >
+    <textarea
+      autoFocus={false}
+      className="input textarea"
+      disabled={false}
+      id="testing"
+      name="testing"
+      onChange={[Function]}
+      readOnly={false}
+      required={false}
+      value=""
+    />
+    <label
+      htmlFor="testing"
+    >
+      <span
+        className="fieldName"
+      >
+        Testing input
+      </span>
+    </label>
+    <span
+      className="helperMessage"
+    >
+      My awesome helper text
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Textarea renders properly with required 1`] = `
+<div
+  className="theme-purple"
+>
+  <div
+    className="wrapper"
+  >
+    <textarea
+      autoFocus={false}
+      className="input textarea"
+      disabled={false}
+      id="testing"
+      name="testing"
+      onChange={[Function]}
+      readOnly={false}
+      required={true}
+      value=""
+    />
+    <label
+      htmlFor="testing"
+    >
+      <span
+        className="fieldName"
+      >
+        Testing required input
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Textarea uses validations 1`] = `
+<div
+  className="theme-purple"
+>
+  <div
+    className="wrapper"
+  >
+    <textarea
+      autoFocus={false}
+      className="input textarea error"
+      disabled={false}
+      id="testing"
+      name="testing"
+      onChange={[Function]}
+      readOnly={false}
+      required={false}
+      value=""
+    />
+    <label
+      htmlFor="testing"
+    >
+      <span
+        className="fieldName"
+      />
+    </label>
+    <span
+      className="theme-purple"
+    >
+      <span
+        className="errorMessage"
+      >
+        Required
+      </span>
+    </span>
+  </div>
 </div>
 `;

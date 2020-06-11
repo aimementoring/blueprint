@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import countriesList from './countryCollection.ignore';
 import Select from '../select';
-import { componentPropTypes, defaultComponentPropTypes } from '../../utils/componentPropTypes';
+import {
+  componentPropTypes,
+  defaultComponentPropTypes,
+} from '../../utils/componentPropTypes';
 import styles from './countrySelector.module.scss';
 
 export default class CountrySelector extends Component {
@@ -19,6 +22,7 @@ export default class CountrySelector extends Component {
     onChangeFunction: () => {},
     value: '',
     name: 'country-name',
+    containerClassName: '',
   };
 
   state = {
@@ -54,7 +58,13 @@ export default class CountrySelector extends Component {
 
   render() {
     const { countries } = this.state;
-    const { className, placeholder, containerClassName, name, theme } = this.props;
+    const {
+      className,
+      placeholder,
+      containerClassName,
+      name,
+      theme,
+    } = this.props;
     let { value } = this.props;
     if (!value || !countries.find(country => country.text === value)) value = '';
 
