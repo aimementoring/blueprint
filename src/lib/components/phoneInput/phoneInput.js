@@ -1,12 +1,12 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import ReactPhoneInput, { parsePhoneNumber } from "react-phone-number-input";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import ReactPhoneInput, { parsePhoneNumber } from 'react-phone-number-input';
 import {
   componentPropTypes,
   defaultComponentPropTypes,
-} from "../../utils/componentPropTypes";
-import { withValidation } from "../../utils/hocs";
-import styles from "./phoneInput.module.scss";
+} from '../../utils/componentPropTypes';
+import { withValidation } from '../../utils/hocs';
+import styles from './phoneInput.module.scss';
 
 class PhoneInput extends PureComponent {
   static propTypes = {
@@ -24,12 +24,12 @@ class PhoneInput extends PureComponent {
 
   static defaultProps = {
     ...defaultComponentPropTypes,
-    placeholder: "phone",
+    placeholder: 'phone',
     className: styles.input,
-    name: "phone",
+    name: 'phone',
     required: false,
-    defaultCountry: "AU",
-    value: "",
+    defaultCountry: 'AU',
+    value: '',
     onCountrySelected: () => {},
     onChangeFunction: () => {},
     handleValidations: () => true,
@@ -37,14 +37,38 @@ class PhoneInput extends PureComponent {
   };
 
   handleChange = value => {
-    const { name, onChangeFunction, handleValidations } = this.props;
+    const {
+      name,
+      onChangeFunction,
+      handleValidations,
+      value: currentValue,
+    } = this.props;
+
     let parsedValue = {};
     const isWrongValidation = handleValidations(value);
-
+    let valueToReturn = value;
     if (value) {
       parsedValue = parsePhoneNumber(value);
+      // check if the country code change and we have to change the country code wrote in the input
+      if (currentValue && currentValue.indexOf('+') > -1 && parsedValue) {
+        const parsedCurrentValue = parsePhoneNumber(currentValue);
+        // change the flag of the country
+        if (
+          (parsedCurrentValue &&
+            parsedCurrentValue.countryCallingCode !==
+              parsedValue.countryCallingCode) ||
+          (!parsedCurrentValue && value.indexOf(currentValue) === -1)
+        ) {
+          valueToReturn = parsedCurrentValue
+            ? `+${parsedValue.countryCallingCode}${
+              currentValue.split(parsedCurrentValue.countryCallingCode)[1]
+            }`
+            : `+${parsedValue.countryCallingCode}`;
+        }
+      }
     }
-    onChangeFunction(name, value, isWrongValidation, parsedValue);
+
+    onChangeFunction(name, valueToReturn, isWrongValidation, parsedValue);
   };
 
   render() {
@@ -73,10 +97,11 @@ class PhoneInput extends PureComponent {
           value={value}
           onChange={this.handleChange}
           error={hasValidationError() ? '' : getValidationMessage()}
-          className={className}
+          className={`${className} ${hasValidationError() && styles.error}`}
           {...inputProps}
           country={defaultCountry}
         />
+        {renderValidationError()}
       </div>
     );
   }
