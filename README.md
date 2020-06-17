@@ -16,6 +16,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/aimementoring/blueprint/badge.svg?branch=master)](https://coveralls.io/github/aimementoring/blueprint?branch=master)
 
 [![https://nodei.co/npm/aime-blueprint.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/aime-blueprint.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/aime-blueprint)
+[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://blueprint.aimementoring.com/)
 
 ## Blueprint
 
@@ -70,8 +71,15 @@ Now you are ready to use them :)!
 To begin you will need to navigate to the folder named **commands**, this can be done via [vscode](https://code.visualstudio.com/docs/editor/integrated-terminal) build in terminal (Windows: command line with the command instruction
 `cd commands`.
 Once you are in the `commands` folder you can run all the following command instructions from this folder.
-
 All naming conventions for Blueprint `folders` and `files` are: _camelCase_
+
+| Filename                      | Description                                                                                                                                                                                                 |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **componentName.module.scss** | SASS file for your component styles                                                                                                                                                                         |
+| **componentName.test.js**     | Unit tests for your component. Includes some default settings, but you have to update with your component props, and you should add custom unit test there (Please, it's important you add those unit test) |
+| **componentName.md**          | Used by styleguide to generate the example of your component. Fill this file with a complete example of the usage of your component.                                                                        |
+| **componentName.js**          | Rhe React component itself, should contain all the logic of your component.                                                                                                                                 |
+| **index.js**                  | File responsible for exporting your component – you probably don't need to change anything here.                                                                                                            |
 
 To automatically create the files required to add components to blueprint you can run the following command `sh createComponent [yourComponent]` replacing `[yourComponent]` with the name of your new component.
 
@@ -190,6 +198,20 @@ _NB: Blueprint will be linked until you run…`yarn unlink` in your `blueprint` 
 | `yarn run test`             | Run all unit tests, and generates coverage report                                           |
 | `yarn run deploy`           | Execute all unit test and run build to generate lib and styleguide folder                   |
 | `yarn run release`          | Generate a release with a new version (Still not ready to use)                              |
+
+## Storybook
+
+We are documenting the project with styleguidist and storybook. For storybook, you need to create a file `componentName.stories.js` inside your component folder.
+We use multiple addons, some of them are:
+
+- `addon-a11y`
+- `addon-actions`
+- `addon-info`
+- `addon-knobs`
+- `addon-links`
+- `addon-storysource`
+
+You can run the project locally with `yarn storybook`
 
 ### Troubleshooting
 

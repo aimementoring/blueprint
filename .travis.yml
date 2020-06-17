@@ -23,7 +23,7 @@ script:
   - yarn lint
   - yarn test
   - yarn build:lib
-  - yarn build:styleguide
+  - yarn build:storybook
 
 after_success:
   - yarn coveralls
