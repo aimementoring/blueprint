@@ -5,6 +5,7 @@ import themeOptions from '../../styles/themeOptions';
 
 export default {
   title: 'WarningBlock',
+  component: WarningBlock,
   parameters: {
     jest: ['warningBlock.test.js'],
   },

@@ -5,6 +5,7 @@ import themeOptions from '../../styles/themeOptions';
 
 export default {
   title: 'TermsAndConditions',
+  component: TermsAndConditions,
   parameters: {
     jest: ['termsAndConditions.test.js'],
   },

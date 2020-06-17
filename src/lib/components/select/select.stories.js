@@ -5,6 +5,7 @@ import themeOptions from '../../styles/themeOptions';
 
 export default {
   title: 'Select',
+  component: Select,
   parameters: {
     jest: ['select.test.js'],
   },

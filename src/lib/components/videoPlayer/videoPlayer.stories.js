@@ -5,6 +5,7 @@ import themeOptions from '../../styles/themeOptions';
 
 export default {
   title: 'VideoPlayer',
+  component: VideoPlayer,
   parameters: {
     jest: ['videoPlayer.test.js'],
   },

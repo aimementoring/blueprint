@@ -3,6 +3,7 @@ import Footer from './footer';
 
 export default {
   title: 'Footer',
+  component: Footer,
   parameters: {
     jest: ['footer.test.js'],
   },

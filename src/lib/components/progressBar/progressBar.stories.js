@@ -5,6 +5,7 @@ import themeOptions from '../../styles/themeOptions';
 
 export default {
   title: 'ProgressBar',
+  component: ProgressBar,
   parameters: {
     jest: ['progressBar.test.js'],
   },

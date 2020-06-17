@@ -3,6 +3,7 @@ import CountdownTimer from './countdownTimer';
 
 export default {
   title: 'CountdownTimer',
+  component: CountdownTimer,
   parameters: {
     jest: ['countdownTimer.test.js'],
   },

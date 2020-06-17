@@ -3,6 +3,7 @@ import HelpToolTip from './helpToolTip';
 
 export default {
   title: 'HelpToolTip',
+  component: HelpToolTip,
   parameters: {
     jest: ['helpToolTip.test.js'],
   },

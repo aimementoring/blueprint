@@ -14,7 +14,7 @@
     "@babel/plugin-transform-react-jsx": "^7.7.0",
     "@bugsnag/js": "^6.2.0",
     "@bugsnag/plugin-react": "^6.2.0",
-    "@storybook/addon-docs": "^5.2.6",
+    "@storybook/addon-docs": "^5.3.19",
     "@svgr/webpack": "^5.4.0",
     "airtable": "^0.6.0",
     "babel-core": "^6.26.3",

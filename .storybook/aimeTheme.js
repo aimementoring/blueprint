@@ -10,13 +10,14 @@ export default create({
   // UI
   appBg: '#fff',
   appContentBg: '#fff',
-  appBorderColor: 'rgb(199, 0, 255)',
+  appBorderColor: '#ccc',
   appBorderRadius: 4,
 
   // Typography
   fontBase:
     '"GT Pressura Mono", "Univers Light", "Helvetica Neue", Helvetica, Arial, sans-serif',
-  fontCode: 'monospace',
+  fontCode:
+    '"Operator Mono","Fira Code Retina","Fira Code","FiraCode-Retina","Andale Mono","Lucida Console",Consolas,Monaco,monospace',
 
   // Text colors
   textColor: 'black',

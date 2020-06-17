@@ -10,6 +10,7 @@ const typeOptions = {
 
 export default {
   title: 'List',
+  component: List,
   parameters: {
     jest: ['list.test.js'],
   },

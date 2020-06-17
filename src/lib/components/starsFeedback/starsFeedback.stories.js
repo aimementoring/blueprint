@@ -5,6 +5,7 @@ import themeOptions from '../../styles/themeOptions';
 
 export default {
   title: 'StarsFeedback',
+  component: StarsFeedback,
   parameters: {
     jest: ['starsFeedback.test.js'],
   },

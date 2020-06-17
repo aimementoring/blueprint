@@ -6,6 +6,7 @@ import themeOptions from '../../styles/themeOptions';
 
 export default {
   title: 'OldInput',
+  component: OldInput,
   parameters: {
     jest: ['oldInput.test.js'],
   },

@@ -3,6 +3,7 @@ import CountryFlagSelector from './countryFlagSelector';
 
 export default {
   title: 'CountryFlagSelector',
+  component: CountryFlagSelector,
   parameters: {
     jest: ['countryFlagSelector.test.js'],
   },

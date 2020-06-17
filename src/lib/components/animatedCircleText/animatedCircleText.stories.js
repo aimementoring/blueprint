@@ -3,6 +3,7 @@ import AnimatedCircleText from './animatedCircleText';
 
 export default {
   title: 'Animated Circle Text',
+  component: AnimatedCircleText,
   parameters: {
     jest: ['animatedCircleText.test.js'],
   },

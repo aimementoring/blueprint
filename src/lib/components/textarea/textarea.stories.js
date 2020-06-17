@@ -5,6 +5,7 @@ import themeOptions from '../../styles/themeOptions';
 
 export default {
   title: 'Textarea',
+  component: Textarea,
   parameters: {
     jest: ['textarea.test.js'],
   },

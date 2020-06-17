@@ -3,6 +3,7 @@ import CountrySelector from './countrySelector';
 
 export default {
   title: 'CountrySelector',
+  component: CountrySelector,
   parameters: {
     jest: ['countrySelector.test.js'],
   },

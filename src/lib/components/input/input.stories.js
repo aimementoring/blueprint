@@ -6,6 +6,7 @@ import themeOptions from '../../styles/themeOptions';
 
 export default {
   title: 'Input',
+  component: Input,
   parameters: {
     jest: ['input.test.js'],
   },

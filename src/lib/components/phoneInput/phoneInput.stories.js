@@ -6,6 +6,7 @@ import themeOptions from '../../styles/themeOptions';
 
 export default {
   title: 'PhoneInput',
+  component: PhoneInput,
   parameters: {
     jest: ['phoneInput.test.js'],
   },

@@ -5,7 +5,6 @@ import {
   setAddon,
 } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
 import { withA11y } from '@storybook/addon-a11y';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 import LiveEdit, { setOptions } from 'storybook-addon-react-live-edit';

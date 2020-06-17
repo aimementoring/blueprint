@@ -6,6 +6,7 @@ import themeOptions from '../../styles/themeOptions';
 
 export default {
   title: 'LabeledTextarea',
+  component: LabeledTextarea,
   parameters: {
     jest: ['labeledTextarea.test.js'],
   },

@@ -14,6 +14,7 @@ const typeOptions = {
 
 export default {
   title: 'Title',
+  component: Title,
   parameters: {
     jest: ['title.test.js'],
   },

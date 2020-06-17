@@ -3,6 +3,7 @@ import CountryFlag from './countryFlag';
 
 export default {
   title: 'CountryFlag',
+  component: CountryFlag,
   parameters: {
     jest: ['countryFlag.test.js'],
   },

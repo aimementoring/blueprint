@@ -12,6 +12,7 @@ const positionOptions = {
 
 export default {
   title: 'SideTrack',
+  component: SideTrack,
   parameters: {
     jest: ['sideTrack.test.js'],
   },

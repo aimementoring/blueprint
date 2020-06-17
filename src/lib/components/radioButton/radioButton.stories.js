@@ -5,6 +5,7 @@ import themeOptions from '../../styles/themeOptions';
 
 export default {
   title: 'RadioButton',
+  component: RadioButton,
   parameters: {
     jest: ['radioButton.test.js'],
   },

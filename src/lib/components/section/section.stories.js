@@ -3,6 +3,7 @@ import Section from './section';
 
 export default {
   title: 'Section',
+  component: Section,
   parameters: {
     jest: ['section.test.js'],
   },

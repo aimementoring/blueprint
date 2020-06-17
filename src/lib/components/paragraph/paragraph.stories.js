@@ -5,6 +5,7 @@ import themeOptions from '../../styles/themeOptions';
 
 export default {
   title: 'Paragraph',
+  component: Paragraph,
   parameters: {
     jest: ['paragraph.test.js'],
   },

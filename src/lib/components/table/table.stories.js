@@ -5,6 +5,7 @@ import themeOptions from '../../styles/themeOptions';
 
 export default {
   title: 'Table',
+  component: Table,
   parameters: {
     jest: ['table.test.js'],
   },

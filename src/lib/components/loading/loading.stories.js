@@ -10,6 +10,7 @@ const loadingOptions = {
 
 export default {
   title: 'Loading',
+  component: Loading,
   parameters: {
     jest: ['loading.test.js'],
   },

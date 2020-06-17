@@ -3,6 +3,7 @@ import ErrorMessage from './errorMessage';
 
 export default {
   title: 'ErrorMessage',
+  component: ErrorMessage,
   parameters: {
     jest: ['errorMessage.test.js'],
   },

@@ -1,7 +1,10 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { select, text, boolean } from '@storybook/addon-knobs';
-import { withLiveEdit, withLiveEditScope } from 'storybook-addon-react-live-edit';
+import {
+  withLiveEdit,
+  withLiveEditScope,
+} from 'storybook-addon-react-live-edit';
 import Button from './button';
 import themeOptions from '../../styles/themeOptions';
 

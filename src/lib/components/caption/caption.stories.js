@@ -5,6 +5,7 @@ import themeOptions from '../../styles/themeOptions';
 
 export default {
   title: 'Caption',
+  component: Caption,
   parameters: {
     jest: ['caption.test.js'],
   },
