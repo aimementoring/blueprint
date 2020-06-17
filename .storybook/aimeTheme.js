@@ -33,7 +33,7 @@ export default create({
   inputTextColor: '#000',
   inputBorderRadius: 4,
 
-  brandTitle: 'My custom storybook',
+  brandTitle: 'AIME Blueprint',
   brandUrl: 'https://aimementoring.com',
   brandImage: 'https://d1muvgoqe3g8vw.cloudfront.net/blueprint/aime_logo.png',
 });

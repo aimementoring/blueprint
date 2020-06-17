@@ -161,9 +161,9 @@
     "coverage": "node scripts/test.js --coverage",
     "coveralls": "cross-env NODE_ENV=test BABEL_ENV=test jest --coverage --coverageReporters=text-lcov | coveralls",
     "checksize": "bundlesize",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "yarn start-storybook -p 6006",
     "prebuild:storybook": "yarn test:generate-output",
-    "build:storybook": "build-storybook -c .storybook -o docs/storybook",
+    "build:storybook": "yarn build-storybook -c .storybook -o docs/storybook",
     "final": "gh-pages -d docs/"
   },
   "bundlesize": [
