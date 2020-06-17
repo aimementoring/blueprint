@@ -23,7 +23,7 @@ exports[`AnimatedCircleText renders properly in reverse mode 1`] = `
         onClick={[Function]}
       >
         <h3
-          className="h3Title"
+          className="h3Title alignLeft"
         >
           <span
             className=""
@@ -271,7 +271,7 @@ exports[`AnimatedCircleText renders properly in standard mode 1`] = `
         onClick={[Function]}
       >
         <h3
-          className="h3Title"
+          className="h3Title alignLeft"
         >
           <span
             className=""

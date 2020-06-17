@@ -19,7 +19,7 @@ class Checkbox extends PureComponent {
     // props from withValidation HOC
     renderValidationError: PropTypes.func.isRequired,
     handleValidations: PropTypes.func.isRequired,
-    isValidationOk: PropTypes.func.isRequired,
+    hasValidationError: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -51,7 +51,7 @@ class Checkbox extends PureComponent {
       customId,
       value,
       theme,
-      isValidationOk,
+      hasValidationError,
       renderValidationError,
     } = this.props;
 
@@ -60,7 +60,7 @@ class Checkbox extends PureComponent {
         <div
           className={`${className} ${styles.customCheckbox} ${
             styles.customCheckboxDefault
-          } ${isValidationOk() ? styles.error : ''}`}
+          } ${hasValidationError() ? styles.error : ''}`}
           onClick={this.handleFieldChange}
         >
           {renderValidationError(styles.errorMessage)}
@@ -71,11 +71,11 @@ class Checkbox extends PureComponent {
             name={name}
             value="yes"
             readOnly
-            className={`${isValidationOk() ? styles.error : ''}`}
+            className={`${hasValidationError() ? styles.error : ''}`}
             checked={value}
           />
           <label
-            className={`${isValidationOk() ? styles.error : ''}`}
+            className={`${hasValidationError() ? styles.error : ''}`}
             htmlFor={customId}
           >
             {placeholder}

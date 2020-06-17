@@ -8,7 +8,6 @@ export { default as Button } from './button';
 export { default as Checkbox } from './checkbox';
 export { default as CountdownTimer } from './countdownTimer';
 export { default as CountryFlag } from './countryFlag';
-export { default as CountryFlagSelector } from './countryFlag';
 export { default as CountrySelector } from './countrySelector';
 export { default as ErrorMessage } from './errorMessage';
 export { default as Footer } from './footer';
